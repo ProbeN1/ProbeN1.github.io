@@ -12,7 +12,16 @@
         <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
         
         <guid>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</guid>
-        <description>&lt;h3 id=&#34;2022-4-13&#34;&gt;2022-4-13&lt;/h3&gt;
+        <description>&lt;h3 id=&#34;2022-5-12&#34;&gt;2022-5-12&lt;/h3&gt;
+&lt;p&gt;今天捣鼓了一天的博客，互联网是在是太精彩啦！&lt;/p&gt;
+&lt;p&gt;在经过重重深思之后，我仍然无法决定观察日记是要写成这种小作文的形式还是写成每天流水账的形式，觉得，可以浅浅结合一下。&lt;/p&gt;
+&lt;p&gt;快乐的月中总结，这里首先点名批评csgo，csgo做错了什么？在我疯狂的，放手一搏的，镇定自若的rushB，抢A大以及野牛干拉之后，我决定冷落这个csgo，恩，还有我帅气的AK火神。然后是身为罗德岛博士的反思，艾丽妮又做错了什么？连着投递五次入职书，她爱你啊！你却还执意偏爱鲨鲨，最终只是，徒劳的，200抽。&lt;/p&gt;
+&lt;p&gt;从没发现自己这么会做ppt，情不自禁展示一下：&lt;/p&gt;
+&lt;img src=&#34;https://pic.imgdb.cn/item/627d093e0947543129eb2b7f.jpg&#34; width=&#34;40%&#34; height=&#34;40%&#34;/&gt;
+&lt;p&gt;最后竟然被打回了，改成了一个淡色的版本，这里又情不自禁展示一下：&lt;/p&gt;
+&lt;img src=&#34;https://pic.imgdb.cn/item/627d09a20947543129ecaf53.jpg&#34; width=&#34;40%&#34; height=&#34;40%&#34;/&gt;
+&lt;p&gt;管理学签到，老师先发了个签到码，四位，我一猜是今天日期，直接一个0512上去，在路上就解决了签到问题，完美。遂逃课。然老师点名，寄，还说我咋签的这么快。&lt;/p&gt;
+&lt;h3 id=&#34;2022-4-13&#34;&gt;2022-4-13&lt;/h3&gt;
 &lt;p&gt;蛮快的，22年过三分之一了，看到四个月前的期末复习感觉自己像个傻子一样。拖，就硬拖，人现在还在等信号成绩。
 在电脑上记的时候比较少，但是看起来存在感比较高，我以后可能会慢慢把手机上的转到电脑上。&lt;/p&gt;
 &lt;p&gt;想想从疫情连夜逃回大连之后都发生了啥。&lt;/p&gt;
@@ -323,7 +332,7 @@ header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Content-Type: text/htm
 &lt;li&gt;DFA (Deterministic finite automaton) 确定型有穷自动机&lt;/li&gt;
 &lt;li&gt;NFA (Non-deterministic finite automaton) 非确定型有穷自动机&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;解释下确定型&lt;code&gt;、&lt;/code&gt;有穷&lt;code&gt;、&lt;/code&gt;自动机`这几个名词：&lt;/p&gt;
+&lt;p&gt;解释下确定型、有穷、自动机这几个名词：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;确定型与非确定型&lt;/strong&gt;：假设有一个字符串（text=abc）需要匹配，在没有编写正则表达式的前提下，就直接&lt;strong&gt;可以确定字符匹配顺序的就是确定型&lt;/strong&gt;，不能确定字符匹配顺序的则为非确定型。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;有穷&lt;/strong&gt;：有穷即表示有限的意思，这里表示有限次数内能得到结果。&lt;/li&gt;
@@ -332,8 +341,8 @@ header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Content-Type: text/htm
 &lt;p&gt;DFA文本主导,按照文本的顺序执行&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif#id=m7jWS&amp;amp;originHeight=310&amp;amp;originWidth=522&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif#id=m7jWS&amp;amp;originHeight=310&amp;amp;originWidth=522&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif&#34;
 			
 			
 			
@@ -345,8 +354,8 @@ header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Content-Type: text/htm
 &lt;p&gt;NFA表达式主导,按照表达式的一部分执行，如果不匹配换其他部分继续匹配，直到表达式匹配完成。&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://segmentfault.com/img/remote/1460000021787031#id=ppPAe&amp;amp;originHeight=310&amp;amp;originWidth=522&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
-		&lt;img src=&#34;https://segmentfault.com/img/remote/1460000021787031#id=ppPAe&amp;amp;originHeight=310&amp;amp;originWidth=522&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/627d06990947543129e1366b.gif&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/627d06990947543129e1366b.gif&#34;
 			
 			
 			
@@ -410,7 +419,7 @@ header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Content-Type: text/htm
 &lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://segmentfault.com/a/1190000021787021&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;正则表达式引擎执行原理&lt;/a&gt;&lt;/p&gt;
+    &gt;正则表达式引擎执行原理&lt;/a&gt;（猪哥）&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.leavesongs.com/PENETRATION/use-pcre-backtrack-limit-to-bypass-restrict.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;P神&lt;/a&gt;&lt;/p&gt;
 </description>
