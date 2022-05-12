@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Python端口扫描以及相关概念理解'><title>Python端口扫描等</title>
+
+<link rel='canonical' href='https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='Python端口扫描等'>
+<meta property='og:description' content='Python端口扫描以及相关概念理解'>
+<meta property='og:url' content='https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='python' /><meta property='article:published_time' content='2021-11-18T22:13:33&#43;08:00'/><meta property='article:modified_time' content='2021-11-18T22:13:33&#43;08:00'/><meta property='og:image' content='https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png' />
+<meta name="twitter:title" content="Python端口扫描等">
+<meta name="twitter:description" content="Python端口扫描以及相关概念理解"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png' /><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/">
+                
+                    <img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" loading="lazy" alt="Featured image of post Python端口扫描等" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" style="background-color: #2a9d8f; color: #fff;">
+                整点小活
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/">Python端口扫描等</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Python端口扫描以及相关概念理解
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 18, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1277字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="思路">思路</h1>
+<p>这里使用了TCP连接扫描，利用操作系统原生的网络功能。</p>
+<p>用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。</p>
+<blockquote>
+<p>还有另外一种扫描方式是SYN扫描，端口扫描工具不使用操作系统原生网络功能，而是自行生成、发送IP数据包，并监控其回应。这种扫描模式被称为“半开放扫描”，因为它从不建立完整的TCP连接。端口扫描工具生成一个SYN包，如果目标端口开放，则会返回SYN-ACK包。扫描端回应一个RST包，然后在握手完成前关闭连接。如果端口关闭了但未使用过滤，目标端口应该会持续返回RST包。这种粗略的网络利用方式有几个优点：给扫描工具全权控制数据包发送和等待回应时长的权力，允许更详细的回应分析。关于哪一种对目标主机的扫描方式更不具备入侵性存在一些争议，但SYN扫描的优势是从不会建立完整的连接。然而，RST包可能导致网络堵塞，尤其是一些简单如打印机之类的网络设备。</p>
+</blockquote>
+<p>1.使用TCP握手连接来扫描指定的<code>(ip,port)</code>对</p>
+<p>2.将单线程改成多线程</p>
+<p>3.第一次使用面向对象编程</p>
+<h1 id="源码">源码</h1>
+<p>说白了就是调接口，然后加了个多线程……</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> socket
+<span style="color:#ff79c6">import</span> threading
+ip <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;82.157.174.226&#34;</span>
+post_list <span style="color:#ff79c6">=</span> [i <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">65536</span>)]
+output <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">65536</span>)]
+delay <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+lock <span style="color:#ff79c6">=</span> threading<span style="color:#ff79c6">.</span>Semaphore(<span style="color:#bd93f9">150</span>)
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">MyThread</span>(threading<span style="color:#ff79c6">.</span>Thread):
+    <span style="color:#ff79c6">def</span> __init__(self, ip, port_number, output, delay):
+        self<span style="color:#ff79c6">.</span>ip <span style="color:#ff79c6">=</span> ip
+        self<span style="color:#ff79c6">.</span>port_number <span style="color:#ff79c6">=</span> port_number
+        self<span style="color:#ff79c6">.</span>output <span style="color:#ff79c6">=</span> output
+        self<span style="color:#ff79c6">.</span>delay <span style="color:#ff79c6">=</span> delay
+        threading<span style="color:#ff79c6">.</span>Thread<span style="color:#ff79c6">.</span>__init__(self)
+
+    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">run</span>(self):
+        <span style="color:#ff79c6">if</span> lock<span style="color:#ff79c6">.</span>acquire():
+            <span style="color:#6272a4">#初始化socket,参数1是ipv4，参数2是TCP</span>
+            TCP_sock <span style="color:#ff79c6">=</span> socket<span style="color:#ff79c6">.</span>socket(socket<span style="color:#ff79c6">.</span>AF_INET,socket<span style="color:#ff79c6">.</span>SOCK_STREAM)
+            <span style="color:#6272a4">#设置参数，参数1表示我们正在使用的socket选项，参数2表示支持多个进程或者线程绑定到同一端口</span>
+            TCP_sock<span style="color:#ff79c6">.</span>setsockopt(socket<span style="color:#ff79c6">.</span>SOL_SOCKET,socket<span style="color:#ff79c6">.</span>SO_REUSEADDR,<span style="color:#bd93f9">1</span>)
+            <span style="color:#6272a4">#设置超时等待时间，单位秒</span>
+            TCP_sock<span style="color:#ff79c6">.</span>settimeout(self<span style="color:#ff79c6">.</span>delay)
+
+            <span style="color:#6272a4"># UDP_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span>
+            <span style="color:#6272a4"># UDP_sock.sendto(str(message), (ip, int(port_number)))</span>
+
+            <span style="color:#ff79c6">try</span>:
+                result <span style="color:#ff79c6">=</span> TCP_sock<span style="color:#ff79c6">.</span>connect_ex((ip, <span style="color:#8be9fd;font-style:italic">int</span>(self<span style="color:#ff79c6">.</span>port_number)))
+
+                <span style="color:#ff79c6">if</span> result <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+                    output[self<span style="color:#ff79c6">.</span>port_number] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;OPEN&#39;</span>
+                    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#8be9fd;font-style:italic">str</span>(self<span style="color:#ff79c6">.</span>port_number) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;:&#34;</span> <span style="color:#ff79c6">+</span> output[self<span style="color:#ff79c6">.</span>port_number])
+                <span style="color:#ff79c6">else</span>:
+                    output[self<span style="color:#ff79c6">.</span>port_number] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;CLOSE&#39;</span>
+
+                    TCP_sock<span style="color:#ff79c6">.</span>close()
+                
+            <span style="color:#ff79c6">except</span> socket<span style="color:#ff79c6">.</span>error <span style="color:#ff79c6">as</span> e:
+                output[self<span style="color:#ff79c6">.</span>port_number] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;error&#39;</span>
+                <span style="color:#6272a4">#print(str(self.port_number) + &#34;:&#34; + output[self.port_number])</span>
+                <span style="color:#ff79c6">pass</span> 
+
+            lock<span style="color:#ff79c6">.</span>release()
+
+ThreadList <span style="color:#ff79c6">=</span> []
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> post_list:
+    t <span style="color:#ff79c6">=</span> MyThread(ip, i, output, delay)
+    ThreadList<span style="color:#ff79c6">.</span>append(t)
+<span style="color:#ff79c6">for</span> t <span style="color:#ff79c6">in</span> ThreadList:
+    t<span style="color:#ff79c6">.</span>start()
+<span style="color:#ff79c6">for</span> t <span style="color:#ff79c6">in</span> ThreadList:
+    t<span style="color:#ff79c6">.</span>join()
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> output:
+    <span style="color:#ff79c6">if</span> output[i] <span style="color:#ff79c6">!=</span><span style="color:#f1fa8c">&#39;CLOSE&#39;</span>:
+        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;PORT:&#34;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(i) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#34;:&#34;</span> <span style="color:#ff79c6">+</span> output[i])
+</code></pre></div><h1 id="其他">其他</h1>
+<h2 id="对handle的理解">对handle的理解</h2>
+<p>首先在 PowerShell 中获取进程信息并以程序 ID 进行排序，第一列出现handles。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#8be9fd;font-style:italic">PS </span>C:\Users\Lenovo&gt; <span style="color:#8be9fd;font-style:italic">Get-Process</span> | <span style="color:#8be9fd;font-style:italic">Sort-Object</span> ID
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  <span style="color:#8be9fd;font-style:italic">SI </span>ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+      0       0       60          8                 0   0 Idle
+   8174       0       48        148                 4   0 System
+      0      16    14708      62260               160   0 Registry
+    430      17     4216      21944       2.11    480   1 RuntimeBroker
+     57       3     1068       1160               556   0 smss
+   2019      30    10004      24904               596   0 lsass
+    904      12     6616      10796               604   0 services
+    245      29    24792      11608               616   0 PresentationFont...
+    154      10     1804       6648               848   0 svchost
+</code></pre></div><p>在代码里，handle 通常是某个数字标记，通过这个标记来操作资源。</p>
+<p>是否可以简单把Handles理解为Id？不好。
+首先分配16位的标记，再用 8 位密码将 16 位标记加密，之后将 4 位类型、4 位权限、8 位密码、16 位加密结果打包成一个 32 位的整数，这时再简单理解的Handles为索引，就不恰当。</p>
+<h2 id="对socket的理解">对socket的理解</h2>
+<p>TCP/IP只是一个协议栈，如果想要有具体的应用，就需要提供对外的操作接口，就像操作系统会提供标准的编程接口，TCP/IP也必须对外提供编程接口，这就是Socket。</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/624022a427f86abb2a97fcf2.jpg" >
+		<img src="https://pic.imgdb.cn/item/624022a427f86abb2a97fcf2.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>现在我算明白了socket和http的区别：</p>
+<p>对概念来说：</p>
+<p>Http协议：基于TCP连接的简单的对象访问协议，对应于应用层。</p>
+<p>Socket是对TCP/IP协议的封装，Socket本身并不是协议，而是一个调用接口（API），通过Socket，我们才能使用TCP/IP协议。</p>
+<p>对一次连接过程而说：</p>
+<p>Http连接：所谓的无状态连接，客户端向服务器发送一次请求，服务器进行一次回应就断开。</p>
+<p>SOCKET连接：长连接，（如果期间没有数据的传输，会发送心跳包确认。）</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python/">python</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/stack%E4%BF%AE%E6%94%B9/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Stack修改</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/docker%E5%AD%A6%E4%B9%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker学习</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png" loading="lazy" data-key="" data-hash="https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">爬取xupt课程表</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#对handle的理解">对handle的理解</a></li>
+    <li><a href="#对socket的理解">对socket的理解</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

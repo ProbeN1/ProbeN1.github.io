@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 May 2022 21:08:57 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sqlmap使用实例</title>
+      <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
+      <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;quot;url&amp;quot; sqlmap -u &amp;quot;url&amp;quot; --dbs sqlmap -u &amp;quot;url&amp;quot; -D xx --tables sqlmap -u &amp;quot;url&amp;quot; -D xx -T xx --columns sqlmap -u &amp;quot;url&amp;quot; -D xx -T xx -C xx,xx --dump 或</description>
+    </item>
+    
+    <item>
+      <title>Docker学习</title>
+      <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <description>Docker Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何</description>
+    </item>
+    
+    <item>
+      <title>Windows权限基础</title>
+      <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
+      <description>用户账户： 用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码 SID：用户帐户拥有唯一的安全标识符 SAM：本地安全帐户数据库，文</description>
+    </item>
+    
+    <item>
+      <title>伪静态注入</title>
+      <link>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</guid>
+      <description>伪静态注入 伪静态网站 看似是静态网页（以.html、.htm等结尾），不存在任何的数据交互，却其实是动态网页，存在数据交互。 将动态网页的id等</description>
+    </item>
+    
+    <item>
+      <title>绕过禁用F12</title>
+      <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
+      <description>今天做题的时候，遇到了这个，一按F12，就弹出hacker 以前还真没遇见过，搜了一下，原来是js &amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot; &amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt; &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; /*禁</description>
+    </item>
+    
+    <item>
+      <title>Python端口扫描等</title>
+      <link>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</link>
+      <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
+      <description>思路 这里使用了TCP连接扫描，利用操作系统原生的网络功能。 用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。 还有另</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://proben1.github.io/2021/git/</link>
+      <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/git/</guid>
+      <description>配置 git config -l 全部配置 git config &amp;ndash;global &amp;ndash;list 用户配置 所有配置文件都保存在本地 !! 设置用户与邮箱 !!!!!! git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;xixi@github.com&amp;rdquo; git理论: Workspace:工作区,平时</description>
+    </item>
+    
+  </channel>
+</rss>

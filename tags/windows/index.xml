@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/windows/</link>
+    <description>Recent content in Windows on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Apr 2022 09:10:24 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows权限基础</title>
+      <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
+      <description>用户账户： 用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码 SID：用户帐户拥有唯一的安全标识符 SAM：本地安全帐户数据库，文</description>
+    </item>
+    
+  </channel>
+</rss>

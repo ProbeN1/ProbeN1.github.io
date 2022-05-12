@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/docker/</link>
+    <description>Recent content in Docker on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Apr 2022 20:28:16 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker学习</title>
+      <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <description>Docker Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Nov 2021 20:38:54 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>爬取xupt课程表</title>
+      <link>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</link>
+      <pubDate>Mon, 15 Nov 2021 20:38:54 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</guid>
+      <description>查课表，以前用的是超级课程表，嫌乎广告太多，加上手机内存不够，卸了，自己写个课表。 由于学校教务系统的参数太多了，直接用了selenium来模</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='搞定我的课程表'><title>爬取xupt课程表</title>
+
+<link rel='canonical' href='https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='爬取xupt课程表'>
+<meta property='og:description' content='搞定我的课程表'>
+<meta property='og:url' content='https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='爬虫' /><meta property='article:published_time' content='2021-11-15T20:38:54&#43;08:00'/><meta property='article:modified_time' content='2021-11-15T20:38:54&#43;08:00'/><meta property='og:image' content='https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png' />
+<meta name="twitter:title" content="爬取xupt课程表">
+<meta name="twitter:description" content="搞定我的课程表"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png' /><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        on-phone--column extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/">
+                
+                    <img src="https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png" loading="lazy" alt="Featured image of post 爬取xupt课程表" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" style="background-color: #2a9d8f; color: #fff;">
+                整点小活
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/">爬取xupt课程表</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        搞定我的课程表
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 15, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1378字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>查课表，以前用的是超级课程表，嫌乎广告太多，加上手机内存不够，卸了，自己写个课表。</p>
+<p>由于学校教务系统的参数太多了，直接用了<a class="link" href="https://selenium-python-zh.readthedocs.io/en/latest/"  target="_blank" rel="noopener"
+    >selenium</a>来模拟登录，之后再用<a class="link" href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/"  target="_blank" rel="noopener"
+    >BeautifulSoup</a>来分离参数。</p>
+<p>流程：查看本地json格式的课表文件，若没有则爬并存储，若有则直接读取并输出。</p>
+<p>做的时候发现单双周挺难弄的，最后是用了空间换时间的方法，把一个单双周合起来变成一个课表。</p>
+<p>最后用Power Automate 简单做了一个桌面流：</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240231b27f86abb2a9acc7b.png" >
+		<img src="https://pic.imgdb.cn/item/6240231b27f86abb2a9acc7b.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>结果：</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240232527f86abb2a9b0b0a.png" >
+		<img src="https://pic.imgdb.cn/item/6240232527f86abb2a9b0b0a.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>附源代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> selenium <span style="color:#ff79c6">import</span> webdriver  <span style="color:#6272a4"># 启动浏览器需要用到</span>
+<span style="color:#ff79c6">from</span> selenium.webdriver.common.keys <span style="color:#ff79c6">import</span> Keys  <span style="color:#6272a4"># 提供键盘按键支持（最后一个K要大写）</span>
+<span style="color:#ff79c6">from</span> bs4 <span style="color:#ff79c6">import</span> BeautifulSoup
+<span style="color:#ff79c6">import</span> time
+<span style="color:#ff79c6">import</span> re
+<span style="color:#ff79c6">import</span> json
+
+<span style="color:#6272a4">#输入账号密码</span>
+student_id<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&#34;</span>
+studend_password<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;&#34;</span>
+<span style="color:#6272a4">#输入浏览器内核位置，如F:\\chromedriver_win32\\chromedriver.exe</span>
+place<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;F:</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">chromedriver_win32</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">chromedriver.exe&#34;</span> 
+<span style="color:#6272a4">#输入开学日期，格式：30 Aug 2021</span>
+time_to_strat <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;30 Aug 2021&#34;</span>
+<span style="color:#6272a4">#爬取后课表的存储位置</span>
+stored_place <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;F:</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">ProbeN1</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">timetable</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">&#34;</span>
+
+<span style="color:#6272a4">#判断明天是周几,是不是单双周</span>
+start_time <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>strptime(time_to_strat, <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">%d</span><span style="color:#f1fa8c"> %b %Y&#34;</span>)
+start_week <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>strftime(<span style="color:#f1fa8c">&#34;%U&#34;</span>, start_time)
+tomorrow_time_tamp <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>time()<span style="color:#ff79c6">+</span><span style="color:#bd93f9">86400</span>
+tomorrow_time <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>localtime(tomorrow_time_tamp)
+tomorrow_week <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>strftime(<span style="color:#f1fa8c">&#34;%U&#34;</span>, tomorrow_time)
+weekin <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(tomorrow_week) <span style="color:#ff79c6">-</span> <span style="color:#8be9fd;font-style:italic">int</span>(start_week) <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+<span style="color:#6272a4">#print(weekin)  #单双周</span>
+dt <span style="color:#ff79c6">=</span> time<span style="color:#ff79c6">.</span>strftime(<span style="color:#f1fa8c">&#34;%A&#34;</span>,tomorrow_time)
+dt_ <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;Saturday&#34;</span>:<span style="color:#f1fa8c">&#34;6&#34;</span>,<span style="color:#f1fa8c">&#34;Sunday&#34;</span>:<span style="color:#f1fa8c">&#34;0&#34;</span>,<span style="color:#f1fa8c">&#34;Monday&#34;</span>:<span style="color:#f1fa8c">&#34;1&#34;</span>,<span style="color:#f1fa8c">&#34;Tuesday&#34;</span>:<span style="color:#f1fa8c">&#34;2&#34;</span>,<span style="color:#f1fa8c">&#34;Wednesday&#34;</span>:<span style="color:#f1fa8c">&#34;3&#34;</span>,<span style="color:#f1fa8c">&#34;Thursday&#34;</span>:<span style="color:#f1fa8c">&#34;4&#34;</span>,<span style="color:#f1fa8c">&#34;Friday&#34;</span>:<span style="color:#f1fa8c">&#34;5&#34;</span>}
+tomorrow_weekday <span style="color:#ff79c6">=</span> dt_[dt]
+<span style="color:#6272a4">#print(tomorrow_weekday) #周几</span>
+time_judge<span style="color:#ff79c6">=</span>[weekin,tomorrow_weekday]
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">print_class</span>(timetable,time_judge):
+    <span style="color:#8be9fd;font-style:italic">print</span>(timetable[<span style="color:#f1fa8c">&#34;flag&#34;</span>][<span style="color:#f1fa8c">&#34;1&#34;</span>])
+    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">int</span>(time_judge[<span style="color:#bd93f9">1</span>])<span style="color:#ff79c6">==</span><span style="color:#bd93f9">6</span> <span style="color:#ff79c6">or</span> <span style="color:#8be9fd;font-style:italic">int</span>(time_judge[<span style="color:#bd93f9">1</span>])<span style="color:#ff79c6">==</span><span style="color:#bd93f9">0</span> :
+        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;明天没课!&#34;</span>)
+    <span style="color:#ff79c6">else</span> :
+        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;---------------------------------------------------&#34;</span>)
+        <span style="color:#ff79c6">if</span> (time_judge[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+            tmp <span style="color:#ff79c6">=</span> timetable[<span style="color:#f1fa8c">&#34;双&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(time_judge[<span style="color:#bd93f9">1</span>])]
+            <span style="color:#ff79c6">for</span> each <span style="color:#ff79c6">in</span> tmp<span style="color:#ff79c6">.</span>values():
+                <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span> (<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">4</span>):
+                    <span style="color:#8be9fd;font-style:italic">print</span>(each[i])
+                <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;---------------------------------------------------&#34;</span>)
+            
+        <span style="color:#ff79c6">elif</span> (time_judge[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+            tmp <span style="color:#ff79c6">=</span> timetable[<span style="color:#f1fa8c">&#34;单&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(time_judge[<span style="color:#bd93f9">1</span>])]
+            <span style="color:#ff79c6">for</span> each <span style="color:#ff79c6">in</span> tmp<span style="color:#ff79c6">.</span>values():
+                <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span> (<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">4</span>):
+                    <span style="color:#8be9fd;font-style:italic">print</span>(each[i])
+                <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;---------------------------------------------------&#34;</span>)
+
+timetable<span style="color:#ff79c6">=</span>{<span style="color:#f1fa8c">&#34;单&#34;</span>:   <span style="color:#6272a4">#课表</span>
+            {
+                <span style="color:#f1fa8c">&#34;1&#34;</span>:{},<span style="color:#f1fa8c">&#34;2&#34;</span>:{},<span style="color:#f1fa8c">&#34;3&#34;</span>:{},<span style="color:#f1fa8c">&#34;4&#34;</span>:{},<span style="color:#f1fa8c">&#34;5&#34;</span>:{}
+            },
+            <span style="color:#f1fa8c">&#34;双&#34;</span>:
+            {
+                <span style="color:#f1fa8c">&#34;1&#34;</span>:{},<span style="color:#f1fa8c">&#34;2&#34;</span>:{},<span style="color:#f1fa8c">&#34;3&#34;</span>:{},<span style="color:#f1fa8c">&#34;4&#34;</span>:{},<span style="color:#f1fa8c">&#34;5&#34;</span>:{}
+            },
+            <span style="color:#f1fa8c">&#34;flag&#34;</span>:
+            {
+                <span style="color:#f1fa8c">&#34;1&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,<span style="color:#f1fa8c">&#34;2&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>
+            }
+        }
+
+<span style="color:#6272a4">#开局先读取</span>
+<span style="color:#ff79c6">try</span>:
+    a_json <span style="color:#ff79c6">=</span> json<span style="color:#ff79c6">.</span>load(<span style="color:#8be9fd;font-style:italic">open</span>(stored_place<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;file.txt&#39;</span>,<span style="color:#f1fa8c">&#39;r&#39;</span>))
+    <span style="color:#ff79c6">if</span> a_json[<span style="color:#f1fa8c">&#34;flag&#34;</span>][<span style="color:#f1fa8c">&#34;2&#34;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;stored&#34;</span>:
+        print_class(a_json,time_judge)
+<span style="color:#ff79c6">except</span>:
+    chrome_options <span style="color:#ff79c6">=</span> webdriver<span style="color:#ff79c6">.</span>ChromeOptions()
+    chrome_options<span style="color:#ff79c6">.</span>add_experimental_option(<span style="color:#f1fa8c">&#34;detach&#34;</span>, <span style="color:#ff79c6">True</span>)
+    chrome_options<span style="color:#ff79c6">.</span>add_argument(<span style="color:#f1fa8c">&#39;--headless&#39;</span>)  <span style="color:#6272a4">#设置后台运行</span>
+    chrome_options<span style="color:#ff79c6">.</span>add_experimental_option(<span style="color:#f1fa8c">&#39;excludeSwitches&#39;</span>, [<span style="color:#f1fa8c">&#39;enable-logging&#39;</span>]) <span style="color:#6272a4">#让终端少输出些东西</span>
+    driver<span style="color:#ff79c6">=</span>webdriver<span style="color:#ff79c6">.</span>Chrome(place,chrome_options<span style="color:#ff79c6">=</span>chrome_options)
+
+    driver<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#34;http://www.zfjw.xupt.edu.cn/jwglxt/xtgl/login_slogin.html&#34;</span>)
+
+    elem_yhm <span style="color:#ff79c6">=</span> driver<span style="color:#ff79c6">.</span>find_elements_by_name(<span style="color:#f1fa8c">&#34;yhm&#34;</span>) <span style="color:#6272a4">#查找并键入用户名,返回一个数组</span>
+    elem_yhm <span style="color:#ff79c6">=</span> elem_yhm[<span style="color:#bd93f9">0</span>]
+    elem_yhm<span style="color:#ff79c6">.</span>clear()
+    elem_yhm<span style="color:#ff79c6">.</span>send_keys(student_id)
+
+    elem_mm <span style="color:#ff79c6">=</span> driver<span style="color:#ff79c6">.</span>find_elements_by_name(<span style="color:#f1fa8c">&#34;mm&#34;</span>) <span style="color:#6272a4">#查找并键入密码</span>
+    elem_mm <span style="color:#ff79c6">=</span> elem_mm[<span style="color:#bd93f9">1</span>]
+    elem_mm<span style="color:#ff79c6">.</span>clear()
+    elem_mm<span style="color:#ff79c6">.</span>send_keys(studend_password)
+    elem_mm<span style="color:#ff79c6">.</span>send_keys(Keys<span style="color:#ff79c6">.</span>RETURN)  <span style="color:#6272a4"># 模拟键盘回车</span>
+
+    driver<span style="color:#ff79c6">.</span>get(<span style="color:#f1fa8c">&#34;http://www.zfjw.xupt.edu.cn/jwglxt/kbcx/xskbcx_cxXskbcxIndex.html?gnmkdm=N2151&amp;layout=default&amp;su=&#34;</span> <span style="color:#ff79c6">+</span> student_id) <span style="color:#6272a4">#直接get数据库界面</span>
+    time<span style="color:#ff79c6">.</span>sleep(<span style="color:#bd93f9">2</span>)   <span style="color:#6272a4">#等待页面内的apex返回,否则soup会抓得太快</span>
+    soup <span style="color:#ff79c6">=</span> BeautifulSoup(driver<span style="color:#ff79c6">.</span>page_source, <span style="color:#f1fa8c">&#34;html.parser&#34;</span>) 
+    allclass_soup <span style="color:#ff79c6">=</span> soup<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#34;table&#34;</span>,{<span style="color:#f1fa8c">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;kbgrid_table_0&#34;</span>})  <span style="color:#6272a4"># 获取kbgrid_table_0标签下的所有课程,allcalss是个TAG类</span>
+
+    <span style="color:#6272a4">#找到用户的名字,(学号:student_id)</span>
+    find_student_name <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>compile(<span style="color:#f1fa8c">r</span><span style="color:#f1fa8c">&#34;[\u4e00-\u9fa5]+的课表&#34;</span>)
+    student_name_soup <span style="color:#ff79c6">=</span> soup<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#34;div&#34;</span>,{<span style="color:#f1fa8c">&#34;class&#34;</span>:<span style="color:#f1fa8c">&#34;timetable_title&#34;</span>})
+    student_name <span style="color:#ff79c6">=</span> find_student_name<span style="color:#ff79c6">.</span>findall(<span style="color:#8be9fd;font-style:italic">str</span>(student_name_soup))[:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">3</span>] <span style="color:#6272a4">#强制转化可以把TAG类转化为str,但是我感觉不是很完美</span>
+
+    <span style="color:#ff79c6">try</span> :
+        <span style="color:#8be9fd;font-style:italic">print</span>(student_name<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34;的课表&#34;</span>)
+    <span style="color:#ff79c6">except</span> :
+        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;未找到名称&#34;</span>)
+
+    content <span style="color:#ff79c6">=</span> []
+    find_inner_html <span style="color:#ff79c6">=</span> re<span style="color:#ff79c6">.</span>compile(<span style="color:#f1fa8c">r</span><span style="color:#f1fa8c">&#34;\&#39;[^\&#39;]*\&#39;&#34;</span>)
+    <span style="color:#ff79c6">for</span> week <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">6</span>):
+        <span style="color:#ff79c6">for</span> classtime <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">12</span>):
+            each_class <span style="color:#ff79c6">=</span> soup<span style="color:#ff79c6">.</span>find(<span style="color:#f1fa8c">&#34;td&#34;</span>,{<span style="color:#f1fa8c">&#34;id&#34;</span>:<span style="color:#8be9fd;font-style:italic">str</span>(week)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34;-&#34;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(classtime)})   <span style="color:#6272a4">#找td标签</span>
+
+            <span style="color:#ff79c6">if</span> each_class <span style="color:#ff79c6">is</span> <span style="color:#ff79c6">None</span> : <span style="color:#6272a4">#跳过空类型</span>
+                <span style="color:#ff79c6">continue</span> 
+
+            each_class <span style="color:#ff79c6">=</span> each_class<span style="color:#ff79c6">.</span>findAll(<span style="color:#f1fa8c">&#34;font&#34;</span>)
+
+            <span style="color:#ff79c6">if</span> each_class <span style="color:#ff79c6">is</span> <span style="color:#ff79c6">None</span> : <span style="color:#6272a4">#跳过空类型</span>
+                <span style="color:#ff79c6">continue</span> 
+
+            <span style="color:#ff79c6">for</span> each <span style="color:#ff79c6">in</span> each_class:  <span style="color:#6272a4">#获取td标签里的内容</span>
+                <span style="color:#ff79c6">for</span> child <span style="color:#ff79c6">in</span> each<span style="color:#ff79c6">.</span>children:
+                    name <span style="color:#ff79c6">=</span>find_inner_html<span style="color:#ff79c6">.</span>findall(<span style="color:#8be9fd;font-style:italic">str</span>(child<span style="color:#ff79c6">.</span>unwrap))
+                    <span style="color:#ff79c6">if</span> name:
+                        content<span style="color:#ff79c6">.</span>append(name[<span style="color:#bd93f9">0</span>][<span style="color:#bd93f9">1</span>:<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>])
+
+            <span style="color:#ff79c6">if</span> content:  <span style="color:#6272a4">#添加课表</span>
+                <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(content) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">11</span>:
+                    timetable[<span style="color:#f1fa8c">&#34;单&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(week)]<span style="color:#ff79c6">.</span>update({<span style="color:#8be9fd;font-style:italic">str</span>(classtime):content})
+                    timetable[<span style="color:#f1fa8c">&#34;双&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(week)]<span style="color:#ff79c6">.</span>update({<span style="color:#8be9fd;font-style:italic">str</span>(classtime):content})
+                <span style="color:#ff79c6">elif</span> <span style="color:#8be9fd;font-style:italic">len</span>(content) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">22</span>:
+                    timetable[<span style="color:#f1fa8c">&#34;单&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(week)]<span style="color:#ff79c6">.</span>update({<span style="color:#8be9fd;font-style:italic">str</span>(classtime):content[:<span style="color:#bd93f9">11</span>]})
+                    timetable[<span style="color:#f1fa8c">&#34;双&#34;</span>][<span style="color:#8be9fd;font-style:italic">str</span>(week)]<span style="color:#ff79c6">.</span>update({<span style="color:#8be9fd;font-style:italic">str</span>(classtime):content[<span style="color:#bd93f9">11</span>:]})
+            content <span style="color:#ff79c6">=</span> []
+        
+    <span style="color:#6272a4">#写入文件</span>
+    <span style="color:#ff79c6">with</span> <span style="color:#8be9fd;font-style:italic">open</span>(stored_place<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;file.txt&#39;</span>, <span style="color:#f1fa8c">&#39;w&#39;</span>) <span style="color:#ff79c6">as</span> file:
+        timetable[<span style="color:#f1fa8c">&#34;flag&#34;</span>][<span style="color:#f1fa8c">&#34;1&#34;</span>] <span style="color:#ff79c6">=</span> student_name
+        timetable[<span style="color:#f1fa8c">&#34;flag&#34;</span>][<span style="color:#f1fa8c">&#34;2&#34;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;stored&#34;</span>
+        file<span style="color:#ff79c6">.</span>write(json<span style="color:#ff79c6">.</span>dumps(timetable)) 
+
+    print_class(timetable,time_judge)
+<span style="color:#6272a4">#print(timetable)</span>
+
+</code></pre></div><p>当然，之后也新建一个bat帮助自动执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">f:
+<span style="color:#ff79c6">cd</span> F:\ProbeN1\timetable
+python3 timetable.py
+<span style="color:#ff79c6">pause</span>
+</code></pre></div><p>然后再在windows里设置</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6240233227f86abb2a9b63a5.png" >
+		<img src="https://pic.imgdb.cn/item/6240233227f86abb2a9b63a5.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/stack%E4%BF%AE%E6%94%B9/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Stack修改</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/docker%E5%AD%A6%E4%B9%A0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker学习</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" loading="lazy" data-key="" data-hash="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Python端口扫描等</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

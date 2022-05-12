@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xss on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/xss/</link>
+    <description>Recent content in xss on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Dec 2021 16:37:25 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Zer0pts2020]musicblog</title>
+      <link>https://proben1.github.io/2021/zer0pts2020musicblog/</link>
+      <pubDate>Sun, 05 Dec 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/zer0pts2020musicblog/</guid>
+      <description>[Zer0pts2020]musicblog 有admin账户 有下载 有注册登录 当然，最后点子在post音频里 去想任意下载，不行。最后看wp，原来给源码，再做一遍。 内容安全策略( CSP ) http://foreversong.cn/archives/760 C</description>
+    </item>
+    
+  </channel>
+</rss>

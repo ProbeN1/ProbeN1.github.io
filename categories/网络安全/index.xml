@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络安全 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 网络安全 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 May 2022 19:11:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CISCN2019总决赛Day2Web1]Easyweb</title>
+      <link>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</link>
+      <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</guid>
+      <description>[CISCN2019 总决赛 Day2 Web1]Easyweb sql绕过 文件上传短标签绕过 信息收集 /robots.txt User-agent: * Disallow: *.php.bak index.php user.php image.php 其中image.php.bak存在 在其中又发现config.php /.DS_Store 没东西 image.php.bak</description>
+    </item>
+    
+    <item>
+      <title>sqlmap使用实例</title>
+      <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
+      <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;#34;url&amp;#34; sqlmap -u &amp;#34;url&amp;#34; --dbs sqlmap -u &amp;#34;url&amp;#34; -D xx --tables sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump 或</description>
+    </item>
+    
+    <item>
+      <title>LNMP环境搭建成功篇</title>
+      <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</link>
+      <pubDate>Thu, 14 Apr 2022 20:24:35 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</guid>
+      <description>这里!!!https://lnmp.org/install.html su root yum install screen screen -S lnmp wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.8.tar.gz &amp;amp;&amp;amp; cd lnmp1.8 &amp;amp;&amp;amp; ./install.sh lnmp 一键安装&amp;hellip;&amp;h</description>
+    </item>
+    
+    <item>
+      <title>LNMP环境搭建失败篇</title>
+      <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</link>
+      <pubDate>Thu, 14 Apr 2022 20:24:28 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</guid>
+      <description>教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）</description>
+    </item>
+    
+    <item>
+      <title>第一次面试经历</title>
+      <link>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</link>
+      <pubDate>Sun, 10 Apr 2022 09:13:17 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</guid>
+      <description>hvv蓝队 西邮的一个学长，很温柔 先是看我加入了AD网络安全协会，他说自己是协会的创始人之一，我tm直接借机套一波近乎先，吹了下协会 然后开始面</description>
+    </item>
+    
+    <item>
+      <title>Windows权限基础</title>
+      <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
+      <description>用户账户： 用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码 SID：用户帐户拥有唯一的安全标识符 SAM：本地安全帐户数据库，文</description>
+    </item>
+    
+    <item>
+      <title>伪静态注入</title>
+      <link>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</guid>
+      <description>伪静态注入 伪静态网站 看似是静态网页（以.html、.htm等结尾），不存在任何的数据交互，却其实是动态网页，存在数据交互。 将动态网页的id等</description>
+    </item>
+    
+    <item>
+      <title>[Zer0pts2020]musicblog</title>
+      <link>https://proben1.github.io/2021/zer0pts2020musicblog/</link>
+      <pubDate>Sun, 05 Dec 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/zer0pts2020musicblog/</guid>
+      <description>[Zer0pts2020]musicblog 有admin账户 有下载 有注册登录 当然，最后点子在post音频里 去想任意下载，不行。最后看wp，原来给源码，再做一遍。 内容安全策略( CSP ) http://foreversong.cn/archives/760 C</description>
+    </item>
+    
+    <item>
+      <title>绕过禁用F12</title>
+      <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
+      <description>今天做题的时候，遇到了这个，一按F12，就弹出hacker 以前还真没遇见过，搜了一下，原来是js &amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34; &amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&amp;gt; &amp;lt;html xmlns=&amp;#34;http://www.w3.org/1999/xhtml&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; /*禁</description>
+    </item>
+    
+    <item>
+      <title>刷题2</title>
+      <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/</guid>
+      <description>P5461 赦免战俘 心态小裂，写了n遍，最后发现循环里忘加x，y了 a = int(input()) b = [[1 for i in range(2**a)] for j in range(2**a)] l = 2**a def func(l,x,y): if l == 1 : return for i in range(x,x+int(l/2)) : for j in range(y,y+int(l/2)) : b[i][j] = 0 func(int(l/2),x+int(l/2),y) func(int(l/2),x,y+int(l/2)) func(int(l/2),x+int(l/2),y+int(l/2)) func(l,0,0)</description>
+    </item>
+    
+    <item>
+      <title>刷题1</title>
+      <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</link>
+      <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</guid>
+      <description>182. 查找重复的电子邮箱 select `Email` from ( select `Email`, count(`Email`) as a from `Person` group by `Email` ) as temp where a &amp;gt; 1; 一些不熟悉的语句 like 模糊查询 select * from employees where last_name like &amp;#39;%a%&amp;#39;; group by（常常和聚合函数一起使用） 聚合</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）'><title>LNMP环境搭建失败篇</title>
+
+<link rel='canonical' href='https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='LNMP环境搭建失败篇'>
+<meta property='og:description' content='教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）'>
+<meta property='og:url' content='https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-04-14T20:24:28&#43;08:00'/><meta property='article:modified_time' content='2022-04-14T20:24:28&#43;08:00'/>
+<meta name="twitter:title" content="LNMP环境搭建失败篇">
+<meta name="twitter:description" content="教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="background-color: #2a9d8f; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/">LNMP环境搭建失败篇</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 14, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    2544字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>教程:http://c.biancheng.net/linux_tutorial/16/</p>
+<p>任务:配置Linux服务器（lnmp或lamp环境）</p>
+<p><strong>LAMP 环境搭建</strong>指的是在 Linux 操作系统中分别安装 Apache 网页服务器、MySQL 数据库服务器和 PHP 开发服务器，以及一些对应的扩展软件。</p>
+<p><strong>LNMP 环境搭建</strong>指的是在 Linux 操作系统中分别安装 Nginx 网页服务器、MySQL 数据库服务器和 PHP 开发服务器，以及一些对应的扩展软件。</p>
+<p>打算安装LNMP的环境.</p>
+<p>系统:Centos-8</p>
+<p>手工安装LAMP需要19个源码包,安装LNMP 环境，那么同样需要安装大概 14 个源码包.
+但是现在网上非常流行的 LNMP 环境的搭建过程是采用 LNMP 一键安装包直接安装。
+既然是一键安装包，所以我们就不用去下载单个的源码包了，只要在 <a class="link" href="http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz"  target="_blank" rel="noopener"
+    >http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz</a> 这个地址中下载 LNMP 一键安装包即可。</p>
+<p>我们应该把软件放置在 Linux 服务器的什么位置呢？
+Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码的位置
+所以我们就把搭建 LNMP 环境所需的所有软件包都传递到这个位置</p>
+<h3 id="winscp传输软件">WinSCP传输软件</h3>
+<p>WinSCP 是在 Windows 中安装，使用 SFTP 协议向 Linux 服务器传递文件的工具。它的特点是使用简单、图形化操作，而且数据传递过程是加密的，较为安全，是 Windows 和 Linux 之间进行数据传递的常用软件。</p>
+<p>在启动界面的“主机名”文本框中输入 Linux 服务器的 IP 地址，如 192.168.0.210，在“用户名”文本框中输入 Linux 的用户名，在“密码”文本框中输入正确的密码，单击“登录”按钮，就会见到如图 3 所示的界面。</p>
+<p>B计划:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd /usr/local/src/
+wget http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz
+mv ~/lnmp1.0-full.tar.gz /usr/local/src/
+</code></pre></div><h3 id="yum换源">yum换源</h3>
+<p>把原本的源移走备份</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir /opt/centos-yum.bak
+mv /etc/yum.repos.d/* /opt/centos-yum.bak/
+</code></pre></div><p>查看系统版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat /etc/redhat-release
+</code></pre></div><p>下载aliyun yum源repo文件(对应CentOS-8)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+</code></pre></div><p>清除缓存</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum clean all
+yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
+yum list
+</code></pre></div><h3 id="检查硬盘的剩余空间">检查硬盘的剩余空间</h3>
+<p><code>df -h</code>
+注意挂载点&quot;&quot;
+先留出4G的空间</p>
+<h3 id="配置防火墙开启80端口3306端口mysql和11211memcache端口">配置防火墙，开启80端口、3306端口(mysql)和11211（memcache）端口</h3>
+<p><code>systemctl start firewalld</code> 开启防火墙
+<code>systemctl status firewalld</code>  查看防火墙状态
+<code>firewall-cmd --list-all</code> 查看开放端口
+发现一个都没开hhh
+下面来添加端口</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">// Step1: 加入开放端口到配置文件
+
+<span style="color:#6272a4"># firewall-cmd --zone=public --add-port=80/tcp --permanent</span>
+
+--zone<span style="color:#ff79c6">=</span>public 添加时区
+
+--add-port<span style="color:#ff79c6">=</span>80/tcp 添加端口
+
+--permanent 永久生效
+
+// 加载防火墙新配置文件<span style="color:#ff79c6">(</span> 以 root 身份输入以下命令，重新加载防火墙，并不中断用户连接，即不丢失状态信息. <span style="color:#ff79c6">)</span>
+
+firewall-cmd --reload
+</code></pre></div><p>记得重载后再查看开放的端口</p>
+<h3 id="关闭selinux安全子系统">关闭SELinux安全子系统</h3>
+<p>我们还需要关闭 SELinux 安全子系统。因为这个子系统会对我们的安装过程产生影响，所以先关闭它。关闭 SELinux 之后，必须重启 Linux 系统，修改才会生效。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vi /etc/selinux/config
+
+<span style="color:#6272a4">#把 SELINUX=enforcing改为 SELINUX=disabled</span>
+
+shutdown -r now
+</code></pre></div><p>B计划:直接禁用防火墙
+<code>systemctl stop firewalld</code>  关闭防火墙</p>
+<h3 id="安装gcc">安装gcc</h3>
+<p>安装 gcc 编译工具。如果没有安装 gcc 编译工具，那么 LNMP 一键安装包会尝试自动 yum 安装，但是要保证 yum 源是可用的。</p>
+<h3 id="停用-rpm-包安装的-apache-和-mysql">停用 RPM 包安装的 apache 和 MySQL</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">service httpd stop
+service mysqld stop
+<span style="color:#6272a4">#停止apache和mysql服务</span>
+chkconfig httpd off
+chkconfig mysqld off
+<span style="color:#6272a4">#关闭apache和mysql的自启动</span>
+</code></pre></div><h3 id="解压">解压</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#8be9fd;font-style:italic">cd</span> /usr/local/src/
+tar -zxvf lnmp1.0-full.tar.gz
+</code></pre></div><h3 id="执行安装脚本安装-lnmp-一键安装包">执行安装脚本安装 LNMP 一键安装包</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#8be9fd;font-style:italic">cd</span> lnmp1.0-full
+./centos.sh
+</code></pre></div><p>起飞!
+回车之后安装就会继续，会看到如下界面：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">==========================================================
+LUMP V1.0 for CentOS/RadHat Linux VPS Written by Licess
+==========================================================
+A tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux
+For more information please visit http://www.lnmp.org/
+==========================================================
+Please input the root password of mysql:
+(Default password: root) : 123  #设定MySQL 的密码，这里设为 123
+==========================================================
+Do you want to install the InnoDB Storage Engine?
+(Default no,if you want please input: y , if not please press the enter button):y
+#是否需要安装MySQL InnoDB，如果需要安装则输入y
+
+Install PHP 5.3.17,Please input y
+Install PHP 5.2.17,Please input n or press Enter
+(Please input y or n) :y
+#选择安装PHP的版本,输入y安装的是5.3.17
+Install MySQL 5.5.27,Please input y
+Install MySQL 5.1.60,Please input n or press Enter
+(Please input y or n) :y
+#选择安装MySQL的版本，输入y安装的是5.5.27
+Press any key to start. . .or Press Ctrl+c to cancel #按任意鍵开始安装
+</code></pre></div><p>如果在安装过程中输入错误，则可以按“Ctrl+Backspace”组合键来进行删除。
+如果看到以下界面，则证明安装成功。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">=========================================================
+Manager for LNMP VI.0 , Written by Licess
+=========================================================
+LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux
+This script is a tool to Manage status of lnmp
+For more information please visit http://www.lnmp.org
+Usage: /root/lnmp {start|stop|reload|restart|kill|status}
+=========================================================
+Nginx is runing!
+php-fpm is runing!
+MySQL running (12489)   [确定]
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address   Foreign Address State
+tcp 0 0 0.0.0.0:53575   0.0.0.0:*   LISTEN
+tcp 0 0 0.0.0.0:3306    0.0.0.0:*   LISTEN
+tcp 0 0 0.0.0.0:111 0.0.0.0:*   LISTEN
+tcp 0 0 0.0.0.0:80  0.0.0.0:*   LISTEN
+tcp 0 0 0.0.0.0:22  0.0.0.0:*   LISTEN
+tcp 0 0 127.0.0.1:631   0.0.0.0:*   LISTEN
+tcp 0 0 127.0.0.1:25    0.0.0.0:*   LISTEN
+tcp 0 0 :::57454    :::*    LISTEN
+tcp 0 0 :::111  :::*    LISTEN
+tcp 0 0 :::22   :::*    LISTEN
+tcp 0 0 ::1:631 :::*    LISTEN
+tcp 0 0 ::1:25  :::*    LISTEN
+</code></pre></div><h3 id="lnmp一键安装包安装的软件及具体位置">LNMP一键安装包安装的软件及具体位置</h3>
+<p>既然是一键安装，那么默认安装的软件和软件的安装位置都是事先设定好的，在安装过程中不能更改。具体安装了哪些软件及其位置如表 1 所示。</p>
+<p><a class="link" href="https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png"  target="_blank" rel="noopener"
+    ><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png" >
+		<img src="https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></a></p>
+<p>也就是说，LNMP 一键安装只安装了基本的 Nginx、MySQL、PHP、phpMyAdmin 和 Zend Optimizer。</p>
+<h3 id="heading">&hellip;.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">===================================== Check install ===================================
+
+Checking...
+Error: /usr/local/nginx not found!!!Nginx install failed.
+Error: /usr/local/php not found!!!PHP install failed.
+Error: /usr/local/mysql not found!!!MySQL install failed.
+Sorry,Failed to install LNMP!
+Please visit http://bbs.vpser.net/forum-25-1.html feedback errors and logs.
+You can download /root/lnmp-install.log from your server,and upload lnmp-install.log to LNMP Forum.
+[root@localhost-localdomain]在[/usr/local/src/lnmp1.0-full]笑着说:
+​
+</code></pre></div><hr>
+<hr>
+<hr>
+<p>竟然失败了
+重来
+这次分来装
+教程:https://blog.csdn.net/qq_24447851/article/details/106316944</p>
+<p>先是安装Nginx
+<code>yum install -y nginx</code>
+安装nginx后可以访问服务器的ip进行查看
+<code>nginx</code></p>
+<p>创建用户组www</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">groupadd www
+ 
+useradd -g www www
+</code></pre></div><p>在php-7.3.18里配置pm的用户组和用户</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./configure --prefix=/usr/local/php \
+--enable-fpm \
+--with-fpm-user=www \
+--with-fpm-group=www \
+--enable-mysqlnd \
+--with-mysqli=mysqlnd \
+--with-pdo-mysql=mysqlnd \
+--enable-mysqlnd-compression-support \
+--with-iconv-dir \
+--with-freetype-dir \
+--with-jpeg-dir \
+--with-png-dir \
+--with-zlib \
+--with-libxml-dir \
+--enable-xml \
+--disable-rpath \
+--enable-bcmath \
+--enable-shmop \
+--enable-sysvsem \
+--enable-inline-optimization \
+--with-curl \
+--enable-mbregex \
+--enable-mbstring \
+--enable-intl \
+--with-mcrypt \
+--with-libmbfl \
+--enable-ftp \
+--with-gd \
+--enable-gd-jis-conv \
+--enable-gd-native-ttf \
+--with-openssl \
+--with-mhash \
+--enable-pcntl \
+--enable-sockets \
+--with-xmlrpc \
+--enable-zip \
+--enable-soap \
+--with-gettext \
+--disable-fileinfo \
+--enable-opcache \
+--with-pear \
+--enable-maintainer-zts \
+--with-ldap=shared \
+--without-gdbm
+</code></pre></div><p>嗯,过程中出现四五次报错,不过问题不大,直接百度就行
+成功的话能看到这里</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Generating files
+configure: creating ./config.status
+creating main/internal_functions.c
+creating main/internal_functions_cli.c
++--------------------------------------------------------------------+
+| License:                                                           |
+| This software is subject to the PHP License, available in this     |
+| distribution in the file LICENSE.  By continuing this installation |
+| process, you are bound by the terms of this license agreement.     |
+| If you do not agree with the terms of this license, you must abort |
+| the installation process at this point.                            |
++--------------------------------------------------------------------+
+
+Thank you for using PHP.
+
+config.status: creating php7.spec
+config.status: creating main/build-defs.h
+config.status: creating scripts/phpize
+config.status: creating scripts/man1/phpize.1
+config.status: creating scripts/php-config
+config.status: creating scripts/man1/php-config.1
+config.status: creating sapi/cli/php.1
+config.status: creating sapi/fpm/php-fpm.conf
+config.status: creating sapi/fpm/www.conf
+config.status: creating sapi/fpm/init.d.php-fpm
+config.status: creating sapi/fpm/php-fpm.service
+config.status: creating sapi/fpm/php-fpm.8
+config.status: creating sapi/fpm/status.html
+config.status: creating sapi/phpdbg/phpdbg.1
+config.status: creating sapi/cgi/php-cgi.1
+config.status: creating ext/phar/phar.1
+config.status: creating ext/phar/phar.phar.1
+config.status: creating main/php_config.h
+config.status: executing default commands
+</code></pre></div><p>接下来编译
+<code>make &amp;&amp; make install</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cp php.ini-development /usr/local/php/etc/php.ini
+cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">vim /usr/local/php/etc/php-fpm.conf
+ 
+# 进入文件后找到下面的内容并更改目录
+pid = /usr/local/php/var/run/php-fpm.pid 
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">vim /usr/lib/systemd/system/php-fpm.service
+#添加
+[Unit]
+Description=The PHP FastCGI Process Manager
+After=syslog.target network.target
+
+[Service]
+Type=notify
+PIDFile=/var/opt/remi/php73/run/php-fpm/php-fpm.pid
+ExecStart=/opt/remi/php73/root/usr/sbin/php-fpm --nodaemonize  --fpm-config /etc/opt/remi/php73/php-fpm.conf
+ExecReload=/bin/kill -USR2 $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><p>注意: 需要根据自己环境情况 填写 PIDFile、ExecStart; PIDFile为pid文件, ExecStart 为可执行文件和 php-fpm.conf 配置文件地址</p>
+<p>加个权限：</p>
+<p>chmod +x /etc/init.d/php-fpm</p>
+<p>现在试一下，/etc/init.d/php-fpm start</p>
+<p>systemctl重载
+<code> systemctl daemon-reload</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 设置开机自启
+ 
+systemctl enable php-fpm.server
+# 重启php-fpm
+ 
+systemctl restart php-fpm.server
+# 重启后可以查看php-fpm状态
+ 
+systemctl status php-fpm.server
+</code></pre></div><p>然后是安装mysql</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 安装
+ 
+yum install -y mariadb-server
+ 
+# 启动
+ 
+systemctl start mariadb
+ 
+# 查看状态
+ 
+systemctl status mariadb
+ 
+# 开机启动
+ 
+systemctl  enable  mariadb
+ 
+# 设置密码
+ 
+mysqladmin -uroot  password  &#39;yourpassword&#39;
+</code></pre></div><p>/usr/share/nginx/html
+/etc/nginx/nginx.conf</p>
+<p><a class="link" href="https://lnmp.org/install.html"  target="_blank" rel="noopener"
+    >https://lnmp.org/install.html</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">第一次面试经历</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">绕过禁用F12</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#winscp传输软件">WinSCP传输软件</a></li>
+        <li><a href="#yum换源">yum换源</a></li>
+        <li><a href="#检查硬盘的剩余空间">检查硬盘的剩余空间</a></li>
+        <li><a href="#配置防火墙开启80端口3306端口mysql和11211memcache端口">配置防火墙，开启80端口、3306端口(mysql)和11211（memcache）端口</a></li>
+        <li><a href="#关闭selinux安全子系统">关闭SELinux安全子系统</a></li>
+        <li><a href="#安装gcc">安装gcc</a></li>
+        <li><a href="#停用-rpm-包安装的-apache-和-mysql">停用 RPM 包安装的 apache 和 MySQL</a></li>
+        <li><a href="#解压">解压</a></li>
+        <li><a href="#执行安装脚本安装-lnmp-一键安装包">执行安装脚本安装 LNMP 一键安装包</a></li>
+        <li><a href="#lnmp一键安装包安装的软件及具体位置">LNMP一键安装包安装的软件及具体位置</a></li>
+        <li><a href="#heading">&hellip;.</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

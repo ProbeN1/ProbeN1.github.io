@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>整点小活 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</link>
+    <description>Recent content in 整点小活 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 May 2022 11:23:22 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stack修改</title>
+      <link>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</guid>
+      <description>使用主题 我选了一个stack的魔改的主题，感谢作者！（已给星星） https://github.com/Mantyke/Hugo-stack-theme-mod 下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended 基</description>
+    </item>
+    
+    <item>
+      <title>Docker学习</title>
+      <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
+      <description>Docker Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何</description>
+    </item>
+    
+    <item>
+      <title>Python端口扫描等</title>
+      <link>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</link>
+      <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
+      <description>思路 这里使用了TCP连接扫描，利用操作系统原生的网络功能。 用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。 还有另</description>
+    </item>
+    
+    <item>
+      <title>爬取xupt课程表</title>
+      <link>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</link>
+      <pubDate>Mon, 15 Nov 2021 20:38:54 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</guid>
+      <description>查课表，以前用的是超级课程表，嫌乎广告太多，加上手机内存不够，卸了，自己写个课表。 由于学校教务系统的参数太多了，直接用了selenium来模</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://proben1.github.io/2021/git/</link>
+      <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/git/</guid>
+      <description>配置 git config -l 全部配置 git config &amp;ndash;global &amp;ndash;list 用户配置 所有配置文件都保存在本地 !! 设置用户与邮箱 !!!!!! git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;xixi@github.com&amp;rdquo; git理论: Workspace:工作区,平时</description>
+    </item>
+    
+    <item>
+      <title>怎么ping不了</title>
+      <link>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</link>
+      <pubDate>Thu, 11 Nov 2021 03:32:29 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</guid>
+      <description>前言 关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用hexo d来把更新的博客上传到github pages上去，然而很不</description>
+    </item>
+    
+  </channel>
+</rss>

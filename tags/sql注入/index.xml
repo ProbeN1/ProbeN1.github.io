@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL注入 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/sql%E6%B3%A8%E5%85%A5/</link>
+    <description>Recent content in SQL注入 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 May 2022 19:11:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/sql%E6%B3%A8%E5%85%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CISCN2019总决赛Day2Web1]Easyweb</title>
+      <link>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</link>
+      <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</guid>
+      <description>[CISCN2019 总决赛 Day2 Web1]Easyweb sql绕过 文件上传短标签绕过 信息收集 /robots.txt User-agent: * Disallow: *.php.bak index.php user.php image.php 其中image.php.bak存在 在其中又发现config.php /.DS_Store 没东西 image.php.bak</description>
+    </item>
+    
+    <item>
+      <title>sqlmap使用实例</title>
+      <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
+      <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;#34;url&amp;#34; sqlmap -u &amp;#34;url&amp;#34; --dbs sqlmap -u &amp;#34;url&amp;#34; -D xx --tables sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump 或</description>
+    </item>
+    
+    <item>
+      <title>伪静态注入</title>
+      <link>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</link>
+      <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</guid>
+      <description>伪静态注入 伪静态网站 看似是静态网页（以.html、.htm等结尾），不存在任何的数据交互，却其实是动态网页，存在数据交互。 将动态网页的id等</description>
+    </item>
+    
+  </channel>
+</rss>

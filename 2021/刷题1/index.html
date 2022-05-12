@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='sql和算法，和网络安全没啥关系'><title>刷题1</title>
+
+<link rel='canonical' href='https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='刷题1'>
+<meta property='og:description' content='sql和算法，和网络安全没啥关系'>
+<meta property='og:url' content='https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='python' /><meta property='article:tag' content='SQL' /><meta property='article:published_time' content='2021-11-22T16:35:10&#43;08:00'/><meta property='article:modified_time' content='2021-11-22T16:35:10&#43;08:00'/>
+<meta name="twitter:title" content="刷题1">
+<meta name="twitter:description" content="sql和算法，和网络安全没啥关系"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="background-color: #2a9d8f; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2021/%E5%88%B7%E9%A2%981/">刷题1</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        sql和算法，和网络安全没啥关系
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 22, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    894字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h4 id="182-查找重复的电子邮箱httpsleetcode-cncomproblemsduplicate-emails"><a class="link" href="https://leetcode-cn.com/problems/duplicate-emails/"  target="_blank" rel="noopener"
+    >182. 查找重复的电子邮箱</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">`</span>Email<span style="color:#ff79c6">`</span> <span style="color:#ff79c6">from</span>
+
+(
+
+ <span style="color:#ff79c6">select</span> <span style="color:#ff79c6">`</span>Email<span style="color:#ff79c6">`</span>, <span style="color:#ff79c6">count</span>(<span style="color:#ff79c6">`</span>Email<span style="color:#ff79c6">`</span>) <span style="color:#ff79c6">as</span> a
+
+ <span style="color:#ff79c6">from</span> <span style="color:#ff79c6">`</span>Person<span style="color:#ff79c6">`</span>
+
+ <span style="color:#ff79c6">group</span> <span style="color:#ff79c6">by</span> <span style="color:#ff79c6">`</span>Email<span style="color:#ff79c6">`</span>
+
+) <span style="color:#ff79c6">as</span> temp
+
+<span style="color:#ff79c6">where</span> a <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">1</span>;
+</code></pre></div><p>一些不熟悉的语句</p>
+<p>like 模糊查询</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> employees <span style="color:#ff79c6">where</span> last_name <span style="color:#ff79c6">like</span> <span style="color:#f1fa8c">&#39;%a%&#39;</span>;
+</code></pre></div><p>group by（常常和聚合函数一起使用）
+聚合函数：<strong>count() , sum() , avg() , max() , min()</strong>
+根据by对数据按照哪个字段进行分组，或者是哪几个字段进行分组。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span>  字段   <span style="color:#ff79c6">from</span>  表名  <span style="color:#ff79c6">where</span>   条件   <span style="color:#ff79c6">group</span>  <span style="color:#ff79c6">by</span>    字段;
+<span style="color:#ff79c6">#</span> 单字段
+<span style="color:#ff79c6">select</span>  grade  <span style="color:#ff79c6">from</span>  student   <span style="color:#ff79c6">group</span>   <span style="color:#ff79c6">by</span>   grade;
+
+<span style="color:#ff79c6">#</span> 多字段
+<span style="color:#ff79c6">select</span>  name , <span style="color:#ff79c6">sum</span>(salary)    <span style="color:#ff79c6">from</span>   student    <span style="color:#ff79c6">group</span>  <span style="color:#ff79c6">by</span>   name , grade;
+name和grade看成一个整体，name和grade相同的才可以分成一组，一个不一样就不能分成一组。
+</code></pre></div><p>having 对group by分组和聚合之后的数据进行过滤
+（与where正好相反）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span>  字段   <span style="color:#ff79c6">from</span>  表名  <span style="color:#ff79c6">group</span>  <span style="color:#ff79c6">by</span>   字段   <span style="color:#ff79c6">having</span>   过滤条件;
+
+<span style="color:#6272a4">-- 查找人数大于 5 的部门
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">select</span> dept_id, <span style="color:#ff79c6">count</span>(<span style="color:#ff79c6">*</span>)
+<span style="color:#ff79c6">from</span> employee
+<span style="color:#ff79c6">group</span> <span style="color:#ff79c6">by</span> dept_id
+<span style="color:#ff79c6">having</span> <span style="color:#ff79c6">count</span>(<span style="color:#ff79c6">*</span>) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">5</span>;
+
+dept_id<span style="color:#ff79c6">|</span><span style="color:#ff79c6">count</span>(<span style="color:#ff79c6">*</span>)<span style="color:#ff79c6">|</span>
+<span style="color:#6272a4">-------|--------|
+</span><span style="color:#6272a4"></span>      <span style="color:#bd93f9">4</span><span style="color:#ff79c6">|</span>       <span style="color:#bd93f9">9</span><span style="color:#ff79c6">|</span>
+      <span style="color:#bd93f9">5</span><span style="color:#ff79c6">|</span>       <span style="color:#bd93f9">8</span><span style="color:#ff79c6">|</span>
+
+</code></pre></div><p>union 联合查询</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> employees <span style="color:#ff79c6">where</span> eamil <span style="color:#ff79c6">like</span> <span style="color:#f1fa8c">&#39;%a%&#39;</span> <span style="color:#ff79c6">or</span> department_id<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">90</span>;
+相当于
+<span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> employees <span style="color:#ff79c6">where</span> eamil <span style="color:#ff79c6">like</span> <span style="color:#f1fa8c">&#39;%a%&#39;</span> 
+<span style="color:#ff79c6">union</span> 
+<span style="color:#ff79c6">select</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">from</span> employees <span style="color:#ff79c6">where</span> department_id<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">90</span>;
+</code></pre></div><p>CONCAT() 函数</p>
+<p>CONCAT(str1,str2,…)</p>
+<p>将多个字符串连接成一个字符串。</p>
+<p>GROUP_CONCAT（）函数</p>
+<p>返回一个字符串结果，该结果由分组中的值连接组合而成。</p>
+<h4 id="175-组合两个表httpsleetcode-cncomproblemscombine-two-tables"><a class="link" href="https://leetcode-cn.com/problems/combine-two-tables/"  target="_blank" rel="noopener"
+    >175. 组合两个表</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">select</span> FirstName, LastName, City, <span style="color:#ff79c6">State</span>
+<span style="color:#ff79c6">from</span> Person  <span style="color:#ff79c6">left</span> <span style="color:#ff79c6">join</span> Address <span style="color:#ff79c6">on</span> Person.PersonId <span style="color:#ff79c6">=</span> Address.PersonId;
+</code></pre></div><p>left join</p>
+<p>也叫left outer join，外连接</p>
+<ul>
+<li>1、 <strong>on</strong> 条件是在生成临时表时使用的条件，它不管 <strong>on</strong> 中的条件是否为真，都会返回左边表中的记录。</li>
+<li>2、<strong>where</strong> 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 <strong>left join</strong> 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
+</ul>
+<h1 id="p1255-数楼梯">P1255 数楼梯</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">gogogo</span>(index):
+    <span style="color:#ff79c6">if</span> index <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">2</span>:
+        <span style="color:#8be9fd;font-style:italic">print</span>(index)
+        <span style="color:#ff79c6">return</span> gogogo(index<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>) <span style="color:#ff79c6">+</span> gogogo(index<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>)
+    <span style="color:#ff79c6">elif</span> index <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>:
+        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">2</span>
+    <span style="color:#ff79c6">elif</span> index <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">or</span> index <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        <span style="color:#ff79c6">return</span> <span style="color:#bd93f9">1</span>
+<span style="color:#8be9fd;font-style:italic">print</span>(gogogo(a))
+</code></pre></div><p>思路是对的，但是层数一多就g了</p>
+<p>于是想用循环取代递归</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+l <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>,n<span style="color:#ff79c6">+</span><span style="color:#bd93f9">2</span>)]
+l[<span style="color:#bd93f9">0</span>], l[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">1</span>
+<span style="color:#ff79c6">if</span> n <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#bd93f9">0</span>)
+<span style="color:#ff79c6">else</span>:
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span>,n<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>):
+        l[i] <span style="color:#ff79c6">=</span> l[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">+</span> l[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>]
+    <span style="color:#8be9fd;font-style:italic">print</span>(l[n])
+</code></pre></div><p>这样是可以通过的</p>
+<p>但是上网又搜了一个更恐怖的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">1</span>
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())): 
+    a, b <span style="color:#ff79c6">=</span> b, a <span style="color:#ff79c6">+</span> b
+<span style="color:#8be9fd;font-style:italic">print</span>(b <span style="color:#ff79c6">if</span> a <span style="color:#ff79c6">else</span> <span style="color:#bd93f9">0</span>)
+</code></pre></div><h1 id="p1143-进制转换">P1143 进制转换</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">trans_map</span>(cint):
+    <span style="color:#ff79c6">if</span> cint <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>:
+        <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;不合法&#34;</span>)
+        <span style="color:#ff79c6">return</span>
+    <span style="color:#ff79c6">elif</span> cint <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">10</span>:
+        <span style="color:#ff79c6">return</span> cint
+
+    <span style="color:#ff79c6">elif</span> cint <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">10</span>:
+        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">chr</span>(cint <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">65</span>)
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">anyToTen</span>(m, origin):
+    <span style="color:#6272a4"># 任意进制的数转换为10机制</span>
+    <span style="color:#6272a4"># 先将m转换为10进制</span>
+    <span style="color:#6272a4"># 公式 num = an * m**(n-1) + an-1 * m**(n-2).....+ a0 * m**0</span>
+    <span style="color:#6272a4"># 直接利用int的自带功能</span>
+    <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(origin), base<span style="color:#ff79c6">=</span>m)
+
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">tenToAny</span>(n, origin):
+    <span style="color:#6272a4"># 10进制转换为任意进制的数</span>
+    <span style="color:#8be9fd;font-style:italic">list</span> <span style="color:#ff79c6">=</span> []
+    <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">True</span>:
+        <span style="color:#6272a4"># 取商</span>
+        s <span style="color:#ff79c6">=</span> origin <span style="color:#ff79c6">//</span> n
+        <span style="color:#6272a4"># 取余数</span>
+        tmp <span style="color:#ff79c6">=</span> origin <span style="color:#ff79c6">%</span> n
+        <span style="color:#8be9fd;font-style:italic">list</span><span style="color:#ff79c6">.</span>append(trans_map(tmp))
+        <span style="color:#ff79c6">if</span> s <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+            <span style="color:#ff79c6">break</span>
+        origin <span style="color:#ff79c6">=</span> s
+    <span style="color:#8be9fd;font-style:italic">list</span><span style="color:#ff79c6">.</span>reverse()
+    <span style="color:#8be9fd;font-style:italic">list</span> <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">str</span>(each) <span style="color:#ff79c6">for</span> each <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">list</span>]
+    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;&#39;</span><span style="color:#ff79c6">.</span>join(<span style="color:#8be9fd;font-style:italic">list</span>))
+
+<span style="color:#6272a4"># 将一个m进制的数转换为一个n进制的数</span>
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">transfer</span>(m, n, origin):
+    num <span style="color:#ff79c6">=</span> anyToTen(m, origin)
+    target <span style="color:#ff79c6">=</span> tenToAny(n, num)
+
+<span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
+    a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+    b <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">input</span>()
+    c <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+    transfer(a,c,b)
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/python/">python</a>
+        
+            <a href="/tags/sql/">SQL</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[CISCN2019总决赛Day2Web1]Easyweb</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">sqlmap使用实例</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+     
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">Example Site</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了26.8k字·共 18篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#182-查找重复的电子邮箱httpsleetcode-cncomproblemsduplicate-emails"><a href="https://leetcode-cn.com/problems/duplicate-emails/">182. 查找重复的电子邮箱</a></a></li>
+            <li><a href="#175-组合两个表httpsleetcode-cncomproblemscombine-two-tables"><a href="https://leetcode-cn.com/problems/combine-two-tables/">175. 组合两个表</a></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">11</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+            <a href="/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/" class="font_size_1">
+                二次注入
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
