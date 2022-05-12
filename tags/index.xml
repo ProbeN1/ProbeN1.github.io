@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 茄子的养殖场</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 May 2022 20:53:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 23:31:13 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF</title>
+      <link>https://proben1.github.io/tags/ctf/</link>
+      <pubDate>Thu, 12 May 2022 23:31:13 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>php</title>
       <link>https://proben1.github.io/tags/php/</link>
@@ -17,34 +26,25 @@
     </item>
     
     <item>
-      <title>正则表达式</title>
-      <link>https://proben1.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
-      <pubDate>Thu, 12 May 2022 20:53:02 +0800</pubDate>
+      <title>环境搭建</title>
+      <link>https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
       
-      <guid>https://proben1.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <guid>https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>SQL注入</title>
-      <link>https://proben1.github.io/tags/sql%E6%B3%A8%E5%85%A5/</link>
-      <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
+      <title>其他</title>
+      <link>https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
       
-      <guid>https://proben1.github.io/tags/sql%E6%B3%A8%E5%85%A5/</guid>
+      <guid>https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>文件上传</title>
-      <link>https://proben1.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</link>
-      <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>https://proben1.github.io/tags/docker/</link>
       <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
       
@@ -53,74 +53,47 @@
     </item>
     
     <item>
-      <title>Windows</title>
-      <link>https://proben1.github.io/tags/windows/</link>
+      <title>思考总结</title>
+      <link>https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 10 Apr 2022 09:13:17 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机基础</title>
+      <link>https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
       
-      <guid>https://proben1.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xss</title>
-      <link>https://proben1.github.io/tags/xss/</link>
-      <pubDate>Sun, 05 Dec 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/xss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>js</title>
-      <link>https://proben1.github.io/tags/js/</link>
-      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>thinkphp</title>
-      <link>https://proben1.github.io/tags/thinkphp/</link>
-      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/thinkphp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>二次注入</title>
-      <link>https://proben1.github.io/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/</link>
-      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://proben1.github.io/tags/python/</link>
-      <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
-      
-      <guid>https://proben1.github.io/tags/python/</guid>
+      <guid>https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
       <link>https://proben1.github.io/tags/sql/</link>
-      <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
+      <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
       
       <guid>https://proben1.github.io/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>爬虫</title>
-      <link>https://proben1.github.io/tags/%E7%88%AC%E8%99%AB/</link>
-      <pubDate>Mon, 15 Nov 2021 20:38:54 +0800</pubDate>
+      <title>web安全</title>
+      <link>https://proben1.github.io/tags/web%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
       
-      <guid>https://proben1.github.io/tags/%E7%88%AC%E8%99%AB/</guid>
+      <guid>https://proben1.github.io/tags/web%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://proben1.github.io/tags/python/</link>
+      <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/tags/python/</guid>
       <description></description>
     </item>
     

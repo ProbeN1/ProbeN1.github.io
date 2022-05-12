@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/ctf/</link>
+    <description>Recent content in CTF on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 May 2022 23:31:13 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[安洵杯2019]iamthinking</title>
+      <link>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</link>
+      <pubDate>Thu, 12 May 2022 23:31:13 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</guid>
+      <description>www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php &amp;lt;?php namespace app\controller; use app\BaseController; class Index extends BaseController { public function index() { echo &amp;#34;&amp;lt;img src=&amp;#39;../test.jpg&amp;#39;&amp;#34;.&amp;#34;/&amp;gt;&amp;#34;; $paylaod =</description>
+    </item>
+    
+    <item>
+      <title>[CISCN2019总决赛Day2Web1]Easyweb</title>
+      <link>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</link>
+      <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</guid>
+      <description>[CISCN2019 总决赛 Day2 Web1]Easyweb sql绕过 文件上传短标签绕过 信息收集 /robots.txt User-agent: * Disallow: *.php.bak index.php user.php image.php 其中image.php.bak存在 在其中又发现config.php /.DS_Store 没东西 image.php.bak</description>
+    </item>
+    
+    <item>
+      <title>[Zer0pts2020]musicblog</title>
+      <link>https://proben1.github.io/2021/zer0pts2020musicblog/</link>
+      <pubDate>Sun, 05 Dec 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/zer0pts2020musicblog/</guid>
+      <description>[Zer0pts2020]musicblog 有admin账户 有下载 有注册登录 当然，最后点子在post音频里 去想任意下载，不行。最后看wp，原来给源码，再做一遍。 内容安全策略( CSP ) http://foreversong.cn/archives/760 C</description>
+    </item>
+    
+    <item>
+      <title>2021DNUICTF,wp</title>
+      <link>https://proben1.github.io/2021/2021dnuictfwp/</link>
+      <pubDate>Sat, 04 Dec 2021 19:00:12 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/2021dnuictfwp/</guid>
+      <description>WEB [签到] flag 凑齐20位，召唤flag ZmxhZ3tuc3NfbG9naW59 base64解码 flag{nss_login} [萌]odd_upload Smarty ssti模板注入，文件覆盖 自己找个Smarty版本，对比</description>
+    </item>
+    
+    <item>
+      <title>[FBCTF2019]Event</title>
+      <link>https://proben1.github.io/2021/fbctf2019event/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/fbctf2019event/</guid>
+      <description>[FBCTF2019]Event flask 没想到在event_important有注入 猜它可能大概想这样 name = event_name address = event_address print(event_important) event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config 于是查到秘钥 fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y 解密，出现的是字符串，不是json 加密 from flask import</description>
+    </item>
+    
+    <item>
+      <title>[FireshellCTF2020]URL_TO_PDF</title>
+      <link>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</guid>
+      <description>[FireshellCTF2020]URL TO PDF 由于刚刚有些无聊所以再开一道 开局一个输入框，url转pdf？没见过 弹出下载，但是没法打开，用010来看，可以看到html，猜测爬虫之类</description>
+    </item>
+    
+    <item>
+      <title>[NPUCTF2020]验证🐎</title>
+      <link>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</guid>
+      <description>js题，长知识了 F12，ctrl+U查源码 源码 const express = require(&amp;#39;express&amp;#39;); const bodyParser = require(&amp;#39;body-parser&amp;#39;); const cookieSession = require(&amp;#39;cookie-session&amp;#39;); const fs = require(&amp;#39;fs&amp;#39;); const crypto = require(&amp;#39;crypto&amp;#39;); const keys = require(&amp;#39;./key.js&amp;#39;).keys; function md5(s) { return crypto.createHash(&amp;#39;md5&amp;#39;) .update(s) .digest(&amp;#39;hex&amp;#39;); } function saferEval(str) { if (str.replace(/(?:Math(?:\.\w+)?)|[()+\-*/&amp;amp;|^%&amp;lt;&amp;gt;=,?:]|(?:\d+\.?\d*(?:e\d+)?)| /g, &amp;#39;&amp;#39;)) { return null; } return eval(str); } //</description>
+    </item>
+    
+    <item>
+      <title>[安洵杯2019]cssgame</title>
+      <link>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</guid>
+      <description>[安洵杯 2019]cssgame 露骨的F12 https://websec.readthedocs.io/zh/latest/vuln/xss/trick/cssi.html CSS注入，如果有机会写任意CSS，那么可以做到 1.得到input栏里的token 2.得到&amp;lt;script&amp;gt</description>
+    </item>
+    
+    <item>
+      <title>[网鼎杯2018]Unfinish</title>
+      <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</guid>
+      <description>[网鼎杯2018]Unfinish 二次注入，注入点是在register.php传入的username中。 1.猜测语句 insert table values (&amp;#39;email&amp;#39;,&amp;#39;username&amp;#39;,&amp;#39;password&amp;#39;) 2.表名是猜的 过</description>
+    </item>
+    
+    <item>
+      <title>[网鼎杯2020半决赛]BabyJS</title>
+      <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</guid>
+      <description>快速拔刀（不是） 快速找到关键源码 var express = require(&amp;#39;express&amp;#39;); var config = require(&amp;#39;../config&amp;#39;); var url=require(&amp;#39;url&amp;#39;); var child_process=require(&amp;#39;child_process&amp;#39;); var fs=require(&amp;#39;fs&amp;#39;); var request=require(&amp;#39;request&amp;#39;); var router = express.Router(); var blacklist=[&amp;#39;127.0.0.1.xip.io&amp;#39;,&amp;#39;::ffff:127.0.0.1&amp;#39;,&amp;#39;127.0.0.1&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;localhost&amp;#39;,&amp;#39;0.0.0.0&amp;#39;,&amp;#39;[::1]&amp;#39;,&amp;#39;::1&amp;#39;]; router.get(&amp;#39;/&amp;#39;, function(req, res, next) { res.json({}); }); router.get(&amp;#39;/debug&amp;#39;, function(req, res, next) { console.log(req.ip); if(blacklist.indexOf(req.ip)!=-1){ console.log(&amp;#39;res&amp;#39;); var u=req.query.url.replace(/[\&amp;#34;\&amp;#39;]/ig,&amp;#39;&amp;#39;); console.log(url.parse(u).href); let log=`echo &amp;#39;${url.parse(u).href}&amp;#39;&amp;gt;&amp;gt;/tmp/log`; console.log(log); child_process.exec(log); res.json({data:fs.readFileSync(&amp;#39;/tmp/log&amp;#39;).toString()}); }else{ res.json({}); } }); router.post(&amp;#39;/debug&amp;#39;, function(req, res, next)</description>
+    </item>
+    
+    <item>
+      <title>[网鼎杯2020玄武组]SSRFMe</title>
+      <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</link>
+      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</guid>
+      <description>[网鼎杯 2020 玄武组]SSRFMe &amp;lt;?php function check_inner_ip($url) { $match_result=preg_match(&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;,$url); if (!$match_result) { die(&amp;#39;url fomat error&amp;#39;); } try { $url_parse=parse_url($url); } catch(Exception $e) { die(&amp;#39;url fomat error&amp;#39;); return false; } $hostname=$url_parse[&amp;#39;host&amp;#39;]; $ip=gethostbyname($hostname); $int_ip=ip2long($ip); return ip2long(&amp;#39;127.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;10.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;172.16.0.0&amp;#39;)&amp;gt;&amp;gt;20 == $int_ip&amp;gt;&amp;gt;20 || ip2long(&amp;#39;192.168.0.0&amp;#39;)&amp;gt;&amp;gt;16 == $int_ip&amp;gt;&amp;gt;16; } function safe_request_url($url) { if (check_inner_ip($url)) { echo $url.&amp;#39; is inner</description>
+    </item>
+    
+  </channel>
+</rss>

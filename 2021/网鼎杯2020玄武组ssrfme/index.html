@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[网鼎杯 2020 玄武组]SSRFMe &amp;lt;?php function check_inner_ip($url) { $match_result=preg_match(&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;,$url); if (!$match_result) { die(&amp;#39;url fomat error&amp;#39;); } try { $url_parse=parse_url($url); } catch(Exception $e) { die(&amp;#39;url fomat error&amp;#39;); return false; } $hostname=$url_parse[&amp;#39;host&amp;#39;]; $ip=gethostbyname($hostname); $int_ip=ip2long($ip); return ip2long(&amp;#39;127.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;10.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;172.16.0.0&amp;#39;)&amp;gt;&amp;gt;20 == $int_ip&amp;gt;&amp;gt;20 || ip2long(&amp;#39;192.168.0.0&amp;#39;)&amp;gt;&amp;gt;16 == $int_ip&amp;gt;&amp;gt;16; } function safe_request_url($url) { if (check_inner_ip($url)) { echo $url.&amp;#39; is inner'><title>[网鼎杯2020玄武组]SSRFMe</title>
+
+<link rel='canonical' href='https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/'>
+
+<link rel="stylesheet" href="/scss/style.min.ddb7a2bc30312e4584c50c2205f5488bbcb69c747900d22926b3f0be637b190f.css"><meta property='og:title' content='[网鼎杯2020玄武组]SSRFMe'>
+<meta property='og:description' content='[网鼎杯 2020 玄武组]SSRFMe &amp;lt;?php function check_inner_ip($url) { $match_result=preg_match(&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;,$url); if (!$match_result) { die(&amp;#39;url fomat error&amp;#39;); } try { $url_parse=parse_url($url); } catch(Exception $e) { die(&amp;#39;url fomat error&amp;#39;); return false; } $hostname=$url_parse[&amp;#39;host&amp;#39;]; $ip=gethostbyname($hostname); $int_ip=ip2long($ip); return ip2long(&amp;#39;127.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;10.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;172.16.0.0&amp;#39;)&amp;gt;&amp;gt;20 == $int_ip&amp;gt;&amp;gt;20 || ip2long(&amp;#39;192.168.0.0&amp;#39;)&amp;gt;&amp;gt;16 == $int_ip&amp;gt;&amp;gt;16; } function safe_request_url($url) { if (check_inner_ip($url)) { echo $url.&amp;#39; is inner'>
+<meta property='og:url' content='https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2021-11-22T16:37:25&#43;08:00'/><meta property='article:modified_time' content='2021-11-22T16:37:25&#43;08:00'/>
+<meta name="twitter:title" content="[网鼎杯2020玄武组]SSRFMe">
+<meta name="twitter:description" content="[网鼎杯 2020 玄武组]SSRFMe &amp;lt;?php function check_inner_ip($url) { $match_result=preg_match(&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;,$url); if (!$match_result) { die(&amp;#39;url fomat error&amp;#39;); } try { $url_parse=parse_url($url); } catch(Exception $e) { die(&amp;#39;url fomat error&amp;#39;); return false; } $hostname=$url_parse[&amp;#39;host&amp;#39;]; $ip=gethostbyname($hostname); $int_ip=ip2long($ip); return ip2long(&amp;#39;127.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;10.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;172.16.0.0&amp;#39;)&amp;gt;&amp;gt;20 == $int_ip&amp;gt;&amp;gt;20 || ip2long(&amp;#39;192.168.0.0&amp;#39;)&amp;gt;&amp;gt;16 == $int_ip&amp;gt;&amp;gt;16; } function safe_request_url($url) { if (check_inner_ip($url)) { echo $url.&amp;#39; is inner"><style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/">[网鼎杯2020玄武组]SSRFMe</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 22, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1489字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="网鼎杯-2020-玄武组ssrfme">[网鼎杯 2020 玄武组]SSRFMe</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">function</span> <span style="color:#50fa7b">check_inner_ip</span>(<span style="color:#8be9fd;font-style:italic">$url</span>)
+{
+    <span style="color:#8be9fd;font-style:italic">$match_result</span><span style="color:#ff79c6">=</span>preg_match(<span style="color:#f1fa8c">&#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&#39;</span>,<span style="color:#8be9fd;font-style:italic">$url</span>);
+    <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">!</span><span style="color:#8be9fd;font-style:italic">$match_result</span>)
+    {
+        <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;url fomat error&#39;</span>);
+    }
+    <span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#8be9fd;font-style:italic">$url_parse</span><span style="color:#ff79c6">=</span>parse_url(<span style="color:#8be9fd;font-style:italic">$url</span>);
+    }
+    <span style="color:#ff79c6">catch</span>(Exception <span style="color:#8be9fd;font-style:italic">$e</span>)
+    {
+        <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;url fomat error&#39;</span>);
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+    }
+    <span style="color:#8be9fd;font-style:italic">$hostname</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$url_parse</span>[<span style="color:#f1fa8c">&#39;host&#39;</span>];
+    <span style="color:#8be9fd;font-style:italic">$ip</span><span style="color:#ff79c6">=</span>gethostbyname(<span style="color:#8be9fd;font-style:italic">$hostname</span>);
+    <span style="color:#8be9fd;font-style:italic">$int_ip</span><span style="color:#ff79c6">=</span>ip2long(<span style="color:#8be9fd;font-style:italic">$ip</span>);
+    <span style="color:#ff79c6">return</span> ip2long(<span style="color:#f1fa8c">&#39;127.0.0.0&#39;</span>)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">24</span> <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">$int_ip</span><span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">24</span> <span style="color:#ff79c6">||</span> ip2long(<span style="color:#f1fa8c">&#39;10.0.0.0&#39;</span>)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">24</span> <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">$int_ip</span><span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">24</span> <span style="color:#ff79c6">||</span> ip2long(<span style="color:#f1fa8c">&#39;172.16.0.0&#39;</span>)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">20</span> <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">$int_ip</span><span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">20</span> <span style="color:#ff79c6">||</span> ip2long(<span style="color:#f1fa8c">&#39;192.168.0.0&#39;</span>)<span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">16</span> <span style="color:#ff79c6">==</span> <span style="color:#8be9fd;font-style:italic">$int_ip</span><span style="color:#ff79c6">&gt;&gt;</span><span style="color:#bd93f9">16</span>;
+}
+
+<span style="color:#ff79c6">function</span> <span style="color:#50fa7b">safe_request_url</span>(<span style="color:#8be9fd;font-style:italic">$url</span>)
+{
+
+    <span style="color:#ff79c6">if</span> (check_inner_ip(<span style="color:#8be9fd;font-style:italic">$url</span>))
+    {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$url</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39; is inner ip&#39;</span>;
+    }
+    <span style="color:#ff79c6">else</span>
+    {
+        <span style="color:#8be9fd;font-style:italic">$ch</span> <span style="color:#ff79c6">=</span> curl_init();
+        curl_setopt(<span style="color:#8be9fd;font-style:italic">$ch</span>, CURLOPT_URL, <span style="color:#8be9fd;font-style:italic">$url</span>);
+        curl_setopt(<span style="color:#8be9fd;font-style:italic">$ch</span>, CURLOPT_RETURNTRANSFER, <span style="color:#bd93f9">1</span>);
+        curl_setopt(<span style="color:#8be9fd;font-style:italic">$ch</span>, CURLOPT_HEADER, <span style="color:#bd93f9">0</span>);
+        <span style="color:#8be9fd;font-style:italic">$output</span> <span style="color:#ff79c6">=</span> curl_exec(<span style="color:#8be9fd;font-style:italic">$ch</span>);
+        <span style="color:#8be9fd;font-style:italic">$result_info</span> <span style="color:#ff79c6">=</span> curl_getinfo(<span style="color:#8be9fd;font-style:italic">$ch</span>);
+        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$result_info</span>[<span style="color:#f1fa8c">&#39;redirect_url&#39;</span>])
+        {
+            safe_request_url(<span style="color:#8be9fd;font-style:italic">$result_info</span>[<span style="color:#f1fa8c">&#39;redirect_url&#39;</span>]);
+        }
+        curl_close(<span style="color:#8be9fd;font-style:italic">$ch</span>);
+        var_dump(<span style="color:#8be9fd;font-style:italic">$output</span>);
+    }
+
+}
+<span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;url&#39;</span>])){
+    <span style="color:#8be9fd;font-style:italic">$url</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;url&#39;</span>];
+    <span style="color:#ff79c6">if</span>(<span style="color:#ff79c6">!</span><span style="color:#ff79c6">empty</span>(<span style="color:#8be9fd;font-style:italic">$url</span>)){
+        safe_request_url(<span style="color:#8be9fd;font-style:italic">$url</span>);
+    }
+}
+<span style="color:#ff79c6">else</span>{
+    highlight_file(__FILE__);
+}
+<span style="color:#6272a4">// Please visit hint.php locally.
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">?&gt;</span>
+</code></pre></div><p>大致就先让你访问/hint.php，但有个ip检测，不能是内网ip</p>
+<ul>
+<li>
+<p>使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">gethostbyname
+</code></pre></div><p>获取ip地址</p>
+<ul>
+<li>防御了xip.io这类利用dns解析的绕过方法</li>
+</ul>
+</li>
+<li>
+<p>使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">ip2long
+</code></pre></div><p>将ip地址转为整数，判断是否为内网网段</p>
+<ul>
+<li>防御了<code>127.0.0.1/8</code></li>
+</ul>
+</li>
+</ul>
+<p>但这里头肯定有问题，不然也不可能出这题，先搜搜$url_parse相关</p>
+<p>最终找到一篇<a class="link" href="https://www.blackhat.com/docs/us-17/thursday/us-17-Tsai-A-New-Era-Of-SSRF-Exploiting-URL-Parser-In-Trending-Programming-Languages.pdf"  target="_blank" rel="noopener"
+    >翻译文章</a></p>
+<p><a class="link" href="https://www.anquanke.com/post/id/86527"  target="_blank" rel="noopener"
+    >https://www.anquanke.com/post/id/86527</a></p>
+<p>（静待20min）</p>
+<p>现在我们默认已经读过这篇文章了</p>
+<p>来，让我们试试文章里的curl与其他语言url解析器联合使用所出现的问题</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">?url=http://@127.0.0.1:80 @baidu.com/hint.php
+</code></pre></div><p>很有自信，但是返回了个bool(false)………………</p>
+<p>为什么……直接搜wp，也是这个……留下了疑惑</p>
+<p>肯定在这一块，好好的抛啥异常……</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">try</span>
+    {
+        <span style="color:#8be9fd;font-style:italic">$url_parse</span><span style="color:#ff79c6">=</span>parse_url(<span style="color:#8be9fd;font-style:italic">$url</span>);
+    }
+    <span style="color:#ff79c6">catch</span>(Exception <span style="color:#8be9fd;font-style:italic">$e</span>)
+    {
+        <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;url fomat error&#39;</span>);
+        <span style="color:#ff79c6">return</span> <span style="color:#ff79c6">false</span>;
+    }
+</code></pre></div><p>好在wp里提供了另一种思路，DNS重绑定漏洞</p>
+<p><a class="link" href="https://blog.csdn.net/NOSEC2019/article/details/103126829"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/NOSEC2019/article/details/103126829</a></p>
+<p>（静待15min）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">(1)、服务器端获得URL参数，进行第一次DNS解析，获得了一个非内网的IP
+
+(2)、对于获得的IP进行判断，发现为非黑名单IP，则通过验证
+
+(3)、服务器端对于URL进行访问，由于DNS服务器设置的TTL为0，所以再次进行DNS解析，这一次DNS服务器返回的是内网地址。
+
+(4)、由于已经绕过验证，所以服务器端返回访问内网资源的结果。
+</code></pre></div><p>现在我们又读了一篇文章，很棒，<a class="link" href="https://lock.cmpxchg8b.com/rebinder.html?tdsourcetag=s_pctim_aiomsg"  target="_blank" rel="noopener"
+    >工具网站</a></p>
+<p>快试试！（？）</p>
+<p>还有个方便的方法，题里忘了过滤了的</p>
+<p><code>0.0.0.0</code>代表本机<code>ipv4</code>的所有地址，所以直接<code>http://0.0.0.0/hint.php</code>也可以……</p>
+<p>不错，所以为啥一开始翻ssrf过滤绕过的时候没找到这个方法^_^</p>
+<p>好在我们现在可以看到hint.php了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
+<span style="color:#ff79c6">if</span>(<span style="color:#8be9fd;font-style:italic">$_SERVER</span>[<span style="color:#f1fa8c">&#39;REMOTE_ADDR&#39;</span>]<span style="color:#ff79c6">===</span><span style="color:#f1fa8c">&#34;127.0.0.1&#34;</span>){
+  highlight_file(__FILE__);
+}
+<span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;file&#39;</span>])){
+  file_put_contents(<span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;file&#39;</span>],<span style="color:#f1fa8c">&#34;&lt;?php echo &#39;redispass is root&#39;;exit();&#34;</span><span style="color:#ff79c6">.</span><span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;file&#39;</span>]);
+}
+<span style="color:#f1fa8c">&#34;
+</span></code></pre></div><p>本来以为是过死亡exit</p>
+<p><a class="link" href="https://xz.aliyun.com/t/8163"  target="_blank" rel="noopener"
+    >https://xz.aliyun.com/t/8163</a></p>
+<p>结果不是……</p>
+<p>完全不会，今晚的目标就是成功复现！呜呜呜</p>
+<p>redis？怎么说……我就知道它是种NoSQL型数据库，来了解一下。</p>
+<p><a class="link" href="https://www.cnblogs.com/powertoolsteam/p/redis.html"  target="_blank" rel="noopener"
+    >https://www.cnblogs.com/powertoolsteam/p/redis.html</a></p>
+<p>首先……我要知道redis在啥端口——6379</p>
+<p>然后题里告诉你密码是root</p>
+<p>使用dict协议去访问redis</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">?url=dict://0.0.0.0:6379
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/624021b127f86abb2a920b6e.png" >
+		<img src="https://pic.imgdb.cn/item/624021b127f86abb2a920b6e.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>存在密码校验，再加上密码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">?url=dict://0.0.0.0:6379/auth root
+</code></pre></div><p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/624021c727f86abb2a92a191.png" >
+		<img src="https://pic.imgdb.cn/item/624021c727f86abb2a92a191.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/624021d527f86abb2a92fca9.png" >
+		<img src="https://pic.imgdb.cn/item/624021d527f86abb2a92fca9.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>Redis客户端支持管道操作，可以通过单个写入操作发送多个命令，而无需在发出下一个命令之前读取上一个命令的服务器回复。所有的回复都可以在最后阅读。</p>
+<p><code>dict</code>协议一次只能执行一条命令，因该是仅仅能进行密码验证。此处需要<code>gopher</code>协议，可以一次性完成密码验证以及恶意命令执行。</p>
+<p>攻击方式位Redis基于主从复制RCE</p>
+<p>提前了解主从复制是啥</p>
+<p>主从复制，是指将一台Redis服务器的数据，复制到其他的Redis服务器。前者称为主节点(master)，后者称为从节点(slave)；数据的复制是单向的，只能由主节点到从节点。
+redis的持久化使得机器即使重启数据也不会丢失，因为redis服务器重启后会把硬盘上的文件重新恢复到内存中，但是如果硬盘的数据被删除的话数据就无法恢复了，如果通过主从复制就能解决这个问题，主redis的数据和从redis上的数据保持实时同步，当主redis写入数据是就会通过主从复制复制到其它从redis。</p>
+<p>接下来，利用这一点，我们创建</p>
+<p><a class="link" href="" >https://github.com/xmsec/redis-ssrf</a>
+<a class="link" href="" >https://github.com/n0b0dyCN/redis-rogue-server</a></p>
+<p>代码审计-&gt;看到curl_exec想到ssrf-&gt;打内网-&gt;根据提示redisgetshell-&gt;生成rogueserver（vps或buu中的linux靶机）-&gt;利用gopher协议生成payload或者直接反弹shell</p>
+<p>参考</p>
+<p><a class="link" href="https://www.secpulse.com/archives/132215.html"  target="_blank" rel="noopener"
+    >https://www.secpulse.com/archives/132215.html</a></p>
+<p><a class="link" href="https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/"  target="_blank" rel="noopener"
+    >https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/</a></p>
+<p>学到了，<a class="link" href="https://liotree.github.io/2020/07/10/%E7%BD%91%E9%BC%8E%E6%9D%AF-2020-%E7%8E%84%E6%AD%A6%E7%BB%84-SSRFMe/"  target="_blank" rel="noopener"
+    >这篇博客</a>里绕过一开始限制的地方写的很全，建议去看看。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[安洵杯2019]iamthinking</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[CISCN2019总决赛Day2Web1]Easyweb</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2021/zer0pts2020musicblog/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">[Zer0pts2020]musicblog</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了33k字·共 29篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#网鼎杯-2020-玄武组ssrfme">[网鼎杯 2020 玄武组]SSRFMe</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">12</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">17</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/ctf/" class="font_size_11">
+                CTF
+            </a>
+        
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_3">
+                其他
+            </a>
+        
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_3">
+                环境搭建
+            </a>
+        
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="font_size_3">
+                计算机基础
+            </a>
+        
+            <a href="/tags/php/" class="font_size_2">
+                php
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                python
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_2">
+                SQL
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/web%E5%AE%89%E5%85%A8/" class="font_size_1">
+                web安全
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
