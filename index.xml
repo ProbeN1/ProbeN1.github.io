@@ -537,7 +537,33 @@ subtitle: 完成一个名为大学的作品
 
 &lt;blockquote class=&#34;quote en&#34;&gt;
         &lt;p&gt;To see a world in a grain of sand. And a heaven in a wild flower. Hold infinity in the palm of your hand. And eternity in an hour.&lt;/p&gt;&lt;/blockquote&gt; 
-&lt;h3 id=&#34;代码块&#34;&gt;代码块&lt;/h3&gt;
+&lt;h3 id=&#34;修改行内代码样式&#34;&gt;修改「行内代码」样式&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;效果&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改键盘标签样式&#34;&gt;修改「键盘标签」样式&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;&lt;/p&gt;
+&lt;h3 id=&#34;添加友链&#34;&gt;添加友链&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;同样是摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在~\data\links.json里添加友链就可以了;image放在~\assets\link-img\里&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;[
+    {
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;小球飞鱼&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;website&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;https://mantyke.icu/&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;image&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;mantyke.png&amp;#34;&lt;/span&gt;,
+     &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;我们会一起遇见鲸鱼吗？&amp;#34;&lt;/span&gt;
+    },
+	{
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;友情链接2&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;website&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;image&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+     &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+    }
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;代码块&#34;&gt;代码块&lt;/h3&gt;
 &lt;p&gt;首先，是代码高亮设置&lt;/p&gt;
 &lt;p&gt;打开项目根目录下的 &lt;code&gt;config.yaml&lt;/code&gt;，在highlight中加入&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;style : autumn  # 样式参考https://xyproto.github.io/splash/docs/all.html
