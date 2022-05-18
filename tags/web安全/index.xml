@@ -6,7 +6,16 @@
     <description>Recent content in web安全 on 茄子的养殖场</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 21:55:19 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 23:15:34 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>同源策略</title>
+      <link>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Tue, 17 May 2022 23:15:34 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</guid>
+      <description>同源策略 同源策略限制了不同源之间如何进行资源交互，是用于隔离潜在恶意文件的重要安全机制。 emmmm其实刚学的时候纠结了好久这个东西 定义 协议/</description>
+    </item>
+    
     <item>
       <title>DNSlog注入</title>
       <link>https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/</link>
