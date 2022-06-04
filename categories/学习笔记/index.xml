@@ -22,7 +22,7 @@
       <pubDate>Tue, 17 May 2022 23:15:34 +0800</pubDate>
       
       <guid>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</guid>
-      <description>同源策略 同源策略限制了不同源之间如何进行资源交互，是用于隔离潜在恶意文件的重要安全机制。 emmmm其实刚学的时候纠结了好久这个东西 定义 协议/</description>
+      <description>这篇文章负责解决一次面试题： 简单的说一下同源策略 说说cors 和 jsonp分别是干什么的 为什么会出现这两个漏洞，以及如何进行修复 cors 和 jsonp 在修复过</description>
     </item>
     
     <item>

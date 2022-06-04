@@ -6,14 +6,14 @@
     <description>Recent content in Posts on 茄子的养殖场</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 May 2022 20:05:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 12:52:34 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>茄科生物观测日志</title>
-      <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</link>
-      <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
+      <title>茄科生物观测日志2022.5</title>
+      <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.5/</link>
+      <pubDate>Sat, 04 Jun 2022 12:52:34 +0800</pubDate>
       
-      <guid>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97/</guid>
-      <description>2022-5-12 今天捣鼓了一天的博客，互联网是在是太精彩啦！ 在经过重重深思之后，我仍然无法决定观察日记是要写成这种小作文的形式还是写成每天流水账的形式，觉</description>
+      <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.5/</guid>
+      <description>2022.5 6.1 凌晨，0：42，读完《我们生活在南京》。 天瑞老师的书，中国式的爱，信息的浪漫，20年的距离，以及，南京。 以后，记得在月牙湖埋一个时间胶囊</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Tue, 17 May 2022 23:15:34 +0800</pubDate>
       
       <guid>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</guid>
-      <description>同源策略 同源策略限制了不同源之间如何进行资源交互，是用于隔离潜在恶意文件的重要安全机制。 emmmm其实刚学的时候纠结了好久这个东西 定义 协议/</description>
+      <description>这篇文章负责解决一次面试题： 简单的说一下同源策略 说说cors 和 jsonp分别是干什么的 为什么会出现这两个漏洞，以及如何进行修复 cors 和 jsonp 在修复过</description>
     </item>
     
     <item>
@@ -158,6 +158,15 @@
       
       <guid>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</guid>
       <description>伪静态注入 伪静态网站 看似是静态网页（以.html、.htm等结尾），不存在任何的数据交互，却其实是动态网页，存在数据交互。 将动态网页的id等</description>
+    </item>
+    
+    <item>
+      <title>茄科生物观测日志(demo)</title>
+      <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97demo/</link>
+      <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97demo/</guid>
+      <description>2022-5-12 今天捣鼓了一天的博客，互联网是在是太精彩啦！ 在经过重重深思之后，我仍然无法决定观察日记是要写成这种小作文的形式还是写成每天流水账的形式，觉</description>
     </item>
     
     <item>
