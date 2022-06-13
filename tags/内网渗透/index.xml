@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内网渗透 on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</link>
+    <description>Recent content in 内网渗透 on 茄子的养殖场</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jun 2022 13:37:17 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解Windows认证</title>
+      <link>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</link>
+      <pubDate>Mon, 13 Jun 2022 13:37:17 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</guid>
+      <description>内网小白一枚，打算从一个个概念开始记 Windows本地认证 SAM数据库 路径：%SystemRoot%\system32\config\sam</description>
+    </item>
+    
+  </channel>
+</rss>

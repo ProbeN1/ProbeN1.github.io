@@ -6,7 +6,25 @@
     <description>Recent content in Posts on 茄子的养殖场</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 13:14:55 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 13:37:17 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解Windows认证</title>
+      <link>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</link>
+      <pubDate>Mon, 13 Jun 2022 13:37:17 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</guid>
+      <description>内网小白一枚，打算从一个个概念开始记 Windows本地认证 SAM数据库 路径：%SystemRoot%\system32\config\sam</description>
+    </item>
+    
+    <item>
+      <title>2022.6.12王英豪赠</title>
+      <link>https://proben1.github.io/2022/2022.6.12%E7%8E%8B%E8%8B%B1%E8%B1%AA%E8%B5%A0/</link>
+      <pubDate>Mon, 13 Jun 2022 13:29:32 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/2022.6.12%E7%8E%8B%E8%8B%B1%E8%B1%AA%E8%B5%A0/</guid>
+      <description>突然想到了一段话，虽然我忘记了记忆的出处但格外令人印象深刻 “为什么满足于绚烂而短暂的爱？” “我感受不到那种永恒的美，但，诗歌需要回车” 我的一</description>
+    </item>
+    
     <item>
       <title>6.10中午梦</title>
       <link>https://proben1.github.io/2022/6.10%E4%B8%AD%E5%8D%88%E6%A2%A6/</link>
