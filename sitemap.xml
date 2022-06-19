@@ -2,19 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://proben1.github.io/categories/</loc>
-    <lastmod>2022-06-19T19:04:44+08:00</lastmod>
+    <loc>https://proben1.github.io/2022/name/</loc>
+    <lastmod>2022-06-19T20:20:57+08:00</lastmod>
   </url><url>
     <loc>https://proben1.github.io/post/</loc>
+    <lastmod>2022-06-19T20:20:57+08:00</lastmod>
+  </url><url>
+    <loc>https://proben1.github.io/</loc>
+    <lastmod>2022-06-19T20:20:57+08:00</lastmod>
+  </url><url>
+    <loc>https://proben1.github.io/categories/</loc>
     <lastmod>2022-06-19T19:04:44+08:00</lastmod>
   </url><url>
     <loc>https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/</loc>
     <lastmod>2022-06-19T19:04:44+08:00</lastmod>
   </url><url>
     <loc>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</loc>
-    <lastmod>2022-06-19T19:04:44+08:00</lastmod>
-  </url><url>
-    <loc>https://proben1.github.io/</loc>
     <lastmod>2022-06-19T19:04:44+08:00</lastmod>
   </url><url>
     <loc>https://proben1.github.io/tags/</loc>
