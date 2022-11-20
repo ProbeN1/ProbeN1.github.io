@@ -6,7 +6,34 @@
     <description>Recent content in Posts on 茄子的养殖场</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Oct 2022 10:32:10 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 16:54:59 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>茄科生物观测日志2022.9 10</title>
+      <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/</link>
+      <pubDate>Sun, 20 Nov 2022 16:54:59 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/</guid>
+      <description>2022.9-10 10.31 深渊12层满星，自力更生。 明日方舟音乐会！！！！！！ Jameson到了，喝起来有种枫糖的香味。 我觉得自己在这点上特别幸运，因为是那种喝完</description>
+    </item>
+    
+    <item>
+      <title>Java版本</title>
+      <link>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Sun, 20 Nov 2022 16:21:00 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</guid>
+      <description>省流：java se6= jdk6+jre6 历史原因 jdk1.6= jdk6 jdk1.8= jdk8 以此类推，现在全都直接叫jdk+版本了，没有1.x、 如现在Java SE 19，对应JDK19 Java SE 8，对应JDK</description>
+    </item>
+    
+    <item>
+      <title>记一次SpringBoot2报错排查</title>
+      <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
+      <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
+      
+      <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
+      <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
+    </item>
+    
     <item>
       <title>茄科生物观测日志2022.8</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/</link>
