@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 茄子的养殖场</title>
+    <link>https://proben1.github.io/tags/linux/</link>
+    <description>Recent content in Linux on 茄子的养殖场</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 May 2024 15:44:05 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle Linux Installation</title>
+      <link>https://proben1.github.io/2024/oracle-linux-installation/</link>
+      <pubDate>Thu, 09 May 2024 15:44:05 +0800</pubDate>
+      <guid>https://proben1.github.io/2024/oracle-linux-installation/</guid>
+      <description>Overview of Linux GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular. img Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on. Difference between UNIX and</description>
+    </item>
+  </channel>
+</rss>

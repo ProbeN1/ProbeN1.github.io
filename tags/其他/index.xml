@@ -4,35 +4,30 @@
     <title>其他 on 茄子的养殖场</title>
     <link>https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/</link>
     <description>Recent content in 其他 on 茄子的养殖场</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 May 2022 21:08:57 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 May 2022 21:08:57 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sqlmap使用实例</title>
       <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
       <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;#34;url&amp;#34; sqlmap -u &amp;#34;url&amp;#34; --dbs sqlmap -u &amp;#34;url&amp;#34; -D xx --tables sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump 或</description>
     </item>
-    
     <item>
       <title>绕过禁用F12</title>
       <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
       <description>今天做题的时候，遇到了这个，一按F12，就弹出hacker 以前还真没遇见过，搜了一下，原来是js &amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34; &amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&amp;gt; &amp;lt;html xmlns=&amp;#34;http://www.w3.org/1999/xhtml&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; /*禁</description>
     </item>
-    
     <item>
       <title>怎么ping不了</title>
       <link>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</link>
       <pubDate>Thu, 11 Nov 2021 03:32:29 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</guid>
       <description>前言 关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用hexo d来把更新的博客上传到github pages上去，然而很不</description>
     </item>
-    
   </channel>
 </rss>

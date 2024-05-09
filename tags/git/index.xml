@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on 茄子的养殖场</title>
+    <title>Git on 茄子的养殖场</title>
     <link>https://proben1.github.io/tags/git/</link>
-    <description>Recent content in git on 茄子的养殖场</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Git on 茄子的养殖场</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Nov 2021 09:58:45 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Nov 2021 09:58:45 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git</title>
       <link>https://proben1.github.io/2021/git/</link>
       <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/git/</guid>
       <description>配置 git config -l 全部配置 git config &amp;ndash;global &amp;ndash;list 用户配置 所有配置文件都保存在本地 !! 设置用户与邮箱 !!!!!! git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;xixi@github.com&amp;rdquo; git理论: Workspace:工作区,平时</description>
     </item>
-    
   </channel>
 </rss>

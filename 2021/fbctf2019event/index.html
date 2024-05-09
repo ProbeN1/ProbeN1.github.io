@@ -11,7 +11,10 @@
 <meta property='og:site_name' content='茄子的养殖场'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2021-11-22T16:37:25&#43;08:00'/><meta property='article:modified_time' content='2021-11-22T16:37:25&#43;08:00'/>
 <meta name="twitter:title" content="[FBCTF2019]Event">
-<meta name="twitter:description" content="[FBCTF2019]Event flask 没想到在event_important有注入 猜它可能大概想这样 name = event_name address = event_address print(event_important) event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config 于是查到秘钥 fb&#43;wwn!n1yo&#43;9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y 解密，出现的是字符串，不是json 加密 from flask import"><style>
+<meta name="twitter:description" content="[FBCTF2019]Event flask 没想到在event_important有注入 猜它可能大概想这样 name = event_name address = event_address print(event_important) event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config 于是查到秘钥 fb&#43;wwn!n1yo&#43;9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y 解密，出现的是字符串，不是json 加密 from flask import">
+  
+
+<style>
     :root {
         --article-font-family: "Noto Serif SC", var(--base-font-family);
     }
@@ -333,7 +336,7 @@
 </span></span><span style="display:flex;"><span>app <span style="color:#ff79c6">=</span> Flask(__name__)
 </span></span><span style="display:flex;"><span>app<span style="color:#ff79c6">.</span>secret_key <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">b</span><span style="color:#f1fa8c">&#39;fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;&amp;_ej$tez)$_ik36n8d7o6mr#y&#39;</span>
 </span></span><span style="display:flex;"><span>session_serializer <span style="color:#ff79c6">=</span> SecureCookieSessionInterface()<span style="color:#ff79c6">.</span>get_signing_serializer(app)
-</span></span><span style="display:flex;"><span>@app<span style="color:#ff79c6">.</span>route(<span style="color:#f1fa8c">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>@app.route(<span style="color:#f1fa8c">&#39;/&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">index</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(session_serializer<span style="color:#ff79c6">.</span>dumps(<span style="color:#f1fa8c">&#34;admin&#34;</span>))
 </span></span><span style="display:flex;"><span>index()
@@ -526,6 +529,8 @@
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -544,8 +549,8 @@
         
             2020 - 
         
-        2023 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了65.4k字·共 47篇文章</br><span><p>
+        2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了65.9k字·共 48篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -711,7 +716,7 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">31</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">32</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">11</a>
             </span></div>
@@ -741,6 +746,14 @@ document.getElementById('days').innerHTML = number_of_days;
         
         
         <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">1</span>
+                        
+                    </a> 
+                </div>
             <div class="archives-year">
                     <a href="/archives/#2023">
                         
@@ -793,7 +806,7 @@ document.getElementById('days').innerHTML = number_of_days;
             </a>
         
             <a href="/tags/web%E5%AE%89%E5%85%A8/" class="font_size_3">
-                web安全
+                Web安全
             </a>
         
             <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_3">
@@ -809,11 +822,11 @@ document.getElementById('days').innerHTML = number_of_days;
             </a>
         
             <a href="/tags/php/" class="font_size_2">
-                php
+                Php
             </a>
         
             <a href="/tags/python/" class="font_size_2">
-                python
+                Python
             </a>
         
             <a href="/tags/sql/" class="font_size_2">
@@ -821,7 +834,7 @@ document.getElementById('days').innerHTML = number_of_days;
             </a>
         
             <a href="/tags/docker/" class="font_size_1">
-                docker
+                Docker
             </a>
         
     </div>

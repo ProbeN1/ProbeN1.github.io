@@ -4,26 +4,23 @@
     <title>Java on 茄子的养殖场</title>
     <link>https://proben1.github.io/tags/java/</link>
     <description>Recent content in Java on 茄子的养殖场</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 16:21:00 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 16:21:00 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java版本</title>
       <link>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</link>
       <pubDate>Sun, 20 Nov 2022 16:21:00 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</guid>
       <description>省流：java se6= jdk6+jre6 历史原因 jdk1.6= jdk6 jdk1.8= jdk8 以此类推，现在全都直接叫jdk+版本了，没有1.x、 如现在Java SE 19，对应JDK19 Java SE 8，对应JDK</description>
     </item>
-    
     <item>
       <title>记一次SpringBoot2报错排查</title>
       <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
       <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
       <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
     </item>
-    
   </channel>
 </rss>

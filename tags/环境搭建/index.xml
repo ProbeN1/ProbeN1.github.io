@@ -4,44 +4,37 @@
     <title>环境搭建 on 茄子的养殖场</title>
     <link>https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
     <description>Recent content in 环境搭建 on 茄子的养殖场</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 11:30:30 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 11:30:30 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记一次SpringBoot2报错排查</title>
       <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
       <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
       <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
     </item>
-    
     <item>
       <title>Stack修改</title>
       <link>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</link>
       <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</guid>
       <description>使用主题 我选了一个stack的魔改的主题，感谢作者！（已给星星） https://github.com/Mantyke/Hugo-stack-theme-mod 下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended 基</description>
     </item>
-    
     <item>
       <title>LNMP环境搭建成功篇</title>
       <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</link>
       <pubDate>Thu, 14 Apr 2022 20:24:35 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</guid>
       <description>这里!!!https://lnmp.org/install.html su root yum install screen screen -S lnmp wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.8.tar.gz &amp;amp;&amp;amp; cd lnmp1.8 &amp;amp;&amp;amp; ./install.sh lnmp 一键安装&amp;hellip;&amp;h</description>
     </item>
-    
     <item>
       <title>LNMP环境搭建失败篇</title>
       <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</link>
       <pubDate>Thu, 14 Apr 2022 20:24:28 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</guid>
       <description>教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）</description>
     </item>
-    
   </channel>
 </rss>

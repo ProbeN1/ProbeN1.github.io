@@ -4,431 +4,345 @@
     <title>Posts on 茄子的养殖场</title>
     <link>https://proben1.github.io/post/</link>
     <description>Recent content in Posts on 茄子的养殖场</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Apr 2023 22:39:05 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 May 2024 15:44:05 +0800</lastBuildDate>
+    <atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle Linux Installation</title>
+      <link>https://proben1.github.io/2024/oracle-linux-installation/</link>
+      <pubDate>Thu, 09 May 2024 15:44:05 +0800</pubDate>
+      <guid>https://proben1.github.io/2024/oracle-linux-installation/</guid>
+      <description>Overview of Linux GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular. img Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on. Difference between UNIX and</description>
+    </item>
     <item>
       <title>英语单词(会议)</title>
       <link>https://proben1.github.io/2023/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E4%BC%9A%E8%AE%AE/</link>
       <pubDate>Sun, 02 Apr 2023 22:39:05 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2023/%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E4%BC%9A%E8%AE%AE/</guid>
       <description>Meeting-会议：这个Meeting是最常见的用词，可以说是个万金油，任何人都可以说我有一个meeting要开，要参加等等。Meetin</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志2022.9 10</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/</link>
       <pubDate>Sun, 20 Nov 2022 16:54:59 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/</guid>
       <description>2022.9-10 10.31 深渊12层满星，自力更生。 明日方舟音乐会！！！！！！ Jameson到了，喝起来有种枫糖的香味。 我觉得自己在这点上特别幸运，因为是那种喝完</description>
     </item>
-    
     <item>
       <title>Java版本</title>
       <link>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</link>
       <pubDate>Sun, 20 Nov 2022 16:21:00 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</guid>
       <description>省流：java se6= jdk6+jre6 历史原因 jdk1.6= jdk6 jdk1.8= jdk8 以此类推，现在全都直接叫jdk+版本了，没有1.x、 如现在Java SE 19，对应JDK19 Java SE 8，对应JDK</description>
     </item>
-    
     <item>
       <title>记一次SpringBoot2报错排查</title>
       <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
       <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
       <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志2022.8</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/</link>
       <pubDate>Sun, 09 Oct 2022 10:32:10 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/</guid>
       <description>2022.8 8.29 学校开学，线上上课。 疫情加重，公交地铁限流，同日下午改为线上办公。这下学时工时都凑上了。 这就是我安心预习数学的好机会啊！ 8.28 于杰家一天。 有</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志2022.7</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.7/</link>
       <pubDate>Sun, 14 Aug 2022 23:15:24 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.7/</guid>
       <description>2022.7 7.31 今天习惯性开CE造戴森球，结果被检测ban掉了。。。 重建！重开个档！ 这次要让总线魔教和超市大法遍布星系！ 顺带一提，今天终于冲出来了完美的</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志2022.6</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.6/</link>
       <pubDate>Sun, 14 Aug 2022 23:15:18 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.6/</guid>
       <description>2022.6 6.30 计时模块：牺牲74LS161一片，555一片 抢答模块：牺牲数码管一块 信号模块：牺牲LED两支，黄色绿色 完成，难忘，数电，课设，通原，考试</description>
     </item>
-    
     <item>
       <title>华山两日游</title>
       <link>https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/</link>
       <pubDate>Sun, 19 Jun 2022 19:04:44 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/</guid>
       <description>华山 2022.6.16-6.17 金乌腾晓，日出扶桑。 ——RA3日冕mod神州阵营金乌轰战机出厂音效 准备 咱们认为 有时候找不到同伴 自己前行也无妨 今年六月份免票，但是从玉泉</description>
     </item>
-    
     <item>
       <title>理解Windows认证</title>
       <link>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</link>
       <pubDate>Mon, 13 Jun 2022 13:37:17 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</guid>
       <description>内网小白一枚，打算从一个个概念开始记 Windows本地认证 SAM数据库 路径：%SystemRoot%\system32\config\sam</description>
     </item>
-    
     <item>
       <title>2022.6.12英豪赠</title>
       <link>https://proben1.github.io/2022/2022.6.12%E8%8B%B1%E8%B1%AA%E8%B5%A0/</link>
       <pubDate>Mon, 13 Jun 2022 13:29:32 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/2022.6.12%E8%8B%B1%E8%B1%AA%E8%B5%A0/</guid>
       <description>作者：JokerUA 突然想到了一段话，虽然我忘记了记忆的出处但格外令人印象深刻 “为什么满足于绚烂而短暂的爱？” “我感受不到那种永恒的美，但，</description>
     </item>
-    
     <item>
       <title>6.10中午梦</title>
       <link>https://proben1.github.io/2022/6.10%E4%B8%AD%E5%8D%88%E6%A2%A6/</link>
       <pubDate>Mon, 13 Jun 2022 13:14:55 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/6.10%E4%B8%AD%E5%8D%88%E6%A2%A6/</guid>
       <description>6.10中午梦 引言：我究竟对她做了什么，让她如此沉迷于我，我的小可爱，我不知道。不过有一点是大家所希望的，就是她走出了阴霾。 坐标，大连，市政</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志2022.5</title>
       <link>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.5/</link>
       <pubDate>Sat, 04 Jun 2022 12:52:34 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.5/</guid>
       <description>2022.5 6.1 凌晨，0：42，读完《我们生活在南京》。 天瑞老师的书，中国式的爱，信息的浪漫，20年的距离，以及，南京。 以后，记得在月牙湖埋一个时间胶囊</description>
     </item>
-    
     <item>
       <title>电脑重装</title>
       <link>https://proben1.github.io/2022/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/</link>
       <pubDate>Fri, 27 May 2022 22:17:48 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/</guid>
       <description>可恶的win11更新，文件资源管理器打不开，打不开就重新打开，反复白屏。 系统坏了，就像是女朋友车祸失忆，还好身子没问题，无奈找学校良心师傅重</description>
     </item>
-    
     <item>
       <title>2022.5.22梦</title>
       <link>https://proben1.github.io/2022/2022.5.22%E6%A2%A6/</link>
       <pubDate>Mon, 23 May 2022 13:18:47 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/2022.5.22%E6%A2%A6/</guid>
       <description>2022.5.22梦 一觉起来，冷静了好多。 做了一个很长的梦，梦见和zc在同一个学校，梦见半夜在大妈家偷偷打csgo，梦见大一的那些同学拿了个</description>
     </item>
-    
     <item>
       <title>KCTF2022春 4 飞蛾扑火</title>
       <link>https://proben1.github.io/2022/kctf2022%E6%98%A5-4-%E9%A3%9E%E8%9B%BE%E6%89%91%E7%81%AB/</link>
       <pubDate>Wed, 18 May 2022 20:05:12 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/kctf2022%E6%98%A5-4-%E9%A3%9E%E8%9B%BE%E6%89%91%E7%81%AB/</guid>
       <description>source:http://121.36.145.157:8044/ 进去之后F12 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;欢迎挑战 Design by 香草&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!--phpinfo.php--&amp;gt; &amp;lt;img src=&amp;#34;url.php?url=https://ctf.pediy.com/upload/team/762/team236762.png&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 提示了phpinfo，http:</description>
     </item>
-    
     <item>
       <title>同源策略</title>
       <link>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</link>
       <pubDate>Tue, 17 May 2022 23:15:34 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/</guid>
       <description>这篇文章负责解决一次面试题： 简单的说一下同源策略 说说cors 和 jsonp分别是干什么的 为什么会出现这两个漏洞，以及如何进行修复 cors 和 jsonp 在修复过</description>
     </item>
-    
     <item>
       <title>DNSlog注入</title>
       <link>https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Tue, 17 May 2022 21:55:19 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/</guid>
       <description>DNSlog注入学习 前置 域名分级与域名解析过程(DNS) 读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务</description>
     </item>
-    
     <item>
       <title>[安洵杯2019]iamthinking</title>
       <link>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</link>
       <pubDate>Thu, 12 May 2022 23:31:13 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E5%AE%89%E6%B4%B5%E6%9D%AF2019iamthinking/</guid>
       <description>www.zip源码泄露，Thinkphp6.0，代码在app/controller/Index.php &amp;lt;?php namespace app\controller; use app\BaseController; class Index extends BaseController { public function index() { echo &amp;#34;&amp;lt;img src=&amp;#39;../test.jpg&amp;#39;&amp;#34;.&amp;#34;/&amp;gt;&amp;#34;; $paylaod =</description>
     </item>
-    
     <item>
       <title>离谱与webshell</title>
       <link>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</link>
       <pubDate>Thu, 12 May 2022 20:53:12 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</guid>
       <description>php5中assert是一个函数，我们可以通过$f=&#39;assert&#39;;$f(...);这样的方法来动态执行任意代码。 但php7中，asser</description>
     </item>
-    
     <item>
       <title>正则与PCRE回溯</title>
       <link>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</link>
       <pubDate>Thu, 12 May 2022 20:53:02 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</guid>
       <description>正则表达式 PHP利用PCRE回溯次数限制绕过 起源 20世纪40年代：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了</description>
     </item>
-    
     <item>
       <title>Stack修改</title>
       <link>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</link>
       <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</guid>
       <description>使用主题 我选了一个stack的魔改的主题，感谢作者！（已给星星） https://github.com/Mantyke/Hugo-stack-theme-mod 下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended 基</description>
     </item>
-    
     <item>
       <title>2022.5.10梦</title>
       <link>https://proben1.github.io/2022/2022.5.10%E6%A2%A6/</link>
       <pubDate>Tue, 10 May 2022 11:56:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/2022.5.10%E6%A2%A6/</guid>
       <description>陨石为人类送上的美味： 橙黑相间的外形，蜈蚣一样外表，无不透露着它的危险。 但这并不能阻止美食家们。 人们无法做到无视它锋利的口器，所以要从尾部的</description>
     </item>
-    
     <item>
       <title>[CISCN2019总决赛Day2Web1]Easyweb</title>
       <link>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</link>
       <pubDate>Thu, 05 May 2022 19:11:01 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/ciscn2019%E6%80%BB%E5%86%B3%E8%B5%9Bday2web1easyweb/</guid>
       <description>[CISCN2019 总决赛 Day2 Web1]Easyweb sql绕过 文件上传短标签绕过 信息收集 /robots.txt User-agent: * Disallow: *.php.bak index.php user.php image.php 其中image.php.bak存在 在其中又发现config.php /.DS_Store 没东西 image.php.bak</description>
     </item>
-    
     <item>
       <title>sqlmap使用实例</title>
       <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
       <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
       <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;#34;url&amp;#34; sqlmap -u &amp;#34;url&amp;#34; --dbs sqlmap -u &amp;#34;url&amp;#34; -D xx --tables sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump 或</description>
     </item>
-    
     <item>
       <title>Docker学习</title>
       <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
       <description>Docker Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何</description>
     </item>
-    
     <item>
       <title>LNMP环境搭建成功篇</title>
       <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</link>
       <pubDate>Thu, 14 Apr 2022 20:24:35 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</guid>
       <description>这里!!!https://lnmp.org/install.html su root yum install screen screen -S lnmp wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.8.tar.gz &amp;amp;&amp;amp; cd lnmp1.8 &amp;amp;&amp;amp; ./install.sh lnmp 一键安装&amp;hellip;&amp;h</description>
     </item>
-    
     <item>
       <title>LNMP环境搭建失败篇</title>
       <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</link>
       <pubDate>Thu, 14 Apr 2022 20:24:28 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</guid>
       <description>教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）</description>
     </item>
-    
     <item>
       <title>第一次面试经历</title>
       <link>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</link>
       <pubDate>Sun, 10 Apr 2022 09:13:17 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</guid>
       <description>hvv蓝队 西邮的一个学长，很温柔 先是看我加入了AD网络安全协会，他说自己是协会的创始人之一，我tm直接借机套一波近乎先，吹了下协会 然后开始面</description>
     </item>
-    
     <item>
       <title>Windows权限基础</title>
       <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
       <description>用户账户： 用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码 SID：用户帐户拥有唯一的安全标识符 SAM：本地安全帐户数据库，文</description>
     </item>
-    
     <item>
       <title>伪静态注入</title>
       <link>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</link>
       <pubDate>Sat, 26 Mar 2022 18:01:28 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2022/%E4%BC%AA%E9%9D%99%E6%80%81%E6%B3%A8%E5%85%A5/</guid>
       <description>伪静态注入 伪静态网站 看似是静态网页（以.html、.htm等结尾），不存在任何的数据交互，却其实是动态网页，存在数据交互。 将动态网页的id等</description>
     </item>
-    
     <item>
       <title>茄科生物观测日志(demo)</title>
       <link>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97demo/</link>
       <pubDate>Mon, 06 Dec 2021 12:08:35 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%97demo/</guid>
       <description>2022-5-12 今天捣鼓了一天的博客，互联网是在是太精彩啦！ 在经过重重深思之后，我仍然无法决定观察日记是要写成这种小作文的形式还是写成每天流水账的形式，觉</description>
     </item>
-    
     <item>
       <title>[Zer0pts2020]musicblog</title>
       <link>https://proben1.github.io/2021/zer0pts2020musicblog/</link>
       <pubDate>Sun, 05 Dec 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/zer0pts2020musicblog/</guid>
       <description>[Zer0pts2020]musicblog 有admin账户 有下载 有注册登录 当然，最后点子在post音频里 去想任意下载，不行。最后看wp，原来给源码，再做一遍。 内容安全策略( CSP ) http://foreversong.cn/archives/760 C</description>
     </item>
-    
     <item>
       <title>绕过禁用F12</title>
       <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
       <description>今天做题的时候，遇到了这个，一按F12，就弹出hacker 以前还真没遇见过，搜了一下，原来是js &amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34; &amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&amp;gt; &amp;lt;html xmlns=&amp;#34;http://www.w3.org/1999/xhtml&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; /*禁</description>
     </item>
-    
     <item>
       <title>2021DNUICTF,wp</title>
       <link>https://proben1.github.io/2021/2021dnuictfwp/</link>
       <pubDate>Sat, 04 Dec 2021 19:00:12 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/2021dnuictfwp/</guid>
       <description>WEB [签到] flag 凑齐20位，召唤flag ZmxhZ3tuc3NfbG9naW59 base64解码 flag{nss_login} [萌]odd_upload Smarty ssti模板注入，文件覆盖 自己找个Smarty版本，对比</description>
     </item>
-    
     <item>
       <title>[FBCTF2019]Event</title>
       <link>https://proben1.github.io/2021/fbctf2019event/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/fbctf2019event/</guid>
       <description>[FBCTF2019]Event flask 没想到在event_important有注入 猜它可能大概想这样 name = event_name address = event_address print(event_important) event_name=1&amp;amp;event_address=1&amp;amp;event_important=__class__.__init__.__globals__[app].config 于是查到秘钥 fb+wwn!n1yo+9c(9s6!_3o#nqm&amp;amp;&amp;amp;_ej$tez)$_ik36n8d7o6mr#y 解密，出现的是字符串，不是json 加密 from flask import</description>
     </item>
-    
     <item>
       <title>[FireshellCTF2020]URL_TO_PDF</title>
       <link>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/fireshellctf2020url_to_pdf/</guid>
       <description>[FireshellCTF2020]URL TO PDF 由于刚刚有些无聊所以再开一道 开局一个输入框，url转pdf？没见过 弹出下载，但是没法打开，用010来看，可以看到html，猜测爬虫之类</description>
     </item>
-    
     <item>
       <title>[NPUCTF2020]验证🐎</title>
       <link>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/npuctf2020%E9%AA%8C%E8%AF%81/</guid>
       <description>js题，长知识了 F12，ctrl+U查源码 源码 const express = require(&amp;#39;express&amp;#39;); const bodyParser = require(&amp;#39;body-parser&amp;#39;); const cookieSession = require(&amp;#39;cookie-session&amp;#39;); const fs = require(&amp;#39;fs&amp;#39;); const crypto = require(&amp;#39;crypto&amp;#39;); const keys = require(&amp;#39;./key.js&amp;#39;).keys; function md5(s) { return crypto.createHash(&amp;#39;md5&amp;#39;) .update(s) .digest(&amp;#39;hex&amp;#39;); } function saferEval(str) { if (str.replace(/(?:Math(?:\.\w+)?)|[()+\-*/&amp;amp;|^%&amp;lt;&amp;gt;=,?:]|(?:\d+\.?\d*(?:e\d+)?)| /g, &amp;#39;&amp;#39;)) { return null; } return eval(str); } //</description>
     </item>
-    
     <item>
       <title>[安洵杯2019]cssgame</title>
       <link>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/</guid>
       <description>[安洵杯 2019]cssgame 露骨的F12 https://websec.readthedocs.io/zh/latest/vuln/xss/trick/cssi.html CSS注入，如果有机会写任意CSS，那么可以做到 1.得到input栏里的token 2.得到&amp;lt;script&amp;gt</description>
     </item>
-    
     <item>
       <title>[网鼎杯2018]Unfinish</title>
       <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2018unfinish/</guid>
       <description>[网鼎杯2018]Unfinish 二次注入，注入点是在register.php传入的username中。 1.猜测语句 insert table values (&amp;#39;email&amp;#39;,&amp;#39;username&amp;#39;,&amp;#39;password&amp;#39;) 2.表名是猜的 过</description>
     </item>
-    
     <item>
       <title>[网鼎杯2020半决赛]BabyJS</title>
       <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/</guid>
       <description>快速拔刀（不是） 快速找到关键源码 var express = require(&amp;#39;express&amp;#39;); var config = require(&amp;#39;../config&amp;#39;); var url=require(&amp;#39;url&amp;#39;); var child_process=require(&amp;#39;child_process&amp;#39;); var fs=require(&amp;#39;fs&amp;#39;); var request=require(&amp;#39;request&amp;#39;); var router = express.Router(); var blacklist=[&amp;#39;127.0.0.1.xip.io&amp;#39;,&amp;#39;::ffff:127.0.0.1&amp;#39;,&amp;#39;127.0.0.1&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;localhost&amp;#39;,&amp;#39;0.0.0.0&amp;#39;,&amp;#39;[::1]&amp;#39;,&amp;#39;::1&amp;#39;]; router.get(&amp;#39;/&amp;#39;, function(req, res, next) { res.json({}); }); router.get(&amp;#39;/debug&amp;#39;, function(req, res, next) { console.log(req.ip); if(blacklist.indexOf(req.ip)!=-1){ console.log(&amp;#39;res&amp;#39;); var u=req.query.url.replace(/[\&amp;#34;\&amp;#39;]/ig,&amp;#39;&amp;#39;); console.log(url.parse(u).href); let log=`echo &amp;#39;${url.parse(u).href}&amp;#39;&amp;gt;&amp;gt;/tmp/log`; console.log(log); child_process.exec(log); res.json({data:fs.readFileSync(&amp;#39;/tmp/log&amp;#39;).toString()}); }else{ res.json({}); } }); router.post(&amp;#39;/debug&amp;#39;, function(req, res, next)</description>
     </item>
-    
     <item>
       <title>[网鼎杯2020玄武组]SSRFMe</title>
       <link>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E7%8E%84%E6%AD%A6%E7%BB%84ssrfme/</guid>
       <description>[网鼎杯 2020 玄武组]SSRFMe &amp;lt;?php function check_inner_ip($url) { $match_result=preg_match(&amp;#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&amp;#39;,$url); if (!$match_result) { die(&amp;#39;url fomat error&amp;#39;); } try { $url_parse=parse_url($url); } catch(Exception $e) { die(&amp;#39;url fomat error&amp;#39;); return false; } $hostname=$url_parse[&amp;#39;host&amp;#39;]; $ip=gethostbyname($hostname); $int_ip=ip2long($ip); return ip2long(&amp;#39;127.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;10.0.0.0&amp;#39;)&amp;gt;&amp;gt;24 == $int_ip&amp;gt;&amp;gt;24 || ip2long(&amp;#39;172.16.0.0&amp;#39;)&amp;gt;&amp;gt;20 == $int_ip&amp;gt;&amp;gt;20 || ip2long(&amp;#39;192.168.0.0&amp;#39;)&amp;gt;&amp;gt;16 == $int_ip&amp;gt;&amp;gt;16; } function safe_request_url($url) { if (check_inner_ip($url)) { echo $url.&amp;#39; is inner</description>
     </item>
-    
     <item>
       <title>P5461赦免战俘</title>
       <link>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</link>
       <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</guid>
       <description>P5461 赦免战俘 心态小裂，写了n遍，最后发现循环里忘加x，y了 a = int(input()) b = [[1 for i in range(2**a)] for j in range(2**a)] l = 2**a def func(l,x,y): if l == 1 : return for i in range(x,x+int(l/2)) : for j in range(y,y+int(l/2)) : b[i][j] = 0 func(int(l/2),x+int(l/2),y) func(int(l/2),x,y+int(l/2)) func(int(l/2),x+int(l/2),y+int(l/2)) func(l,0,0)</description>
     </item>
-    
     <item>
       <title>刷题1</title>
       <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</link>
       <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</guid>
       <description>182. 查找重复的电子邮箱 select `Email` from ( select `Email`, count(`Email`) as a from `Person` group by `Email` ) as temp where a &amp;gt; 1; 一些不熟悉的语句 like 模糊查询 select * from employees where last_name like &amp;#39;%a%&amp;#39;; group by（常常和聚合函数一起使用） 聚合</description>
     </item>
-    
     <item>
       <title>Python端口扫描等</title>
       <link>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</link>
       <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
       <description>思路 这里使用了TCP连接扫描，利用操作系统原生的网络功能。 用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。 还有另</description>
     </item>
-    
     <item>
       <title>爬取xupt课程表</title>
       <link>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</link>
       <pubDate>Mon, 15 Nov 2021 20:38:54 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/</guid>
       <description>查课表，以前用的是超级课程表，嫌乎广告太多，加上手机内存不够，卸了，自己写个课表。 由于学校教务系统的参数太多了，直接用了selenium来模</description>
     </item>
-    
     <item>
       <title>Git</title>
       <link>https://proben1.github.io/2021/git/</link>
       <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/git/</guid>
       <description>配置 git config -l 全部配置 git config &amp;ndash;global &amp;ndash;list 用户配置 所有配置文件都保存在本地 !! 设置用户与邮箱 !!!!!! git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;xixi@github.com&amp;rdquo; git理论: Workspace:工作区,平时</description>
     </item>
-    
     <item>
       <title>怎么ping不了</title>
       <link>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</link>
       <pubDate>Thu, 11 Nov 2021 03:32:29 +0800</pubDate>
-      
       <guid>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</guid>
       <description>前言 关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用hexo d来把更新的博客上传到github pages上去，然而很不</description>
     </item>
-    
   </channel>
 </rss>
