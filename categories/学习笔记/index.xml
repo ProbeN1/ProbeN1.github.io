@@ -6,8 +6,15 @@
     <description>Recent content in 学习笔记 on 茄子的养殖场</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 May 2024 15:44:05 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2024 15:55:13 +0800</lastBuildDate>
     <atom:link href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux常用命令和vi</title>
+      <link>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi/</link>
+      <pubDate>Thu, 09 May 2024 15:55:13 +0800</pubDate>
+      <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi/</guid>
+      <description>Startup process in Linux Stage1 Hardware boot POST + BIOS Stage2 BootLoader Stage3 Kernel boot Stage4 Sys init Process init is the starting point for all processes on the system. /etc/inittab Determine the run level in system(0-6). Run Level Change run level : init n ,n=0,1,3,5,6 （init 0 means shutdown without syn, 6 means reboot） Change the default run level</description>
+    </item>
     <item>
       <title>Oracle Linux Installation</title>
       <link>https://proben1.github.io/2024/oracle-linux-installation/</link>

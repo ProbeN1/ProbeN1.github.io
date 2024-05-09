@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='完成一个名为大学的作品'><title>Posts</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1'><title>磁盘分区以及LVM</title>
 
-<link rel='canonical' href='https://proben1.github.io/post/'>
+<link rel='canonical' href='https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='Posts'>
-<meta property='og:description' content='完成一个名为大学的作品'>
-<meta property='og:url' content='https://proben1.github.io/post/'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='磁盘分区以及LVM'>
+<meta property='og:description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1'>
+<meta property='og:url' content='https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-05-09T15:57:26&#43;08:00 '/>
-<meta name="twitter:title" content="Posts">
-<meta name="twitter:description" content="完成一个名为大学的作品"><link rel="alternate" type="application/rss&#43;xml" href="https://proben1.github.io/post/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-09T15:57:26&#43;08:00'/><meta property='article:modified_time' content='2024-05-09T15:57:26&#43;08:00'/>
+<meta name="twitter:title" content="磁盘分区以及LVM">
+<meta name="twitter:description" content="lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1">
   
 
 <style>
@@ -32,7 +32,9 @@
 </script>
 
     </head>
-    <body class="">
+    <body class="
+    article-page
+">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -55,7 +57,26 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+<div class="container main-container flex 
+    <!-- 
+        on-phone--column extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -235,157 +256,160 @@
         
     </ol>
 </aside>
-<main class="main full-width">
-    <h3 class="section-title">
-        
-            Section
-        
-    </h3>
 
-    <div class="section-card">
-        <div class="section-details">
-            <h3 class="section-count">50 pages</h3>
-            <h1 class="section-term">Posts</h1>
-            
-        </div>
-    </div>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
     
-    <section class="article-list--compact">
+    <header class="article-category">
         
-            <article>
-    <a href="/2021/%E5%88%B7%E9%A2%981/">
-        <div class="article-details">
-            <h2 class="article-title">刷题1</h2>
-            <footer class="article-time">
-                <time datetime='2021-11-22T16:35:10&#43;08:00'>Nov 22, 2021</time>
-            </footer>
-        </div>
-    </a>
-</article>
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/">磁盘分区以及LVM</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
         
-            <article>
-    <a href="/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/">
-        <div class="article-details">
-            <h2 class="article-title">Python端口扫描等</h2>
-            <footer class="article-time">
-                <time datetime='2021-11-18T22:13:33&#43;08:00'>Nov 18, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" loading="lazy" alt="Featured image of post Python端口扫描等" />
-                
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 09, 2024</time>
             </div>
         
-    </a>
-</article>
+
         
-            <article>
-    <a href="/2021/%E7%88%AC%E5%8F%96xupt%E8%AF%BE%E7%A8%8B%E8%A1%A8/">
-        <div class="article-details">
-            <h2 class="article-title">爬取xupt课程表</h2>
-            <footer class="article-time">
-                <time datetime='2021-11-15T20:38:54&#43;08:00'>Nov 15, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://pic.imgdb.cn/item/624023fa27f86abb2a9fb4a9.png" loading="lazy" alt="Featured image of post 爬取xupt课程表" />
-                
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    41字
+                </time>
             </div>
         
-    </a>
-</article>
-        
-            <article>
-    <a href="/2021/git/">
-        <div class="article-details">
-            <h2 class="article-title">Git</h2>
-            <footer class="article-time">
-                <time datetime='2021-11-14T09:58:45&#43;08:00'>Nov 14, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="https://pic.imgdb.cn/item/624024bb27f86abb2aa32a8d.png" loading="lazy" alt="Featured image of post Git" />
-                
-            </div>
-        
-    </a>
-</article>
-        
-            <article>
-    <a href="/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/">
-        <div class="article-details">
-            <h2 class="article-title">怎么ping不了</h2>
-            <footer class="article-time">
-                <time datetime='2021-11-11T03:32:29&#43;08:00'>Nov 11, 2021</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                <img src="/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/whynotping_hu616477bebd46c20b4c98465270ecd701_142418_120x120_fill_q75_box_smart1.jpg" 
-                        width="120"
-                        height="120" 
-                        alt="怎么ping不了"
-                        loading="lazy">
-                
-            </div>
-        
-    </a>
-</article>
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lsblk
+</span></span><span style="display:flex;"><span>fdisk /dev/nvme0n1
+</span></span><span style="display:flex;"><span>n/p/e/+1G
+</span></span><span style="display:flex;"><span>mkfs.xfs /dev/nvme0n1p3(56)
+</span></span><span style="display:flex;"><span>mount /dev/nvme0n1p3 /root/new
+</span></span><span style="display:flex;"><span>vi /etc/fstab
+</span></span><span style="display:flex;"><span>(add &#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&#34;)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>parted /dev/sdb1
+</span></span><span style="display:flex;"><span>mklabel gpt
+</span></span><span style="display:flex;"><span>print
+</span></span><span style="display:flex;"><span>mkpart primary 0% 100%
+</span></span><span style="display:flex;"><span>quit
+</span></span><span style="display:flex;"><span># Let the kernel know to add a new partition
+</span></span><span style="display:flex;"><span>partprobe 
+</span></span><span style="display:flex;"><span>mkfs.xfs /dev/sdb1
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
         
     </section>
-    <nav class='pagination'>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
         
         
 
+        <div class="article-details">
+            <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/">
         
-            
-                    <a class='page-link' href='/post/'>1</a>
-                
-            
-            
-                    
-                        
-                        <span class='page-link dots'>&hellip;</span>
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    
-                
-            
-            
-                    <a class='page-link' href='/post/page/9/'>9</a>
-                
-            
-            
-                <span class='page-link current'>10</span>
-                
-            
-    </nav>
+        
 
-<footer class="site-footer">
+        <div class="article-details">
+            <h2 class="article-title">茄科生物观测日志2022.8</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">茄科生物观测日志2022.7</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
   
 
 
@@ -538,7 +562,86 @@ document.getElementById('days').innerHTML = number_of_days;
 
 
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
             </main>
+    
     
     
     <aside class="sidebar right-sidebar sticky">
