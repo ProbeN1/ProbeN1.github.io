@@ -104,7 +104,7 @@
         
         
         <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
-        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -318,23 +318,23 @@
     <section class="article-content">
     
     
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lsblk
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>lsblk
 </span></span><span style="display:flex;"><span>fdisk /dev/nvme0n1
 </span></span><span style="display:flex;"><span>n/p/e/+1G
-</span></span><span style="display:flex;"><span>mkfs.xfs /dev/nvme0n1p3(56)
+</span></span><span style="display:flex;"><span>mkfs.xfs /dev/nvme0n1p3<span style="color:#f92672">(</span>56<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>mount /dev/nvme0n1p3 /root/new
 </span></span><span style="display:flex;"><span>vi /etc/fstab
-</span></span><span style="display:flex;"><span>(add &#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&#34;)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>parted /dev/sdb1
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>add <span style="color:#e6db74">&#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>parted /dev/sdb1
 </span></span><span style="display:flex;"><span>mklabel gpt
 </span></span><span style="display:flex;"><span>print
 </span></span><span style="display:flex;"><span>mkpart primary 0% 100%
 </span></span><span style="display:flex;"><span>quit
-</span></span><span style="display:flex;"><span># Let the kernel know to add a new partition
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Let the kernel know to add a new partition</span>
 </span></span><span style="display:flex;"><span>partprobe 
 </span></span><span style="display:flex;"><span>mkfs.xfs /dev/sdb1
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>use &#34;fisk&#34; create new partition
-</span></span><span style="display:flex;"><span>change the partition to &#34;LVM&#34;(8e)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>use <span style="color:#e6db74">&#34;fisk&#34;</span> create new partition
+</span></span><span style="display:flex;"><span>change the partition to <span style="color:#e6db74">&#34;LVM&#34;</span><span style="color:#f92672">(</span>8e<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p3 
 </span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p5 
 </span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p6

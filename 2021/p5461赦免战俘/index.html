@@ -104,7 +104,7 @@
         
         
         <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
-        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -320,26 +320,26 @@
     
     <h1 id="p5461-赦免战俘">P5461 赦免战俘
 </h1><p>心态小裂，写了n遍，最后发现循环里忘加x，y了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">input</span>())
-</span></span><span style="display:flex;"><span>b <span style="color:#ff79c6">=</span> [[<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)] <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a)]
-</span></span><span style="display:flex;"><span>l <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">func</span>(l,x,y):
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> l <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span> :
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> int(input())
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>a)] <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>a)]
+</span></span><span style="display:flex;"><span>l <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>a
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(l,x,y):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> l <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> :
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> 
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(x,x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(y,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)) :
-</span></span><span style="display:flex;"><span>            b[i][j] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(x,x<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)) :
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(y,y<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)) :
+</span></span><span style="display:flex;"><span>            b[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y)
-</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x,y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
-</span></span><span style="display:flex;"><span>    func(<span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),x<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>),y<span style="color:#ff79c6">+</span><span style="color:#8be9fd;font-style:italic">int</span>(l<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
+</span></span><span style="display:flex;"><span>    func(int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>),x<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>),y)
+</span></span><span style="display:flex;"><span>    func(int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>),x,y<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>    func(int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>),x<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>),y<span style="color:#f92672">+</span>int(l<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>func(l,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">0</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">2</span><span style="color:#ff79c6">**</span>a):
-</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">print</span>(b[i][j],end<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34; &#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>()
+</span></span><span style="display:flex;"><span>func(l,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>a):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>a):
+</span></span><span style="display:flex;"><span>        print(b[i][j],end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>    print()
 </span></span></code></pre></div>
 </section>
 

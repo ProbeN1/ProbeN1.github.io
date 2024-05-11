@@ -104,7 +104,7 @@
         
         
         <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
-        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -370,7 +370,7 @@
 	</a>
 	
 </figure></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>winlogon.exe -&gt; 接收用户输入 -&gt; lsass.exe -&gt; (认证)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>winlogon.exe -&gt; 接收用户输入 -&gt; lsass.exe -&gt; (认证)
 </span></span></code></pre></div><p>首先，用户注销、重启、锁屏后，操作系统会让winlogon显示登录界面，也就是输入框，接收输入后，会将密码交给lsass进程，这个进程中会存一份明文密码，随后明文密码加密成NTLM Hash，对SAM数据库比较认证。</p>
 <ul>
 <li>Windows Logon Process(即 winlogon.exe)，是Windows NT 用户登 陆程序，用于管理用户登录和退出。</li>
@@ -407,7 +407,7 @@
 	</a>
 	
 </figure></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>1.客户端向服务器发出认证请求；
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>1.客户端向服务器发出认证请求；
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>2.认证服务器从用户数据库中查询用户是否是合法的用户，若不是，则不做进一步的处理；
 </span></span><span style="display:flex;"><span>

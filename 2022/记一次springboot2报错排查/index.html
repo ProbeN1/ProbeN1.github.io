@@ -104,7 +104,7 @@
         
         
         <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
-        <h2 class="site-description">完成一个名为大学的作品</h2><ol class="social-menu">
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
                 
                     <li>
                         <a 
@@ -324,7 +324,7 @@
 <h1 id="part1">part1
 </h1><p>先从idea上连github把项目clone下来：https://blog.csdn.net/hry2015/article/details/77984399</p>
 <p>理论上这之后maven构建一下就可以了，结果构建之后运行出现了报错：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
 </span></span></code></pre></div><p>遂上网搜索novacrypto:Base58，发现这个包是存在的，但是版本出现了问题。</p>
 <p><figure 
 	>
@@ -351,12 +351,12 @@
 	
 </figure></p>
 <p>如图，在pom.xml中，默认的版本是2019.01.27，但是现在只有2022.01.17的版本，猜测更新的时候删掉了旧版本hhhh，重新修改后reload:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>        <span style="color:#6272a4">&lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;groupId&gt;</span>io.github.novacrypto<span style="color:#ff79c6">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;artifactId&gt;</span>Base58<span style="color:#ff79c6">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;version&gt;</span>2022.01.17<span style="color:#ff79c6">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;groupId&gt;</span>io.github.novacrypto<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;artifactId&gt;</span>Base58<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;version&gt;</span>2022.01.17<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><p>中间还出现了一次网络报错，切换一下线路即可。</p>
 <h1 id="part2">part2
 </h1><p>运行com.timvanx.Application入口，启动Spring Boot项目，过程中出现报错：</p>
@@ -383,8 +383,8 @@ Spring Boot 2.0.1<br>
 [Apache Gossip]</p>
 </blockquote> 
 <p>我的版本是16，有可能不支持</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>java -version
-</span></span><span style="display:flex;"><span>java version <span style="color:#f1fa8c">&#34;16.0.2&#34;</span> 2021-07-20
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span>java version <span style="color:#e6db74">&#34;16.0.2&#34;</span> 2021-07-20
 </span></span><span style="display:flex;"><span>Java(TM) SE Runtime Environment (build 16.0.2+7-67)
 </span></span><span style="display:flex;"><span>Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
 </span></span></code></pre></div><p>到官网新安装了一个java8：https://www.oracle.com/java/technologies/downloads/#java8-windows</p>
