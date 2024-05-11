@@ -323,12 +323,12 @@
     
     
     <p>内网小白一枚，打算从一个个概念开始记</p>
-<h1 id="windows本地认证">Windows本地认证</h1>
-<h2 id="sam数据库">SAM数据库</h2>
-<p>路径：<code>%SystemRoot%\system32\config\sam</code></p>
+<h1 id="windows本地认证">Windows本地认证
+</h1><h2 id="sam数据库">SAM数据库
+</h2><p>路径：<code>%SystemRoot%\system32\config\sam</code></p>
 <p>当我们登录系统的时候，系统会自动地读取SAM文件中的“密码”与我们输入的 “密码”进行比对，如果相同，证明认证成功。</p>
-<h2 id="lan-manager-hash">LAN Manager Hash</h2>
-<p>LM Hash(LAN Manager Hash) 是windows最早用的加密算法，由IBM设计。LM Hash 使用硬编码秘钥的DES，且存在缺陷。早期的Windows系统如XP、Server 2003等使用LM Hash，而后的系统默认禁用了LM Hash并使用NTLM Hash。</p>
+<h2 id="lan-manager-hash">LAN Manager Hash
+</h2><p>LM Hash(LAN Manager Hash) 是windows最早用的加密算法，由IBM设计。LM Hash 使用硬编码秘钥的DES，且存在缺陷。早期的Windows系统如XP、Server 2003等使用LM Hash，而后的系统默认禁用了LM Hash并使用NTLM Hash。</p>
 <p>作为早期的算法，LM Hash存在着诸多问题：</p>
 <ul>
 <li>密码长度不会超过14字符，且不区分大小写</li>
@@ -336,8 +336,8 @@
 <li>分组加密极大程度降低了密码的复杂度</li>
 <li>DES算法强度低</li>
 </ul>
-<h2 id="nt-lan-mangger-hash">NT LAN Mangger Hash</h2>
-<p>NTLM（NT LAN Mangger）Hash，也叫NT Hash，是支持<strong>Net NTLM认证协议</strong>(这个以后说)及<strong>本地认证</strong>过程中的一个重要参数。其长度为32位，由数字与字母组成。</p>
+<h2 id="nt-lan-mangger-hash">NT LAN Mangger Hash
+</h2><p>NTLM（NT LAN Mangger）Hash，也叫NT Hash，是支持<strong>Net NTLM认证协议</strong>(这个以后说)及<strong>本地认证</strong>过程中的一个重要参数。其长度为32位，由数字与字母组成。</p>
 <p>Windows本身不储存用户的明文密码，而是通过加密算法之后储存到SAM数据库里。当用户登录时，输入的密码也通过NTML Hash与SAM中的NTML Hash比较。</p>
 <p>生成算法</p>
 <ol>
@@ -357,8 +357,8 @@
 	</a>
 	
 </figure></p>
-<h2 id="流程">流程</h2>
-<p><figure 
+<h2 id="流程">流程
+</h2><p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/62a6d29f0947543129672a11.jpg" >
 		<img src="https://pic.imgdb.cn/item/62a6d29f0947543129672a11.jpg"
@@ -376,22 +376,22 @@
 <li>Windows Logon Process(即 winlogon.exe)，是Windows NT 用户登 陆程序，用于管理用户登录和退出。</li>
 <li>LSASS用于微软Windows系统的安全机 制。它用于本地安全和登陆策略。</li>
 </ul>
-<h1 id="windows网络认证">Windows网络认证</h1>
-<h2 id="工作组和域">工作组和域</h2>
-<h3 id="工作组-work-group">工作组 Work Group</h3>
-<p>在Windows 9x/NT/2008就引用了“工作组”这个概念，将不同的电脑一般按功能分别列入不同的组中。</p>
+<h1 id="windows网络认证">Windows网络认证
+</h1><h2 id="工作组和域">工作组和域
+</h2><h3 id="工作组-work-group">工作组 Work Group
+</h3><p>在Windows 9x/NT/2008就引用了“工作组”这个概念，将不同的电脑一般按功能分别列入不同的组中。</p>
 <p>你也可以退出某个工作组，只要将工作组名称改动即可。不过这样在网上别人照样可以访问你的共享资源，只不过换了一个工作组而已。你可以随便加入同一网络上的任何工作组，也可以离开一个工作组。“工作组”就像一个自由加入和退出的俱乐部一样，它本身的作用仅仅是提供一个“房间”，以方便网上计算机共享资源的浏览。</p>
 <p>工作组环境是一个逻辑上的网络环境，隶属于工作组的机器之间无法互相建 立一个完美的信任机制。</p>
 <p>假设A主机与B主机属于同一个工作组环境，A想访问B主机上的资料，需要将一个存在于B主机上的账户凭证发送至B主机，经过认证才能够访问B主机上的资源。</p>
 <p>eg:445端口SMB服务</p>
-<h3 id="域-domain">域 Domain</h3>
-<p>与工作组的“松散会员制”有所不同，域”是一个相对严格的组织。“域”指的是服务器控制网络上的计算机能否加入的计算机组合。</p>
+<h3 id="域-domain">域 Domain
+</h3><p>与工作组的“松散会员制”有所不同，域”是一个相对严格的组织。“域”指的是服务器控制网络上的计算机能否加入的计算机组合。</p>
 <p>在“域”模式下，至少有一台服务器负责每一台联入网络的电脑和用户的验证工作，相当于一个单位的门卫一样，称为“域控制器（Domain Controller，简写为DC）”。“域控制器”中包含了由这个域的账户、密码、属于这个域的计算机等信息构成的数据库。当电脑联入网络时，域控制器首先要鉴别这台电脑是否是属于这个域的。</p>
-<h2 id="ntlm协议">NTLM协议</h2>
-<p>SMB协议明文传输，于是有了LAN Manager Challenge/Response 验证机制，检查LM，但是也很容易被破解，于是微软提出了NTLM协议（现在有NTLMv2和Kerberos）</p>
+<h2 id="ntlm协议">NTLM协议
+</h2><p>SMB协议明文传输，于是有了LAN Manager Challenge/Response 验证机制，检查LM，但是也很容易被破解，于是微软提出了NTLM协议（现在有NTLMv2和Kerberos）</p>
 <p>NTLM采用一种质询/应答（Challenge/Response）消息交换模式。</p>
-<h3 id="chalengeresponse">Chalenge/Response</h3>
-<p>Chalenge/Response模式企图不泄露明文口令本身就能证明客户机确实拥有正确的口令。</p>
+<h3 id="chalengeresponse">Chalenge/Response
+</h3><p>Chalenge/Response模式企图不泄露明文口令本身就能证明客户机确实拥有正确的口令。</p>
 <p>协商：主要用于确认双方协议版本</p>
 <p>质询：ChalengeResponse</p>
 <p>验证：验证结果</p>
@@ -418,15 +418,15 @@
 </span></span><span style="display:flex;"><span>5.认证服务器将Response与自己的计算结果比较，如两者相同，则通过一次认证，反之认证失败；
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>6.认证服务器通知客户端认证成功或失败
-</span></span></code></pre></div><h2 id="ntlmv2协议">NTLMv2协议</h2>
-<p>NTLM v1与NTLM v2最显著的区别就是Challenge与<strong>加密算法</strong>不相同 。</p>
+</span></span></code></pre></div><h2 id="ntlmv2协议">NTLMv2协议
+</h2><p>NTLM v1与NTLM v2最显著的区别就是Challenge与<strong>加密算法</strong>不相同 。</p>
 <p>前者的Challenge为8位，后者为16位。</p>
 <p>前者使用的主要加密算法是DES，后者使用的主要加密算法是HMAC-MD5。</p>
-<h2 id="pass-the-hash">Pass The Hash</h2>
-<p>哈希传递是能够在不需要账户明文密码的情况下完成认证的一个技术。</p>
+<h2 id="pass-the-hash">Pass The Hash
+</h2><p>哈希传递是能够在不需要账户明文密码的情况下完成认证的一个技术。</p>
 <p>当使用其他方式得到用户名对应的NTLM Hash时，可以对服务器给出的 Chanllenge加密，生成一个Response，来完成认证。也就避免了密码。</p>
-<h1 id="lm-hash脆弱性分析附">LM Hash脆弱性分析（附）</h1>
-<ul>
+<h1 id="lm-hash脆弱性分析附">LM Hash脆弱性分析（附）
+</h1><ul>
 <li>将所有小写字母转换为大写字母</li>
 <li>123ABC // 未达到7个字符</li>
 <li>将密码转化为16进制，分两组，填充为14个字符,空余位使用0x00字符填补</li>
@@ -487,7 +487,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

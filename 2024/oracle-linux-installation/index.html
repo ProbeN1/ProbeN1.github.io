@@ -322,8 +322,8 @@
     <section class="article-content">
     
     
-    <h1 id="overview-of-linux">Overview of Linux</h1>
-<p>GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular.</p>
+    <h1 id="overview-of-linux">Overview of Linux
+</h1><p>GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular.</p>
 <p><figure 
 	>
 	<a href="https://static.dingtalk.com/media/lALPD1lNdCOfhtvM0cy9_189_209.png_810x10000.jpg" >
@@ -339,10 +339,10 @@
 	
 </figure></p>
 <p>Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on.</p>
-<h2 id="difference-between-unix-and-linux">Difference between UNIX and Linux</h2>
-<p>UNIX is an operating system (non-open source) and linux is an open source operating system that has adopted the design concepts of the UNIX system in its many versions.</p>
-<h2 id="basic-idea">Basic idea</h2>
-<ol>
+<h2 id="difference-between-unix-and-linux">Difference between UNIX and Linux
+</h2><p>UNIX is an operating system (non-open source) and linux is an open source operating system that has adopted the design concepts of the UNIX system in its many versions.</p>
+<h2 id="basic-idea">Basic idea
+</h2><ol>
 <li>
 <p>Everything is a document.</p>
 </li>
@@ -350,8 +350,8 @@
 <p>Every document has a defined purpose.</p>
 </li>
 </ol>
-<h1 id="linux-installation-and-basic-configuration">Linux installation and basic configuration</h1>
-<p>System Oracle Linux 8.6 installation and configuration via VMware WORKSTATION PRO 17.</p>
+<h1 id="linux-installation-and-basic-configuration">Linux installation and basic configuration
+</h1><p>System Oracle Linux 8.6 installation and configuration via VMware WORKSTATION PRO 17.</p>
 <p><figure 
 	>
 	<a href="https://static.dingtalk.com/media/lALPD1lNdCOfNHTNAWvNAi8_559_363.png_810x10000.jpg" >
@@ -366,11 +366,11 @@
 	<figcaption>img</figcaption>
 	
 </figure></p>
-<h3 id="basic-configuration">Basic Configuration</h3>
-<p>After loading by VM, in the installation interface, select the language as English (United States), Language Support select EN (US) and Simplified Chinese in turn, and select the time zone at the same time.</p>
+<h3 id="basic-configuration">Basic Configuration
+</h3><p>After loading by VM, in the installation interface, select the language as English (United States), Language Support select EN (US) and Simplified Chinese in turn, and select the time zone at the same time.</p>
 <p>Enter the installation source, wait for loading and detection, select the local CD-ROM drive ISO file as the installation source, and select Minimized Installation in Software Selection.</p>
-<h3 id="system-partitioning-customized-manual-partitioning">System partitioning: customized manual partitioning</h3>
-<p>Boot partition：/boot, 1G, file system type is xfs, Device Type is Standard</p>
+<h3 id="system-partitioning-customized-manual-partitioning">System partitioning: customized manual partitioning
+</h3><p>Boot partition：/boot, 1G, file system type is xfs, Device Type is Standard</p>
 <p>Root partition：/20G, adjust LVM settings, VG Name,vg00;RAID Level,None;Size policy,As large as possible;and change the name to lvroot.</p>
 <p>Partition in order (using LVM management, XFS file system format, belongs to VG00)</p>
 <p>/usr，10G，lvusr</p>
@@ -397,8 +397,8 @@
 	<figcaption>img</figcaption>
 	
 </figure></p>
-<h3 id="others"><strong>Others</strong></h3>
-<p>KDUMP: check Enable kdump, select the policy as Automatic</p>
+<h3 id="others"><strong>Others</strong>
+</h3><p>KDUMP: check Enable kdump, select the policy as Automatic</p>
 <p>Security policy: keep the default value</p>
 <p>Password: set a strong password, at least 8 digits, including upper case letters, lower case letters, numbers and special symbols.</p>
 <p>Finish the loading configuration, perform a reboot, and choose to boot from Oracle Linux Server 8 UEK kernel by default when rebooting.</p>
@@ -417,13 +417,13 @@
 	<figcaption>img</figcaption>
 	
 </figure></p>
-<h3 id="network-configuration">Network Configuration</h3>
-<p>Go to the directory where the network cards are configured: cd /etc/sysconfig/network-scripts</p>
+<h3 id="network-configuration">Network Configuration
+</h3><p>Go to the directory where the network cards are configured: cd /etc/sysconfig/network-scripts</p>
 <p>View all network cards: ifconfig -a</p>
 <p>Configure eth0 (lo for loopback) for remote connection to the system.</p>
 <p>vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
-<h3 id="check-the-version-and-kernel">Check the Version and Kernel</h3>
-<p>version:</p>
+<h3 id="check-the-version-and-kernel">Check the Version and Kernel
+</h3><p>version:</p>
 <p>cat /etc/redhat-release</p>
 <p><figure 
 	>
@@ -502,7 +502,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

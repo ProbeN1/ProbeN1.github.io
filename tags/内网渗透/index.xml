@@ -1,19 +1,150 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>内网渗透 on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</link>
-    <description>Recent content in 内网渗透 on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jun 2022 13:37:17 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>理解Windows认证</title>
-      <link>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</link>
-      <pubDate>Mon, 13 Jun 2022 13:37:17 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</guid>
-      <description>内网小白一枚，打算从一个个概念开始记 Windows本地认证 SAM数据库 路径：%SystemRoot%\system32\config\sam</description>
-    </item>
-  </channel>
+    <channel>
+        <title>内网渗透 on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/</link>
+        <description>Recent content in 内网渗透 on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 13 Jun 2022 13:37:17 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>理解Windows认证</title>
+        <link>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</link>
+        <pubDate>Mon, 13 Jun 2022 13:37:17 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E7%90%86%E8%A7%A3windows%E8%AE%A4%E8%AF%81/</guid>
+        <description>&lt;p&gt;内网小白一枚，打算从一个个概念开始记&lt;/p&gt;
+&lt;h1 id=&#34;windows本地认证&#34;&gt;Windows本地认证
+&lt;/h1&gt;&lt;h2 id=&#34;sam数据库&#34;&gt;SAM数据库
+&lt;/h2&gt;&lt;p&gt;路径：&lt;code&gt;%SystemRoot%\system32\config\sam&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;当我们登录系统的时候，系统会自动地读取SAM文件中的“密码”与我们输入的 “密码”进行比对，如果相同，证明认证成功。&lt;/p&gt;
+&lt;h2 id=&#34;lan-manager-hash&#34;&gt;LAN Manager Hash
+&lt;/h2&gt;&lt;p&gt;LM Hash(LAN Manager Hash) 是windows最早用的加密算法，由IBM设计。LM Hash 使用硬编码秘钥的DES，且存在缺陷。早期的Windows系统如XP、Server 2003等使用LM Hash，而后的系统默认禁用了LM Hash并使用NTLM Hash。&lt;/p&gt;
+&lt;p&gt;作为早期的算法，LM Hash存在着诸多问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;密码长度不会超过14字符，且不区分大小写&lt;/li&gt;
+&lt;li&gt;如果密码长度小于7位，后一组哈希的值确定，可以通过结尾为 &lt;code&gt;aad3b435b51404ee&lt;/code&gt; 来判断密码长度不超过7位（可以看下分析）&lt;/li&gt;
+&lt;li&gt;分组加密极大程度降低了密码的复杂度&lt;/li&gt;
+&lt;li&gt;DES算法强度低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;nt-lan-mangger-hash&#34;&gt;NT LAN Mangger Hash
+&lt;/h2&gt;&lt;p&gt;NTLM（NT LAN Mangger）Hash，也叫NT Hash，是支持&lt;strong&gt;Net NTLM认证协议&lt;/strong&gt;(这个以后说)及&lt;strong&gt;本地认证&lt;/strong&gt;过程中的一个重要参数。其长度为32位，由数字与字母组成。&lt;/p&gt;
+&lt;p&gt;Windows本身不储存用户的明文密码，而是通过加密算法之后储存到SAM数据库里。当用户登录时，输入的密码也通过NTML Hash与SAM中的NTML Hash比较。&lt;/p&gt;
+&lt;p&gt;生成算法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;明文转换为16进制ASCII码&lt;/li&gt;
+&lt;li&gt;使用little-endian(小端)序将其在转换为Unicode格式。0x80之前的标准ASCII码转换成Unicode码，就是简单地从0x??变成 0×00??。此类标准ASCII串按little-endian序转换成Unicode串，就是简单地在原有每个字节之后添加0×00&lt;/li&gt;
+&lt;li&gt;对所获取的 Unicode串进行标准MD4单向哈希，无论数据源有多少字节，MD4固定产生128-bit的哈希值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62a6d1c70947543129661a9f.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62a6d1c70947543129661a9f.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;流程&#34;&gt;流程
+&lt;/h2&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62a6d29f0947543129672a11.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62a6d29f0947543129672a11.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winlogon.exe -&amp;gt; 接收用户输入 -&amp;gt; lsass.exe -&amp;gt; (认证)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;首先，用户注销、重启、锁屏后，操作系统会让winlogon显示登录界面，也就是输入框，接收输入后，会将密码交给lsass进程，这个进程中会存一份明文密码，随后明文密码加密成NTLM Hash，对SAM数据库比较认证。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Logon Process(即 winlogon.exe)，是Windows NT 用户登 陆程序，用于管理用户登录和退出。&lt;/li&gt;
+&lt;li&gt;LSASS用于微软Windows系统的安全机 制。它用于本地安全和登陆策略。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;windows网络认证&#34;&gt;Windows网络认证
+&lt;/h1&gt;&lt;h2 id=&#34;工作组和域&#34;&gt;工作组和域
+&lt;/h2&gt;&lt;h3 id=&#34;工作组-work-group&#34;&gt;工作组 Work Group
+&lt;/h3&gt;&lt;p&gt;在Windows 9x/NT/2008就引用了“工作组”这个概念，将不同的电脑一般按功能分别列入不同的组中。&lt;/p&gt;
+&lt;p&gt;你也可以退出某个工作组，只要将工作组名称改动即可。不过这样在网上别人照样可以访问你的共享资源，只不过换了一个工作组而已。你可以随便加入同一网络上的任何工作组，也可以离开一个工作组。“工作组”就像一个自由加入和退出的俱乐部一样，它本身的作用仅仅是提供一个“房间”，以方便网上计算机共享资源的浏览。&lt;/p&gt;
+&lt;p&gt;工作组环境是一个逻辑上的网络环境，隶属于工作组的机器之间无法互相建 立一个完美的信任机制。&lt;/p&gt;
+&lt;p&gt;假设A主机与B主机属于同一个工作组环境，A想访问B主机上的资料，需要将一个存在于B主机上的账户凭证发送至B主机，经过认证才能够访问B主机上的资源。&lt;/p&gt;
+&lt;p&gt;eg:445端口SMB服务&lt;/p&gt;
+&lt;h3 id=&#34;域-domain&#34;&gt;域 Domain
+&lt;/h3&gt;&lt;p&gt;与工作组的“松散会员制”有所不同，域”是一个相对严格的组织。“域”指的是服务器控制网络上的计算机能否加入的计算机组合。&lt;/p&gt;
+&lt;p&gt;在“域”模式下，至少有一台服务器负责每一台联入网络的电脑和用户的验证工作，相当于一个单位的门卫一样，称为“域控制器（Domain Controller，简写为DC）”。“域控制器”中包含了由这个域的账户、密码、属于这个域的计算机等信息构成的数据库。当电脑联入网络时，域控制器首先要鉴别这台电脑是否是属于这个域的。&lt;/p&gt;
+&lt;h2 id=&#34;ntlm协议&#34;&gt;NTLM协议
+&lt;/h2&gt;&lt;p&gt;SMB协议明文传输，于是有了LAN Manager Challenge/Response 验证机制，检查LM，但是也很容易被破解，于是微软提出了NTLM协议（现在有NTLMv2和Kerberos）&lt;/p&gt;
+&lt;p&gt;NTLM采用一种质询/应答（Challenge/Response）消息交换模式。&lt;/p&gt;
+&lt;h3 id=&#34;chalengeresponse&#34;&gt;Chalenge/Response
+&lt;/h3&gt;&lt;p&gt;Chalenge/Response模式企图不泄露明文口令本身就能证明客户机确实拥有正确的口令。&lt;/p&gt;
+&lt;p&gt;协商：主要用于确认双方协议版本&lt;/p&gt;
+&lt;p&gt;质询：ChalengeResponse&lt;/p&gt;
+&lt;p&gt;验证：验证结果&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62a6eac209475431298b0169.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62a6eac209475431298b0169.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1.客户端向服务器发出认证请求；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2.认证服务器从用户数据库中查询用户是否是合法的用户，若不是，则不做进一步的处理；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3.认证服务器内部产生一个随机数，作为Challenge，发送给用户；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;4.客户将口令和随机数合并，使用单向Hash函数 ( 例如MD5算法 ) 生成一个字节串作为Response；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5.认证服务器将Response与自己的计算结果比较，如两者相同，则通过一次认证，反之认证失败；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;6.认证服务器通知客户端认证成功或失败
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ntlmv2协议&#34;&gt;NTLMv2协议
+&lt;/h2&gt;&lt;p&gt;NTLM v1与NTLM v2最显著的区别就是Challenge与&lt;strong&gt;加密算法&lt;/strong&gt;不相同 。&lt;/p&gt;
+&lt;p&gt;前者的Challenge为8位，后者为16位。&lt;/p&gt;
+&lt;p&gt;前者使用的主要加密算法是DES，后者使用的主要加密算法是HMAC-MD5。&lt;/p&gt;
+&lt;h2 id=&#34;pass-the-hash&#34;&gt;Pass The Hash
+&lt;/h2&gt;&lt;p&gt;哈希传递是能够在不需要账户明文密码的情况下完成认证的一个技术。&lt;/p&gt;
+&lt;p&gt;当使用其他方式得到用户名对应的NTLM Hash时，可以对服务器给出的 Chanllenge加密，生成一个Response，来完成认证。也就避免了密码。&lt;/p&gt;
+&lt;h1 id=&#34;lm-hash脆弱性分析附&#34;&gt;LM Hash脆弱性分析（附）
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;将所有小写字母转换为大写字母&lt;/li&gt;
+&lt;li&gt;123ABC // 未达到7个字符&lt;/li&gt;
+&lt;li&gt;将密码转化为16进制，分两组，填充为14个字符,空余位使用0x00字符填补&lt;/li&gt;
+&lt;li&gt;31323341424300000000000000&lt;/li&gt;
+&lt;li&gt;将密码分割为两组7个字节的块&lt;/li&gt;
+&lt;li&gt;&amp;gt;31323341424300 00000000000000 // 16进制&lt;/li&gt;
+&lt;li&gt;将每组转化为比特流，不足56Bit则在左边加0&lt;/li&gt;
+&lt;li&gt;31323341424300 -&amp;gt;(转换为二进制) 110001001100100011001101000001010000100100001100000000-&amp;gt; (补足56Bit)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;00&lt;/code&gt;110001001100100011001101000001010000100100001100000000&lt;/li&gt;
+&lt;li&gt;将比特流按照7比特一组，分出8组，末尾加0&lt;/li&gt;
+&lt;li&gt;由于后者都为0，结果可想而知，那就都是0;&lt;/li&gt;
+&lt;li&gt;将每组比特流转换为16进制作为被加密的值，使用DES加密，字符串 &lt;code&gt;KGS!@#$%为Key(0x4B47532140232425)&lt;/code&gt;，得到8个结果 ，每个 结果转换为16进制。&lt;/li&gt;
+&lt;li&gt;-&amp;gt; 0011000010011000100011000110100000010100000100100000110000000000&lt;/li&gt;
+&lt;li&gt;-&amp;gt;30988C6814120C00 -&amp;gt; DES(30988C6814120C00) -&amp;gt; 48-D7-EB-91- 2F-5E-69-7C&lt;/li&gt;
+&lt;li&gt;由于我们的密码不超过7字节，所以后面的一半是固定的:&lt;/li&gt;
+&lt;li&gt;AA-D3-B4-35-B5-14-04-EE&lt;/li&gt;
+&lt;li&gt;连接两个DES加密字符串。这是LM哈希。&lt;/li&gt;
+&lt;li&gt;48-D7-EB-91-2F-5E-69-7C-AA-D3-B4-35-B5-14-04-EE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/0d4y/p/12805112.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.cnblogs.com/0d4y/p/12805112.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.secpulse.com/archives/94848.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.secpulse.com/archives/94848.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.freebuf.com/articles/web/332190.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.freebuf.com/articles/web/332190.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

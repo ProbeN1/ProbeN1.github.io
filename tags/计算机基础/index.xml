@@ -1,33 +1,281 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>计算机基础 on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
-    <description>Recent content in 计算机基础 on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 09:10:24 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Windows权限基础</title>
-      <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
-      <description>用户账户： 用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码 SID：用户帐户拥有唯一的安全标识符 SAM：本地安全帐户数据库，文</description>
-    </item>
-    <item>
-      <title>P5461赦免战俘</title>
-      <link>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</link>
-      <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
-      <guid>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</guid>
-      <description>P5461 赦免战俘 心态小裂，写了n遍，最后发现循环里忘加x，y了 a = int(input()) b = [[1 for i in range(2**a)] for j in range(2**a)] l = 2**a def func(l,x,y): if l == 1 : return for i in range(x,x+int(l/2)) : for j in range(y,y+int(l/2)) : b[i][j] = 0 func(int(l/2),x+int(l/2),y) func(int(l/2),x,y+int(l/2)) func(int(l/2),x+int(l/2),y+int(l/2)) func(l,0,0)</description>
-    </item>
-    <item>
-      <title>刷题1</title>
-      <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</link>
-      <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
-      <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</guid>
-      <description>182. 查找重复的电子邮箱 select `Email` from ( select `Email`, count(`Email`) as a from `Person` group by `Email` ) as temp where a &amp;gt; 1; 一些不熟悉的语句 like 模糊查询 select * from employees where last_name like &amp;#39;%a%&amp;#39;; group by（常常和聚合函数一起使用） 聚合</description>
-    </item>
-  </channel>
+    <channel>
+        <title>计算机基础 on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/</link>
+        <description>Recent content in 计算机基础 on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 10 Apr 2022 09:10:24 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows权限基础</title>
+        <link>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Sun, 10 Apr 2022 09:10:24 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/windows%E6%9D%83%E9%99%90%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;h4 id=&#34;用户账户&#34;&gt;用户账户：
+&lt;/h4&gt;&lt;p&gt;用户帐户是对计算机用户身份的标识。每个用户包含一个名称和一个密码&lt;/p&gt;
+&lt;p&gt;SID：用户帐户拥有唯一的安全标识符&lt;/p&gt;
+&lt;p&gt;SAM：本地安全帐户数据库，文件路径：C:\Windows\System32\config\SAM ，进程：lsass.exe&lt;/p&gt;
+&lt;p&gt;本地用户和组：为用户和组分配权利和权限，从而限制用户和组执行某些操作的能力。&lt;/p&gt;
+&lt;p&gt;一个用户可以在不同的组里，一个组也可以有不同的用户。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;whoami /user   查看系统当前用户的SID&lt;/li&gt;
+&lt;li&gt;wmic useraccount get name,sid   查看所有用户的SID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62523004239250f7c5dad75e.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62523004239250f7c5dad75e.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;默认账户&#34;&gt;默认账户
+&lt;/h4&gt;&lt;p&gt;**权限：**System &amp;gt; Administrator &amp;gt; User &amp;gt; Guest&lt;/p&gt;
+&lt;p&gt;与windows组件关联的用户账户&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System (本地系统)：为windows的核心组件访问文件等资源提供权限；&lt;/li&gt;
+&lt;li&gt;Local Service (本地服务)：预设的拥有最小权限的本地账户；&lt;/li&gt;
+&lt;li&gt;Network Service (网络服务)：具有运行网络服务权限的计算机账户&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;查看创建和删除账户&#34;&gt;查看、创建和删除账户
+&lt;/h4&gt;&lt;p&gt;使用命令查看、创建和删除账户：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;net user　　  查看系统账户&lt;/li&gt;
+&lt;li&gt;net user  xie   123  /add    创建新用户xie，密码设置为 123&lt;/li&gt;
+&lt;li&gt;net user  hack$ 123 /add    创建隐藏用户hack，密码为123&lt;/li&gt;
+&lt;li&gt;net user xie    查看账户xie的属性&lt;/li&gt;
+&lt;li&gt;net user xie x456.  将用户写的密码修改为x456.&lt;/li&gt;
+&lt;li&gt;net user xie /del  删除用户xie&lt;/li&gt;
+&lt;li&gt;net localgroup  administrators xie  /add   将普通用户xie提权到管理员&lt;/li&gt;
+&lt;li&gt;net localgroup  administrators hack$ /add  将隐藏用户hack提权到管理员&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;用户组&#34;&gt;用户组
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Administrators&lt;/li&gt;
+&lt;li&gt;Guests&lt;/li&gt;
+&lt;li&gt;Power Users&lt;/li&gt;
+&lt;li&gt;Users（标准用户）&lt;/li&gt;
+&lt;li&gt;Remote Desktop Users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;administators&lt;/strong&gt; 组内的用户，都具备系统管理员的权限，它们拥有对这台计算机最大的控制权限，可以执行整台计算机的管理任务。内置的系统管理员账号 Administrator 就是本地组的成员，而且无法将它从该组删除。如果这台计算机已加入域，则域的Domain Admins 会自动地加入到该计算机的Administrators组内。也就是说，域上的系统管理员在这台计算机上也具备着系统管理员的权限。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Guests&lt;/strong&gt; 组是提供给没有用户帐户但是需要访问本地计算机内资源的用户使用，该组的成员无法永久地改变其桌面的工作环境。该组最常见的默认成员为用户帐号Guest。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Power Users&lt;/strong&gt; 组内的用户具备比Users组更多的权利，但是比Administrators组拥有的权利更少一些，例如，可以：创建、删除、更改本地用户帐户；创建、删除、管理本地计算机内的共享文件夹与共享打印机；自定义系统设置，例如更改计算机时间、关闭计算机等。但是不可以更改Administrators，无法夺取文件的所有权、无法备份与还原文件、无法安装删除与删除设备驱动程序、无法管理安全与审核日志。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Users&lt;/strong&gt; 组内的成员只拥有一些基本的权利，例如运行应用程序，但是他们不能修改操作系统的设置、不能更改其它用户的数据、不能关闭服务器级的计算机。所有添加的本地用户帐户者自动属于Users组。如果这台计算机已经加入域，则域的Domain Users会自动地被加入到该计算机的Users组中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remote Desktop Users&lt;/strong&gt; 组内的成员拥有远程桌面登录的权限。默认Administrators组内的成员都拥有远程桌面的权限。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;动态包含成员的内置组&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;其成员由Windows程序“自动添加” ，Windows会根据用户的状态来决定用户所属的组 ，组内的成员也随之动态变化，无法修改。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;*&lt;strong&gt;Interactive：*&lt;/strong&gt; 动态包含在本地登录的用户；&lt;/li&gt;
+&lt;li&gt;*&lt;strong&gt;Authenticated Users*&lt;/strong&gt;：任何一个利用有效的用户帐户连接的用户都属于这个组。建议在设置权限时，尽量针对Authenticated Users组进行设置，而不要针对Everone进行设置。&lt;/li&gt;
+&lt;li&gt;*&lt;strong&gt;Everyone*&lt;/strong&gt; ：任何一个用户都属于这个组。注意，如果Guest帐号被启用时，则给Everone这个组指派权限时必须小心，因为当一个没有帐户的用户连接计算机时，他被允许自动利用Guest帐户连接，但是因为Guest也是属于Everone组，所以他将具备Everyone所拥有的权限。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;组的查看创建和删除&#34;&gt;组的查看、创建和删除
+&lt;/h4&gt;&lt;p&gt;*&lt;strong&gt;使用命令查看、创建和删除组*&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;net localgroup  查看系统的组&lt;/li&gt;
+&lt;li&gt;net localgroup  marketGroup  /add     新建一个marketGroup的组&lt;/li&gt;
+&lt;li&gt;net localgroup  marketGroup  xie /add  将用户xie加入marketGroup组中&lt;/li&gt;
+&lt;li&gt;net localgroup  markGroup   查看markGroup组内的成员&lt;/li&gt;
+&lt;li&gt;net localgroup  marketGroup  xie /del  将用户xi从marketGroup组中移除&lt;/li&gt;
+&lt;li&gt;net localgroup  marketGroup  /del      删除marketGroup组&lt;/li&gt;
+&lt;li&gt;net localgroup &amp;ldquo;remote desktop users&amp;rdquo; hack /add   将用户hack加入远程桌面组&lt;/li&gt;
+&lt;li&gt;net localgroup &amp;ldquo;remote desktop users&amp;rdquo; hack /del   将用户hack从远程桌面组删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6252316c239250f7c5dd0d72.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6252316c239250f7c5dd0d72.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;WDAGUtilityAccount帐户是Windows Defender Application Guard的一部分，它包含在RS3（aka windows 10 fall update）中。&lt;/p&gt;
+&lt;p&gt;DefaultAccount用于开机自检阶段。&lt;/p&gt;
+&lt;p&gt;BvSsh_VirtualUsers 是设置 BitWise（详见https://www.bitwise.nl/）虚拟用户时，创建的一个用户并将其用作写入文件的安全上下文。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>P5461赦免战俘</title>
+        <link>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</link>
+        <pubDate>Mon, 22 Nov 2021 16:37:25 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/p5461%E8%B5%A6%E5%85%8D%E6%88%98%E4%BF%98/</guid>
+        <description>&lt;h1 id=&#34;p5461-赦免战俘&#34;&gt;P5461 赦免战俘
+&lt;/h1&gt;&lt;p&gt;心态小裂，写了n遍，最后发现循环里忘加x，y了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [[&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)] &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;func&lt;/span&gt;(l,x,y):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; l &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; :
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(x,x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(y,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)) :
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            b[i][j] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x,y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    func(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),x&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;),y&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(l&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;func(l,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; j &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;a):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(b[i][j],end&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>刷题1</title>
+        <link>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</link>
+        <pubDate>Mon, 22 Nov 2021 16:35:10 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/</guid>
+        <description>&lt;h4 id=&#34;182-查找重复的电子邮箱httpsleetcode-cncomproblemsduplicate-emails&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/duplicate-emails/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;182. 查找重复的电子邮箱&lt;/a&gt;
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;Email&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;Email&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;, &lt;span style=&#34;color:#ff79c6&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;Email&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;as&lt;/span&gt; a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;Person&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;Email&lt;span style=&#34;color:#ff79c6&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;as&lt;/span&gt; temp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt; a &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一些不熟悉的语句&lt;/p&gt;
+&lt;p&gt;like 模糊查询&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; employees &lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt; last_name &lt;span style=&#34;color:#ff79c6&#34;&gt;like&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%a%&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;group by（常常和聚合函数一起使用）
+聚合函数：&lt;strong&gt;count() , sum() , avg() , max() , min()&lt;/strong&gt;
+根据by对数据按照哪个字段进行分组，或者是哪几个字段进行分组。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt;  字段   &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt;  表名  &lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt;   条件   &lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt;    字段;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;#&lt;/span&gt; 单字段
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt;  grade  &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt;  student   &lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt;   &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt;   grade;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;#&lt;/span&gt; 多字段
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt;  name , &lt;span style=&#34;color:#ff79c6&#34;&gt;sum&lt;/span&gt;(salary)    &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt;   student    &lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt;   name , grade;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;name和grade看成一个整体，name和grade相同的才可以分成一组，一个不一样就不能分成一组。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;having 对group by分组和聚合之后的数据进行过滤
+（与where正好相反）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt;  字段   &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt;  表名  &lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt;   字段   &lt;span style=&#34;color:#ff79c6&#34;&gt;having&lt;/span&gt;   过滤条件;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;-- 查找人数大于 5 的部门
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; dept_id, &lt;span style=&#34;color:#ff79c6&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; employee
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;group&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;by&lt;/span&gt; dept_id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;having&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dept_id&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;-------|--------|
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#bd93f9&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#bd93f9&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#bd93f9&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;union 联合查询&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; employees &lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt; eamil &lt;span style=&#34;color:#ff79c6&#34;&gt;like&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%a%&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; department_id&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;90&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;相当于
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; employees &lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt; eamil &lt;span style=&#34;color:#ff79c6&#34;&gt;like&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%a%&amp;#39;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;union&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; employees &lt;span style=&#34;color:#ff79c6&#34;&gt;where&lt;/span&gt; department_id&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;90&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;CONCAT() 函数&lt;/p&gt;
+&lt;p&gt;CONCAT(str1,str2,…)&lt;/p&gt;
+&lt;p&gt;将多个字符串连接成一个字符串。&lt;/p&gt;
+&lt;p&gt;GROUP_CONCAT（）函数&lt;/p&gt;
+&lt;p&gt;返回一个字符串结果，该结果由分组中的值连接组合而成。&lt;/p&gt;
+&lt;h4 id=&#34;175-组合两个表httpsleetcode-cncomproblemscombine-two-tables&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://leetcode-cn.com/problems/combine-two-tables/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;175. 组合两个表&lt;/a&gt;
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;select&lt;/span&gt; FirstName, LastName, City, &lt;span style=&#34;color:#ff79c6&#34;&gt;State&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; Person  &lt;span style=&#34;color:#ff79c6&#34;&gt;left&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;join&lt;/span&gt; Address &lt;span style=&#34;color:#ff79c6&#34;&gt;on&lt;/span&gt; Person.PersonId &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; Address.PersonId;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;left join&lt;/p&gt;
+&lt;p&gt;也叫left outer join，外连接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、 &lt;strong&gt;on&lt;/strong&gt; 条件是在生成临时表时使用的条件，它不管 &lt;strong&gt;on&lt;/strong&gt; 中的条件是否为真，都会返回左边表中的记录。&lt;/li&gt;
+&lt;li&gt;2、&lt;strong&gt;where&lt;/strong&gt; 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 &lt;strong&gt;left join&lt;/strong&gt; 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;p1255-数楼梯&#34;&gt;P1255 数楼梯
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;gogogo&lt;/span&gt;(index):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; index &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(index)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; gogogo(index&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; gogogo(index&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;elif&lt;/span&gt; index &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;elif&lt;/span&gt; index &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; index &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(gogogo(a))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;思路是对的，但是层数一多就g了&lt;/p&gt;
+&lt;p&gt;于是想用循环取代递归&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;,n&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;l[&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;], l[&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; n &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;,n&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        l[i] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; l[i&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; l[i&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(l[n])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样是可以通过的&lt;/p&gt;
+&lt;p&gt;但是上网又搜了一个更恐怖的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a, b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())): 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    a, b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; b, a &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; b
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(b &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; a &lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;p1143-进制转换&#34;&gt;P1143 进制转换
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;trans_map&lt;/span&gt;(cint):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; cint &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;不合法&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;elif&lt;/span&gt; cint &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; cint
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;elif&lt;/span&gt; cint &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chr&lt;/span&gt;(cint &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;65&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;anyToTen&lt;/span&gt;(m, origin):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;# 任意进制的数转换为10机制&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;# 先将m转换为10进制&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;# 公式 num = an * m**(n-1) + an-1 * m**(n-2).....+ a0 * m**0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;# 直接利用int的自带功能&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(origin), base&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;m)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;tenToAny&lt;/span&gt;(n, origin):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;# 10进制转换为任意进制的数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;True&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6272a4&#34;&gt;# 取商&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        s &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; origin &lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt; n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6272a4&#34;&gt;# 取余数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        tmp &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; origin &lt;span style=&#34;color:#ff79c6&#34;&gt;%&lt;/span&gt; n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;append(trans_map(tmp))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; s &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        origin &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;reverse()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(each) &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; each &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;list&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 将一个m进制的数转换为一个n进制的数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;transfer&lt;/span&gt;(m, n, origin):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    num &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; anyToTen(m, origin)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    target &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; tenToAny(n, num)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    a &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    b &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;int&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;input&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    transfer(a,c,b)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

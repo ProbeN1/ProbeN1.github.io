@@ -331,15 +331,15 @@
 <p>我们应该把软件放置在 Linux 服务器的什么位置呢？
 Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码的位置
 所以我们就把搭建 LNMP 环境所需的所有软件包都传递到这个位置</p>
-<h3 id="winscp传输软件">WinSCP传输软件</h3>
-<p>WinSCP 是在 Windows 中安装，使用 SFTP 协议向 Linux 服务器传递文件的工具。它的特点是使用简单、图形化操作，而且数据传递过程是加密的，较为安全，是 Windows 和 Linux 之间进行数据传递的常用软件。</p>
+<h3 id="winscp传输软件">WinSCP传输软件
+</h3><p>WinSCP 是在 Windows 中安装，使用 SFTP 协议向 Linux 服务器传递文件的工具。它的特点是使用简单、图形化操作，而且数据传递过程是加密的，较为安全，是 Windows 和 Linux 之间进行数据传递的常用软件。</p>
 <p>在启动界面的“主机名”文本框中输入 Linux 服务器的 IP 地址，如 192.168.0.210，在“用户名”文本框中输入 Linux 的用户名，在“密码”文本框中输入正确的密码，单击“登录”按钮，就会见到如图 3 所示的界面。</p>
 <p>B计划:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>cd /usr/local/src/
 </span></span><span style="display:flex;"><span>wget http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz
 </span></span><span style="display:flex;"><span>mv ~/lnmp1.0-full.tar.gz /usr/local/src/
-</span></span></code></pre></div><h3 id="yum换源">yum换源</h3>
-<p>把原本的源移走备份</p>
+</span></span></code></pre></div><h3 id="yum换源">yum换源
+</h3><p>把原本的源移走备份</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir /opt/centos-yum.bak
 </span></span><span style="display:flex;"><span>mv /etc/yum.repos.d/* /opt/centos-yum.bak/
 </span></span></code></pre></div><p>查看系统版本</p>
@@ -350,12 +350,12 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum clean all
 </span></span><span style="display:flex;"><span>yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
 </span></span><span style="display:flex;"><span>yum list
-</span></span></code></pre></div><h3 id="检查硬盘的剩余空间">检查硬盘的剩余空间</h3>
-<p><code>df -h</code>
+</span></span></code></pre></div><h3 id="检查硬盘的剩余空间">检查硬盘的剩余空间
+</h3><p><code>df -h</code>
 注意挂载点&quot;&quot;
 先留出4G的空间</p>
-<h3 id="配置防火墙开启80端口3306端口mysql和11211memcache端口">配置防火墙，开启80端口、3306端口(mysql)和11211（memcache）端口</h3>
-<p><code>systemctl start firewalld</code> 开启防火墙
+<h3 id="配置防火墙开启80端口3306端口mysql和11211memcache端口">配置防火墙，开启80端口、3306端口(mysql)和11211（memcache）端口
+</h3><p><code>systemctl start firewalld</code> 开启防火墙
 <code>systemctl status firewalld</code>  查看防火墙状态
 <code>firewall-cmd --list-all</code> 查看开放端口
 发现一个都没开hhh
@@ -374,8 +374,8 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>firewall-cmd --reload
 </span></span></code></pre></div><p>记得重载后再查看开放的端口</p>
-<h3 id="关闭selinux安全子系统">关闭SELinux安全子系统</h3>
-<p>我们还需要关闭 SELinux 安全子系统。因为这个子系统会对我们的安装过程产生影响，所以先关闭它。关闭 SELinux 之后，必须重启 Linux 系统，修改才会生效。</p>
+<h3 id="关闭selinux安全子系统">关闭SELinux安全子系统
+</h3><p>我们还需要关闭 SELinux 安全子系统。因为这个子系统会对我们的安装过程产生影响，所以先关闭它。关闭 SELinux 之后，必须重启 Linux 系统，修改才会生效。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi /etc/selinux/config
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">#把 SELINUX=enforcing改为 SELINUX=disabled</span>
@@ -383,20 +383,20 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
 </span></span><span style="display:flex;"><span>shutdown -r now
 </span></span></code></pre></div><p>B计划:直接禁用防火墙
 <code>systemctl stop firewalld</code>  关闭防火墙</p>
-<h3 id="安装gcc">安装gcc</h3>
-<p>安装 gcc 编译工具。如果没有安装 gcc 编译工具，那么 LNMP 一键安装包会尝试自动 yum 安装，但是要保证 yum 源是可用的。</p>
-<h3 id="停用-rpm-包安装的-apache-和-mysql">停用 RPM 包安装的 apache 和 MySQL</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>service httpd stop
+<h3 id="安装gcc">安装gcc
+</h3><p>安装 gcc 编译工具。如果没有安装 gcc 编译工具，那么 LNMP 一键安装包会尝试自动 yum 安装，但是要保证 yum 源是可用的。</p>
+<h3 id="停用-rpm-包安装的-apache-和-mysql">停用 RPM 包安装的 apache 和 MySQL
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>service httpd stop
 </span></span><span style="display:flex;"><span>service mysqld stop
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">#停止apache和mysql服务</span>
 </span></span><span style="display:flex;"><span>chkconfig httpd off
 </span></span><span style="display:flex;"><span>chkconfig mysqld off
 </span></span><span style="display:flex;"><span><span style="color:#6272a4">#关闭apache和mysql的自启动</span>
-</span></span></code></pre></div><h3 id="解压">解压</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /usr/local/src/
+</span></span></code></pre></div><h3 id="解压">解压
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /usr/local/src/
 </span></span><span style="display:flex;"><span>tar -zxvf lnmp1.0-full.tar.gz
-</span></span></code></pre></div><h3 id="执行安装脚本安装-lnmp-一键安装包">执行安装脚本安装 LNMP 一键安装包</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> lnmp1.0-full
+</span></span></code></pre></div><h3 id="执行安装脚本安装-lnmp-一键安装包">执行安装脚本安装 LNMP 一键安装包
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> lnmp1.0-full
 </span></span><span style="display:flex;"><span>./centos.sh
 </span></span></code></pre></div><p>起飞!
 回车之后安装就会继续，会看到如下界面：</p>
@@ -449,8 +449,8 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
 </span></span><span style="display:flex;"><span>tcp <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span> :::<span style="color:#bd93f9">22</span>   :::<span style="color:#ff79c6">*</span>    LISTEN
 </span></span><span style="display:flex;"><span>tcp <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span> ::<span style="color:#bd93f9">1</span>:<span style="color:#bd93f9">631</span> :::<span style="color:#ff79c6">*</span>    LISTEN
 </span></span><span style="display:flex;"><span>tcp <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span> ::<span style="color:#bd93f9">1</span>:<span style="color:#bd93f9">25</span>  :::<span style="color:#ff79c6">*</span>    LISTEN
-</span></span></code></pre></div><h3 id="lnmp一键安装包安装的软件及具体位置">LNMP一键安装包安装的软件及具体位置</h3>
-<p>既然是一键安装，那么默认安装的软件和软件的安装位置都是事先设定好的，在安装过程中不能更改。具体安装了哪些软件及其位置如表 1 所示。</p>
+</span></span></code></pre></div><h3 id="lnmp一键安装包安装的软件及具体位置">LNMP一键安装包安装的软件及具体位置
+</h3><p>既然是一键安装，那么默认安装的软件和软件的安装位置都是事先设定好的，在安装过程中不能更改。具体安装了哪些软件及其位置如表 1 所示。</p>
 <p><a class="link" href="https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png"  target="_blank" rel="noopener"
     ><figure 
 	>
@@ -465,8 +465,8 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
 	
 </figure></a></p>
 <p>也就是说，LNMP 一键安装只安装了基本的 Nginx、MySQL、PHP、phpMyAdmin 和 Zend Optimizer。</p>
-<h3 id="heading">&hellip;.</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#ff79c6">=====================================</span> Check install <span style="color:#ff79c6">===================================</span>
+<h3 id="heading">&hellip;.
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#ff79c6">=====================================</span> Check install <span style="color:#ff79c6">===================================</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Checking<span style="color:#ff79c6">...</span>
 </span></span><span style="display:flex;"><span>Error: <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span>nginx <span style="color:#ff79c6">not</span> found<span style="color:#ff79c6">!!!</span>Nginx install failed<span style="color:#ff79c6">.</span>
@@ -670,7 +670,7 @@ Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

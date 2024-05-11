@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on 茄子的养殖场</title>
-    <link>https://proben1.github.io/categories/</link>
-    <description>Recent content in Categories on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 09 May 2024 15:57:26 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Linux</title>
-      <link>https://proben1.github.io/categories/linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://proben1.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>学习笔记</title>
-      <link>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>小人联合工会内部资料</title>
-      <link>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>整点小活</title>
-      <link>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
-      <description></description>
-    </item>
-  </channel>
+    <channel>
+        <title>Categories on 茄子的养殖场</title>
+        <link>https://proben1.github.io/categories/</link>
+        <description>Recent content in Categories on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 09 May 2024 15:57:26 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux</title>
+        <link>https://proben1.github.io/categories/linux/</link>
+        <pubDate>Thu, 09 May 2024 15:57:26 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>学习笔记</title>
+        <link>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Sun, 02 Apr 2023 22:39:05 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/shua.jpg" alt="Featured image of post 学习笔记" /&gt;</description>
+        </item>
+        <item>
+        <title>小人联合工会内部资料</title>
+        <link>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</link>
+        <pubDate>Sun, 20 Nov 2022 16:54:59 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</guid>
+        <description>&lt;img src="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/littleblue.jpg" alt="Featured image of post 小人联合工会内部资料" /&gt;</description>
+        </item>
+        <item>
+        <title>整点小活</title>
+        <link>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</link>
+        <pubDate>Fri, 27 May 2022 22:17:48 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
+        <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/learn.jpg" alt="Featured image of post 整点小活" /&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

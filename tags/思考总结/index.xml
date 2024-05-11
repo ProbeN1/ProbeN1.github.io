@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>思考总结 on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/</link>
-    <description>Recent content in 思考总结 on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 09:13:17 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>第一次面试经历</title>
-      <link>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</link>
-      <pubDate>Sun, 10 Apr 2022 09:13:17 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</guid>
-      <description>hvv蓝队 西邮的一个学长，很温柔 先是看我加入了AD网络安全协会，他说自己是协会的创始人之一，我tm直接借机套一波近乎先，吹了下协会 然后开始面</description>
-    </item>
-  </channel>
+    <channel>
+        <title>思考总结 on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/</link>
+        <description>Recent content in 思考总结 on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 10 Apr 2022 09:13:17 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>第一次面试经历</title>
+        <link>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</link>
+        <pubDate>Sun, 10 Apr 2022 09:13:17 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/</guid>
+        <description>&lt;p&gt;hvv蓝队&lt;/p&gt;
+&lt;p&gt;西邮的一个学长，很温柔&lt;/p&gt;
+&lt;p&gt;先是看我加入了AD网络安全协会，他说自己是协会的创始人之一，我tm直接借机套一波近乎先，吹了下协会&lt;/p&gt;
+&lt;p&gt;然后开始面试&lt;/p&gt;
+&lt;p&gt;首先问了下《白帽子》，通过这本书我都了解些什么，我大概说了下安全世界观的事情，安全的本质是信任，扯了扯。第二个问sql注入的流程，分类，流程很简单，就是找个框就开注，遇到过滤fuzz一下，该绕过绕过；&lt;/p&gt;
+&lt;p&gt;分类我分了三大类，差不多原话答&lt;/p&gt;
+&lt;p&gt;1、按注入点数据类型分类：数字型、字符型
+2、按数据传参方式分类：GET注入、POST注入、header头注入（cookie注入、host注入、user-agent注入、referer注入…）
+3、按执行效果分类：union注入攻击、Boolean注入攻击-布尔盲注、报错注入攻击、时间注入攻击-时间盲注、堆叠查询注入攻击、二次注入攻击、宽字节注入攻击…&lt;/p&gt;
+&lt;p&gt;接下来问了报错注入，我超我记不清，就记得e和u开头的俩函数，就实话实说了，但是等一会又想起来了，有一个updatexml，他问啥是xpath，我说是xml路径。最后他打了个圆场，可能我学太多忘了。&lt;/p&gt;
+&lt;p&gt;补充一下&lt;/p&gt;
+&lt;p&gt;floor报错注入，利用数据库表主键不能重复的原理，使用GROUP BY分组，产生主键冗余，导致报错&lt;/p&gt;
+&lt;p&gt;updatexml()函数实际上是去更新了XML文档，但是我们在xml文档路径的位置里面写入了子查询，我们输入特殊字符，然后就因为不符合输入规则然后报错了，但是报错的时候它其实已经执行了那个子查询代码。&lt;/p&gt;
+&lt;p&gt;extractvalue() :对XML文档进行查询的函数。
+xml文档中查找字符位置是用/xxx/xxx/xxx/&amp;hellip;这种格式，如果写入其他格式就会报错,并且会返回写入的非法格式内容，错误信息如:XPATH syntax error:&amp;lsquo;xxxxxxxx&amp;rsquo;。&lt;/p&gt;
+&lt;p&gt;注入接着问，盲注，怎么判断是不是盲注，我说了看回显可以类比成01的bool型还有无回显的时间盲注，接着又问了python脚本跑盲注，这个按自己情况说就可以了。&lt;/p&gt;
+&lt;p&gt;接下来是文件上传，大体的上传思路（比如前端），还有对应的中间件解析漏洞，基本都在这两个博客里。
+中间件解析漏洞https://www.cnblogs.com/1996-11-01-614lb/p/14237744.html
+文件上传https://blog.csdn.net/ouyang_ly/article/details/120210422&lt;/p&gt;
+&lt;p&gt;可能是按照我的简历问的，问了怎么加固系统，我说了下可以按照阿里云给的加固方案
+&lt;a class=&#34;link&#34; href=&#34;https://www.alibabacloud.com/help/zh/doc-detail/49781.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.alibabacloud.com/help/zh/doc-detail/49781.html&lt;/a&gt;，分成linux和windows，并强调了我在面试前特地准备了一下这个，还没说就问下一条了。&lt;/p&gt;
+&lt;p&gt;最后是应急响应怎么做，我的思路是应急响应-&amp;gt;加固-&amp;gt;溯源，先找到具体的那一台机器，然后既然报警那就说明知道了具体的漏洞类型，加相应的补丁打上，以linux为主（一般都会问linux的），查看/var/log/secure系统日志，查看登录失败的记录，还有Linux历史命令&amp;ndash;&amp;gt;home目录的bash_histor，查看执行过的命令。再利用webshell或者是shell查杀工具查杀，查看tmp目录下是非有带有免杀的木马。拿到攻击ip之后开始溯源。
+到这里就停了，溯源他没问，面试结束。&lt;/p&gt;
+&lt;p&gt;最后问了下我的年级，大二，夸了下年轻有为，我说不算不算，年级里还有比我厉害的。&lt;/p&gt;
+&lt;p&gt;我最后也问候了下学长的健康（本来昨天定的面试，结果人家去医院了）&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

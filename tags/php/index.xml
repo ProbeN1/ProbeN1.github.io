@@ -1,26 +1,341 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Php on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/php/</link>
-    <description>Recent content in Php on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 12 May 2022 20:53:12 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>离谱与webshell</title>
-      <link>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</link>
-      <pubDate>Thu, 12 May 2022 20:53:12 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</guid>
-      <description>php5中assert是一个函数，我们可以通过$f=&#39;assert&#39;;$f(...);这样的方法来动态执行任意代码。 但php7中，asser</description>
-    </item>
-    <item>
-      <title>正则与PCRE回溯</title>
-      <link>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</link>
-      <pubDate>Thu, 12 May 2022 20:53:02 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</guid>
-      <description>正则表达式 PHP利用PCRE回溯次数限制绕过 起源 20世纪40年代：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Php on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/php/</link>
+        <description>Recent content in Php on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 12 May 2022 20:53:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>离谱与webshell</title>
+        <link>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</link>
+        <pubDate>Thu, 12 May 2022 20:53:12 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E7%A6%BB%E8%B0%B1%E4%B8%8Ewebshell/</guid>
+        <description>&lt;p&gt;php5中assert是一个函数，我们可以通过&lt;code&gt;$f=&#39;assert&#39;;$f(...);&lt;/code&gt;这样的方法来动态执行任意代码。&lt;/p&gt;
+&lt;p&gt;但php7中，assert不再是函数，变成了一个语言结构（类似eval），不能再作为函数名动态执行代码.但也不是不行,也有其他的方法,比如file_put_contents这些函数&lt;/p&gt;
+&lt;p&gt;所以这些都是用php5里的assert(),但是可以为php7.x版本提供思路&lt;/p&gt;
+&lt;p&gt;下面,pass it!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/[a-z0-9]/is&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;shell&amp;#39;&lt;/span&gt;])) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;eval&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;shell&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;异或&#34;&gt;异或
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%01&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%13&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%13&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%05&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%12&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%14&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#6272a4&#34;&gt;// $_=&amp;#39;assert&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%0D&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%2F&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;`&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%0E&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;%09&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;]&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#6272a4&#34;&gt;// $__=&amp;#39;_POST&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;[_]); &lt;span style=&#34;color:#6272a4&#34;&gt;// assert($_POST[_]);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;取反&#34;&gt;取反
+&lt;/h2&gt;&lt;p&gt;UTF-8编码的某个汉字，并将其中某个字符取出来，比如&lt;code&gt;&#39;和&#39;{2}&lt;/code&gt;的结果是&lt;code&gt;&amp;quot;\x8c&amp;quot;&lt;/code&gt;，其取反即为字母&lt;code&gt;s&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;弱类型，true的值为1，故&lt;code&gt;true+true==2&lt;/code&gt;，也就是&lt;code&gt;(&#39;&amp;gt;&#39;&amp;gt;&#39;&amp;lt;&#39;)+(&#39;&amp;gt;&#39;&amp;gt;&#39;&amp;lt;&#39;)==2&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;lt;&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;lt;&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;瞰&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;和&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;和&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;的&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;半&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;始&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;俯&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;瞰&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;次&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;});&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;站&amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=~&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;{&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$$_____&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;[&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;寻找思路:找一篇长点的文章,写个脚本把里面的字挨个试一下,看通过截取并取反这个过程能不能得到字母&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;error_reporting(&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Content-Type: text/html; charset=utf-8&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;str_split_unicode&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$str&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$l&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$l&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ret&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$len&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; mb_strlen(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$str&lt;/span&gt;, &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$len&lt;/span&gt;; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$l&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ret&lt;/span&gt;[] &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; mb_substr(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$str&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$l&lt;/span&gt;, &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$ret&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; preg_split(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;//u&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$str&lt;/span&gt;, &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;, PREG_SPLIT_NO_EMPTY);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$s&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;当我站在山顶上俯瞰半个鼓浪屿和整个厦门的夜空的时候，我知道此次出行的目的已经完成了，我要开始收拾行李，明天早上离开这里。前几天有人问我，大学四年结束了，你也不说点什么？乌云发生了一些事情，所有人都缄默不言，你也是一样吗？你逃到南方，难道不回家了吗？当然要回家，我只是想找到我要找的答案。其实这次出来一趟很累，晚上几乎是热汗淋漓回到住处，马，追回十年前姑娘”。后来，感觉一切都步入正轨，学位证也顺利拿到，我匆匆告别了自己的大学。后来也遇到了很多事，事后有人找我，很多人关心你，少数人可能不是，但出了学校以后，又有多少人和事情完全没有目的呢？我也考虑了很多去处，但一直没有决断，倒有念怀旧主，也有妄自菲薄之意，我希望自己能做出点成绩再去谈其他的，所以很久都是闭门不出，琢磨东西。来到厦门，我还了一个愿，又许了新的愿望，希望我还会再次来还愿。我又来到了上次没住够的鼓浪屿，订了一间安静的房子，只有我一个人。在这里，能听到的只有远处屋檐下鸟儿叽叽喳喳的鸣叫声，远处的喧嚣早已烟消云散，即使这只是暂时的。站在屋顶的我，喝下杯中最后一口水。清晨，背着行李，我乘轮渡离开了鼓浪屿，这是我第二次来鼓浪屿，谁知道会不会是最后一次。我在这里住了三天，用三天去寻找了一个答案。不知不觉我又想到辜鸿铭与沈子培的那段对话。“大难临头，何以为之？”“世受国恩，死生系之&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$arr_str&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;str_split_unicode(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$s&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt; strlen(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$s&lt;/span&gt;) ; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$arr_str&lt;/span&gt;[&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;--&amp;gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.~&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$arr_str&lt;/span&gt;[&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$i&lt;/span&gt;]{&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;}&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;lt;br&amp;gt;&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;递增递减&#34;&gt;递增／递减
+&lt;/h2&gt;&lt;p&gt;PHP 支持 C 风格的前／后递增与递减运算符。&lt;/p&gt;
+&lt;p&gt;所以，我们只要能拿到一个变量，其值为&lt;code&gt;a&lt;/code&gt;，通过自增操作即可获得a-z中所有字符。&lt;/p&gt;
+&lt;p&gt;数组（Array）的第一个字母就是大写A，而且第4个字母是小写a。也就是说，我们可以同时拿到小写和大写A，等于我们就可以拿到a-z和A-Z的所有字母。&lt;/p&gt;
+&lt;p&gt;如果强制连接数组和字符串的话，数组将被转换成字符串，其值为&lt;code&gt;Array&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a34752ab3f51d91b97c7a.jpg#alt=&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a34752ab3f51d91b97c7a.jpg#alt=&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;[];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=@&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// $_=&amp;#39;Array&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;!&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;@&amp;#39;&lt;/span&gt;]; &lt;span style=&#34;color:#6272a4&#34;&gt;// $_=$_[0];
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// A
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// S
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// S
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// E 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// R
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// T
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;_&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// P
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// O
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// S
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;++&lt;/span&gt;; &lt;span style=&#34;color:#6272a4&#34;&gt;// T
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$____&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$__&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$$____&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$___&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_&lt;/span&gt;[_]); &lt;span style=&#34;color:#6272a4&#34;&gt;// ASSERT($_POST[_]);
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;php7动态函数&#34;&gt;php7动态函数
+&lt;/h2&gt;&lt;p&gt;看来已经不足以阻挡了.加点难度&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;])){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$code&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(strlen(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$code&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;35&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Long.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;/[A-Za-z0-9_$]+/&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$code&lt;/span&gt;)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;die&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;NO.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;eval&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$code&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    highlight_file(__FILE__);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;pass it!&lt;/p&gt;
+&lt;p&gt;PHP7前是不允许用&lt;code&gt;($a)();&lt;/code&gt;这样的方法来执行动态函数的，但PHP7中增加了对此的支持。所以，我们可以通过&lt;code&gt;(&#39;phpinfo&#39;)();&lt;/code&gt;来执行函数，第一个括号中可以是任意PHP表达式。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a3bb22ab3f51d91c05a77.png#alt=&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a3bb22ab3f51d91c05a77.png#alt=&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后,利用之前的取反,得到答案(phpinfo)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(~%8F%97%8F%96%91%99%90)();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(上面url表示的都是abcd&amp;hellip;之外的不可见字符)&lt;/p&gt;
+&lt;h2 id=&#34;回调函数&#34;&gt;回调函数
+&lt;/h2&gt;&lt;p&gt;回调函数的运用在一段时间里曾被webshell广泛应用。&lt;/p&gt;
+&lt;p&gt;首先，我们需要知道什么是回调函数，回调是什么意思？&lt;/p&gt;
+&lt;p&gt;所谓是回调其实就是间接调用，当PHP调用用户自定义的函数时，必须要通过一个代理函数来进行调用，所以称为回调函数。&lt;/p&gt;
+&lt;h4 id=&#34;array_walk&#34;&gt;array_walk()
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;array_walk(&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;,myfunction,parameter&lt;span style=&#34;color:#ff79c6&#34;&gt;...&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;参数&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;em&gt;array&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;必需。规定数组。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;em&gt;myfunction&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;必需。用户自定义函数的名称。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;em&gt;userdata&lt;/em&gt;,…&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;可选。规定用户自定义函数的参数。您能够向此函数传递任意多参数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;Ameng&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$key&lt;/span&gt;){   
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$a&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$key&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$value&lt;/span&gt;;	&lt;span style=&#34;color:#6272a4&#34;&gt;//拼接
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$a&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_POST&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$b&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;ass&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;ert&amp;#34;&lt;/span&gt;);	&lt;span style=&#34;color:#6272a4&#34;&gt;//$value=ert,$key=ass
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    array_walk(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$b&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Ameng&amp;#34;&lt;/span&gt;);	&lt;span style=&#34;color:#6272a4&#34;&gt;//调用自己定义函数，并传入键值对
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;一些不包含数字和字母的webshell&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;无字母数字webshell之提高篇&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.icode9.com/content-3-827439.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;php webshell各种姿势总结 - ICode9&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>正则与PCRE回溯</title>
+        <link>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</link>
+        <pubDate>Thu, 12 May 2022 20:53:02 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/</guid>
+        <description>&lt;p&gt;正则表达式&lt;/p&gt;
+&lt;p&gt;PHP利用PCRE回溯次数限制绕过&lt;/p&gt;
+&lt;h2 id=&#34;起源&#34;&gt;起源
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;20世纪40年代&lt;/strong&gt;：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了一种用数学方式来描述&lt;strong&gt;神经网络&lt;/strong&gt;的模型。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1956年&lt;/strong&gt;：一位名叫Stephen Kleene的数学科学家发表了一篇题目是《神经网事件的表示法》的论文，利用称之为&lt;strong&gt;正则集合的数学符号来描述此模型&lt;/strong&gt;，引入了正则表达式的概念。正则表达式被作为用来描述其称之为“正则集的代数”的一种表达式，因而采用了“&lt;strong&gt;正则表达式&lt;/strong&gt;”这个术语。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1968年&lt;/strong&gt;：C语言之父、UNIX之父&lt;strong&gt;肯·汤普森&lt;/strong&gt;把这个“正则表达式”的理论成果用于做一些搜索算法的研究，他描述了一种正则表达式的编译器，于是出现了应该算是最早的正则表达式的编译器qed（这也就成为后来的grep编辑器）。&lt;/p&gt;
+&lt;p&gt;Unix使用正则之后，正则表达式不断的发展壮大，然后大规模应用于各种领域，根据这些领域各自的条件需要，又发展出了许多版本的正则表达式，出现了许多的分支。我们把这些分支叫做“&lt;strong&gt;流派&lt;/strong&gt;”。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1987年&lt;/strong&gt;：Perl语言诞生了，它综合了其他的语言，用正则表达式作为基础，开创了一个新的流派，&lt;strong&gt;Perl流派&lt;/strong&gt;。之后很多编程语言如：&lt;strong&gt;Python、Java、Ruby、.Net、PHP等等在设计正则式支持的时候都参考Perl正则表达式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;到这里我们也就知道&lt;strong&gt;为什么众多编程语言的正则表达式基本一样，因为他们都师从Perl&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://deerchao.cn/tutorials/regex/regex.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;正则表达式30分钟入门教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a28c32ab3f51d91b1002a.png#id=hMpDc&amp;amp;originHeight=732&amp;amp;originWidth=454&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a28c32ab3f51d91b1002a.png#id=hMpDc&amp;amp;originHeight=732&amp;amp;originWidth=454&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;匹配原理&#34;&gt;匹配原理
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;执行过程&lt;/strong&gt;:由正则表达引擎编译执行,可以有预编译&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a28d02ab3f51d91b10a35.png#id=X18mt&amp;amp;originHeight=732&amp;amp;originWidth=720&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a28d02ab3f51d91b10a35.png#id=X18mt&amp;amp;originHeight=732&amp;amp;originWidth=720&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;引擎&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DFA (Deterministic finite automaton) 确定型有穷自动机&lt;/li&gt;
+&lt;li&gt;NFA (Non-deterministic finite automaton) 非确定型有穷自动机&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解释下确定型、有穷、自动机这几个名词：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定型与非确定型&lt;/strong&gt;：假设有一个字符串（text=abc）需要匹配，在没有编写正则表达式的前提下，就直接&lt;strong&gt;可以确定字符匹配顺序的就是确定型&lt;/strong&gt;，不能确定字符匹配顺序的则为非确定型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有穷&lt;/strong&gt;：有穷即表示有限的意思，这里表示有限次数内能得到结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动机&lt;/strong&gt;：自动机便是自动完成，在我们设置好匹配规则后由引擎自动完成，不需要人为干预！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;DFA文本主导,按照文本的顺序执行&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a2a852ab3f51d91b26262.gif&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;NFA表达式主导,按照表达式的一部分执行，如果不匹配换其他部分继续匹配，直到表达式匹配完成。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/627d06990947543129e1366b.gif&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/627d06990947543129e1366b.gif&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;绝大多数编程语言都选择NFA引擎,因为更灵活些.&lt;/p&gt;
+&lt;p&gt;当某个正则分支匹配不成功之后，文本的位置需要回退，然后换另一个分支匹配，&lt;strong&gt;而回退这步专业术语就叫：回溯&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a29352ab3f51d91b15b99.png#id=pktqx&amp;amp;originHeight=485&amp;amp;originWidth=732&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a29352ab3f51d91b15b99.png#id=pktqx&amp;amp;originHeight=485&amp;amp;originWidth=732&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;回溯陷阱&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;举个例子：text=aaaaa，pattern=/^(a*)b$/，匹配过程大致是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;(a*)：匹配到了文本中的aaaaa&lt;/li&gt;
+&lt;li&gt;匹配正则中的b，但是失败，因为(a*)已经把text都吃了&lt;/li&gt;
+&lt;li&gt;这时候引擎会要求(a*)吐出最后一个字符(a)，但是无法匹配b&lt;/li&gt;
+&lt;li&gt;第二次是吐出倒数第二个字符(还是a)，依然无法匹配&lt;/li&gt;
+&lt;li&gt;就这样引擎会要求(a*)逐个将吃进去的字符都吐出来&lt;/li&gt;
+&lt;li&gt;但是到最后都无法匹配b&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;引擎会要求&lt;code&gt;*&lt;/code&gt;匹配的东西一点一点吐回，我们假设如果文本长度为几万，那引擎就要回溯几万次，这对机器的CPU来说简直是灾难。&lt;/p&gt;
+&lt;p&gt;这就是回溯陷阱&lt;/p&gt;
+&lt;p&gt;附:&lt;a class=&#34;link&#34; href=&#34;https://c.runoob.com/front-end/854/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;常用正则表达式&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pcrebacktrack_limit&#34;&gt;pcre.backtrack_limit
+&lt;/h2&gt;&lt;p&gt;PHP为了防止正则表达式的拒绝服务攻击（reDOS），给pcre设定了一个回溯次数上限&lt;code&gt;pcre.backtrack_limit&lt;/code&gt;。我们可以通过&lt;code&gt;var_dump(ini_get(&#39;pcre.backtrack_limit&#39;));&lt;/code&gt;的方式查看当前环境下的上限&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/617a2b102ab3f51d91b2ce5a.jpg#id=xoK7z&amp;amp;originHeight=66&amp;amp;originWidth=498&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/617a2b102ab3f51d91b2ce5a.jpg#id=xoK7z&amp;amp;originHeight=66&amp;amp;originWidth=498&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;status=done&amp;amp;style=none&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可见，回溯次数上限默认是100万。那么，假设我们的回溯次数超过了100万,那么&lt;code&gt;preg_match&lt;/code&gt;返回的不是1和0，而是false。&lt;/p&gt;
+&lt;p&gt;eg:放进xunt里面了,题目名PCRE&lt;/p&gt;
+&lt;h2 id=&#34;修复方法&#34;&gt;修复方法
+&lt;/h2&gt;&lt;p&gt;如果用&lt;code&gt;preg_match&lt;/code&gt;对字符串进行匹配，一定要使用&lt;code&gt;===&lt;/code&gt;全等号来判断返回值&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;is_php&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$data&lt;/span&gt;){  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; preg_match(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/&amp;lt;\?.*[(`;?&amp;gt;].*/is&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$data&lt;/span&gt;);  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(is_php(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$input&lt;/span&gt;) &lt;span style=&#34;color:#ff79c6&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;// fwrite($f, $input); ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://segmentfault.com/a/1190000021787021&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;正则表达式引擎执行原理&lt;/a&gt;（猪哥）&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.leavesongs.com/PENETRATION/use-pcre-backtrack-limit-to-bypass-restrict.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;P神&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

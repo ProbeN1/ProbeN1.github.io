@@ -1,19 +1,284 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/docker/</link>
-    <description>Recent content in Docker on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 14 Apr 2022 20:28:16 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker学习</title>
-      <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
-      <description>Docker Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Docker on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/docker/</link>
+        <description>Recent content in Docker on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 14 Apr 2022 20:28:16 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Docker学习</title>
+        <link>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Thu, 14 Apr 2022 20:28:16 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/docker%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;h1 id=&#34;docker&#34;&gt;Docker
+&lt;/h1&gt;&lt;p&gt;Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从 Apache2.0 协议开源。&lt;/p&gt;
+&lt;p&gt;Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。&lt;/p&gt;
+&lt;p&gt;简单地说,就是用来创建容器的引擎.&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170b5a82ab3f51d9150630a.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170b5a82ab3f51d9150630a.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&#34;docker-架构&#34;&gt;Docker 架构
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;镜像（Image）&lt;/strong&gt;：Docker 镜像（Image），就相当于是一个 root 文件系统(rootfs)。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;容器（Container）&lt;/strong&gt;：镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：仓库可看成一个代码控制中心，用来保存镜像。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Docker客户端与服务器（C/S架构）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Docker&lt;/code&gt; 在运行时分为 &lt;code&gt;Docker 引擎（服务端守护进程）&lt;/code&gt; 和 &lt;code&gt;客户端工具&lt;/code&gt;，我们日常使用各种 &lt;code&gt;docker 命令&lt;/code&gt;，其实就是在使用 &lt;code&gt;客户端工具&lt;/code&gt; 与 &lt;code&gt;Docker 引擎&lt;/code&gt; 进行交互。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170bc782ab3f51d91543f34.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170bc782ab3f51d91543f34.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在Docker的术语里，&lt;strong&gt;一个只读层被称为镜像&lt;/strong&gt;，一个镜像是永久不会变的。
+由于Docker使用一个统一文件系统，Docker进程认为整个文件系统是以读写方式挂载的。但是所有的变更都发生顶层的可写层，而下层的原始的只读镜像文件并未变化。由于镜像不可写，所以&lt;strong&gt;镜像是无状态的&lt;/strong&gt;。
+&lt;strong&gt;Docker镜像可用于创建Docker容器。&lt;/strong&gt;
+Docker镜像是由文件系统叠加而成，&lt;strong&gt;最底层是一个文件引导系统（bootfs）&lt;/strong&gt;。Docker用户几乎永远不会与引导系统有交互。
+&lt;strong&gt;Docker镜像是一个只读的文件&lt;/strong&gt;，若要修改镜像内容只能重新制作或生成镜像。
+在Docker镜像创建为Docker容器后，最底层的文件引导系统（bootfs)便会被卸载，此时的容器是可以进行读写操作的。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170bdc42ab3f51d9154ec22.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170bdc42ab3f51d9154ec22.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;在利用Docker镜像创建容器时会在镜像的只读层上创建一层可写层作为最顶层。&lt;/p&gt;
+&lt;p&gt;每一个镜像都可能依赖于由一个或多个下层的组成的另一个镜像，&lt;strong&gt;下层镜像是上层镜像的父镜像&lt;/strong&gt;。
+一个没有任何父镜像的镜像，谓之&lt;strong&gt;基础镜像（Base Image）&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170be0c2ab3f51d91551ac1.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170be0c2ab3f51d91551ac1.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;图中的&lt;code&gt;add emacs&lt;/code&gt;便是&lt;code&gt;add Apache&lt;/code&gt;镜像的父镜像，而&lt;code&gt;Debian&lt;/code&gt;没有任何父镜像，我们便认为&lt;code&gt;Debian&lt;/code&gt;是基础镜像（Base Image）&lt;/p&gt;
+&lt;p&gt;(文件引导系统在这里不视作一层镜像)&lt;/p&gt;
+&lt;p&gt;在容器层中，用户看到的是一个叠加之后的文件系统。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;文件操作&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;添加文件&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;在容器中创建文件时，新文件被添加到容器层中。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;读取文件&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;在容器中读取某个文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后打开并读入内存。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;修改文件&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;在容器中修改已存在的文件时，Docker 会从上往下依次在各镜像层中查找此文件。一旦找到，立即将其复制到容器层，然后修改之。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;删除文件&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;在容器中删除文件时，Docker 也是从上往下依次在镜像层中查找此文件。找到后，会在容器层中**「记录下此删除操作」**。（只是记录删除操作）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;只有当需要修改时才复制一份数据，这种特性被称作 Copy-on-Write。可见，容器层保存的是镜像变化的部分，不会对镜像本身进行任何修改。&lt;/p&gt;
+&lt;h1 id=&#34;docker使用&#34;&gt;Docker使用
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;启动Docker&lt;/strong&gt;：&lt;code&gt;systemctl start docker&lt;/code&gt;
+&lt;strong&gt;重启Docker&lt;/strong&gt;：&lt;code&gt;systemctl restart docker&lt;/code&gt;
+&lt;strong&gt;开机启动Docker&lt;/strong&gt;：&lt;code&gt;systemctl enable docker&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hello-world&#34;&gt;hello-world
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;拉取镜像&lt;/strong&gt;：&lt;code&gt;docker pull 镜像仓库/镜像名称&lt;/code&gt;
+eg：&lt;code&gt;docker pull hello-world&lt;/code&gt; - 拉取hello-world镜像
+示例命令省略了仓库地址，Docker便默认从官方仓库（registry.hub.docker.com）拉取镜像，实际命令等价于
+&lt;code&gt;docker pull registry.hub.docker.com/hello-world&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看本地镜像&lt;/strong&gt;：&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170c05a2ab3f51d91566ff7.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170c05a2ab3f51d91566ff7.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;镜像的 &lt;code&gt;ID&lt;/code&gt; 唯一标识了镜像&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;利用镜像创建Docker容器&lt;/strong&gt;：&lt;code&gt;docker run 镜像名称&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170c0c82ab3f51d9156ab7a.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170c0c82ab3f51d9156ab7a.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看当前运行的所有容器&lt;/strong&gt;：&lt;code&gt;docker ps -a&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker镜像的使用&#34;&gt;Docker镜像的使用
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;拉取镜像&lt;/strong&gt;: &lt;code&gt;docker pull 仓库名:TAG&lt;/code&gt;
+例如拉取一个Ubuntu 18.04的镜像作为基础镜像：&lt;code&gt;docker pull ubuntu:18.04&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;列出镜像&lt;/strong&gt;: &lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建容器&lt;/strong&gt;: &lt;code&gt;docker run -ti idiswy/lnmp /bin/bash&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170c5ca2ab3f51d915986ed.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170c5ca2ab3f51d915986ed.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;也可以用&lt;code&gt;docker images&lt;/code&gt;时的镜像ID代替&lt;code&gt;仓库名:TAG&lt;/code&gt;的组合&lt;/p&gt;
+&lt;p&gt;我们和一个容器产生了交互,在Shell中输入&lt;code&gt;exit&lt;/code&gt;即可停止该镜像回到原命令行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;docker run 常用参数&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;-d:&lt;/strong&gt; 后台运行容器，并返回容器ID；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-p:&lt;/strong&gt; 指定端口映射，格式为：&lt;strong&gt;主机(宿主)端口:容器端口&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-t:&lt;/strong&gt; 为容器重新分配一个伪输入终端，通常与 -i 同时使用；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-i:&lt;/strong&gt; 以交互模式运行容器，通常与 -t 同时使用；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;name=&amp;ldquo;nginx-lb&amp;rdquo;:&lt;/strong&gt; 为容器指定一个名称；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;-e username=&amp;ldquo;ritchie&amp;rdquo;:&lt;/strong&gt; 设置环境变量；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ndash;net=&amp;ldquo;bridge&amp;rdquo;:&lt;/strong&gt; 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;删除镜像&lt;/strong&gt;: &lt;code&gt;docker rmi 镜像名称/镜像ID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;eg:删除刚刚拉取的hello-world&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170c6a02ab3f51d915a07e6.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170c6a02ab3f51d915a07e6.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修改标签&lt;/strong&gt;: &lt;code&gt;docker tag 镜像ID 用户名/镜像名称:新标签&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;搜索镜像&lt;/strong&gt;: 使用&lt;code&gt;docker search&lt;/code&gt;命令来检索公开仓库中的镜像&lt;/p&gt;
+&lt;p&gt;例如&lt;code&gt;docker search lamp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170e8572ab3f51d916fbdfb.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170e8572ab3f51d916fbdfb.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker镜像的创建&#34;&gt;Docker镜像的创建
+&lt;/h2&gt;&lt;p&gt;1.&lt;strong&gt;docker commit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先创建一个容器：&lt;code&gt;docker run -ti idiswy/lnmp /bin/bash&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在根目录加入一个flag&lt;/p&gt;
+&lt;p&gt;结束后输入&lt;code&gt;exit&lt;/code&gt; 来退出容器，现在我们的容器已经被我们改变了&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;docker commit&lt;/code&gt; 命令来提交更新后的副本：
+&lt;code&gt;docker commit -m &amp;quot;Added flag&amp;quot; -a &amp;quot;ginger&amp;quot; b70f3162e24e test/flag&lt;/code&gt;
+其中，&lt;code&gt;-m&lt;/code&gt; 来指定提交的说明信息，跟我们使用的版本控制工具一样，&lt;code&gt;-a&lt;/code&gt; 可以指定更新的用户信息，之后是用来创建镜像的容器的ID，最后指定目标镜像的仓库名和 tag 信息。&lt;/p&gt;
+&lt;p&gt;利用这个新镜像来创建一个容器,ok&lt;/p&gt;
+&lt;p&gt;2.&lt;strong&gt;利用 Dockerfile 来创建镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;之后再提&lt;/p&gt;
+&lt;p&gt;3.&lt;strong&gt;从本地文件系统导入镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker import - ubuntu:14.04
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker save -o ubuntu_18.04.tar ubuntu:18.04
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6170eca62ab3f51d91722a1a.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6170eca62ab3f51d91722a1a.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker容器的操作&#34;&gt;Docker容器的操作
+&lt;/h2&gt;&lt;p&gt;启动容器我们共有两种方式：一种是&lt;strong&gt;基于镜像新建一个容器并启动&lt;/strong&gt;，另外一种是&lt;strong&gt;将在中止状态（Exited）的容器重新启动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;前者: &lt;code&gt;docker start ID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;后者: &lt;code&gt;docker start ID&lt;/code&gt;命令来启动已中止的容器&lt;/p&gt;
+&lt;p&gt;相应的，我们也可以使用&lt;code&gt;docker stop/kill ID&lt;/code&gt;命令来&lt;strong&gt;停止运行中的容器&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;同时需要注意的是，我们在容器终端中输入&lt;code&gt;exit&lt;/code&gt;或Ctrl+D来退出终端时，容器也会自动中止。&lt;/p&gt;
+&lt;p&gt;除此之外还可以使用&lt;code&gt;docker restart 容器ID&lt;/code&gt;命令来&lt;strong&gt;重启容器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker logs ID&lt;/code&gt;命令来查看容器的输出信息&lt;/p&gt;
+&lt;p&gt;在后台运行容器后，我们需要对容器进行操作时，可以使用&lt;code&gt;docker attach ID&lt;/code&gt;命令来对容器进行操作。&lt;/p&gt;
+&lt;p&gt;也可以使用&lt;code&gt;docker exec -it ID 所执行命令&lt;/code&gt;来操作容器。&lt;/p&gt;
+&lt;p&gt;注意&lt;strong&gt;在使用&lt;code&gt;docker exec&lt;/code&gt;命令后，退出终端时，容器依旧保持运行状态&lt;/strong&gt;，而在&lt;code&gt;docker attach&lt;/code&gt;命令打开终端退出后，容器便会中止。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;docker rm ID&lt;/code&gt;命令来删除容器。&lt;/p&gt;
+&lt;p&gt;注意，&lt;strong&gt;在删除容器前必须停止容器&lt;/strong&gt;，如果要删除一个运行中的容器，可以添加&lt;code&gt;-f&lt;/code&gt;参数来关闭并删除容器。&lt;/p&gt;
+&lt;h2 id=&#34;docker网络&#34;&gt;Docker网络
+&lt;/h2&gt;&lt;p&gt;可以通过&lt;code&gt;docker network ls&lt;/code&gt;命令查看网络模式&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Docker四种网络模式：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Bridge - 桥接网络模式&lt;/li&gt;
+&lt;li&gt;Host - 开放式网络模式&lt;/li&gt;
+&lt;li&gt;Container - 联合挂载式网络模式（Host网络模式的延伸）&lt;/li&gt;
+&lt;li&gt;None - 封闭式网络模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;端口映射&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker run -it -p 物理机端口:容器端口 镜像名称:标签信息&lt;/code&gt; 此时&lt;strong&gt;指定的容器端口&lt;/strong&gt;便映射到了&lt;strong&gt;指定的物理机端口&lt;/strong&gt;上。同时&lt;code&gt;-p&lt;/code&gt;可以多次使用来绑定多个端口映射关系。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;eg：&lt;/p&gt;
+&lt;p&gt;docker run -it -p 10001:80 idiswy/lnmp /bin/bash&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;docker port 容器ID 端口&lt;/code&gt;即可查看当前映射的端口配置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除所有已经停止的容器：&lt;code&gt;docker rm $(docker ps -a -q)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考
+&lt;/h1&gt;&lt;p&gt;Docker 架构及工作原理：https://www.cnblogs.com/mrhelloworld/p/docker2.html&lt;/p&gt;
+&lt;p&gt;菜鸟教程：https://www.runoob.com/docker&lt;/p&gt;
+&lt;p&gt;Docker学习笔记：https://www.cnblogs.com/yesec/p/15025511.html&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

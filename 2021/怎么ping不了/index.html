@@ -335,8 +335,8 @@
     <section class="article-content">
     
     
-    <h1 id="前言">前言</h1>
-<p>关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用<code>hexo d</code>来把更新的博客上传到github pages上去，然而很不巧的是它给我报了这样一个错误：</p>
+    <h1 id="前言">前言
+</h1><p>关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用<code>hexo d</code>来把更新的博客上传到github pages上去，然而很不巧的是它给我报了这样一个错误：</p>
 <p>Error！！</p>
 <p>好吧截图暂时复现不到了，它的意思大概是无法和github进行连接。明明挂了梯子，可以在谷歌上搜索东西，甚至把clash的全局代理打开了，为什么不能在windows终端里连接到github呢？于是我想确认一下这终端是不是真的连上了代理，就做了一件事情：ping google.com</p>
 <p><figure 
@@ -359,8 +359,8 @@
 	
 </figure></p>
 <p>md，然后我就开始想为什么ping不通google。</p>
-<h1 id="要说的话">要说的话</h1>
-<p>2021届安全组的成员们，注意啦！！！</p>
+<h1 id="要说的话">要说的话
+</h1><p>2021届安全组的成员们，注意啦！！！</p>
 <p>可能大家以后学习安全的方向不尽相同，但是如果你在<a class="link" href="https://www.sec-wiki.com/skill/index"  target="_blank" rel="noopener"
     >secwiki</a>上查找过的话，可以发现有一条打造科学的工作环境，这其中就包括学会使用谷歌搜索。更何况现在，我认为这正在逐渐向基本的生活技能靠拢……不单单搜谷歌，查文献，steam社区，逛github这些也很有必要。</p>
 <p>之前一直在用QQ浏览器，有的地方被坑惨了（真的，推荐大家一开始就用谷歌浏览器，特别是web方向）。换了之后界面简洁，而且hackbar这些插件也十分方便，最主要的是没啥大病，不会在该弹出下载的地方给你弹出404。</p>
@@ -373,8 +373,8 @@
 <p><strong>最后！！</strong>
 所以文章里不会提及具体方式的哦，只是想简单普及一下，不想让大家像我之前一样迷迷糊糊的。</p>
 <hr>
-<h1 id="why-not-一">why not （一）</h1>
-<p>墙墙是啥？</p>
+<h1 id="why-not-一">why not （一）
+</h1><p>墙墙是啥？</p>
 <p>通过<strong>IP地址封锁</strong>，<strong>端口阻断</strong>，<strong>DNS劫持和污染</strong>，<strong>关键字屏蔽</strong> 等技术对认为不符合要求（可以搜下审查制度）的互联网国际出口传输内容，进行干扰、阻断、屏蔽。
 <figure 
 	
@@ -393,10 +393,10 @@
 	</a>
 	
 </figure></p>
-<h1 id="why-can-一">why can （一）</h1>
-<p>接下来，是为什么又能在浏览器访问到谷歌。这里有两种原理。</p>
-<h2 id="1vpn">1.VPN</h2>
-<p>刚刚说了，墙墙屏蔽的是那些不符合审查制度的网站，如果我们连接一台墙墙认为合理的服务器，把它作为一层代理，去完成用户想要做的事情，最后再返回结果，不就可以了吗？不由得去想谁能干这样的事情，VPN呀（virtual private network）！</p>
+<h1 id="why-can-一">why can （一）
+</h1><p>接下来，是为什么又能在浏览器访问到谷歌。这里有两种原理。</p>
+<h2 id="1vpn">1.VPN
+</h2><p>刚刚说了，墙墙屏蔽的是那些不符合审查制度的网站，如果我们连接一台墙墙认为合理的服务器，把它作为一层代理，去完成用户想要做的事情，最后再返回结果，不就可以了吗？不由得去想谁能干这样的事情，VPN呀（virtual private network）！</p>
 <p><figure 
 	
 		class="gallery-image" 
@@ -417,8 +417,8 @@
 	
 </figure></p>
 <p>吼吼，看上去十分完美，但是……慢慢的，墙墙发现越来越多的流量都是先发送一个数据包请求和一个服务器建立加密连接，然后紧跟着一个代理请求，于是这种特征就被识别出来了，就寄了。（特征一被识别，提供 VPN 服务的服务器 IP 地址就会被封了）</p>
-<h2 id="2shadowsocks">2.Shadowsocks</h2>
-<p>接下来，一个更新的技术出现了，Shadowsocks（这既是一个技术的名字又是一类客户端的名字）。</p>
+<h2 id="2shadowsocks">2.Shadowsocks
+</h2><p>接下来，一个更新的技术出现了，Shadowsocks（这既是一个技术的名字又是一类客户端的名字）。</p>
 <p><figure 
 	
 		class="gallery-image" 
@@ -439,16 +439,16 @@
 	
 </figure></p>
 <p>Shadowsocks是将代理服务器拆开成Server端和client端，中间使用了socks网络传输协议。Socks 代理与应用层代理、 HTTP 层代理不同，Socks 代理只是简单地传递数据包，所以可以实现经过 墙墙量全部加密，从而消除明显的流量特征这个概念。</p>
-<h1 id="how一">how（一）</h1>
-<p>现在我们简单了解了墙墙 的大概工作思路，以及VPN和Shadowsocks的工作思路，我们再来看看理论上有几种方式实现。</p>
-<h2 id="软件方向">软件方向</h2>
-<h3 id="1vpn-1">1.VPN</h3>
-<p>虚拟私有网络，最早应用于一些大公司中，因私密通信的需求而产生，是一种端对端的虚拟私有专线，可避免通讯流量被中间人劫持。</p>
+<h1 id="how一">how（一）
+</h1><p>现在我们简单了解了墙墙 的大概工作思路，以及VPN和Shadowsocks的工作思路，我们再来看看理论上有几种方式实现。</p>
+<h2 id="软件方向">软件方向
+</h2><h3 id="1vpn-1">1.VPN
+</h3><p>虚拟私有网络，最早应用于一些大公司中，因私密通信的需求而产生，是一种端对端的虚拟私有专线，可避免通讯流量被中间人劫持。</p>
 <p>也就是说，访问谷歌能只是VPN刚好可以做到的，人家本来没想要干这个，而且VPN流量特征明显，早就可以被 GFW 完美探测并封锁。</p>
 <p>只有申请报备的企业用户才可正常使用VPN，比如科研机构，大型企业之类的。</p>
 <p>顺便吐槽一下，我手机里以前那些免费加速器基本都属于这种。</p>
-<h3 id="2shadowsocks-及衍生品">2.Shadowsocks 及衍生品</h3>
-<p>该类软件利用本地服务器加密流量，然后将加密流量发送至远程服务器解密。</p>
+<h3 id="2shadowsocks-及衍生品">2.Shadowsocks 及衍生品
+</h3><p>该类软件利用本地服务器加密流量，然后将加密流量发送至远程服务器解密。</p>
 <p>常见的应用软件有 Shadowsocks、ShadowsocksR、Shadowrocket、V2Ray、Clash、Surge。</p>
 <p><strong>clash</strong>是使用 GO 开的发一个基于规则的隧道代理软件，支持 HTTP/HTTPS/SOCKS/Shadowsocks/ShadowsocksR/V2Ray/Trojan 协议, 能更好的使用处理规则（就是你规定它该连啥）</p>
 <p><figure 
@@ -470,22 +470,22 @@
 	<figcaption>download</figcaption>
 	
 </figure></p>
-<h2 id="硬件方向">硬件方向</h2>
-<h3 id="1路由">1.路由</h3>
-<p>没错！</p>
+<h2 id="硬件方向">硬件方向
+</h2><h3 id="1路由">1.路由
+</h3><p>没错！</p>
 <p>将上面的软件部署在了路由器上，连接路由器的设备都可以通过路由器访问到谷歌。</p>
 <p>很不错的想法，但是遗憾的是大部分路由器在设计的时候算力只能满足基本的路由功能，而在通信产生大量的加解密运算，路由器算不过来，网就卡了……</p>
 <p>接着往下看，还有更好的方法。</p>
-<h3 id="2-软路由">2. 软路由</h3>
-<p>新主意，利用台式机或服务器配合软件形成路由解决方案，主要靠软件的设置，达成路由器的功能。这样既有《全局代理》的效果，又有足够的算力。</p>
+<h3 id="2-软路由">2. 软路由
+</h3><p>新主意，利用台式机或服务器配合软件形成路由解决方案，主要靠软件的设置，达成路由器的功能。这样既有《全局代理》的效果，又有足够的算力。</p>
 <p>但是缺点。。。比较麻烦。。。
 接着往下看，还有更好的方法。</p>
-<h3 id="3网关模式">3.网关模式</h3>
-<p>通过一台计算机上跑的软件来实现路由器功能，代表性产品：Windows 下的 Clash，Mac 下的 Surge。</p>
+<h3 id="3网关模式">3.网关模式
+</h3><p>通过一台计算机上跑的软件来实现路由器功能，代表性产品：Windows 下的 Clash，Mac 下的 Surge。</p>
 <p>相当于在本地局域网里部署了一个开启Clash或Surge的电脑当网关，任何在局域网内的设备都可以将此网关作为代理，访问互联网。</p>
 <p>这样有几个好处，一是效率高，方便；二是便于集中管理。</p>
-<h1 id="why-not-二">why not （二）</h1>
-<p>讲了这么多，还是不知道为什么不能ping到google。</p>
+<h1 id="why-not-二">why not （二）
+</h1><p>讲了这么多，还是不知道为什么不能ping到google。</p>
 <p>其实原因很简单，</p>
 <p><strong>SOCKS协议在会话层 (第五层)</strong></p>
 <p><strong>ICMP协议在网络层(第三层)</strong></p>
@@ -512,8 +512,8 @@
 	<figcaption>1</figcaption>
 	
 </figure></p>
-<h1 id="how二">how（二）</h1>
-<p>于是我们来解决这个问题，怎么ping到google？</p>
+<h1 id="how二">how（二）
+</h1><p>于是我们来解决这个问题，怎么ping到google？</p>
 <p>这里clash有个很好的功能，虚拟网卡。</p>
 <p><strong>TUN</strong>与<strong>TAP</strong></p>
 <p>在计算机网络中，<strong>TUN</strong>与<strong>TAP</strong>是操作系统内核中的虚拟网络设备。不同于普通靠硬件网络适配器实现的设备，这些虚拟的网络设备全部用软件实现，并向运行于操作系统上的软件提供与硬件的网络设备完全相同的功能。</p>
@@ -580,8 +580,8 @@
 </span></span></code></pre></div><p>7890是我的默认代理端口</p>
 <p>这样直接输代码肯定比之前name一大堆简单的多，可是为什么这样修改之后可以上传github pages却不能ping google呢？</p>
 <p>原因很明显，就是git和windows powershell 在osi模型上的层数在第三层之上，修改他们的代理也无法代理ICMP协议，也就ping不了google。但是连接github pages却用的更上层的协议。</p>
-<h1 id="最后">最后</h1>
-<p>最后再解释几个名词</p>
+<h1 id="最后">最后
+</h1><p>最后再解释几个名词</p>
 <p>机场：提供特殊的、以私密方式上网的服务商（或平台）。</p>
 <p>VPS：Virtual Private Server
 是将一台服务器分割成多个虚拟专用服务器的服务。</p>
@@ -622,7 +622,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

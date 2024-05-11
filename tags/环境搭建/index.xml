@@ -1,40 +1,599 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>环境搭建 on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-    <description>Recent content in 环境搭建 on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 11:30:30 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>记一次SpringBoot2报错排查</title>
-      <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
-      <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
-      <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
-    </item>
-    <item>
-      <title>Stack修改</title>
-      <link>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</link>
-      <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</guid>
-      <description>使用主题 我选了一个stack的魔改的主题，感谢作者！（已给星星） https://github.com/Mantyke/Hugo-stack-theme-mod 下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended 基</description>
-    </item>
-    <item>
-      <title>LNMP环境搭建成功篇</title>
-      <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</link>
-      <pubDate>Thu, 14 Apr 2022 20:24:35 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</guid>
-      <description>这里!!!https://lnmp.org/install.html su root yum install screen screen -S lnmp wget http://soft.vpser.net/lnmp/lnmp1.8.tar.gz -cO lnmp1.8.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.8.tar.gz &amp;amp;&amp;amp; cd lnmp1.8 &amp;amp;&amp;amp; ./install.sh lnmp 一键安装&amp;hellip;&amp;h</description>
-    </item>
-    <item>
-      <title>LNMP环境搭建失败篇</title>
-      <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</link>
-      <pubDate>Thu, 14 Apr 2022 20:24:28 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</guid>
-      <description>教程:http://c.biancheng.net/linux_tutorial/16/ 任务:配置Linux服务器（lnmp或lamp环境）</description>
-    </item>
-  </channel>
+    <channel>
+        <title>环境搭建 on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+        <description>Recent content in 环境搭建 on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 20 Nov 2022 11:30:30 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>记一次SpringBoot2报错排查</title>
+        <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
+        <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
+        <description>&lt;p&gt;背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。&lt;/p&gt;
+&lt;p&gt;项目：https://github.com/TimVan1596/LightDisk&lt;/p&gt;
+&lt;p&gt;IDEA 2022.2.3：https://www.exception.site/essay/idea-reset-eval&lt;/p&gt;
+&lt;h1 id=&#34;part1&#34;&gt;part1
+&lt;/h1&gt;&lt;p&gt;先从idea上连github把项目clone下来：https://blog.csdn.net/hry2015/article/details/77984399&lt;/p&gt;
+&lt;p&gt;理论上这之后maven构建一下就可以了，结果构建之后运行出现了报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;遂上网搜索novacrypto:Base58，发现这个包是存在的，但是版本出现了问题。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如图，在pom.xml中，默认的版本是2019.01.27，但是现在只有2022.01.17的版本，猜测更新的时候删掉了旧版本hhhh，重新修改后reload:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6272a4&#34;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.github.novacrypto&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;Base58&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2022.01.17&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;中间还出现了一次网络报错，切换一下线路即可。&lt;/p&gt;
+&lt;h1 id=&#34;part2&#34;&gt;part2
+&lt;/h1&gt;&lt;p&gt;运行com.timvanx.Application入口，启动Spring Boot项目，过程中出现报错：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;吃个黄豆糕冷静一下，一般来说，像这种框架出现报错，要么就是环境配置问题，要么就是别想解决了……&lt;/p&gt;
+&lt;p&gt;我首先试着删除libraries中的依赖，然后使用maven中的clean来删除创建了的target，再用maven重新导入依赖，无果。&lt;/p&gt;
+&lt;p&gt;看着readme中的环境要求，感觉可以用jdk1.8试一下：&lt;/p&gt;
+
+
+&lt;blockquote class=&#34;quote en&#34;&gt;&lt;p&gt;软件架构&lt;/p&gt;
+&lt;p&gt;JDK 1.8+&lt;br&gt;
+Spring Boot 2.0.1&lt;br&gt;
+[Apache Gossip]&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;p&gt;我的版本是16，有可能不支持&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java version &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;16.0.2&amp;#34;&lt;/span&gt; 2021-07-20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java(TM) SE Runtime Environment (build 16.0.2+7-67)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到官网新安装了一个java8：https://www.oracle.com/java/technologies/downloads/#java8-windows&lt;/p&gt;
+&lt;p&gt;在File-&amp;gt;Project Structure -&amp;gt; SDK中选择JDK1.8，Apply！（idea会自动检索到）&lt;/p&gt;
+&lt;p&gt;重新启动后，成功！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Stack修改</title>
+        <link>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</link>
+        <pubDate>Thu, 12 May 2022 11:23:22 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/stack%E4%BF%AE%E6%94%B9/</guid>
+        <description>&lt;h3 id=&#34;使用主题&#34;&gt;使用主题
+&lt;/h3&gt;&lt;p&gt;我选了一个stack的魔改的主题，感谢作者！（已给星星）&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Mantyke/Hugo-stack-theme-mod&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Mantyke/Hugo-stack-theme-mod&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载下来直接和github连接并使用即可，这里的hugo版本是hugo v0.89.2-63E3A5EB+extended&lt;/p&gt;
+&lt;h3 id=&#34;基础配置&#34;&gt;基础配置
+&lt;/h3&gt;&lt;p&gt;对根目录的config.yaml进行配置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;baseurl: https://proben1.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: 茄子的养殖场
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;emoji: 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 推荐一个emoji查询的网站：https://www.emojiall.com/zh-hans
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 如果难看可以注释掉emoji
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;subtitle: 完成一个名为大学的作品
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;网站图标&#34;&gt;网站图标
+&lt;/h3&gt;&lt;p&gt;根目录下新建static文件夹，把中意图标的ioc拖进去，命名favicon.ico&lt;/p&gt;
+&lt;h3 id=&#34;头像&#34;&gt;头像
+&lt;/h3&gt;&lt;p&gt;修改img/avatar.png&lt;/p&gt;
+&lt;h3 id=&#34;短代码&#34;&gt;短代码
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://guanqr.com/tech/website/hugo-shortcodes-customization/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;选自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;直接效果演示吧：&lt;/p&gt;
+
+
+&lt;p style=&#34;text-align:left&#34;&gt;文字居左&lt;/p&gt;
+
+
+
+&lt;p style=&#34;text-align:center&#34;&gt;文字居中&lt;/p&gt;
+
+
+
+&lt;p style=&#34;text-align:right&#34;&gt;文字居右&lt;/p&gt;
+
+
+
+
+&lt;div class=&#34;notice notice-warning&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;notice-warning&lt;/p&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;notice notice-info&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M256 8a248 248 0 100 496 248 248 0 000-496zm0 110a42 42 0 110 84 42 42 0 010-84zm56 254c0 7-5 12-12 12h-88c-7 0-12-5-12-12v-24c0-7 5-12 12-12h12v-64h-12c-7 0-12-5-12-12v-24c0-7 5-12 12-12h64c7 0 12 5 12 12v100h12c7 0 12 5 12 12v24z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;notice-info&lt;/p&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;notice notice-note&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;notice-note&lt;/p&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;notice notice-tip&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zM227 387l184-184c7-6 7-16 0-22l-22-23c-7-6-17-6-23 0L216 308l-70-70c-6-6-16-6-23 0l-22 23c-7 6-7 16 0 22l104 104c6 7 16 7 22 0z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;notice-tip&lt;/p&gt;&lt;/div&gt;
+
+
+
+&lt;blockquote class=&#34;quote en&#34;&gt;
+        &lt;p&gt;To see a world in a grain of sand. And a heaven in a wild flower. Hold infinity in the palm of your hand. And eternity in an hour.&lt;/p&gt;&lt;/blockquote&gt; 
+&lt;h3 id=&#34;修改行内代码样式&#34;&gt;修改「行内代码」样式
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;效果&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改键盘标签样式&#34;&gt;修改「键盘标签」样式
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt;&lt;/p&gt;
+&lt;h3 id=&#34;添加友链&#34;&gt;添加友链
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.echosec.top/p/custom-hugo-theme-styles/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;同样是摘自这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在~\data\links.json里添加友链就可以了;image放在~\assets\link-img\里&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;小球飞鱼&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;website&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;https://mantyke.icu/&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;image&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;mantyke.png&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;我们会一起遇见鲸鱼吗？&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;友情链接2&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;website&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;image&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;代码块&#34;&gt;代码块
+&lt;/h3&gt;&lt;p&gt;首先，是代码高亮设置&lt;/p&gt;
+&lt;p&gt;打开项目根目录下的 &lt;code&gt;config.yaml&lt;/code&gt;，在highlight中加入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;style : autumn  # 样式参考https://xyproto.github.io/splash/docs/all.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我很喜欢白天用perldoc夜间用dracula，现在有个问题是怎么能做到切换。由于暂时无法解决我先一直用着dracula。&lt;/p&gt;
+&lt;p&gt;然后是这个大块块不太顺眼，直白白的边框实在是难看hhh。在F:\ProbeN1\myblog\assets\scss\custom.scss里添加css代码进行修改，这里我加了一个灰色的边框：&lt;/p&gt;
+&lt;p&gt;早就看这个代码块不太顺眼，那个直白白的边框实在是难看hhh。在F:\ProbeN1\myblog\themes\hugo-theme-stack\assets\scss\custom.scss里添加css代码进行修改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;代码块&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#50fa7b&#34;&gt;highlight&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;pre&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;font-family&lt;/span&gt;: Consolas;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border-style&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;solid&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border-width&lt;/span&gt;: &lt;span style=&#34;color:#bd93f9&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#8be9fd&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;border-color&lt;/span&gt;: (&lt;span style=&#34;color:#bd93f9&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>LNMP环境搭建成功篇</title>
+        <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</link>
+        <pubDate>Thu, 14 Apr 2022 20:24:35 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/</guid>
+        <description>&lt;p&gt;这里!!!https://lnmp.org/install.html&lt;/p&gt;
+&lt;p&gt;su root&lt;/p&gt;
+&lt;p&gt;yum install screen&lt;/p&gt;
+&lt;p&gt;screen -S lnmp&lt;/p&gt;
+&lt;p&gt;wget &lt;a class=&#34;link&#34; href=&#34;http://soft.vpser.net/lnmp/lnmp1.8.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://soft.vpser.net/lnmp/lnmp1.8.tar.gz&lt;/a&gt; -cO lnmp1.8.tar.gz &amp;amp;&amp;amp; tar zxf lnmp1.8.tar.gz &amp;amp;&amp;amp; cd lnmp1.8 &amp;amp;&amp;amp; ./install.sh lnmp&lt;/p&gt;
+&lt;p&gt;一键安装&amp;hellip;&amp;hellip;&amp;hellip;省心&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install lnmp takes 34 minutes.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install lnmp V1.8 completed! enjoy it.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;LNMP相关软件安装目录&lt;/strong&gt;
+Nginx 目录: /usr/local/nginx/
+MySQL 目录 : /usr/local/mysql/
+MySQL数据库所在目录：/usr/local/mysql/var/
+MariaDB 目录 : /usr/local/mariadb/
+MariaDB数据库所在目录：/usr/local/mariadb/var/
+PHP目录 : /usr/local/php/
+多PHP版本目录 : /usr/local/php5.5/ 其他版本前面5.5的版本号换成其他即可
+PHPMyAdmin目录 : 0.9版本为/home/wwwroot/phpmyadmin/ 1.0及以后版本为 /home/wwwroot/default/phpmyadmin/ 强烈建议将此目录重命名为其不容易猜到的名字。phpmyadmin可自己从官网下载新版替换。
+默认网站目录 : 0.9版本为 /home/wwwroot/ 1.0及以后版本为 /home/wwwroot/default/
+Nginx日志目录：/home/wwwlogs/
+/root/vhost.sh添加的虚拟主机配置文件所在目录：/usr/local/nginx/conf/vhost/
+PureFtpd 目录：/usr/local/pureftpd/
+PureFtpd web管理目录： 0.9版为/home/wwwroot/default/ftp/ 1.0版为 /home/wwwroot/default/ftp/
+Proftpd 目录：/usr/local/proftpd/
+Redis 目录：/usr/local/redis/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LNMP相关配置文件位置&lt;/strong&gt;
+Nginx主配置(默认虚拟主机)文件：/usr/local/nginx/conf/nginx.conf
+添加的虚拟主机配置文件：/usr/local/nginx/conf/vhost/域名.conf
+MySQL配置文件：/etc/my.cnf
+PHP配置文件：/usr/local/php/etc/php.ini
+php-fpm配置文件：/usr/local/php/etc/php-fpm.conf
+PureFtpd配置文件：/usr/local/pureftpd/pure-ftpd.conf 1.3及更高版本：/usr/local/pureftpd/etc/pure-ftpd.conf
+PureFtpd MySQL配置文件：/usr/local/pureftpd/pureftpd-mysql.conf
+Proftpd配置文件：/usr/local/proftpd/etc/proftpd.conf 1.2及之前版本为/usr/local/proftpd/proftpd.conf
+Proftpd 用户配置文件：/usr/local/proftpd/etc/vhost/用户名.conf
+Redis 配置文件：/usr/local/redis/etc/redis.conf&lt;/p&gt;
+&lt;p&gt;如果之前已经有php-fpm,就&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;killall php-fpm 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lnmp restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://pic.imgdb.cn/item/60f790f55132923bf8935b6b.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/60f790f55132923bf8935b6b.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/60f790f55132923bf8935b6b.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;好啦!&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>LNMP环境搭建失败篇</title>
+        <link>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</link>
+        <pubDate>Thu, 14 Apr 2022 20:24:28 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%A4%B1%E8%B4%A5%E7%AF%87/</guid>
+        <description>&lt;p&gt;教程:http://c.biancheng.net/linux_tutorial/16/&lt;/p&gt;
+&lt;p&gt;任务:配置Linux服务器（lnmp或lamp环境）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LAMP 环境搭建&lt;/strong&gt;指的是在 Linux 操作系统中分别安装 Apache 网页服务器、MySQL 数据库服务器和 PHP 开发服务器，以及一些对应的扩展软件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LNMP 环境搭建&lt;/strong&gt;指的是在 Linux 操作系统中分别安装 Nginx 网页服务器、MySQL 数据库服务器和 PHP 开发服务器，以及一些对应的扩展软件。&lt;/p&gt;
+&lt;p&gt;打算安装LNMP的环境.&lt;/p&gt;
+&lt;p&gt;系统:Centos-8&lt;/p&gt;
+&lt;p&gt;手工安装LAMP需要19个源码包,安装LNMP 环境，那么同样需要安装大概 14 个源码包.
+但是现在网上非常流行的 LNMP 环境的搭建过程是采用 LNMP 一键安装包直接安装。
+既然是一键安装包，所以我们就不用去下载单个的源码包了，只要在 &lt;a class=&#34;link&#34; href=&#34;http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz&lt;/a&gt; 这个地址中下载 LNMP 一键安装包即可。&lt;/p&gt;
+&lt;p&gt;我们应该把软件放置在 Linux 服务器的什么位置呢？
+Linux 中的 /usr/local/src/ 目录是系统默认的放置下载软件源代码的位置
+所以我们就把搭建 LNMP 环境所需的所有软件包都传递到这个位置&lt;/p&gt;
+&lt;h3 id=&#34;winscp传输软件&#34;&gt;WinSCP传输软件
+&lt;/h3&gt;&lt;p&gt;WinSCP 是在 Windows 中安装，使用 SFTP 协议向 Linux 服务器传递文件的工具。它的特点是使用简单、图形化操作，而且数据传递过程是加密的，较为安全，是 Windows 和 Linux 之间进行数据传递的常用软件。&lt;/p&gt;
+&lt;p&gt;在启动界面的“主机名”文本框中输入 Linux 服务器的 IP 地址，如 192.168.0.210，在“用户名”文本框中输入 Linux 的用户名，在“密码”文本框中输入正确的密码，单击“登录”按钮，就会见到如图 3 所示的界面。&lt;/p&gt;
+&lt;p&gt;B计划:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /usr/local/src/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget http://soft.vpser.net/lnmp/lnmp1.0-full.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv ~/lnmp1.0-full.tar.gz /usr/local/src/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;yum换源&#34;&gt;yum换源
+&lt;/h3&gt;&lt;p&gt;把原本的源移走备份&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir /opt/centos-yum.bak
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv /etc/yum.repos.d/* /opt/centos-yum.bak/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看系统版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/redhat-release
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载aliyun yum源repo文件(对应CentOS-8)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;清除缓存&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum clean all
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum makecache        //把yum源缓存到本地，加快软件的搜索好安装速度
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;检查硬盘的剩余空间&#34;&gt;检查硬盘的剩余空间
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;df -h&lt;/code&gt;
+注意挂载点&amp;quot;&amp;quot;
+先留出4G的空间&lt;/p&gt;
+&lt;h3 id=&#34;配置防火墙开启80端口3306端口mysql和11211memcache端口&#34;&gt;配置防火墙，开启80端口、3306端口(mysql)和11211（memcache）端口
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;systemctl start firewalld&lt;/code&gt; 开启防火墙
+&lt;code&gt;systemctl status firewalld&lt;/code&gt;  查看防火墙状态
+&lt;code&gt;firewall-cmd --list-all&lt;/code&gt; 查看开放端口
+发现一个都没开hhh
+下面来添加端口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// Step1: 加入开放端口到配置文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# firewall-cmd --zone=public --add-port=80/tcp --permanent&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--zone&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;public 添加时区
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--add-port&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;80/tcp 添加端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--permanent 永久生效
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;// 加载防火墙新配置文件&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt; 以 root 身份输入以下命令，重新加载防火墙，并不中断用户连接，即不丢失状态信息. &lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;记得重载后再查看开放的端口&lt;/p&gt;
+&lt;h3 id=&#34;关闭selinux安全子系统&#34;&gt;关闭SELinux安全子系统
+&lt;/h3&gt;&lt;p&gt;我们还需要关闭 SELinux 安全子系统。因为这个子系统会对我们的安装过程产生影响，所以先关闭它。关闭 SELinux 之后，必须重启 Linux 系统，修改才会生效。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/selinux/config
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#把 SELINUX=enforcing改为 SELINUX=disabled&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shutdown -r now
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;B计划:直接禁用防火墙
+&lt;code&gt;systemctl stop firewalld&lt;/code&gt;  关闭防火墙&lt;/p&gt;
+&lt;h3 id=&#34;安装gcc&#34;&gt;安装gcc
+&lt;/h3&gt;&lt;p&gt;安装 gcc 编译工具。如果没有安装 gcc 编译工具，那么 LNMP 一键安装包会尝试自动 yum 安装，但是要保证 yum 源是可用的。&lt;/p&gt;
+&lt;h3 id=&#34;停用-rpm-包安装的-apache-和-mysql&#34;&gt;停用 RPM 包安装的 apache 和 MySQL
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service httpd stop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service mysqld stop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#停止apache和mysql服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chkconfig httpd off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chkconfig mysqld off
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#关闭apache和mysql的自启动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;解压&#34;&gt;解压
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;cd&lt;/span&gt; /usr/local/src/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -zxvf lnmp1.0-full.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;执行安装脚本安装-lnmp-一键安装包&#34;&gt;执行安装脚本安装 LNMP 一键安装包
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;cd&lt;/span&gt; lnmp1.0-full
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./centos.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;起飞!
+回车之后安装就会继续，会看到如下界面：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LUMP V1&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; CentOS&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;RadHat Linux VPS Written by Licess
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;A &lt;span style=&#34;color:#ff79c6&#34;&gt;tool&lt;/span&gt; to auto&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;compile &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;amp;&lt;/span&gt; install Nginx&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;MySQL&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;PHP on Linux
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;For more information please visit http:&lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt;www&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lnmp&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Please input the root password of mysql:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(Default password: root) : &lt;span style=&#34;color:#bd93f9&#34;&gt;123&lt;/span&gt;  &lt;span style=&#34;color:#6272a4&#34;&gt;#设定MySQL 的密码，这里设为 123&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Do you want to install the InnoDB Storage Engine?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(Default no,&lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; you want please input: y , &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; please press the enter button):y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#是否需要安装MySQL InnoDB，如果需要安装则输入y&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install PHP &lt;span style=&#34;color:#bd93f9&#34;&gt;5.3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;17&lt;/span&gt;,Please input y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install PHP &lt;span style=&#34;color:#bd93f9&#34;&gt;5.2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;17&lt;/span&gt;,Please input n &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; press Enter
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(Please input y &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; n) :y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#选择安装PHP的版本,输入y安装的是5.3.17&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install MySQL &lt;span style=&#34;color:#bd93f9&#34;&gt;5.5&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;27&lt;/span&gt;,Please input y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Install MySQL &lt;span style=&#34;color:#bd93f9&#34;&gt;5.1&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;60&lt;/span&gt;,Please input n &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; press Enter
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(Please input y &lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; n) :y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#选择安装MySQL的版本，输入y安装的是5.5.27&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Press any key to start&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;or&lt;/span&gt; Press Ctrl&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;c to cancel &lt;span style=&#34;color:#6272a4&#34;&gt;#按任意鍵开始安装&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果在安装过程中输入错误，则可以按“Ctrl+Backspace”组合键来进行删除。
+如果看到以下界面，则证明安装成功。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Manager &lt;span style=&#34;color:#ff79c6&#34;&gt;for&lt;/span&gt; LNMP VI&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; , Written by Licess
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LNMP is a &lt;span style=&#34;color:#ff79c6&#34;&gt;tool&lt;/span&gt; to auto&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;compile &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;amp;&lt;/span&gt; install Nginx&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;MySQL&lt;span style=&#34;color:#ff79c6&#34;&gt;+&lt;/span&gt;PHP on Linux
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;This script is a &lt;span style=&#34;color:#ff79c6&#34;&gt;tool&lt;/span&gt; to Manage status of lnmp
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;For more information please visit http:&lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt;www&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lnmp&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;org
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;root&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;lnmp {start&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;stop&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;reload&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;restart&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;kill&lt;span style=&#34;color:#ff79c6&#34;&gt;|&lt;/span&gt;status}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=========================================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Nginx is runing&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm is runing&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MySQL running (&lt;span style=&#34;color:#bd93f9&#34;&gt;12489&lt;/span&gt;)   [确定]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Active Internet connections (only servers)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Proto Recv&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;Q Send&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;Q Local Address   Foreign Address State
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;53575&lt;/span&gt;   &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;3306&lt;/span&gt;    &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;111&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;80&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;22&lt;/span&gt;  &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;127.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.1&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;631&lt;/span&gt;   &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;127.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.1&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;25&lt;/span&gt;    &lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0.0&lt;/span&gt;:&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;   LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; :::&lt;span style=&#34;color:#bd93f9&#34;&gt;57454&lt;/span&gt;    :::&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;    LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; :::&lt;span style=&#34;color:#bd93f9&#34;&gt;111&lt;/span&gt;  :::&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;    LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; :::&lt;span style=&#34;color:#bd93f9&#34;&gt;22&lt;/span&gt;   :::&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;    LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; ::&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;631&lt;/span&gt; :::&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;    LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tcp &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt; ::&lt;span style=&#34;color:#bd93f9&#34;&gt;1&lt;/span&gt;:&lt;span style=&#34;color:#bd93f9&#34;&gt;25&lt;/span&gt;  :::&lt;span style=&#34;color:#ff79c6&#34;&gt;*&lt;/span&gt;    LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lnmp一键安装包安装的软件及具体位置&#34;&gt;LNMP一键安装包安装的软件及具体位置
+&lt;/h3&gt;&lt;p&gt;既然是一键安装，那么默认安装的软件和软件的安装位置都是事先设定好的，在安装过程中不能更改。具体安装了哪些软件及其位置如表 1 所示。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/60f68dc05132923bf83598ba.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也就是说，LNMP 一键安装只安装了基本的 Nginx、MySQL、PHP、phpMyAdmin 和 Zend Optimizer。&lt;/p&gt;
+&lt;h3 id=&#34;heading&#34;&gt;&amp;hellip;.
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=====================================&lt;/span&gt; Check install &lt;span style=&#34;color:#ff79c6&#34;&gt;===================================&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Checking&lt;span style=&#34;color:#ff79c6&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;nginx &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; found&lt;span style=&#34;color:#ff79c6&#34;&gt;!!!&lt;/span&gt;Nginx install failed&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; found&lt;span style=&#34;color:#ff79c6&#34;&gt;!!!&lt;/span&gt;PHP install failed&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Error: &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;mysql &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; found&lt;span style=&#34;color:#ff79c6&#34;&gt;!!!&lt;/span&gt;MySQL install failed&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Sorry,Failed to install LNMP&lt;span style=&#34;color:#ff79c6&#34;&gt;!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Please visit http:&lt;span style=&#34;color:#ff79c6&#34;&gt;//&lt;/span&gt;bbs&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;vpser&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;net&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;forum&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;1.&lt;/span&gt;html feedback errors &lt;span style=&#34;color:#ff79c6&#34;&gt;and&lt;/span&gt; logs&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You can download &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;root&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;lnmp&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;install&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;log from your server,&lt;span style=&#34;color:#ff79c6&#34;&gt;and&lt;/span&gt; upload lnmp&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;install&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;log to LNMP Forum&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[root@localhost&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;localdomain]在[&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;src&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;lnmp1&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;full]笑着说:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;​
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;竟然失败了
+重来
+这次分来装
+教程:https://blog.csdn.net/qq_24447851/article/details/106316944&lt;/p&gt;
+&lt;p&gt;先是安装Nginx
+&lt;code&gt;yum install -y nginx&lt;/code&gt;
+安装nginx后可以访问服务器的ip进行查看
+&lt;code&gt;nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建用户组www&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;groupadd www
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;useradd -g www www
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在php-7.3.18里配置pm的用户组和用户&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --prefix=/usr/local/php \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-fpm \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-fpm-user=www \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-fpm-group=www \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-mysqlnd \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-mysqli=mysqlnd \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-pdo-mysql=mysqlnd \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-mysqlnd-compression-support \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-iconv-dir \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-freetype-dir \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-jpeg-dir \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-png-dir \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-zlib \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-libxml-dir \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-xml \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--disable-rpath \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-bcmath \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-shmop \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-sysvsem \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-inline-optimization \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-curl \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-mbregex \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-mbstring \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-intl \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-mcrypt \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-libmbfl \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-ftp \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-gd \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-gd-jis-conv \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-gd-native-ttf \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-openssl \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-mhash \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-pcntl \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-sockets \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-xmlrpc \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-zip \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-soap \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-gettext \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--disable-fileinfo \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-opcache \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-pear \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--enable-maintainer-zts \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--with-ldap=shared \
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--without-gdbm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;嗯,过程中出现四五次报错,不过问题不大,直接百度就行
+成功的话能看到这里&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Generating files
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;configure: creating ./config.status
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;creating main/internal_functions.c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;creating main/internal_functions_cli.c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+--------------------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| License:                                                           |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| This software is subject to the PHP License, available in this     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| distribution in the file LICENSE.  By continuing this installation |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| process, you are bound by the terms of this license agreement.     |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| If you do not agree with the terms of this license, you must abort |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| the installation process at this point.                            |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+--------------------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Thank you for using PHP.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating php7.spec
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating main/build-defs.h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating scripts/phpize
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating scripts/man1/phpize.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating scripts/php-config
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating scripts/man1/php-config.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/cli/php.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/php-fpm.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/www.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/init.d.php-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/php-fpm.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/php-fpm.8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/fpm/status.html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/phpdbg/phpdbg.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating sapi/cgi/php-cgi.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating ext/phar/phar.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating ext/phar/phar.phar.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: creating main/php_config.h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config.status: executing default commands
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来编译
+&lt;code&gt;make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp php.ini-development /usr/local/php/etc/php.ini
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;etc&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# 进入文件后找到下面的内容并更改目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pid &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;local&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;var&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;run&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;pid 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;systemd&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;system&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#添加&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[Unit]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Description&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;The PHP FastCGI Process Manager
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;After&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;syslog&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;target network&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[Service]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Type&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;notify
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PIDFile&lt;span style=&#34;color:#ff79c6&#34;&gt;=/&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;var&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;opt&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;remi&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php73&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;run&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;pid
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ExecStart&lt;span style=&#34;color:#ff79c6&#34;&gt;=/&lt;/span&gt;opt&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;remi&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php73&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;root&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;usr&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;sbin&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm &lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;nodaemonize  &lt;span style=&#34;color:#ff79c6&#34;&gt;--&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;config &lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;etc&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;opt&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;remi&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php73&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;php&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;fpm&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ExecReload&lt;span style=&#34;color:#ff79c6&#34;&gt;=/&lt;/span&gt;bin&lt;span style=&#34;color:#ff79c6&#34;&gt;/&lt;/span&gt;kill &lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;USR2 &lt;span style=&#34;color:#ff79c6&#34;&gt;$&lt;/span&gt;MAINPID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PrivateTmp&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[Install]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WantedBy&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;multi&lt;span style=&#34;color:#ff79c6&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意: 需要根据自己环境情况 填写 PIDFile、ExecStart; PIDFile为pid文件, ExecStart 为可执行文件和 php-fpm.conf 配置文件地址&lt;/p&gt;
+&lt;p&gt;加个权限：&lt;/p&gt;
+&lt;p&gt;chmod +x /etc/init.d/php-fpm&lt;/p&gt;
+&lt;p&gt;现在试一下，/etc/init.d/php-fpm start&lt;/p&gt;
+&lt;p&gt;systemctl重载
+&lt;code&gt; systemctl daemon-reload&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 设置开机自启
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl enable php-fpm.server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 重启php-fpm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart php-fpm.server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 重启后可以查看php-fpm状态
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status php-fpm.server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后是安装mysql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 安装
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum install -y mariadb-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 启动
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl start mariadb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 查看状态
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status mariadb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 开机启动
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl  enable  mariadb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 设置密码
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysqladmin -uroot  password  &amp;#39;yourpassword&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;/usr/share/nginx/html
+/etc/nginx/nginx.conf&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://lnmp.org/install.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://lnmp.org/install.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

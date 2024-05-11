@@ -320,15 +320,15 @@
     
     <p>正则表达式</p>
 <p>PHP利用PCRE回溯次数限制绕过</p>
-<h2 id="起源">起源</h2>
-<p><strong>20世纪40年代</strong>：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了一种用数学方式来描述<strong>神经网络</strong>的模型。</p>
+<h2 id="起源">起源
+</h2><p><strong>20世纪40年代</strong>：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了一种用数学方式来描述<strong>神经网络</strong>的模型。</p>
 <p><strong>1956年</strong>：一位名叫Stephen Kleene的数学科学家发表了一篇题目是《神经网事件的表示法》的论文，利用称之为<strong>正则集合的数学符号来描述此模型</strong>，引入了正则表达式的概念。正则表达式被作为用来描述其称之为“正则集的代数”的一种表达式，因而采用了“<strong>正则表达式</strong>”这个术语。</p>
 <p><strong>1968年</strong>：C语言之父、UNIX之父<strong>肯·汤普森</strong>把这个“正则表达式”的理论成果用于做一些搜索算法的研究，他描述了一种正则表达式的编译器，于是出现了应该算是最早的正则表达式的编译器qed（这也就成为后来的grep编辑器）。</p>
 <p>Unix使用正则之后，正则表达式不断的发展壮大，然后大规模应用于各种领域，根据这些领域各自的条件需要，又发展出了许多版本的正则表达式，出现了许多的分支。我们把这些分支叫做“<strong>流派</strong>”。</p>
 <p><strong>1987年</strong>：Perl语言诞生了，它综合了其他的语言，用正则表达式作为基础，开创了一个新的流派，<strong>Perl流派</strong>。之后很多编程语言如：<strong>Python、Java、Ruby、.Net、PHP等等在设计正则式支持的时候都参考Perl正则表达式</strong>。</p>
 <p>到这里我们也就知道<strong>为什么众多编程语言的正则表达式基本一样，因为他们都师从Perl</strong>。</p>
-<h2 id="语法">语法</h2>
-<p><a class="link" href="https://deerchao.cn/tutorials/regex/regex.htm"  target="_blank" rel="noopener"
+<h2 id="语法">语法
+</h2><p><a class="link" href="https://deerchao.cn/tutorials/regex/regex.htm"  target="_blank" rel="noopener"
     >正则表达式30分钟入门教程</a></p>
 <p><figure 
 	>
@@ -342,8 +342,8 @@
 	</a>
 	
 </figure></p>
-<h2 id="匹配原理">匹配原理</h2>
-<p><strong>执行过程</strong>:由正则表达引擎编译执行,可以有预编译</p>
+<h2 id="匹配原理">匹配原理
+</h2><p><strong>执行过程</strong>:由正则表达引擎编译执行,可以有预编译</p>
 <p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/617a28d02ab3f51d91b10a35.png#id=X18mt&amp;originHeight=732&amp;originWidth=720&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" >
@@ -421,8 +421,8 @@
 <p>这就是回溯陷阱</p>
 <p>附:<a class="link" href="https://c.runoob.com/front-end/854/"  target="_blank" rel="noopener"
     >常用正则表达式</a></p>
-<h2 id="pcrebacktrack_limit">pcre.backtrack_limit</h2>
-<p>PHP为了防止正则表达式的拒绝服务攻击（reDOS），给pcre设定了一个回溯次数上限<code>pcre.backtrack_limit</code>。我们可以通过<code>var_dump(ini_get('pcre.backtrack_limit'));</code>的方式查看当前环境下的上限</p>
+<h2 id="pcrebacktrack_limit">pcre.backtrack_limit
+</h2><p>PHP为了防止正则表达式的拒绝服务攻击（reDOS），给pcre设定了一个回溯次数上限<code>pcre.backtrack_limit</code>。我们可以通过<code>var_dump(ini_get('pcre.backtrack_limit'));</code>的方式查看当前环境下的上限</p>
 <p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/617a2b102ab3f51d91b2ce5a.jpg#id=xoK7z&amp;originHeight=66&amp;originWidth=498&amp;originalType=binary&amp;ratio=1&amp;status=done&amp;style=none" >
@@ -437,8 +437,8 @@
 </figure></p>
 <p>可见，回溯次数上限默认是100万。那么，假设我们的回溯次数超过了100万,那么<code>preg_match</code>返回的不是1和0，而是false。</p>
 <p>eg:放进xunt里面了,题目名PCRE</p>
-<h2 id="修复方法">修复方法</h2>
-<p>如果用<code>preg_match</code>对字符串进行匹配，一定要使用<code>===</code>全等号来判断返回值</p>
+<h2 id="修复方法">修复方法
+</h2><p>如果用<code>preg_match</code>对字符串进行匹配，一定要使用<code>===</code>全等号来判断返回值</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff79c6">function</span> <span style="color:#50fa7b">is_php</span>(<span style="color:#8be9fd;font-style:italic">$data</span>){  
 </span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">return</span> preg_match(<span style="color:#f1fa8c">&#39;/&lt;\?.*[(`;?&gt;].*/is&#39;</span>, <span style="color:#8be9fd;font-style:italic">$data</span>);  
 </span></span><span style="display:flex;"><span>}
@@ -485,7 +485,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

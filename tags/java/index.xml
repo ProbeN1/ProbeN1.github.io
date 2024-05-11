@@ -1,26 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Java on 茄子的养殖场</title>
-    <link>https://proben1.github.io/tags/java/</link>
-    <description>Recent content in Java on 茄子的养殖场</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 20 Nov 2022 16:21:00 +0800</lastBuildDate>
-    <atom:link href="https://proben1.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java版本</title>
-      <link>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</link>
-      <pubDate>Sun, 20 Nov 2022 16:21:00 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</guid>
-      <description>省流：java se6= jdk6+jre6 历史原因 jdk1.6= jdk6 jdk1.8= jdk8 以此类推，现在全都直接叫jdk+版本了，没有1.x、 如现在Java SE 19，对应JDK19 Java SE 8，对应JDK</description>
-    </item>
-    <item>
-      <title>记一次SpringBoot2报错排查</title>
-      <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
-      <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
-      <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
-      <description>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159</description>
-    </item>
-  </channel>
+    <channel>
+        <title>Java on 茄子的养殖场</title>
+        <link>https://proben1.github.io/tags/java/</link>
+        <description>Recent content in Java on 茄子的养殖场</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 20 Nov 2022 16:21:00 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Java版本</title>
+        <link>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</link>
+        <pubDate>Sun, 20 Nov 2022 16:21:00 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/java%E7%89%88%E6%9C%AC/</guid>
+        <description>&lt;p&gt;省流：java se6= jdk6+jre6&lt;/p&gt;
+&lt;p&gt;历史原因&lt;/p&gt;
+&lt;p&gt;jdk1.6= jdk6&lt;/p&gt;
+&lt;p&gt;jdk1.8= jdk8&lt;/p&gt;
+&lt;p&gt;以此类推，现在全都直接叫jdk+版本了，没有1.x、&lt;/p&gt;
+&lt;p&gt;如现在&lt;strong&gt;Java SE 19&lt;/strong&gt;，对应JDK19&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Java SE 8&lt;/strong&gt;，对应JDK8，或者叫1.8&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/637992e916f2c2beb1bdae67.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/637992e916f2c2beb1bdae67.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;维基百科可以直接查看：https://zh.wikipedia.org/wiki/Java%E7%89%88%E6%9C%AC%E6%AD%B7%E5%8F%B2&lt;/p&gt;
+&lt;p&gt;另外是三个类型，可以了解一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JavaSE（Java Platform，Standard Edition）Java标准版&lt;/li&gt;
+&lt;li&gt;JavaME（Java Platform，Micro Edition）Java微型版&lt;/li&gt;
+&lt;li&gt;JavaEE（Java Platform，Enterprise Edition) JAVA企业版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考：https://www.jb51.net/article/214196.htm&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>记一次SpringBoot2报错排查</title>
+        <link>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</link>
+        <pubDate>Sun, 20 Nov 2022 11:30:30 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/</guid>
+        <description>&lt;p&gt;背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。&lt;/p&gt;
+&lt;p&gt;项目：https://github.com/TimVan1596/LightDisk&lt;/p&gt;
+&lt;p&gt;IDEA 2022.2.3：https://www.exception.site/essay/idea-reset-eval&lt;/p&gt;
+&lt;h1 id=&#34;part1&#34;&gt;part1
+&lt;/h1&gt;&lt;p&gt;先从idea上连github把项目clone下来：https://blog.csdn.net/hry2015/article/details/77984399&lt;/p&gt;
+&lt;p&gt;理论上这之后maven构建一下就可以了，结果构建之后运行出现了报错：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;遂上网搜索novacrypto:Base58，发现这个包是存在的，但是版本出现了问题。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如图，在pom.xml中，默认的版本是2019.01.27，但是现在只有2022.01.17的版本，猜测更新的时候删掉了旧版本hhhh，重新修改后reload:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6272a4&#34;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;io.github.novacrypto&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;Base58&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;2022.01.17&lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;中间还出现了一次网络报错，切换一下线路即可。&lt;/p&gt;
+&lt;h1 id=&#34;part2&#34;&gt;part2
+&lt;/h1&gt;&lt;p&gt;运行com.timvanx.Application入口，启动Spring Boot项目，过程中出现报错：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;吃个黄豆糕冷静一下，一般来说，像这种框架出现报错，要么就是环境配置问题，要么就是别想解决了……&lt;/p&gt;
+&lt;p&gt;我首先试着删除libraries中的依赖，然后使用maven中的clean来删除创建了的target，再用maven重新导入依赖，无果。&lt;/p&gt;
+&lt;p&gt;看着readme中的环境要求，感觉可以用jdk1.8试一下：&lt;/p&gt;
+
+
+&lt;blockquote class=&#34;quote en&#34;&gt;&lt;p&gt;软件架构&lt;/p&gt;
+&lt;p&gt;JDK 1.8+&lt;br&gt;
+Spring Boot 2.0.1&lt;br&gt;
+[Apache Gossip]&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;p&gt;我的版本是16，有可能不支持&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java -version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;java version &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;16.0.2&amp;#34;&lt;/span&gt; 2021-07-20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java(TM) SE Runtime Environment (build 16.0.2+7-67)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到官网新安装了一个java8：https://www.oracle.com/java/technologies/downloads/#java8-windows&lt;/p&gt;
+&lt;p&gt;在File-&amp;gt;Project Structure -&amp;gt; SDK中选择JDK1.8，Apply！（idea会自动检索到）&lt;/p&gt;
+&lt;p&gt;重新启动后，成功！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
 </rss>
