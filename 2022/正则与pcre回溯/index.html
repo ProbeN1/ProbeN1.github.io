@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='正则与PCRE回溯'>
+<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='正则与PCRE回溯'>
 <meta property='og:description' content='正则表达式 PHP利用PCRE回溯次数限制绕过 起源 20世纪40年代：正则表达式最初的想法来自两位神经学家：沃尔特·皮茨与麦卡洛克，他们研究出了'>
 <meta property='og:url' content='https://proben1.github.io/2022/%E6%AD%A3%E5%88%99%E4%B8%8Epcre%E5%9B%9E%E6%BA%AF/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -450,13 +450,13 @@
 <p>eg:放进xunt里面了,题目名PCRE</p>
 <h2 id="修复方法">修复方法
 </h2><p>如果用<code>preg_match</code>对字符串进行匹配，一定要使用<code>===</code>全等号来判断返回值</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00a8c8">function</span> <span style="color:#75af00">is_php</span><span style="color:#111">(</span><span style="color:#111">$data</span><span style="color:#111">){</span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#00a8c8">return</span> <span style="color:#75af00">preg_match</span><span style="color:#111">(</span><span style="color:#d88200">&#39;/&lt;\?.*[(`;?&gt;].*/is&#39;</span><span style="color:#111">,</span> <span style="color:#111">$data</span><span style="color:#111">);</span>  
-</span></span><span style="display:flex;"><span><span style="color:#111">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#859900">function</span> <span style="color:#268bd2">is_php</span>(<span style="color:#268bd2">$data</span>){  
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">return</span> <span style="color:#268bd2">preg_match</span>(<span style="color:#2aa198">&#39;/&lt;\?.*[(`;?&gt;].*/is&#39;</span>, <span style="color:#268bd2">$data</span>);  
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#75af00">is_php</span><span style="color:#111">(</span><span style="color:#111">$input</span><span style="color:#111">)</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// fwrite($f, $input); ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#111">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">if</span>(<span style="color:#268bd2">is_php</span>(<span style="color:#268bd2">$input</span>) === <span style="color:#2aa198;font-weight:bold">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic">// fwrite($f, $input); ...
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>}
 </span></span></code></pre></div><p>参考</p>
 <p><a class="link" href="https://segmentfault.com/a/1190000021787021"  target="_blank" rel="noopener"
     >正则表达式引擎执行原理</a>（猪哥）</p>

@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2022/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='电脑重装'>
+<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='电脑重装'>
 <meta property='og:description' content='可恶的win11更新，文件资源管理器打不开，打不开就重新打开，反复白屏。 系统坏了，就像是女朋友车祸失忆，还好身子没问题，无奈找学校良心师傅重'>
 <meta property='og:url' content='https://proben1.github.io/2022/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -351,17 +351,17 @@ TranslucentTB（也可以从商店下载）
 <p>配置Chrome，基本不用，登录上去全自动恢复了，单独设置一下SwitchyOmega</p>
 <p>没有gpedit.msc的话</p>
 <p>自动配置组策略编辑器 2022-4-3 135314 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span><span style="color:#111">@</span><span style="color:#00a8c8">echo</span> off
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bat" data-lang="bat"><span style="display:flex;"><span>@<span style="color:#859900">echo</span> off
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">pushd</span> <span style="color:#d88200">&#34;</span><span style="color:#111">%~dp0</span><span style="color:#d88200">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">pushd</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">%~dp0</span><span style="color:#2aa198">&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">dir</span> /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum <span style="color:#111">&gt;</span>List.txt
+</span></span><span style="display:flex;"><span><span style="color:#859900">dir</span> /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">dir</span> /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum <span style="color:#111">&gt;&gt;</span>List.txt
+</span></span><span style="display:flex;"><span><span style="color:#859900">dir</span> /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">for</span> <span style="color:#00a8c8">/f</span> <span style="color:#8045ff">%%</span>i <span style="color:#00a8c8">in</span> <span style="color:#111">(</span><span style="color:#d88200">&#39;findstr /i . List.txt 2^&gt;nul&#39;</span><span style="color:#111">)</span> <span style="color:#00a8c8">do</span> dism /online /norestart /add-package:<span style="color:#d88200">&#34;C:\Windows\servicing\Packages\</span><span style="color:#8045ff">%%</span><span style="color:#d88200">i&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">for</span> <span style="color:#859900">/f</span> <span style="color:#2aa198">%%</span>i <span style="color:#859900">in</span> (<span style="color:#2aa198">&#39;findstr /i . List.txt 2^&gt;nul&#39;</span>) <span style="color:#859900">do</span> dism /online /norestart /add-package:<span style="color:#2aa198">&#34;C:\Windows\servicing\Packages\</span><span style="color:#2aa198">%%</span><span style="color:#2aa198">i&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">pause</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">pause</span>
 </span></span></code></pre></div>
 </section>
 

