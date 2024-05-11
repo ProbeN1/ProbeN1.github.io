@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 文件 -name 名字 df -h cp或mv -r 源 目的 vi'><title>Linux常用命令和vi速查</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'><title>Linux常用命令和vi速查</title>
 
 <link rel='canonical' href='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
 
 <link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='Linux常用命令和vi速查'>
-<meta property='og:description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 文件 -name 名字 df -h cp或mv -r 源 目的 vi'>
+<meta property='og:description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'>
 <meta property='og:url' content='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
 <meta property='og:site_name' content='茄子的养殖场'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-09T15:55:13&#43;08:00'/><meta property='article:modified_time' content='2024-05-09T15:55:13&#43;08:00'/>
 <meta name="twitter:title" content="Linux常用命令和vi速查">
-<meta name="twitter:description" content="版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 文件 -name 名字 df -h cp或mv -r 源 目的 vi">
+<meta name="twitter:description" content="版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file">
   
 
 <style>
@@ -59,7 +59,7 @@
 </script>
 <div class="container main-container flex 
     <!-- 
-        on-phone--column extended
+        extended
      -->
     on-phone--column extended
 ">
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    68字
+                    711字
                 </time>
             </div>
         
@@ -329,21 +329,95 @@
     <section class="article-content">
     
     
-    <h1 id="版本内核查看">版本、内核查看
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/redhat-release
+    <h3 id="版本内核查看">版本、内核查看
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/redhat-release
 </span></span><span style="display:flex;"><span>cat /etc/os-release
 </span></span><span style="display:flex;"><span>uname -a
-</span></span></code></pre></div><h1 id="关机重启">关机、重启
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>shutdown -h now
+</span></span></code></pre></div><h3 id="关机重启">关机、重启
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>shutdown -h now
 </span></span><span style="display:flex;"><span>reboot
-</span></span></code></pre></div><h1 id="基本">基本
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls -al 额外参数：-t时间排序 -r反序 -h大小
+</span></span></code></pre></div><h3 id="基本">基本
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls -al 额外参数：-t时间排序 -r反序 -h大小
 </span></span><span style="display:flex;"><span>cat 文件 | less
-</span></span><span style="display:flex;"><span>find 文件 -name 名字
-</span></span><span style="display:flex;"><span>df -h
-</span></span><span style="display:flex;"><span>cp或mv -r 源 目的 
-</span></span></code></pre></div><h1 id="vi">vi
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"></code></pre></div>
+</span></span><span style="display:flex;"><span>find 目录 -name 名字
+</span></span><span style="display:flex;"><span>cp -r 源 目的 
+</span></span><span style="display:flex;"><span>mv -r 源 目的 
+</span></span><span style="display:flex;"><span>touch 文件
+</span></span><span style="display:flex;"><span>file 文件
+</span></span><span style="display:flex;"><span>ln –s 实际文件 链接文件
+</span></span><span style="display:flex;"><span>du -h
+</span></span></code></pre></div><h3 id="压缩打包">压缩打包
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tar
+</span></span><span style="display:flex;"><span>-c  创建文件
+</span></span><span style="display:flex;"><span>-x  提取 解压还原文件
+</span></span><span style="display:flex;"><span>-v  显示执行详细过程
+</span></span><span style="display:flex;"><span>-f  指定备份文件
+</span></span><span style="display:flex;"><span>-t  列出压缩包中包括哪些文件，不解包，查看包中的内容
+</span></span><span style="display:flex;"><span>-C  指定解压位置
+</span></span><span style="display:flex;"><span>tar -cvf grub.tar /boot/grub/
+</span></span><span style="display:flex;"><span>tar -xvf grub.tar.bz2 -C /opt/
+</span></span></code></pre></div><h3 id="vi">vi
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>上左右下 hjkl
+</span></span><span style="display:flex;"><span>[ Page Down ]和[ Page Up ]常用
+</span></span><span style="display:flex;"><span>[ Home ]和[ End ]常用
+</span></span><span style="display:flex;"><span>u 撤销上一次操作
+</span></span><span style="display:flex;"><span>ctrl + r 重做上一次撤销的操作
+</span></span><span style="display:flex;"><span>(n)x 删除字符
+</span></span><span style="display:flex;"><span>(n)dd 剪切
+</span></span><span style="display:flex;"><span>(n)yy 复制
+</span></span><span style="display:flex;"><span>p 粘贴
+</span></span><span style="display:flex;"><span>:w  保存文件。
+</span></span><span style="display:flex;"><span>:q  退出编辑器。
+</span></span><span style="display:flex;"><span>:wq 保存退出
+</span></span><span style="display:flex;"><span>/word 向光标之下寻找
+</span></span><span style="display:flex;"><span>?word 向光标之上寻找
+</span></span><span style="display:flex;"><span>n 重复前一个搜寻的动作
+</span></span></code></pre></div><p><figure 
+	>
+	<a href="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" >
+		<img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<h3 id="用户管理">用户管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>groupadd –g GID groupname
+</span></span><span style="display:flex;"><span>useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
+</span></span><span style="display:flex;"><span>usermod -L username
+</span></span><span style="display:flex;"><span>usermod -U username
+</span></span><span style="display:flex;"><span>userdel -r username
+</span></span><span style="display:flex;"><span>id username
+</span></span><span style="display:flex;"><span>passwd username
+</span></span><span style="display:flex;"><span>su - username  切换用户，使用切换用户的变量 
+</span></span><span style="display:flex;"><span>su username 切换用户，使用当前用户的变量
+</span></span><span style="display:flex;"><span>sudo Commands 以root身份来执行自己不具备权限的操作
+</span></span></code></pre></div><h3 id="权限管理">权限管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>chmod 634 /tmp/test
+</span></span><span style="display:flex;"><span>chown -R user:gruop /tmp/test
+</span></span></code></pre></div><h3 id="进程管理">进程管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
+</span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
+</span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
+</span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
+</span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
+</span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
+</span></span><span style="display:flex;"><span>pstree 将当前时间点的进程树展示
+</span></span><span style="display:flex;"><span>kill -9 PID
+</span></span><span style="display:flex;"><span>fuser -m /app 查看占用
+</span></span><span style="display:flex;"><span>fuser –kcu /app 快速删除占用的进程
+</span></span></code></pre></div><h3 id="服务管理">服务管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Systemctl命令使用方法
+</span></span><span style="display:flex;"><span>查询服务状态：systemctl status service名
+</span></span><span style="display:flex;"><span>启动服务：systemctl start service名
+</span></span><span style="display:flex;"><span>关闭服务：systemctl stop service名
+</span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
+</span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
+</span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
+</span></span></code></pre></div>
 </section>
 
 
@@ -381,36 +455,36 @@
                 
                     
 <article class="">
-    <a href="/2024/%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">磁盘操作</h2>
+            <h2 class="article-title">Linux概念知识 </h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2024/oracle-linux-installation/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Oracle Linux Installation</h2>
+            <h2 class="article-title">Linux概念知识 运行、内核和shell</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8F%91%E8%A1%8C%E7%89%88/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
+            <h2 class="article-title">Linux概念知识 背景与发行版</h2>
         </div>
     </a>
 </article>
@@ -426,6 +500,14 @@
     <footer class="site-footer">
   
 
+
+    
+
+    
+
+    
+
+    
 
     
 
@@ -554,7 +636,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了65.8k字·共 50篇文章</br><span><p>
+      共书写了68.7k字·共 54篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -679,6 +761,42 @@ document.getElementById('days').innerHTML = number_of_days;
     </form>
         
             
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#版本内核查看">版本、内核查看</a></li>
+        <li><a href="#关机重启">关机、重启</a></li>
+        <li><a href="#基本">基本</a></li>
+        <li><a href="#压缩打包">压缩打包</a></li>
+        <li><a href="#vi">vi</a></li>
+        <li><a href="#用户管理">用户管理</a></li>
+        <li><a href="#权限管理">权限管理</a></li>
+        <li><a href="#进程管理">进程管理</a></li>
+        <li><a href="#服务管理">服务管理</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
         
             <section class="widget categories">
         <div class="widget-icon">
@@ -696,7 +814,7 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">3</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">7</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">31</a>
             </span></div>
@@ -732,7 +850,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">3</span>
+                            <span class="count">7</span>
                         
                     </a> 
                 </div>

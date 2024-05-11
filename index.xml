@@ -6,13 +6,167 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 11 May 2024 14:33:57 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>磁盘操作</title>
-        <link>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/</link>
+        <lastBuildDate>Sat, 11 May 2024 15:27:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux概念知识 </title>
+        <link>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/</link>
+        <pubDate>Sat, 11 May 2024 15:27:12 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linux概念知识 运行、内核和shell</title>
+        <link>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/</link>
+        <pubDate>Sat, 11 May 2024 15:27:07 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/</guid>
+        <description>&lt;h3 id=&#34;启动步骤&#34;&gt;启动步骤
+&lt;/h3&gt;&lt;p&gt;一：上电与BIOS启动：&lt;/p&gt;
+&lt;p&gt;上电：打开电源，BIOS（Basic Input/Output System）进行开机自检（POST）BIOS启动：初始化内存等设备，按照启动顺序，启动各个设备&lt;/p&gt;
+&lt;p&gt;二：加载引导加载程序（Boot Loader）：&lt;/p&gt;
+&lt;p&gt;Boot Loader读取配置文件grub.cfg、lilo.conf等，加载并启动Linux内核到内存，并跳转到内核的入口点开始执行。内核会进行一系列的初始化工作，如初始化硬件设备、建立内存空间的映射图等。&lt;/p&gt;
+&lt;p&gt;三：执行init进程：&lt;/p&gt;
+&lt;p&gt;Linux内核启动完成后，会启动第一个用户空间进程init（PID为1）。
+init进程会读取/etc/inittab或/etc/systemd/system/default.target等配置文件，确定系统的运行级别（runlevel）。&lt;/p&gt;
+&lt;p&gt;四：启动系统服务和管理器：&lt;/p&gt;
+&lt;p&gt;根据运行级别，init进程会启动相应的服务和管理器（如systemd）。
+systemd会根据配置文件（如/etc/systemd/system/和/lib/systemd/system/目录下的.service文件）启动相应的服务。&lt;/p&gt;
+&lt;h3 id=&#34;uefi和legacy两种启动方式的区别&#34;&gt;UEFI和Legacy两种启动方式的区别
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;UEFI&lt;/th&gt;
+&lt;th&gt;Legacy&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;更快的启动时间&lt;/td&gt;
+&lt;td&gt;相比UEFI，它的速度较慢&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;默认GPT 分区方案&lt;/td&gt;
+&lt;td&gt;默认MBR 分区方案&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;以 32 位和 64 位运行&lt;/td&gt;
+&lt;td&gt;16位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;允许安全启动,将操作系统（OS）视为应用程序&lt;/td&gt;
+&lt;td&gt;它不提供允许加载未经授权的应用程序的安全启动方法，未限制双启动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;uek和rhck内核&#34;&gt;UEK和RHCK内核
+&lt;/h3&gt;&lt;p&gt;二者分别是Unbreakable Enterprise Kernel(UEK)以及Red Hat Compatible Kernel(RHCK) ，RHCK使用与Redhat一样的内核的版本，稳定性与兼容性有保证。
+UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强功能。&lt;/p&gt;
+&lt;h3 id=&#34;kernel和操作系统硬件驱动&#34;&gt;Kernel和操作系统、硬件、驱动
+&lt;/h3&gt;&lt;p&gt;内核操作系统的一个核心组成部分，主要用于管理计算机的硬件资源，如CPU、内存、输入输出等。
+操作系统是建立在内核之上的一个软件系统，包括了Kernel、系统服务、工具程序和应用程序等，用户通过系统调用程序申请内核相关功能。
+内核与计算机硬件交互，提供了操作系统运行的核心功能，如进程管理、内存管理、设备驱动程序等。
+驱动又是内核与硬件沟通的桥梁，用于与特定硬件设备进行通信。&lt;/p&gt;
+&lt;h3 id=&#34;kernel和shell&#34;&gt;Kernel和shell
+&lt;/h3&gt;&lt;p&gt;Shell是用户与操作系统交互的主要接口，会将用户输入的命令通过系统调用（system call）发送给内核（Kernel）。
+内核是操作系统的核心部分，负责管理系统资源、提供进程管理、内存管理、设备驱动等核心功能。
+内核在接收到Shell发送的命令后，会执行相应的操作，并将结果返回给Shell。从而实现了用户的需求。&lt;/p&gt;
+&lt;h3 id=&#34;用户连接shell变量和进程的关系&#34;&gt;用户连接、shell、变量和进程的关系
+&lt;/h3&gt;&lt;p&gt;首先，系统会启动一个shell进程作为用户与操作系统之间的接口。&lt;/p&gt;
+&lt;p&gt;其次，shell进程启动后，会加载并设置一系列的环境变量。系统级的环境变量和用户级环境变量。&lt;/p&gt;
+&lt;p&gt;每当用户在shell中输入一个命令并回车时，shell会为该命令创建一个新的进程。这个新进程是shell进程的子进程，它继承了shell进程的环境变量。&lt;/p&gt;
+&lt;h3 id=&#34;pci连接设备&#34;&gt;PCI连接设备
+&lt;/h3&gt;&lt;p&gt;PCI（Peripheral Component Interconnect）是一种计算机总线标准，用于连接计算机主板和其他硬件设备。PCI连接设备指的是那些通过PCI总线与主板相连的设备。如显卡、声卡、网卡、RAID卡等。&lt;/p&gt;
+&lt;h3 id=&#34;系统的运行级别&#34;&gt;系统的运行级别
+&lt;/h3&gt;&lt;p&gt;运行级别0：系统停机
+运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆
+运行级别2：多用户状态(没有NFS)
+运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式
+运行级别4：系统未使用，保留
+运行级别5：图形GUI模式
+运行级别6：系统正常关闭并重启&lt;/p&gt;
+&lt;p&gt;存储在/etc/systemd/system/default.target
+通过systemctl set-default xxx修改&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux概念知识 背景与发行版</title>
+        <link>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8F%91%E8%A1%8C%E7%89%88/</link>
+        <pubDate>Sat, 11 May 2024 15:19:50 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8F%91%E8%A1%8C%E7%89%88/</guid>
+        <description>&lt;h3 id=&#34;从unics到unix&#34;&gt;从UNICS到UNIX
+&lt;/h3&gt;&lt;p&gt;UNICS是“UNiplexed Information and Computing System”的简称，可以说是第一版UNIX，它由PDP-7机器的的汇编语言编写，因为PDP-7的性能不佳，开发者把第一版UNIX移植到PDP-11/20机器上，开发第二版，同时改名UNIX。1971年，汤普逊和里奇共同发明了C语言，重写了Unix，形成第三版UNIX。&lt;/p&gt;
+&lt;h3 id=&#34;linux与unix&#34;&gt;Linux与UNIX
+&lt;/h3&gt;&lt;p&gt;接上文，Unix从实验室走出来并成为了操作系统的主流，Unix是商业软件。Linus Torvalds以学生时代熟悉的Unix作为原型，开发了类UNIX操作系统Linux，没有保留 Linux 源代码的版权，公开了代码，并邀请他人一起完善 Linux。&lt;/p&gt;
+&lt;h3 id=&#34;gnu计划&#34;&gt;GNU计划
+&lt;/h3&gt;&lt;p&gt;GNU是“GNU is Not Unix”的缩写，目标是创建一套完全自由的操作系统，开发出包括C语言编译器&lt;a class=&#34;link&#34; href=&#34;https://zh.m.wikipedia.org/wiki/GCC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GCC&lt;/a&gt;以及大部分UNIX系统的程序库和工具，在与Linux内核合并之后，产生了完全自由的操作系统。&lt;/p&gt;
+&lt;h3 id=&#34;linux发行版&#34;&gt;Linux发行版
+&lt;/h3&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.runoob.com/wp-content/uploads/2014/06/1511849829609658.jpg&#34; &gt;
+		&lt;img src=&#34;https://www.runoob.com/wp-content/uploads/2014/06/1511849829609658.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、Arch Linux、SolusOS 等。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux复杂命令</title>
+        <link>https://proben1.github.io/2024/linux%E5%A4%8D%E6%9D%82%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Sat, 11 May 2024 15:13:26 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E5%A4%8D%E6%9D%82%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;h3 id=&#34;查看前五的占用cpu进程&#34;&gt;查看前五的占用CPU进程
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%cpu | head -n 6
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ps -e显示所有进程，-o自定义输出格式，包括pid,ppid,%mem,%cpu,cmd（启动进程的命令名），通过cpu使用率降序排列。head -n 可以改数量。&lt;/p&gt;
+&lt;h3 id=&#34;在指定目录下查找超过3天的所有文件&#34;&gt;在指定目录下查找超过3天的所有文件
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find  目录 -ctime +3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Linux磁盘操作</title>
+        <link>https://proben1.github.io/2024/linux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Sat, 11 May 2024 14:33:57 +0800</pubDate>
         
-        <guid>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/</guid>
-        <description></description>
+        <guid>https://proben1.github.io/2024/linux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/</guid>
+        <description>&lt;h3 id=&#34;磁盘常用命令&#34;&gt;磁盘常用命令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;利用fdisk分区与挂载&#34;&gt;利用fdisk分区与挂载
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/nvme0n1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n/p/e/+1G
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/nvme0n1p3(56)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount /dev/nvme0n1p3 /root/new
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/fstab
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(add &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;利用parted分区与挂载&#34;&gt;利用parted分区与挂载
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mklabel gpt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkpart primary 0% 100%
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;quit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;# Let the kernel know to add a new partition&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;partprobe 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lvm操作&#34;&gt;LVM操作
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;fisk&amp;#34;&lt;/span&gt; create new partition
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;change the partition to &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;LVM&amp;#34;&lt;/span&gt;(8e)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p3 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p5 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvcreate -L 1g -n lvnew vg01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/vg01/lvnew
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;条带化： 创建LV时加入-i参数&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Linux常用命令和vi速查</title>
@@ -20,21 +174,95 @@
         <pubDate>Thu, 09 May 2024 15:55:13 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</guid>
-        <description>&lt;h1 id=&#34;版本内核查看&#34;&gt;版本、内核查看
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/redhat-release
+        <description>&lt;h3 id=&#34;版本内核查看&#34;&gt;版本、内核查看
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/redhat-release
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/os-release
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uname -a
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;关机重启&#34;&gt;关机、重启
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shutdown -h now
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;关机重启&#34;&gt;关机、重启
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shutdown -h now
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reboot
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;基本&#34;&gt;基本
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -al 额外参数：-t时间排序 -r反序 -h大小
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;基本&#34;&gt;基本
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -al 额外参数：-t时间排序 -r反序 -h大小
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat 文件 | less
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find 文件 -name 名字
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df -h
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp或mv -r 源 目的 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vi&#34;&gt;vi
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find 目录 -name 名字
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -r 源 目的 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv -r 源 目的 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch 文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file 文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln –s 实际文件 链接文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;压缩打包&#34;&gt;压缩打包
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-c  创建文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-x  提取 解压还原文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-v  显示执行详细过程
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-f  指定备份文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-t  列出压缩包中包括哪些文件，不解包，查看包中的内容
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-C  指定解压位置
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -cvf grub.tar /boot/grub/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -xvf grub.tar.bz2 -C /opt/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;vi&#34;&gt;vi
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;上左右下 hjkl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ Page Down ]和[ Page Up ]常用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ Home ]和[ End ]常用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;u 撤销上一次操作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ctrl + r 重做上一次撤销的操作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(n)x 删除字符
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(n)dd 剪切
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(n)yy 复制
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p 粘贴
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:w  保存文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:q  退出编辑器。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;:wq 保存退出
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/word 向光标之下寻找
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;?word 向光标之上寻找
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n 重复前一个搜寻的动作
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif&#34; &gt;
+		&lt;img src=&#34;https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;用户管理&#34;&gt;用户管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;groupadd –g GID groupname
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -L username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -U username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userdel -r username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;passwd username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su - username  切换用户，使用切换用户的变量 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su username 切换用户，使用当前用户的变量
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo Commands 以root身份来执行自己不具备权限的操作
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;权限管理&#34;&gt;权限管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod 634 /tmp/test
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chown -R user:gruop /tmp/test
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;进程管理&#34;&gt;进程管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jobs：查看当前正在后台工作的进程
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fg：将后台进程放到前台执行 fg 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bg：将后台进程在后台继续执行 bg 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ 指令与参数 ] &amp;amp; &amp;lt;==在终端机前景中工作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup [ 指令与参数 ] &amp;amp; &amp;lt;==在终端机背景中工作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps aux或者ps –ef		打印当前系统运行的所有进程
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pstree 将当前时间点的进程树展示
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kill -9 PID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser -m /app 查看占用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser –kcu /app 快速删除占用的进程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;服务管理&#34;&gt;服务管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Systemctl命令使用方法
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;查询服务状态：systemctl status service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;启动服务：systemctl start service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;关闭服务：systemctl stop service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;重启服务：systemctl restart service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机自启：systemctl enable service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机不自启：systemctl disable service名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>Oracle Linux Installation</title>
