@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/'>
 
-<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='记一次SpringBoot2报错排查'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='记一次SpringBoot2报错排查'>
 <meta property='og:description' content='背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159'>
 <meta property='og:url' content='https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -335,7 +335,7 @@
 <h1 id="part1">part1
 </h1><p>先从idea上连github把项目clone下来：https://blog.csdn.net/hry2015/article/details/77984399</p>
 <p>理论上这之后maven构建一下就可以了，结果构建之后运行出现了报错：</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
 </span></span></code></pre></div><p>遂上网搜索novacrypto:Base58，发现这个包是存在的，但是版本出现了问题。</p>
 <p><figure 
 	>
@@ -362,12 +362,12 @@
 	
 </figure></p>
 <p>如图，在pom.xml中，默认的版本是2019.01.27，但是现在只有2022.01.17的版本，猜测更新的时候删掉了旧版本hhhh，重新修改后reload:</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic">&lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2;font-weight:bold">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;groupId&gt;</span>io.github.novacrypto<span style="color:#268bd2;font-weight:bold">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;artifactId&gt;</span>Base58<span style="color:#268bd2;font-weight:bold">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;version&gt;</span>2022.01.17<span style="color:#268bd2;font-weight:bold">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2;font-weight:bold">&lt;/dependency&gt;</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">&lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">&lt;groupId&gt;</span>io.github.novacrypto<span style="color:#000">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">&lt;artifactId&gt;</span>Base58<span style="color:#000">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">&lt;version&gt;</span>2022.01.17<span style="color:#000">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">&lt;/dependency&gt;</span>
 </span></span></code></pre></div><p>中间还出现了一次网络报错，切换一下线路即可。</p>
 <h1 id="part2">part2
 </h1><p>运行com.timvanx.Application入口，启动Spring Boot项目，过程中出现报错：</p>
@@ -394,8 +394,8 @@ Spring Boot 2.0.1<br>
 [Apache Gossip]</p>
 </blockquote> 
 <p>我的版本是16，有可能不支持</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>java -version
-</span></span><span style="display:flex;"><span>java version <span style="color:#2aa198">&#34;16.0.2&#34;</span> 2021-07-20
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>java -version
+</span></span><span style="display:flex;"><span>java version <span style="color:#5a2">&#34;16.0.2&#34;</span> 2021-07-20
 </span></span><span style="display:flex;"><span>Java(TM) SE Runtime Environment (build 16.0.2+7-67)
 </span></span><span style="display:flex;"><span>Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
 </span></span></code></pre></div><p>到官网新安装了一个java8：https://www.oracle.com/java/technologies/downloads/#java8-windows</p>

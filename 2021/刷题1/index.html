@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/'>
 
-<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='刷题1'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='刷题1'>
 <meta property='og:description' content='sql和算法'>
 <meta property='og:url' content='https://proben1.github.io/2021/%E5%88%B7%E9%A2%981/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -335,52 +335,52 @@
     
     <h4 id="182-查找重复的电子邮箱httpsleetcode-cncomproblemsduplicate-emails"><a class="link" href="https://leetcode-cn.com/problems/duplicate-emails/"  target="_blank" rel="noopener"
     >182. 查找重复的电子邮箱</a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span> `<span style="color:#268bd2">Email</span>` <span style="color:#859900">from</span>
+</h4><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span> `<span style="color:#000">Email</span>` <span style="color:#00f">from</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> <span style="color:#859900">select</span> `<span style="color:#268bd2">Email</span>`, <span style="color:#859900">count</span>(`<span style="color:#268bd2">Email</span>`) <span style="color:#859900">as</span> <span style="color:#268bd2">a</span>
+</span></span><span style="display:flex;"><span> <span style="color:#00f">select</span> `<span style="color:#000">Email</span>`, <span style="color:#00f">count</span>(`<span style="color:#000">Email</span>`) <span style="color:#00f">as</span> <span style="color:#000">a</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> <span style="color:#859900">from</span> `<span style="color:#268bd2">Person</span>`
+</span></span><span style="display:flex;"><span> <span style="color:#00f">from</span> `<span style="color:#000">Person</span>`
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> <span style="color:#859900">group</span> <span style="color:#859900">by</span> `<span style="color:#268bd2">Email</span>`
+</span></span><span style="display:flex;"><span> <span style="color:#00f">group</span> <span style="color:#00f">by</span> `<span style="color:#000">Email</span>`
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>) <span style="color:#859900">as</span> <span style="color:#268bd2">temp</span>
+</span></span><span style="display:flex;"><span>) <span style="color:#00f">as</span> <span style="color:#000">temp</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">where</span> <span style="color:#268bd2">a</span> &gt; <span style="color:#2aa198;font-weight:bold">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">where</span> <span style="color:#000">a</span> &gt; <span style="color:#3af">1</span>;
 </span></span></code></pre></div><p>一些不熟悉的语句</p>
 <p>like 模糊查询</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span> * <span style="color:#859900">from</span> <span style="color:#268bd2">employees</span> <span style="color:#859900">where</span> <span style="color:#268bd2">last_name</span> <span style="color:#859900">like</span> <span style="color:#2aa198">&#39;%a%&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span> * <span style="color:#00f">from</span> <span style="color:#000">employees</span> <span style="color:#00f">where</span> <span style="color:#000">last_name</span> <span style="color:#00f">like</span> <span style="color:#5a2">&#39;%a%&#39;</span>;
 </span></span></code></pre></div><p>group by（常常和聚合函数一起使用）
 聚合函数：<strong>count() , sum() , avg() , max() , min()</strong>
 根据by对数据按照哪个字段进行分组，或者是哪几个字段进行分组。</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span>  字段   <span style="color:#859900">from</span>  表名  <span style="color:#859900">where</span>   条件   <span style="color:#859900">group</span>  <span style="color:#859900">by</span>    字段;
-</span></span><span style="display:flex;"><span># 单字段
-</span></span><span style="display:flex;"><span><span style="color:#859900">select</span>  <span style="color:#268bd2">grade</span>  <span style="color:#859900">from</span>  <span style="color:#268bd2">student</span>   <span style="color:#859900">group</span>   <span style="color:#859900">by</span>   <span style="color:#268bd2">grade</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span>  <span style="color:#f00">字段</span>   <span style="color:#00f">from</span>  <span style="color:#f00">表名</span>  <span style="color:#00f">where</span>   <span style="color:#f00">条件</span>   <span style="color:#00f">group</span>  <span style="color:#00f">by</span>    <span style="color:#f00">字段</span>;
+</span></span><span style="display:flex;"><span># <span style="color:#f00">单字段</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">select</span>  <span style="color:#000">grade</span>  <span style="color:#00f">from</span>  <span style="color:#000">student</span>   <span style="color:#00f">group</span>   <span style="color:#00f">by</span>   <span style="color:#000">grade</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># 多字段
-</span></span><span style="display:flex;"><span><span style="color:#859900">select</span>  <span style="color:#268bd2">name</span> , <span style="color:#859900">sum</span>(<span style="color:#268bd2">salary</span>)    <span style="color:#859900">from</span>   <span style="color:#268bd2">student</span>    <span style="color:#859900">group</span>  <span style="color:#859900">by</span>   <span style="color:#268bd2">name</span> , <span style="color:#268bd2">grade</span>;
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">name和grade看成一个整体</span>，<span style="color:#268bd2">name和grade相同的才可以分成一组</span>，一个不一样就不能分成一组。
+</span></span><span style="display:flex;"><span># <span style="color:#f00">多字段</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">select</span>  <span style="color:#000">name</span> , <span style="color:#00f">sum</span>(<span style="color:#000">salary</span>)    <span style="color:#00f">from</span>   <span style="color:#000">student</span>    <span style="color:#00f">group</span>  <span style="color:#00f">by</span>   <span style="color:#000">name</span> , <span style="color:#000">grade</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000">name和grade看成一个整体</span><span style="color:#f00">，</span><span style="color:#000">name和grade相同的才可以分成一组</span><span style="color:#f00">，一个不一样就不能分成一组。</span>
 </span></span></code></pre></div><p>having 对group by分组和聚合之后的数据进行过滤
 （与where正好相反）</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span>  字段   <span style="color:#859900">from</span>  表名  <span style="color:#859900">group</span>  <span style="color:#859900">by</span>   字段   <span style="color:#859900">having</span>   过滤条件;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span>  <span style="color:#f00">字段</span>   <span style="color:#00f">from</span>  <span style="color:#f00">表名</span>  <span style="color:#00f">group</span>  <span style="color:#00f">by</span>   <span style="color:#f00">字段</span>   <span style="color:#00f">having</span>   <span style="color:#f00">过滤条件</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">-- 查找人数大于 5 的部门
-</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">select</span> <span style="color:#268bd2">dept_id</span>, <span style="color:#859900">count</span>(*)
-</span></span><span style="display:flex;"><span><span style="color:#859900">from</span> <span style="color:#268bd2">employee</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">group</span> <span style="color:#859900">by</span> <span style="color:#268bd2">dept_id</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">having</span> <span style="color:#859900">count</span>(*) &gt; <span style="color:#2aa198;font-weight:bold">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">-- 查找人数大于 5 的部门
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">select</span> <span style="color:#000">dept_id</span>, <span style="color:#00f">count</span>(*)
+</span></span><span style="display:flex;"><span><span style="color:#00f">from</span> <span style="color:#000">employee</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">group</span> <span style="color:#00f">by</span> <span style="color:#000">dept_id</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">having</span> <span style="color:#00f">count</span>(*) &gt; <span style="color:#3af">5</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">dept_id</span>|<span style="color:#859900">count</span>(*)|
-</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">-------|--------|
-</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>      <span style="color:#2aa198;font-weight:bold">4</span>|       <span style="color:#2aa198;font-weight:bold">9</span>|
-</span></span><span style="display:flex;"><span>      <span style="color:#2aa198;font-weight:bold">5</span>|       <span style="color:#2aa198;font-weight:bold">8</span>|
+</span></span><span style="display:flex;"><span><span style="color:#000">dept_id</span>|<span style="color:#00f">count</span>(*)|
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">-------|--------|
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>      <span style="color:#3af">4</span>|       <span style="color:#3af">9</span>|
+</span></span><span style="display:flex;"><span>      <span style="color:#3af">5</span>|       <span style="color:#3af">8</span>|
 </span></span></code></pre></div><p>union 联合查询</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span> * <span style="color:#859900">from</span> <span style="color:#268bd2">employees</span> <span style="color:#859900">where</span> <span style="color:#268bd2">eamil</span> <span style="color:#859900">like</span> <span style="color:#2aa198">&#39;%a%&#39;</span> <span style="color:#859900">or</span> <span style="color:#268bd2">department_id</span>&gt;<span style="color:#2aa198;font-weight:bold">90</span>;
-</span></span><span style="display:flex;"><span>相当于
-</span></span><span style="display:flex;"><span><span style="color:#859900">select</span> * <span style="color:#859900">from</span> <span style="color:#268bd2">employees</span> <span style="color:#859900">where</span> <span style="color:#268bd2">eamil</span> <span style="color:#859900">like</span> <span style="color:#2aa198">&#39;%a%&#39;</span> 
-</span></span><span style="display:flex;"><span><span style="color:#859900">union</span> 
-</span></span><span style="display:flex;"><span><span style="color:#859900">select</span> * <span style="color:#859900">from</span> <span style="color:#268bd2">employees</span> <span style="color:#859900">where</span> <span style="color:#268bd2">department_id</span>&gt;<span style="color:#2aa198;font-weight:bold">90</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span> * <span style="color:#00f">from</span> <span style="color:#000">employees</span> <span style="color:#00f">where</span> <span style="color:#000">eamil</span> <span style="color:#00f">like</span> <span style="color:#5a2">&#39;%a%&#39;</span> <span style="color:#00f">or</span> <span style="color:#000">department_id</span>&gt;<span style="color:#3af">90</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f00">相当于</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">select</span> * <span style="color:#00f">from</span> <span style="color:#000">employees</span> <span style="color:#00f">where</span> <span style="color:#000">eamil</span> <span style="color:#00f">like</span> <span style="color:#5a2">&#39;%a%&#39;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#00f">union</span> 
+</span></span><span style="display:flex;"><span><span style="color:#00f">select</span> * <span style="color:#00f">from</span> <span style="color:#000">employees</span> <span style="color:#00f">where</span> <span style="color:#000">department_id</span>&gt;<span style="color:#3af">90</span>;
 </span></span></code></pre></div><p>CONCAT() 函数</p>
 <p>CONCAT(str1,str2,…)</p>
 <p>将多个字符串连接成一个字符串。</p>
@@ -388,8 +388,8 @@
 <p>返回一个字符串结果，该结果由分组中的值连接组合而成。</p>
 <h4 id="175-组合两个表httpsleetcode-cncomproblemscombine-two-tables"><a class="link" href="https://leetcode-cn.com/problems/combine-two-tables/"  target="_blank" rel="noopener"
     >175. 组合两个表</a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#859900">select</span> <span style="color:#268bd2">FirstName</span>, <span style="color:#268bd2">LastName</span>, <span style="color:#268bd2">City</span>, <span style="color:#859900">State</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">from</span> <span style="color:#268bd2">Person</span>  <span style="color:#859900">left</span> <span style="color:#859900">join</span> <span style="color:#268bd2">Address</span> <span style="color:#859900">on</span> <span style="color:#268bd2">Person</span>.<span style="color:#268bd2">PersonId</span> = <span style="color:#268bd2">Address</span>.<span style="color:#268bd2">PersonId</span>;
+</h4><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#00f">select</span> <span style="color:#000">FirstName</span>, <span style="color:#000">LastName</span>, <span style="color:#000">City</span>, <span style="color:#00f">State</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">from</span> <span style="color:#000">Person</span>  <span style="color:#00f">left</span> <span style="color:#00f">join</span> <span style="color:#000">Address</span> <span style="color:#00f">on</span> <span style="color:#000">Person</span>.<span style="color:#000">PersonId</span> = <span style="color:#000">Address</span>.<span style="color:#000">PersonId</span>;
 </span></span></code></pre></div><p>left join</p>
 <p>也叫left outer join，外连接</p>
 <ul>
@@ -397,77 +397,77 @@
 <li>2、<strong>where</strong> 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 <strong>left join</strong> 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
 </ul>
 <h1 id="p1255-数楼梯">P1255 数楼梯
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#268bd2">a</span> = <span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">input</span>())
-</span></span><span style="display:flex;"><span><span style="color:#859900">def</span> <span style="color:#268bd2">gogogo</span>(<span style="color:#268bd2">index</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span> <span style="color:#268bd2">index</span> &gt; <span style="color:#2aa198;font-weight:bold">2</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#cb4b16">print</span>(<span style="color:#268bd2">index</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#268bd2">gogogo</span>(<span style="color:#268bd2">index</span>-<span style="color:#2aa198;font-weight:bold">1</span>) + <span style="color:#268bd2">gogogo</span>(<span style="color:#268bd2">index</span>-<span style="color:#2aa198;font-weight:bold">2</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">elif</span> <span style="color:#268bd2">index</span> == <span style="color:#2aa198;font-weight:bold">2</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#2aa198;font-weight:bold">2</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">elif</span> <span style="color:#268bd2">index</span> == <span style="color:#2aa198;font-weight:bold">1</span> <span style="color:#859900">or</span> <span style="color:#268bd2">index</span> == <span style="color:#2aa198;font-weight:bold">0</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#2aa198;font-weight:bold">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#cb4b16">print</span>(<span style="color:#268bd2">gogogo</span>(<span style="color:#268bd2">a</span>))
+</h1><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">a</span> = <span style="color:#000">int</span>(<span style="color:#000">input</span>())
+</span></span><span style="display:flex;"><span><span style="color:#00f">def</span> <span style="color:#000">gogogo</span>(<span style="color:#000">index</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> <span style="color:#000">index</span> &gt; <span style="color:#3af">2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#000">print</span>(<span style="color:#000">index</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#000">gogogo</span>(<span style="color:#000">index</span>-<span style="color:#3af">1</span>) + <span style="color:#000">gogogo</span>(<span style="color:#000">index</span>-<span style="color:#3af">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">elif</span> <span style="color:#000">index</span> == <span style="color:#3af">2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#3af">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">elif</span> <span style="color:#000">index</span> == <span style="color:#3af">1</span> <span style="color:#00f">or</span> <span style="color:#000">index</span> == <span style="color:#3af">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#3af">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">print</span>(<span style="color:#000">gogogo</span>(<span style="color:#000">a</span>))
 </span></span></code></pre></div><p>思路是对的，但是层数一多就g了</p>
 <p>于是想用循环取代递归</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#268bd2">n</span> = <span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">input</span>())
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">l</span> = [<span style="color:#2aa198;font-weight:bold">0</span> <span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#cb4b16">range</span>(<span style="color:#2aa198;font-weight:bold">0</span>,<span style="color:#268bd2">n</span>+<span style="color:#2aa198;font-weight:bold">2</span>)]
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">l</span>[<span style="color:#2aa198;font-weight:bold">0</span>], <span style="color:#268bd2">l</span>[<span style="color:#2aa198;font-weight:bold">1</span>] = <span style="color:#2aa198;font-weight:bold">1</span>,<span style="color:#2aa198;font-weight:bold">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">if</span> <span style="color:#268bd2">n</span> == <span style="color:#2aa198;font-weight:bold">0</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">print</span>(<span style="color:#2aa198;font-weight:bold">0</span>)
-</span></span><span style="display:flex;"><span><span style="color:#859900">else</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#cb4b16">range</span>(<span style="color:#2aa198;font-weight:bold">2</span>,<span style="color:#268bd2">n</span>+<span style="color:#2aa198;font-weight:bold">1</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">l</span>[<span style="color:#268bd2">i</span>] = <span style="color:#268bd2">l</span>[<span style="color:#268bd2">i</span>-<span style="color:#2aa198;font-weight:bold">1</span>] + <span style="color:#268bd2">l</span>[<span style="color:#268bd2">i</span>-<span style="color:#2aa198;font-weight:bold">2</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">print</span>(<span style="color:#268bd2">l</span>[<span style="color:#268bd2">n</span>])
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">n</span> = <span style="color:#000">int</span>(<span style="color:#000">input</span>())
+</span></span><span style="display:flex;"><span><span style="color:#000">l</span> = [<span style="color:#3af">0</span> <span style="color:#00f">for</span> <span style="color:#000">i</span> <span style="color:#00f">in</span> <span style="color:#000">range</span>(<span style="color:#3af">0</span>,<span style="color:#000">n</span>+<span style="color:#3af">2</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#000">l</span>[<span style="color:#3af">0</span>], <span style="color:#000">l</span>[<span style="color:#3af">1</span>] = <span style="color:#3af">1</span>,<span style="color:#3af">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">if</span> <span style="color:#000">n</span> == <span style="color:#3af">0</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#000">print</span>(<span style="color:#3af">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00f">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">for</span> <span style="color:#000">i</span> <span style="color:#00f">in</span> <span style="color:#000">range</span>(<span style="color:#3af">2</span>,<span style="color:#000">n</span>+<span style="color:#3af">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#000">l</span>[<span style="color:#000">i</span>] = <span style="color:#000">l</span>[<span style="color:#000">i</span>-<span style="color:#3af">1</span>] + <span style="color:#000">l</span>[<span style="color:#000">i</span>-<span style="color:#3af">2</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#000">print</span>(<span style="color:#000">l</span>[<span style="color:#000">n</span>])
 </span></span></code></pre></div><p>这样是可以通过的</p>
 <p>但是上网又搜了一个更恐怖的</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#268bd2">a</span>, <span style="color:#268bd2">b</span> = <span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#2aa198;font-weight:bold">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#cb4b16">range</span>(<span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">input</span>())): 
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">a</span>, <span style="color:#268bd2">b</span> = <span style="color:#268bd2">b</span>, <span style="color:#268bd2">a</span> + <span style="color:#268bd2">b</span>
-</span></span><span style="display:flex;"><span><span style="color:#cb4b16">print</span>(<span style="color:#268bd2">b</span> <span style="color:#859900">if</span> <span style="color:#268bd2">a</span> <span style="color:#859900">else</span> <span style="color:#2aa198;font-weight:bold">0</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">a</span>, <span style="color:#000">b</span> = <span style="color:#3af">0</span>, <span style="color:#3af">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">for</span> <span style="color:#000">i</span> <span style="color:#00f">in</span> <span style="color:#000">range</span>(<span style="color:#000">int</span>(<span style="color:#000">input</span>())): 
+</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span>, <span style="color:#000">b</span> = <span style="color:#000">b</span>, <span style="color:#000">a</span> + <span style="color:#000">b</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">print</span>(<span style="color:#000">b</span> <span style="color:#00f">if</span> <span style="color:#000">a</span> <span style="color:#00f">else</span> <span style="color:#3af">0</span>)
 </span></span></code></pre></div><h1 id="p1143-进制转换">P1143 进制转换
-</h1><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#859900">def</span> <span style="color:#268bd2">trans_map</span>(<span style="color:#268bd2">cint</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span> <span style="color:#268bd2">cint</span> &lt; <span style="color:#2aa198;font-weight:bold">0</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#cb4b16">print</span>(<span style="color:#2aa198">&#34;不合法&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">elif</span> <span style="color:#268bd2">cint</span> &lt; <span style="color:#2aa198;font-weight:bold">10</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#268bd2">cint</span>
+</h1><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">def</span> <span style="color:#000">trans_map</span>(<span style="color:#000">cint</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> <span style="color:#000">cint</span> &lt; <span style="color:#3af">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#000">print</span>(<span style="color:#5a2">&#34;不合法&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">elif</span> <span style="color:#000">cint</span> &lt; <span style="color:#3af">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#000">cint</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">elif</span> <span style="color:#268bd2">cint</span> &gt;= <span style="color:#2aa198;font-weight:bold">10</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#cb4b16">chr</span>(<span style="color:#268bd2">cint</span> - <span style="color:#2aa198;font-weight:bold">10</span> + <span style="color:#2aa198;font-weight:bold">65</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">elif</span> <span style="color:#000">cint</span> &gt;= <span style="color:#3af">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#000">chr</span>(<span style="color:#000">cint</span> - <span style="color:#3af">10</span> + <span style="color:#3af">65</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">def</span> <span style="color:#268bd2">anyToTen</span>(<span style="color:#268bd2">m</span>, <span style="color:#268bd2">origin</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic"># 任意进制的数转换为10机制</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic"># 先将m转换为10进制</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic"># 公式 num = an * m**(n-1) + an-1 * m**(n-2).....+ a0 * m**0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic"># 直接利用int的自带功能</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">return</span> <span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">str</span>(<span style="color:#268bd2">origin</span>), <span style="color:#268bd2">base</span>=<span style="color:#268bd2">m</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00f">def</span> <span style="color:#000">anyToTen</span>(<span style="color:#000">m</span>, <span style="color:#000">origin</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic"># 任意进制的数转换为10机制</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic"># 先将m转换为10进制</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic"># 公式 num = an * m**(n-1) + an-1 * m**(n-2).....+ a0 * m**0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic"># 直接利用int的自带功能</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">return</span> <span style="color:#000">int</span>(<span style="color:#000">str</span>(<span style="color:#000">origin</span>), <span style="color:#000">base</span>=<span style="color:#000">m</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">def</span> <span style="color:#268bd2">tenToAny</span>(<span style="color:#268bd2">n</span>, <span style="color:#268bd2">origin</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#93a1a1;font-style:italic"># 10进制转换为任意进制的数</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">list</span> = []
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">while</span> <span style="color:#859900;font-weight:bold">True</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic"># 取商</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">s</span> = <span style="color:#268bd2">origin</span> // <span style="color:#268bd2">n</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic"># 取余数</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">tmp</span> = <span style="color:#268bd2">origin</span> % <span style="color:#268bd2">n</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#cb4b16">list</span>.<span style="color:#268bd2">append</span>(<span style="color:#268bd2">trans_map</span>(<span style="color:#268bd2">tmp</span>))
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">if</span> <span style="color:#268bd2">s</span> == <span style="color:#2aa198;font-weight:bold">0</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#859900">break</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">origin</span> = <span style="color:#268bd2">s</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">list</span>.<span style="color:#268bd2">reverse</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">list</span> = [<span style="color:#cb4b16">str</span>(<span style="color:#268bd2">each</span>) <span style="color:#859900">for</span> <span style="color:#268bd2">each</span> <span style="color:#859900">in</span> <span style="color:#cb4b16">list</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">print</span>(<span style="color:#2aa198">&#39;&#39;</span>.<span style="color:#268bd2">join</span>(<span style="color:#cb4b16">list</span>))
+</span></span><span style="display:flex;"><span><span style="color:#00f">def</span> <span style="color:#000">tenToAny</span>(<span style="color:#000">n</span>, <span style="color:#000">origin</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic"># 10进制转换为任意进制的数</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">list</span> = []
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">while</span> <span style="color:#00f">True</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic"># 取商</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">s</span> = <span style="color:#000">origin</span> // <span style="color:#000">n</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic"># 取余数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">tmp</span> = <span style="color:#000">origin</span> % <span style="color:#000">n</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">list</span>.<span style="color:#000">append</span>(<span style="color:#000">trans_map</span>(<span style="color:#000">tmp</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">if</span> <span style="color:#000">s</span> == <span style="color:#3af">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#00f">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">origin</span> = <span style="color:#000">s</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">list</span>.<span style="color:#000">reverse</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#000">list</span> = [<span style="color:#000">str</span>(<span style="color:#000">each</span>) <span style="color:#00f">for</span> <span style="color:#000">each</span> <span style="color:#00f">in</span> <span style="color:#000">list</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#000">print</span>(<span style="color:#5a2">&#39;&#39;</span>.<span style="color:#000">join</span>(<span style="color:#000">list</span>))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"># 将一个m进制的数转换为一个n进制的数</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">def</span> <span style="color:#268bd2">transfer</span>(<span style="color:#268bd2">m</span>, <span style="color:#268bd2">n</span>, <span style="color:#268bd2">origin</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">num</span> = <span style="color:#268bd2">anyToTen</span>(<span style="color:#268bd2">m</span>, <span style="color:#268bd2">origin</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">target</span> = <span style="color:#268bd2">tenToAny</span>(<span style="color:#268bd2">n</span>, <span style="color:#268bd2">num</span>)
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># 将一个m进制的数转换为一个n进制的数</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">def</span> <span style="color:#000">transfer</span>(<span style="color:#000">m</span>, <span style="color:#000">n</span>, <span style="color:#000">origin</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#000">num</span> = <span style="color:#000">anyToTen</span>(<span style="color:#000">m</span>, <span style="color:#000">origin</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000">target</span> = <span style="color:#000">tenToAny</span>(<span style="color:#000">n</span>, <span style="color:#000">num</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">if</span> <span style="color:#268bd2">__name__</span> == <span style="color:#2aa198">&#39;__main__&#39;</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">a</span> = <span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">input</span>())
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">b</span> = <span style="color:#cb4b16">input</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">c</span> = <span style="color:#cb4b16">int</span>(<span style="color:#cb4b16">input</span>())
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">transfer</span>(<span style="color:#268bd2">a</span>,<span style="color:#268bd2">c</span>,<span style="color:#268bd2">b</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00f">if</span> <span style="color:#000">__name__</span> == <span style="color:#5a2">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span> = <span style="color:#000">int</span>(<span style="color:#000">input</span>())
+</span></span><span style="display:flex;"><span>    <span style="color:#000">b</span> = <span style="color:#000">input</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#000">c</span> = <span style="color:#000">int</span>(<span style="color:#000">input</span>())
+</span></span><span style="display:flex;"><span>    <span style="color:#000">transfer</span>(<span style="color:#000">a</span>,<span style="color:#000">c</span>,<span style="color:#000">b</span>)
 </span></span></code></pre></div>
 </section>
 

