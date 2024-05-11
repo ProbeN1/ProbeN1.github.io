@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1'><title>磁盘分区以及LVM</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1 use &amp;#34;fisk&amp;#34; create new partition change the partition to &amp;#34;LVM&amp;#34;(8e) pvcreate /dev/nvme0n1p3 pvcreate /dev/nvme0n1p5 pvcreate /dev/nvme0n1p6 vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6 lvcreate -L 1g -n lvnew vg01 mkfs.xfs /dev/vg01/lvnew'><title>磁盘分区以及LVM</title>
 
 <link rel='canonical' href='https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/'>
 
 <link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='磁盘分区以及LVM'>
-<meta property='og:description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1'>
+<meta property='og:description' content='lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1 use &amp;#34;fisk&amp;#34; create new partition change the partition to &amp;#34;LVM&amp;#34;(8e) pvcreate /dev/nvme0n1p3 pvcreate /dev/nvme0n1p5 pvcreate /dev/nvme0n1p6 vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6 lvcreate -L 1g -n lvnew vg01 mkfs.xfs /dev/vg01/lvnew'>
 <meta property='og:url' content='https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/'>
 <meta property='og:site_name' content='茄子的养殖场'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-09T15:57:26&#43;08:00'/><meta property='article:modified_time' content='2024-05-09T15:57:26&#43;08:00'/>
 <meta name="twitter:title" content="磁盘分区以及LVM">
-<meta name="twitter:description" content="lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1">
+<meta name="twitter:description" content="lsblk fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1 use &amp;#34;fisk&amp;#34; create new partition change the partition to &amp;#34;LVM&amp;#34;(8e) pvcreate /dev/nvme0n1p3 pvcreate /dev/nvme0n1p5 pvcreate /dev/nvme0n1p6 vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6 lvcreate -L 1g -n lvnew vg01 mkfs.xfs /dev/vg01/lvnew">
   
 
 <style>
@@ -265,6 +265,10 @@
     
     <header class="article-category">
         
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
     </header>
     
 
@@ -302,7 +306,7 @@
 
 
                 <time class="article-words">
-                    41字
+                    71字
                 </time>
             </div>
         
@@ -329,6 +333,15 @@
 </span></span><span style="display:flex;"><span># Let the kernel know to add a new partition
 </span></span><span style="display:flex;"><span>partprobe 
 </span></span><span style="display:flex;"><span>mkfs.xfs /dev/sdb1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>use &#34;fisk&#34; create new partition
+</span></span><span style="display:flex;"><span>change the partition to &#34;LVM&#34;(8e)
+</span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p3 
+</span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p5 
+</span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p6
+</span></span><span style="display:flex;"><span>vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6
+</span></span><span style="display:flex;"><span>lvcreate -L 1g -n lvnew vg01
+</span></span><span style="display:flex;"><span>mkfs.xfs /dev/vg01/lvnew
+</span></span><span style="display:flex;"><span>...
 </span></span></code></pre></div>
 </section>
 
@@ -367,36 +380,36 @@
                 
                     
 <article class="">
+    <a href="/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux常用命令和vi速查</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/oracle-linux-installation/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle Linux Installation</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2022.8</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.7/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2022.7</h2>
         </div>
     </a>
 </article>
@@ -540,7 +553,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了66.4k字·共 50篇文章</br><span><p>
+      共书写了65.9k字·共 50篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -682,7 +695,9 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">33</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">3</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">31</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">11</a>
             </span></div>
@@ -787,10 +802,6 @@ document.getElementById('days').innerHTML = number_of_days;
                 Java
             </a>
         
-            <a href="/tags/linux/" class="font_size_2">
-                Linux
-            </a>
-        
             <a href="/tags/php/" class="font_size_2">
                 Php
             </a>
@@ -801,6 +812,10 @@ document.getElementById('days').innerHTML = number_of_days;
         
             <a href="/tags/sql/" class="font_size_2">
                 SQL
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
             </a>
         
     </div>

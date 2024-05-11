@@ -13,21 +13,21 @@
       <link>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</link>
       <pubDate>Thu, 09 May 2024 15:57:26 +0800</pubDate>
       <guid>https://proben1.github.io/2024/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E4%BB%A5%E5%8F%8Alvm/</guid>
-      <description>lsblk fdisk /dev/nvme0n1 n/p/e/+1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1</description>
+      <description>lsblk fdisk /dev/nvme0n1 n/p/e/+1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new partition partprobe mkfs.xfs /dev/sdb1 use &amp;#34;fisk&amp;#34; create new partition change the partition to &amp;#34;LVM&amp;#34;(8e) pvcreate /dev/nvme0n1p3 pvcreate /dev/nvme0n1p5 pvcreate /dev/nvme0n1p6 vgcreate vg01 /dev/nvme0n1p3 /dev/nvme0n1p5 /dev/nvme0n1p6 lvcreate -L 1g -n lvnew vg01 mkfs.xfs /dev/vg01/lvnew</description>
     </item>
     <item>
-      <title>Linux常用命令和vi</title>
-      <link>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi/</link>
+      <title>Linux常用命令和vi速查</title>
+      <link>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Thu, 09 May 2024 15:55:13 +0800</pubDate>
-      <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi/</guid>
-      <description>Startup process in Linux Stage1 Hardware boot POST + BIOS Stage2 BootLoader Stage3 Kernel boot Stage4 Sys init Process init is the starting point for all processes on the system. /etc/inittab Determine the run level in system(0-6). Run Level Change run level : init n ,n=0,1,3,5,6 （init 0 means shutdown without syn, 6 means reboot） Change the default run level</description>
+      <guid>https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/</guid>
+      <description>版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 文件 -name 名字 df -h cp或mv -r 源 目的 vi</description>
     </item>
     <item>
       <title>Oracle Linux Installation</title>
       <link>https://proben1.github.io/2024/oracle-linux-installation/</link>
       <pubDate>Thu, 09 May 2024 15:44:05 +0800</pubDate>
       <guid>https://proben1.github.io/2024/oracle-linux-installation/</guid>
-      <description>Overview of Linux GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular. img Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on. Difference between UNIX and</description>
+      <description>Overview of Linux GNU/Linux (Linux kernel + GNU suite), UNIX-like OS. Compared with Windows, it has the advantages of stable system performance, speed and security. Commonly used in servers, embedded systems, network firewalls and so on. Because of its open source, powerful network functions, the system tool chain is complete and popular.&#xA;img&#xD;Common versions: RHEL, Oracle Linux, CentOS, Ubuntu, Debian, SUSE, archlinux and so on.&#xA;Difference between UNIX and Linux UNIX is an operating system (non-open source) and linux is an open source operating system that has adopted the design concepts of the UNIX system in its many versions.</description>
     </item>
     <item>
       <title>英语单词(会议)</title>
