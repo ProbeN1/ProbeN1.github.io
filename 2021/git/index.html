@@ -447,14 +447,14 @@
 </h1><p>版本冲突的问题。</p>
 <p>有如下几种解决方法：</p>
 <p>1.使用强制push的方法：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git push -u origin master -f 
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git push -u origin master -f 
 </span></span></code></pre></div><p>这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。</p>
 <p>2.push前先将远程repository修改pull下来</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git pull origin master
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git pull origin master
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ git push -u origin master
 </span></span></code></pre></div><p>3.若不想merge远程和本地修改，可以先创建新的分支，然后push：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git branch [name]
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ git branch [name]
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>$ git push -u origin [name]
 </span></span></code></pre></div><h2 id="参考">参考

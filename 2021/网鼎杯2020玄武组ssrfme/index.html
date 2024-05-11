@@ -330,69 +330,69 @@
     
     
     <h2 id="网鼎杯-2020-玄武组ssrfme">[网鼎杯 2020 玄武组]SSRFMe
-</h2><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">function</span> <span style="color:#000">check_inner_ip</span>(<span style="color:#000">$url</span>)
+</h2><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#268bd2">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">function</span> <span style="color:#268bd2">check_inner_ip</span>(<span style="color:#268bd2">$url</span>)
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#000">$match_result</span>=<span style="color:#000">preg_match</span>(<span style="color:#5a2">&#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&#39;</span>,<span style="color:#000">$url</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (!<span style="color:#000">$match_result</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">$match_result</span>=<span style="color:#268bd2">preg_match</span>(<span style="color:#2aa198">&#39;/^(http|https|gopher|dict)?:\/\/.*(\/)?.*$/&#39;</span>,<span style="color:#268bd2">$url</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span> (!<span style="color:#268bd2">$match_result</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">die</span>(<span style="color:#5a2">&#39;url fomat error&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">die</span>(<span style="color:#2aa198">&#39;url fomat error&#39;</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">try</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">try</span>
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$url_parse</span>=<span style="color:#000">parse_url</span>(<span style="color:#000">$url</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">$url_parse</span>=<span style="color:#268bd2">parse_url</span>(<span style="color:#268bd2">$url</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">catch</span>(<span style="color:#000">Exception</span> <span style="color:#000">$e</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">catch</span>(<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">$e</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">die</span>(<span style="color:#5a2">&#39;url fomat error&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#00f">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">die</span>(<span style="color:#2aa198">&#39;url fomat error&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#000">$hostname</span>=<span style="color:#000">$url_parse</span>[<span style="color:#5a2">&#39;host&#39;</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#000">$ip</span>=<span style="color:#000">gethostbyname</span>(<span style="color:#000">$hostname</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#000">$int_ip</span>=<span style="color:#000">ip2long</span>(<span style="color:#000">$ip</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">return</span> <span style="color:#000">ip2long</span>(<span style="color:#5a2">&#39;127.0.0.0&#39;</span>)&gt;&gt;<span style="color:#3af">24</span> == <span style="color:#000">$int_ip</span>&gt;&gt;<span style="color:#3af">24</span> || <span style="color:#000">ip2long</span>(<span style="color:#5a2">&#39;10.0.0.0&#39;</span>)&gt;&gt;<span style="color:#3af">24</span> == <span style="color:#000">$int_ip</span>&gt;&gt;<span style="color:#3af">24</span> || <span style="color:#000">ip2long</span>(<span style="color:#5a2">&#39;172.16.0.0&#39;</span>)&gt;&gt;<span style="color:#3af">20</span> == <span style="color:#000">$int_ip</span>&gt;&gt;<span style="color:#3af">20</span> || <span style="color:#000">ip2long</span>(<span style="color:#5a2">&#39;192.168.0.0&#39;</span>)&gt;&gt;<span style="color:#3af">16</span> == <span style="color:#000">$int_ip</span>&gt;&gt;<span style="color:#3af">16</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">$hostname</span>=<span style="color:#268bd2">$url_parse</span>[<span style="color:#2aa198">&#39;host&#39;</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">$ip</span>=<span style="color:#268bd2">gethostbyname</span>(<span style="color:#268bd2">$hostname</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">$int_ip</span>=<span style="color:#268bd2">ip2long</span>(<span style="color:#268bd2">$ip</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">return</span> <span style="color:#268bd2">ip2long</span>(<span style="color:#2aa198">&#39;127.0.0.0&#39;</span>)&gt;&gt;<span style="color:#2aa198;font-weight:bold">24</span> == <span style="color:#268bd2">$int_ip</span>&gt;&gt;<span style="color:#2aa198;font-weight:bold">24</span> || <span style="color:#268bd2">ip2long</span>(<span style="color:#2aa198">&#39;10.0.0.0&#39;</span>)&gt;&gt;<span style="color:#2aa198;font-weight:bold">24</span> == <span style="color:#268bd2">$int_ip</span>&gt;&gt;<span style="color:#2aa198;font-weight:bold">24</span> || <span style="color:#268bd2">ip2long</span>(<span style="color:#2aa198">&#39;172.16.0.0&#39;</span>)&gt;&gt;<span style="color:#2aa198;font-weight:bold">20</span> == <span style="color:#268bd2">$int_ip</span>&gt;&gt;<span style="color:#2aa198;font-weight:bold">20</span> || <span style="color:#268bd2">ip2long</span>(<span style="color:#2aa198">&#39;192.168.0.0&#39;</span>)&gt;&gt;<span style="color:#2aa198;font-weight:bold">16</span> == <span style="color:#268bd2">$int_ip</span>&gt;&gt;<span style="color:#2aa198;font-weight:bold">16</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">function</span> <span style="color:#000">safe_request_url</span>(<span style="color:#000">$url</span>)
+</span></span><span style="display:flex;"><span><span style="color:#859900">function</span> <span style="color:#268bd2">safe_request_url</span>(<span style="color:#268bd2">$url</span>)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span> (<span style="color:#000">check_inner_ip</span>(<span style="color:#000">$url</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span> (<span style="color:#268bd2">check_inner_ip</span>(<span style="color:#268bd2">$url</span>))
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">echo</span> <span style="color:#000">$url</span>.<span style="color:#5a2">&#39; is inner ip&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">echo</span> <span style="color:#268bd2">$url</span>.<span style="color:#2aa198">&#39; is inner ip&#39;</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">else</span>
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$ch</span> = <span style="color:#000">curl_init</span>();
-</span></span><span style="display:flex;"><span>        <span style="color:#000">curl_setopt</span>(<span style="color:#000">$ch</span>, <span style="color:#000">CURLOPT_URL</span>, <span style="color:#000">$url</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#000">curl_setopt</span>(<span style="color:#000">$ch</span>, <span style="color:#000">CURLOPT_RETURNTRANSFER</span>, <span style="color:#3af">1</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#000">curl_setopt</span>(<span style="color:#000">$ch</span>, <span style="color:#000">CURLOPT_HEADER</span>, <span style="color:#3af">0</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$output</span> = <span style="color:#000">curl_exec</span>(<span style="color:#000">$ch</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$result_info</span> = <span style="color:#000">curl_getinfo</span>(<span style="color:#000">$ch</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">if</span> (<span style="color:#000">$result_info</span>[<span style="color:#5a2">&#39;redirect_url&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">$ch</span> = <span style="color:#268bd2">curl_init</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">curl_setopt</span>(<span style="color:#268bd2">$ch</span>, <span style="color:#268bd2">CURLOPT_URL</span>, <span style="color:#268bd2">$url</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">curl_setopt</span>(<span style="color:#268bd2">$ch</span>, <span style="color:#268bd2">CURLOPT_RETURNTRANSFER</span>, <span style="color:#2aa198;font-weight:bold">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">curl_setopt</span>(<span style="color:#268bd2">$ch</span>, <span style="color:#268bd2">CURLOPT_HEADER</span>, <span style="color:#2aa198;font-weight:bold">0</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">$output</span> = <span style="color:#268bd2">curl_exec</span>(<span style="color:#268bd2">$ch</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">$result_info</span> = <span style="color:#268bd2">curl_getinfo</span>(<span style="color:#268bd2">$ch</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">if</span> (<span style="color:#268bd2">$result_info</span>[<span style="color:#2aa198">&#39;redirect_url&#39;</span>])
 </span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#000">safe_request_url</span>(<span style="color:#000">$result_info</span>[<span style="color:#5a2">&#39;redirect_url&#39;</span>]);
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">safe_request_url</span>(<span style="color:#268bd2">$result_info</span>[<span style="color:#2aa198">&#39;redirect_url&#39;</span>]);
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#000">curl_close</span>(<span style="color:#000">$ch</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#000">var_dump</span>(<span style="color:#000">$output</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">curl_close</span>(<span style="color:#268bd2">$ch</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">var_dump</span>(<span style="color:#268bd2">$output</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#00f">if</span>(<span style="color:#000">isset</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#39;url&#39;</span>])){
-</span></span><span style="display:flex;"><span>    <span style="color:#000">$url</span> = <span style="color:#000">$_GET</span>[<span style="color:#5a2">&#39;url&#39;</span>];
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">if</span>(!<span style="color:#00f">empty</span>(<span style="color:#000">$url</span>)){
-</span></span><span style="display:flex;"><span>        <span style="color:#000">safe_request_url</span>(<span style="color:#000">$url</span>);
+</span></span><span style="display:flex;"><span><span style="color:#859900">if</span>(<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#39;url&#39;</span>])){
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">$url</span> = <span style="color:#268bd2">$_GET</span>[<span style="color:#2aa198">&#39;url&#39;</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">if</span>(!<span style="color:#859900">empty</span>(<span style="color:#268bd2">$url</span>)){
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">safe_request_url</span>(<span style="color:#268bd2">$url</span>);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#00f">else</span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#000">highlight_file</span>(<span style="color:#000">__FILE__</span>);
+</span></span><span style="display:flex;"><span><span style="color:#859900">else</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">highlight_file</span>(<span style="color:#268bd2">__FILE__</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Please visit hint.php locally.
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#888;font-style:italic">?&gt;</span><span style="color:#f00">
-</span></span></span></code></pre></div><p>大致就先让你访问/hint.php，但有个ip检测，不能是内网ip</p>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">// Please visit hint.php locally.
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#93a1a1;font-style:italic">?&gt;</span>
+</span></span></code></pre></div><p>大致就先让你访问/hint.php，但有个ip检测，不能是内网ip</p>
 <ul>
 <li>
 <p>使用</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>gethostbyname
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>gethostbyname
 </span></span></code></pre></div><p>获取ip地址</p>
 <ul>
 <li>防御了xip.io这类利用dns解析的绕过方法</li>
@@ -400,7 +400,7 @@
 </li>
 <li>
 <p>使用</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ip2long
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ip2long
 </span></span></code></pre></div><p>将ip地址转为整数，判断是否为内网网段</p>
 <ul>
 <li>防御了<code>127.0.0.1/8</code></li>
@@ -415,24 +415,24 @@
 <p>（静待20min）</p>
 <p>现在我们默认已经读过这篇文章了</p>
 <p>来，让我们试试文章里的curl与其他语言url解析器联合使用所出现的问题</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=http://@127.0.0.1:80 @baidu.com/hint.php
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=http://@127.0.0.1:80 @baidu.com/hint.php
 </span></span></code></pre></div><p>很有自信，但是返回了个bool(false)………………</p>
 <p>为什么……直接搜wp，也是这个……留下了疑惑</p>
 <p>肯定在这一块，好好的抛啥异常……</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00f">try</span>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#859900">try</span>
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$url_parse</span>=<span style="color:#000">parse_url</span>(<span style="color:#000">$url</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">$url_parse</span>=<span style="color:#268bd2">parse_url</span>(<span style="color:#268bd2">$url</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">catch</span>(<span style="color:#000">Exception</span> <span style="color:#000">$e</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">catch</span>(<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">$e</span>)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">die</span>(<span style="color:#5a2">&#39;url fomat error&#39;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#00f">false</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">die</span>(<span style="color:#2aa198">&#39;url fomat error&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>好在wp里提供了另一种思路，DNS重绑定漏洞</p>
 <p><a class="link" href="https://blog.csdn.net/NOSEC2019/article/details/103126829"  target="_blank" rel="noopener"
     >https://blog.csdn.net/NOSEC2019/article/details/103126829</a></p>
 <p>（静待15min）</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(1)、服务器端获得URL参数，进行第一次DNS解析，获得了一个非内网的IP
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(1)、服务器端获得URL参数，进行第一次DNS解析，获得了一个非内网的IP
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>(2)、对于获得的IP进行判断，发现为非黑名单IP，则通过验证
 </span></span><span style="display:flex;"><span>
@@ -446,14 +446,14 @@
 <p><code>0.0.0.0</code>代表本机<code>ipv4</code>的所有地址，所以直接<code>http://0.0.0.0/hint.php</code>也可以……</p>
 <p>不错，所以为啥一开始翻ssrf过滤绕过的时候没找到这个方法^_^</p>
 <p>好在我们现在可以看到hint.php了</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">if</span>(<span style="color:#000">$_SERVER</span>[<span style="color:#5a2">&#39;REMOTE_ADDR&#39;</span>]===<span style="color:#5a2">&#34;127.0.0.1&#34;</span>){
-</span></span><span style="display:flex;"><span>  <span style="color:#000">highlight_file</span>(<span style="color:#000">__FILE__</span>);
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#268bd2">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">if</span>(<span style="color:#268bd2">$_SERVER</span>[<span style="color:#2aa198">&#39;REMOTE_ADDR&#39;</span>]===<span style="color:#2aa198">&#34;127.0.0.1&#34;</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">highlight_file</span>(<span style="color:#268bd2">__FILE__</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#00f">if</span>(<span style="color:#000">isset</span>(<span style="color:#000">$_POST</span>[<span style="color:#5a2">&#39;file&#39;</span>])){
-</span></span><span style="display:flex;"><span>  <span style="color:#000">file_put_contents</span>(<span style="color:#000">$_POST</span>[<span style="color:#5a2">&#39;file&#39;</span>],<span style="color:#5a2">&#34;&lt;?php echo &#39;redispass is root&#39;;exit();&#34;</span>.<span style="color:#000">$_POST</span>[<span style="color:#5a2">&#39;file&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#859900">if</span>(<span style="color:#268bd2">isset</span>(<span style="color:#268bd2">$_POST</span>[<span style="color:#2aa198">&#39;file&#39;</span>])){
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">file_put_contents</span>(<span style="color:#268bd2">$_POST</span>[<span style="color:#2aa198">&#39;file&#39;</span>],<span style="color:#2aa198">&#34;&lt;?php echo &#39;redispass is root&#39;;exit();&#34;</span>.<span style="color:#268bd2">$_POST</span>[<span style="color:#2aa198">&#39;file&#39;</span>]);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#5a2">&#34;
+</span></span><span style="display:flex;"><span><span style="color:#2aa198">&#34;
 </span></span></span></code></pre></div><p>本来以为是过死亡exit</p>
 <p><a class="link" href="https://xz.aliyun.com/t/8163"  target="_blank" rel="noopener"
     >https://xz.aliyun.com/t/8163</a></p>
@@ -465,7 +465,7 @@
 <p>首先……我要知道redis在啥端口——6379</p>
 <p>然后题里告诉你密码是root</p>
 <p>使用dict协议去访问redis</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=dict://0.0.0.0:6379
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=dict://0.0.0.0:6379
 </span></span></code></pre></div><p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/624021b127f86abb2a920b6e.png" >
@@ -479,7 +479,7 @@
 	
 </figure></p>
 <p>存在密码校验，再加上密码</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=dict://0.0.0.0:6379/auth root
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>?url=dict://0.0.0.0:6379/auth root
 </span></span></code></pre></div><p><figure 
 	>
 	<a href="https://pic.imgdb.cn/item/624021c727f86abb2a92a191.png" >

