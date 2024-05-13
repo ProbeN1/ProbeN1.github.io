@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    711字
+                    1410字
                 </time>
             </div>
         
@@ -345,7 +345,46 @@
 </span></span><span style="display:flex;"><span>touch 文件
 </span></span><span style="display:flex;"><span>file 文件
 </span></span><span style="display:flex;"><span>ln –s 实际文件 链接文件
-</span></span><span style="display:flex;"><span>du -h
+</span></span><span style="display:flex;"><span>du -sh /root/* （分开统计）
+</span></span><span style="display:flex;"><span>du -sh /root （合并统计）
+</span></span></code></pre></div><h3 id="查找">查找
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep根据文件的内容进行查找
+</span></span><span style="display:flex;"><span>grep [options] pattern [files]
+</span></span><span style="display:flex;"><span>-i：忽略大小写进行匹配。
+</span></span><span style="display:flex;"><span>-v：反向查找，只打印不匹配的行。
+</span></span><span style="display:flex;"><span>-n：显示匹配行的行号。
+</span></span><span style="display:flex;"><span>-r：递归查找子目录中的文件。
+</span></span><span style="display:flex;"><span>-l：只打印匹配的文件名。
+</span></span><span style="display:flex;"><span>-c：只打印匹配的行数。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>find是根据文件的属性进行查找
+</span></span><span style="display:flex;"><span>find [路径] [匹配条件] [动作]
+</span></span><span style="display:flex;"><span>-name pattern：按文件名查找，支持使用通配符 * 和 ?。
+</span></span><span style="display:flex;"><span>-type type：按文件类型查找，可以是 f（普通文件）、d（目录）、l（符号链接）等。
+</span></span><span style="display:flex;"><span>-size [+-]size[cwbkMG]：按文件大小查找，支持使用 + 或 - 表示大于或小于指定大小
+</span></span><span style="display:flex;"><span>-user username：按文件所有者查找。
+</span></span><span style="display:flex;"><span>-group groupname：按文件所属组查找。
+</span></span><span style="display:flex;"><span>-amin n：查找在 n 分钟内被访问过的文件。
+</span></span><span style="display:flex;"><span>-atime n：查找在 n*24 小时内被访问过的文件。
+</span></span><span style="display:flex;"><span>-cmin n：查找在 n 分钟内状态发生变化的文件（例如权限）。
+</span></span><span style="display:flex;"><span>-ctime n：查找在 n*24 小时内状态发生变化的文件（例如权限）。
+</span></span><span style="display:flex;"><span>-mmin n：查找在 n 分钟内被修改过的文件。
+</span></span><span style="display:flex;"><span>-mtime n：查找在 n*24 小时内被修改过的文件。
+</span></span></code></pre></div><h3 id="网络">网络
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ifconfig -a
+</span></span><span style="display:flex;"><span>ip addr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vi /etc/sysconfig/network-scripts
+</span></span><span style="display:flex;"><span>TYPE=Ethernet（默认为以太网卡）
+</span></span><span style="display:flex;"><span>BOOTPROTO=static（更改为静态配置方式）
+</span></span><span style="display:flex;"><span>NAME=eth0（默认为网卡名）
+</span></span><span style="display:flex;"><span>DEVICE=eth0（默认为网卡名）
+</span></span><span style="display:flex;"><span>ONBOOT=yes（更改自动启动为yes）
+</span></span><span style="display:flex;"><span>IPADDR=xx.xx.xx.xx（设置分配的IP地址）
+</span></span><span style="display:flex;"><span>NETMASK=xx.xx.xx.xx（设置分配的掩码）
+</span></span><span style="display:flex;"><span>GATEWAY=xx.xx.xx.xx（设置分配的网关）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>systemctl restart NetworkManager
 </span></span></code></pre></div><h3 id="压缩打包">压缩打包
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tar
 </span></span><span style="display:flex;"><span>-c  创建文件
@@ -356,6 +395,43 @@
 </span></span><span style="display:flex;"><span>-C  指定解压位置
 </span></span><span style="display:flex;"><span>tar -cvf grub.tar /boot/grub/
 </span></span><span style="display:flex;"><span>tar -xvf grub.tar.bz2 -C /opt/
+</span></span></code></pre></div><h3 id="用户管理">用户管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>groupadd –g GID groupname
+</span></span><span style="display:flex;"><span>useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
+</span></span><span style="display:flex;"><span>usermod -L username（锁）
+</span></span><span style="display:flex;"><span>usermod -U username（解锁）
+</span></span><span style="display:flex;"><span>usermod -g groupname username（改主组）
+</span></span><span style="display:flex;"><span>usermod -aG groupname username（加副组）
+</span></span><span style="display:flex;"><span>usermod -G othergroup username（重设副组）
+</span></span><span style="display:flex;"><span>userdel -r username
+</span></span><span style="display:flex;"><span>groupdel groupname
+</span></span><span style="display:flex;"><span>id username
+</span></span><span style="display:flex;"><span>passwd username
+</span></span><span style="display:flex;"><span>su - username  切换用户，使用切换用户的变量 
+</span></span><span style="display:flex;"><span>su username 切换用户，使用当前用户的变量
+</span></span><span style="display:flex;"><span>sudo Commands 以root身份来执行自己不具备权限的操作
+</span></span></code></pre></div><h3 id="权限管理">权限管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>chmod 634 /tmp/test
+</span></span><span style="display:flex;"><span>chown -R user:gruop /tmp/test
+</span></span></code></pre></div><h3 id="进程管理">进程管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
+</span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
+</span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
+</span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
+</span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
+</span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
+</span></span><span style="display:flex;"><span>pstree 将当前时间点的进程树展示
+</span></span><span style="display:flex;"><span>kill -9 PID
+</span></span><span style="display:flex;"><span>fuser -m /app 查看占用
+</span></span><span style="display:flex;"><span>fuser –kcu /app 快速删除占用的进程
+</span></span></code></pre></div><h3 id="服务管理">服务管理
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Systemctl命令使用方法
+</span></span><span style="display:flex;"><span>查询服务状态：systemctl status service名
+</span></span><span style="display:flex;"><span>启动服务：systemctl start service名
+</span></span><span style="display:flex;"><span>关闭服务：systemctl stop service名
+</span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
+</span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
+</span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
 </span></span></code></pre></div><h3 id="vi">vi
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>上左右下 hjkl
 </span></span><span style="display:flex;"><span>[ Page Down ]和[ Page Up ]常用
@@ -384,40 +460,8 @@
 	</a>
 	
 </figure></p>
-<h3 id="用户管理">用户管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>groupadd –g GID groupname
-</span></span><span style="display:flex;"><span>useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
-</span></span><span style="display:flex;"><span>usermod -L username
-</span></span><span style="display:flex;"><span>usermod -U username
-</span></span><span style="display:flex;"><span>userdel -r username
-</span></span><span style="display:flex;"><span>id username
-</span></span><span style="display:flex;"><span>passwd username
-</span></span><span style="display:flex;"><span>su - username  切换用户，使用切换用户的变量 
-</span></span><span style="display:flex;"><span>su username 切换用户，使用当前用户的变量
-</span></span><span style="display:flex;"><span>sudo Commands 以root身份来执行自己不具备权限的操作
-</span></span></code></pre></div><h3 id="权限管理">权限管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>chmod 634 /tmp/test
-</span></span><span style="display:flex;"><span>chown -R user:gruop /tmp/test
-</span></span></code></pre></div><h3 id="进程管理">进程管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
-</span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
-</span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
-</span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
-</span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
-</span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
-</span></span><span style="display:flex;"><span>pstree 将当前时间点的进程树展示
-</span></span><span style="display:flex;"><span>kill -9 PID
-</span></span><span style="display:flex;"><span>fuser -m /app 查看占用
-</span></span><span style="display:flex;"><span>fuser –kcu /app 快速删除占用的进程
-</span></span></code></pre></div><h3 id="服务管理">服务管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Systemctl命令使用方法
-</span></span><span style="display:flex;"><span>查询服务状态：systemctl status service名
-</span></span><span style="display:flex;"><span>启动服务：systemctl start service名
-</span></span><span style="display:flex;"><span>关闭服务：systemctl stop service名
-</span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
-</span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
-</span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
-</span></span></code></pre></div>
+<h3 id="heading">
+</h3>
 </section>
 
 
@@ -455,12 +499,12 @@
                 
                     
 <article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux概念知识 </h2>
+            <h2 class="article-title">Linux概念知识 重定向</h2>
         </div>
     </a>
 </article>
@@ -617,6 +661,10 @@
 
     
 
+    
+
+    
+
 
 <script>
 (function(u, c) {
@@ -636,7 +684,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了68.7k字·共 54篇文章</br><span><p>
+      共书写了73.1k字·共 56篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -784,12 +832,15 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#版本内核查看">版本、内核查看</a></li>
         <li><a href="#关机重启">关机、重启</a></li>
         <li><a href="#基本">基本</a></li>
+        <li><a href="#查找">查找</a></li>
+        <li><a href="#网络">网络</a></li>
         <li><a href="#压缩打包">压缩打包</a></li>
-        <li><a href="#vi">vi</a></li>
         <li><a href="#用户管理">用户管理</a></li>
         <li><a href="#权限管理">权限管理</a></li>
         <li><a href="#进程管理">进程管理</a></li>
         <li><a href="#服务管理">服务管理</a></li>
+        <li><a href="#vi">vi</a></li>
+        <li><a href="#heading"></a></li>
       </ol>
     </li>
   </ol>
@@ -822,6 +873,8 @@ document.getElementById('days').innerHTML = number_of_days;
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">5</a>
             </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">2</a>
+            </span></div>
         </div>
     </div>
 </div>
@@ -850,7 +903,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">7</span>
+                            <span class="count">9</span>
                         
                     </a> 
                 </div>

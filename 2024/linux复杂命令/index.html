@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    121字
+                    283字
                 </time>
             </div>
         
@@ -334,6 +334,21 @@
 </span></span></code></pre></div><p>ps -e显示所有进程，-o自定义输出格式，包括pid,ppid,%mem,%cpu,cmd（启动进程的命令名），通过cpu使用率降序排列。head -n 可以改数量。</p>
 <h3 id="在指定目录下查找超过3天的所有文件">在指定目录下查找超过3天的所有文件
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>find  目录 -ctime +3
+</span></span></code></pre></div><h3 id="最近50个用户登录的记录">最近50个用户登录的记录
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lastlog | head -n 51
+</span></span></code></pre></div><h3 id="22监听端口下所有进程的启动情况">22监听端口下所有进程的启动情况
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>netstat -tulnp | grep 22
+</span></span></code></pre></div><h3 id="查看环境变量过滤掉所有以开头的注释行">查看环境变量，过滤掉所有以‘#’开头的注释行
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep -v &#39;^#&#39; /etc/profile
+</span></span></code></pre></div><h3 id="查询用户自动执行任务的配置情况">查询用户自动执行任务的配置情况
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>crontab -l -u 用户名
+</span></span></code></pre></div><h3 id="修改当前命令行显示">修改当前命令行显示
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>vi ~/.bashrc
+</span></span><span style="display:flex;"><span>PS1=&#34;\u@\h:[\w]% &#34;
+</span></span><span style="display:flex;"><span>\u：当前用户名（如oracle）
+</span></span><span style="display:flex;"><span>\h：主机名（如drocsdb1）
+</span></span><span style="display:flex;"><span>[\w]：当前工作目录（如/oracle）
+</span></span><span style="display:flex;"><span>空格：留个空方便读
 </span></span></code></pre></div>
 </section>
 
@@ -372,12 +387,12 @@
                 
                     
 <article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux概念知识 </h2>
+            <h2 class="article-title">Linux概念知识 重定向</h2>
         </div>
     </a>
 </article>
@@ -534,6 +549,10 @@
 
     
 
+    
+
+    
+
 
 <script>
 (function(u, c) {
@@ -553,7 +572,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了68.7k字·共 54篇文章</br><span><p>
+      共书写了73.1k字·共 56篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -700,6 +719,11 @@ document.getElementById('days').innerHTML = number_of_days;
       <ol>
         <li><a href="#查看前五的占用cpu进程">查看前五的占用CPU进程</a></li>
         <li><a href="#在指定目录下查找超过3天的所有文件">在指定目录下查找超过3天的所有文件</a></li>
+        <li><a href="#最近50个用户登录的记录">最近50个用户登录的记录</a></li>
+        <li><a href="#22监听端口下所有进程的启动情况">22监听端口下所有进程的启动情况</a></li>
+        <li><a href="#查看环境变量过滤掉所有以开头的注释行">查看环境变量，过滤掉所有以‘#’开头的注释行</a></li>
+        <li><a href="#查询用户自动执行任务的配置情况">查询用户自动执行任务的配置情况</a></li>
+        <li><a href="#修改当前命令行显示">修改当前命令行显示</a></li>
       </ol>
     </li>
   </ol>
@@ -732,6 +756,8 @@ document.getElementById('days').innerHTML = number_of_days;
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">5</a>
             </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">2</a>
+            </span></div>
         </div>
     </div>
 </div>
@@ -760,7 +786,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">7</span>
+                            <span class="count">9</span>
                         
                     </a> 
                 </div>

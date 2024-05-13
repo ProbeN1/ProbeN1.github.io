@@ -6,13 +6,236 @@
         <description>Recent content in Posts on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 11 May 2024 15:27:12 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Linux概念知识 </title>
-        <link>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/</link>
+        <lastBuildDate>Mon, 13 May 2024 14:25:51 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>以太网基础</title>
+        <link>https://proben1.github.io/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Mon, 13 May 2024 14:25:51 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;h3 id=&#34;以太网连接介质&#34;&gt;以太网连接介质
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;铜缆&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;铜缆又称为双绞线，双绞线的外部是外套，两端使用RJ-45的标准制作接口。
+直连线：两端线序相同；交叉线：两端线序不同
+对于同种设备之间的连线，要使用交叉线，不同设备的连接，要使用直连线&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;光纤&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;LC-LC接口，用于SFP模块&lt;/p&gt;
+&lt;h3 id=&#34;单播广播组播&#34;&gt;单播、广播、组播
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;单播&lt;/strong&gt;
+每次只有两个实体相互通信，发送端和接收端都是唯一确定的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;广播&lt;/strong&gt;
+一个主机向网上的所有其他主机发送帧&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;组播&lt;/strong&gt;
+组播帧仅传送给属于组的多个主机.&lt;/p&gt;
+&lt;h3 id=&#34;交换机工作原理&#34;&gt;交换机工作原理
+&lt;/h3&gt;&lt;h4 id=&#34;泛洪&#34;&gt;泛洪
+&lt;/h4&gt;&lt;p&gt;交换机没有在MAC地址表中找到和目标MAC地址匹配的记录，则交换机将数据帧发送到自己的全部端口，也就是&amp;quot;广播&amp;quot;给下游的所有设备；下游设备也会检查Header，如果发现目标MAC地址和自己的不符，则会默默丢弃。&lt;/p&gt;
+&lt;h4 id=&#34;学习&#34;&gt;学习
+&lt;/h4&gt;&lt;p&gt;交换机其中一个主要功能是维护一个 MAC 地址表，将每个交换机端口与所连接设备的 MAC 地址建立映射关系。交换机的MAC地址表一开始是空的，因此每次当交换机接收到数据帧时，都会查看Header，将数据帧中的源MAC地址和接收到数据帧的端口进行映射，并存储在自己的MAC地址表中。慢慢地，每个连接到交换机的设备都会发出一些数据，MAC地址表中的记录会逐渐增加，直到这个局域网下的所有设备的MAC地址和端口映射都存储到了自己的MAC地址表中。因此，交换机只会将数据帧的发送方的MAC地址存储在MAC地址表，对于所有在表中没有记录的MAC地址，会一律使用泛洪作为应对。&lt;/p&gt;
+&lt;h4 id=&#34;转发&#34;&gt;转发
+&lt;/h4&gt;&lt;p&gt;交换机在MAC地址表中找到和目标MAC地址匹配的记录，交换机将数据帧转发到对应的端口。&lt;/p&gt;
+&lt;h4 id=&#34;过滤&#34;&gt;过滤
+&lt;/h4&gt;&lt;p&gt;基本上只有泛洪功能会依赖过滤。过滤主要是为了防止数据帧在泛洪时被发回给来源端口。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>网络基础</title>
+        <link>https://proben1.github.io/2024/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Mon, 13 May 2024 11:05:54 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;h3 id=&#34;网络&#34;&gt;网络
+&lt;/h3&gt;&lt;p&gt;网络是一组相互连接的设备和终端系统，它们之间可以互相通信（传输数据）。&lt;/p&gt;
+&lt;h3 id=&#34;协议&#34;&gt;协议
+&lt;/h3&gt;&lt;p&gt;协议是计算机与计算机之间事先达成的一种“约定”，这种“约定”让不同厂商，不同CPU以及不同操作系统组成的计算机之间，只要遵循这种协议就可以进行通信。最初,每个厂商都有自己的网络体系结构和协议，且不相互兼容，所以导致一个问题，只有相同厂商的产品才可以相互通信，这样带来了极大的不便。
+为了解决上述问题，ISO 制定了一个国际标准 OSI，对通信系统进行了标准化。&lt;/p&gt;
+&lt;h3 id=&#34;网络层次划分&#34;&gt;网络层次划分
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OSI中的层次&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;功能&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;TCP/IP协议族&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;应用层&lt;/td&gt;
+&lt;td&gt;文件传输，电子邮件，文件服务，虚拟终端，数据 Data&lt;/td&gt;
+&lt;td&gt;TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet 等等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;表示层&lt;/td&gt;
+&lt;td&gt;数据格式化，代码转换，数据加密&lt;/td&gt;
+&lt;td&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;会话层&lt;/td&gt;
+&lt;td&gt;建立或解除与其他节点的连接&lt;/td&gt;
+&lt;td&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;传输层&lt;/td&gt;
+&lt;td&gt;提供端对端的接口，网段 Segment&lt;/td&gt;
+&lt;td&gt;TCP，UDP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;网络层&lt;/td&gt;
+&lt;td&gt;为数据包选择路由，数据包 Packet&lt;/td&gt;
+&lt;td&gt;IP，ICMP，OSPF，EIGRP，IGMP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;数据链路层&lt;/td&gt;
+&lt;td&gt;传输有地址的帧，错误检测，帧 Frame&lt;/td&gt;
+&lt;td&gt;SLIP，CSLIP，PPP，MTU&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;物理层&lt;/td&gt;
+&lt;td&gt;以二进制数据形式在物理媒体上传输数据 ，位bit&lt;/td&gt;
+&lt;td&gt;ISO2110，IEEE802，IEEE802.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://www.runoob.com/wp-content/uploads/2018/09/1538030296-7490-20150904094019903-1923900106.jpg&#34; &gt;
+		&lt;img src=&#34;https://www.runoob.com/wp-content/uploads/2018/09/1538030296-7490-20150904094019903-1923900106.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;网络构成要素&#34;&gt;网络构成要素
+&lt;/h3&gt;&lt;h4 id=&#34;数据链路&#34;&gt;数据链路
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;计算机之间通过&lt;strong&gt;电缆&lt;/strong&gt;互相连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;电缆可以分为很多种，包括：双绞线电缆、光纤电缆、同轴电缆、串行电缆等。根据数据链路的不同选用不同的电缆&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;媒介可以划分为电波、微波等不同类型的电磁波&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;传输速率又称带宽，单位 bps（Bits Per Second，每秒比特数）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;吞吐量指主机之间实际的传输速率&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;网卡&#34;&gt;网卡
+&lt;/h4&gt;&lt;p&gt;任何一台计算机连接网络时，必须要使用网卡（网络接口卡 NIC），也被叫做网络适配器，网卡，LAN卡。
+一块网卡包括了 OSI 模型的两个层，&lt;strong&gt;物理层和数据链路层&lt;/strong&gt;，其主要作用为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将电脑的数据封装成帧，并通过网线（对于无线网来说就是电磁波）将数据发送到网络上去&lt;/li&gt;
+&lt;li&gt;接收网络上其它设备传过来的帧，并将帧重新组合成数据，发送到电脑中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;中继器&#34;&gt;中继器
+&lt;/h4&gt;&lt;p&gt;中继器是在 OSI 模型的第一层（物理层）上 &lt;strong&gt;延长网络&lt;/strong&gt; 的设备。由电缆传过来的电信号或光信号经由中继器的波形调整和放大再传给另一个电缆。&lt;/p&gt;
+&lt;p&gt;有些中继器可以提供多个端口服务，这种中继器称作 &lt;strong&gt;中继集线器&lt;/strong&gt; 或 &lt;strong&gt;集线器（Hub）&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;网桥--2-层交换机&#34;&gt;网桥 / 2 层交换机
+&lt;/h4&gt;&lt;p&gt;网桥是在 OSI 模型的第二层（数据链路层）上 &lt;strong&gt;连接两个网络&lt;/strong&gt; 的设备，是一个扩大网络的器材。它能够识别数据链路层中的数据帧，并将这些数据帧临时存储于内存中，再生成信号作为一个全新的帧转发给相连的另一个网段（&lt;strong&gt;根据 MAC 地址）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;现在 **交换集线器（Hub）**也属于网桥的一种，交换集线器中连接电缆的每个端口都能提供类似网桥的功能。&lt;/p&gt;
+&lt;h4 id=&#34;路由器--3-层交换机&#34;&gt;路由器 / 3 层交换机
+&lt;/h4&gt;&lt;p&gt;路由器是在 OSI 模型的第三层（网络层）上 &lt;strong&gt;连接两个网络、并对分组报文进行转发&lt;/strong&gt; 的设备。网桥是根据**物理地址（MAC地址）**进行转发，而路由器则是根据 &lt;strong&gt;IP 地址&lt;/strong&gt;进行处理的，在网络间起网关的作用，&lt;/p&gt;
+&lt;h4 id=&#34;应用层设备--47层交换机&#34;&gt;应用层设备 / 4、7层交换机
+&lt;/h4&gt;&lt;p&gt;基于传输层数据包交换，是一类建立在TCP/IP应用层之上，实现用户应用需求的设备；它实现一类应用层的访问控制与质量保证服务，与其说它是硬件设备，不如说它是软件网络管理系统。实现负载均衡，包分析等等。&lt;/p&gt;
+&lt;p&gt;负载均衡设备F5，Radware等&lt;/p&gt;
+&lt;h4 id=&#34;安全设备&#34;&gt;安全设备
+&lt;/h4&gt;&lt;p&gt;网络安全设备是保护计算机免受恶意攻击和未经授权的访问的重要工具。
+如防火墙Firewall，WEB应用防护系统WAF，入侵防御系统IPS等等&lt;/p&gt;
+&lt;h3 id=&#34;ip地址&#34;&gt;IP地址
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;1）网络地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;IP地址由网络号（包括子网号）和主机号组成，网络地址的主机号为全0，网络地址代表着整个网络。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2）广播地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;广播地址通常称为直接广播地址，是为了区分受限广播地址。
+广播地址与网络地址的主机号正好相反，广播地址中，主机号为全1。当向某个网络的广播地址发送消息时，该网络内的所有主机都能收到该广播消息。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3）组播地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A类地址以0开头，第一个字节作为网络号，地址范围为：0.0.0.0~127.255.255.255；
+B类地址以10开头，前两个字节作为网络号，地址范围是：128.0.0.0~191.255.255.255;
+C类地址以110开头，前三个字节作为网络号，地址范围是：192.0.0.0~223.255.255.255。
+D类地址以1110开头，地址范围是224.0.0.0~239.255.255.255，D类地址作为组播地址（一对多的通信）；
+E类地址以1111开头，地址范围是240.0.0.0~255.255.255.255，E类地址为保留地址，供以后使用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4）255.255.255.255&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;该IP地址指的是受限的广播地址。受限广播地址与一般广播地址（直接广播地址）的区别在于，受限广播地址只能用于本地网络，路由器不会转发以受限广播地址为目的地址的分组；一般广播地址既可在本地广播，也可跨网段广播。例如：主机192.168.1.1/30上的直接广播数据包后，另外一个网段192.168.1.5/30也能收到该数据报；若发送受限广播数据报，则不能收到。
+注：一般的广播地址（直接广播地址）能够通过某些路由器（当然不是所有的路由器），而受限的广播地址不能通过路由器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5）0.0.0.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;常用于寻找自己的IP地址，例如在我们的RARP，BOOTP和DHCP协议中，若某个未知IP地址的无盘机想要知道自己的IP地址，它就以255.255.255.255为目的地址，向本地范围（具体而言是被各个路由器屏蔽的范围内）的服务器发送IP请求分组。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6）回环地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;127.0.0.0/8被用作回环地址，回环地址表示本机的地址，常用于对本机的测试，用的最多的是127.0.0.1。&lt;/p&gt;
+&lt;h3 id=&#34;mac地址&#34;&gt;Mac地址
+&lt;/h3&gt;&lt;p&gt;**每一台网络设备都用物理地址来标识自己，**这个地址就是MAC地址。MAC地址也叫物理地址，大多数网卡厂商把MAC地址烧入了网卡的ROM中。网络设备的MAC地址是全球唯一的。&lt;/p&gt;
+&lt;p&gt;MAC地址包含两部分：
+1、前24比特是&lt;strong&gt;组织唯一标识符（OUI，Organizationally Unique Identifier）&lt;/strong&gt;，由&lt;strong&gt;IEEE统一分配给设备制造商&lt;/strong&gt;。例如，华为的网络产品的MAC地址前24比特是0x00e0fc。
+2、后24位序列号是厂商分配给每个产品的唯一数值，由各个厂商自行分配（这里所说的产品可以是网卡或者其他需要MAC地址的设备）。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux概念知识 重定向</title>
+        <link>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/</link>
         <pubDate>Sat, 11 May 2024 15:27:12 +0800</pubDate>
         
-        <guid>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86/</guid>
-        <description></description>
+        <guid>https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/</guid>
+        <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;符号&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;作用&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;标准输出重定向&lt;/td&gt;
+&lt;td&gt;命令 &amp;gt; 文件&lt;/td&gt;
+&lt;td&gt;以覆盖的方式，把命令的正确输出输出到指定的文件或设备中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;命令 &amp;raquo; 文件&lt;/td&gt;
+&lt;td&gt;以追加的方式，把命令的正确输出输出到指定的文件或设备中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;标准错误输出重定向&lt;/td&gt;
+&lt;td&gt;错误命令 2&amp;gt; 文件&lt;/td&gt;
+&lt;td&gt;以覆盖的方式，把命令的错误输出输出到指定的文件或设备中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;错误命令 2&amp;raquo; 文件&lt;/td&gt;
+&lt;td&gt;以追加的方式，把命令的错误输出输出到指定的文件或设备中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;正确输出和错误输出同时保存&lt;/td&gt;
+&lt;td&gt;命令 &amp;gt; 文件 2&amp;gt;&amp;amp;1&lt;/td&gt;
+&lt;td&gt;以覆盖的方式，把正确输出和错误输出都保存到同一个文件当中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;命令 &amp;raquo; 文件 2&amp;gt;&amp;amp;1&lt;/td&gt;
+&lt;td&gt;以追加的方式，把正确输出和错误输出都保存到同一个文件当中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;命令 &amp;amp;&amp;gt;文件&lt;/td&gt;
+&lt;td&gt;以覆盖的方式，把正确输出和错误输出都保存到同一个文件当中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;命令 &amp;amp;&amp;raquo;文件&lt;/td&gt;
+&lt;td&gt;以追加的方式，把正确输出和错误输出都保存到同一个文件当中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;命令&amp;raquo;文件1 2&amp;raquo;文件2&lt;/td&gt;
+&lt;td&gt;把正确的输出追加到文件1中，把错误的输出追加到文件2中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
         </item>
         <item>
         <title>Linux概念知识 运行、内核和shell</title>
@@ -128,6 +351,21 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ps -e显示所有进程，-o自定义输出格式，包括pid,ppid,%mem,%cpu,cmd（启动进程的命令名），通过cpu使用率降序排列。head -n 可以改数量。&lt;/p&gt;
 &lt;h3 id=&#34;在指定目录下查找超过3天的所有文件&#34;&gt;在指定目录下查找超过3天的所有文件
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find  目录 -ctime +3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;最近50个用户登录的记录&#34;&gt;最近50个用户登录的记录
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lastlog | head -n 51
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;22监听端口下所有进程的启动情况&#34;&gt;22监听端口下所有进程的启动情况
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;netstat -tulnp | grep 22
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查看环境变量过滤掉所有以开头的注释行&#34;&gt;查看环境变量，过滤掉所有以‘#’开头的注释行
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep -v &amp;#39;^#&amp;#39; /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查询用户自动执行任务的配置情况&#34;&gt;查询用户自动执行任务的配置情况
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;crontab -l -u 用户名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;修改当前命令行显示&#34;&gt;修改当前命令行显示
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PS1=&amp;#34;\u@\h:[\w]% &amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;\u：当前用户名（如oracle）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;\h：主机名（如drocsdb1）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[\w]：当前工作目录（如/oracle）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;空格：留个空方便读
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
@@ -190,7 +428,46 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch 文件
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;file 文件
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln –s 实际文件 链接文件
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -sh /root/* （分开统计）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -sh /root （合并统计）
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查找&#34;&gt;查找
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep根据文件的内容进行查找
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep [options] pattern [files]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-i：忽略大小写进行匹配。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-v：反向查找，只打印不匹配的行。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-n：显示匹配行的行号。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-r：递归查找子目录中的文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-l：只打印匹配的文件名。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-c：只打印匹配的行数。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find是根据文件的属性进行查找
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find [路径] [匹配条件] [动作]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-name pattern：按文件名查找，支持使用通配符 * 和 ?。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-type type：按文件类型查找，可以是 f（普通文件）、d（目录）、l（符号链接）等。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-size [+-]size[cwbkMG]：按文件大小查找，支持使用 + 或 - 表示大于或小于指定大小
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-user username：按文件所有者查找。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-group groupname：按文件所属组查找。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-amin n：查找在 n 分钟内被访问过的文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-atime n：查找在 n*24 小时内被访问过的文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-cmin n：查找在 n 分钟内状态发生变化的文件（例如权限）。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-ctime n：查找在 n*24 小时内状态发生变化的文件（例如权限）。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-mmin n：查找在 n 分钟内被修改过的文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-mtime n：查找在 n*24 小时内被修改过的文件。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;网络&#34;&gt;网络
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ifconfig -a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/sysconfig/network-scripts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TYPE=Ethernet（默认为以太网卡）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BOOTPROTO=static（更改为静态配置方式）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME=eth0（默认为网卡名）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DEVICE=eth0（默认为网卡名）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ONBOOT=yes（更改自动启动为yes）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;IPADDR=xx.xx.xx.xx（设置分配的IP地址）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NETMASK=xx.xx.xx.xx（设置分配的掩码）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GATEWAY=xx.xx.xx.xx（设置分配的网关）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart NetworkManager
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;压缩打包&#34;&gt;压缩打包
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-c  创建文件
@@ -201,6 +478,43 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-C  指定解压位置
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -cvf grub.tar /boot/grub/
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar -xvf grub.tar.bz2 -C /opt/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;用户管理&#34;&gt;用户管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;groupadd –g GID groupname
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -L username（锁）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -U username（解锁）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -g groupname username（改主组）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -aG groupname username（加副组）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -G othergroup username（重设副组）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userdel -r username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;groupdel groupname
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;passwd username
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su - username  切换用户，使用切换用户的变量 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su username 切换用户，使用当前用户的变量
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo Commands 以root身份来执行自己不具备权限的操作
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;权限管理&#34;&gt;权限管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod 634 /tmp/test
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chown -R user:gruop /tmp/test
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;进程管理&#34;&gt;进程管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jobs：查看当前正在后台工作的进程
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fg：将后台进程放到前台执行 fg 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bg：将后台进程在后台继续执行 bg 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ 指令与参数 ] &amp;amp; &amp;lt;==在终端机前景中工作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup [ 指令与参数 ] &amp;amp; &amp;lt;==在终端机背景中工作
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps aux或者ps –ef		打印当前系统运行的所有进程
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pstree 将当前时间点的进程树展示
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kill -9 PID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser -m /app 查看占用
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser –kcu /app 快速删除占用的进程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;服务管理&#34;&gt;服务管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Systemctl命令使用方法
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;查询服务状态：systemctl status service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;启动服务：systemctl start service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;关闭服务：systemctl stop service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;重启服务：systemctl restart service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机自启：systemctl enable service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机不自启：systemctl disable service名
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;vi&#34;&gt;vi
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;上左右下 hjkl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ Page Down ]和[ Page Up ]常用
@@ -229,40 +543,8 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 	&lt;/a&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&#34;用户管理&#34;&gt;用户管理
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;groupadd –g GID groupname
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -L username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;usermod -U username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;userdel -r username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;id username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;passwd username
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su - username  切换用户，使用切换用户的变量 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su username 切换用户，使用当前用户的变量
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo Commands 以root身份来执行自己不具备权限的操作
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;权限管理&#34;&gt;权限管理
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod 634 /tmp/test
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chown -R user:gruop /tmp/test
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;进程管理&#34;&gt;进程管理
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jobs：查看当前正在后台工作的进程
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fg：将后台进程放到前台执行 fg 1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bg：将后台进程在后台继续执行 bg 1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ 指令与参数 ] &amp;amp; &amp;lt;==在终端机前景中工作
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup [ 指令与参数 ] &amp;amp; &amp;lt;==在终端机背景中工作
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps aux或者ps –ef		打印当前系统运行的所有进程
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pstree 将当前时间点的进程树展示
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kill -9 PID
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser -m /app 查看占用
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fuser –kcu /app 快速删除占用的进程
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;服务管理&#34;&gt;服务管理
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Systemctl命令使用方法
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;查询服务状态：systemctl status service名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;启动服务：systemctl start service名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;关闭服务：systemctl stop service名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;重启服务：systemctl restart service名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机自启：systemctl enable service名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机不自启：systemctl disable service名
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;h3 id=&#34;heading&#34;&gt;
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>Oracle Linux Installation</title>
