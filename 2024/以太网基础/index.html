@@ -276,7 +276,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%BD%91%E7%BB%9C/" >
+            <a href="/categories/%E7%BD%91%E7%BB%9C/" style="background-color: #2a9d8f; color: #fff;">
                 网络
             </a>
         
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    677字
+                    2110字
                 </time>
             </div>
         
@@ -352,6 +352,61 @@
 </h4><p>交换机在MAC地址表中找到和目标MAC地址匹配的记录，交换机将数据帧转发到对应的端口。</p>
 <h4 id="过滤">过滤
 </h4><p>基本上只有泛洪功能会依赖过滤。过滤主要是为了防止数据帧在泛洪时被发回给来源端口。</p>
+<h3 id="vlan">VLAN
+</h3><p>LAN，局域网。全称为Local Area Network。
+广播域：数据帧能到达的范围
+突域：数据发送可能产生冲突的范围</p>
+<p>VLAN，(Virtual LAN) 虚拟局域网。
+VLAN 通过在以太网帧中的地址和类型之间新增了一个字段，字段中定义了VLAN ID。
+VLAN ID 区间为 0 到 4095，其中0和4095是保留的，VLAN 1是交换机默认存在的，并且所有接口默认是处于VLAN 1。一个初始化无任何配置的交换机，我们只需要把设备的接口接入交换机，那么这些设备默认都处于VLAN 1
+一个 VLAN 就是一个广播域，所以处于一个 VLAN 的所有设备可以互相通信。 不同 VLAN 之间的设备无法互相通信，当一个二层设备接收到二层的以太网帧时，会对以太网帧进行拆分检查，如果查到这个 VLAN ID 不是自己需要转发的，就会将这个二层的以太网帧丢弃。这样VLAN就做到了对广播域的分割。</p>
+<h3 id="端口模式">端口模式
+</h3><p>Tag，untag：untag 就是普通的 ethernet 报文，tag 报文被交换机加上了 4bytes 的vlan 信息（包含PVID）</p>
+<p>
+
+
+<div class="notice notice-note" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Access</p></div>
+
+只能属于1个VLAN，有自己的VLAN ID，且该端口不打tag，一般用于连接计算机端口；</p>
+<p>
+
+
+<div class="notice notice-note" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Trunk</p></div>
+
+中继口，Trunk口用于传输二层的以太网帧，一个Trunk口可以传输多个VLAN。可以允许多个VLAN通过，且该端口打tag(PVID)，一般用于交换机之间的连接；
+本征Vlan是针对Trunk中继链路而言，在trunk链路中默认是非Native vlan 带着Tag标签通过的。为了使传输以太网帧不带Tag标签而引入Native vlan的概念，其作用就是为兼容一些不支持Vlan的设备（比较早的设备或者一些无线AP) 或者不能打Tag标签的协议（如stp等等）。</p>
+<p>例如：trunk口允许10,20,30通过，带着10tag的帧可以通过，11tag的不行。而直连在trunk上的特殊设备，帧会被打上本征Vlan的tag。</p>
+<p>
+
+
+<div class="notice notice-note" >
+    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Hybrid</p></div>
+
+Hybrid端口允许多个VLAN的报文发送时不打标签，而Trunk端口只允许本征VLAN的报文发送时不打标签。同一个交换机上不能 hybrid 和 trunk 并存。</p>
+<h3 id="生成树协议">生成树协议
+</h3><p>环路造成的问题：</p>
+<ol>
+<li>广播风暴：因为没有环路的抑制机制，每台交换机都会泛洪无尽的广播包。</li>
+<li>多帧传输：帧的传输在到达目的站之前会无限的走下去，引起网络的堵塞</li>
+<li>MAC地址表不稳定：由于交换机上不同端口上接收相同帧的多个副本，造成MAC表的抖动</li>
+</ol>
+<p>生成树协议（Spanning Tree Protocol）：将局域网中所有可能产生环路的拓扑，通过所有相关设备的选举，抑制某些端口的数据转发，实现消除环路的功能。当任意一交换机中存在到达根网桥有两条或两条以上的链路时，STP会根据算法仅保留一条链路，切断其他链路，从而保证任意两个交换机之间只有一条单一的活动链路。这种生成的拓扑结构类似于以根交换机为树干的树形结构，因此被称为生成树协议。</p>
+<p>生成树是如何产生的？</p>
+<ol>
+<li>选择一个根网桥（Root Switch），在一个广播域中只有一个根网桥</li>
+<li>根据最低路径成本来为每个非根网桥选择根端口（Root Port，RP），根端口显示到根网桥的最佳路径方向</li>
+<li>根据最低路径成本选择每个网段的指定端口（DP），每个链路只有一个指定端口</li>
+<li>根端口和指定端口转换到转发状态，其它端口变为阻塞状态</li>
+</ol>
+<p>常见的生成树类型：</p>
+<ul>
+<li>STP协议，最常见，也是最初的生成树协议，对于STP来说，<strong>所有VLAN属于一个生成树</strong></li>
+<li>MSTP协议，常用的生成树协议，对于MSTP来说，<strong>可以依据VLAN划分不同的生成树</strong></li>
+<li>HSTP/RSTP协议，STP协议的快速版本（生成树收敛的速度）</li>
+<li>快速MSTP协议，顾名思义，MSTP的快速版本</li>
+</ul>
 
 </section>
 
@@ -575,7 +630,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了73.1k字·共 56篇文章</br><span><p>
+      共书写了75.9k字·共 56篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -730,6 +785,9 @@ document.getElementById('days').innerHTML = number_of_days;
             <li><a href="#过滤">过滤</a></li>
           </ol>
         </li>
+        <li><a href="#vlan">VLAN</a></li>
+        <li><a href="#端口模式">端口模式</a></li>
+        <li><a href="#生成树协议">生成树协议</a></li>
       </ol>
     </li>
   </ol>

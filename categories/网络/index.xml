@@ -35,6 +35,61 @@
 &lt;/h4&gt;&lt;p&gt;交换机在MAC地址表中找到和目标MAC地址匹配的记录，交换机将数据帧转发到对应的端口。&lt;/p&gt;
 &lt;h4 id=&#34;过滤&#34;&gt;过滤
 &lt;/h4&gt;&lt;p&gt;基本上只有泛洪功能会依赖过滤。过滤主要是为了防止数据帧在泛洪时被发回给来源端口。&lt;/p&gt;
+&lt;h3 id=&#34;vlan&#34;&gt;VLAN
+&lt;/h3&gt;&lt;p&gt;LAN，局域网。全称为Local Area Network。
+广播域：数据帧能到达的范围
+突域：数据发送可能产生冲突的范围&lt;/p&gt;
+&lt;p&gt;VLAN，(Virtual LAN) 虚拟局域网。
+VLAN 通过在以太网帧中的地址和类型之间新增了一个字段，字段中定义了VLAN ID。
+VLAN ID 区间为 0 到 4095，其中0和4095是保留的，VLAN 1是交换机默认存在的，并且所有接口默认是处于VLAN 1。一个初始化无任何配置的交换机，我们只需要把设备的接口接入交换机，那么这些设备默认都处于VLAN 1
+一个 VLAN 就是一个广播域，所以处于一个 VLAN 的所有设备可以互相通信。 不同 VLAN 之间的设备无法互相通信，当一个二层设备接收到二层的以太网帧时，会对以太网帧进行拆分检查，如果查到这个 VLAN ID 不是自己需要转发的，就会将这个二层的以太网帧丢弃。这样VLAN就做到了对广播域的分割。&lt;/p&gt;
+&lt;h3 id=&#34;端口模式&#34;&gt;端口模式
+&lt;/h3&gt;&lt;p&gt;Tag，untag：untag 就是普通的 ethernet 报文，tag 报文被交换机加上了 4bytes 的vlan 信息（包含PVID）&lt;/p&gt;
+&lt;p&gt;
+
+
+&lt;div class=&#34;notice notice-note&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;Access&lt;/p&gt;&lt;/div&gt;
+
+只能属于1个VLAN，有自己的VLAN ID，且该端口不打tag，一般用于连接计算机端口；&lt;/p&gt;
+&lt;p&gt;
+
+
+&lt;div class=&#34;notice notice-note&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;Trunk&lt;/p&gt;&lt;/div&gt;
+
+中继口，Trunk口用于传输二层的以太网帧，一个Trunk口可以传输多个VLAN。可以允许多个VLAN通过，且该端口打tag(PVID)，一般用于交换机之间的连接；
+本征Vlan是针对Trunk中继链路而言，在trunk链路中默认是非Native vlan 带着Tag标签通过的。为了使传输以太网帧不带Tag标签而引入Native vlan的概念，其作用就是为兼容一些不支持Vlan的设备（比较早的设备或者一些无线AP) 或者不能打Tag标签的协议（如stp等等）。&lt;/p&gt;
+&lt;p&gt;例如：trunk口允许10,20,30通过，带着10tag的帧可以通过，11tag的不行。而直连在trunk上的特殊设备，帧会被打上本征Vlan的tag。&lt;/p&gt;
+&lt;p&gt;
+
+
+&lt;div class=&#34;notice notice-note&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path d=&#34;M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;Hybrid&lt;/p&gt;&lt;/div&gt;
+
+Hybrid端口允许多个VLAN的报文发送时不打标签，而Trunk端口只允许本征VLAN的报文发送时不打标签。同一个交换机上不能 hybrid 和 trunk 并存。&lt;/p&gt;
+&lt;h3 id=&#34;生成树协议&#34;&gt;生成树协议
+&lt;/h3&gt;&lt;p&gt;环路造成的问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;广播风暴：因为没有环路的抑制机制，每台交换机都会泛洪无尽的广播包。&lt;/li&gt;
+&lt;li&gt;多帧传输：帧的传输在到达目的站之前会无限的走下去，引起网络的堵塞&lt;/li&gt;
+&lt;li&gt;MAC地址表不稳定：由于交换机上不同端口上接收相同帧的多个副本，造成MAC表的抖动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;生成树协议（Spanning Tree Protocol）：将局域网中所有可能产生环路的拓扑，通过所有相关设备的选举，抑制某些端口的数据转发，实现消除环路的功能。当任意一交换机中存在到达根网桥有两条或两条以上的链路时，STP会根据算法仅保留一条链路，切断其他链路，从而保证任意两个交换机之间只有一条单一的活动链路。这种生成的拓扑结构类似于以根交换机为树干的树形结构，因此被称为生成树协议。&lt;/p&gt;
+&lt;p&gt;生成树是如何产生的？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择一个根网桥（Root Switch），在一个广播域中只有一个根网桥&lt;/li&gt;
+&lt;li&gt;根据最低路径成本来为每个非根网桥选择根端口（Root Port，RP），根端口显示到根网桥的最佳路径方向&lt;/li&gt;
+&lt;li&gt;根据最低路径成本选择每个网段的指定端口（DP），每个链路只有一个指定端口&lt;/li&gt;
+&lt;li&gt;根端口和指定端口转换到转发状态，其它端口变为阻塞状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;常见的生成树类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;STP协议，最常见，也是最初的生成树协议，对于STP来说，&lt;strong&gt;所有VLAN属于一个生成树&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MSTP协议，常用的生成树协议，对于MSTP来说，&lt;strong&gt;可以依据VLAN划分不同的生成树&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;HSTP/RSTP协议，STP协议的快速版本（生成树收敛的速度）&lt;/li&gt;
+&lt;li&gt;快速MSTP协议，顾名思义，MSTP的快速版本&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -171,6 +226,29 @@ E类地址以1111开头，地址范围是240.0.0.0~255.255.255.255，E类地址�
 &lt;p&gt;MAC地址包含两部分：
 1、前24比特是&lt;strong&gt;组织唯一标识符（OUI，Organizationally Unique Identifier）&lt;/strong&gt;，由&lt;strong&gt;IEEE统一分配给设备制造商&lt;/strong&gt;。例如，华为的网络产品的MAC地址前24比特是0x00e0fc。
 2、后24位序列号是厂商分配给每个产品的唯一数值，由各个厂商自行分配（这里所说的产品可以是网卡或者其他需要MAC地址的设备）。&lt;/p&gt;
+&lt;h3 id=&#34;arp协议&#34;&gt;ARP协议
+&lt;/h3&gt;&lt;p&gt;ARP协议，即地址解析协议，是一个用于根据IP地址获取物理地址（通常是MAC地址）的TCP/IP协议。&lt;/p&gt;
+&lt;p&gt;当一台主机需要向另一台主机发送数据时，它首先会检查本地ARP缓存中是否有目标主机的MAC地址。如果没有，它将发送一个ARP请求广播到网络上，询问目标IP地址对应的MAC地址是什么。目标主机在收到这个广播后，如果其IP地址与请求中的目标IP地址匹配，就会回复一个包含其MAC地址的ARP响应包。发送方在收到这个响应后，会将目标IP地址和MAC地址的对应关系存储在本地ARP缓存中，并使用这个MAC地址将数据包发送到目标主机。&lt;/p&gt;
+&lt;p&gt;RAIP协议（Reverse Address Resolution Protocol）并不是一个标准的网络协议名称。在网络通信中，与ARP协议相对应的反向操作是将MAC地址转换为IP地址，通常是通过其他机制（如DHCP、DNS等）来实现的。&lt;/p&gt;
+&lt;h3 id=&#34;路由选择协议&#34;&gt;路由选择协议
+&lt;/h3&gt;&lt;p&gt;路由选择协议是一系列用于控制网络中流量转发的网络路由算法，这些算法以自动化、可靠的方式选择和整合复杂的网络路由信息，并将这些信息传递给路由处理器以实现数据传输。路由选择协议的目标是确定数据从源地址到目的地址传输的最佳路径。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;静态路由选择协议：路由选择规则是通过路由器配置文件事先确定的，而无需根据网络环境而随时调整。&lt;/li&gt;
+&lt;li&gt;动态路由选择协议：这些协议可以根据网络条件的变化自动调整路由选择。常见的动态路由协议包括RIP（路由信息协议）、OSPF（开放最短路径优先）和BGP（边界网关协议）等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;根据路由选择协议是运行在一个自治系统的内部还是运行在自治系统之间以连接不同的自治系统（AS），路由选择协议可以分为内部网关协议（IGP）和外部网关协议（EGP）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内部网关协议（IGP）：用于在自治系统内部交换路由选择信息的路由选择协议，如RIP和OSPF。&lt;/li&gt;
+&lt;li&gt;外部网关协议（EGP）：用于在自治系统之间交换路由选择信息的路由选择协议，如BGP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;rip&#34;&gt;RIP
+&lt;/h4&gt;&lt;p&gt;RIP是一种基于距离矢量（Distance-Vector）算法的协议，它使用跳数（Hop Count）作为度量值来衡量到达目的地址的距离。在RIP网络中,RIP协议要求网络中每一台路由器都要维护从自身到每一个目的网络的路由信息。RIP协议使用跳数来衡量网络间的“距离”：从一台路由器到其直连网络的跳数定义为1，从一台路由器到其非直连网络的距离定义为每经过一个路由器则距离加1。&lt;/p&gt;
+&lt;h4 id=&#34;ospf&#34;&gt;OSPF
+&lt;/h4&gt;&lt;p&gt;由于RIP存在着收敛慢、路由环路、可扩展性差等问题，所以逐渐被OSPF取代。
+OSPF基于迪杰特斯拉算法，每台路由器都通过链路状态数据库**LSDB(Link State DataBase)**掌握全网的拓扑结构。&lt;strong&gt;每台路由器都会收集其它路由器发来的LSA，所有的LSA放在一起便组成了链路状态数据库LSDB&lt;/strong&gt;。
+LSA是对路由器周围网络拓扑结构的描述，LSDB则是对整个自治系统的网络拓扑结构的描述。路由器将LSDB转换成一张带权的有向图，对整个网络拓扑结构的真实反映。&lt;/p&gt;
+&lt;h4 id=&#34;bgp&#34;&gt;BGP
+&lt;/h4&gt;&lt;p&gt;是互联网上一个核心的去中心化自治路由协议。它通过维护IP路由表或“前缀”表来实现自治系统（AS）之间的可达性，属于矢量路由协议。现在的Internet是一个由多个自治系统相互连接构成的大网络，BGP作为事实上的Internet外部路由协议标准，被广泛应用于ISP（Internet Service Provider）之间。&lt;/p&gt;
 </description>
         </item>
         

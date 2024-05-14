@@ -276,7 +276,7 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%BD%91%E7%BB%9C/" >
+            <a href="/categories/%E7%BD%91%E7%BB%9C/" style="background-color: #2a9d8f; color: #fff;">
                 网络
             </a>
         
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    2505字
+                    3860字
                 </time>
             </div>
         
@@ -457,6 +457,29 @@ E类地址以1111开头，地址范围是240.0.0.0~255.255.255.255，E类地址�
 <p>MAC地址包含两部分：
 1、前24比特是<strong>组织唯一标识符（OUI，Organizationally Unique Identifier）</strong>，由<strong>IEEE统一分配给设备制造商</strong>。例如，华为的网络产品的MAC地址前24比特是0x00e0fc。
 2、后24位序列号是厂商分配给每个产品的唯一数值，由各个厂商自行分配（这里所说的产品可以是网卡或者其他需要MAC地址的设备）。</p>
+<h3 id="arp协议">ARP协议
+</h3><p>ARP协议，即地址解析协议，是一个用于根据IP地址获取物理地址（通常是MAC地址）的TCP/IP协议。</p>
+<p>当一台主机需要向另一台主机发送数据时，它首先会检查本地ARP缓存中是否有目标主机的MAC地址。如果没有，它将发送一个ARP请求广播到网络上，询问目标IP地址对应的MAC地址是什么。目标主机在收到这个广播后，如果其IP地址与请求中的目标IP地址匹配，就会回复一个包含其MAC地址的ARP响应包。发送方在收到这个响应后，会将目标IP地址和MAC地址的对应关系存储在本地ARP缓存中，并使用这个MAC地址将数据包发送到目标主机。</p>
+<p>RAIP协议（Reverse Address Resolution Protocol）并不是一个标准的网络协议名称。在网络通信中，与ARP协议相对应的反向操作是将MAC地址转换为IP地址，通常是通过其他机制（如DHCP、DNS等）来实现的。</p>
+<h3 id="路由选择协议">路由选择协议
+</h3><p>路由选择协议是一系列用于控制网络中流量转发的网络路由算法，这些算法以自动化、可靠的方式选择和整合复杂的网络路由信息，并将这些信息传递给路由处理器以实现数据传输。路由选择协议的目标是确定数据从源地址到目的地址传输的最佳路径。</p>
+<ol>
+<li>静态路由选择协议：路由选择规则是通过路由器配置文件事先确定的，而无需根据网络环境而随时调整。</li>
+<li>动态路由选择协议：这些协议可以根据网络条件的变化自动调整路由选择。常见的动态路由协议包括RIP（路由信息协议）、OSPF（开放最短路径优先）和BGP（边界网关协议）等。</li>
+</ol>
+<p>根据路由选择协议是运行在一个自治系统的内部还是运行在自治系统之间以连接不同的自治系统（AS），路由选择协议可以分为内部网关协议（IGP）和外部网关协议（EGP）。</p>
+<ul>
+<li>内部网关协议（IGP）：用于在自治系统内部交换路由选择信息的路由选择协议，如RIP和OSPF。</li>
+<li>外部网关协议（EGP）：用于在自治系统之间交换路由选择信息的路由选择协议，如BGP。</li>
+</ul>
+<h4 id="rip">RIP
+</h4><p>RIP是一种基于距离矢量（Distance-Vector）算法的协议，它使用跳数（Hop Count）作为度量值来衡量到达目的地址的距离。在RIP网络中,RIP协议要求网络中每一台路由器都要维护从自身到每一个目的网络的路由信息。RIP协议使用跳数来衡量网络间的“距离”：从一台路由器到其直连网络的跳数定义为1，从一台路由器到其非直连网络的距离定义为每经过一个路由器则距离加1。</p>
+<h4 id="ospf">OSPF
+</h4><p>由于RIP存在着收敛慢、路由环路、可扩展性差等问题，所以逐渐被OSPF取代。
+OSPF基于迪杰特斯拉算法，每台路由器都通过链路状态数据库**LSDB(Link State DataBase)**掌握全网的拓扑结构。<strong>每台路由器都会收集其它路由器发来的LSA，所有的LSA放在一起便组成了链路状态数据库LSDB</strong>。
+LSA是对路由器周围网络拓扑结构的描述，LSDB则是对整个自治系统的网络拓扑结构的描述。路由器将LSDB转换成一张带权的有向图，对整个网络拓扑结构的真实反映。</p>
+<h4 id="bgp">BGP
+</h4><p>是互联网上一个核心的去中心化自治路由协议。它通过维护IP路由表或“前缀”表来实现自治系统（AS）之间的可达性，属于矢量路由协议。现在的Internet是一个由多个自治系统相互连接构成的大网络，BGP作为事实上的Internet外部路由协议标准，被广泛应用于ISP（Internet Service Provider）之间。</p>
 
 </section>
 
@@ -680,7 +703,7 @@ E类地址以1111开头，地址范围是240.0.0.0~255.255.255.255，E类地址�
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了73.1k字·共 56篇文章</br><span><p>
+      共书写了75.9k字·共 56篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -841,6 +864,14 @@ document.getElementById('days').innerHTML = number_of_days;
         </li>
         <li><a href="#ip地址">IP地址</a></li>
         <li><a href="#mac地址">Mac地址</a></li>
+        <li><a href="#arp协议">ARP协议</a></li>
+        <li><a href="#路由选择协议">路由选择协议</a>
+          <ol>
+            <li><a href="#rip">RIP</a></li>
+            <li><a href="#ospf">OSPF</a></li>
+            <li><a href="#bgp">BGP</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
