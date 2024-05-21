@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='磁盘常用命令 lsblk df -h 利用fdisk分区与挂载 fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) 利用parted分区与挂载 parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new'><title>Linux磁盘操作</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='磁盘常用命令 lsblk df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。 -h, --human-readable：以'><title>Linux磁盘操作</title>
 
 <link rel='canonical' href='https://proben1.github.io/2024/linux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/'>
 
 <link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='Linux磁盘操作'>
-<meta property='og:description' content='磁盘常用命令 lsblk df -h 利用fdisk分区与挂载 fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) 利用parted分区与挂载 parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new'>
+<meta property='og:description' content='磁盘常用命令 lsblk df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。 -h, --human-readable：以'>
 <meta property='og:url' content='https://proben1.github.io/2024/linux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/'>
 <meta property='og:site_name' content='茄子的养殖场'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-11T14:33:57&#43;08:00'/><meta property='article:modified_time' content='2024-05-11T14:33:57&#43;08:00'/>
 <meta name="twitter:title" content="Linux磁盘操作">
-<meta name="twitter:description" content="磁盘常用命令 lsblk df -h 利用fdisk分区与挂载 fdisk /dev/nvme0n1 n/p/e/&#43;1G mkfs.xfs /dev/nvme0n1p3(56) mount /dev/nvme0n1p3 /root/new vi /etc/fstab (add &amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;) 利用parted分区与挂载 parted /dev/sdb1 mklabel gpt print mkpart primary 0% 100% quit # Let the kernel know to add a new">
+<meta name="twitter:description" content="磁盘常用命令 lsblk df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。 -h, --human-readable：以">
   
 
 <style>
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    124字
+                    1128字
                 </time>
             </div>
         
@@ -331,7 +331,18 @@
     
     <h3 id="磁盘常用命令">磁盘常用命令
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lsblk
-</span></span><span style="display:flex;"><span>df -h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df（英文全拼：disk free）
+</span></span><span style="display:flex;"><span>命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。
+</span></span><span style="display:flex;"><span>-h, --human-readable：以人类可读的格式显示输出结果。
+</span></span><span style="display:flex;"><span>-i, --inodes：显示 inode 使用情况而不是块使用情况。
+</span></span><span style="display:flex;"><span>-T, --print-type：显示文件系统的类型。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> du （英文全拼：disk usage）
+</span></span><span style="display:flex;"><span> 命令用于显示目录或文件的大小。
+</span></span><span style="display:flex;"><span> -h或--human-readable 
+</span></span><span style="display:flex;"><span> -s或--summarize 仅显示指定目录或文件的总大小，而不显示其子目录的大小。
+</span></span><span style="display:flex;"><span> du -sh /ocs和 du -sh /ocs/* 分别查看目录使用空间和各个子目录使用空间
 </span></span></code></pre></div><h3 id="利用fdisk分区与挂载">利用fdisk分区与挂载
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>fdisk /dev/nvme0n1
 </span></span><span style="display:flex;"><span>n/p/e/+1G
@@ -359,7 +370,32 @@
 </span></span><span style="display:flex;"><span>mkfs.xfs /dev/vg01/lvnew
 </span></span><span style="display:flex;"><span>...
 </span></span></code></pre></div><p>条带化： 创建LV时加入-i参数</p>
-
+<h3 id="案例">案例
+</h3><h4 id="1如何分析处理当前目录下有哪些大的文件">1、如何分析处理当前目录下有哪些大的文件？
+</h4><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>1，ls -al 确保没有隐藏文件
+</span></span><span style="display:flex;"><span>2，du -sh /test和 du -sh /test/* 分别查看目录使用空间和各个子目录使用空间。
+</span></span><span style="display:flex;"><span>3. lsof /test查看是否有某个进程使用的已删除的大文件，如果有kill掉进程
+</span></span></code></pre></div><h4 id="2创建新文件时候遇到如下报错可能的原因">2、创建新文件时候，遇到如下报错可能的原因？
+</h4><p>touch:cannot touch `test.txt‘: No space left on device</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>block不足，可以通过df -h看到使用率100%	
+</span></span><span style="display:flex;"><span>inode不足，可以通过df -i看到使用率 100%（小文件过多，索引不够）
+</span></span></code></pre></div><p>这里提一下inode和block，在Linux系统中，文件由元数据和数据块组成。数据块就是多个连续性的扇区（sector），扇区是文件存储的最小单位（每个512字节）。块（block）的大小，最常见的是4KB，也就是连续8个sector组成，存储文件数据和目录数据。而元数据用来记录文件的创建者、创建日期、大小等，这种存储文件元数据信息的区域叫做inode，即索引节点。</p>
+<p>由于inode也是用来存储文件相关属性信息的，所以也会消耗硬盘空间。具体包含的信息有inode号，文件的字节数、User ID、Group ID、读、写、执行权限、时间戳（共有三个：ctime指inode上一次变动的时间，mtime指文件内容上一次变动的时间，atime指文件上一次打开的时间）、链接数（软硬链接）、数据block的位置，注意没有文件名。</p>
+<h4 id="3lvm扩容思路">3、LVM扩容思路
+</h4><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lvs查看/test文件系统所在的lv使用的哪个vg
+</span></span><span style="display:flex;"><span>vgs查看是否还有剩余空间		
+</span></span><span style="display:flex;"><span>pvs如果没有剩余空间，pvs查看是否还有未做PV的分区进行扩容
+</span></span></code></pre></div><p>XFS和EXT4文件系统扩容</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>lvextend –L 20G /dev/vg00/lvtest
+</span></span><span style="display:flex;"><span>#xfs
+</span></span><span style="display:flex;"><span>xfs_growfs /dev/vg00/lvtest
+</span></span><span style="display:flex;"><span>#ext4
+</span></span><span style="display:flex;"><span>resize2fs /dev/vg00/lvtest 20G
+</span></span></code></pre></div><h4 id="4条带化">4、条带化
+</h4><p>把连续的数据分割成相同大小的数据块，把每段数据分别写入到阵列中的不同磁盘上，相当于进行磁盘的负载均衡。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>LVM中用“-i 磁盘数量”指令
+</span></span><span style="display:flex;"><span>lvcreate –L 1500G -i 3 –n lvtest vg00
+</span></span></code></pre></div>
 </section>
 
 
@@ -397,36 +433,36 @@
                 
                     
 <article class="">
+    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux变量</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">本地yum源配置</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Linux概念知识 重定向</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux概念知识 运行、内核和shell</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8F%91%E8%A1%8C%E7%89%88/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux概念知识 背景与发行版</h2>
         </div>
     </a>
 </article>
@@ -442,6 +478,14 @@
     <footer class="site-footer">
   
 
+
+    
+
+    
+
+    
+
+    
 
     
 
@@ -582,7 +626,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了75.9k字·共 56篇文章</br><span><p>
+      共书写了79.1k字·共 60篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -731,6 +775,14 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#利用fdisk分区与挂载">利用fdisk分区与挂载</a></li>
         <li><a href="#利用parted分区与挂载">利用parted分区与挂载</a></li>
         <li><a href="#lvm操作">LVM操作</a></li>
+        <li><a href="#案例">案例</a>
+          <ol>
+            <li><a href="#1如何分析处理当前目录下有哪些大的文件">1、如何分析处理当前目录下有哪些大的文件？</a></li>
+            <li><a href="#2创建新文件时候遇到如下报错可能的原因">2、创建新文件时候，遇到如下报错可能的原因？</a></li>
+            <li><a href="#3lvm扩容思路">3、LVM扩容思路</a></li>
+            <li><a href="#4条带化">4、条带化</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -755,9 +807,9 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">7</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">9</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">31</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">33</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">11</a>
             </span></div>
@@ -793,7 +845,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">9</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -844,16 +896,16 @@ document.getElementById('days').innerHTML = number_of_days;
                 CTF
             </a>
         
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_4">
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_5">
                 环境搭建
+            </a>
+        
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_4">
+                其他
             </a>
         
             <a href="/tags/web%E5%AE%89%E5%85%A8/" class="font_size_3">
                 Web安全
-            </a>
-        
-            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_3">
-                其他
             </a>
         
             <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="font_size_3">
@@ -876,8 +928,24 @@ document.getElementById('days').innerHTML = number_of_days;
                 SQL
             </a>
         
+            <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="font_size_2">
+                英语
+            </a>
+        
             <a href="/tags/docker/" class="font_size_1">
                 Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                Git
+            </a>
+        
+            <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" class="font_size_1">
+                内网渗透
+            </a>
+        
+            <a href="/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/" class="font_size_1">
+                思考总结
             </a>
         
     </div>

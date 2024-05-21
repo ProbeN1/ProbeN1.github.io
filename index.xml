@@ -6,7 +6,176 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 13 May 2024 14:25:51 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 21 May 2024 17:07:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>英语发音</title>
+        <link>https://proben1.github.io/2024/%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3/</link>
+        <pubDate>Tue, 21 May 2024 17:07:43 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3/</guid>
+        <description>&lt;h3 id=&#34;简写发音&#34;&gt;简写发音
+&lt;/h3&gt;&lt;p&gt;K、M、G、T、P：
+Kilobytes、Megabytes、Gigabytes、Terabytes、Petabytes&lt;/p&gt;
+&lt;p&gt;e.g. 	for example&lt;/p&gt;
+&lt;p&gt;etc.	et cetera&lt;/p&gt;
+&lt;h3 id=&#34;符号发音&#34;&gt;符号发音
+&lt;/h3&gt;&lt;p&gt;/			Slash&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;pre&gt;&lt;code&gt;  	hyphen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;_     underscore&lt;/p&gt;
+&lt;p&gt;\     backslash&lt;/p&gt;
+&lt;p&gt;Open&amp;quot;(&amp;quot; and close &amp;ldquo;)&amp;rdquo; parenthesis&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;[&amp;rdquo; and &amp;ldquo;]&amp;rdquo; are square brackets.&lt;/p&gt;
+&lt;p&gt;#		 hash&lt;/p&gt;
+&lt;p&gt;+ Plus&lt;/p&gt;
+&lt;p&gt;- Minus/Subtract/Take away&lt;/p&gt;
+&lt;p&gt;乘除 Times (multiply)、Divide&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/664c653bd9c307b7e96403ba.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/664c653bd9c307b7e96403ba.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;e.g. Universal-Appliances.co.uk/customer_enquiries&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;“Universal hyphen Appliances dot co dot UK (forward) slash customer underscore enquiries”.&lt;/p&gt;
+&lt;p&gt;学习网站：https://www.londonschool.com/blog/signs-and-symbols/&lt;/p&gt;
+&lt;h3 id=&#34;易错发音&#34;&gt;易错发音
+&lt;/h3&gt;&lt;p&gt;推荐网站：https://cpwp.netlify.app/&lt;/p&gt;
+&lt;p&gt;尤其是access的读法（那个向上挑一下的感觉）&lt;/p&gt;
+&lt;p&gt;ps：这个网站的kubernetes发音错了，应改是i的音，不是i：&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux变量</title>
+        <link>https://proben1.github.io/2024/linux%E5%8F%98%E9%87%8F/</link>
+        <pubDate>Tue, 21 May 2024 15:50:07 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/linux%E5%8F%98%E9%87%8F/</guid>
+        <description>&lt;p&gt;每一种编程语言中，我们都会碰到变量的作用域的问题。Linux 是一个多用户的操作系统。多用户意味着每个用户登录系统后，都有自己专用的运行环境。而这个环境是由一组变量所定义, 这组变量被称为环境变量。用户可以对自己的环境变量进行修改以达到对环境的要求。&lt;/p&gt;
+&lt;p&gt;本地vs环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;本地变量只对当前&lt;span style=&#34;color:#268bd2&#34;&gt;shell生效&lt;/span&gt;，用“变量名=变量值”设定
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;环境变量对子进程也生效，用&lt;span style=&#34;color:#268bd2&#34;&gt;export设定&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;用户vs系统&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;系统级变量对所有用户生效
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;用户级变量只对当前用户生效
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;暂时vs永久&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;如果要设定永久的变量，需要写入相应文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;否则就是暂时的，下次登录不生效
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;对所有用户生效的永久性变量&#34;&gt;对所有用户生效的永久性变量
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这类变量对系统内的所有用户都生效，所有用户都可以使用这类变量。作用范围是整个系统，只在 root 下才能修改。&lt;/p&gt;
+&lt;p&gt;修改后使用source命令进行生效&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;对单一用户生效的永久性变量&#34;&gt;对单一用户生效的永久性变量
+&lt;/h3&gt;&lt;p&gt;在用户目录下的.bash_profile 文件中添加变量，该文件是隐藏文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;若bash是以login方式执行时，读取~/.bash_profile，若它不存在，则读取~/.bash_login，若前两者不存在，读取~/.profile。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;当bash是以non-login形式执行时,读取~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;临时有效的环境变量&#34;&gt;临时有效的环境变量
+&lt;/h3&gt;&lt;p&gt;此类环境变量只对当前的 shell 有效。当我们退出登录或者关闭终端再重新打开时，这个环境变量就会消失。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;export&lt;/span&gt; 变量名=变量值 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#设置新的环境变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;变量名=变量值 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#设置或更新本地变量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;echo&lt;/span&gt; $变量名 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#打印&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;unset&lt;/span&gt; 变量名 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#删除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;readonly&lt;/span&gt; 变量名 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#设置只读&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;env&lt;/span&gt; &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#显示当前用户的变量；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;set&lt;/span&gt; &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#显示当前 shell 变量(shell 变量包含用户变量)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;生效顺序&#34;&gt;生效顺序
+&lt;/h3&gt;&lt;p&gt;bash会在用户登录时，读取下列四个环境配置文件：&lt;/p&gt;
+&lt;p&gt;全局环境变量设置文件：/etc/profile、/etc/bashrc。
+用户环境变量设置文件：~/.bash_profile、~/.bashrc。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;读取顺序：① /etc/profile、② ~/.bash_profile、③ ~/.bashrc、④ /etc/bashrc。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;① /etc/profile：此文件为系统的每个用户设置环境信息，系统中每个用户登录时都要执行这个脚本，如果系统管理员希望某个设置对所有用户都生效，可以写在这个脚本里，该文件也会从/etc/profile.d目录中的配置文件中搜集shell的设置。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;② ~/.bash_profile：每个用户都可使用该文件设置专用于自己的shell信息，当用户登录时，该文件仅执行一次。默认情况下，他设置一些环境变量，执行用户的.bashrc文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;③ ~/.bashrc：该文件包含专用于自己的shell信息，当登录时以及每次打开新shell时，该文件被读取。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;④ /etc/bashrc：为每一个运行bash shell的用户执行此文件，当bash shell被打开时，该文件被读取。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;常见的环境变量&#34;&gt;常见的环境变量
+&lt;/h3&gt;&lt;p&gt;BASH Bash Shell的全路径
+CDPATH 用于快速进入某个目录。
+&lt;strong&gt;PATH 决定了shell将到哪些目录中寻找命令或程序&lt;/strong&gt;
+HOME 当前用户主目录
+HISTSIZE 历史记录数
+LOGNAME 当前用户的登录名
+HOSTNAME 指主机的名称
+SHELL 当前用户Shell类型
+LANGUGE 语言相关的环境变量，多语言可以修改此环境变量
+MAIL 当前用户的邮件存放目录
+PS1 基本提示符，对于root用户是#，对于普通用户是$&lt;/p&gt;
+&lt;h3 id=&#34;su和sudo&#34;&gt;su和sudo
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su - user #切换用户user且切换环境变量
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;su user #切换用户user，不切换环境变量
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo user #使用user权限运行单个命令
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;su命令会启动一个新shell，环境变量和加不加“-”有关，执行时需要输入新用户的密码&lt;/p&gt;
+&lt;p&gt;sudo是以新用户的权限运行某个命令，这个能运行的范围由root用户规定，输入的是现在用户的密码&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>本地yum源配置</title>
+        <link>https://proben1.github.io/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Tue, 21 May 2024 15:37:14 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;p&gt;Linux本地yum源配置，以Oracle Linux 8.6为例&lt;/p&gt;
+&lt;h3 id=&#34;创建系统镜像上传目录&#34;&gt;创建系统镜像上传目录
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir /soft/os_iso
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;想个办法传上镜像文件&lt;/p&gt;
+&lt;h3 id=&#34;备份默认资源库&#34;&gt;备份默认资源库
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /etc/yum.repos.d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir /etc/yum.repos.d/backup
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/backup/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置yum源&#34;&gt;配置yum源
+&lt;/h3&gt;&lt;p&gt;在/etc/yum.repos.d/下创建一个local.repo文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/yum.repos.d/local.repo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;写入：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[OL9_BaseOS]  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;name=Oracle Linux 8 x86_64 BaseOS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;baseurl=file:///mnt/BaseOS/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpgcheck=0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;enabled=1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[OL9_AppStream]     
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;name=Oracle Linux 8 x86_64 AppStream
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;baseurl=file:///mnt/AppStream/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpgcheck=0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;enabled=1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;挂载iso镜像&#34;&gt;挂载iso镜像
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /soft/os_iso
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount -o loop OracleLinux-R8-U6-x86_64-dvd-8.6.iso /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;更新元数据缓存&#34;&gt;更新元数据缓存
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# 清除缓存，如果是第一次配置可以不输入
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum clean all 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dnf repolist
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dnf makecache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;检测和查看&#34;&gt;检测和查看
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#检查是否成功
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dnf list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#查看当前yum源
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum info yum
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>机房系统安装初体验</title>
+        <link>https://proben1.github.io/2024/%E6%9C%BA%E6%88%BF%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
+        <pubDate>Wed, 15 May 2024 19:31:18 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E6%9C%BA%E6%88%BF%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>以太网基础</title>
         <link>https://proben1.github.io/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Mon, 13 May 2024 14:25:51 +0800</pubDate>
@@ -444,6 +613,10 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;\h：主机名（如drocsdb1）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[\w]：当前工作目录（如/oracle）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;空格：留个空方便读
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;统计有多少个和mon相关的进程&#34;&gt;统计有多少个和“mon”相关的进程
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps -ef | grep mon | wc -l	
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#利用wc指令我们可以计算文件的Byte数、字数、或是列数
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#-l或--lines 显示行数
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
@@ -454,7 +627,18 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
         <guid>https://proben1.github.io/2024/linux%E7%A3%81%E7%9B%98%E6%93%8D%E4%BD%9C/</guid>
         <description>&lt;h3 id=&#34;磁盘常用命令&#34;&gt;磁盘常用命令
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lsblk
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df -h
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df（英文全拼：disk free）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-h, --human-readable：以人类可读的格式显示输出结果。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-i, --inodes：显示 inode 使用情况而不是块使用情况。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-T, --print-type：显示文件系统的类型。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; du （英文全拼：disk usage）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 命令用于显示目录或文件的大小。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; -h或--human-readable 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; -s或--summarize 仅显示指定目录或文件的总大小，而不显示其子目录的大小。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; du -sh /ocs和 du -sh /ocs/* 分别查看目录使用空间和各个子目录使用空间
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;利用fdisk分区与挂载&#34;&gt;利用fdisk分区与挂载
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/nvme0n1
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n/p/e/+1G
@@ -482,7 +666,32 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/vg01/lvnew
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;条带化： 创建LV时加入-i参数&lt;/p&gt;
-</description>
+&lt;h3 id=&#34;案例&#34;&gt;案例
+&lt;/h3&gt;&lt;h4 id=&#34;1如何分析处理当前目录下有哪些大的文件&#34;&gt;1、如何分析处理当前目录下有哪些大的文件？
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1，ls -al 确保没有隐藏文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2，du -sh /test和 du -sh /test/* 分别查看目录使用空间和各个子目录使用空间。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3. lsof /test查看是否有某个进程使用的已删除的大文件，如果有kill掉进程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2创建新文件时候遇到如下报错可能的原因&#34;&gt;2、创建新文件时候，遇到如下报错可能的原因？
+&lt;/h4&gt;&lt;p&gt;touch:cannot touch `test.txt‘: No space left on device&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;block不足，可以通过df -h看到使用率100%	
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;inode不足，可以通过df -i看到使用率 100%（小文件过多，索引不够）
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里提一下inode和block，在Linux系统中，文件由元数据和数据块组成。数据块就是多个连续性的扇区（sector），扇区是文件存储的最小单位（每个512字节）。块（block）的大小，最常见的是4KB，也就是连续8个sector组成，存储文件数据和目录数据。而元数据用来记录文件的创建者、创建日期、大小等，这种存储文件元数据信息的区域叫做inode，即索引节点。&lt;/p&gt;
+&lt;p&gt;由于inode也是用来存储文件相关属性信息的，所以也会消耗硬盘空间。具体包含的信息有inode号，文件的字节数、User ID、Group ID、读、写、执行权限、时间戳（共有三个：ctime指inode上一次变动的时间，mtime指文件内容上一次变动的时间，atime指文件上一次打开的时间）、链接数（软硬链接）、数据block的位置，注意没有文件名。&lt;/p&gt;
+&lt;h4 id=&#34;3lvm扩容思路&#34;&gt;3、LVM扩容思路
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvs查看/test文件系统所在的lv使用的哪个vg
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgs查看是否还有剩余空间		
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvs如果没有剩余空间，pvs查看是否还有未做PV的分区进行扩容
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;XFS和EXT4文件系统扩容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend –L 20G /dev/vg00/lvtest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#xfs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xfs_growfs /dev/vg00/lvtest
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#ext4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resize2fs /dev/vg00/lvtest 20G
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;4条带化&#34;&gt;4、条带化
+&lt;/h4&gt;&lt;p&gt;把连续的数据分割成相同大小的数据块，把每段数据分别写入到阵列中的不同磁盘上，相当于进行磁盘的负载均衡。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LVM中用“-i 磁盘数量”指令
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvcreate –L 1500G -i 3 –n lvtest vg00
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>Linux常用命令和vi速查</title>
@@ -508,6 +717,7 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln –s 实际文件 链接文件
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -sh /root/* （分开统计）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -sh /root （合并统计）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iostat #查看当前系统的读写情况
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;查找&#34;&gt;查找
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep根据文件的内容进行查找
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep [options] pattern [files]
@@ -578,6 +788,7 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jobs：查看当前正在后台工作的进程
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fg：将后台进程放到前台执行 fg 1
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bg：将后台进程在后台继续执行 bg 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ctrl+z 同样也是放在后台执行
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ 指令与参数 ] &amp;amp; &amp;lt;==在终端机前景中工作
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup [ 指令与参数 ] &amp;amp; &amp;lt;==在终端机背景中工作
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ps aux或者ps –ef		打印当前系统运行的所有进程
@@ -593,6 +804,10 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;重启服务：systemctl restart service名
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机自启：systemctl enable service名
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;使服务开机不自启：systemctl disable service名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;查看启动时候的报错相关信息或者日志信息：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -xe	带不带-xe都可，查看系统详细的日志
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status xxxx 	也可以看到少量的日志
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;vi&#34;&gt;vi
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;上左右下 hjkl
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[ Page Down ]和[ Page Up ]常用
@@ -621,8 +836,8 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 	&lt;/a&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;
-&lt;/h3&gt;</description>
+&lt;p&gt;这里提一下G和L的区别，G是直接文末，一般接?进行向上搜索；L是屏幕末尾，范围小于行末。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Oracle Linux Installation</title>

@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    1410字
+                    1531字
                 </time>
             </div>
         
@@ -347,6 +347,7 @@
 </span></span><span style="display:flex;"><span>ln –s 实际文件 链接文件
 </span></span><span style="display:flex;"><span>du -sh /root/* （分开统计）
 </span></span><span style="display:flex;"><span>du -sh /root （合并统计）
+</span></span><span style="display:flex;"><span>iostat #查看当前系统的读写情况
 </span></span></code></pre></div><h3 id="查找">查找
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep根据文件的内容进行查找
 </span></span><span style="display:flex;"><span>grep [options] pattern [files]
@@ -417,6 +418,7 @@
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
 </span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
 </span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
+</span></span><span style="display:flex;"><span>ctrl+z 同样也是放在后台执行
 </span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
 </span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
 </span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
@@ -432,6 +434,10 @@
 </span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
 </span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
 </span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>查看启动时候的报错相关信息或者日志信息：
+</span></span><span style="display:flex;"><span>journalctl -xe	带不带-xe都可，查看系统详细的日志
+</span></span><span style="display:flex;"><span>systemctl status xxxx 	也可以看到少量的日志
 </span></span></code></pre></div><h3 id="vi">vi
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>上左右下 hjkl
 </span></span><span style="display:flex;"><span>[ Page Down ]和[ Page Up ]常用
@@ -460,8 +466,8 @@
 	</a>
 	
 </figure></p>
-<h3 id="heading">
-</h3>
+<p>这里提一下G和L的区别，G是直接文末，一般接?进行向上搜索；L是屏幕末尾，范围小于行末。</p>
+
 </section>
 
 
@@ -499,36 +505,36 @@
                 
                     
 <article class="">
+    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux变量</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">本地yum源配置</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Linux概念知识 重定向</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux概念知识 运行、内核和shell</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%83%8C%E6%99%AF%E4%B8%8E%E5%8F%91%E8%A1%8C%E7%89%88/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux概念知识 背景与发行版</h2>
         </div>
     </a>
 </article>
@@ -544,6 +550,14 @@
     <footer class="site-footer">
   
 
+
+    
+
+    
+
+    
+
+    
 
     
 
@@ -684,7 +698,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了75.9k字·共 56篇文章</br><span><p>
+      共书写了79.1k字·共 60篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -840,7 +854,6 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#进程管理">进程管理</a></li>
         <li><a href="#服务管理">服务管理</a></li>
         <li><a href="#vi">vi</a></li>
-        <li><a href="#heading"></a></li>
       </ol>
     </li>
   </ol>
@@ -865,9 +878,9 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">7</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">9</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">31</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">33</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">11</a>
             </span></div>
@@ -903,7 +916,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">9</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -954,16 +967,16 @@ document.getElementById('days').innerHTML = number_of_days;
                 CTF
             </a>
         
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_4">
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_5">
                 环境搭建
+            </a>
+        
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_4">
+                其他
             </a>
         
             <a href="/tags/web%E5%AE%89%E5%85%A8/" class="font_size_3">
                 Web安全
-            </a>
-        
-            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_3">
-                其他
             </a>
         
             <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="font_size_3">
@@ -986,8 +999,24 @@ document.getElementById('days').innerHTML = number_of_days;
                 SQL
             </a>
         
+            <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="font_size_2">
+                英语
+            </a>
+        
             <a href="/tags/docker/" class="font_size_1">
                 Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                Git
+            </a>
+        
+            <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" class="font_size_1">
+                内网渗透
+            </a>
+        
+            <a href="/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/" class="font_size_1">
+                思考总结
             </a>
         
     </div>
