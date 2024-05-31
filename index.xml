@@ -6,7 +6,67 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 21 May 2024 17:07:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2024 19:31:18 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>技术学习与团队成长</title>
+        <link>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</link>
+        <pubDate>Tue, 21 May 2024 17:55:29 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</guid>
+        <description>&lt;p&gt;作为部门的一员，一名工程师如果只有技术上的属性，那么他只能算合格；一名优秀的工程师，需要同时兼顾技术能力与团队沟通，正如描述所言：独行快，众行远。&lt;/p&gt;
+&lt;p&gt;下面是我认为在工作和学习中需要遵循的原则，当遇事犹豫之时，可依此为指导，方能不忘初心。&lt;/p&gt;
+&lt;h2 id=&#34;团队&#34;&gt;团队
+&lt;/h2&gt;&lt;h3 id=&#34;汇报&#34;&gt;汇报
+&lt;/h3&gt;
+
+&lt;blockquote class=&#34;quote en&#34;&gt;
+        &lt;p&gt;凡是有交代，件件有着落，事事有回音。——致靠谱的人&lt;/p&gt;&lt;/blockquote&gt; 
+&lt;p&gt;多交流，多沟通，多汇报。这不单是对自己负责，更是对团队负责。我的建议是当你拿不准要不要汇报的时候，就要汇报一下，不要不作为。&lt;/p&gt;
+&lt;p&gt;作为技术人员，技术上有不懂的地方很正常，可以学习，可以提升。但是汇报的态度是工作的基本。遇到了什么困难，要进行交代，不要不好意思；有什么发现，及时沟通，不要私下处理。有沟通的团队才能良好的运作下去。&lt;/p&gt;
+&lt;h3 id=&#34;沟通&#34;&gt;沟通
+&lt;/h3&gt;&lt;p&gt;其实还是强调了汇报的重要性，不过这里我单独提一嘴，关于需要休息时间打扰别人的问题。
+先说结论：在你有任务需求的情况下，正常休息日打扰别人是完全合理的，不要觉得不好意思。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;实习期间发生的一件事，直属领导要求周末完成对服务器的安装，但是机房的负责人在周末休息，并表示周三之前完成安装就可以。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;我们当时因为没有钥匙进不去机房，就没有在周末打扰机房的负责人开门，同时也没有告知领导，等着周一去处理这件事情。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;这就是一种完全错误的方法。正确的做法应该直接联系机房负责人（他回不回消息就是他的事情了），随后把结果告知直属领导，等待下一步指示。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;技术&#34;&gt;技术
+&lt;/h2&gt;&lt;h3 id=&#34;安全红线&#34;&gt;安全红线
+&lt;/h3&gt;&lt;p&gt;生产环境操作要三思。&lt;/p&gt;
+&lt;p&gt;当你拿不准操作是否有问题的时候，问一下，走流程，就算最后还是出现问题，那也不是个人的问题。&lt;/p&gt;
+
+
+
+&lt;div class=&#34;notice notice-warning&#34; &gt;
+    &lt;div class=&#34;notice-title&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; class=&#34;icon notice-icon&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path d=&#34;M570 440c18 32-5 72-42 72H48c-37 0-60-40-42-72L246 24c19-32 65-32 84 0l240 416zm-282-86a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z&#34;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;p&gt;危险命令相关&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;首先不能敲危险命令（rm -f、mkfs之类的），其次不能敲类危险命令。甚么是类危险命令呢(O_o)??&lt;/p&gt;
+&lt;p&gt;就是长得像危险命令的命令，比如一些命令，对目录操作没问题，但是假如在/test的“/”和&amp;quot;test&amp;quot;之间不小心按了个空格，命令就会直接对根目录生效，导致严重的后果。（举个通俗的例子，&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;打成&lt;code&gt;&amp;gt;&lt;/code&gt;）&lt;/p&gt;
+&lt;h3 id=&#34;质疑精神&#34;&gt;质疑精神
+&lt;/h3&gt;&lt;p&gt;不是所有问题都只有一个答案，不是所有场景都只有一种解决方案。从不同角度分析问题，提出新的解决方案或是企图找到更好的方案。&lt;/p&gt;
+&lt;p&gt;同事或者领导并不一定完全是对的，他们的经验和观点十分宝贵，但也可能存在局限性。你需要保持独立思考的能力，多去尝试，遇到问题以实践为标准。&lt;/p&gt;
+&lt;h3 id=&#34;深究精神&#34;&gt;深究精神
+&lt;/h3&gt;&lt;p&gt;接上文，遇到问题以实践为标准，为什么会出现这样的结果？需要事后的思考和总结。&lt;/p&gt;
+&lt;p&gt;就举一个最最入门的例子吧，刚学Linux命令的时候，为什么cd叫cd，du叫du，这些命令后面是有具体英文含义的，不是死记硬背的出来的，比如cd（change directory）、du（disk usage）、甚至du里的-s（summary）都是有含义的。&lt;/p&gt;
+&lt;p&gt;再比如，装系统的时候踩过的坑，Linux8.6图形界面配置网络之后无法更改，最后发现是network和NetworkManager冲突的问题，同时得出结论在使用操作系统时有良好的操作习惯，在配置网络尽量用命令行。从一个小问题引申出来的技术点和之后的规避。&lt;/p&gt;
+&lt;h3 id=&#34;分享精神&#34;&gt;分享精神
+&lt;/h3&gt;&lt;p&gt;好好写笔记，第一遍笔记是自己一手输出的随笔，有很强的时效性（包括当时的记忆），但缺乏整理，只有自己在记完的那一段时间里可以看得懂。需要养成整理笔记的良好习惯，不单单是对自己负责，还可以输出给别人理解学习，在历史上留下浓墨重彩的一笔（不是）。&lt;/p&gt;
+&lt;h3 id=&#34;出差&#34;&gt;出差
+&lt;/h3&gt;&lt;p&gt;技术过硬！&lt;/p&gt;
+&lt;p&gt;自信！&lt;/p&gt;
+&lt;p&gt;找点乐子！&lt;/p&gt;
+&lt;p&gt;以及抱着和客户快乐交流的基本原则。&lt;/p&gt;
+&lt;h3 id=&#34;结语&#34;&gt;结语
+&lt;/h3&gt;&lt;p&gt;个人的成长过程是贯穿始终的，是以年为单位的，而且会一直持续数十年。每位&lt;code&gt;工程师&lt;/code&gt;的学习方法、工作方法、学习态度等等，都要经历数十年的考验，谨记。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>装系统之从0到100</title>
+        <link>https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/</link>
+        <pubDate>Tue, 28 May 2024 19:31:18 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/</guid>
+        <description>&lt;img src="https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/%E6%95%B4%E4%BD%93%E7%8E%AF%E5%A2%83.jpg" alt="Featured image of post 装系统之从0到100" /&gt;</description>
+        </item>
+        <item>
         <title>英语发音</title>
         <link>https://proben1.github.io/2024/%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3/</link>
         <pubDate>Tue, 21 May 2024 17:07:43 +0800</pubDate>
@@ -19,20 +79,15 @@ Kilobytes、Megabytes、Gigabytes、Terabytes、Petabytes&lt;/p&gt;
 &lt;p&gt;etc.	et cetera&lt;/p&gt;
 &lt;h3 id=&#34;符号发音&#34;&gt;符号发音
 &lt;/h3&gt;&lt;p&gt;/			Slash&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code&gt;  	hyphen
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;_     underscore&lt;/p&gt;
-&lt;p&gt;\     backslash&lt;/p&gt;
+&lt;p&gt;- 		hyphen&lt;/p&gt;
+&lt;p&gt;_  	   underscore&lt;/p&gt;
+&lt;p&gt;\  	   backslash&lt;/p&gt;
 &lt;p&gt;Open&amp;quot;(&amp;quot; and close &amp;ldquo;)&amp;rdquo; parenthesis&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;[&amp;rdquo; and &amp;ldquo;]&amp;rdquo; are square brackets.&lt;/p&gt;
 &lt;p&gt;#		 hash&lt;/p&gt;
-&lt;p&gt;+ Plus&lt;/p&gt;
-&lt;p&gt;- Minus/Subtract/Take away&lt;/p&gt;
-&lt;p&gt;乘除 Times (multiply)、Divide&lt;/p&gt;
+&lt;p&gt;+ 		Plus&lt;/p&gt;
+&lt;p&gt;- 		Minus/Subtract/Take away&lt;/p&gt;
+&lt;p&gt;乘除	 Times (multiply)、Divide&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
 	&lt;a href=&#34;https://pic.imgdb.cn/item/664c653bd9c307b7e96403ba.png&#34; &gt;
@@ -164,16 +219,8 @@ PS1 基本提示符，对于root用户是#，对于普通用户是$&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dnf list
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#查看当前yum源
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum info yum
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yum repolist all
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>机房系统安装初体验</title>
-        <link>https://proben1.github.io/2024/%E6%9C%BA%E6%88%BF%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
-        <pubDate>Wed, 15 May 2024 19:31:18 +0800</pubDate>
-        
-        <guid>https://proben1.github.io/2024/%E6%9C%BA%E6%88%BF%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-        <description></description>
         </item>
         <item>
         <title>以太网基础</title>
@@ -742,7 +789,9 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-mmin n：查找在 n 分钟内被修改过的文件。
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-mtime n：查找在 n*24 小时内被修改过的文件。
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;网络&#34;&gt;网络
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ifconfig -a
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hostnamectl set-hostname &amp;lt;newhostname&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ifconfig -a
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ip addr
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/sysconfig/network-scripts
@@ -756,6 +805,7 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GATEWAY=xx.xx.xx.xx（设置分配的网关）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart NetworkManager
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart network
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;压缩打包&#34;&gt;压缩打包
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-c  创建文件
