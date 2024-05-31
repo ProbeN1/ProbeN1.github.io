@@ -12,7 +12,356 @@
         <pubDate>Tue, 28 May 2024 19:31:18 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/</guid>
-        <description>&lt;img src="https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/%E6%95%B4%E4%BD%93%E7%8E%AF%E5%A2%83.jpg" alt="Featured image of post 装系统之从0到100" /&gt;</description>
+        <description>&lt;img src="https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/%E6%95%B4%E4%BD%93%E7%8E%AF%E5%A2%83.jpg" alt="Featured image of post 装系统之从0到100" /&gt;&lt;p&gt;仅作为个人成长的记录。内容为三次装机实践的过程和一些总结。&lt;/p&gt;
+&lt;h2 id=&#34;零&#34;&gt;零
+&lt;/h2&gt;&lt;p&gt;实习不到一周，第一个任务来了，让我们去机房装个系统练手。初到机房，一切都很新鲜：嗡嗡的风扇声、错综复杂的排线、柜子上摆着一列列的大方块。Leader指了指一个柜子，五个服务器静静躺在上面，“硬件可能有问题，你们自己检查，哪里坏了可以换，把服务器装好，下周我来检查。“于是几个一脸懵的小可爱开始苦哈哈的蹲机房捣鼓。&lt;/p&gt;
+&lt;h3 id=&#34;硬件报错风波&#34;&gt;硬件报错风波
+&lt;/h3&gt;&lt;p&gt;服务器是DELL的，刚好五个电源，我们一人插一个，还在找开机按钮呢，就看到上面的小显示屏滚动起了字符：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hwc2002 system board Riser cable or interconnect failure .  Check connection.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(Hwc2002系统板riser线缆或互连故障。检查连接。)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unavailable in standby.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(待机不可用。)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PSU003 Power input for  PSU 1 is lost .Check PSU cables.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(PSU003电源模块1输入丢失检查电源线缆。)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;当时心中就是一咯噔，上网搜了下23是因为只插了一个电源的原因，一般服务器都有两个电源，1我不知道，于是下电开盖查看，。由于不知道什么是hwc2002，我最后只能观摩观摩服务器里头啥构造，并且。。。。。。卸了一个内存条，然后（特别）费力地把它再按回去，并拍了一张照片留念：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66592ac6d9c307b7e93c1eaf.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66592ac6d9c307b7e93c1eaf.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;（太巧了刚好是个错误示范）上面插的黑色塑料片是占位置用的，绿色是内存，现在来看我重插的内存很明显连在了一块，是有问题的。Dell服务器内存安装按照颜色的顺序进行插： 白色、黑色、绿色。最后经过了开机自检的重大报错之后，我联想到了我对内存所做的不可告人的操作，并再次（特别）费力的把它重新插会白色凹槽。&lt;/p&gt;
+&lt;h3 id=&#34;安装系统&#34;&gt;安装系统
+&lt;/h3&gt;&lt;p&gt;经过了彻彻底底的人为制造错误之后，我决定跳过这些直接进到安装操作系统。但是事情真的有这么简单吗？最开始我的思路是这样的：需要一个USB做启动盘，狂按F几键进入从USB启动，安装，搞定！但是系统在启动原先系统失败后进入了boot菜单，我迷路了。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66593287d9c307b7e943f954.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66593287d9c307b7e943f954.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;于是，它显示的每个按钮我都按了按，在BIOS丛林探索了一小时（一半时间都是在等自检），我终于走到了终点，那个让我欣喜若狂的界面——系统安装。我快速的配置好了支持语言、时区、安装模式，等到分配磁盘的时候、、、显示没有空间！！！我蒙了，于是开始反思换个硬盘的必要。这时善良的同事提醒了我：需要做RAID。&lt;/p&gt;
+&lt;p&gt;磁盘阵列（Redundant Arrays of Independent Disks，RAID），由很多块独立的磁盘，组合成一个容量巨大的磁盘组，通过把数据放在多个硬盘上，既能条带化地提升性能，又可以作为冗余。不同服务器进入配置菜单的方式不一样，这里需要在自检后通过Ctrl+R的方式进入RAID配置。我删除了原来的逻辑分组，新建了一个逻辑组，在这个过程中它会进行快速初始化，再进入操作系统安装界面之后，就有磁盘空间了。&lt;/p&gt;
+&lt;h3 id=&#34;网络&#34;&gt;网络
+&lt;/h3&gt;&lt;p&gt;完成了安装之后，就进入了操作系统（这里有个伏笔，我没有思考它是怎么进到操作系统的）。以为万事大吉？No no no，还有后续很多软件的安装还有一些优化的配置，难道我们要一直在这里蹲着手敲？这时候就需要连上自己的电脑。这里也有很多小问题，包括：插上网线了不知道下一步干啥、找不到自己电脑在哪里改以太网IP、服务器不知道插的是哪个网卡、配完忘重启网络以为又坏了。。。总之，最后成功ping到了自己电脑，可以ssh登录，值得小小庆祝一下。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66593860d9c307b7e9491318.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66593860d9c307b7e9491318.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;yum&#34;&gt;yum
+&lt;/h3&gt;&lt;p&gt;已经跨过两座大山：装系统和配网络，接下来要安装环境了。首先要建立一个本地的yum源，但是我改怎么把镜像文件传过去呢？我先想到用usb直接挂载，复制过去。但是出现了windows和linux文件系统不兼容的问题，也就是封面搜索的那个问题。最后通过xftp网络了过去，速度还蛮快的。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66593960d9c307b7e94a0317.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66593960d9c307b7e94a0317.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;按照集成手册配置本地yum源，中途遇到了版本不同报错的问题，手动修改即可，最终yum list的成功显示一串串的软件包，当时成就感拉满。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;疯狂安装软件:yum install -y xxx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;检测哪些没按上的:rpm -q xxx | grep not
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;之后就是配置/etc/profile，配置/etc/sysctl.conf，一步一步完成操作，因为不是生产环境所以有些步骤跳过了。&lt;/p&gt;
+&lt;h3 id=&#34;检查&#34;&gt;检查
+&lt;/h3&gt;&lt;p&gt;Leader发来了一个检测脚本，给777权限跑一下，最后结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66593bd4d9c307b7e94c5f8a.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66593bd4d9c307b7e94c5f8a.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以看到上面大部分是服务和软件的问题，但是下面的检测结果就有点那啥了，单纯是看有没有这个文件，如果确实是实际环境，可以起到一个提醒的作用。但是但是练习环境下根本配不到这些啊喂~&lt;/p&gt;
+&lt;p&gt;不管怎么说，总算费劲的给搞完了吼吼，我物理装机的第一部作品！&lt;/p&gt;
+&lt;h2 id=&#34;壹&#34;&gt;壹
+&lt;/h2&gt;&lt;p&gt;有个小任务，要装几台系统作为网络设备的测试平台，交给我们去安装系统，这次是浪潮的服务器。&lt;/p&gt;
+&lt;h3 id=&#34;初见管理口&#34;&gt;初见管理口
+&lt;/h3&gt;&lt;p&gt;服务器通常会有两种不同类型的网络接口，即管理口（Management Port）和网口（Ethernet Port），它们的作用和用途不同。&lt;/p&gt;
+&lt;p&gt;管理口通常是用于服务器管理的网络接口，也被称为外带网卡或带外接口（Out-of-band Interface）。管理口与服务器主板上的 BMC（Baseboard Management Controller）或者其他管理卡相连，可以通过远程管理协议（例如IPMI、iDRAC、iLO等）进行远程管理和监控服务器。网口就是咱们平时正常用的网络接口。&lt;/p&gt;
+&lt;p&gt;学长指导，可以通过内网直接访问到这几台服务器的带外口，我直接ssh连了上去。。。发现是一个看不懂的命令行，smartctl，没有办法像bash一样操作。试了几下，用浏览器访问这个ip，发现了新大陆——BMC页面，可以图形化的管理服务器硬件的状态，以及一个重要的功能：远程控制台。进到了远程控制台，相当于一个小显示屏，远程实时显示服务器的屏幕。&lt;/p&gt;
+&lt;h3 id=&#34;安装系统-1&#34;&gt;安装系统
+&lt;/h3&gt;&lt;p&gt;好奇宝宝们尝试用远程上传镜像媒体的方式安一下系统，结果这个速度一言难尽，20分种跑了几kb，遂放弃。（我们后来才知道，这个在进入系统安装界面的时候才会开始正常的上传）。&lt;/p&gt;
+&lt;p&gt;所以最后还是选择了进到机房物理USB的方式安装。&lt;/p&gt;
+&lt;h3 id=&#34;配置raid&#34;&gt;配置RAID
+&lt;/h3&gt;&lt;p&gt;安装过程中理所当然的遇到了硬盘没空间的问题，需要初始化一下硬盘。这里就出现问题了。我在安好了操作系统之后，发现无论如何都无法进入系统，在一个地方反复徘徊检测。询问学长，可能是硬盘启动顺序设置不对的原因。于是我们进到BIOS启动顺序菜单进行查看。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659436bd9c307b7e955061a.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659436bd9c307b7e955061a.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;十分不幸，BIOS启动顺序菜单只能把所有硬盘当成一个整体进行启动，那么不同硬盘之间呢？和同事对比了之后，进入了raid管理界面，简单分析一下：&lt;/p&gt;
+&lt;p&gt;原本服务器里有两个480GRAID1的系统盘，组成了一个逻辑盘组，排在启动顺序第一位；12个1.2T的数据盘，组成了令一个逻辑盘组，排在启动顺序第二位。因为我初始化系统盘的时候，不是直接原地初始化，而是删除了逻辑盘组再新建。删除了之后第二个逻辑盘组顺位到第一启动位，所以新建的逻辑盘组只能排在第二。在调整好硬盘的启动顺序之后，可以正常进入系统。&lt;/p&gt;
+&lt;h3 id=&#34;配置网卡&#34;&gt;配置网卡
+&lt;/h3&gt;&lt;p&gt;需求是将两个万兆网卡做双网卡绑定，哪个是万兆网卡可以在装系统时的network里查看。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66596425d9c307b7e976a474.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66596425d9c307b7e976a474.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是注意！！！不要在图形化界面里配置网络，老老实实进到系统vi /etc/sysconfig/network-scripts/里配置，不然可能出现不可预料的后果（同事的血泪教训）。以及后面的restart不要把network和NetworkManager混用。&lt;/p&gt;
+&lt;p&gt;完成了双网卡绑定的配置之后，这里暂时告一段落。&lt;/p&gt;
+&lt;h2 id=&#34;佰&#34;&gt;佰
+&lt;/h2&gt;&lt;p&gt;新任务，工作实战课题，去ZTE的滨江园区进行预装。滨江园区，比较大，规矩也比较多，是不一样的环境。两批服务器，分别是利比亚和利比里亚的，需要从裸机到安装操作系统。共计45+38台&lt;/p&gt;
+&lt;p&gt;首先说下为什么要去园区吧，因为园区有着一个完整的供应链。ZTE的对外业务包括语音核心网，我们的计费处理是其中的一环。
+预安装需要为境外项目服务，第一是可以节省项目的时间。一些服务器和环境被预先配置好，这样到现场可以立即开始使用。第二是可以检查硬件的可使用性，相当于提前对设备能否正常运行做的一次测验。这样现场再出现问题，可以定位到问题在哪里出现，比如运输途中损坏，更有利于后续的鉴定。&lt;/p&gt;
+&lt;p&gt;此外预安装还可以减少一部分项目现场的成本。不过总的来说还是为了境外项目可以更快更好的完成。&lt;/p&gt;
+&lt;p&gt;机架长这样（照片是ZTE的人拍的）&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/665999abd9c307b7e9b309ba.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/665999abd9c307b7e9b309ba.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;触摸服务器&#34;&gt;触摸服务器
+&lt;/h3&gt;&lt;p&gt;拆开防尘盖查看服务器，进行辨识。&lt;/p&gt;
+&lt;p&gt;服务器前面板：品牌标识、状态指示灯、存储硬盘（很大一排）&lt;/p&gt;
+&lt;p&gt;内部：主板、CPU两个（可numa），内存条（需要按正确顺序颜色安装）、风扇、防尘盖&lt;/p&gt;
+&lt;p&gt;后面板：千兆网卡（4口），万兆网卡（2口），480G系统硬盘，电源&lt;/p&gt;
+&lt;h3 id=&#34;前期准备&#34;&gt;前期准备
+&lt;/h3&gt;&lt;p&gt;我认为前期是做准备工作，指的是不在现场就可以完成的任务，保证现场工作可以高效率无阻碍的执行。主要进行项目分析、资源准备、设备清点单和安装规划等工作。&lt;/p&gt;
+&lt;h4 id=&#34;1-所内准备&#34;&gt;1. 所内准备
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;提交外出申请，确保自己出勤。&lt;/li&gt;
+&lt;li&gt;与同事进行工作交接，确保没有其他紧急任务或依赖项未解决。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2-所外准备&#34;&gt;2. 所外准备
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;提前联系机房管理员，确保能够顺利进入机房。&lt;/li&gt;
+&lt;li&gt;提前联系设备交接人，了解设备存放位置、运达情况、机房环境等信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-文件准备&#34;&gt;3. 文件准备
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;深入掌握项目的背景、目标、设备配置要求。&lt;/li&gt;
+&lt;li&gt;准备详细的&lt;code&gt;设备清点单&lt;/code&gt;，包括设备型号、数量、配件等。&lt;/li&gt;
+&lt;li&gt;准备&lt;code&gt;项目规划表&lt;/code&gt;，规划不同服务器不同的功能，规划好IP。&lt;/li&gt;
+&lt;li&gt;根据项目需求制定项目&lt;code&gt;SIMS部署表&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;根据项目需求制定&lt;code&gt;时间规划表&lt;/code&gt;，确保工作进度，及时反馈。&lt;/li&gt;
+&lt;li&gt;准备必要的安装工具、测试工具（自己电脑上的镜像、ssh软件、cPing等等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，这些只是我最后的总结，实际上都不是我做的hhhhhh，我负责打杂+体力劳动+学习记录~&lt;/p&gt;
+&lt;h3 id=&#34;中期执行&#34;&gt;中期执行
+&lt;/h3&gt;&lt;p&gt;中期就是接触到服务器了，从清点设备收集信息到安装系统和软件，中期应该是耗时最长的。&lt;/p&gt;
+&lt;h4 id=&#34;1-设备清点与分类&#34;&gt;1. 设备清点与分类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;依照：设备清点单、设备型号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;交换机和防火墙：清点主设备，电源，风扇，光模块，尤其注意光模块单模多模和速率&lt;/p&gt;
+&lt;p&gt;服务器：清点主机型号，CPU，网卡，内存，硬盘。包括硬盘类型，大小，型号，数量。网卡主要看接口。内存和CPU可在加电后进行查看。&lt;/p&gt;
+&lt;p&gt;主要通过主机型号、网卡接口、硬盘类型，大小，型号，数量，区分主机应用。其中，需要物理将PR主机和DR主机进行布局上的调整，并将区分好的主机前后贴上作用标签。&lt;/p&gt;
+&lt;p&gt;服务器清点时发现两台服务器型号统计反了，但是一台已经装好了系统并配好了IP，需要修改IP和主机名。我直接vi修改了相应网卡的配置文件并配合&lt;code&gt;systemctl restart NetworkManager&lt;/code&gt;重启网络服务，检查过程中发现之前和现在的ip同时存在。reboot一下就好了，我才发现network与NetworkManager是差别的。&lt;/p&gt;
+&lt;h4 id=&#34;2-配置管理口&#34;&gt;2. 配置管理口
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;收集每台主机的SN号和之后要用到的数据口的MAC地址，记录到预安装的规划表中。&lt;/li&gt;
+&lt;li&gt;使用原始密码和原始IP登录每台主机，修改主机名、管理口IP等配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-bios配置&#34;&gt;3. BIOS配置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;多线程模式&lt;/li&gt;
+&lt;li&gt;Max&amp;ndash;Performance模式&lt;/li&gt;
+&lt;li&gt;系统盘RAID1配置&lt;/li&gt;
+&lt;li&gt;启动顺序配置，先硬盘再PXE&lt;/li&gt;
+&lt;li&gt;保存并退出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为服务器对外管理口默认网段和我们计划的网段不一致，修改后需要重新配置电脑IP，这里有个小妙招：在网络共享中心配置IP时，点“高级”，添加新网段的IP，这样可以同时访问多个网段（原理和昨天的配置路由不同），比较方便。化身多线程大师！&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659a92fd9c307b7e9c3e21d.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659a92fd9c307b7e9c3e21d.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4sims部署&#34;&gt;4.SIMS部署
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;选取并安装种子机&lt;/li&gt;
+&lt;li&gt;部署SIMS&lt;/li&gt;
+&lt;li&gt;计划好每批部署多少台，填写SIMS部署表，上传&lt;/li&gt;
+&lt;li&gt;确认客户端服务器网线连接无误、数据无误后，启动SIMS批量部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SIMS一键部署工具为IAAS平台自动化部署工具，用户通过向SIMS一键部署工具中导入平台规划数据，SIMS一键部署工具将全自动的部署操作系统及平台软件。在平台设施构建阶段，为用户节省大量时间并提供标准化的软件输出。&lt;/p&gt;
+&lt;p&gt;至于怎么部署SIMS，这确实是我没有接触过的事情，涉及到docker相关，但是我在重装种子机的时候，看到了作为SIMS部署系统里相关的压缩包，推测是相关压缩包+命令的手册进行种子机的部署。与其知道怎么部署SIMS，不如了解一下SIMS的原理。&lt;/p&gt;
+&lt;p&gt;原理：部署信息表+对外管理口+PXE&lt;/p&gt;
+&lt;p&gt;部署信息表就是列出了相关配置，什么系统装什么，mac是什么，对外口的账号密码是什么，然后通过命令模式，在外操控对外口、进PXE，在内安装操作系统和配置，都是预先的命令。&lt;/p&gt;
+&lt;h5 id=&#34;pxe&#34;&gt;PXE
+&lt;/h5&gt;&lt;p&gt;PXE(Pre-boot Execution Environment)，可以使计算机通过网络启动，也是厂商默认和推荐的方式。分为 client和server两端，服务端就是种子机，客户端就是等待安装的机器。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开机后，客户端计算机的网卡BIOS将广播DHCP请求，以获取一个IP地址。&lt;/li&gt;
+&lt;li&gt;DHCP服务器响应客户端的DHCP请求，并提供了IP地址、子网掩码、默认网关、TFTP（Trivial File Transfer Protocol）服务器地址和启动文件名等信息。&lt;/li&gt;
+&lt;li&gt;客户端使用TFTP协议从TFTP服务器加载启动文件。负责为客户端计算机准备启动环境，包括连接到远程安装服务器等。&lt;/li&gt;
+&lt;li&gt;启动加载程序执行后，客户端将从安装服务器下载并加载完整的操作系统安装映像文件。&lt;/li&gt;
+&lt;li&gt;安装程序执行，引导用户完成操作系统的安装过程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;种子机充当DHCP服务器，引导客户端的PXE流程：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659b0e9d9c307b7e9cd21dd.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659b0e9d9c307b7e9cd21dd.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;至于这个装系统，要是流畅的话会爽到什么程度，我只能说如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659b173d9c307b7e9cdb8ba.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659b173d9c307b7e9cdb8ba.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;一个个都是命令形式，完全没有图形化界面，分磁盘的规划都是复制粘贴上去的。but，代价是什么？？&lt;/p&gt;
+&lt;p&gt;代价是。。。调试。主要是不断的操作，不断的出错，不断的排查并继续操作。最开始设置的只有硬盘boot，但是一直卡在no boot device，推测一直卡在硬盘这里，没有激活PXE（理论上是可以自动激活一次的）。只能手动去调这个了，也就是说利比亚的机器需要再统一改一次BIOS才能SIMS集体安装。调试好了之后，可以用SIMS自动部署。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659afecd9c307b7e9cc155c.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659afecd9c307b7e9cc155c.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;还出现了已经进入PEX模式，准备进行操作系统安装，但是卡住不动，需要手动选择版本与内核，同时接下来需要手动在文字界面安装操作系统的情况，&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决思路：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、对比sims安装表里是否有ip、mac、主机名等等的错误，经过对比后没有发现错误&lt;/p&gt;
+&lt;p&gt;2、通过&lt;code&gt;docker exec -ti $(docker ps | grep pxe | awk &#39;{print $1}&#39;) bash&lt;/code&gt;命令进入种子机里pxe的docker，跑到&lt;code&gt;/var/lib/tftpboot/pxelinux.cfg&lt;/code&gt;中查看是否有对应mac地址的文件，发现确实有（图左），但是无法查看。而通过&lt;code&gt;cat 58-53-c0-94-17-46\&lt;/code&gt;命令反而可以查看，于是发现文件名后面是一个空格，真相大白。&lt;/p&gt;
+&lt;p&gt;3、将这批机器换到下一批重新安装，修改表中的所有mac地址，删去后面的空格，同时仔细检查。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原理：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在空格前加上反斜杠（\），告诉shell这个空格是文件名的一部分，而不是命令参数的分隔符。&lt;/p&gt;
+&lt;p&gt;当我直接从服务器对外管理界面复制mac的时候，邪恶的电脑会给我或前或后的加上空格符号，在前面的还可以看出来，删去了。在后面的看不出来，导致结果非常的哇塞。&lt;/p&gt;
+&lt;h4 id=&#34;5重装种子机&#34;&gt;5.重装种子机
+&lt;/h4&gt;&lt;p&gt;这个种子机手动重装居然耽误了我一天的时间。。。当时我可是信心满满，实际上坑不少。先从什么是NVME说起吧。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659b2f2d9c307b7e9cf4186.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659b2f2d9c307b7e9cf4186.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;NVME是一种硬盘协议，专为SSD设计，利用高速接口进行CPU和SSD间的数据通信。除了快就是贵，用作加速盘，数据库服务器上都安排了两块。不巧的是，种子机选取的就是数据库的服务器，这个大伏笔。&lt;/p&gt;
+&lt;p&gt;操作系统安好了之后，登不上去，一度让我怀疑是安装的时候连续两次输了相同的错误密码。最后发现一直登录的是原SIMS的系统，原来的硬盘没有格式化，而且放在了第一启动位置，出现了启动顺序冲突。这个问题之前遇到过了，所以很快就定位并修改了启动顺序。&lt;/p&gt;
+&lt;p&gt;不同的服务器调整的方法不一样，之前浪潮的服务器只能支持所有硬盘作为一个整体来启动，我们只能提前规划好创建逻辑磁盘的顺序来达到目的，而这里中兴的R5300G4可以细分到哪个硬盘，我认为这个更加合理。&lt;/p&gt;
+&lt;p&gt;然后就来了个大的。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6659b3eed9c307b7e9d04963.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6659b3eed9c307b7e9d04963.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;调整了boot的硬盘启动顺序后，出现报错&lt;/p&gt;
+&lt;p&gt;bash: cannot create temp file for here-document: Read-only file system&lt;/p&gt;
+&lt;p&gt;还真没遇到过，排错吧~先使用mount命令查看结果，根目录显示ro（readonly），显然有问题。使用lsblk命令查看硬盘挂载情况，可以很明显的看到vg00大部分都没有挂载。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://static.dingtalk.com/media/lALPD1W_9aDbhTPNAYDNAf8_511_384.png_810x10000.jpg&#34; &gt;
+		&lt;img src=&#34;https://static.dingtalk.com/media/lALPD1W_9aDbhTPNAYDNAf8_511_384.png_810x10000.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;img&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;img&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;怀疑开机自动挂载没有打开，cat /etc/fstab查看情况，但是这里确实有记录自动挂载，那就是其他原因导致挂载不上去。&lt;/p&gt;
+&lt;p&gt;然后看到nvme0n1里面还有SIMS部署用到的临时操作系统，使用如下命令删去并格式化。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fdisk /dev/nvme0n1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/nvme0n1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再次返回BMC页面，对系统RAID1进行快速格式化，重装系统，最后成功解决。接着就是yum源，配置，之前的那一套，拿下种子机的预装。&lt;/p&gt;
+&lt;p&gt;原因有两点：第一，原SIMS的系统没有清除干净；第二，之前我对系统RAID1进行了慢速格式化，而当时我不知道这个格式化到底是什么速度，没等格式化完事等不及了安装系统。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;慢速初始化和快速初始化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;快速格式化使系统认为磁盘上没有文件了。它并不真正格式化全部硬盘，而是快速地将文件系统标记为“无文件”状态。因此，快速格式化后，数据有可能通过特定的工具恢复。&lt;/p&gt;
+&lt;p&gt;慢速格式化或完全格式化会扫描硬盘上的所有磁道，清除硬盘上的所有内容。这个过程还包括检查磁盘上的坏道，并对其进行标记。完全格式化后的数据无法恢复，因为它真正地擦除了磁盘上的所有数据。&lt;/p&gt;
+&lt;p&gt;最最最后，利比里亚的服务器延迟一周发货，我们预先帮助之后的业务部门插下光纤。。。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;交换机与光纤安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;光模块（optical module）是现在通信中最重要的器件之一，实现光电转换，现在的光模块也集成了一些数字信号处理的功能。&lt;/p&gt;
+&lt;p&gt;光纤有两个插孔，先接好一台机器，当要与另一台机器接的时候，查看此时光纤的两个插孔中哪一个一个冒光，你需要把光纤冒光的头插到机器不激光的口，把光纤不冒光的头插到机器冒光的口，完成上行和下行线路的建立。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;关于预装，其实是分体力活和脑力活的。&lt;/p&gt;
+&lt;p&gt;体力活包括但不限于：搬服务器，收集信息，插拔网线与光纤，服务器上电下电，甚至包括改BIOS。这部分涉及到反复操作，并且需要耐心（尤其是等服务器开机）。&lt;/p&gt;
+&lt;p&gt;脑力活，可以是SIMS的调试，设备的调试，整体的预转的规划。尤其是在椅子上坐着看SIMS部署的时候，一片一片命令在日志翻过，可以明显感受到自动化脚本降维式的打击。&lt;/p&gt;
+&lt;p&gt;多去干脑力活，对个人成长是有帮助的。每一次成长，都来源于直面和解决问题，而不是否定和逃避。半个月的时间，我从一个对物理服务器一无所知的小白，到最后自己可以独立安装操作系统和相关环境，成就感是有的。刚开始时，对物理服务器感到陌生和畏惧，但随着学习的深入和实践的积累，逐渐建立了信心。这是一个不断尝试和犯错的过程，不断从错误中吸取教训，慢慢经验就积累起来。&lt;/p&gt;
+&lt;p&gt;顺带一提，一U是4.445cm。&lt;/p&gt;
+&lt;p&gt;EOL&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>记一次SpringBoot2报错排查</title>
