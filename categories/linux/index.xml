@@ -387,7 +387,7 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#ext4
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;resize2fs /dev/vg00/lvtest 20G
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;4条带化&#34;&gt;4、条带化
-&lt;/h4&gt;&lt;p&gt;把连续的数据分割成相同大小的数据块，把每段数据分别写入到阵列中的不同磁盘上，相当于进行磁盘的负载均衡。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;把连续的数据分割成相同大小的数据块，把每段数据分别写入到阵列中的不同磁盘上，提升了存储性能。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LVM中用“-i 磁盘数量”指令
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvcreate –L 1500G -i 3 –n lvtest vg00
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159'><title>记一次SpringBoot2报错排查</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='2024.6 总结：诸事不顺，还好一点点平推了所有不顺。 需要提升： 英语正式演讲能力 加强心理承受能力，同时少点生气 讲话语速放缓，语气平和一些 周五单位发通知'><title>茄科生物观测日志2024.6</title>
 
-<link rel='canonical' href='https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/'>
+<link rel='canonical' href='https://proben1.github.io/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/'>
 
-<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='记一次SpringBoot2报错排查'>
-<meta property='og:description' content='背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159'>
-<meta property='og:url' content='https://proben1.github.io/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/'>
+<link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='茄科生物观测日志2024.6'>
+<meta property='og:description' content='2024.6 总结：诸事不顺，还好一点点平推了所有不顺。 需要提升： 英语正式演讲能力 加强心理承受能力，同时少点生气 讲话语速放缓，语气平和一些 周五单位发通知'>
+<meta property='og:url' content='https://proben1.github.io/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java' /><meta property='article:tag' content='环境搭建' /><meta property='article:published_time' content='2022-11-20T11:30:30&#43;08:00'/><meta property='article:modified_time' content='2022-11-20T11:30:30&#43;08:00'/>
-<meta name="twitter:title" content="记一次SpringBoot2报错排查">
-<meta name="twitter:description" content="背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。 项目：https://github.com/TimVan159">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-06-23T19:10:03&#43;08:00'/><meta property='article:modified_time' content='2024-06-23T19:10:03&#43;08:00'/>
+<meta name="twitter:title" content="茄科生物观测日志2024.6">
+<meta name="twitter:description" content="2024.6 总结：诸事不顺，还好一点点平推了所有不顺。 需要提升： 英语正式演讲能力 加强心理承受能力，同时少点生气 讲话语速放缓，语气平和一些 周五单位发通知">
   
 
 <style>
@@ -276,15 +276,15 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
-                学习笔记
+            <a href="/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" style="background-color: #2a9d8f; color: #fff;">
+                小人联合工会内部资料
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2022/%E8%AE%B0%E4%B8%80%E6%AC%A1springboot2%E6%8A%A5%E9%94%99%E6%8E%92%E6%9F%A5/">记一次SpringBoot2报错排查</a>
+        <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/">茄科生物观测日志2024.6</a>
     </h2>
 
     
@@ -302,7 +302,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Nov 20, 2022</time>
+                <time class="article-time--published">Jun 23, 2024</time>
             </div>
         
 
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    796字
+                    1809字
                 </time>
             </div>
         
@@ -329,90 +329,58 @@
     <section class="article-content">
     
     
-    <p>背景：需要跑一个web端的小项目，正好之前电脑重装还没下idea，顺手下了个。</p>
-<p>项目：https://github.com/TimVan1596/LightDisk</p>
-<p>IDEA 2022.2.3：https://www.exception.site/essay/idea-reset-eval</p>
-<h1 id="part1">part1
-</h1><p>先从idea上连github把项目clone下来：https://blog.csdn.net/hry2015/article/details/77984399</p>
-<p>理论上这之后maven构建一下就可以了，结果构建之后运行出现了报错：</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Could not find artifact io.github.novacrypto:Base58:pom:2019.01.27 in central
-</span></span></code></pre></div><p>遂上网搜索novacrypto:Base58，发现这个包是存在的，但是版本出现了问题。</p>
-<p><figure 
-	>
-	<a href="https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg" >
-		<img src="https://pic.imgdb.cn/item/6379a3d916f2c2beb1d76042.jpg"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<p><figure 
-	>
-	<a href="https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg" >
-		<img src="https://pic.imgdb.cn/item/6379a41116f2c2beb1d7b3ad.jpg"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<p>如图，在pom.xml中，默认的版本是2019.01.27，但是现在只有2022.01.17的版本，猜测更新的时候删掉了旧版本hhhh，重新修改后reload:</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span>        <span style="color:#93a1a1;font-style:italic">&lt;!-- https://mvnrepository.com/artifact/io.github.novacrypto/Base58 --&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2;font-weight:bold">&lt;dependency&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;groupId&gt;</span>io.github.novacrypto<span style="color:#268bd2;font-weight:bold">&lt;/groupId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;artifactId&gt;</span>Base58<span style="color:#268bd2;font-weight:bold">&lt;/artifactId&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#268bd2;font-weight:bold">&lt;version&gt;</span>2022.01.17<span style="color:#268bd2;font-weight:bold">&lt;/version&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#268bd2;font-weight:bold">&lt;/dependency&gt;</span>
-</span></span></code></pre></div><p>中间还出现了一次网络报错，切换一下线路即可。</p>
-<h1 id="part2">part2
-</h1><p>运行com.timvanx.Application入口，启动Spring Boot项目，过程中出现报错：</p>
-<p><figure 
-	>
-	<a href="https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg" >
-		<img src="https://pic.imgdb.cn/item/6379e1c616f2c2beb13aba92.jpg"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<p>吃个黄豆糕冷静一下，一般来说，像这种框架出现报错，要么就是环境配置问题，要么就是别想解决了……</p>
-<p>我首先试着删除libraries中的依赖，然后使用maven中的clean来删除创建了的target，再用maven重新导入依赖，无果。</p>
-<p>看着readme中的环境要求，感觉可以用jdk1.8试一下：</p>
-
-
-<blockquote class="quote en"><p>软件架构</p>
-<p>JDK 1.8+<br>
-Spring Boot 2.0.1<br>
-[Apache Gossip]</p>
-</blockquote> 
-<p>我的版本是16，有可能不支持</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>java -version
-</span></span><span style="display:flex;"><span>java version <span style="color:#2aa198">&#34;16.0.2&#34;</span> 2021-07-20
-</span></span><span style="display:flex;"><span>Java(TM) SE Runtime Environment (build 16.0.2+7-67)
-</span></span><span style="display:flex;"><span>Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
-</span></span></code></pre></div><p>到官网新安装了一个java8：https://www.oracle.com/java/technologies/downloads/#java8-windows</p>
-<p>在File-&gt;Project Structure -&gt; SDK中选择JDK1.8，Apply！（idea会自动检索到）</p>
-<p>重新启动后，成功！</p>
-<p><figure 
-	>
-	<a href="https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg" >
-		<img src="https://pic.imgdb.cn/item/6379e3e816f2c2beb13dfb73.jpg"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
+    <p>2024.6</p>
+<p>总结：诸事不顺，还好一点点平推了所有不顺。</p>
+<p>需要提升：
+英语正式演讲能力
+加强心理承受能力，同时少点生气
+讲话语速放缓，语气平和一些</p>
+<p>周五单位发通知，周二下班前要社保卡。我看了下，周六银行不开门，周天开门，遂去办理。
+周天去了中国银行，发现开门了但是没发办理社保业务，没多想网申了社保卡，以为提供了信息就有了电子社保卡，实际上不行，需要等实体卡邮寄到了才能激活，而且申卡流程没法取消了。
+出门，旁边有个建行，可以直接办理，但由于网申了，没法线下办理了。于是我今天费了最大的功夫，把本来能办好的事情办不好了。十分难受，现在复盘一下。</p>
+<p>首先是办事出了问题，处理流程，不要一味被情绪影响：
+1.不要纠结已经发生的错误
+2.思考该怎么弥补
+3.事后总结，为什么会犯这种错误</p>
+<p>办事准备：
+去办事也要像准备工作文档一样，用全力去准备。
+你觉得你的方案万无一失，实际上并不是。你需要在详尽准备计划A的同时，思考哪个环节可能出现问题，并根据可能出现的问题做好计划B、C&hellip;&hellip;比如今天，如果我提前准备了几个大银行的去处，而不是死磕中国银行，就不会出现这种情况。如果我提前查了社保局，就会发现社保局周六上班，我就可以不用死磕周天。实在不行，可以周一周二请假去办理，都不会出现现在这种卡死在流程上的情况。</p>
+<p>以后去办事，一定要想多些方案，不要只准备一个，死磕到底。</p>
+<p><kbd>6.17-6.23</kbd>
+疯狂补齐落下的学习进度，在委托同学帮忙论文验收和归档，培训的课程、考试和presentation之间大脑多线程运作。每天七点起来，晚上赶着末班车back，周末准备周一的实操考试，办个社保卡还没办好。已经不能用充实来形容了，我感觉这几天人发生了某种蜕化，失去了几乎所有的内耗，和人交流不再迟疑。每天都干了很多事情，但是只能记住重要的事情，比如考试节点等等，回过神来发现社交软件有一堆对话，论文归档远程整完了，甚至自己还办了张流量卡hhh。</p>
+<p><kbd>6.12—6.16</kbd>
+充实的五天。踏着夜色回到宿舍，第二天火线验收毕设，答辩，怼老师怼的太狠差点二辩hhh，不过还是顺利毕业啦。
+毕业照，院里的，班里的，宿舍之间的……
+和舍友聚餐，铜锅涮肉，牛肚豆皮，漠北人烤肉……
+和网协的各位告了别，最后学妹送了我一份蛋糕，甚是感激。
+收拾宿舍，邮了44斤的书回家，注销校园网，一点一点脱离西安这个城市……</p>
+<p>大一充满了张狂的热情，努力去成长，克服了很多自己的高中缺陷。大二并没有如理想般走出自己的道路，一次次失败的经历让我迷茫，学校课程和理想的冲突让我心烦意乱。大三准备考研，可惜一考一个不吱声，至今不忘考完数学之后，是以怎样的心情去考专业课的呢？大四一边克制自己的抑郁情绪，一边尽力抓住身边的稻草。在经历了种种之后，四年间的一切变成了一声感慨。
+还好有斯卡蒂和她的小虎鲸们，感激很多人一直陪我到最后，在本科的时光，弥补了，很多本应有的遗憾。</p>
+<p>直到最后，在一个下小雨的清晨，舍友送我上了前往地铁站的出租车，我离开了这里，生活了接近四年的城市，一个小小的监牢，一个可以白天看山晚上想海的宿舍，一群有趣有志之人的相遇之地……</p>
+<p><kbd>6.9—6.10</kbd>
+回连，准备会西安，处理一些杂事。
+和节操樱花小聚。
+通关了深海迷航二。</p>
+<p><kbd>6.7—6.8</kbd>
+去姥姥家。端午煮了很多粽子鸡蛋，羊圈里新生了一只小羊。
+成功挑战了姥姥家的旱厕！</p>
+<p><kbd>6.5—6.6</kbd>
+答辩时间出了，做一下接下来的计划。
+修改答辩PPT。
+上班之后生物钟变了，以往0:30我还精神的很，现在却头昏脑胀，提醒我需要睡觉。以往起床太阳公公会晒屁股，现在只能晒到脸hhhh。
+体检。填写入职相关材料。</p>
+<p><kbd>6.4</kbd>
+火化。
+爷爷姜作欣，初中语文老师，一生教书育人。他写了一辈子文章，关心国家，关心学生，关心家人，是个善良的人。于2024年6月2日上午去世，享年93岁。印象中，爷爷和我下象棋，把写过的文章分享给我，和我探讨最近的新闻。他是个基督教徒，也会给我讲圣经，愿亲爱的爷爷回归主怀。</p>
+<p><kbd>6.3</kbd>
+看望奶奶。
+被学校答辩抽检抽到，要求明天早上回学校。一下午时间联系导员，导师，教办。其中在教办的工作时间内，呼电不下20次，最后才接通。成功请假。经此一事，对学校的行政效率产生怀疑。其他感受不多说了。</p>
+<p><kbd>6.2</kbd>
+爷爷走了，请假回大连。</p>
+<p><kbd>6.1</kbd>
+1.下午去莫愁湖逛了一圈，风景很好，略惋惜此景无人共赏。
+2.许嵩在南京奥体演唱会，最后一首歌是《我乐意》，正如当年徒步跨海大桥时一样。
+3.给爸爸打个视频，爷爷当时一整天没说话，见到之后喊了声我的名字。爸爸差点哭了。</p>
 
 </section>
 
@@ -420,10 +388,6 @@ Spring Boot 2.0.1<br>
     <footer class="article-footer">
     
     <section class="article-tags">
-        
-            <a href="/tags/java/">Java</a>
-        
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
         
     </section>
 
@@ -454,48 +418,37 @@ Spring Boot 2.0.1<br>
             <div class="flex article-list--tile">
                 
                     
-<article class="has-image">
-    <a href="/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/">
+<article class="">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
         
-        
-            <div class="article-image">
-                <img src="/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/%E6%95%B4%E4%BD%93%E7%8E%AF%E5%A2%83.541f4c0bf36f0db7bd28d36874146230_hu47001e859e1e2bfd90b04234dd8b0aa3_3466838_250x150_fill_q75_box_smart1.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post 装系统之从0到100"
-                        
-                        data-hash="md5-VB9MC/NvDbe9KNNodBRiMA==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">装系统之从0到100</h2>
+            <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2022/java%E7%89%88%E6%9C%AC/">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Java版本</h2>
+            <h2 class="article-title">茄科生物观测日志2022.8</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2022/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E7%AF%87/">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.7/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">LNMP环境搭建成功篇</h2>
+            <h2 class="article-title">茄科生物观测日志2022.7</h2>
         </div>
     </a>
 </article>
