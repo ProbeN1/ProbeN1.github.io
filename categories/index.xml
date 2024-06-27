@@ -46,6 +46,14 @@
         <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
         <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/learn.jpg" alt="Featured image of post 整点小活" /&gt;</description>
         </item>
+        <item>
+        <title>数据库</title>
+        <link>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+        <description>&lt;img src="https://proben1.github.io/DBA.jpg" alt="Featured image of post 数据库" /&gt;</description>
+        </item>
         
     </channel>
 </rss>
