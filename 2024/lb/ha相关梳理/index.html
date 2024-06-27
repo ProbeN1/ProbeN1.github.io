@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 load-balancing 负载均衡 1、大量的并发访问或数据流量分担到多台节点设备上分别处理，减'><title>LB/HA相关梳理</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 Active-Standby 双机热备 主服务器运行应用，备份服务器处于空闲状态，但实时监测主服务器'><title>LB/HA相关梳理</title>
 
 <link rel='canonical' href='https://proben1.github.io/2024/lb/ha%E7%9B%B8%E5%85%B3%E6%A2%B3%E7%90%86/'>
 
 <link rel="stylesheet" href="/scss/style.min.9b1fc3b09cf11c2391a1bb047fd93317cd0f3be091b6c8d36d221829af5af94d.css"><meta property='og:title' content='LB/HA相关梳理'>
-<meta property='og:description' content='High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 load-balancing 负载均衡 1、大量的并发访问或数据流量分担到多台节点设备上分别处理，减'>
+<meta property='og:description' content='High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 Active-Standby 双机热备 主服务器运行应用，备份服务器处于空闲状态，但实时监测主服务器'>
 <meta property='og:url' content='https://proben1.github.io/2024/lb/ha%E7%9B%B8%E5%85%B3%E6%A2%B3%E7%90%86/'>
 <meta property='og:site_name' content='茄子的养殖场'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LB/HA高可用' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-06-25T08:33:08&#43;08:00'/><meta property='article:modified_time' content='2024-06-25T08:33:08&#43;08:00'/>
 <meta name="twitter:title" content="LB/HA相关梳理">
-<meta name="twitter:description" content="High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 load-balancing 负载均衡 1、大量的并发访问或数据流量分担到多台节点设备上分别处理，减">
+<meta name="twitter:description" content="High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划 High-Performance 高性能：快 Active-Standby 双机热备 主服务器运行应用，备份服务器处于空闲状态，但实时监测主服务器">
   
 
 <style>
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    2277字
+                    2403字
                 </time>
             </div>
         
@@ -331,13 +331,14 @@
     
     <p>High-Availability 高可用：通过设计减少系统不能提供服务的时间，简称有b计划</p>
 <p>High-Performance 高性能：快</p>
+<h3 id="active-standby-双机热备">Active-Standby 双机热备
+</h3><p>主服务器运行应用，备份服务器处于空闲状态，但实时监测主服务器的运行状态。一但主服务器出现异常或故障，备份服务器立刻接管主服务器的应用。</p>
+<h3 id="active-active-双机互备">Active-Active 双机互备
+</h3><p>两台服务器均为工作机，均为应用系统提供支持，同时还相互监测对方状况。当任一台主机宕机时，另一台主机主动接管异常机的应用，以保证业务的不间断运行（虽然加大了正常运行主机的负载）。最常见的例子：网站服务器</p>
 <h3 id="load-balancing-负载均衡">load-balancing 负载均衡
 </h3><p>1、大量的并发访问或数据流量分担到多台节点设备上分别处理，减少用户等待响应的时间</p>
 <p>2、单个重负载的运算分担到多台节点设备上做并行处理，每个节点设备处理结束后，将结果汇总</p>
-<h3 id="active-active-双机互备">Active-Active 双机互备
-</h3><p>两台主机互为备份。主机各自运行不同应用，同时还相互监测对方状况。当任一台主机宕机时，另一台主机立即接管它的应用，以保证业务的不间断运行。</p>
-<h3 id="active-standby-双机热备">Active-Standby 双机热备
-</h3><p>主服务器运行应用，备份服务器处于空闲状态，但实时监测主服务器的运行状态。一但主服务器出现异常或故障，备份服务器立刻接管主服务器的应用。</p>
+<p>Load-Balance就是Active Active的一种</p>
 <h3 id="cluster-群集">Cluster 群集
 </h3><p>多台主机一起工作，各自运行一个或几个服务。当某个主机发生故障时，运行在其上的服务就被其它主机接管。</p>
 <h3 id="split-brain-脑裂">split-brain 脑裂
@@ -350,8 +351,7 @@
 </h3><p>模式1：两台主机上运行的应用是同一种，但是可以互不关联相互独立完成。只需要配置好负载均衡，保证提供高性能的服务即可。</p>
 <p>模式2：两台主机上运行的应用是相关联的，一台产生的结果会对另一台影响。通过消息日志，存储到本地数据库或共享的消息队列，再通过业务规则自动发起作用。反过来，对于两台主机都要写入的数据，通过锁的方式，保证只有一台在输出。</p>
 <h3 id="q2在数据层面应用产生的数据怎么保证一致性">Q2:在数据层面，应用产生的数据，怎么保证一致性?
-</h3><p>节点层面：Oracle RAC（real application cluster）不同主机的 Oracle 实例节点同时访问同一个 Oracle 数据库，节点之间互相监控的运行状态，如果节点down掉，可以保证数据库实例仍然可用。而oracle 数据库所有的数据文件、联机日志文件、控制文件等均放在集群的共享存储设备上。
-这里的节点是一个个不同的数据库主机。</p>
+</h3><p>节点层面：Oracle RAC（Real Application Clusters）是Oracle数据库提供的一种数据库集群技术，专门用于实现数据库的高可用性和可扩展性。RAC允许多个数据库实例运行在不同的服务器上，共享访问相同的数据库文件，通过缓存融合（Cache Fusion）技术实现数据的一致性。RAC提供了连接负载均衡（Connection Balancing）和基于服务的负载均衡（Service-Based Load Balancing）两种方式来分散负载</p>
 <p>容灾层面：Data Guard。它是在主节点与备用节点间通过日志同步来保证数据的同步，可以实现数据库快速切换与灾难性恢复。这里的节点由是不同城市的机房组成。</p>
 <h3 id="q3从ingress来看北向进来的业务请求怎么做到尽量平均分摊到aa集群里的不同节点上基于什么规则去进行分发">Q3:从Ingress来看，北向进来的业务请求，怎么做到尽量平均分摊到AA集群里的不同节点上,基于什么规则去进行分发?
 </h3><p>通过负载均衡。包含三个方面：</p>
@@ -375,13 +375,13 @@
 <p><kbd>三层负载均衡（ip）</kbd></p>
 <p>一般采用虚拟IP地址方式，外部对虚拟的ip地址请求，负载均衡接收后分配后端实际的IP地址响应. (即一个ip对一个ip的转发, 端口全放开)</p>
 <p><kbd>四层负载均衡（tcp）</kbd></p>
-<p>在三次负载均衡的基础上，即从第四层&quot;传输层&quot;开始, 使用&quot;ip+port&quot;接收请求，再转发到对应的机器。
-<kbd>七层负载均衡（http）</kbd></p>
+<p>在三次负载均衡的基础上，即从第四层&quot;传输层&quot;开始, 使用&quot;ip+port&quot;接收请求，再转发到对应的机器。</p>
+<p><kbd>七层负载均衡（http）</kbd></p>
 <p>从第七层&quot;应用层&quot;开始, 根据虚拟的url或IP，主机名接收请求，再转向相应的处理服务器。</p>
 <p><strong>二层</strong>：链路聚合</p>
 <p><strong>四层</strong>：基于IP+端口的负载均衡</p>
-<p>在三层负载均衡的基础上，通过发布三层的IP地址（Virtual IP），然后加四层的端口号，来决定哪些流量需要做负载均衡，对需要处理的流量进行NAT处理，转发至后台服务器，并记录下这个TCP或者UDP的流量是由哪台服务器处理的，后续这个连接的所有流量都同样转发到同一台服务器处理。</p>
-<p>L4 switch，主要分析IP层及TCP/UDP层</p>
+<p>在三层负载均衡的基础上，通过发布三层的IP地址（Virtual IP），然后加四层的端口号，来决定哪些流量需要做负载均衡，对需要处理的流量进行NAT处理，转发至后台服务器，并记录下这个TCP或者UDP的流量是由哪台服务器处理的，后续这个连接的所有流量都同样转发到同一台服务器处理。
+L4 switch，主要分析IP层及TCP/UDP层</p>
 <p><strong>七层</strong>：基于虚拟的URL或主机IP的负载均衡</p>
 <p>在四层负载均衡的基础上（没有四层是绝对不可能有七层的），再考虑应用层的特征。比如：不同业务交给不同服务器，假设用户访问高流量网站，在会话期间，它可能会请求静态内容（例如图像或视频）、动态内容（例如新闻订阅源）或者交易信息（例如订单状态）等等。7层负载平衡允许负载均衡器根据请求本身中的消息（如内容类型）来路由请求。可以将对图像或视频的请求路由到存储它的服务器；可以将诸如折扣价之类的交易信息请求路由到负责管理定价的应用服务器…</p>
 
@@ -424,6 +424,18 @@
                 
                     
 <article class="">
+    <a href="/2024/keepalived-nginx%E9%83%A8%E7%BD%B2%E5%AE%9E%E9%AA%8C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Keepalived&#43;Nginx部署实验</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2024/%E8%8B%B1%E8%AF%AD%E5%8F%91%E9%9F%B3/">
         
         
@@ -446,18 +458,6 @@
     </a>
 </article>
                 
-                    
-<article class="">
-    <a href="/2022/java%E7%89%88%E6%9C%AC/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Java版本</h2>
-        </div>
-    </a>
-</article>
-                
             </div>
         </div>
     
@@ -469,6 +469,8 @@
     <footer class="site-footer">
   
 
+
+    
 
     
 
@@ -623,7 +625,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了92.1k字·共 63篇文章</br><span><p>
+      共书写了92.4k字·共 64篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -768,9 +770,9 @@ document.getElementById('days').innerHTML = number_of_days;
   <ol>
     <li>
       <ol>
-        <li><a href="#load-balancing-负载均衡">load-balancing 负载均衡</a></li>
-        <li><a href="#active-active-双机互备">Active-Active 双机互备</a></li>
         <li><a href="#active-standby-双机热备">Active-Standby 双机热备</a></li>
+        <li><a href="#active-active-双机互备">Active-Active 双机互备</a></li>
+        <li><a href="#load-balancing-负载均衡">load-balancing 负载均衡</a></li>
         <li><a href="#cluster-群集">Cluster 群集</a></li>
         <li><a href="#split-brain-脑裂">split-brain 脑裂</a></li>
         <li><a href="#反向代理">反向代理</a></li>
@@ -810,7 +812,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="category-list">
             <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">9</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">34</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">35</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">13</a>
             </span></div>
@@ -846,7 +848,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">16</span>
+                            <span class="count">17</span>
                         
                     </a> 
                 </div>
@@ -897,7 +899,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 CTF
             </a>
         
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_5">
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_6">
                 环境搭建
             </a>
         
@@ -915,6 +917,10 @@ document.getElementById('days').innerHTML = number_of_days;
         
             <a href="/tags/java/" class="font_size_2">
                 Java
+            </a>
+        
+            <a href="/tags/lb/ha%E9%AB%98%E5%8F%AF%E7%94%A8/" class="font_size_2">
+                LB/HA高可用
             </a>
         
             <a href="/tags/php/" class="font_size_2">
@@ -943,10 +949,6 @@ document.getElementById('days').innerHTML = number_of_days;
         
             <a href="/tags/git/" class="font_size_1">
                 Git
-            </a>
-        
-            <a href="/tags/lb/ha%E9%AB%98%E5%8F%AF%E7%94%A8/" class="font_size_1">
-                LB/HA高可用
             </a>
         
     </div>
