@@ -12,17 +12,136 @@
         <pubDate>Thu, 27 Jun 2024 09:37:07 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/keepalived-nginx%E9%83%A8%E7%BD%B2%E5%AE%9E%E9%AA%8C/</guid>
-        <description>&lt;h3 id=&#34;规划方案&#34;&gt;规划方案
+        <description>&lt;h3 id=&#34;keepalived简介&#34;&gt;Keepalived简介
+&lt;/h3&gt;&lt;p&gt;一个免费开源的轻量级别高可用解决方案，通过VRRP协议实现多台机器之间的故障转移服务。&lt;/p&gt;
+&lt;h3 id=&#34;规划方案&#34;&gt;规划方案
 &lt;/h3&gt;&lt;p&gt;master ：192.168.137.6&lt;/p&gt;
 &lt;p&gt;backup ：192.168.10.8&lt;/p&gt;
 &lt;p&gt;vip ：192.168.10.11&lt;/p&gt;
 &lt;p&gt;OS：CentOS Linux 7 (Core)&lt;/p&gt;
-&lt;p&gt;vip 上跑一个Nginx服务&lt;/p&gt;
+&lt;p&gt;网卡名都是ens34&lt;/p&gt;
+&lt;p&gt;实现：vip 上跑一个Nginx服务&lt;/p&gt;
+&lt;p&gt;思路：安装+配置+脚本+启动排错+验证&lt;/p&gt;
 &lt;h3 id=&#34;环境安装&#34;&gt;环境安装
 &lt;/h3&gt;&lt;p&gt;sudo yum -y install nginx&lt;/p&gt;
 &lt;p&gt;sudo yum -y install keepalive&lt;/p&gt;
 &lt;p&gt;主程序文件：/usr/sbin/keepalived.conf&lt;/p&gt;
 &lt;p&gt;主配置文件：/usr/sbin/keepalived.conf&lt;/p&gt;
+&lt;h3 id=&#34;服务配置&#34;&gt;服务配置
+&lt;/h3&gt;&lt;p&gt;master 和backup区别：配置中的state和priority不一样&lt;/p&gt;
+&lt;p&gt;master ：&lt;code&gt;vi /usr/sbin/keepalived.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vrrp_instance VI_1 {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    state MASTER
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    interface ens34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    virtual_router_id 51
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    priority 100
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    advert_int 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    authentication {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        auth_type PASS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        auth_pass 1111
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    virtual_ipaddress {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        192.168.137.11/24 dev ens34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    preempt delay 60
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vrrp_script chk_nginx_port {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	script &amp;#34;/opt/chk_nginx.sh&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	interval 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	weight -5
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	fall 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	rise 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;backup：vi /usr/sbin/keepalived.conf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vrrp_instance VI_1 {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    state BACKUP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    interface ens34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    virtual_router_id 51
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    priority 80
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    advert_int 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    authentication {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        auth_type PASS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        auth_pass 1111
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    virtual_ipaddress {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        192.168.137.11/24 dev ens34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    preempt delay 60
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vrrp_script chk_nginx_port {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	script &amp;#34;/opt/chk_nginx.sh&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	interval 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	weight -5
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	fall 2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	rise 1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;脚本配置&#34;&gt;脚本配置
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;vi /opt/chk_nginx.sh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#检测nginx是否启动了&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;A&lt;/span&gt;=&lt;span style=&#34;color:#2aa198&#34;&gt;`&lt;/span&gt;ps -C nginx --no-header |wc -l&lt;span style=&#34;color:#2aa198&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#如果nginx没有启动就启动nginx &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#268bd2&#34;&gt;$A&lt;/span&gt; -eq &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;0&lt;/span&gt; ];&lt;span style=&#34;color:#859900&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#重启nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#systemctl start nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;#nginx重启失败，则停掉keepalived服务，进行VIP转移&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#859900&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#2aa198&#34;&gt;`&lt;/span&gt;ps -C nginx --no-header |wc -l&lt;span style=&#34;color:#2aa198&#34;&gt;`&lt;/span&gt; -eq &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;0&lt;/span&gt; ];&lt;span style=&#34;color:#859900&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;           killall keepalived
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#859900&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;赋权：&lt;code&gt;chmod 775 /opt/chk_nginx.sh&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;启动排错&#34;&gt;启动排错
+&lt;/h3&gt;&lt;p&gt;systemctl start nginx&lt;/p&gt;
+&lt;p&gt;systemctl start keepalived&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;ip a&lt;/code&gt;可以发现vip没有启动&lt;/p&gt;
+&lt;p&gt;systemctl status keepalived 查看状态，发现很多中文的空格未识别，修改配置文件，删去空格，重试&lt;/p&gt;
+&lt;p&gt;systemctl restart keepalived&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;ip a&lt;/code&gt;可以发现vip已经启动&lt;/p&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667cce87d9c307b7e9cf73f4.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667cce87d9c307b7e9cf73f4.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;验证&#34;&gt;验证
+&lt;/h3&gt;&lt;p&gt;通过ip&lt;code&gt;192.168.137.11&lt;/code&gt;可以看到nginx欢迎界面，我们在主备上修改这个界面&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; vi /usr/share/nginx/html/index.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;分别在&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;后加上111和222&lt;/p&gt;
+&lt;p&gt;访问192.168.137.11可以看到111&lt;/p&gt;
+&lt;p&gt;systemctl stop keepalived关闭主机1的keepalived服务&lt;/p&gt;
+&lt;p&gt;再次访问192.168.137.11可以看到222&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667cd01fd9c307b7e9d1e3d5.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667cd01fd9c307b7e9d1e3d5.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;重新开启&lt;/p&gt;
+&lt;p&gt;变回111&lt;/p&gt;
+&lt;p&gt;验证成功&lt;/p&gt;
 </description>
         </item>
         <item>
