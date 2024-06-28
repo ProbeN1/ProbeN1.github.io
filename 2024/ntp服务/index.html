@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='以太网连接介质 铜缆 铜缆又称为双绞线，双绞线的外部是外套，两端使用RJ-45的标准制作接口。 直连线：两端线序相同；交叉线：两端线序不同 对于同种'><title>以太网基础</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='网络时间协议NTP（Network Time Protocol）是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高'><title>NTP服务</title>
 
-<link rel='canonical' href='https://proben1.github.io/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/'>
+<link rel='canonical' href='https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='以太网基础'>
-<meta property='og:description' content='以太网连接介质 铜缆 铜缆又称为双绞线，双绞线的外部是外套，两端使用RJ-45的标准制作接口。 直连线：两端线序相同；交叉线：两端线序不同 对于同种'>
-<meta property='og:url' content='https://proben1.github.io/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='NTP服务'>
+<meta property='og:description' content='网络时间协议NTP（Network Time Protocol）是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高'>
+<meta property='og:url' content='https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-13T14:25:51&#43;08:00'/><meta property='article:modified_time' content='2024-05-13T14:25:51&#43;08:00'/>
-<meta name="twitter:title" content="以太网基础">
-<meta name="twitter:description" content="以太网连接介质 铜缆 铜缆又称为双绞线，双绞线的外部是外套，两端使用RJ-45的标准制作接口。 直连线：两端线序相同；交叉线：两端线序不同 对于同种">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-06-28T10:53:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-28T10:53:01&#43;08:00'/>
+<meta name="twitter:title" content="NTP服务">
+<meta name="twitter:description" content="网络时间协议NTP（Network Time Protocol）是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高">
   
 
 <style>
@@ -59,7 +59,7 @@
 </script>
 <div class="container main-container flex 
     <!-- 
-        extended
+        on-phone--column extended
      -->
     on-phone--column extended
 ">
@@ -276,15 +276,15 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%BD%91%E7%BB%9C/" style="background-color: #2a9d8f; color: #fff;">
-                网络
+            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
+                Linux
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2024/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E7%A1%80/">以太网基础</a>
+        <a href="/2024/ntp%E6%9C%8D%E5%8A%A1/">NTP服务</a>
     </h2>
 
     
@@ -302,7 +302,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 13, 2024</time>
+                <time class="article-time--published">Jun 28, 2024</time>
             </div>
         
 
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    2110字
+                    376字
                 </time>
             </div>
         
@@ -329,85 +329,19 @@
     <section class="article-content">
     
     
-    <h3 id="以太网连接介质">以太网连接介质
-</h3><p><strong>铜缆</strong></p>
-<p>铜缆又称为双绞线，双绞线的外部是外套，两端使用RJ-45的标准制作接口。
-直连线：两端线序相同；交叉线：两端线序不同
-对于同种设备之间的连线，要使用交叉线，不同设备的连接，要使用直连线</p>
-<p><strong>光纤</strong></p>
-<p>LC-LC接口，用于SFP模块</p>
-<h3 id="单播广播组播">单播、广播、组播
-</h3><p><strong>单播</strong>
-每次只有两个实体相互通信，发送端和接收端都是唯一确定的。</p>
-<p><strong>广播</strong>
-一个主机向网上的所有其他主机发送帧</p>
-<p><strong>组播</strong>
-组播帧仅传送给属于组的多个主机.</p>
-<h3 id="交换机工作原理">交换机工作原理
-</h3><h4 id="泛洪">泛洪
-</h4><p>交换机没有在MAC地址表中找到和目标MAC地址匹配的记录，则交换机将数据帧发送到自己的全部端口，也就是&quot;广播&quot;给下游的所有设备；下游设备也会检查Header，如果发现目标MAC地址和自己的不符，则会默默丢弃。</p>
-<h4 id="学习">学习
-</h4><p>交换机其中一个主要功能是维护一个 MAC 地址表，将每个交换机端口与所连接设备的 MAC 地址建立映射关系。交换机的MAC地址表一开始是空的，因此每次当交换机接收到数据帧时，都会查看Header，将数据帧中的源MAC地址和接收到数据帧的端口进行映射，并存储在自己的MAC地址表中。慢慢地，每个连接到交换机的设备都会发出一些数据，MAC地址表中的记录会逐渐增加，直到这个局域网下的所有设备的MAC地址和端口映射都存储到了自己的MAC地址表中。因此，交换机只会将数据帧的发送方的MAC地址存储在MAC地址表，对于所有在表中没有记录的MAC地址，会一律使用泛洪作为应对。</p>
-<h4 id="转发">转发
-</h4><p>交换机在MAC地址表中找到和目标MAC地址匹配的记录，交换机将数据帧转发到对应的端口。</p>
-<h4 id="过滤">过滤
-</h4><p>基本上只有泛洪功能会依赖过滤。过滤主要是为了防止数据帧在泛洪时被发回给来源端口。</p>
-<h3 id="vlan">VLAN
-</h3><p>LAN，局域网。全称为Local Area Network。
-广播域：数据帧能到达的范围
-突域：数据发送可能产生冲突的范围</p>
-<p>VLAN，(Virtual LAN) 虚拟局域网。
-VLAN 通过在以太网帧中的地址和类型之间新增了一个字段，字段中定义了VLAN ID。
-VLAN ID 区间为 0 到 4095，其中0和4095是保留的，VLAN 1是交换机默认存在的，并且所有接口默认是处于VLAN 1。一个初始化无任何配置的交换机，我们只需要把设备的接口接入交换机，那么这些设备默认都处于VLAN 1
-一个 VLAN 就是一个广播域，所以处于一个 VLAN 的所有设备可以互相通信。 不同 VLAN 之间的设备无法互相通信，当一个二层设备接收到二层的以太网帧时，会对以太网帧进行拆分检查，如果查到这个 VLAN ID 不是自己需要转发的，就会将这个二层的以太网帧丢弃。这样VLAN就做到了对广播域的分割。</p>
-<h3 id="端口模式">端口模式
-</h3><p>Tag，untag：untag 就是普通的 ethernet 报文，tag 报文被交换机加上了 4bytes 的vlan 信息（包含PVID）</p>
-<p>
-
-
-<div class="notice notice-note" >
-    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Access</p></div>
-
-只能属于1个VLAN，有自己的VLAN ID，且该端口不打tag，一般用于连接计算机端口；</p>
-<p>
-
-
-<div class="notice notice-note" >
-    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Trunk</p></div>
-
-中继口，Trunk口用于传输二层的以太网帧，一个Trunk口可以传输多个VLAN。可以允许多个VLAN通过，且该端口打tag(PVID)，一般用于交换机之间的连接；
-本征Vlan是针对Trunk中继链路而言，在trunk链路中默认是非Native vlan 带着Tag标签通过的。为了使传输以太网帧不带Tag标签而引入Native vlan的概念，其作用就是为兼容一些不支持Vlan的设备（比较早的设备或者一些无线AP) 或者不能打Tag标签的协议（如stp等等）。</p>
-<p>例如：trunk口允许10,20,30通过，带着10tag的帧可以通过，11tag的不行。而直连在trunk上的特殊设备，帧会被打上本征Vlan的tag。</p>
-<p>
-
-
-<div class="notice notice-note" >
-    <div class="notice-title"><svg xmlns="http://www.w3.org/2000/svg" class="icon notice-icon" viewBox="0 0 512 512"><path d="M504 256a248 248 0 11-496 0 248 248 0 01496 0zm-248 50a46 46 0 100 92 46 46 0 000-92zm-44-165l8 136c0 6 5 11 12 11h48c7 0 12-5 12-11l8-136c0-7-5-13-12-13h-64c-7 0-12 6-12 13z"/></svg></div><p>Hybrid</p></div>
-
-Hybrid端口允许多个VLAN的报文发送时不打标签，而Trunk端口只允许本征VLAN的报文发送时不打标签。同一个交换机上不能 hybrid 和 trunk 并存。</p>
-<h3 id="生成树协议">生成树协议
-</h3><p>环路造成的问题：</p>
-<ol>
-<li>广播风暴：因为没有环路的抑制机制，每台交换机都会泛洪无尽的广播包。</li>
-<li>多帧传输：帧的传输在到达目的站之前会无限的走下去，引起网络的堵塞</li>
-<li>MAC地址表不稳定：由于交换机上不同端口上接收相同帧的多个副本，造成MAC表的抖动</li>
-</ol>
-<p>生成树协议（Spanning Tree Protocol）：将局域网中所有可能产生环路的拓扑，通过所有相关设备的选举，抑制某些端口的数据转发，实现消除环路的功能。当任意一交换机中存在到达根网桥有两条或两条以上的链路时，STP会根据算法仅保留一条链路，切断其他链路，从而保证任意两个交换机之间只有一条单一的活动链路。这种生成的拓扑结构类似于以根交换机为树干的树形结构，因此被称为生成树协议。</p>
-<p>生成树是如何产生的？</p>
-<ol>
-<li>选择一个根网桥（Root Switch），在一个广播域中只有一个根网桥</li>
-<li>根据最低路径成本来为每个非根网桥选择根端口（Root Port，RP），根端口显示到根网桥的最佳路径方向</li>
-<li>根据最低路径成本选择每个网段的指定端口（DP），每个链路只有一个指定端口</li>
-<li>根端口和指定端口转换到转发状态，其它端口变为阻塞状态</li>
-</ol>
-<p>常见的生成树类型：</p>
-<ul>
-<li>STP协议，最常见，也是最初的生成树协议，对于STP来说，<strong>所有VLAN属于一个生成树</strong></li>
-<li>MSTP协议，常用的生成树协议，对于MSTP来说，<strong>可以依据VLAN划分不同的生成树</strong></li>
-<li>HSTP/RSTP协议，STP协议的快速版本（生成树收敛的速度）</li>
-<li>快速MSTP协议，顾名思义，MSTP的快速版本</li>
-</ul>
-
+    <p>网络时间协议NTP（Network Time Protocol）<strong>是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高精准度的时间校正</strong>。 NTP服务器从权威时钟源（例如原子钟、GPS）接收精确的协调世界时UTC，客户端再从服务器请求和接收时间。</p>
+<p>在以前，ntp服务使用ntpd（“d” stands for “Daemon”），现在使用chronyd，它使用连续修正（通过减慢时钟或者加快时钟的方式连续的修正）而非直接调整时间，不会出现间断，并且比ntpd更加精准。</p>
+<p>对于机房内的机器，可以采用二级时间校正，即配置一台连接权威时钟源chronyd服务器后，通过这台服务器像其他客户端提供chronyd服务。</p>
+<p>配置命令如下，首先确保ntpd的关闭，systemctl is-enabled ntpd</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>echo &#39;server 10.xxx.xxx.xxx iburst&#39; &gt;&gt; /etc/chrony.conf
+</span></span><span style="display:flex;"><span>systemctl restart chronyd
+</span></span></code></pre></div><p>可以通过多种方式查看chronyd服务的开启或者状态：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>system status chronyd
+</span></span><span style="display:flex;"><span>date
+</span></span><span style="display:flex;"><span>chronyc tracking
+</span></span><span style="display:flex;"><span>timedatectl
+</span></span><span style="display:flex;"><span>chronyc sourcestats
+</span></span></code></pre></div>
 </section>
 
 
@@ -445,36 +379,36 @@ Hybrid端口允许多个VLAN的报文发送时不打标签，而Trunk端口只�
                 
                     
 <article class="">
-    <a href="/2024/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">网络基础</h2>
+            <h2 class="article-title">Linux变量</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2024/ntp%E6%9C%8D%E5%8A%A1/">
+    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">NTP服务</h2>
+            <h2 class="article-title">本地yum源配置</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/">
+    <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E9%87%8D%E5%AE%9A%E5%90%91/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2024.6</h2>
+            <h2 class="article-title">Linux概念知识 重定向</h2>
         </div>
     </a>
 </article>
@@ -775,46 +709,6 @@ document.getElementById('days').innerHTML = number_of_days;
     </form>
         
             
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#以太网连接介质">以太网连接介质</a></li>
-        <li><a href="#单播广播组播">单播、广播、组播</a></li>
-        <li><a href="#交换机工作原理">交换机工作原理</a>
-          <ol>
-            <li><a href="#泛洪">泛洪</a></li>
-            <li><a href="#学习">学习</a></li>
-            <li><a href="#转发">转发</a></li>
-            <li><a href="#过滤">过滤</a></li>
-          </ol>
-        </li>
-        <li><a href="#vlan">VLAN</a></li>
-        <li><a href="#端口模式">端口模式</a></li>
-        <li><a href="#生成树协议">生成树协议</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
         
             <section class="widget categories">
         <div class="widget-icon">

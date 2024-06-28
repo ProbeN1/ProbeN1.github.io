@@ -6,7 +6,15 @@
         <description>Recent content in Categories on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 27 Jun 2024 11:15:24 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 28 Jun 2024 10:53:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux</title>
+        <link>https://proben1.github.io/categories/linux/</link>
+        <pubDate>Fri, 28 Jun 2024 10:53:01 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/linux/</guid>
+        <description>&lt;img src="https://proben1.github.io/categories/linux/Linux.jpg" alt="Featured image of post Linux" /&gt;</description>
+        </item>
+        <item>
         <title>学习笔记</title>
         <link>https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Thu, 27 Jun 2024 11:15:24 +0800</pubDate>
@@ -21,14 +29,6 @@
         
         <guid>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</guid>
         <description>&lt;img src="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/littleblue.jpg" alt="Featured image of post 小人联合工会内部资料" /&gt;</description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://proben1.github.io/categories/linux/</link>
-        <pubDate>Tue, 21 May 2024 15:50:07 +0800</pubDate>
-        
-        <guid>https://proben1.github.io/categories/linux/</guid>
-        <description>&lt;img src="https://proben1.github.io/categories/linux/Linux.jpg" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>网络</title>

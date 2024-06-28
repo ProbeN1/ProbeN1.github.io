@@ -6,7 +6,27 @@
         <description>Recent content in Linux on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 21 May 2024 15:50:07 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 28 Jun 2024 10:53:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>NTP服务</title>
+        <link>https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/</link>
+        <pubDate>Fri, 28 Jun 2024 10:53:01 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/</guid>
+        <description>&lt;p&gt;网络时间协议NTP（Network Time Protocol）&lt;strong&gt;是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高精准度的时间校正&lt;/strong&gt;。 NTP服务器从权威时钟源（例如原子钟、GPS）接收精确的协调世界时UTC，客户端再从服务器请求和接收时间。&lt;/p&gt;
+&lt;p&gt;在以前，ntp服务使用ntpd（“d” stands for “Daemon”），现在使用chronyd，它使用连续修正（通过减慢时钟或者加快时钟的方式连续的修正）而非直接调整时间，不会出现间断，并且比ntpd更加精准。&lt;/p&gt;
+&lt;p&gt;对于机房内的机器，可以采用二级时间校正，即配置一台连接权威时钟源chronyd服务器后，通过这台服务器像其他客户端提供chronyd服务。&lt;/p&gt;
+&lt;p&gt;配置命令如下，首先确保ntpd的关闭，systemctl is-enabled ntpd&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &amp;#39;server 10.xxx.xxx.xxx iburst&amp;#39; &amp;gt;&amp;gt; /etc/chrony.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart chronyd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以通过多种方式查看chronyd服务的开启或者状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;system status chronyd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chronyc tracking
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;timedatectl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chronyc sourcestats
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Linux变量</title>
         <link>https://proben1.github.io/2024/linux%E5%8F%98%E9%87%8F/</link>
         <pubDate>Tue, 21 May 2024 15:50:07 +0800</pubDate>

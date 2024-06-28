@@ -12,7 +12,85 @@
         <pubDate>Thu, 27 Jun 2024 11:15:24 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/vmware%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</guid>
-        <description></description>
+        <description>&lt;p&gt;从大一就开始装虚拟机，苦其网络久已，今日学成归来，我观虚拟网络，如插标卖首！&lt;/p&gt;
+&lt;h3 id=&#34;类别&#34;&gt;类别
+&lt;/h3&gt;&lt;p&gt;VMware虚拟机常见的网络类型有**bridged（桥接）、NAT（地址转换）、host-only（仅主机）**三种。&lt;/p&gt;
+&lt;h4 id=&#34;host-only&#34;&gt;host-only
+&lt;/h4&gt;&lt;p&gt;虚拟机的网卡会连接到宿主的VMnet1上，宿主系统并不为虚拟机提供任何路由服务，因此虚拟机只能和宿主机进行通信，不能连接到实际网络上。好处是可以配置静态ip是不局限于同一个网段，可以作为虚机之间的心跳线使用。&lt;/p&gt;
+&lt;h4 id=&#34;bridged&#34;&gt;Bridged
+&lt;/h4&gt;&lt;p&gt;桥接模式直接把虚机连入到了实际网络中，被分配与物理主机相同网段的独立IP，和网内真实计算机所处的网络位置是一样的。&lt;/p&gt;
+&lt;p&gt;但是一般情况下，真实机器都采用dhcp的方式接入网络，换了个地理位置，就换了个ip，不适合需要配静态IP的虚机。&lt;/p&gt;
+&lt;h4 id=&#34;nat&#34;&gt;NAT
+&lt;/h4&gt;&lt;p&gt;NAT（Network Address Translation），网络地址转换，虚拟机的网卡连接到宿主机的VMnet8上，采用主机上的VMware NAT Service服务充当路由器，将虚拟机发到VMnet8的包进行地址转换之后发到实际的网络上，再将实际网络上返回的包进行地址转换后通过VMnet8发送给虚拟机。&lt;/p&gt;
+&lt;p&gt;这种情况下，可以采用dhcp的方式分配给虚机VMnet8的IP，也可以手动静态规划。宿主机外界IP的变化不会影响到VMnet8内的IP，非常的方便和稳定。&lt;/p&gt;
+&lt;p&gt;下面采取最稳定的方式，配置VMnet8内的静态IP，实现虚机一直通网。&lt;/p&gt;
+&lt;h3 id=&#34;外部配置&#34;&gt;外部配置
+&lt;/h3&gt;&lt;p&gt;VMnet8网段规划：&lt;/p&gt;
+&lt;p&gt;网段：192.168.137.0/24&lt;/p&gt;
+&lt;p&gt;宿主机：192.168.137.1&lt;/p&gt;
+&lt;p&gt;网关：192.168.137.2&lt;/p&gt;
+&lt;p&gt;虚拟机：192.168.137.3—254&lt;/p&gt;
+&lt;p&gt;在虚拟网络编辑器中确认VMnet8的子网IP和子网掩码&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;打开电脑的网络和共享中心，更改网络适配器，选择VMnet8网卡，更改宿主机的在VMnet8卡里的IP，网关和DNS&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;打开宿主机和外界通网的真正网卡，设置允许共享给VMnet8网卡&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;外部配置完成。&lt;/p&gt;
+&lt;h3 id=&#34;内部配置&#34;&gt;内部配置
+&lt;/h3&gt;&lt;p&gt;安装好虚拟机后，ip a查看网卡，这时应该会在装系统的时候被配一个dhcp的IP，我们将它替换成静态IP。&lt;/p&gt;
+&lt;p&gt;找到你想配置虚拟机的网卡名称后，这里以ens160为例：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;更改BOOTPROTO为static&lt;/p&gt;
+&lt;p&gt;更改ONBOOT为yes&lt;/p&gt;
+&lt;p&gt;加上你想要的IP地址&lt;/p&gt;
+&lt;p&gt;systemctl restart NetworkManager（或者network，看机型不同重启不同的网路服务）&lt;/p&gt;
+&lt;p&gt;结束！&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Keepalived&#43;Nginx部署实验</title>

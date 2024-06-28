@@ -59,7 +59,7 @@
 </script>
 <div class="container main-container flex 
     <!-- 
-        on-phone--column extended
+        extended
      -->
     on-phone--column extended
 ">
@@ -321,7 +321,7 @@
 
 
                 <time class="article-words">
-                    0字
+                    956字
                 </time>
             </div>
         
@@ -333,7 +333,85 @@
     <section class="article-content">
     
     
-    
+    <p>从大一就开始装虚拟机，苦其网络久已，今日学成归来，我观虚拟网络，如插标卖首！</p>
+<h3 id="类别">类别
+</h3><p>VMware虚拟机常见的网络类型有**bridged（桥接）、NAT（地址转换）、host-only（仅主机）**三种。</p>
+<h4 id="host-only">host-only
+</h4><p>虚拟机的网卡会连接到宿主的VMnet1上，宿主系统并不为虚拟机提供任何路由服务，因此虚拟机只能和宿主机进行通信，不能连接到实际网络上。好处是可以配置静态ip是不局限于同一个网段，可以作为虚机之间的心跳线使用。</p>
+<h4 id="bridged">Bridged
+</h4><p>桥接模式直接把虚机连入到了实际网络中，被分配与物理主机相同网段的独立IP，和网内真实计算机所处的网络位置是一样的。</p>
+<p>但是一般情况下，真实机器都采用dhcp的方式接入网络，换了个地理位置，就换了个ip，不适合需要配静态IP的虚机。</p>
+<h4 id="nat">NAT
+</h4><p>NAT（Network Address Translation），网络地址转换，虚拟机的网卡连接到宿主机的VMnet8上，采用主机上的VMware NAT Service服务充当路由器，将虚拟机发到VMnet8的包进行地址转换之后发到实际的网络上，再将实际网络上返回的包进行地址转换后通过VMnet8发送给虚拟机。</p>
+<p>这种情况下，可以采用dhcp的方式分配给虚机VMnet8的IP，也可以手动静态规划。宿主机外界IP的变化不会影响到VMnet8内的IP，非常的方便和稳定。</p>
+<p>下面采取最稳定的方式，配置VMnet8内的静态IP，实现虚机一直通网。</p>
+<h3 id="外部配置">外部配置
+</h3><p>VMnet8网段规划：</p>
+<p>网段：192.168.137.0/24</p>
+<p>宿主机：192.168.137.1</p>
+<p>网关：192.168.137.2</p>
+<p>虚拟机：192.168.137.3—254</p>
+<p>在虚拟网络编辑器中确认VMnet8的子网IP和子网掩码</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png" >
+		<img src="https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>打开电脑的网络和共享中心，更改网络适配器，选择VMnet8网卡，更改宿主机的在VMnet8卡里的IP，网关和DNS</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png" >
+		<img src="https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>打开宿主机和外界通网的真正网卡，设置允许共享给VMnet8网卡</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png" >
+		<img src="https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>外部配置完成。</p>
+<h3 id="内部配置">内部配置
+</h3><p>安装好虚拟机后，ip a查看网卡，这时应该会在装系统的时候被配一个dhcp的IP，我们将它替换成静态IP。</p>
+<p>找到你想配置虚拟机的网卡名称后，这里以ens160为例：</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png" >
+		<img src="https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>更改BOOTPROTO为static</p>
+<p>更改ONBOOT为yes</p>
+<p>加上你想要的IP地址</p>
+<p>systemctl restart NetworkManager（或者network，看机型不同重启不同的网路服务）</p>
+<p>结束！</p>
+
 </section>
 
 
@@ -557,6 +635,8 @@
 
     
 
+    
+
 
 <script>
 (function(u, c) {
@@ -576,7 +656,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了93k字·共 65篇文章</br><span><p>
+      共书写了94.5k字·共 66篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -701,6 +781,42 @@ document.getElementById('days').innerHTML = number_of_days;
     </form>
         
             
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#类别">类别</a>
+          <ol>
+            <li><a href="#host-only">host-only</a></li>
+            <li><a href="#bridged">Bridged</a></li>
+            <li><a href="#nat">NAT</a></li>
+          </ol>
+        </li>
+        <li><a href="#外部配置">外部配置</a></li>
+        <li><a href="#内部配置">内部配置</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
         
             <section class="widget categories">
         <div class="widget-icon">
@@ -718,7 +834,7 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">9</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">10</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">36</a>
             </span></div>
@@ -830,7 +946,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">18</span>
+                            <span class="count">19</span>
                         
                     </a> 
                 </div>

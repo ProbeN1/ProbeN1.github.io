@@ -6,7 +6,7 @@
         <description>Recent content in Posts on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 27 Jun 2024 11:15:24 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 28 Jun 2024 10:53:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>技术学习与团队成长</title>
         <link>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</link>
         <pubDate>Tue, 21 May 2024 17:55:29 +0800</pubDate>
@@ -68,12 +68,110 @@
 </description>
         </item>
         <item>
+        <title>NTP服务</title>
+        <link>https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/</link>
+        <pubDate>Fri, 28 Jun 2024 10:53:01 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/</guid>
+        <description>&lt;p&gt;网络时间协议NTP（Network Time Protocol）&lt;strong&gt;是TCP/IP协议族里面的一个应用层协议，用来使客户端和服务器之间进行时钟同步，提供高精准度的时间校正&lt;/strong&gt;。 NTP服务器从权威时钟源（例如原子钟、GPS）接收精确的协调世界时UTC，客户端再从服务器请求和接收时间。&lt;/p&gt;
+&lt;p&gt;在以前，ntp服务使用ntpd（“d” stands for “Daemon”），现在使用chronyd，它使用连续修正（通过减慢时钟或者加快时钟的方式连续的修正）而非直接调整时间，不会出现间断，并且比ntpd更加精准。&lt;/p&gt;
+&lt;p&gt;对于机房内的机器，可以采用二级时间校正，即配置一台连接权威时钟源chronyd服务器后，通过这台服务器像其他客户端提供chronyd服务。&lt;/p&gt;
+&lt;p&gt;配置命令如下，首先确保ntpd的关闭，systemctl is-enabled ntpd&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &amp;#39;server 10.xxx.xxx.xxx iburst&amp;#39; &amp;gt;&amp;gt; /etc/chrony.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart chronyd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以通过多种方式查看chronyd服务的开启或者状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;system status chronyd
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chronyc tracking
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;timedatectl
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chronyc sourcestats
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>VMware网络配置详解</title>
         <link>https://proben1.github.io/2024/vmware%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Thu, 27 Jun 2024 11:15:24 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/vmware%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/</guid>
-        <description></description>
+        <description>&lt;p&gt;从大一就开始装虚拟机，苦其网络久已，今日学成归来，我观虚拟网络，如插标卖首！&lt;/p&gt;
+&lt;h3 id=&#34;类别&#34;&gt;类别
+&lt;/h3&gt;&lt;p&gt;VMware虚拟机常见的网络类型有**bridged（桥接）、NAT（地址转换）、host-only（仅主机）**三种。&lt;/p&gt;
+&lt;h4 id=&#34;host-only&#34;&gt;host-only
+&lt;/h4&gt;&lt;p&gt;虚拟机的网卡会连接到宿主的VMnet1上，宿主系统并不为虚拟机提供任何路由服务，因此虚拟机只能和宿主机进行通信，不能连接到实际网络上。好处是可以配置静态ip是不局限于同一个网段，可以作为虚机之间的心跳线使用。&lt;/p&gt;
+&lt;h4 id=&#34;bridged&#34;&gt;Bridged
+&lt;/h4&gt;&lt;p&gt;桥接模式直接把虚机连入到了实际网络中，被分配与物理主机相同网段的独立IP，和网内真实计算机所处的网络位置是一样的。&lt;/p&gt;
+&lt;p&gt;但是一般情况下，真实机器都采用dhcp的方式接入网络，换了个地理位置，就换了个ip，不适合需要配静态IP的虚机。&lt;/p&gt;
+&lt;h4 id=&#34;nat&#34;&gt;NAT
+&lt;/h4&gt;&lt;p&gt;NAT（Network Address Translation），网络地址转换，虚拟机的网卡连接到宿主机的VMnet8上，采用主机上的VMware NAT Service服务充当路由器，将虚拟机发到VMnet8的包进行地址转换之后发到实际的网络上，再将实际网络上返回的包进行地址转换后通过VMnet8发送给虚拟机。&lt;/p&gt;
+&lt;p&gt;这种情况下，可以采用dhcp的方式分配给虚机VMnet8的IP，也可以手动静态规划。宿主机外界IP的变化不会影响到VMnet8内的IP，非常的方便和稳定。&lt;/p&gt;
+&lt;p&gt;下面采取最稳定的方式，配置VMnet8内的静态IP，实现虚机一直通网。&lt;/p&gt;
+&lt;h3 id=&#34;外部配置&#34;&gt;外部配置
+&lt;/h3&gt;&lt;p&gt;VMnet8网段规划：&lt;/p&gt;
+&lt;p&gt;网段：192.168.137.0/24&lt;/p&gt;
+&lt;p&gt;宿主机：192.168.137.1&lt;/p&gt;
+&lt;p&gt;网关：192.168.137.2&lt;/p&gt;
+&lt;p&gt;虚拟机：192.168.137.3—254&lt;/p&gt;
+&lt;p&gt;在虚拟网络编辑器中确认VMnet8的子网IP和子网掩码&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1062.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;打开电脑的网络和共享中心，更改网络适配器，选择VMnet8网卡，更改宿主机的在VMnet8卡里的IP，网关和DNS&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b1149.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;打开宿主机和外界通网的真正网卡，设置允许共享给VMnet8网卡&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e8533d9c307b7e98b11fc.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;外部配置完成。&lt;/p&gt;
+&lt;h3 id=&#34;内部配置&#34;&gt;内部配置
+&lt;/h3&gt;&lt;p&gt;安装好虚拟机后，ip a查看网卡，这时应该会在装系统的时候被配一个dhcp的IP，我们将它替换成静态IP。&lt;/p&gt;
+&lt;p&gt;找到你想配置虚拟机的网卡名称后，这里以ens160为例：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/667e870ad9c307b7e98fd495.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;更改BOOTPROTO为static&lt;/p&gt;
+&lt;p&gt;更改ONBOOT为yes&lt;/p&gt;
+&lt;p&gt;加上你想要的IP地址&lt;/p&gt;
+&lt;p&gt;systemctl restart NetworkManager（或者network，看机型不同重启不同的网路服务）&lt;/p&gt;
+&lt;p&gt;结束！&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Keepalived&#43;Nginx部署实验</title>
@@ -283,7 +381,7 @@ L4 switch，主要分析IP层及TCP/UDP层&lt;/p&gt;
         
         <guid>https://proben1.github.io/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/</guid>
         <description>&lt;p&gt;2024.6&lt;/p&gt;
-&lt;p&gt;总结：诸事不顺，还好一点点平推了所有不顺。&lt;/p&gt;
+&lt;p&gt;总结：诸事不顺，但是平推了所有不顺。&lt;/p&gt;
 &lt;p&gt;需要提升：
 英语正式演讲能力
 加强心理承受能力，同时少点生气
@@ -299,6 +397,11 @@ L4 switch，主要分析IP层及TCP/UDP层&lt;/p&gt;
 去办事也要像准备工作文档一样，用全力去准备。
 你觉得你的方案万无一失，实际上并不是。你需要在详尽准备计划A的同时，思考哪个环节可能出现问题，并根据可能出现的问题做好计划B、C&amp;hellip;&amp;hellip;比如今天，如果我提前准备了几个大银行的去处，而不是死磕中国银行，就不会出现这种情况。如果我提前查了社保局，就会发现社保局周六上班，我就可以不用死磕周天。实在不行，可以周一周二请假去办理，都不会出现现在这种卡死在流程上的情况。&lt;/p&gt;
 &lt;p&gt;以后去办事，一定要想多些方案，不要只准备一个，死磕到底。&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;6.29&lt;/kbd&gt;&lt;/p&gt;
+&lt;p&gt;Jane来南京，和他好好玩玩。&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;6.24-6.28&lt;/kbd&gt;&lt;/p&gt;
+&lt;p&gt;进入了半工半学的状态，换了座位，每天也有被分配任务，工作效率逐渐重要了起来，不然每天14小时work+study也会把task拖到明天。&lt;/p&gt;
+&lt;p&gt;写了个超长的部署脚本，只需要复制到xshell里，就可以解放双手，体会到屏幕狂刷代码的多巴胺分泌，最后再按下巨大的Enter键，完成荡气回肠的logout。&lt;/p&gt;
 &lt;p&gt;&lt;kbd&gt;6.17-6.23&lt;/kbd&gt;&lt;/p&gt;
 &lt;p&gt;疯狂补齐落下的学习进度，在委托同学帮忙论文验收和归档，培训的课程、考试和presentation之间大脑多线程运作。每天七点起来，晚上赶着末班车back，周末准备周一的实操考试，办个社保卡还没办好。已经不能用充实来形容了，我感觉这几天人发生了某种蜕化，失去了几乎所有的内耗，和人交流不再迟疑。每天都干了很多事情，但是只能记住重要的事情，比如考试节点等等，回过神来发现社交软件有一堆对话，论文归档远程整完了，甚至自己还办了张流量卡hhh。&lt;/p&gt;
 &lt;p&gt;&lt;kbd&gt;6.12—6.16&lt;/kbd&gt;&lt;/p&gt;
