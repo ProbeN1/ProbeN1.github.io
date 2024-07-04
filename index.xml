@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 03 Jul 2024 14:48:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 Jul 2024 09:44:37 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>六月二十九日晚</title>
         <link>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</link>
         <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
@@ -131,21 +131,48 @@
 </description>
         </item>
         <item>
+        <title>Oracle细节知识整理</title>
+        <link>https://proben1.github.io/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</link>
+        <pubDate>Thu, 04 Jul 2024 09:44:37 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</guid>
+        <description>&lt;h3 id=&#34;自动共享管理内存-asmm&#34;&gt;&lt;strong&gt;自动共享管理内存&lt;/strong&gt; ASMM
+&lt;/h3&gt;&lt;p&gt;从 Oracle 10g 开始，Oracle 提供了自动 SGA 的管理（简称 ASMM，Automatic Shared Memory Management）新特性。不再需要手工设置若干内存池的大小，而是为 SGA 设置一个总的大小尺寸即可。&lt;/p&gt;
+&lt;p&gt;原理：Oracle 新引入了一个名为 MMAN（Memory Manager）的后台进程。每隔很短的一段时间，MMAN 进程就会启动，然后去询问一下 Oracle 提供的各个内存组件顾问，由这些顾问根据当前的负载情况，将可以自动调整的内存池建议的大小尺寸，返回给 MMAN。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MEMORY_TARGET&lt;/code&gt; 参数定义了整个 SGA 的总容量，不能超过&lt;code&gt;MEMORY_MAX_TARGET&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;statistics_level&lt;/code&gt; 必须设置为 typical 或 all 才能启动ASMM，否则如果设置为 basic，则关闭 ASMM。&lt;/p&gt;
+&lt;p&gt;参数大小设置如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6686006ad9c307b7e9925a91.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6686006ad9c307b7e9925a91.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Oracle服务器结构</title>
         <link>https://proben1.github.io/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/</link>
         <pubDate>Wed, 03 Jul 2024 14:48:43 +0800</pubDate>
         
         <guid>https://proben1.github.io/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/</guid>
         <description>&lt;h3 id=&#34;前言&#34;&gt;前言
-&lt;/h3&gt;&lt;p&gt;在接触Oracle之前，寻思我都用过MySQL了,这玩意搞起来不是轻轻松松?事实上错得离谱啊。“用过”代表只是会一点SQL语句，也就是说我对数据库本身是未知的一个状态。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;在接触Oracle之前，寻思我都用过MySQL了，这玩意搞起来不是轻轻松松？事实上错得离谱啊。“用过”代表只是会一点SQL语句，也就是说我对数据库本身是未知的一个状态。&lt;/p&gt;
 &lt;p&gt;MySQL是中小型、小内存的数据库，对于字符串可以使用双引号，并且在windows下大小写不敏感，Linux下敏感。&lt;/p&gt;
 &lt;p&gt;Oracle是大型、大内存的数据库，对于字符串只可以单引号，普通情况下会将所有小写都转换为大写进行处理。&lt;/p&gt;
 &lt;h3 id=&#34;oracle服务器&#34;&gt;Oracle服务器
 &lt;/h3&gt;&lt;p&gt;Oracle服务器通常指的是运行Oracle数据库管理系统的硬件和软件环境的总称。它不仅仅是一个数据库管理系统（DBMS），还包括了运行DBMS所需的服务器硬件、操作系统、网络连接等。&lt;/p&gt;
-&lt;p&gt;Oracle服务器由Oracle数据库软件、数据库实例、监听器（Listener）、网络服务等部分组成。其中，Oracle数据库软件是核心，是一个具有高性能和高可靠面向对象&lt;strong&gt;关系型数据库管理系统（Relational Database Management System，RDBMS）&lt;/strong&gt;，负责数据库的管理和操作；数据库实例是数据库运行时在内存中的表示，包括内存结构和后台进程；监听器则负责监听客户端的连接请求，并将其转发给相应的数据库实例。&lt;/p&gt;
+&lt;p&gt;概述：Oracle服务器由Oracle数据库软件、数据库实例、监听器（Listener）、网络服务等部分组成。其中，Oracle数据库软件是核心，是一个具有高性能和高可靠面向对象&lt;strong&gt;关系型数据库管理系统（Relational Database Management System，RDBMS）&lt;/strong&gt;，负责数据库的管理和操作；数据库实例是数据库运行时在内存中的表示，包括内存结构和后台进程；监听器则负责监听客户端的连接请求，并将其转发给相应的数据库实例。&lt;/p&gt;
 &lt;p&gt;在结构上，Oracle 服务器（Oracle Server）由实例（Instance）和数据库（Database）两大部分构成。实例是一组内存结构和 Oracle 后台进程的集合；数据库在物理上由多个操作系统文件组成，其中主要包括数据文件、控制文件和重做日志文件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Oracle 服务器=实例+数据库&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实例（Instance） = 内存结构（System Global Area，SGA）+ 后台进程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实例（Instance） = 内存结构+ 后台进程&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;内存结构 = SGA （System Global Area）+ PGA（Program Global Area）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;数据库 = 数据文件 + 控制文件 + 联机重做日志文件&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
@@ -162,11 +189,256 @@
 &lt;h3 id=&#34;oracle实例&#34;&gt;Oracle实例
 &lt;/h3&gt;&lt;p&gt;实例是数据库运行时在内存中的表示，相当于用户和数据库的中间层。一个数据库可以有很多实例，而一个实例在生存周期中只能属于一个数据库。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;实例（Instance） = 内存结构（System Global Area，SGA）+ 后台进程&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;内存结构描述的是 Oracle 数据库对内存的使用构成，Oracle 内存结构总称为 SGA 。包括数据库高速缓冲区、重做日志缓冲区和共享池等部分。&lt;/p&gt;
+&lt;p&gt;内存结构描述的是 Oracle 数据库对内存的使用构成，Oracle 内存结构总称为 &lt;strong&gt;SGA&lt;/strong&gt; 。包括数据库高速缓冲区、重做日志缓冲区和共享池等部分。&lt;/p&gt;
 &lt;p&gt;后台进程有 DBWn、CKPT、LGWR、SMON、PMON、ARCn 、RECO等。&lt;/p&gt;
 &lt;h3 id=&#34;oracle数据库&#34;&gt;Oracle数据库
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Oracle 数据库 = 数据文件 + 控制文件 + 联机重做日志文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;除此之外，还有非数据库文件如参数文件、口令文件、归档日志文件、跟踪文件、警告文件等。&lt;/p&gt;
+&lt;p&gt;除此之外，还有&lt;strong&gt;非数据库文件&lt;/strong&gt;如参数文件、口令文件、归档日志文件、跟踪文件、警告文件等。&lt;/p&gt;
+&lt;h3 id=&#34;sga&#34;&gt;SGA
+&lt;/h3&gt;&lt;h4 id=&#34;数据库高速缓冲区&#34;&gt;数据库高速缓冲区
+&lt;/h4&gt;&lt;p&gt;数据库高速缓冲区的作用就是用来缓存最近从数据库中读出的数据块，并可供其他客户进程共享。用户进程查看数据时，首先检查需要的信息是否在缓冲区内，如果在缓冲区中，就可以直接访问，否则访问物理文件并读取数据块到数据库缓冲区。&lt;/p&gt;
+&lt;p&gt;根据缓冲数据块的状态，Oracle 将数据高速缓冲区可划分成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;脏缓冲区（Dirty Buffer）：当数据库发生 DML（Insert、Update、Delete）操作时，会对缓冲区内容进行修改，这样缓冲区的内容就会和相对应的数据文件不一致，这时，缓冲区标识为“脏缓冲区”。&lt;/li&gt;
+&lt;li&gt;自由缓冲区（Free Buffer）：当“脏缓冲区”的内容被写入数据文件后，因为该缓冲区与相应数据文件部分内容一致，所以将这些缓冲区称为“自由缓冲区”。&lt;/li&gt;
+&lt;li&gt;忙缓冲区（Pinned Buffer）：指服务器进程正在访问的缓冲区。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Oracle 用&lt;strong&gt;LRU&lt;/strong&gt;（Least Recently Used）算法来管理数据高速缓冲区。&lt;/p&gt;
+&lt;h4 id=&#34;重做日志缓冲区&#34;&gt;重做日志缓冲区
+&lt;/h4&gt;&lt;p&gt;重做日志缓冲区用来记录对数据缓冲区数据进行的修改。&lt;/p&gt;
+&lt;p&gt;当用户运行DML(INSERT、UPDATE、DELETE)以及 DDL(CREATE、ALTER、DROP)语句时，会改变数据高速缓存中的相应缓冲区。但是在修改这些缓冲区之前，Oracle 会自动生成重做项，首先要将这些缓冲区的变化记载到“重做日志缓冲区”中。&lt;/p&gt;
+&lt;p&gt;重做日志缓冲区由一条一条的重做项构成，每条重做项记载了修改的时间、被修改的块、修改位置以及新数据。缓冲区被循环使用，当重做日志缓冲区填满时，数据库系统将&lt;strong&gt;重做日志缓冲区&lt;/strong&gt;的内容写入&lt;strong&gt;日志文件&lt;/strong&gt;。在系统发生故障时，可以通过重做项重新执行对数据库的修改，实现对实例的恢复。&lt;/p&gt;
+&lt;h4 id=&#34;共享池&#34;&gt;共享池
+&lt;/h4&gt;&lt;p&gt;共享池（Shared Pool）内包含了库缓存（Library Cache），数据字典缓冲区（Dictionary Cache），并行执行消息缓冲区（Buffers for parallel execution messages），以及用于系统控制的各种内存结构。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6685f58fd9c307b7e9835ab0.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6685f58fd9c307b7e9835ab0.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据字典缓冲区&lt;/strong&gt;：数据字典被存放在 SYSTEM 表空间的数据文件中，是一系列保存了数据库重要参考信息（账户、数据文件、表的描述、用户权限等）的表和视图。执行任何 SQL 语句都需要访问数据字典。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;视图有三种实例：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;user_*(当前用户所拥有对象的有关信息)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;all_*(当前用户可访问对象的信息)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dba_*(数据库中所有对象的信息)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例如，当用户执行&amp;quot;SELECT * FROM emp WHERE empno=7788&amp;quot;语句时，Oracle 需要查询数据字典 dba_tables 确定表 emp 是否存在；如果该表已经存在，还需要查询数据字典dba_tab_columns 确定列 empno 在表 emp 中是否存在，然后才能生成执行语句的过程（执行计划）。这些定义在首次查询时存入数据字典高速缓冲区，在后续过程中用到就可以直接使用，而不必重新查询数据字典。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;库高速缓冲区&lt;/strong&gt;：又可分为&lt;strong&gt;共享 SQL 区&lt;/strong&gt;和共享 &lt;strong&gt;PL/SQL 区&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;共享 SQL 区&lt;/strong&gt;用来存放最近执行的 SQL 语句信息，包括语句文本、解析树及执行计划，通过**上下文区(Context Area)**来实现。相同格式的SQL在解析时可以共享上下文区，减少解析次数，提升性能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;共享PL/SQL区&lt;/strong&gt;用来存放最近执行的PL/SQL语句，解析和编译过的程序单元和过程（函数、包和触发器）也存放在此区域。&lt;/p&gt;
+&lt;h4 id=&#34;大池&#34;&gt;大池
+&lt;/h4&gt;&lt;p&gt;供一次性大量的内存分配使用，例如：&lt;/p&gt;
+&lt;p&gt;● I/O 服务进程&lt;/p&gt;
+&lt;p&gt;● Oracle 备份与恢复操作&lt;/p&gt;
+&lt;p&gt;大池能够更好地满足此类大量内存分配的要求。&lt;/p&gt;
+&lt;h4 id=&#34;java池和流池&#34;&gt;Java池和流池
+&lt;/h4&gt;&lt;p&gt;Java 池供各会话内运行的 Java 代码及 JVM 内的数据使用。&lt;/p&gt;
+&lt;p&gt;流池主要用于缓存流进程在数据库间移动或复制数据时使用的队列消息。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;想象你有一个大的仓库（数据库），里面存着很多货物（数据）。现在，你想把这些货物（数据）快速地搬运到另一个仓库（可能是另一个数据库，或者是数据库内的另一个部分）去。Oracle流池就像是你在搬运过程中使用的一个临时存放区或者是一个快速通道。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;pga&#34;&gt;PGA
+&lt;/h3&gt;&lt;p&gt;当客户进程访问 Oracle 服务器时，会在 Oracle 服务器端为用户进程分配相应的服务进程，并且为该服务进程分配相应的内存空间来存放其数据和控制信息，每一个后台进程也同样需要为其分配专用的存储空间，这块内存空间被称为程序全局区(Program Global Area 或Process Global Area )。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;所有进程都可共享 SGA，而 PGA 是非共享的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6685fcd7d9c307b7e98d5f55.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6685fcd7d9c307b7e98d5f55.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;PGA内部大致分三个区域：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;会话内存：是为会话变量和会话有关信息分配的内存。&lt;/li&gt;
+&lt;li&gt;SQL工作区：用于排序（Sort）哈斯连接（Hash-join）位图（Bitmap）合并和位图创建。&lt;/li&gt;
+&lt;li&gt;私有 SQL 区：存储了执行SQL语句时所需的各种信息，包括绑定变量、查询执行状态、工作区域等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;进程结构&#34;&gt;进程结构
+&lt;/h3&gt;&lt;p&gt;Oracle 的进程分为用户进程、服务器进程和后台进程。&lt;/p&gt;
+&lt;p&gt;用户进程是在客户机内存上运行的程序，在用户请求连接 Oracle 数据库时建立。用户进程不能直接同 Oracle 服务器交互，而是把操作请求提交给服务进程。服务进程是在用户同 Oracle 数据库建立会话之后自动在服务器端创建的进程。服务进程直接同 Oracle 服务器交互，执行用户请求并返回结果。服务进程有专有和共享之分。&lt;/p&gt;
+&lt;p&gt;后台进程属于 Oracle 实例的一部分，Oracle 的后台进程的作用是对数据进行操作，并维护数据库系统，使其始终处于良好的状态。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/668600d4d9c307b7e99308a7.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/668600d4d9c307b7e99308a7.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在这里我们着重说明&lt;strong&gt;后台进程&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;一个 Oracle 实例中可以包含多种后台进程，这些进程不一定全部出现在实例中。系统中运行的后台进程数量众多，用户可以通过 &lt;code&gt;V$BGPROCESS&lt;/code&gt; 视图查询关于后台进程的信息。&lt;/p&gt;
+&lt;p&gt;● 系统监控进程（SMON），主要任务是实例启动时执行恢复性工作，对有故障数据库实例进行恢复。&lt;/p&gt;
+&lt;p&gt;● 进程监控进程（PMON），主要任务用于恢复失败的用户进程。&lt;/p&gt;
+&lt;p&gt;● 数据库写入进程（DBWn），将修改后的数据块内容写回数据文件。&lt;/p&gt;
+&lt;p&gt;● 日志写入进程（LGWR），将内存中的日志内容写入日志文件。&lt;/p&gt;
+&lt;p&gt;● 检查点进程（CKPT），启动检查点，用于减少数据库实例恢复所需要的时间。&lt;/p&gt;
+&lt;p&gt;● 归档进程（ARCn），当数据库服务器以归档方式运行时调用该进程完成日志归档。&lt;/p&gt;
+&lt;p&gt;● 恢复进程（RECO），用于分布式数据库中的失败处理。&lt;/p&gt;
+&lt;p&gt;● 锁进程（LCKn），在并行服务器模式下确保数据的一致性。&lt;/p&gt;
+&lt;p&gt;● 调度进程（Dnnn），负责把用户进程分配到可用的服务进程进行处理。&lt;/p&gt;
+&lt;h4 id=&#34;lgwr日志写入进程log-writer&#34;&gt;LGWR日志写入进程（Log Writer）
+&lt;/h4&gt;&lt;p&gt;LGWR 日志写入进程负责将重做日志缓冲区的日志条目写入磁盘上的联机日志文件。上文的重做日志缓冲区满了之后，就是这个进程帮助写入磁盘。&lt;/p&gt;
+&lt;p&gt;在出现以下情况时 LGWR 会开始工作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 DWBR 进程将脏缓冲区写入数据文件之前。//预写协议&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在重做日志记录达到缓冲区的三分之一。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;日志缓冲区记录的日志多于 1M。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;每隔 3 秒钟。//重做日志缓冲区是循环使用的，要腾出足够的空间给新的记录使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;提交事务（执行 Commit）。//提交事务相当于确定保存修改，不存入日志文件就有丢失的可能&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Oracle 总是先记载数据变化到重做日志缓冲区，然后才修改数据高速缓存。与之类似，在后台进程 DBWn 将脏缓冲区写入到数据文件之前，首先要由后台进程 LGWR 将重做日志缓冲区写入到重做日志中。与数据高速缓存相比，重做日志缓冲区相对要小得多，但写入频率高的多。&lt;/p&gt;
+&lt;p&gt;Oracle 采用了快速提交机制，当执行 COMMIT 操作时，并不是将“脏缓冲区”数据写入到数据文件中，而是将重做日志缓冲区的内容写入到重做日志文件中，以确保数据库完整性。&lt;/p&gt;
+&lt;h4 id=&#34;dbwn-数据库写入进程database-writer&#34;&gt;DBWn 数据库写入进程（Database Writer）
+&lt;/h4&gt;&lt;p&gt;数据库写入进程负责将数据库高速缓冲区（脏缓冲区）的内容写入到数据文件。&lt;/p&gt;
+&lt;p&gt;可以配置额外的进程（DBW0-DBW9，最多 10 个进程），以提高写入性能，通过设置初始化参数DB_WRITER_PROCESSES 来完成。&lt;/p&gt;
+&lt;p&gt;在出现以下情况时 DBWn 进程会开始工作：&lt;/p&gt;
+&lt;p&gt;● 系统发出检查点指令。//同步数据，详见检查点进程（CKPT）。&lt;/p&gt;
+&lt;p&gt;● 脏缓冲区个数达到指定阀值。&lt;/p&gt;
+&lt;p&gt;● 服务进程搜索一定数目的数据块后，不能找到自由缓冲区。&lt;/p&gt;
+&lt;p&gt;● 数据写入计时时间到。&lt;/p&gt;
+&lt;p&gt;//客户端执行 SELECT\INSERT\UPDATE\DELETE 语句时，都需要访问数据库高速缓冲区。如果是第一次访问，必须要将数据由数据文件读取到数据库高速缓冲区，所以 Oracle 必须要确保数据高速缓存总是存在足够的“自由缓冲区”以容纳新数据。当 DBWn 进程将脏缓冲区的数据块写入到数据文件后，Oracle 将把“脏缓冲区”标记为“自由缓冲区”。因此，为了保证有足够“自由缓冲区”来存放新的数据块，需要 DBWn 进程工作。&lt;/p&gt;
+&lt;p&gt;● 表空间脱机或进入只读状态。&lt;/p&gt;
+&lt;p&gt;● 执行删除或截断表操作。&lt;/p&gt;
+&lt;p&gt;● 执行 ALTER TABLESPACE … BEGIN BACKUP 命令//需要同步数据，原理同检查点。&lt;/p&gt;
+&lt;h4 id=&#34;ckpt-检查点进程checkpoint&#34;&gt;CKPT 检查点进程（Checkpoint）
+&lt;/h4&gt;&lt;p&gt;CKPT 检查点进程的作用是执行一个“检查点”，同步数据库的所有数据文件、控制文件和重做日志文件。&lt;/p&gt;
+&lt;p&gt;当执行检查点时，系统促使 DBWn 将数据缓冲区中数据的变化写入数据文件，同时完成对数据文件和控制文件的更新，记录下当前数据库的结构和状态。在执行一个检查点之后，数据库处于一个完整状态。在数据库发生崩溃后，可以将数据库恢复到上一个检查点。&lt;/p&gt;
+&lt;p&gt;进程 CKPT 在以下情况下会开始工作：&lt;/p&gt;
+&lt;p&gt;● 发生日志切换。&lt;/p&gt;
+&lt;p&gt;● 关闭实例(SHUTDOWN ABORT 除外)。&lt;/p&gt;
+&lt;p&gt;● 手工执行检查点操作。&lt;/p&gt;
+&lt;p&gt;● 由初始化参数 LOG_CHECKPOINT_INTERVAL 和LOG_CHECKPOINT_TIMEOUT 强制发出。&lt;/p&gt;
+&lt;h4 id=&#34;初始进程过程&#34;&gt;初始进程过程
+&lt;/h4&gt;&lt;p&gt;现在我们已经讲完了Oracle最最重要的几个进程，可以采用一个数据写入的例子加深一下理解。&lt;/p&gt;
+&lt;p&gt;假设现在有一张员工工资表，员工号 7899 的员工张三工资为 8000，现在为其加薪到 10000。&lt;/p&gt;
+&lt;p&gt;1&amp;gt; 此时，第一次读取，需要将数据从数据文件读入数据库高速缓冲区。&lt;/p&gt;
+&lt;p&gt;2&amp;gt; 数据读入数据库高速缓冲区后，我们修改数据的条目先记录入重做日志缓冲区。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6686043fd9c307b7e99995e3.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6686043fd9c307b7e99995e3.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3&amp;gt; 接着新数据被写入数据库高速缓冲区&lt;/p&gt;
+&lt;p&gt;4&amp;gt; 提交，LGWR 进程将条目从重做日志缓冲区写入联机重做日志文件&lt;/p&gt;
+&lt;p&gt;5&amp;gt; 执行检查点 CKPT，同步数据库。发现联机日志文件为最新，同步更新数据文件、控制文件，触发了 DBWn 进程。此时数据才发生了真正的改变。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6686043fd9c307b7e99995fe.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6686043fd9c307b7e99995fe.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;smon-系统监控进程system-monitor&#34;&gt;SMON 系统监控进程（System Monitor）
+&lt;/h4&gt;&lt;p&gt;SMON 系统监控进程主要作用是强制对数据库进行恢复操作。&lt;/p&gt;
+&lt;p&gt;在实例启动时，如果上一次数据库是非正常关闭，并且重做日志文件和控制文件的 SCN 值是不同的，Oracle 将自动在重新打开数据库之前，通过执行重做日志文件的记录，来同步所有数据文件、控制文件和重做日志文件，确保所有数据库文件的一致性，然后才打开数据库。&lt;/p&gt;
+&lt;p&gt;该进程还负责在启动实例时清理临时段和合并区（Extent）碎片等工作。&lt;/p&gt;
+&lt;p&gt;所以 SMON进程的工作归纳如下：&lt;/p&gt;
+&lt;p&gt;● 进行实例恢复&lt;/p&gt;
+&lt;p&gt;● 合并数据文件的自由空间&lt;/p&gt;
+&lt;p&gt;● 释放数据文件的临时段&lt;/p&gt;
+&lt;h4 id=&#34;pmon-进程监控进程process-monitor&#34;&gt;PMON 进程监控进程（Process Monitor）
+&lt;/h4&gt;&lt;p&gt;PMON 进程监控进程负责对失败的用户进程或服务进程进行恢复。&lt;/p&gt;
+&lt;p&gt;当用户进程连接到Oracle 服务器时，Oracle 将在服务器端分配相应的服务进程。这时由 PMON 进程来监视用户进程的执行情况。当由于种种原因，用户对 Oracle 数据库的连接，发生崩溃、挂起或异常终止现象时，该进程负责清除服务进程所占用的资源，回滚没有完成的事务。&lt;/p&gt;
+&lt;p&gt;当 PMON 检测到用户进程失败时，进行的工作归纳如下：&lt;/p&gt;
+&lt;p&gt;● 回滚当前用户的事务&lt;/p&gt;
+&lt;p&gt;● 释放当前用户加的表或行级锁&lt;/p&gt;
+&lt;p&gt;● 释放用户的其他资源&lt;/p&gt;
+&lt;p&gt;● 重新启动死掉的调度进程&lt;/p&gt;
+&lt;h4 id=&#34;sql语句在rdbms是如何运作的&#34;&gt;SQL语句在RDBMS是如何运作的
+&lt;/h4&gt;&lt;p&gt;以上五个进程，是Oracle中必须的五个进程，相信现在已经有了一定的了解，现在我们完整梳理下SQL语句在RDBMS是如何运作的。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66860d0ad9c307b7e9a72c9c.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66860d0ad9c307b7e9a72c9c.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;1.将SQL语句加载入数据库缓冲区
+2.将SQL语句要操作的数据文件副本加载入数据库缓冲区
+3.执行SQL语句，修改数据文件副本，形成“脏缓冲区”
+4.CKPT检测到“脏缓冲区”，调用DBWn
+5.在DBWn运行之前，先运行了LGWR，将数据文件的原始状态和数据库的改变记录到Redo Log Files
+6.运行DBWn，将“脏缓冲区的内容写入到数据文件”
+7.同时CKPT修改控制文件和数据文件头
+8.SMON回收不必要的空闲资源&lt;/p&gt;
+&lt;h4 id=&#34;arcn-归档进程archive&#34;&gt;ARCn 归档进程（Archive）
+&lt;/h4&gt;&lt;p&gt;ARCn 归档进程完成日志的归档备份，是一个可选后台进程，但是也十分重要。&lt;/p&gt;
+&lt;p&gt;当数据库运行于归档日志模式（ARCHIVELOG）下时，负责将已写满的&lt;strong&gt;重做日志文件&lt;/strong&gt;复制到&lt;strong&gt;归档日志&lt;/strong&gt;目标文件中，这样可以保留所有的重做记录。&lt;/p&gt;
+&lt;h4 id=&#34;reco-恢复进程recover&#34;&gt;&lt;strong&gt;RECO&lt;/strong&gt; 恢复进程（Recover）
+&lt;/h4&gt;&lt;p&gt;RECO 恢复进程负责在分布式数据库（Distributed Database）环境下,自动恢复失败的分布式事务。当某个分布式事务由于网络连接故障或者其他原因失败时，RECO 进程将会尝试与该事物相关的所有数据库进行联系，已完成对失败事物的处理工作。&lt;/p&gt;
+&lt;h4 id=&#34;dnnnn-调度进程&#34;&gt;Dnnnn 调度进程
+&lt;/h4&gt;&lt;p&gt;Dnnnn 调度进程是多线程服务器体系结构的一部分，调度进程接受用户进程的请求，将他们放入到请求队列中，然后为请求队列中的用户进程分配一个服务进程。&lt;/p&gt;
+&lt;h3 id=&#34;oracle-数据库&#34;&gt;Oracle 数据库
+&lt;/h3&gt;&lt;p&gt;数据库是数据存储的容器，作用是用来收集、存储数据和返回信息。&lt;/p&gt;
+&lt;p&gt;Oracle 数据库的物理结构包括两个部分，分别是&lt;strong&gt;数据库文件&lt;/strong&gt;（控制+数据+重做日志）和&lt;strong&gt;操作系统文件&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;控制文件control-files&#34;&gt;控制文件（Control Files）
+&lt;/h4&gt;&lt;p&gt;控制文件是一个很小的&lt;strong&gt;二进制文件&lt;/strong&gt;，用于记录和维护数据库结构（数据库名、数据文件的名称和路径、联机重做日志文件的名称和路径、备份信息等），每个 Oracle 数据库可以有1-8 个控制文件，最少要包含一个控制文件。&lt;/p&gt;
+&lt;h4 id=&#34;数据文件data-file&#34;&gt;数据文件（Data File）
+&lt;/h4&gt;&lt;p&gt;数据文件是用于存储数据库数据的物理文件，它由若干个操作系统文件组成，在数据文件中存储着用户数据(表、索引等)、数据字典以及回滚段数据等。&lt;/p&gt;
+&lt;p&gt;没错，这才是我们一般意义理解上的“数据库”。&lt;/p&gt;
+&lt;h4 id=&#34;联机重做日志文件online-redo-log-file&#34;&gt;联机重做日志文件（Online Redo Log File）
+&lt;/h4&gt;&lt;p&gt;我们知道重做日志缓冲区是循环使用的：当重做日志缓冲区的重做项被写入联机重做日志文件后，重做日志缓冲区的内容可以被覆盖。&lt;/p&gt;
+&lt;p&gt;日志文件也是循环使用的，当联机重做日志文件中记录的数据已经同步写入数据文件，联机重做日志文件中的内容也可以被覆盖。但是这种循环以组的方式循环。&lt;/p&gt;
+&lt;h4 id=&#34;操作系统文件&#34;&gt;操作系统文件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;初始化参数文件（Initialization Parameter File）&lt;/strong&gt;：定义了 Oracle 实例的各项参数，初始化参数文件一般默认存放在$ORACLE_HOME/dbs路径下。&lt;/p&gt;
+&lt;p&gt;初始化参数文件分为静态初始化参数文件和动态初始化参数文件。静态初始化参数文件为文本格式，可以用 vi 编辑器编辑，默认名为 initsid.ora；动态初始化参数文件为二进制格式，不可以用 vi 编辑器编辑，默认名为 spfilesid.ora&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;口令文件（Password File）&lt;/strong&gt;：存放&lt;strong&gt;特权用户&lt;/strong&gt;信息及其口令。“特权用户”是指具有启动、关闭Oracle 服务器并建立数据库等特殊权利的用户。如具有 SYSDBA、SYSOPER、SYSASM权限的用户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;归档日志文件（Archive Log File）&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;归档日志文件用于记录联机重做日志文件中的内容。&lt;/p&gt;
+&lt;p&gt;我们知道，联机重做日志文件以日志组的形式存在，并且循环使用。也就是说，如果联机重做日志文件被覆盖以后数据库发生故障，由于日志已经覆盖，将会导致数据库无法恢复。&lt;/p&gt;
+&lt;p&gt;我们把联机重做日志以脱机的形式存放在归档日志文件里，既可以保证日志不会丢失，又可以保证不影响数据库的正常运行。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;追踪文件（Trace File）和警告文件（Alert Log File）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;追踪文件用于存放后台进程和服务器进程的跟踪信息。每个后台进程都有相应的跟踪文件，存放着后台进程的警告和错误信息。服务器进程跟踪文件用于存放 SQL 语句的跟踪信息，该类文件会记载 SQL 语句的执行时间、执行计划等信息等。&lt;/p&gt;
+&lt;p&gt;警告文件由连续的消息和错误组成。通过查看警告文件，可以查看到 Oracle 内部错误、块损坏错误以及非默认的初始化参数值，并且可以监视特权用户的所有操作，例如启动、关闭数据库。&lt;/p&gt;
 </description>
         </item>
         <item>

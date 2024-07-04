@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='金乌腾晓，日出扶桑。'><title>华山两日游</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='自动共享管理内存 ASMM 从 Oracle 10g 开始，Oracle 提供了自动 SGA 的管理（简称 ASMM，Automatic Shared Memory Management）新特性。不再需要手工'><title>Oracle细节知识整理</title>
 
-<link rel='canonical' href='https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/'>
+<link rel='canonical' href='https://proben1.github.io/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='华山两日游'>
-<meta property='og:description' content='金乌腾晓，日出扶桑。'>
-<meta property='og:url' content='https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Oracle细节知识整理'>
+<meta property='og:description' content='自动共享管理内存 ASMM 从 Oracle 10g 开始，Oracle 提供了自动 SGA 的管理（简称 ASMM，Automatic Shared Memory Management）新特性。不再需要手工'>
+<meta property='og:url' content='https://proben1.github.io/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-06-19T19:04:44&#43;08:00'/><meta property='article:modified_time' content='2022-06-19T19:04:44&#43;08:00'/><meta property='og:image' content='https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/%E6%89%B9%E6%B3%A8%202022-06-19%20201805.png' />
-<meta name="twitter:title" content="华山两日游">
-<meta name="twitter:description" content="金乌腾晓，日出扶桑。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://proben1.github.io/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/%E6%89%B9%E6%B3%A8%202022-06-19%20201805.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-07-04T09:44:37&#43;08:00'/><meta property='article:modified_time' content='2024-07-04T09:44:37&#43;08:00'/>
+<meta name="twitter:title" content="Oracle细节知识整理">
+<meta name="twitter:description" content="自动共享管理内存 ASMM 从 Oracle 10g 开始，Oracle 提供了自动 SGA 的管理（简称 ASMM，Automatic Shared Memory Management）新特性。不再需要手工">
   
 
 <style>
@@ -270,40 +269,24 @@
 </aside>
 
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/">
-                <img src="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/%E6%89%B9%E6%B3%A8%202022-06-19%20201805_hu2a960d95d769cb380bf6d4c552143af4_272609_800x0_resize_box_3.png"
-                        srcset="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/%E6%89%B9%E6%B3%A8%202022-06-19%20201805_hu2a960d95d769cb380bf6d4c552143af4_272609_800x0_resize_box_3.png 800w, /2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/%E6%89%B9%E6%B3%A8%202022-06-19%20201805_hu2a960d95d769cb380bf6d4c552143af4_272609_1600x0_resize_box_3.png 1600w"
-                        width="800" 
-                        height="556" 
-                        loading="lazy"
-                        alt="Featured image of post 华山两日游" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" style="background-color: #2a9d8f; color: #fff;">
-                小人联合工会内部资料
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="background-color: #2a9d8f; color: #fff;">
+                数据库
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/">华山两日游</a>
+        <a href="/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">Oracle细节知识整理</a>
     </h2>
 
-    
-    <h3 class="article-subtitle">
-        金乌腾晓，日出扶桑。
-    </h3>
     
 
     
@@ -319,7 +302,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 19, 2022</time>
+                <time class="article-time--published">Jul 04, 2024</time>
             </div>
         
 
@@ -334,7 +317,7 @@
 
 
                 <time class="article-words">
-                    2390字
+                    307字
                 </time>
             </div>
         
@@ -346,78 +329,19 @@
     <section class="article-content">
     
     
-    <h1 id="华山">华山
-</h1><p>2022.6.16-6.17</p>
-<p>金乌腾晓，日出扶桑。</p>
-
-
-<p style="text-align:right">——RA3日冕mod神州阵营金乌轰战机出厂音效</p>
-
-<h2 id="准备">准备
-</h2>
-
-<blockquote class="quote en">
-        <p>咱们认为
-有时候找不到同伴
-自己前行也无妨</p></blockquote> 
-<p>今年六月份免票，但是从玉泉院的步行票要抢，我抢不到所以买了个16号下午的北峰缆车线路的票。</p>
-<p>物品：身份证，学生证，口罩，一些现金，面包，牛奶，水，手套，耳机，转换头，充电线，充电宝（手机5000mAh的设计电池容量借了舍友的20000mAh充电宝，最后直接用干了）</p>
-<p>需要核酸证明，西安市的手机上一码通那种就行。 西安工会医院，混检，但是1.0人，3.4元，支付宝随机立减之后2.98，然后，做完就发现学校发了个明天统一核酸的信息。我是sillyB。</p>
-<p>天气：华山风景名胜区，微博</p>
-<p>买票：华山旅游服务平台，微信</p>
-<p>额外信息：上贴吧搜的，华山吧吧主的微信区，加进去可以寻找旅友，收集一些信息也很方便。</p>
-<p>路线：10点宿舍出发，吃饭做核酸，10:50到学校北门，12：20到达西安北站（地铁二号线太顶了，直接25km从南到北，油门到底），12：50上车，13：30下车，等公交到生态中心50min)大概14：30分到达，乘坐旅行车进入北峰缆车口（20min），16：00之前买票上缆车。然后，卡其脱离太！什么都不要想，直奔西峰看日落。 晚上去东峰，睡觉看日出，最后通过南峰返回西峰，做缆车下山。</p>
-<h2 id="出发">出发
-</h2><p>复兴号，很帅气，橙黑色的流线车头，整体二西莫夫风。车内灯光明亮，加上橙光，会有温馨的感觉。全车空调和wifi覆盖，二等座的位置也很宽敞。运行十分平稳，尤其是启动的时候，虽然竖硬币不至于，但体验感++。路过灞河，窗外是西安的城郊，大平原，从工厂林立到麦田滚滚，是真的一望无际。车速很快，88km，大概26-28min，好家伙，渭南什么时候过的我的没发现。 一直在往北看农田，回头一看吓一跳，华山好大一坨。</p>
-<p>等了半天华阴1路，来了个空调公交车，一人2块立马发车，师傅直接卡其脱离太。暴躁模式，打鸣公交车。直接到游客中心。</p>
-<p>山下吃了个凉皮肉夹馍冰峰25 ，个人认为是陕西最经典的套餐之一。虽然他的肉夹馍有点硬，凉皮也比较少， 奈何很对我口味，一直说好吃，走的时候差点忘付钱了hhh。</p>
-<p>15：00坐完缆车 ，开始登山。路上什么样的人都有（没看到小孩），甚至还有被人搀扶着的拄拐杖的老奶奶和残疾人。比预计的快很多，大概下午五点多就到西峰顶了，日落还在八点，于是我找了个观景很好的石头小窝，躺着享受阳光与风景。</p>
-<h2 id="日落">日落
-</h2><p>在等日落的那段时间，真的是人生中最幸福的时刻之一。无尽的山，无尽的平原，躺到一个小坑，旁边是结实的护栏，背对着太阳，想着这个时候背单词应该很酷吧。打开了软件，发现锁屏上给我推的是horizon。</p>
-<p>照了会儿照片，我想着在学校的时候，我夕阳最喜欢点一首许嵩的《超市》听，当我插上耳机抬起头的那一刻，我看见了奇迹。</p>
-<p>没有相机可以拍出这样的场景，如果真的要形容的话，它应该是一个恒星大小的蜘蛛，日光是它的蛛身，八条扩散的光晕是它的腿脚，如同古神一般。我SAN值清零了一样，死死地盯着它，哪怕视野已经被成了直视太阳的紫色，这颜色绕着圈一圈一圈地扩散着，直到完全看不见，闭上了眼睛。那一刻我有一种翻过栅栏跳下华山的冲动，去拥抱太阳，拥抱这神迹。</p>
-<p>最后太阳被地平线吞噬了。慢慢享受吧，仅仅是这一个时刻给这一天赋予了意义，也为你的人生添加了意义。</p>
+    <h3 id="自动共享管理内存-asmm"><strong>自动共享管理内存</strong> ASMM
+</h3><p>从 Oracle 10g 开始，Oracle 提供了自动 SGA 的管理（简称 ASMM，Automatic Shared Memory Management）新特性。不再需要手工设置若干内存池的大小，而是为 SGA 设置一个总的大小尺寸即可。</p>
+<p>原理：Oracle 新引入了一个名为 MMAN（Memory Manager）的后台进程。每隔很短的一段时间，MMAN 进程就会启动，然后去询问一下 Oracle 提供的各个内存组件顾问，由这些顾问根据当前的负载情况，将可以自动调整的内存池建议的大小尺寸，返回给 MMAN。</p>
+<p><code>MEMORY_TARGET</code> 参数定义了整个 SGA 的总容量，不能超过<code>MEMORY_MAX_TARGET</code>。</p>
+<p><code>statistics_level</code> 必须设置为 typical 或 all 才能启动ASMM，否则如果设置为 basic，则关闭 ASMM。</p>
+<p>参数大小设置如下：</p>
 <p><figure 
-	
-		class="gallery-image" 
-		style="
-			flex-grow: 133; 
-			flex-basis: 320px"
 	>
-	<a href="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220616195135.jpg" data-size="9280x6944">
-		<img src="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220616195135.jpg"
-			width="9280"
-			height="6944"
-			srcset="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220616195135_huf6995f5c517d2fa3fa8d2448c7e9d1b4_15496282_480x0_resize_q75_box.jpg 480w, /2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220616195135_huf6995f5c517d2fa3fa8d2448c7e9d1b4_15496282_1024x0_resize_q75_box.jpg 1024w"
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<h2 id="日出">日出
-</h2><p>西峰晚上清山， 我被迫要换个地方 ，换好衣服全副武装，确保除了必要外，其他部位全部不露出。 考虑到安全，我决定原路返回去，回到西峰索道顺道到中峰看一眼去东峰，走小树林这条线啊，没有掉下去的风险。夜爬华山，开始！你给路打油！</p>
-<p>路上一边顺着灯光和小帐篷，一边听着许嵩的歌。听到兴起还会唱两句。一般只有我一个人，所以我唱的很带劲儿，除了这个还会跟微信朋友们吐槽吐槽。</p>
-<p>晚上睡在三个帐篷构成的小坑里，还可以。没错，是左，右，前有三个帐篷，我在外面hhh，风很大，我尽量把衣服覆盖到全身，保证晚上不被风扫到。晚上躺着打方舟的ex关，华山论舰，可惜打一半没理智了。红色的月亮，慢慢变成金黄，又褪成白色，伴着希希散散的星星，山顶的烈风，还有一声声“刮跑啦！”，静静待着明天，期待那一句，金乌腾晓，日出扶桑。</p>
-<p>顺便提一下，100多人一块睡觉，实在是太sb了，尤其是年轻人居多的情况下，两点多还有人在嗷嗷直叫。</p>
-<p>迷迷糊糊的一晚上，3：40，起来了，感觉天空有什么在一点一点的，戴上眼镜发现是群星。遗憾实在是太微薄了，手机拍不了。很浪漫，因为真的是满天都是。</p>
-<p>抢到了个第二排hhh ，前面是俩高考完出来玩的高中妹子（还帮她们拍了个合影），所以看的很清楚。日出对比日落我觉得多了些人性，少了些神性。地平线先是一摸橙红的霞光 ，渐渐能看得清底下的山脉，山下的灯火熄灭，换来的是一望无尽的平原与河流。太阳露头的那一刻，人群中传来惊叹，我清楚地听到一位大爷说：这不似个大咸鸭蛋吗。还真是，只不过是红色的大咸鸭蛋。手机还是拍不了那种红色的光晕，只能多看看，刻在记忆里。</p>
-<p>完全升起后，颜色从红向金黄再向白色转变，如同一个朝气蓬勃的年轻人，神清气爽的哈，脱去外套，向南峰-&gt;西峰出发。由于晚上睡眠时间太少了，再持续作战可能有些不安全，在早上八点多坐了西峰缆车下山。</p>
-<p>惊喜！我本来想过缆车里，我会邂逅一生的浪漫，我会遇到人生的导师，我会结拜异姓的兄弟，我会遇见甜蜜的情侣，可我没想到的是——这辆车就我一个，我变成了华山野猴。在里面疯狂自拍hhh。</p>
-<p>最后回学校了，除了中途公交车坐反了又坐会景区再没别的乱子了。在火车站旁边的餐馆遇到了一个刚艺考考完的高三哥们，好一顿唠嗑，在站里还遇到了看日出时前面的妹子，她们也是高考完出来的。</p>
-<p>一路上花个400出头，高铁54x2，缆车80+126，门票免费，进出山车20+40，保险10，正餐就吃了两顿，都没在山上吃，其他面包牛奶火腿肠。很棒的一次旅行，下次有机会一定从玉泉院爬上山！</p>
-<p>金乌腾晓，日出扶桑。</p>
-<p><figure 
-	
-		class="gallery-image" 
-		style="
-			flex-grow: 133; 
-			flex-basis: 320px"
-	>
-	<a href="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220617054531.jpg" data-size="9280x6944">
-		<img src="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220617054531.jpg"
-			width="9280"
-			height="6944"
-			srcset="/2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220617054531_hu2c0cf091cb3ff68fb17e2f93cf4af00b_13309973_480x0_resize_q75_box.jpg 480w, /2022/%E5%8D%8E%E5%B1%B1%E4%B8%A4%E6%97%A5%E6%B8%B8/IMG20220617054531_hu2c0cf091cb3ff68fb17e2f93cf4af00b_13309973_1024x0_resize_q75_box.jpg 1024w"
+	<a href="https://pic.imgdb.cn/item/6686006ad9c307b7e9925a91.png" >
+		<img src="https://pic.imgdb.cn/item/6686006ad9c307b7e9925a91.png"
+			
+			
+			
 			loading="lazy"
 			>
 	</a>
@@ -460,6 +384,30 @@
             <div class="flex article-list--tile">
                 
                     
+<article class="">
+    <a href="/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle服务器结构</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数据库类型概述</h2>
+        </div>
+    </a>
+</article>
+                
+                    
 <article class="has-image">
     <a href="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/">
         
@@ -478,30 +426,6 @@
 
         <div class="article-details">
             <h2 class="article-title">六月二十九日晚</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2024.6</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
         </div>
     </a>
 </article>
@@ -828,10 +752,11 @@ document.getElementById('days').innerHTML = number_of_days;
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#准备">准备</a></li>
-    <li><a href="#出发">出发</a></li>
-    <li><a href="#日落">日落</a></li>
-    <li><a href="#日出">日出</a></li>
+    <li>
+      <ol>
+        <li><a href="#自动共享管理内存-asmm"><strong>自动共享管理内存</strong> ASMM</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
