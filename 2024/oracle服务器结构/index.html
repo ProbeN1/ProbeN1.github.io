@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'><title>Linux常用命令和vi速查</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='初始Oracle'><title>Oracle服务器结构</title>
 
-<link rel='canonical' href='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
+<link rel='canonical' href='https://proben1.github.io/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Linux常用命令和vi速查'>
-<meta property='og:description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'>
-<meta property='og:url' content='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Oracle服务器结构'>
+<meta property='og:description' content='初始Oracle'>
+<meta property='og:url' content='https://proben1.github.io/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-09T15:55:13&#43;08:00'/><meta property='article:modified_time' content='2024-05-09T15:55:13&#43;08:00'/>
-<meta name="twitter:title" content="Linux常用命令和vi速查">
-<meta name="twitter:description" content="版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-07-03T14:48:43&#43;08:00'/><meta property='article:modified_time' content='2024-07-03T14:48:43&#43;08:00'/>
+<meta name="twitter:title" content="Oracle服务器结构">
+<meta name="twitter:description" content="初始Oracle">
   
 
 <style>
@@ -276,17 +276,21 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
-                Linux
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="background-color: #2a9d8f; color: #fff;">
+                数据库
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/">Linux常用命令和vi速查</a>
+        <a href="/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/">Oracle服务器结构</a>
     </h2>
 
+    
+    <h3 class="article-subtitle">
+        初始Oracle
+    </h3>
     
 
     
@@ -302,7 +306,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 09, 2024</time>
+                <time class="article-time--published">Jul 03, 2024</time>
             </div>
         
 
@@ -317,7 +321,7 @@
 
 
                 <time class="article-words">
-                    1538字
+                    980字
                 </time>
             </div>
         
@@ -329,138 +333,21 @@
     <section class="article-content">
     
     
-    <h3 id="版本内核查看">版本、内核查看
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/redhat-release
-</span></span><span style="display:flex;"><span>cat /etc/os-release
-</span></span><span style="display:flex;"><span>uname -a
-</span></span></code></pre></div><h3 id="关机重启">关机、重启
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>shutdown -h now
-</span></span><span style="display:flex;"><span>reboot
-</span></span></code></pre></div><h3 id="基本">基本
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls -al 额外参数：-t时间排序 -r反序 -h大小
-</span></span><span style="display:flex;"><span>cat 文件 | less
-</span></span><span style="display:flex;"><span>find 目录 -name 名字
-</span></span><span style="display:flex;"><span>cp -r 源 目的 
-</span></span><span style="display:flex;"><span>mv -r 源 目的 
-</span></span><span style="display:flex;"><span>touch 文件
-</span></span><span style="display:flex;"><span>file 文件
-</span></span><span style="display:flex;"><span>ln –s 实际文件 链接文件
-</span></span><span style="display:flex;"><span>du -sh /root/* （分开统计）
-</span></span><span style="display:flex;"><span>du -sh /root （合并统计）
-</span></span><span style="display:flex;"><span>iostat #查看当前系统的读写情况
-</span></span></code></pre></div><h3 id="查找">查找
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep根据文件的内容进行查找
-</span></span><span style="display:flex;"><span>grep [options] pattern [files]
-</span></span><span style="display:flex;"><span>-i：忽略大小写进行匹配。
-</span></span><span style="display:flex;"><span>-v：反向查找，只打印不匹配的行。
-</span></span><span style="display:flex;"><span>-n：显示匹配行的行号。
-</span></span><span style="display:flex;"><span>-r：递归查找子目录中的文件。
-</span></span><span style="display:flex;"><span>-l：只打印匹配的文件名。
-</span></span><span style="display:flex;"><span>-c：只打印匹配的行数。
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>find是根据文件的属性进行查找
-</span></span><span style="display:flex;"><span>find [路径] [匹配条件] [动作]
-</span></span><span style="display:flex;"><span>-name pattern：按文件名查找，支持使用通配符 * 和 ?。
-</span></span><span style="display:flex;"><span>-type type：按文件类型查找，可以是 f（普通文件）、d（目录）、l（符号链接）等。
-</span></span><span style="display:flex;"><span>-size [+-]size[cwbkMG]：按文件大小查找，支持使用 + 或 - 表示大于或小于指定大小
-</span></span><span style="display:flex;"><span>-user username：按文件所有者查找。
-</span></span><span style="display:flex;"><span>-group groupname：按文件所属组查找。
-</span></span><span style="display:flex;"><span>-amin n：查找在 n 分钟内被访问过的文件。
-</span></span><span style="display:flex;"><span>-atime n：查找在 n*24 小时内被访问过的文件。
-</span></span><span style="display:flex;"><span>-cmin n：查找在 n 分钟内状态发生变化的文件（例如权限）。
-</span></span><span style="display:flex;"><span>-ctime n：查找在 n*24 小时内状态发生变化的文件（例如权限）。
-</span></span><span style="display:flex;"><span>-mmin n：查找在 n 分钟内被修改过的文件。
-</span></span><span style="display:flex;"><span>-mtime n：查找在 n*24 小时内被修改过的文件。
-</span></span></code></pre></div><h3 id="网络">网络
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hostname
-</span></span><span style="display:flex;"><span>hostnamectl set-hostname &lt;newhostname&gt;
-</span></span><span style="display:flex;"><span>ifconfig -a
-</span></span><span style="display:flex;"><span>ip addr
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vi /etc/sysconfig/network-scripts
-</span></span><span style="display:flex;"><span>TYPE=Ethernet（默认为以太网卡）
-</span></span><span style="display:flex;"><span>BOOTPROTO=static（更改为静态配置方式）
-</span></span><span style="display:flex;"><span>NAME=eth0（默认为网卡名）
-</span></span><span style="display:flex;"><span>DEVICE=eth0（默认为网卡名）
-</span></span><span style="display:flex;"><span>ONBOOT=yes（更改自动启动为yes）
-</span></span><span style="display:flex;"><span>IPADDR=xx.xx.xx.xx（设置分配的IP地址）
-</span></span><span style="display:flex;"><span>NETMASK=xx.xx.xx.xx（设置分配的掩码）
-</span></span><span style="display:flex;"><span>GATEWAY=xx.xx.xx.xx（设置分配的网关）
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>systemctl restart NetworkManager
-</span></span><span style="display:flex;"><span>systemctl restart network
-</span></span></code></pre></div><h3 id="压缩打包">压缩打包
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tar
-</span></span><span style="display:flex;"><span>-c  创建文件
-</span></span><span style="display:flex;"><span>-x  提取 解压还原文件
-</span></span><span style="display:flex;"><span>-v  显示执行详细过程
-</span></span><span style="display:flex;"><span>-f  指定备份文件
-</span></span><span style="display:flex;"><span>-t  列出压缩包中包括哪些文件，不解包，查看包中的内容
-</span></span><span style="display:flex;"><span>-C  指定解压位置
-</span></span><span style="display:flex;"><span>tar -cvf grub.tar /boot/grub/
-</span></span><span style="display:flex;"><span>tar -xvf grub.tar.bz2 -C /opt/
-</span></span></code></pre></div><h3 id="用户管理">用户管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>groupadd –g GID groupname
-</span></span><span style="display:flex;"><span>useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
-</span></span><span style="display:flex;"><span>usermod -L username（锁）
-</span></span><span style="display:flex;"><span>usermod -U username（解锁）
-</span></span><span style="display:flex;"><span>usermod -g groupname username（改主组）
-</span></span><span style="display:flex;"><span>usermod -aG groupname username（加副组）
-</span></span><span style="display:flex;"><span>usermod -G othergroup username（重设副组）
-</span></span><span style="display:flex;"><span>userdel -r username
-</span></span><span style="display:flex;"><span>groupdel groupname
-</span></span><span style="display:flex;"><span>id username
-</span></span><span style="display:flex;"><span>passwd username
-</span></span><span style="display:flex;"><span>su - username  切换用户，使用切换用户的变量 
-</span></span><span style="display:flex;"><span>su username 切换用户，使用当前用户的变量
-</span></span><span style="display:flex;"><span>sudo Commands 以root身份来执行自己不具备权限的操作
-</span></span></code></pre></div><h3 id="权限管理">权限管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>chmod 634 /tmp/test
-</span></span><span style="display:flex;"><span>chown -R user:gruop /tmp/test
-</span></span></code></pre></div><h3 id="进程管理">进程管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
-</span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
-</span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
-</span></span><span style="display:flex;"><span>ctrl+z 同样也是放在后台执行
-</span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
-</span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
-</span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
-</span></span><span style="display:flex;"><span>pstree 将当前时间点的进程树展示
-</span></span><span style="display:flex;"><span>kill -9 PID
-</span></span><span style="display:flex;"><span>fuser -m /app 查看占用
-</span></span><span style="display:flex;"><span>fuser –kcu /app 快速删除占用的进程
-</span></span></code></pre></div><h3 id="服务管理">服务管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Systemctl命令使用方法
-</span></span><span style="display:flex;"><span>查询服务状态：systemctl status service名
-</span></span><span style="display:flex;"><span>启动服务：systemctl start service名
-</span></span><span style="display:flex;"><span>关闭服务：systemctl stop service名
-</span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
-</span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
-</span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>查看启动时候的报错相关信息或者日志信息：
-</span></span><span style="display:flex;"><span>journalctl -xe	带不带-xe都可，查看系统详细的日志
-</span></span><span style="display:flex;"><span>systemctl status xxxx 	也可以看到少量的日志
-</span></span></code></pre></div><h3 id="vi">vi
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>上左右下 hjkl
-</span></span><span style="display:flex;"><span>[ Page Down ]和[ Page Up ]常用
-</span></span><span style="display:flex;"><span>[ Home ]和[ End ]常用
-</span></span><span style="display:flex;"><span>u 撤销上一次操作
-</span></span><span style="display:flex;"><span>ctrl + r 重做上一次撤销的操作
-</span></span><span style="display:flex;"><span>(n)x 删除字符
-</span></span><span style="display:flex;"><span>(n)dd 剪切
-</span></span><span style="display:flex;"><span>(n)yy 复制
-</span></span><span style="display:flex;"><span>p 粘贴
-</span></span><span style="display:flex;"><span>:w  保存文件。
-</span></span><span style="display:flex;"><span>:q  退出编辑器。
-</span></span><span style="display:flex;"><span>:wq 保存退出
-</span></span><span style="display:flex;"><span>/word 向光标之下寻找
-</span></span><span style="display:flex;"><span>?word 向光标之上寻找
-</span></span><span style="display:flex;"><span>n 重复前一个搜寻的动作
-</span></span></code></pre></div><p><figure 
+    <h3 id="前言">前言
+</h3><p>在接触Oracle之前，寻思我都用过MySQL了,这玩意搞起来不是轻轻松松?事实上错得离谱啊。“用过”代表只是会一点SQL语句，也就是说我对数据库本身是未知的一个状态。</p>
+<p>MySQL是中小型、小内存的数据库，对于字符串可以使用双引号，并且在windows下大小写不敏感，Linux下敏感。</p>
+<p>Oracle是大型、大内存的数据库，对于字符串只可以单引号，普通情况下会将所有小写都转换为大写进行处理。</p>
+<h3 id="oracle服务器">Oracle服务器
+</h3><p>Oracle服务器通常指的是运行Oracle数据库管理系统的硬件和软件环境的总称。它不仅仅是一个数据库管理系统（DBMS），还包括了运行DBMS所需的服务器硬件、操作系统、网络连接等。</p>
+<p>Oracle服务器由Oracle数据库软件、数据库实例、监听器（Listener）、网络服务等部分组成。其中，Oracle数据库软件是核心，是一个具有高性能和高可靠面向对象<strong>关系型数据库管理系统（Relational Database Management System，RDBMS）</strong>，负责数据库的管理和操作；数据库实例是数据库运行时在内存中的表示，包括内存结构和后台进程；监听器则负责监听客户端的连接请求，并将其转发给相应的数据库实例。</p>
+<p>在结构上，Oracle 服务器（Oracle Server）由实例（Instance）和数据库（Database）两大部分构成。实例是一组内存结构和 Oracle 后台进程的集合；数据库在物理上由多个操作系统文件组成，其中主要包括数据文件、控制文件和重做日志文件。</p>
+<p><strong>Oracle 服务器=实例+数据库</strong></p>
+<p><strong>实例（Instance） = 内存结构（System Global Area，SGA）+ 后台进程</strong></p>
+<p><strong>数据库 = 数据文件 + 控制文件 + 联机重做日志文件</strong></p>
+<p><figure 
 	>
-	<a href="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" >
-		<img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif"
+	<a href="https://pic.imgdb.cn/item/668500eed9c307b7e9eea2ab.png" >
+		<img src="https://pic.imgdb.cn/item/668500eed9c307b7e9eea2ab.png"
 			
 			
 			
@@ -469,7 +356,14 @@
 	</a>
 	
 </figure></p>
-<p>这里提一下G和L的区别，G是直接文末，一般接?进行向上搜索；L是屏幕末尾，范围小于行末。</p>
+<h3 id="oracle实例">Oracle实例
+</h3><p>实例是数据库运行时在内存中的表示，相当于用户和数据库的中间层。一个数据库可以有很多实例，而一个实例在生存周期中只能属于一个数据库。</p>
+<p><strong>实例（Instance） = 内存结构（System Global Area，SGA）+ 后台进程</strong></p>
+<p>内存结构描述的是 Oracle 数据库对内存的使用构成，Oracle 内存结构总称为 SGA 。包括数据库高速缓冲区、重做日志缓冲区和共享池等部分。</p>
+<p>后台进程有 DBWn、CKPT、LGWR、SMON、PMON、ARCn 、RECO等。</p>
+<h3 id="oracle数据库">Oracle数据库
+</h3><p><strong>Oracle 数据库 = 数据文件 + 控制文件 + 联机重做日志文件</strong></p>
+<p>除此之外，还有非数据库文件如参数文件、口令文件、归档日志文件、跟踪文件、警告文件等。</p>
 
 </section>
 
@@ -508,36 +402,47 @@
                 
                     
 <article class="">
+    <a href="/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数据库类型概述</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/">
+        
+        
+            <div class="article-image">
+                <img src="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/index.a23777db09f9cd42443c3247c4eead86_hu355cd1ffd98197a463438d175fafc20c_3203579_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 六月二十九日晚"
+                        
+                        data-hash="md5-ojd32wn5zUJEPDJHxO6thg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">六月二十九日晚</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2024/ntp%E6%9C%8D%E5%8A%A1/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">NTP服务</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux变量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">本地yum源配置</h2>
         </div>
     </a>
 </article>
@@ -864,17 +769,10 @@ document.getElementById('days').innerHTML = number_of_days;
   <ol>
     <li>
       <ol>
-        <li><a href="#版本内核查看">版本、内核查看</a></li>
-        <li><a href="#关机重启">关机、重启</a></li>
-        <li><a href="#基本">基本</a></li>
-        <li><a href="#查找">查找</a></li>
-        <li><a href="#网络">网络</a></li>
-        <li><a href="#压缩打包">压缩打包</a></li>
-        <li><a href="#用户管理">用户管理</a></li>
-        <li><a href="#权限管理">权限管理</a></li>
-        <li><a href="#进程管理">进程管理</a></li>
-        <li><a href="#服务管理">服务管理</a></li>
-        <li><a href="#vi">vi</a></li>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#oracle服务器">Oracle服务器</a></li>
+        <li><a href="#oracle实例">Oracle实例</a></li>
+        <li><a href="#oracle数据库">Oracle数据库</a></li>
       </ol>
     </li>
   </ol>

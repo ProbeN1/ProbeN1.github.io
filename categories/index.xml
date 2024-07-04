@@ -6,7 +6,15 @@
         <description>Recent content in Categories on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 29 Jun 2024 19:31:35 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 03 Jul 2024 14:48:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数据库</title>
+        <link>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+        <pubDate>Wed, 03 Jul 2024 14:48:43 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+        <description>&lt;img src="https://proben1.github.io/DBA.jpg" alt="Featured image of post 数据库" /&gt;</description>
+        </item>
+        <item>
         <title>小人联合工会内部资料</title>
         <link>https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/</link>
         <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
@@ -45,14 +53,6 @@
         
         <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
         <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/learn.jpg" alt="Featured image of post 整点小活" /&gt;</description>
-        </item>
-        <item>
-        <title>数据库</title>
-        <link>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-        <description>&lt;img src="https://proben1.github.io/DBA.jpg" alt="Featured image of post 数据库" /&gt;</description>
         </item>
         
     </channel>

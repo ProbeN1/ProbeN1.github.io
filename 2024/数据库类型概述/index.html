@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'><title>Linux常用命令和vi速查</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='会SQL≠会数据库'><title>数据库类型概述</title>
 
-<link rel='canonical' href='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
+<link rel='canonical' href='https://proben1.github.io/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Linux常用命令和vi速查'>
-<meta property='og:description' content='版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file'>
-<meta property='og:url' content='https://proben1.github.io/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='数据库类型概述'>
+<meta property='og:description' content='会SQL≠会数据库'>
+<meta property='og:url' content='https://proben1.github.io/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-09T15:55:13&#43;08:00'/><meta property='article:modified_time' content='2024-05-09T15:55:13&#43;08:00'/>
-<meta name="twitter:title" content="Linux常用命令和vi速查">
-<meta name="twitter:description" content="版本、内核查看 cat /etc/redhat-release cat /etc/os-release uname -a 关机、重启 shutdown -h now reboot 基本 ls -al 额外参数：-t时间排序 -r反序 -h大小 cat 文件 | less find 目录 -name 名字 cp -r 源 目的 mv -r 源 目的 touch 文件 file">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-07-03T10:50:55&#43;08:00'/><meta property='article:modified_time' content='2024-07-03T10:50:55&#43;08:00'/>
+<meta name="twitter:title" content="数据库类型概述">
+<meta name="twitter:description" content="会SQL≠会数据库">
   
 
 <style>
@@ -276,17 +276,21 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" style="background-color: #2a9d8f; color: #fff;">
-                Linux
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="background-color: #2a9d8f; color: #fff;">
+                数据库
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2024/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8Cvi%E9%80%9F%E6%9F%A5/">Linux常用命令和vi速查</a>
+        <a href="/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/">数据库类型概述</a>
     </h2>
 
+    
+    <h3 class="article-subtitle">
+        会SQL≠会数据库
+    </h3>
     
 
     
@@ -302,7 +306,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 09, 2024</time>
+                <time class="article-time--published">Jul 03, 2024</time>
             </div>
         
 
@@ -317,7 +321,7 @@
 
 
                 <time class="article-words">
-                    1538字
+                    3705字
                 </time>
             </div>
         
@@ -329,147 +333,112 @@
     <section class="article-content">
     
     
-    <h3 id="版本内核查看">版本、内核查看
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/redhat-release
-</span></span><span style="display:flex;"><span>cat /etc/os-release
-</span></span><span style="display:flex;"><span>uname -a
-</span></span></code></pre></div><h3 id="关机重启">关机、重启
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>shutdown -h now
-</span></span><span style="display:flex;"><span>reboot
-</span></span></code></pre></div><h3 id="基本">基本
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls -al 额外参数：-t时间排序 -r反序 -h大小
-</span></span><span style="display:flex;"><span>cat 文件 | less
-</span></span><span style="display:flex;"><span>find 目录 -name 名字
-</span></span><span style="display:flex;"><span>cp -r 源 目的 
-</span></span><span style="display:flex;"><span>mv -r 源 目的 
-</span></span><span style="display:flex;"><span>touch 文件
-</span></span><span style="display:flex;"><span>file 文件
-</span></span><span style="display:flex;"><span>ln –s 实际文件 链接文件
-</span></span><span style="display:flex;"><span>du -sh /root/* （分开统计）
-</span></span><span style="display:flex;"><span>du -sh /root （合并统计）
-</span></span><span style="display:flex;"><span>iostat #查看当前系统的读写情况
-</span></span></code></pre></div><h3 id="查找">查找
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>grep根据文件的内容进行查找
-</span></span><span style="display:flex;"><span>grep [options] pattern [files]
-</span></span><span style="display:flex;"><span>-i：忽略大小写进行匹配。
-</span></span><span style="display:flex;"><span>-v：反向查找，只打印不匹配的行。
-</span></span><span style="display:flex;"><span>-n：显示匹配行的行号。
-</span></span><span style="display:flex;"><span>-r：递归查找子目录中的文件。
-</span></span><span style="display:flex;"><span>-l：只打印匹配的文件名。
-</span></span><span style="display:flex;"><span>-c：只打印匹配的行数。
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>find是根据文件的属性进行查找
-</span></span><span style="display:flex;"><span>find [路径] [匹配条件] [动作]
-</span></span><span style="display:flex;"><span>-name pattern：按文件名查找，支持使用通配符 * 和 ?。
-</span></span><span style="display:flex;"><span>-type type：按文件类型查找，可以是 f（普通文件）、d（目录）、l（符号链接）等。
-</span></span><span style="display:flex;"><span>-size [+-]size[cwbkMG]：按文件大小查找，支持使用 + 或 - 表示大于或小于指定大小
-</span></span><span style="display:flex;"><span>-user username：按文件所有者查找。
-</span></span><span style="display:flex;"><span>-group groupname：按文件所属组查找。
-</span></span><span style="display:flex;"><span>-amin n：查找在 n 分钟内被访问过的文件。
-</span></span><span style="display:flex;"><span>-atime n：查找在 n*24 小时内被访问过的文件。
-</span></span><span style="display:flex;"><span>-cmin n：查找在 n 分钟内状态发生变化的文件（例如权限）。
-</span></span><span style="display:flex;"><span>-ctime n：查找在 n*24 小时内状态发生变化的文件（例如权限）。
-</span></span><span style="display:flex;"><span>-mmin n：查找在 n 分钟内被修改过的文件。
-</span></span><span style="display:flex;"><span>-mtime n：查找在 n*24 小时内被修改过的文件。
-</span></span></code></pre></div><h3 id="网络">网络
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hostname
-</span></span><span style="display:flex;"><span>hostnamectl set-hostname &lt;newhostname&gt;
-</span></span><span style="display:flex;"><span>ifconfig -a
-</span></span><span style="display:flex;"><span>ip addr
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vi /etc/sysconfig/network-scripts
-</span></span><span style="display:flex;"><span>TYPE=Ethernet（默认为以太网卡）
-</span></span><span style="display:flex;"><span>BOOTPROTO=static（更改为静态配置方式）
-</span></span><span style="display:flex;"><span>NAME=eth0（默认为网卡名）
-</span></span><span style="display:flex;"><span>DEVICE=eth0（默认为网卡名）
-</span></span><span style="display:flex;"><span>ONBOOT=yes（更改自动启动为yes）
-</span></span><span style="display:flex;"><span>IPADDR=xx.xx.xx.xx（设置分配的IP地址）
-</span></span><span style="display:flex;"><span>NETMASK=xx.xx.xx.xx（设置分配的掩码）
-</span></span><span style="display:flex;"><span>GATEWAY=xx.xx.xx.xx（设置分配的网关）
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>systemctl restart NetworkManager
-</span></span><span style="display:flex;"><span>systemctl restart network
-</span></span></code></pre></div><h3 id="压缩打包">压缩打包
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tar
-</span></span><span style="display:flex;"><span>-c  创建文件
-</span></span><span style="display:flex;"><span>-x  提取 解压还原文件
-</span></span><span style="display:flex;"><span>-v  显示执行详细过程
-</span></span><span style="display:flex;"><span>-f  指定备份文件
-</span></span><span style="display:flex;"><span>-t  列出压缩包中包括哪些文件，不解包，查看包中的内容
-</span></span><span style="display:flex;"><span>-C  指定解压位置
-</span></span><span style="display:flex;"><span>tar -cvf grub.tar /boot/grub/
-</span></span><span style="display:flex;"><span>tar -xvf grub.tar.bz2 -C /opt/
-</span></span></code></pre></div><h3 id="用户管理">用户管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>groupadd –g GID groupname
-</span></span><span style="display:flex;"><span>useradd –u 1601 –g GID(MAIN) –G GID(SUPPORT) –d /home/test –s /bin/bash –c “notes” username
-</span></span><span style="display:flex;"><span>usermod -L username（锁）
-</span></span><span style="display:flex;"><span>usermod -U username（解锁）
-</span></span><span style="display:flex;"><span>usermod -g groupname username（改主组）
-</span></span><span style="display:flex;"><span>usermod -aG groupname username（加副组）
-</span></span><span style="display:flex;"><span>usermod -G othergroup username（重设副组）
-</span></span><span style="display:flex;"><span>userdel -r username
-</span></span><span style="display:flex;"><span>groupdel groupname
-</span></span><span style="display:flex;"><span>id username
-</span></span><span style="display:flex;"><span>passwd username
-</span></span><span style="display:flex;"><span>su - username  切换用户，使用切换用户的变量 
-</span></span><span style="display:flex;"><span>su username 切换用户，使用当前用户的变量
-</span></span><span style="display:flex;"><span>sudo Commands 以root身份来执行自己不具备权限的操作
-</span></span></code></pre></div><h3 id="权限管理">权限管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>chmod 634 /tmp/test
-</span></span><span style="display:flex;"><span>chown -R user:gruop /tmp/test
-</span></span></code></pre></div><h3 id="进程管理">进程管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>jobs：查看当前正在后台工作的进程
-</span></span><span style="display:flex;"><span>fg：将后台进程放到前台执行 fg 1
-</span></span><span style="display:flex;"><span>bg：将后台进程在后台继续执行 bg 1
-</span></span><span style="display:flex;"><span>ctrl+z 同样也是放在后台执行
-</span></span><span style="display:flex;"><span>[ 指令与参数 ] &amp; &lt;==在终端机前景中工作
-</span></span><span style="display:flex;"><span>nohup [ 指令与参数 ] &amp; &lt;==在终端机背景中工作
-</span></span><span style="display:flex;"><span>ps aux或者ps –ef		打印当前系统运行的所有进程
-</span></span><span style="display:flex;"><span>pstree 将当前时间点的进程树展示
-</span></span><span style="display:flex;"><span>kill -9 PID
-</span></span><span style="display:flex;"><span>fuser -m /app 查看占用
-</span></span><span style="display:flex;"><span>fuser –kcu /app 快速删除占用的进程
-</span></span></code></pre></div><h3 id="服务管理">服务管理
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Systemctl命令使用方法
-</span></span><span style="display:flex;"><span>查询服务状态：systemctl status service名
-</span></span><span style="display:flex;"><span>启动服务：systemctl start service名
-</span></span><span style="display:flex;"><span>关闭服务：systemctl stop service名
-</span></span><span style="display:flex;"><span>重启服务：systemctl restart service名
-</span></span><span style="display:flex;"><span>使服务开机自启：systemctl enable service名
-</span></span><span style="display:flex;"><span>使服务开机不自启：systemctl disable service名
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>查看启动时候的报错相关信息或者日志信息：
-</span></span><span style="display:flex;"><span>journalctl -xe	带不带-xe都可，查看系统详细的日志
-</span></span><span style="display:flex;"><span>systemctl status xxxx 	也可以看到少量的日志
-</span></span></code></pre></div><h3 id="vi">vi
-</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>上左右下 hjkl
-</span></span><span style="display:flex;"><span>[ Page Down ]和[ Page Up ]常用
-</span></span><span style="display:flex;"><span>[ Home ]和[ End ]常用
-</span></span><span style="display:flex;"><span>u 撤销上一次操作
-</span></span><span style="display:flex;"><span>ctrl + r 重做上一次撤销的操作
-</span></span><span style="display:flex;"><span>(n)x 删除字符
-</span></span><span style="display:flex;"><span>(n)dd 剪切
-</span></span><span style="display:flex;"><span>(n)yy 复制
-</span></span><span style="display:flex;"><span>p 粘贴
-</span></span><span style="display:flex;"><span>:w  保存文件。
-</span></span><span style="display:flex;"><span>:q  退出编辑器。
-</span></span><span style="display:flex;"><span>:wq 保存退出
-</span></span><span style="display:flex;"><span>/word 向光标之下寻找
-</span></span><span style="display:flex;"><span>?word 向光标之上寻找
-</span></span><span style="display:flex;"><span>n 重复前一个搜寻的动作
-</span></span></code></pre></div><p><figure 
-	>
-	<a href="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif" >
-		<img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch.gif"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<p>这里提一下G和L的区别，G是直接文末，一般接?进行向上搜索；L是屏幕末尾，范围小于行末。</p>
+    <h3 id="前言">前言
+</h3><p>我们从一个不等式开始：<strong>会SQL≠会数据库</strong></p>
+<p>SQL是结构化查询语言（Structured Query Language）的缩写，用来访问和操作关系型数据库系统。</p>
+<p>这里出现了两个概念，分别是：关系型、数据库系统。</p>
+<p>什么是数据库系统（DataBase System）？什么叫关系型？还有非关系型？</p>
+<p><strong>数据库系统=数据库+硬件+软件+人</strong></p>
+<ul>
+<li>数据库：数据库（DataBase），是按照数据结构来组织、存储和管理数据的仓库。</li>
+<li>硬件：构成计算机系统的各种物理设备。</li>
+<li>软件：包括操作系统、数据库管理系统及应用程序。数据库管理系统（Database Management System，DBMS）是数据库系统的核心软件，科学地组织和存储数据，高效获取和维护数据。</li>
+<li>人：广义上讲包括四类，这里只说数据库管理员（Data Base Administrator，DBA）。</li>
+</ul>
+<p>既然我们使用DBMS来管理数据库，现在眼前有两种选择：<strong>关系型数据库</strong>（<strong>SQL 数据库</strong>）和<strong>非关系型数据库</strong>（<strong>No SQL 数据库</strong>）。</p>
+<h3 id="关系型数据库">关系型数据库
+</h3><p>关系型数据库使用 SQL，来编写数据库查询和数据库进行通信。查询可以是用于执行任何 <strong>CRUD</strong>（创建、读取、更新、删除）操作的命令。</p>
+<ul>
+<li><a class="link" href="https://www.postgresql.org/"  target="_blank" rel="noopener"
+    >PostgreSQL</a></li>
+<li><a class="link" href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads"  target="_blank" rel="noopener"
+    >Microsoft SQL Server</a></li>
+<li><a class="link" href="https://www.mysql.com/"  target="_blank" rel="noopener"
+    >MySQL</a></li>
+<li><a class="link" href="https://www.oracle.com/index.html"  target="_blank" rel="noopener"
+    >Oracle</a></li>
+<li><a class="link" href="https://sqlite.org/index.html"  target="_blank" rel="noopener"
+    >SQLite</a></li>
+</ul>
+<p>关系数据库以结构化和表的方式存储数据。也就是说，它将信息存储在<strong>表</strong>中，可以将其视为数据的存储容器。</p>
+<p>关系数据库具有严格的、静态的预定义逻辑<strong>架构（schema）</strong>。可以将数据库架构视为一个组织蓝图——一组规则：哪些可以插入表、哪些不能插入表、以及如何设置数据。</p>
+<p>在每个表中，至少有一个<strong>列（column）</strong>。这些列具有特定的数据类型，例如 <code>INTEGER</code> 或 <code>VARCHAR</code>。</p>
+<p>一个表也会包含**行（rows）**或 <strong>记录（records）</strong>。记录是遵守预定义架构的单个数据条目。本质上，它是一个数据项。</p>
+<p>此外，一个关系数据库可以有多个表，这些表可以是相互关联的。关系数据库有一个主键，它作为标识符，确保表中的每一项都是唯一的，从而确保表中没有重复和冗余的数据。<strong>外键</strong> 用于表示在表之间的关系，比如1:1、1:n或者是n:n。</p>
+<p>关系数据库提供 ACID 数据一致性模型。原子性（<strong>A</strong>tomicity）、一致性（<strong>C</strong>onsistency）、事务隔离（<strong>I</strong>solation）、持久性（<strong>D</strong>urability）。</p>
+<p><strong>原子性</strong>意味着事务是原子的并且采取 “all or nothing” 的方法。也就是，要么整个操作成功，从头到尾完成，要么不成功，整个操作“回滚”。所有操作都保证以成功或失败结束，不存在部分成功。</p>
+<p><strong>一致性</strong>是确保数据库结构从事务开始到结束保持不变。一致性确保进入数据库的任何数据都遵循已设置的规则和约束。它可以保护和维护关系数据库中数据的完整性。</p>
+<p><strong>事务隔离</strong>意味着尽管在任何时候都发生了许多事务，但每个事务都被视为一个原子的、独立的单元，并且事务似乎是按顺序发生的。</p>
+<p>例如，如果两个事务同时发生，此属性可确保一个事务以及那里发生的更改不会以任何方式影响另一个事务。</p>
+<p>最后，<strong>持久性</strong>意味着事务的任何结果和更改都已提交，因此是永久性的，并且将持续存在，即使出现系统故障也是如此。</p>
+<p>ACID 模型可确保数据库可靠且安全。</p>
+<h3 id="非关系数据库">非关系数据库
+</h3><p>非关系数据库都是指不使用关系数据模型的数据库。无论是“<strong>N</strong>ot <strong>o</strong>nly <strong>SQL</strong>”还是“Non-SQL”。</p>
+<ul>
+<li><a class="link" href="https://www.mongodb.com/"  target="_blank" rel="noopener"
+    >MongoDB</a></li>
+<li><a class="link" href="https://redis.io/"  target="_blank" rel="noopener"
+    >Redis</a></li>
+</ul>
+<p>非关系数据库不以表格式存储和组织数据。不同数据点之间没有表、行、列或关系。数据存储在<strong>集合</strong>中。数据库通常是非结构化的并使用动态架构。</p>
+<p>1、键值（Key-Value）存储</p>
+<p><strong>键-值数据库</strong>是最简单的非关系数据库类型之一。数据以键值对集合的形式存储在字典或哈希表中。这种类型的数据库具有唯一的键。键充当指向特定值的指针并与该值相关联。分配给键的值可以是任何信息和数据类型。要检索和访问该值，请使用唯一键作为引用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>优点：查询快
+</span></span><span style="display:flex;"><span>缺点：数据无结构化，通常只被当做字符串和二进制数据存储
+</span></span><span style="display:flex;"><span>应用场景：内容缓存、用户信息（会话、配置信息、购物车等），主要处理大量数据的高访问负载
+</span></span><span style="display:flex;"><span>代表：Redis、Memcached
+</span></span></code></pre></div><p>2、文档（Document-Oriented）存储</p>
+<p><strong>面向文档的数据库</strong>也以键值对的方式存储数据。但是其值是一个文档，它有一个唯一的键作为它的标识符。文档可以是任何格式，例如 XML、YAML 或二进制，通常采用 JSON 格式。这种类型的数据库以半结构化的方式存储数据。没有架构或预定义的结构。正因为如此，它更灵活，可以在项目需求发生变化时重新安排和重新设计数据库结构。它还提供了类似 SQL 的查询语言或者通过 API 来对数据执行查询以及 CRUD 操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>优点：数据结构要求不严格，表结构可变
+</span></span><span style="display:flex;"><span>缺点：查询性能不高，缺乏统一的查询语法
+</span></span><span style="display:flex;"><span>应用场景：日志、Web应用
+</span></span><span style="display:flex;"><span>代表：Mongdb、CouchDB
+</span></span></code></pre></div><p>3、列（Wide Column Store/Column-Family）存储</p>
+<p><strong>列式数据库</strong>在概念上类似于关系数据库，但它们使用组或列集（也称为列族）而不是行来逻辑组织相关数据。可以通过使用与单个列关联的唯一行键来独立访问列族。列式数据库搜索特定数据的速度很快，因为无需通过不相关的信息行来查找要搜索的内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>优点：列存储查找速度快，可扩展行强，更容易进行分布式扩展，适用于分布式的文件系统，应对分布式存储的海量数据
+</span></span><span style="display:flex;"><span>缺点：查询性能不高，缺乏统一的查询语法
+</span></span><span style="display:flex;"><span>应用场景：日志、分布式文件系统（对象存储）、时空数据、推荐画像、消息/订单等。
+</span></span><span style="display:flex;"><span>代表：Cassandra、Hbase
+</span></span></code></pre></div><p>4、图形（Graph-Oriented）存储
+特点：<strong>图数据库</strong>是最复杂的非关系数据库类型，它们可以处理大量数据。图数据库专注于数据元素之间的连接和关系，并使用图论来存储、搜索和管理这些关系。图数据库使用 <em>nodes</em> 来存储数据，用 <em>nodes</em> 表示单个实体或数据。一个节点连接到另一个节点。为了表示实体之间的连接或关系，图数据库还用到了 <em>edges</em>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>优点：图形相关算法。比如最短路径寻址，N度关系查找等
+</span></span><span style="display:flex;"><span>缺点：有时需要对整个图计算才能得出需要信息，分布式的集群方案不好做，处理超级节点乏力，没有分片存储
+</span></span><span style="display:flex;"><span>应用场景：社交网络、推荐系统等。专注于构建关系图谱。
+</span></span><span style="display:flex;"><span>代表：Neo4j、Infinite Graph
+</span></span></code></pre></div><p>非关系数据库提供 BASE 数据库一致性模型。该模型不像关系数据库的 ACID 模型那样严格。</p>
+<p>BASE 是以下的首字母缩写词：</p>
+<ul>
+<li><strong>B</strong>asic <strong>A</strong>vailability 基本可用，该模型不关注数据的即时一致性。但是，该系统在持续工作，并始终保证数据的可用性。</li>
+<li><strong>S</strong>oft 软状态，由于缺乏即时一致性，系统的状态可能会随着时间而改变。软状态意味着系统不需要写一致性。</li>
+<li><strong>E</strong>ventual 最终一致性，主要优先事项是数据的持续可用，而不是数据一致性。但是，最终在某个时候，可以期望数据是一致的。当系统停止接收输入时，可能会发生这种情况。</li>
+</ul>
+<h3 id="二者对比">二者对比
+</h3><p><strong>SQL数据库</strong></p>
+<ul>
+<li>需要分布在多个表中的高度结构化的数据，需要数据遵守严格的、可预测的、预定义的和已经计划好的模式。</li>
+<li>数据将保持相对不变。如果不打算频繁更改数据库的结构并且不需要定期更新项目，SQL 数据库会很方便。请记住，它们提供的灵活性很小。</li>
+<li>需要一致的数据。</li>
+<li>数据完整性和安全性是重中之重。</li>
+<li>需要复杂查询的准确结果。</li>
+</ul>
+<p>SQL 数据库的一个缺点是它们是垂直扩展的。当存储变多时，需要增加当前机器上的硬件和提高计算能力。这可能代价高昂。需要增加处理能力和内存存储来处理增加的负载以提高性能。</p>
+<p>但是SQL可以确保数据的完整性和一致性，并且快速查询。</p>
+<p><strong>NoSQL 数据库</strong></p>
+<ul>
+<li>在一个快速的开发环境中工作，需要经常调整需求并不断更改数据库结构。</li>
+<li>正在处理大量性质不同但不需要大量结构或准确性的数据。</li>
+<li>正在处理需要频繁更新的数据。NoSQL 数据库提供了一个松散、灵活和动态的模式，允许对数据进行定期更改。</li>
+<li>需要快速的查询结果和系统的持续可用性。</li>
+<li>不想对数据库进行任何前期规划、准备或设计，而是想立即开始构建。</li>
+</ul>
+<p>NoSQL 数据库的一大优势是它们可以水平扩展。它们的设计方式可以将更多机器添加到现有机器（例如云服务器）中。与需要额外 CPU（中央处理单元）或 RAM（随机存取存储器）资源的垂直缩放相比，这种行为更可取。</p>
+<p>但当然，NoSQL 数据库的一个缺点是它们不能确保数据的完整性和一致性。</p>
+<h3 id="分析型数据库">分析型数据库
+</h3><p>我们根据数据库存储数据的模式，将它们分为关系型和非关系型。而根据数据库的作用，我们还可以划出另一种分类方式：<strong>分析型数据库</strong>。</p>
+<p>分析数据库是面向分析应用的数据库，与传统的数据库不同，它可以对数据进行在线统计、数据在线分析、即时查询等，从而发掘数据的价值信息。</p>
+<p><strong>OLTP(OnLine Transaction Processing)</strong>；OLTP 是能够提供实时在线处理事务，同时保证实时强一致性的关系型数据库，也称交易型数据库。开源产品有：MySQL、PostgreSQL。可以理解成传统的关系型数据库的主要应用，主要是基本的、日常的事务处理，例如银行交易。</p>
+<p><strong>OLAP(Online Analytical Processing)</strong>：OLAP 是指支持对大规模数据进行较为复杂的联机分析处理的关系型数据库。开源产品有：Greenplum、Doris、Clickhouse、Kylin、Impala、Sparksql、Druid、Hive、Presto。是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。</p>
+<p><strong>HTAP (Hybrid Transactional/Analytical Processing)</strong>：HTAP 是指能够同时支持在线事务处理和复杂数据分析的关系型数据库。广义的 HTAP 指的是同时支持 OLTP 和 OLAP 查询的数据库，而狭义的 HTAP 指的是同时支持行存列存 OLTP 和 OLAP 查询的数据库。</p>
 
 </section>
 
@@ -508,36 +477,47 @@
                 
                     
 <article class="">
+    <a href="/2024/oracle%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BB%93%E6%9E%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle服务器结构</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/">
+        
+        
+            <div class="article-image">
+                <img src="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/index.a23777db09f9cd42443c3247c4eead86_hu355cd1ffd98197a463438d175fafc20c_3203579_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 六月二十九日晚"
+                        
+                        data-hash="md5-ojd32wn5zUJEPDJHxO6thg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">六月二十九日晚</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/2024/ntp%E6%9C%8D%E5%8A%A1/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">NTP服务</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux变量</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">本地yum源配置</h2>
         </div>
     </a>
 </article>
@@ -864,17 +844,11 @@ document.getElementById('days').innerHTML = number_of_days;
   <ol>
     <li>
       <ol>
-        <li><a href="#版本内核查看">版本、内核查看</a></li>
-        <li><a href="#关机重启">关机、重启</a></li>
-        <li><a href="#基本">基本</a></li>
-        <li><a href="#查找">查找</a></li>
-        <li><a href="#网络">网络</a></li>
-        <li><a href="#压缩打包">压缩打包</a></li>
-        <li><a href="#用户管理">用户管理</a></li>
-        <li><a href="#权限管理">权限管理</a></li>
-        <li><a href="#进程管理">进程管理</a></li>
-        <li><a href="#服务管理">服务管理</a></li>
-        <li><a href="#vi">vi</a></li>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#关系型数据库">关系型数据库</a></li>
+        <li><a href="#非关系数据库">非关系数据库</a></li>
+        <li><a href="#二者对比">二者对比</a></li>
+        <li><a href="#分析型数据库">分析型数据库</a></li>
       </ol>
     </li>
   </ol>
