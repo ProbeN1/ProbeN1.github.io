@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 04 Jul 2024 09:44:37 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 Jul 2024 10:54:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>六月二十九日晚</title>
         <link>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</link>
         <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
@@ -128,6 +128,87 @@
 &lt;p&gt;以及抱着和客户快乐交流的基本原则。&lt;/p&gt;
 &lt;h1 id=&#34;结语&#34;&gt;结语
 &lt;/h1&gt;&lt;p&gt;个人的成长过程是贯穿始终的，是以年为单位的，而且会一直持续数十年。每位&lt;code&gt;工程师&lt;/code&gt;的学习方法、工作方法、学习态度等等，都要经历数十年的考验，谨记。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Oracle物理逻辑存储概念区分</title>
+        <link>https://proben1.github.io/2024/oracle%E7%89%A9%E7%90%86%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86/</link>
+        <pubDate>Thu, 04 Jul 2024 10:54:43 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/oracle%E7%89%A9%E7%90%86%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86/</guid>
+        <description>&lt;h3 id=&#34;前言&#34;&gt;前言
+&lt;/h3&gt;&lt;p&gt;在刚学习Oracle的时候，会接触的一个叫“表空间”的词，很容易被误认为“表”。实际上这是两个完全不同的概念，&lt;strong&gt;表空间&lt;/strong&gt;是Oracle里逻辑存储上最大的单位，”表“是关系型数据库存储和管理数据的一种结构，由行和列组成，每行代表一条记录，每列代表记录中的一个字段。“表”对应Oracle逻辑存储的&lt;strong&gt;段&lt;/strong&gt;，而且只是众多&lt;strong&gt;段&lt;/strong&gt;的一种。&lt;/p&gt;
+&lt;p&gt;现在我们看一下，该如何去理解这些概念：实例（Instance）、表空间（Table space）、模式（Schema）、数据库对象、用户（Users）、段（segment）、区（extend）、块（block）、表（table）、列（column）、行（row）&lt;/p&gt;
+&lt;h3 id=&#34;行列表&#34;&gt;行、列、表
+&lt;/h3&gt;&lt;p&gt;在关系数据库中，&lt;strong&gt;表&lt;/strong&gt;（Table）是数据的主要组织单元。它是由一组命名的列和行组成，用于存储和组织数据。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;列&lt;/strong&gt;（Column）是表中的一个字段，用于存储特定类型的数据。每个列都有一个名称和相应的数据类型。例如，一个包含学生信息的表可以有列如&amp;quot;学生编号&amp;quot;、&amp;ldquo;姓名&amp;quot;和&amp;quot;年龄&amp;quot;等，其中每个列分别存储学生的唯一编号、姓名和年龄数据。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;行&lt;/strong&gt;（Row），也称为记录（Record），是表中的一个实例或一个数据行。每行由一组与该表的列相对应的值组成。例如，在上述的学生信息表中，每一行可以表示一个学生的具体信息，包括学生编号、姓名和年龄。&lt;/p&gt;
+&lt;p&gt;简单来说：&lt;/p&gt;
+&lt;p&gt;表是一个二维的数据结构，由行和列组成。
+列是表中的一个字段，用于定义数据的类型和存储特定数据。
+行是表中的一个记录或实例，包含一组值，每个值与相应列对应。&lt;/p&gt;
+&lt;p&gt;就像这样：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;EmpId&lt;/th&gt;
+&lt;th&gt;Lastname&lt;/th&gt;
+&lt;th&gt;Firstname&lt;/th&gt;
+&lt;th&gt;Salary&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Smith&lt;/td&gt;
+&lt;td&gt;Joe&lt;/td&gt;
+&lt;td&gt;40000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Jones&lt;/td&gt;
+&lt;td&gt;Mary&lt;/td&gt;
+&lt;td&gt;50000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Johnson&lt;/td&gt;
+&lt;td&gt;Cathy&lt;/td&gt;
+&lt;td&gt;44000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;块区段表空间&#34;&gt;块、区、段、表空间
+&lt;/h3&gt;&lt;p&gt;接下来是Oralce逻辑存储上的划分：&lt;/p&gt;
+&lt;p&gt;首先我们清空大脑，想象数据库宏观上都要存储哪些东西。&lt;/p&gt;
+&lt;p&gt;主要是数据文件和日志文件，是吧。&lt;/p&gt;
+&lt;p&gt;接着想象，它们存储在磁盘上，是直接在磁盘上吗？不，数据库要做到管理数据，就必须要划分出一个最小的单元，这个单元就叫做&lt;strong&gt;块&lt;/strong&gt;。块是Oracle数据库中最小的逻辑单元，也是最小的I/O单元。&lt;/p&gt;
+&lt;p&gt;块的大小可以是2KB、4KB、8KB（默认）、16KB、32KB等，这些大小必须是倍数增加。&lt;/p&gt;
+&lt;p&gt;一个块的结构包括以下几个部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;块头（Block Header）&lt;/strong&gt;：存放块的基本信息，如块的物理地址、块所属的类型（数据段、索引段等）、事务槽（用于记录对块进行事务处理的信息）等。块头的大小不是固定的，但通常占用一定的空间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;表目录（Table Directory）&lt;/strong&gt;：如果块中存储的数据为表数据，则表目录中保存这个表的相关信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行目录（Row Directory）&lt;/strong&gt;：如果块中存储的数据为表数据，则行目录中保存数据行的相关信息，它是一个指针数组，指示了每一行在数据块中的物理位置。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行数据（Row Data）&lt;/strong&gt;：真正存放数据的区域，这部分空间已被使用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;空闲空间（Free Space）&lt;/strong&gt;：未使用的区域，用于新行的插入或者已经存在行的更新。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现在，一些块在物理上连续地在一起，就组成了一个&lt;strong&gt;区&lt;/strong&gt;，&lt;strong&gt;区&lt;/strong&gt;的大小从一个块到2GB不等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;区&lt;/strong&gt;的概念很容易理解，当很多相连或者不相连的区组合在一起，就变成了一个&lt;strong&gt;段&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;段&lt;/strong&gt;是Oracle数据库中的分配单位，对象如表、索引等都是以&lt;strong&gt;段&lt;/strong&gt;为单位进行分配。当创建一个表时将创建一个表段，创建一个索引时就创建一个索引段。每一个消耗存储空间的对象最终被存储到一个段中。有回滚段、临时段、聚簇段、索引段等。&lt;/p&gt;
+&lt;p&gt;我们上边所说的表，其实就是一个&lt;strong&gt;表段&lt;/strong&gt;，也可以说数据段。毫无疑问，表段是最主要的段，但其他段的作用也不可忽视。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/668619c7d9c307b7e9bc82e1.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/668619c7d9c307b7e9bc82e1.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;继续向上延伸，引出&lt;strong&gt;表空间&lt;/strong&gt;的概念：&lt;strong&gt;表空间&lt;/strong&gt;是数据库中存储数据的逻辑容器，可以包含一个或多个数据文件(*.DBF)，DBF文件就可以肉眼（ls）看到啦！&lt;/p&gt;
 </description>
         </item>
         <item>
