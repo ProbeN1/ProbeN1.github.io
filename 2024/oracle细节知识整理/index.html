@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    307字
+                    1801字
                 </time>
             </div>
         
@@ -347,6 +347,73 @@
 	</a>
 	
 </figure></p>
+<h3 id="关机指令">关机指令
+</h3><ol>
+<li>SHUTDOWN NORMAL（普通关闭）
+<ul>
+<li>如果没有指定任何模式，则默认使用NORMAL模式。</li>
+<li>在此模式下，Oracle服务器在完成关闭之前会<strong>等待所有用户断开连接</strong>。</li>
+<li>数据库高速缓冲区缓存和重做日志缓冲区被写入磁盘。</li>
+<li>终止后台进程，并从内存中删除SGA（系统全局区）。</li>
+<li>在关闭实例之前，Oracle服务器会关闭并卸除数据库。</li>
+</ul>
+</li>
+<li>SHUTDOWN IMMEDIATE（立即关闭）
+<ul>
+<li>使用此命令时，Oracle服务器<strong>不等待当前连接到数据库的用户</strong>直接断开连接。</li>
+<li>Oracle服务器会<strong>回滚</strong>活动事务并断开所有已连接用户的连接。</li>
+<li>在关闭实例之前，Oracle服务器会关闭并卸除数据库。</li>
+</ul>
+</li>
+<li>SHUTDOWN TRANSACTIONAL（事务保证关闭）
+<ul>
+<li>在此模式下关闭可防止客户端丢失数据，包括其当前活动会话的结果。</li>
+<li>没有客户端可以在此实例上启动新事务。</li>
+<li>当客户端结束正在进行的事务时，客户端将断开连接。</li>
+<li>完成所有事务后，将立即关闭。</li>
+</ul>
+</li>
+<li>SHUTDOWN ABORT（强制终止/强制关闭）
+<ul>
+<li>在某些紧急情况下，如果其他关闭模式均无效，可以使用此命令。</li>
+<li>Oracle服务器正在处理的当前SQL语句将立即终止。</li>
+<li>Oracle服务器不等待当前连接到数据库的用户直接断开连接。</li>
+<li>数据库高速缓冲区缓存和重做缓冲区<strong>未写入磁盘</strong>。</li>
+<li>未提交的事务<strong>不会回滚</strong>。</li>
+<li>该实例将终止而不关闭文件。</li>
+<li>数据库未关闭或卸载</li>
+</ul>
+</li>
+</ol>
+<h3 id="scope参数">scope参数
+</h3><p><code>SCOPE</code>参数在Oracle数据库中用于控制<code>ALTER SYSTEM</code>命令对数据库参数修改的生效范围和时机，总共有三个值：BOTH、MEMORY，SPFILE。</p>
+<ul>
+<li>MEMORY：仅对当前实例的内存中的参数值进行修改，不改变服务器参数文件（SPFILE）中的值，修改立即生效，但只持续到数据库实例关闭。</li>
+<li>SPFILE：仅对服务器参数文件（SPFILE）中的参数值进行修改，不改变当前实例的内存中的值。修改不会立即生效，而是在数据库实例下一次启动时生效。</li>
+<li>BOTH：同时修改当前实例的内存中的参数值和服务器参数文件（SPFILE）中的值。修改立即生效（针对内存中的值），并且在数据库实例下一次启动时仍然有效（因为SPFILE中的值也被修改了）。</li>
+</ul>
+<h3 id="asm实现高可用的方式">ASM实现高可用的方式
+</h3><p>ASM（Automatic Storage Management，自动存储管理）是Oracle推荐的一种智能化数据库文件存储管理方式，它通过自动管理磁盘组来平衡I/O负载，提高数据的可靠性和可用性。</p>
+<p>ASM提供三种镜像类型来实现数据冗余：</p>
+<ol>
+<li><strong>外部冗余（External Redundancy）</strong>：没有镜像的一种冗余方式，即在磁盘组中没有故障组。这种方式下，Oracle不管理镜像，镜像功能由外部存储系统实现（如RAID技术）。</li>
+<li><strong>常规冗余（Normal Redundancy）</strong>：要求磁盘组具有两个故障组，每个故障组一个磁盘控制器。这种方式下，Oracle提供两份镜像来保护数据，有效磁盘空间是所有磁盘设备大小之和的1/2。</li>
+<li><strong>高冗余（High Redundancy）</strong>：要求磁盘组具有三个故障组，每个故障组一个磁盘控制器。这种方式下，Oracle提供三份镜像来保护数据，以提高性能和数据的安全性。有效磁盘空间是所有磁盘设备大小之和的1/3。</li>
+</ol>
+<h3 id="block_size对应最大的表空间大小">block_size对应最大的表空间大小
+</h3><p>Oracle的Rowid使用22位来代表数据块号，因此Oracle表空间数据文件每个数据文件最多只能包含2^22个数据块。
+也因此数据库表空间的数据文件不是无限增长的，例如：</p>
+<p>登DBA用户，查询当前ORACEL数据库数据库的大小：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>SQL&gt; select name,value from v$parameter where name = &#39;db_block_size&#39;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                           VALUE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>------------------------------ --------------------
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>db_block_size                  8192
+</span></span></code></pre></div><p>在数据块为8k的情况下，单个数据文件的最大容量为8K*2^22 = 32G。</p>
+<p>因此，有的表空间扩容不能直接resize，需要去添加新的数据文件到表空间中，例如：</p>
+<p><code>ALTER TABLESPACE TAB_CC ADD DATAFILE '/oradata/test2.dbf' SIZE 10G;</code></p>
 
 </section>
 
@@ -600,7 +667,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了107.5k字·共 71篇文章</br><span><p>
+      共书写了109k字·共 71篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -746,6 +813,10 @@ document.getElementById('days').innerHTML = number_of_days;
     <li>
       <ol>
         <li><a href="#自动共享管理内存-asmm"><strong>自动共享管理内存</strong> ASMM</a></li>
+        <li><a href="#关机指令">关机指令</a></li>
+        <li><a href="#scope参数">scope参数</a></li>
+        <li><a href="#asm实现高可用的方式">ASM实现高可用的方式</a></li>
+        <li><a href="#block_size对应最大的表空间大小">block_size对应最大的表空间大小</a></li>
       </ol>
     </li>
   </ol>

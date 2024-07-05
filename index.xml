@@ -235,6 +235,73 @@
 	&lt;/a&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;关机指令&#34;&gt;关机指令
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;SHUTDOWN NORMAL（普通关闭）
+&lt;ul&gt;
+&lt;li&gt;如果没有指定任何模式，则默认使用NORMAL模式。&lt;/li&gt;
+&lt;li&gt;在此模式下，Oracle服务器在完成关闭之前会&lt;strong&gt;等待所有用户断开连接&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;数据库高速缓冲区缓存和重做日志缓冲区被写入磁盘。&lt;/li&gt;
+&lt;li&gt;终止后台进程，并从内存中删除SGA（系统全局区）。&lt;/li&gt;
+&lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SHUTDOWN IMMEDIATE（立即关闭）
+&lt;ul&gt;
+&lt;li&gt;使用此命令时，Oracle服务器&lt;strong&gt;不等待当前连接到数据库的用户&lt;/strong&gt;直接断开连接。&lt;/li&gt;
+&lt;li&gt;Oracle服务器会&lt;strong&gt;回滚&lt;/strong&gt;活动事务并断开所有已连接用户的连接。&lt;/li&gt;
+&lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SHUTDOWN TRANSACTIONAL（事务保证关闭）
+&lt;ul&gt;
+&lt;li&gt;在此模式下关闭可防止客户端丢失数据，包括其当前活动会话的结果。&lt;/li&gt;
+&lt;li&gt;没有客户端可以在此实例上启动新事务。&lt;/li&gt;
+&lt;li&gt;当客户端结束正在进行的事务时，客户端将断开连接。&lt;/li&gt;
+&lt;li&gt;完成所有事务后，将立即关闭。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SHUTDOWN ABORT（强制终止/强制关闭）
+&lt;ul&gt;
+&lt;li&gt;在某些紧急情况下，如果其他关闭模式均无效，可以使用此命令。&lt;/li&gt;
+&lt;li&gt;Oracle服务器正在处理的当前SQL语句将立即终止。&lt;/li&gt;
+&lt;li&gt;Oracle服务器不等待当前连接到数据库的用户直接断开连接。&lt;/li&gt;
+&lt;li&gt;数据库高速缓冲区缓存和重做缓冲区&lt;strong&gt;未写入磁盘&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;未提交的事务&lt;strong&gt;不会回滚&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;该实例将终止而不关闭文件。&lt;/li&gt;
+&lt;li&gt;数据库未关闭或卸载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;scope参数&#34;&gt;scope参数
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;SCOPE&lt;/code&gt;参数在Oracle数据库中用于控制&lt;code&gt;ALTER SYSTEM&lt;/code&gt;命令对数据库参数修改的生效范围和时机，总共有三个值：BOTH、MEMORY，SPFILE。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MEMORY：仅对当前实例的内存中的参数值进行修改，不改变服务器参数文件（SPFILE）中的值，修改立即生效，但只持续到数据库实例关闭。&lt;/li&gt;
+&lt;li&gt;SPFILE：仅对服务器参数文件（SPFILE）中的参数值进行修改，不改变当前实例的内存中的值。修改不会立即生效，而是在数据库实例下一次启动时生效。&lt;/li&gt;
+&lt;li&gt;BOTH：同时修改当前实例的内存中的参数值和服务器参数文件（SPFILE）中的值。修改立即生效（针对内存中的值），并且在数据库实例下一次启动时仍然有效（因为SPFILE中的值也被修改了）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;asm实现高可用的方式&#34;&gt;ASM实现高可用的方式
+&lt;/h3&gt;&lt;p&gt;ASM（Automatic Storage Management，自动存储管理）是Oracle推荐的一种智能化数据库文件存储管理方式，它通过自动管理磁盘组来平衡I/O负载，提高数据的可靠性和可用性。&lt;/p&gt;
+&lt;p&gt;ASM提供三种镜像类型来实现数据冗余：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;外部冗余（External Redundancy）&lt;/strong&gt;：没有镜像的一种冗余方式，即在磁盘组中没有故障组。这种方式下，Oracle不管理镜像，镜像功能由外部存储系统实现（如RAID技术）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常规冗余（Normal Redundancy）&lt;/strong&gt;：要求磁盘组具有两个故障组，每个故障组一个磁盘控制器。这种方式下，Oracle提供两份镜像来保护数据，有效磁盘空间是所有磁盘设备大小之和的1/2。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高冗余（High Redundancy）&lt;/strong&gt;：要求磁盘组具有三个故障组，每个故障组一个磁盘控制器。这种方式下，Oracle提供三份镜像来保护数据，以提高性能和数据的安全性。有效磁盘空间是所有磁盘设备大小之和的1/3。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;block_size对应最大的表空间大小&#34;&gt;block_size对应最大的表空间大小
+&lt;/h3&gt;&lt;p&gt;Oracle的Rowid使用22位来代表数据块号，因此Oracle表空间数据文件每个数据文件最多只能包含2^22个数据块。
+也因此数据库表空间的数据文件不是无限增长的，例如：&lt;/p&gt;
+&lt;p&gt;登DBA用户，查询当前ORACEL数据库数据库的大小：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SQL&amp;gt; select name,value from v$parameter where name = &amp;#39;db_block_size&amp;#39;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;NAME                           VALUE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;------------------------------ --------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;db_block_size                  8192
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在数据块为8k的情况下，单个数据文件的最大容量为8K*2^22 = 32G。&lt;/p&gt;
+&lt;p&gt;因此，有的表空间扩容不能直接resize，需要去添加新的数据文件到表空间中，例如：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ALTER TABLESPACE TAB_CC ADD DATAFILE &#39;/oradata/test2.dbf&#39; SIZE 10G;&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
