@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    1511字
+                    1978字
                 </time>
             </div>
         
@@ -401,7 +401,26 @@
 	</a>
 	
 </figure></p>
-<p>继续向上延伸，引出<strong>表空间</strong>的概念：<strong>表空间</strong>是数据库中存储数据的逻辑容器，可以包含一个或多个数据文件(*.DBF)，DBF文件就可以肉眼（ls）看到啦！</p>
+<p>继续向上延伸，引出<strong>表空间</strong>的概念：<strong>表空间</strong>是数据库中存储数据的逻辑容器，可以包含一个或多个数据文件(*.DBF)，DBF文件就可以肉眼（ls命令）看到啦！</p>
+<p>一个段只能属于一个表空间，并且只能存储在该表空间的数据文件中。虽然段属于一个表空间，但它可以跨越该表空间内的多个数据文件（*.DBF）。Oracle数据库会自动管理数据块和区的分配，以便将段分布在多个数据文件中，以提高性能和空间利用率。而一个区只能属于一个数据文件。</p>
+<h3 id="模式用户">模式、用户
+</h3><p><strong>模式</strong>是数据库对象的逻辑集合。<strong>数据库对象</strong>包括表，视图，同义词，约束、索引，序列，游标，触发器，函数，变量，（控制块，异常），存储过程，包。模式中的对象存储在表空间中，一个表空间可以包含多个模式中的对象，而一个模式中的对象也可以分布在多个表空间中。
+<strong>用户</strong>是指拥有数据库访问权限的实体，每个用户都对应一个模式（Schema）。当用户在Oracle数据库中创建时，通常会为其指定一个默认表空间。该表空间将作为用户创建新对象（如表、索引等）时的默认存储位置。
+要注意，schema是逻辑对象的集合组织，是一个<strong>组织概念</strong>，和表空间等<strong>逻辑概念</strong>不属于一个层面。在oracle中，一个user对应的就是一个schema，二者是强相关的。</p>
+<h3 id="总结">总结
+</h3><p>oracle数据库存储的逻辑和物理结构</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/668b474bd9c307b7e9278580.png" >
+		<img src="https://pic.imgdb.cn/item/668b474bd9c307b7e9278580.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
 
 </section>
 
@@ -655,7 +674,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了109k字·共 71篇文章</br><span><p>
+      共书写了111.1k字·共 71篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -803,6 +822,8 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#前言">前言</a></li>
         <li><a href="#行列表">行、列、表</a></li>
         <li><a href="#块区段表空间">块、区、段、表空间</a></li>
+        <li><a href="#模式用户">模式、用户</a></li>
+        <li><a href="#总结">总结</a></li>
       </ol>
     </li>
   </ol>

@@ -84,7 +84,26 @@
 	&lt;/a&gt;
 	
 &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;继续向上延伸，引出&lt;strong&gt;表空间&lt;/strong&gt;的概念：&lt;strong&gt;表空间&lt;/strong&gt;是数据库中存储数据的逻辑容器，可以包含一个或多个数据文件(*.DBF)，DBF文件就可以肉眼（ls）看到啦！&lt;/p&gt;
+&lt;p&gt;继续向上延伸，引出&lt;strong&gt;表空间&lt;/strong&gt;的概念：&lt;strong&gt;表空间&lt;/strong&gt;是数据库中存储数据的逻辑容器，可以包含一个或多个数据文件(*.DBF)，DBF文件就可以肉眼（ls命令）看到啦！&lt;/p&gt;
+&lt;p&gt;一个段只能属于一个表空间，并且只能存储在该表空间的数据文件中。虽然段属于一个表空间，但它可以跨越该表空间内的多个数据文件（*.DBF）。Oracle数据库会自动管理数据块和区的分配，以便将段分布在多个数据文件中，以提高性能和空间利用率。而一个区只能属于一个数据文件。&lt;/p&gt;
+&lt;h3 id=&#34;模式用户&#34;&gt;模式、用户
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;模式&lt;/strong&gt;是数据库对象的逻辑集合。&lt;strong&gt;数据库对象&lt;/strong&gt;包括表，视图，同义词，约束、索引，序列，游标，触发器，函数，变量，（控制块，异常），存储过程，包。模式中的对象存储在表空间中，一个表空间可以包含多个模式中的对象，而一个模式中的对象也可以分布在多个表空间中。
+&lt;strong&gt;用户&lt;/strong&gt;是指拥有数据库访问权限的实体，每个用户都对应一个模式（Schema）。当用户在Oracle数据库中创建时，通常会为其指定一个默认表空间。该表空间将作为用户创建新对象（如表、索引等）时的默认存储位置。
+要注意，schema是逻辑对象的集合组织，是一个&lt;strong&gt;组织概念&lt;/strong&gt;，和表空间等&lt;strong&gt;逻辑概念&lt;/strong&gt;不属于一个层面。在oracle中，一个user对应的就是一个schema，二者是强相关的。&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;总结
+&lt;/h3&gt;&lt;p&gt;oracle数据库存储的逻辑和物理结构&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/668b474bd9c307b7e9278580.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/668b474bd9c307b7e9278580.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -178,6 +197,72 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在数据块为8k的情况下，单个数据文件的最大容量为8K*2^22 = 32G。&lt;/p&gt;
 &lt;p&gt;因此，有的表空间扩容不能直接resize，需要去添加新的数据文件到表空间中，例如：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ALTER TABLESPACE TAB_CC ADD DATAFILE &#39;/oradata/test2.dbf&#39; SIZE 10G;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;oracle几种启动状态&#34;&gt;Oracle几种启动状态
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;1、startup nomount；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　非安装启动，数据库实例已经启动，但并未加载任何数据库文件，因此不能访问数据库中的数据。此阶段通常用于新建数据库、修复控制文件等场景。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;启动实例&lt;/strong&gt;：数据库实例开始运行，但此时并不加载数据库文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;初始化SGA&lt;/strong&gt;：系统全局区（SGA）被初始化，分配内存结构供实例使用。SGA包括数据库缓冲区缓存、日志缓冲区、共享池等关键内存结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;启动后台进程&lt;/strong&gt;：启动一系列必需的后台进程，如PMON（进程监控器）、SMON（系统监控器）、DBWn（数据库写入器）、LGWR（日志写入器）和CKPT（检查点进程）等，这些进程负责数据库的运行和维护。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;读取初始化文件&lt;/strong&gt;：读取并解析初始化文件（如init.ora或spfile），该文件包含数据库启动和运行所需的配置参数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打开警告日志和跟踪文件&lt;/strong&gt;：启动过程中，相关的警告日志和跟踪文件被打开，用于记录数据库的运行状态和错误信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2、startup mount (dbname)；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　安装启动，这种模式将启动实例，加载数据库并保持数据库关闭状态。这种方式启动下可执行：数据库日志归档、数据库介质恢复、使数据文件联机或脱机、重新定位数据文件、重做日志文件。&lt;/p&gt;
+&lt;p&gt;　　此时我们可以查看数据字典，因为控制文件已经打开；不能访问数据库的数据文件（表，视图），此时数据文件没有打开。&lt;/p&gt;
+&lt;p&gt;改变归档模式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE ARCHIVELOG；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE NOARCHIVELOG；
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;暂停和重开数据库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM SUSPEND;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM RESUME;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;（接上）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;打开控制文件&lt;/strong&gt;：控制文件是Oracle数据库的关键文件之一，它包含了数据库的物理结构信息，如数据文件、重做日志文件的位置和状态等。在MOUNT阶段，数据库会打开控制文件，并读取其中的信息，以确认数据文件和联机日志文件的位置和状态。但此时不会对数据文件和日志文件进行实际的读写操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;准备数据访问&lt;/strong&gt;：虽然MOUNT阶段不会直接打开数据文件，但数据库会确保控制文件中记录的数据文件和日志文件的位置是有效的，并准备在后续的OPEN阶段中打开这些文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录日志信息&lt;/strong&gt;：如实例启动的详细信息、控制文件的打开情况等。这些日志信息对于数据库的故障排查和恢复非常重要。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3、startup open (dbname)；&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ALTER DATABASE OPEN&lt;/code&gt;：从mount或nomount状态切换到open&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;STARTUP&lt;/code&gt;：先执行“nomount”，然后执行“mount”，再打开包括Redo log文件在内的所有数据库文件，这种方式下可访问数据库中的数据。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;startup 等于以下三个命令
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　startup nomount；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　alter database mount；
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;　　alter database open；
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看oracle 启动状态：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; select status from v$instance； （showdown | nomount | mount | open）&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;oracle索引类型&#34;&gt;Oracle索引类型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;b-tree索引
+Oracle数据库中最常见的索引类型是b-tree索引，也就是B-树索引，以其同名的计算科学结构命名。CREATE
+INDEX语句时，默认就是在创建b-tree索引。没有特别规定可用于任何情况。&lt;/li&gt;
+&lt;li&gt;位图索引(bitmap index)
+位图索引特定于该列只有几个枚举值的情况，比如性别字段，标示字段比如只有0和1的情况。&lt;/li&gt;
+&lt;li&gt;基于函数的索引
+比如经常对某个字段做查询的时候是带函数操作的，那么此时建一个函数索引就有价值了。&lt;/li&gt;
+&lt;li&gt;分区索引和全局索引
+这2个是用于分区表的时候。前者是分区内索引，后者是全表索引&lt;/li&gt;
+&lt;li&gt;反向索引（REVERSE）
+这个索引不常见，但是特定情况特别有效，比如一个varchar(5)位字段(员工编号)含值
+（10001,10002,10033,10005,10016..）
+这种情况默认索引分布过于密集，不能利用好服务器的并行
+但是反向之后10001,20001,33001,50001,61001就有了一个很好的分布，能高效的利用好并行运算。&lt;/li&gt;
+&lt;li&gt;HASH索引
+HASH索引可能是访问数据库中数据的最快方法，但它也有自身的缺点。集群键上不同值的数目必须在创建HASH集群之前就要知道。需要在创建HASH集群的时候指定这个值。使用HASH索引必须要使用HASH集群。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         </item>
         <item>
