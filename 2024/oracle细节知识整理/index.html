@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    3416字
+                    3397字
                 </time>
             </div>
         
@@ -349,7 +349,8 @@
 </figure></p>
 <h3 id="关机指令">关机指令
 </h3><ol>
-<li>SHUTDOWN NORMAL（普通关闭）
+<li>
+<p>SHUTDOWN NORMAL（普通关闭）</p>
 <ul>
 <li>如果没有指定任何模式，则默认使用NORMAL模式。</li>
 <li>在此模式下，Oracle服务器在完成关闭之前会<strong>等待所有用户断开连接</strong>。</li>
@@ -358,14 +359,16 @@
 <li>在关闭实例之前，Oracle服务器会关闭并卸除数据库。</li>
 </ul>
 </li>
-<li>SHUTDOWN IMMEDIATE（立即关闭）
+<li>
+<p>SHUTDOWN IMMEDIATE（立即关闭）</p>
 <ul>
 <li>使用此命令时，Oracle服务器<strong>不等待当前连接到数据库的用户</strong>直接断开连接。</li>
 <li>Oracle服务器会<strong>回滚</strong>活动事务并断开所有已连接用户的连接。</li>
 <li>在关闭实例之前，Oracle服务器会关闭并卸除数据库。</li>
 </ul>
 </li>
-<li>SHUTDOWN TRANSACTIONAL（事务保证关闭）
+<li>
+<p>SHUTDOWN TRANSACTIONAL（事务保证关闭）</p>
 <ul>
 <li>在此模式下关闭可防止客户端丢失数据，包括其当前活动会话的结果。</li>
 <li>没有客户端可以在此实例上启动新事务。</li>
@@ -373,7 +376,8 @@
 <li>完成所有事务后，将立即关闭。</li>
 </ul>
 </li>
-<li>SHUTDOWN ABORT（强制终止/强制关闭）
+<li>
+<p>SHUTDOWN ABORT（强制终止/强制关闭）</p>
 <ul>
 <li>在某些紧急情况下，如果其他关闭模式均无效，可以使用此命令。</li>
 <li>Oracle服务器正在处理的当前SQL语句将立即终止。</li>
@@ -438,8 +442,9 @@
 <p>　　安装启动，这种模式将启动实例，加载数据库并保持数据库关闭状态。这种方式启动下可执行：数据库日志归档、数据库介质恢复、使数据文件联机或脱机、重新定位数据文件、重做日志文件。</p>
 <p>　　此时我们可以查看数据字典，因为控制文件已经打开；不能访问数据库的数据文件（表，视图），此时数据文件没有打开。</p>
 <p>改变归档模式</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ALTER DATABASE ARCHIVELOG；
-</span></span><span style="display:flex;"><span>ALTER DATABASE NOARCHIVELOG；
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>archive log list;
+</span></span><span style="display:flex;"><span>ALTER DATABASE ARCHIVELOG;
+</span></span><span style="display:flex;"><span>ALTER DATABASE NOARCHIVELOG;
 </span></span></code></pre></div><p>暂停和重开数据库</p>
 <div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ALTER SYSTEM SUSPEND;
 </span></span><span style="display:flex;"><span>ALTER SYSTEM RESUME;
@@ -714,6 +719,16 @@ HASH索引可能是访问数据库中数据的最快方法，但它也有自身�
 
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
 
 <script>
 (function(u, c) {
@@ -733,7 +748,7 @@ HASH索引可能是访问数据库中数据的最快方法，但它也有自身�
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了111.1k字·共 71篇文章</br><span><p>
+      共书写了111.6k字·共 76篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -917,7 +932,7 @@ document.getElementById('days').innerHTML = number_of_days;
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库<span class="category-list-count">4</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">5</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">2</a>
             </span></div>
@@ -950,7 +965,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 环境搭建
             </a>
         
-            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_4">
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_5">
                 其他
             </a>
         
@@ -1023,7 +1038,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">24</span>
+                            <span class="count">29</span>
                         
                     </a> 
                 </div>

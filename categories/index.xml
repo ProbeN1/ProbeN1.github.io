@@ -6,13 +6,21 @@
         <description>Recent content in Categories on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 04 Jul 2024 10:54:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jul 2024 15:41:45 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>整点小活</title>
+        <link>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</link>
+        <pubDate>Sat, 27 Jul 2024 15:41:45 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
+        <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/learn.jpg" alt="Featured image of post 整点小活" /&gt;</description>
+        </item>
+        <item>
         <title>数据库</title>
         <link>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
         <pubDate>Thu, 04 Jul 2024 10:54:43 +0800</pubDate>
         
         <guid>https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-        <description>&lt;img src="https://proben1.github.io/DBA.jpg" alt="Featured image of post 数据库" /&gt;</description>
+        <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/DBA.jpg" alt="Featured image of post 数据库" /&gt;</description>
         </item>
         <item>
         <title>小人联合工会内部资料</title>
@@ -45,14 +53,6 @@
         
         <guid>https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/</guid>
         <description>&lt;img src="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/net.jpg" alt="Featured image of post 网络" /&gt;</description>
-        </item>
-        <item>
-        <title>整点小活</title>
-        <link>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</link>
-        <pubDate>Fri, 27 May 2022 22:17:48 +0800</pubDate>
-        
-        <guid>https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/</guid>
-        <description>&lt;img src="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/learn.jpg" alt="Featured image of post 整点小活" /&gt;</description>
         </item>
         
     </channel>

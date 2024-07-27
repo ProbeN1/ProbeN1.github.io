@@ -321,7 +321,7 @@
 
 
                 <time class="article-words">
-                    854字
+                    933字
                 </time>
             </div>
         
@@ -434,6 +434,27 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#859900">border-width</span>: <span style="color:#2aa198;font-weight:bold">2</span><span style="color:#859900;font-weight:bold">px</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#859900">border-color</span>: (<span style="color:#2aa198;font-weight:bold">255</span>,<span style="color:#2aa198;font-weight:bold">255</span>,<span style="color:#2aa198;font-weight:bold">0</span>);
 </span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><h3 id="设置分栏">设置分栏
+</h3><p>分成两栏显示：</p>
+<p>在assets\scss\custom.scss里添加：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>  /* 归档页面两栏 */
+</span></span><span style="display:flex;"><span>@<span style="color:#268bd2">media</span> (<span style="color:#cb4b16">min</span>-<span style="color:#268bd2">width</span>: <span style="color:#2aa198;font-weight:bold">1024</span><span style="color:#268bd2">px</span>) {
+</span></span><span style="display:flex;"><span>    .<span style="color:#268bd2">article</span>-<span style="color:#268bd2">list</span>--<span style="color:#268bd2">compact</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">display</span>: <span style="color:#268bd2">grid</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">grid</span>-<span style="color:#268bd2">template</span>-<span style="color:#268bd2">columns</span>: <span style="color:#2aa198;font-weight:bold">1</span><span style="color:#268bd2">fr</span> <span style="color:#2aa198;font-weight:bold">1</span><span style="color:#268bd2">fr</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">background</span>: <span style="color:#268bd2">none</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">box</span>-<span style="color:#268bd2">shadow</span>: <span style="color:#268bd2">none</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">gap</span>: <span style="color:#2aa198;font-weight:bold">1</span><span style="color:#268bd2">rem</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">article</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">background</span>: <span style="color:#859900">var</span>(--<span style="color:#268bd2">card</span>-<span style="color:#268bd2">background</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">border</span>: <span style="color:#268bd2">none</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">box</span>-<span style="color:#268bd2">shadow</span>: <span style="color:#859900">var</span>(--<span style="color:#268bd2">shadow</span>-<span style="color:#268bd2">l2</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">margin</span>-<span style="color:#268bd2">bottom</span>: <span style="color:#2aa198;font-weight:bold">8</span><span style="color:#268bd2">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">border</span>-<span style="color:#268bd2">radius</span>: <span style="color:#2aa198;font-weight:bold">16</span><span style="color:#268bd2">px</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
 </span></span></code></pre></div>
 </section>
 
@@ -485,6 +506,18 @@
 </article>
                 
                     
+<article class="">
+    <a href="/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">让Google搜索到搭建在GithubPages上的博客</h2>
+        </div>
+    </a>
+</article>
+                
+                    
 <article class="has-image">
     <a href="/2021/%E6%80%8E%E4%B9%88ping%E4%B8%8D%E4%BA%86/">
         
@@ -503,18 +536,6 @@
 
         <div class="article-details">
             <h2 class="article-title">怎么ping不了</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/oracle%E7%89%A9%E7%90%86%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Oracle物理逻辑存储概念区分</h2>
         </div>
     </a>
 </article>
@@ -725,6 +746,16 @@
 
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
 
 <script>
 (function(u, c) {
@@ -744,7 +775,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了111.1k字·共 71篇文章</br><span><p>
+      共书写了111.6k字·共 76篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -898,6 +929,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#修改键盘标签样式">修改「键盘标签」样式</a></li>
         <li><a href="#添加友链">添加友链</a></li>
         <li><a href="#代码块">代码块</a></li>
+        <li><a href="#设置分栏">设置分栏</a></li>
       </ol>
     </li>
   </ol>
@@ -930,7 +962,7 @@ document.getElementById('days').innerHTML = number_of_days;
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库<span class="category-list-count">4</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">5</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">2</a>
             </span></div>
@@ -963,7 +995,7 @@ document.getElementById('days').innerHTML = number_of_days;
                 环境搭建
             </a>
         
-            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_4">
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_5">
                 其他
             </a>
         
@@ -1036,7 +1068,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">24</span>
+                            <span class="count">29</span>
                         
                     </a> 
                 </div>

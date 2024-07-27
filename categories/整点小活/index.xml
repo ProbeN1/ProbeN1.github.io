@@ -6,7 +6,70 @@
         <description>Recent content in 整点小活 on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 27 May 2022 22:17:48 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jul 2024 15:41:45 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>让Google搜索到搭建在GithubPages上的博客</title>
+        <link>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Sat, 27 Jul 2024 15:41:45 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;将Hugo博客框架和Github Pages结合起来搭建博客是一种很不错的选择，但是如果仅仅搭建完毕是无法通过搜索引擎查询到的，因为搜索引擎不会去检索你的Github仓库，遇到这个问题怎么办呢？本文教你用Hugo在Github Pages上搭建的博客如何能被Google搜索到。&lt;/p&gt;
+&lt;h2 id=&#34;查看是否被收录&#34;&gt;查看是否被收录
+&lt;/h2&gt;&lt;p&gt;首先查看你的博客地址是否已经被Google收录，在Google的搜索栏中搜索：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;site:http://xxxx.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有结果，那么先添加收录&lt;/p&gt;
+&lt;p&gt;如果只有主页面，那么添加站点地图&lt;/p&gt;
+&lt;h2 id=&#34;搜索资源提交&#34;&gt;搜索资源提交
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;在添加资源中，选择网址前缀验证&lt;/p&gt;
+&lt;p&gt;选择&lt;strong&gt;备用方法&lt;/strong&gt;中的HTML标记方式来验证&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Google会给出一个html的标识，你需要在博客根目录下的static文件夹里创建一个和该html同名的文件夹，并把这个html标识复制到文件夹内，更名为index.html&lt;/p&gt;
+&lt;p&gt;更新你的目录，完成验证。&lt;/p&gt;
+&lt;h2 id=&#34;编制索引&#34;&gt;编制索引
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的网址检查里，对网址完成检查，并点击请求编入索引：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;站点地图&#34;&gt;站点地图
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的站点地图里，添加站点地图，hugo默认的地图是xml格式，直接在后缀添加即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>电脑重装</title>
         <link>https://proben1.github.io/2022/%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/</link>
         <pubDate>Fri, 27 May 2022 22:17:48 +0800</pubDate>
@@ -154,6 +217,27 @@ TranslucentTB（也可以从商店下载）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#859900&#34;&gt;border-width&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#859900;font-weight:bold&#34;&gt;px&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#859900&#34;&gt;border-color&lt;/span&gt;: (&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;0&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置分栏&#34;&gt;设置分栏
+&lt;/h3&gt;&lt;p&gt;分成两栏显示：&lt;/p&gt;
+&lt;p&gt;在assets\scss\custom.scss里添加：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  /* 归档页面两栏 */
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#268bd2&#34;&gt;media&lt;/span&gt; (&lt;span style=&#34;color:#cb4b16&#34;&gt;min&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;width&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1024&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#268bd2&#34;&gt;article&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;list&lt;/span&gt;--&lt;span style=&#34;color:#268bd2&#34;&gt;compact&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;grid&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;grid&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;template&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;columns&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;fr&lt;/span&gt; &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;fr&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;box&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;gap&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;rem&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;article&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;: &lt;span style=&#34;color:#859900&#34;&gt;var&lt;/span&gt;(--&lt;span style=&#34;color:#268bd2&#34;&gt;card&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;border&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;box&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;: &lt;span style=&#34;color:#859900&#34;&gt;var&lt;/span&gt;(--&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;l2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;margin&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;bottom&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;border&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;radius&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
@@ -162,7 +246,7 @@ TranslucentTB（也可以从商店下载）
         <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
         
         <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
-        <description>&lt;img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
+        <description>&lt;img src="https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/Python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
 &lt;/h1&gt;&lt;p&gt;这里使用了TCP连接扫描，利用操作系统原生的网络功能。&lt;/p&gt;
 &lt;p&gt;用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。&lt;/p&gt;
 &lt;blockquote&gt;

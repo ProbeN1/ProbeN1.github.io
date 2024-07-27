@@ -6,7 +6,7 @@
         <description>Recent content in Posts on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 04 Jul 2024 10:54:43 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jul 2024 16:02:51 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>六月二十九日晚</title>
         <link>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</link>
         <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
@@ -128,6 +128,101 @@
 &lt;p&gt;以及抱着和客户快乐交流的基本原则。&lt;/p&gt;
 &lt;h1 id=&#34;结语&#34;&gt;结语
 &lt;/h1&gt;&lt;p&gt;个人的成长过程是贯穿始终的，是以年为单位的，而且会一直持续数十年。每位&lt;code&gt;工程师&lt;/code&gt;的学习方法、工作方法、学习态度等等，都要经历数十年的考验，谨记。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Spine Leaf架构</title>
+        <link>https://proben1.github.io/2024/spine-leaf%E6%9E%B6%E6%9E%84/</link>
+        <pubDate>Sat, 27 Jul 2024 16:02:51 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/spine-leaf%E6%9E%B6%E6%9E%84/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>链路聚合、堆叠、VRRP、M LAG的区分</title>
+        <link>https://proben1.github.io/2024/%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88%E5%A0%86%E5%8F%A0vrrpm-lag%E7%9A%84%E5%8C%BA%E5%88%86/</link>
+        <pubDate>Sat, 27 Jul 2024 16:02:07 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88%E5%A0%86%E5%8F%A0vrrpm-lag%E7%9A%84%E5%8C%BA%E5%88%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Oracle静默安装</title>
+        <link>https://proben1.github.io/2024/oracle%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 27 Jul 2024 15:59:23 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/oracle%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>SSH使用</title>
+        <link>https://proben1.github.io/2024/ssh%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Sat, 27 Jul 2024 15:58:11 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/ssh%E4%BD%BF%E7%94%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>让Google搜索到搭建在GithubPages上的博客</title>
+        <link>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Sat, 27 Jul 2024 15:41:45 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;将Hugo博客框架和Github Pages结合起来搭建博客是一种很不错的选择，但是如果仅仅搭建完毕是无法通过搜索引擎查询到的，因为搜索引擎不会去检索你的Github仓库，遇到这个问题怎么办呢？本文教你用Hugo在Github Pages上搭建的博客如何能被Google搜索到。&lt;/p&gt;
+&lt;h2 id=&#34;查看是否被收录&#34;&gt;查看是否被收录
+&lt;/h2&gt;&lt;p&gt;首先查看你的博客地址是否已经被Google收录，在Google的搜索栏中搜索：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;site:http://xxxx.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有结果，那么先添加收录&lt;/p&gt;
+&lt;p&gt;如果只有主页面，那么添加站点地图&lt;/p&gt;
+&lt;h2 id=&#34;搜索资源提交&#34;&gt;搜索资源提交
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;在添加资源中，选择网址前缀验证&lt;/p&gt;
+&lt;p&gt;选择&lt;strong&gt;备用方法&lt;/strong&gt;中的HTML标记方式来验证&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Google会给出一个html的标识，你需要在博客根目录下的static文件夹里创建一个和该html同名的文件夹，并把这个html标识复制到文件夹内，更名为index.html&lt;/p&gt;
+&lt;p&gt;更新你的目录，完成验证。&lt;/p&gt;
+&lt;h2 id=&#34;编制索引&#34;&gt;编制索引
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的网址检查里，对网址完成检查，并点击请求编入索引：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;站点地图&#34;&gt;站点地图
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的站点地图里，添加站点地图，hugo默认的地图是xml格式，直接在后缀添加即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -256,7 +351,8 @@
 &lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&#34;关机指令&#34;&gt;关机指令
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;SHUTDOWN NORMAL（普通关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN NORMAL（普通关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果没有指定任何模式，则默认使用NORMAL模式。&lt;/li&gt;
 &lt;li&gt;在此模式下，Oracle服务器在完成关闭之前会&lt;strong&gt;等待所有用户断开连接&lt;/strong&gt;。&lt;/li&gt;
@@ -265,14 +361,16 @@
 &lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN IMMEDIATE（立即关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN IMMEDIATE（立即关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用此命令时，Oracle服务器&lt;strong&gt;不等待当前连接到数据库的用户&lt;/strong&gt;直接断开连接。&lt;/li&gt;
 &lt;li&gt;Oracle服务器会&lt;strong&gt;回滚&lt;/strong&gt;活动事务并断开所有已连接用户的连接。&lt;/li&gt;
 &lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN TRANSACTIONAL（事务保证关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN TRANSACTIONAL（事务保证关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在此模式下关闭可防止客户端丢失数据，包括其当前活动会话的结果。&lt;/li&gt;
 &lt;li&gt;没有客户端可以在此实例上启动新事务。&lt;/li&gt;
@@ -280,7 +378,8 @@
 &lt;li&gt;完成所有事务后，将立即关闭。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN ABORT（强制终止/强制关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN ABORT（强制终止/强制关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在某些紧急情况下，如果其他关闭模式均无效，可以使用此命令。&lt;/li&gt;
 &lt;li&gt;Oracle服务器正在处理的当前SQL语句将立即终止。&lt;/li&gt;
@@ -345,8 +444,9 @@
 &lt;p&gt;　　安装启动，这种模式将启动实例，加载数据库并保持数据库关闭状态。这种方式启动下可执行：数据库日志归档、数据库介质恢复、使数据文件联机或脱机、重新定位数据文件、重做日志文件。&lt;/p&gt;
 &lt;p&gt;　　此时我们可以查看数据字典，因为控制文件已经打开；不能访问数据库的数据文件（表，视图），此时数据文件没有打开。&lt;/p&gt;
 &lt;p&gt;改变归档模式&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE ARCHIVELOG；
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE NOARCHIVELOG；
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;archive log list;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE ARCHIVELOG;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE NOARCHIVELOG;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;暂停和重开数据库&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM SUSPEND;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM RESUME;
@@ -2151,15 +2251,6 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount /dev/nvme0n1p3 /root/new
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi /etc/fstab
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(add &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;/dev/nvme0n1p3 /root/new xfs defaults 0 0&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;利用parted分区与挂载&#34;&gt;利用parted分区与挂载
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted /dev/sdb1
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mklabel gpt
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkpart primary 0% 100%
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;quit
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;# Let the kernel know to add a new partition&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;partprobe 
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/sdb1
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lvm基本创建&#34;&gt;LVM基本创建
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;fisk&amp;#34;&lt;/span&gt; create new partition
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;change the partition to &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;LVM&amp;#34;&lt;/span&gt;(8e)
@@ -2175,14 +2266,15 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use &amp;#34;fisk&amp;#34; create new partition
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgextend vg00 /dev/nvme0n1p7
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend /dev/vg00/lvoracle -L +9.9G /dev/nvme0n1p7
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend /dev/vg00/lvoracle -L +9.9G vg00
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xfs_growfs /dev/vg00/lvoracle
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;swap扩容&#34;&gt;SWAP扩容
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapoff 分区名/LV名（卸载）
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapoff 分区名/LV名（卸）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;对SWAP所在的文件系统扩容
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkswap 分区名/LV名
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapon 分区名/LV名（挂载）
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;案例&#34;&gt;案例
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapon 分区名/LV名（挂）
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading&#34;&gt;
+&lt;/h3&gt;&lt;h3 id=&#34;案例&#34;&gt;案例
 &lt;/h3&gt;&lt;h4 id=&#34;1如何分析处理当前目录下有哪些大的文件&#34;&gt;1、如何分析处理当前目录下有哪些大的文件？
 &lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1，ls -al 确保没有隐藏文件
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2，du -sh /test和 du -sh /test/* 分别查看目录使用空间和各个子目录使用空间。
@@ -2207,7 +2299,17 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
 &lt;/h4&gt;&lt;p&gt;把连续的数据分割成相同大小的数据块，把每段数据分别写入到阵列中的不同磁盘上，提升了存储性能。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;LVM中用“-i 磁盘数量”指令
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvcreate –L 1500G -i 3 –n lvtest vg00
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;利用parted分区与挂载&#34;&gt;利用parted分区与挂载
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;parted /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mklabel gpt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkpart primary 0% 100%
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;quit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;# Let the kernel know to add a new partition&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;partprobe 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkfs.xfs /dev/sdb1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;heading-1&#34;&gt;
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>Linux常用命令和vi速查</title>
@@ -4486,6 +4588,27 @@ TranslucentTB（也可以从商店下载）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#859900&#34;&gt;border-style&lt;/span&gt;: &lt;span style=&#34;color:#859900;font-weight:bold&#34;&gt;solid&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#859900&#34;&gt;border-width&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#859900;font-weight:bold&#34;&gt;px&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#859900&#34;&gt;border-color&lt;/span&gt;: (&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;255&lt;/span&gt;,&lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置分栏&#34;&gt;设置分栏
+&lt;/h3&gt;&lt;p&gt;分成两栏显示：&lt;/p&gt;
+&lt;p&gt;在assets\scss\custom.scss里添加：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  /* 归档页面两栏 */
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#268bd2&#34;&gt;media&lt;/span&gt; (&lt;span style=&#34;color:#cb4b16&#34;&gt;min&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;width&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1024&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#268bd2&#34;&gt;article&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;list&lt;/span&gt;--&lt;span style=&#34;color:#268bd2&#34;&gt;compact&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;grid&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;grid&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;template&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;columns&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;fr&lt;/span&gt; &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;fr&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;box&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;gap&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;rem&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#268bd2&#34;&gt;article&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;: &lt;span style=&#34;color:#859900&#34;&gt;var&lt;/span&gt;(--&lt;span style=&#34;color:#268bd2&#34;&gt;card&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;background&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;border&lt;/span&gt;: &lt;span style=&#34;color:#268bd2&#34;&gt;none&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;box&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;: &lt;span style=&#34;color:#859900&#34;&gt;var&lt;/span&gt;(--&lt;span style=&#34;color:#268bd2&#34;&gt;shadow&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;l2&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;margin&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;bottom&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#268bd2&#34;&gt;border&lt;/span&gt;-&lt;span style=&#34;color:#268bd2&#34;&gt;radius&lt;/span&gt;: &lt;span style=&#34;color:#2aa198;font-weight:bold&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;px&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
@@ -6891,7 +7014,7 @@ redis的持久化使得机器即使重启数据也不会丢失，因为redis服�
         <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
         
         <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
-        <description>&lt;img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
+        <description>&lt;img src="https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/Python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
 &lt;/h1&gt;&lt;p&gt;这里使用了TCP连接扫描，利用操作系统原生的网络功能。&lt;/p&gt;
 &lt;p&gt;用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。&lt;/p&gt;
 &lt;blockquote&gt;

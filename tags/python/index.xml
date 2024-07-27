@@ -12,7 +12,7 @@
         <pubDate>Thu, 18 Nov 2021 22:13:33 +0800</pubDate>
         
         <guid>https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/</guid>
-        <description>&lt;img src="https://pic.imgdb.cn/item/6240249d27f86abb2aa27d03.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
+        <description>&lt;img src="https://proben1.github.io/2021/python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%E7%AD%89/Python%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.png" alt="Featured image of post Python端口扫描等" /&gt;&lt;h1 id=&#34;思路&#34;&gt;思路
 &lt;/h1&gt;&lt;p&gt;这里使用了TCP连接扫描，利用操作系统原生的网络功能。&lt;/p&gt;
 &lt;p&gt;用户无需特殊权限，但因为建立了TCP连接，很容易被发现，而且会留下IP地址。&lt;/p&gt;
 &lt;blockquote&gt;

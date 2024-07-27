@@ -6,7 +6,70 @@
         <description>Recent content in 其他 on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 May 2024 19:31:18 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Jul 2024 15:41:45 +0800</lastBuildDate><atom:link href="https://proben1.github.io/tags/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>让Google搜索到搭建在GithubPages上的博客</title>
+        <link>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Sat, 27 Jul 2024 15:41:45 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E8%AE%A9google%E6%90%9C%E7%B4%A2%E5%88%B0%E6%90%AD%E5%BB%BA%E5%9C%A8githubpages%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2/</guid>
+        <description>&lt;p&gt;将Hugo博客框架和Github Pages结合起来搭建博客是一种很不错的选择，但是如果仅仅搭建完毕是无法通过搜索引擎查询到的，因为搜索引擎不会去检索你的Github仓库，遇到这个问题怎么办呢？本文教你用Hugo在Github Pages上搭建的博客如何能被Google搜索到。&lt;/p&gt;
+&lt;h2 id=&#34;查看是否被收录&#34;&gt;查看是否被收录
+&lt;/h2&gt;&lt;p&gt;首先查看你的博客地址是否已经被Google收录，在Google的搜索栏中搜索：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;site:http://xxxx.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果没有结果，那么先添加收录&lt;/p&gt;
+&lt;p&gt;如果只有主页面，那么添加站点地图&lt;/p&gt;
+&lt;h2 id=&#34;搜索资源提交&#34;&gt;搜索资源提交
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;在添加资源中，选择网址前缀验证&lt;/p&gt;
+&lt;p&gt;选择&lt;strong&gt;备用方法&lt;/strong&gt;中的HTML标记方式来验证&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a642d9c307b7e979c095.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Google会给出一个html的标识，你需要在博客根目录下的static文件夹里创建一个和该html同名的文件夹，并把这个html标识复制到文件夹内，更名为index.html&lt;/p&gt;
+&lt;p&gt;更新你的目录，完成验证。&lt;/p&gt;
+&lt;h2 id=&#34;编制索引&#34;&gt;编制索引
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的网址检查里，对网址完成检查，并点击请求编入索引：&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a728d9c307b7e97a7d59.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;站点地图&#34;&gt;站点地图
+&lt;/h2&gt;&lt;p&gt;进入Google  &lt;a class=&#34;link&#34; href=&#34;https://www.google.com/webmasters/tools/home?hl=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Search Console&lt;/a&gt; 中的站点地图里，添加站点地图，hugo默认的地图是xml格式，直接在后缀添加即可。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66a4a79cd9c307b7e97ad6e0.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>装系统之从0到100</title>
         <link>https://proben1.github.io/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/</link>
         <pubDate>Tue, 28 May 2024 19:31:18 +0800</pubDate>

@@ -132,7 +132,8 @@
 &lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&#34;关机指令&#34;&gt;关机指令
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;SHUTDOWN NORMAL（普通关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN NORMAL（普通关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果没有指定任何模式，则默认使用NORMAL模式。&lt;/li&gt;
 &lt;li&gt;在此模式下，Oracle服务器在完成关闭之前会&lt;strong&gt;等待所有用户断开连接&lt;/strong&gt;。&lt;/li&gt;
@@ -141,14 +142,16 @@
 &lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN IMMEDIATE（立即关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN IMMEDIATE（立即关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用此命令时，Oracle服务器&lt;strong&gt;不等待当前连接到数据库的用户&lt;/strong&gt;直接断开连接。&lt;/li&gt;
 &lt;li&gt;Oracle服务器会&lt;strong&gt;回滚&lt;/strong&gt;活动事务并断开所有已连接用户的连接。&lt;/li&gt;
 &lt;li&gt;在关闭实例之前，Oracle服务器会关闭并卸除数据库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN TRANSACTIONAL（事务保证关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN TRANSACTIONAL（事务保证关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在此模式下关闭可防止客户端丢失数据，包括其当前活动会话的结果。&lt;/li&gt;
 &lt;li&gt;没有客户端可以在此实例上启动新事务。&lt;/li&gt;
@@ -156,7 +159,8 @@
 &lt;li&gt;完成所有事务后，将立即关闭。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;SHUTDOWN ABORT（强制终止/强制关闭）
+&lt;li&gt;
+&lt;p&gt;SHUTDOWN ABORT（强制终止/强制关闭）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在某些紧急情况下，如果其他关闭模式均无效，可以使用此命令。&lt;/li&gt;
 &lt;li&gt;Oracle服务器正在处理的当前SQL语句将立即终止。&lt;/li&gt;
@@ -221,8 +225,9 @@
 &lt;p&gt;　　安装启动，这种模式将启动实例，加载数据库并保持数据库关闭状态。这种方式启动下可执行：数据库日志归档、数据库介质恢复、使数据文件联机或脱机、重新定位数据文件、重做日志文件。&lt;/p&gt;
 &lt;p&gt;　　此时我们可以查看数据字典，因为控制文件已经打开；不能访问数据库的数据文件（表，视图），此时数据文件没有打开。&lt;/p&gt;
 &lt;p&gt;改变归档模式&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE ARCHIVELOG；
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE NOARCHIVELOG；
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;archive log list;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE ARCHIVELOG;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER DATABASE NOARCHIVELOG;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;暂停和重开数据库&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM SUSPEND;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ALTER SYSTEM RESUME;
