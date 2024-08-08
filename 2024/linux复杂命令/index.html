@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    352字
+                    437字
                 </time>
             </div>
         
@@ -353,7 +353,17 @@
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ps -ef | grep mon | wc -l	
 </span></span><span style="display:flex;"><span>#利用wc指令我们可以计算文件的Byte数、字数、或是列数
 </span></span><span style="display:flex;"><span>#-l或--lines 显示行数
-</span></span></code></pre></div>
+</span></span></code></pre></div><h3 id="awk-print-2">awk &lsquo;{print $2}&rsquo;
+</h3><p>$2：表示第二个字段
+print $2 ： 打印第二个字段
+awk &lsquo;{print $2}&rsquo;  $fileName :   一行一行的读取指定的文件， 以空格作为分隔符，打印第二个字段
+比如有这样一个文件
+a1  b1  c1  d1
+a2  b2  c2  d2
+执行的结果是,输出
+b1
+b2</p>
+
 </section>
 
 
@@ -597,6 +607,10 @@
 
     
 
+    
+
+    
+
 
 <script>
 (function(u, c) {
@@ -616,7 +630,7 @@
             2020 - 
         
         2024 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
-      共书写了111.6k字·共 76篇文章</br><span><p>
+      共书写了114.8k字·共 78篇文章</br><span><p>
     </section>
     
     <section class="powerby">
@@ -769,6 +783,7 @@ document.getElementById('days').innerHTML = number_of_days;
         <li><a href="#查询用户自动执行任务的配置情况">查询用户自动执行任务的配置情况</a></li>
         <li><a href="#修改当前命令行显示">修改当前命令行显示</a></li>
         <li><a href="#统计有多少个和mon相关的进程">统计有多少个和“mon”相关的进程</a></li>
+        <li><a href="#awk-print-2">awk &lsquo;{print $2}&rsquo;</a></li>
       </ol>
     </li>
   </ol>
@@ -793,17 +808,17 @@ document.getElementById('days').innerHTML = number_of_days;
     <h3 class="widget-title"> </h3>
     <div class="widget-body">
         <div class="category-list">
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">10</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">12</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">36</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">14</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">15</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库<span class="category-list-count">4</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库<span class="category-list-count">5</a>
             </span></div>
             <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
             </span></div>
-            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">2</a>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">4</a>
             </span></div>
         </div>
     </div>
@@ -907,7 +922,7 @@ document.getElementById('days').innerHTML = number_of_days;
                     <a href="/archives/#2024">
                         
                             <span class="year">2024</span>
-                            <span class="count">29</span>
+                            <span class="count">31</span>
                         
                     </a> 
                 </div>

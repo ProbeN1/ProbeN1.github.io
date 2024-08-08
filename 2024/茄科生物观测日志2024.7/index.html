@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='小实验'><title>Keepalived&#43;Nginx部署实验</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='茄科生物观察手册2024.7 毕业的第一个月，好的开始是成功的开始。 7.25 爽，凌晨操作，明天不用去公司，直接居家办公。 如果人生是一场旅途，那么钱和'><title>茄科生物观测日志2024.7</title>
 
-<link rel='canonical' href='https://proben1.github.io/2024/keepalived-nginx%E9%83%A8%E7%BD%B2%E5%AE%9E%E9%AA%8C/'>
+<link rel='canonical' href='https://proben1.github.io/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.7/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Keepalived&#43;Nginx部署实验'>
-<meta property='og:description' content='小实验'>
-<meta property='og:url' content='https://proben1.github.io/2024/keepalived-nginx%E9%83%A8%E7%BD%B2%E5%AE%9E%E9%AA%8C/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='茄科生物观测日志2024.7'>
+<meta property='og:description' content='茄科生物观察手册2024.7 毕业的第一个月，好的开始是成功的开始。 7.25 爽，凌晨操作，明天不用去公司，直接居家办公。 如果人生是一场旅途，那么钱和'>
+<meta property='og:url' content='https://proben1.github.io/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.7/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LB/HA高可用' /><meta property='article:tag' content='环境搭建' /><meta property='article:published_time' content='2024-06-27T09:37:07&#43;08:00'/><meta property='article:modified_time' content='2024-06-27T09:37:07&#43;08:00'/>
-<meta name="twitter:title" content="Keepalived&#43;Nginx部署实验">
-<meta name="twitter:description" content="小实验">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-08-08T09:39:04&#43;08:00'/><meta property='article:modified_time' content='2024-08-08T09:39:04&#43;08:00'/>
+<meta name="twitter:title" content="茄科生物观测日志2024.7">
+<meta name="twitter:description" content="茄科生物观察手册2024.7 毕业的第一个月，好的开始是成功的开始。 7.25 爽，凌晨操作，明天不用去公司，直接居家办公。 如果人生是一场旅途，那么钱和">
   
 
 <style>
@@ -59,7 +59,7 @@
 </script>
 <div class="container main-container flex 
     <!-- 
-        extended
+        on-phone--column extended
      -->
     on-phone--column extended
 ">
@@ -276,21 +276,17 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
-                学习笔记
+            <a href="/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" style="background-color: #2a9d8f; color: #fff;">
+                小人联合工会内部资料
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/2024/keepalived-nginx%E9%83%A8%E7%BD%B2%E5%AE%9E%E9%AA%8C/">Keepalived&#43;Nginx部署实验</a>
+        <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.7/">茄科生物观测日志2024.7</a>
     </h2>
 
-    
-    <h3 class="article-subtitle">
-        小实验
-    </h3>
     
 
     
@@ -306,7 +302,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 27, 2024</time>
+                <time class="article-time--published">Aug 08, 2024</time>
             </div>
         
 
@@ -321,7 +317,7 @@
 
 
                 <time class="article-words">
-                    749字
+                    2397字
                 </time>
             </div>
         
@@ -333,106 +329,27 @@
     <section class="article-content">
     
     
-    <h3 id="keepalived简介">Keepalived简介
-</h3><p>一个免费开源的轻量级别高可用解决方案，通过VRRP协议实现多台机器之间的故障转移服务。</p>
-<h3 id="规划方案">规划方案
-</h3><p>master ：192.168.137.6</p>
-<p>backup ：192.168.10.8</p>
-<p>vip ：192.168.10.11</p>
-<p>OS：CentOS Linux 7 (Core)</p>
-<p>网卡名都是ens34</p>
-<p>实现：vip 上跑一个Nginx服务</p>
-<p>思路：安装+配置+脚本+启动排错+验证</p>
-<h3 id="环境安装">环境安装
-</h3><p>sudo yum -y install nginx</p>
-<p>sudo yum -y install keepalive</p>
-<p>主程序文件：/usr/sbin/keepalived.conf</p>
-<p>主配置文件：/usr/sbin/keepalived.conf</p>
-<h3 id="服务配置">服务配置
-</h3><p>master 和backup区别：配置中的state和priority不一样</p>
-<p>master ：<code>vi /usr/sbin/keepalived.conf</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>vrrp_instance VI_1 {
-</span></span><span style="display:flex;"><span>    state MASTER
-</span></span><span style="display:flex;"><span>    interface ens34
-</span></span><span style="display:flex;"><span>    virtual_router_id 51
-</span></span><span style="display:flex;"><span>    priority 100
-</span></span><span style="display:flex;"><span>    advert_int 1
-</span></span><span style="display:flex;"><span>    authentication {
-</span></span><span style="display:flex;"><span>        auth_type PASS
-</span></span><span style="display:flex;"><span>        auth_pass 1111
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    virtual_ipaddress {
-</span></span><span style="display:flex;"><span>        192.168.137.11/24 dev ens34
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    preempt delay 60
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>vrrp_script chk_nginx_port {
-</span></span><span style="display:flex;"><span>	script &#34;/opt/chk_nginx.sh&#34;
-</span></span><span style="display:flex;"><span>	interval 2
-</span></span><span style="display:flex;"><span>	weight -5
-</span></span><span style="display:flex;"><span>	fall 2
-</span></span><span style="display:flex;"><span>	rise 1
-</span></span><span style="display:flex;"><span>	}
-</span></span></code></pre></div><p>backup：vi /usr/sbin/keepalived.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>vrrp_instance VI_1 {
-</span></span><span style="display:flex;"><span>    state BACKUP
-</span></span><span style="display:flex;"><span>    interface ens34
-</span></span><span style="display:flex;"><span>    virtual_router_id 51
-</span></span><span style="display:flex;"><span>    priority 80
-</span></span><span style="display:flex;"><span>    advert_int 1
-</span></span><span style="display:flex;"><span>    authentication {
-</span></span><span style="display:flex;"><span>        auth_type PASS
-</span></span><span style="display:flex;"><span>        auth_pass 1111
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    virtual_ipaddress {
-</span></span><span style="display:flex;"><span>        192.168.137.11/24 dev ens34
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    preempt delay 60
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>vrrp_script chk_nginx_port {
-</span></span><span style="display:flex;"><span>	script &#34;/opt/chk_nginx.sh&#34;
-</span></span><span style="display:flex;"><span>	interval 2
-</span></span><span style="display:flex;"><span>	weight -5
-</span></span><span style="display:flex;"><span>	fall 2
-</span></span><span style="display:flex;"><span>	rise 1
-</span></span><span style="display:flex;"><span>	}
-</span></span></code></pre></div><h3 id="脚本配置">脚本配置
-</h3><p><code>vi /opt/chk_nginx.sh</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span> 
-</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#检测nginx是否启动了</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#268bd2">A</span>=<span style="color:#2aa198">`</span>ps -C nginx --no-header |wc -l<span style="color:#2aa198">`</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">#如果nginx没有启动就启动nginx </span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#859900">if</span> [ <span style="color:#268bd2">$A</span> -eq <span style="color:#2aa198;font-weight:bold">0</span> ];<span style="color:#859900">then</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#93a1a1;font-style:italic">#重启nginx</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#93a1a1;font-style:italic">#systemctl start nginx</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#93a1a1;font-style:italic">#nginx重启失败，则停掉keepalived服务，进行VIP转移</span>
-</span></span><span style="display:flex;"><span> 
-</span></span><span style="display:flex;"><span>      <span style="color:#859900">if</span> [ <span style="color:#2aa198">`</span>ps -C nginx --no-header |wc -l<span style="color:#2aa198">`</span> -eq <span style="color:#2aa198;font-weight:bold">0</span> ];<span style="color:#859900">then</span>
-</span></span><span style="display:flex;"><span>           killall keepalived
-</span></span><span style="display:flex;"><span>      <span style="color:#859900">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#859900">fi</span>
-</span></span></code></pre></div><p>赋权：<code>chmod 775 /opt/chk_nginx.sh</code></p>
-<h3 id="启动排错">启动排错
-</h3><p>systemctl start nginx</p>
-<p>systemctl start keepalived</p>
-<p>通过<code>ip a</code>可以发现vip没有启动</p>
-<p>systemctl status keepalived 查看状态，发现很多中文的空格未识别，修改配置文件，删去空格，重试</p>
-<p>systemctl restart keepalived</p>
-<p>通过<code>ip a</code>可以发现vip已经启动</p>
-<p>效果如下：</p>
+    <p>茄科生物观察手册2024.7</p>
+<p>毕业的第一个月，好的开始是成功的开始。</p>
+<p><kbd>7.25</kbd></p>
+<p>爽，凌晨操作，明天不用去公司，直接居家办公。</p>
+<p>如果人生是一场旅途，那么钱和社会地位是什么？</p>
+<p>车票？不行，旅途并非有什么目的，车票目的性太强了。</p>
+<p>旅行经费？不行，我不允许你把这么理想的事情说得这么现实[流泪][流泪]</p>
+<p>身上的装备？既符合钱和社会地位的状态性，又能限制你去一些地方，又不影响你欣赏其他景色。</p>
+<p><kbd>7.24</kbd></p>
+<p>你怎么知道天翔哥连续三天赞了我的日报，十分开心~~~</p>
+<p>开始投入工作之后，我发现我的行事方式有了很大的改变。比如今天pdd退货，因为体积超了，快递要额外收费，pdd只退款了首重的运费。以往遇到这种事情，我会先是很气，然后很气，然后再很气，pdd卸了吧。今天我却没有，脑海中想了两套方案：一是交钱退货，然后想办法能不能把这额外的钱再找平台要回来（已经做好要不回来的打算了）。二是换成上门取货试一下，可能会免费。想了一下还是选了方案一，因为实在有点累而且不一定有时间等他上门。付款之后联系商家客服，平台客服，还是不行，并上网搜了一下原因。遂在心中拉黑商家并下载了1688待用。一套下来，我真的惊讶于我的改变，几天的时间，让我看到了改变20年养成的习惯的希望。</p>
+<p>所以，我愈加感觉到，一切都是可以学习的，不光是技术，还有性格，习惯，外向程度，只要我愿意，并处在合适的环境下。</p>
+<p>瑞幸的陨石咖啡好好喝，特别是不含任何陨石成分笑死我了。才发现每周9.9可以折扣买咖啡，舒服。</p>
+<p><kbd>7.22</kbd></p>
+<p>。。。班味</p>
+<p>堂堂新时代中国特色社会主义好青年怎么能染上班味？？？</p>
+<p>换了个很红的钉钉头像，叫劳动气息！</p>
 <p><figure 
 	>
-	<a href="https://pic.imgdb.cn/item/667cce87d9c307b7e9cf73f4.png" >
-		<img src="https://pic.imgdb.cn/item/667cce87d9c307b7e9cf73f4.png"
+	<a href="https://pic.imgdb.cn/item/66b42466d9c307b7e969ec17.png" >
+		<img src="https://pic.imgdb.cn/item/66b42466d9c307b7e969ec17.png"
 			
 			
 			
@@ -441,28 +358,70 @@
 	</a>
 	
 </figure></p>
-<h3 id="验证">验证
-</h3><p>通过ip<code>192.168.137.11</code>可以看到nginx欢迎界面，我们在主备上修改这个界面</p>
-<p><code> vi /usr/share/nginx/html/index.html</code></p>
-<p>分别在<h1>Welcome to nginx!</h1>后加上111和222</p>
-<p>访问192.168.137.11可以看到111</p>
-<p>systemctl stop keepalived关闭主机1的keepalived服务</p>
-<p>再次访问192.168.137.11可以看到222</p>
-<p><figure 
-	>
-	<a href="https://pic.imgdb.cn/item/667cd01fd9c307b7e9d1e3d5.png" >
-		<img src="https://pic.imgdb.cn/item/667cd01fd9c307b7e9d1e3d5.png"
-			
-			
-			
-			loading="lazy"
-			>
-	</a>
-	
-</figure></p>
-<p>重新开启</p>
-<p>变回111</p>
-<p>验证成功</p>
+<p>瑞幸12块的抹茶柠檬水喝起来和蜜雪冰城4块的柠檬水没差别啊~</p>
+<p><kbd>7.20-7.21</kbd></p>
+<p>Superhot，夏天真的不敢city walk了，37°的天，热崩溃了</p>
+<p>周六去奥匹游了个泳，比大连市游泳馆贵但是整体环境好，水质可能略微刺激一点，但比南京里其他的健身房小馆子好多了。吃了一顿汉堡王的大嘴安格斯：鸡豆腐史诗级难吃；汉堡很大很满足，但是太干了；薯条还好；整体评价一般。</p>
+<p>周天：宜家，七分钟吃完瑞典肉丸+意大利面；打卡小说里的梅花山庄+月牙湖；金陵正春园鸭血粉丝，good</p>
+<p><kbd>7.19</kbd></p>
+<p>​	两个半月的必修培训结束了，虽然中间经过了毕业答辩和预装，但整体节奏还是很快的，尤其是最后这两周时间，环环相扣。</p>
+<p>​	同时，新的“培训”也已经开始了，我要开始学习如何支持项目，如何高效地确定需求并解决问题。我认为这些的难度不亚于必修培训，甚至还包含技术之外的很多东西。但我相信这些是可以学习的。</p>
+<p>​	那么我将这作为短期目标，现在中期和短期目标都明确了，长期目标还需要再摸索。</p>
+<p><kbd>7.18</kbd></p>
+<p>搁公司睡一晚，晚上睡公司可以省四块的车费和四块的电费，总计1$</p>
+<p>拯救了一只失足大甲虫（真不是屎壳郎）</p>
+<p>笑死，半夜一区的紧急电话打到二区的负责人手里，然后叫我帮忙叫一下负责操作的倒霉蛋~我还真就一个电话打通了 。。。仿佛看到了自己的将来</p>
+<p>00后整顿职场之和部门四个p7的交集（我p3）：</p>
+<p>No1.天翔哥，场景：结业答辩</p>
+<p>你这张胶片（企图攻击），嗯。。。（寻找漏洞），没什么问题（未发现漏洞）</p>
+<p>0.2s后（刷新状态）</p>
+<p>你这个PPT（准备架势），恩。。。（寻找弱点），写的还可以（未发现弱点）</p>
+<p>0.2s后（刷新CD）</p>
+<p>你这个布局，恩。。。</p>
+<p>。。。</p>
+<p>（循环）</p>
+<p>No2.旺总</p>
+<p>前天，七点半出发上班，公交车遇到旺总，不敢认，一块走到食堂，回部门，哇就是他。</p>
+<p>昨天，换了个时间点，八点半出发上班，公交车遇到旺总，就是他，太尴尬了假装没看到，一块走到食堂，回部门。</p>
+<p>今天，旺总来找我了，“公交车上是不是你小子”</p>
+<p>No3.二爷</p>
+<p>聊天记录只有无数次同样的对话：</p>
+<p>我：“二爷好，求一下xxx项目的动态验证码~”</p>
+<p>二爷：“xxxxxx”</p>
+<p>我：“谢谢！”</p>
+<p>No4.王爷</p>
+<p>人很和善，刚刚回来拿东西还看到我在加班打游戏。</p>
+<p><kbd>7.17</kbd></p>
+<p>结业答辩，终于拿出了一个天翔哥满意的ppt！</p>
+<p>仿佛进了赛博流水线，负责500+服务器巡检结果的check，还是，抬头之时已是下班之点！</p>
+<p><kbd>7.16</kbd></p>
+<p>高可用考试和Oracle考试，以及被环境问题拿下的考生和考官，同样，抬头之时已是下班之点。</p>
+<p><kbd>7.15</kbd></p>
+<p>支持项目，处理云盘挂载问题，抬头之时已是下班之点。</p>
+<p>坑死我了，就好像是剧本杀，过程无比复杂，结局笑掉大牙。tm最大的问题是hosts里的IP和域名写反了。什么人啊~</p>
+<p><kbd>7.14</kbd></p>
+<p>。。。写了一天LLD</p>
+<p><kbd>7.13</kbd></p>
+<p>周六，入职活动还是到单位里去了，认识新同学，有佬！</p>
+<p><kbd>7.12</kbd></p>
+<p>入职活动，难忘的经历。第一次体验组织者这个角色。共同和16人的小队，完成队名口号旗帜的指定，取得球赛第三的成绩；共同和44名同学在8秒内报数至60，在大家的共同努力下达成了6秒28的佳绩。顺便做了俯卧撑10+20+40+80个。</p>
+<p>晚饭时候我确实拿不起来筷子，因为哥一直用勺子吃。</p>
+<p><kbd>7.9</kbd></p>
+<p>啊啊啊好多知识，脑子塞不下了，崩溃。</p>
+<p>学长高频率请吃饭，这次又请我吃了pizza。等我转正了一定要请回来！</p>
+<p><kbd>7.7</kbd></p>
+<p>周六周天为了生活一共花了520，感叹生活不易，鼠鼠崩溃。</p>
+<p>四处找游泳馆，没找到满意的，下次去建邺奥匹看看。为什么南京的游泳馆都是上午12点之后才开门啊~</p>
+<p><kbd>7.2</kbd></p>
+<p>我！</p>
+<p>毕！</p>
+<p>业！</p>
+<p>了！</p>
+<p>事2：</p>
+<p>学长去年毕业来的公司，23届优秀员工，晚上请我吃了顿烧烤。我俩谈论了一些话题，中间有一部分是关于我现在实习成绩的，建议我好好搞，保持我现在的成绩。晚上正好有时间，思索一下相关的事情。</p>
+<p>客观上讲，我现在实习成绩上保持领先，接下来需要好好保持。</p>
+<p>主观上讲，在学校的经历让我产生了一定程度的习得性无助，对于部门里这种干净的氛围有点受宠若惊，努力在这里是可以得到回报的。同时我认为，部门里的大家都是很有能力的人，想要在其中突出就需要努力+细节。但是从来没想过什么“争第一”这种事情，我的想法很简单，只是担心试用期别给我淘汰了，入职之后别给我优化了。。。。。。</p>
+<p>所以，最后我得出了结论：不去特意把自己放在“第一”的位置上，因为保持这种心态对我自己的伤害比较大。我要做的只是保持本心，干好自己的事情，将一个良好的责任感。</p>
 
 </section>
 
@@ -470,10 +429,6 @@
     <footer class="article-footer">
     
     <section class="article-tags">
-        
-            <a href="/tags/lb/ha%E9%AB%98%E5%8F%AF%E7%94%A8/">LB/HA高可用</a>
-        
-            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
         
     </section>
 
@@ -504,48 +459,48 @@
             <div class="flex article-list--tile">
                 
                     
-<article class="">
-    <a href="/2024/vmware%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">VMware网络配置详解</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/2024/lb/ha%E7%9B%B8%E5%85%B3%E6%A2%B3%E7%90%86/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">LB/HA相关梳理</h2>
-        </div>
-    </a>
-</article>
-                
-                    
 <article class="has-image">
-    <a href="/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/">
+    <a href="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/">
         
         
             <div class="article-image">
-                <img src="/2024/%E8%A3%85%E7%B3%BB%E7%BB%9F%E4%B9%8B%E4%BB%8E0%E5%88%B0100/%E6%95%B4%E4%BD%93%E7%8E%AF%E5%A2%83.2e4ed5f21b9ca68ba08e891b2f81080c_hu6d95ae0bcf28ccaf22018a9e11d0c3f9_5043893_250x150_fill_q75_box_smart1.jpg" 
+                <img src="/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/index.a23777db09f9cd42443c3247c4eead86_hu355cd1ffd98197a463438d175fafc20c_3203579_250x150_fill_q75_box_smart1.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post 装系统之从0到100"
+                        alt="Featured image of post 六月二十九日晚"
                         
-                        data-hash="md5-Lk7V8hucpougjokbL4EIDA==">
+                        data-hash="md5-ojd32wn5zUJEPDJHxO6thg==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">装系统之从0到100</h2>
+            <h2 class="article-title">六月二十九日晚</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">茄科生物观测日志2024.6</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2022/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972022.9-10/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">茄科生物观测日志2022.9 10</h2>
         </div>
     </a>
 </article>
@@ -870,40 +825,6 @@ document.getElementById('days').innerHTML = number_of_days;
     </form>
         
             
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">Table of contents</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#keepalived简介">Keepalived简介</a></li>
-        <li><a href="#规划方案">规划方案</a></li>
-        <li><a href="#环境安装">环境安装</a></li>
-        <li><a href="#服务配置">服务配置</a></li>
-        <li><a href="#脚本配置">脚本配置</a></li>
-        <li><a href="#启动排错">启动排错</a></li>
-        <li><a href="#验证">验证</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
         
             <section class="widget categories">
         <div class="widget-icon">
