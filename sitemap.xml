@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</loc>
-    <lastmod>2024-06-29T19:31:35+08:00</lastmod>
-  </url><url>
     <loc>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</loc>
     <lastmod>2024-05-21T17:55:29+08:00</lastmod>
   </url><url>
@@ -70,6 +67,9 @@
   </url><url>
     <loc>https://proben1.github.io/2024/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%BF%B0/</loc>
     <lastmod>2024-07-03T10:50:55+08:00</lastmod>
+  </url><url>
+    <loc>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</loc>
+    <lastmod>2024-06-29T19:31:35+08:00</lastmod>
   </url><url>
     <loc>https://proben1.github.io/2024/ntp%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2024-06-28T10:53:01+08:00</lastmod>

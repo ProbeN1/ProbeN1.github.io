@@ -7,69 +7,6 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Thu, 08 Aug 2024 09:39:04 +0800</lastBuildDate><atom:link href="https://proben1.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>六月二十九日晚</title>
-        <link>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</link>
-        <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
-        
-        <guid>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</guid>
-        <description>&lt;img src="https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/index.jpg" alt="Featured image of post 六月二十九日晚" /&gt;
-
-&lt;blockquote class=&#34;quote en&#34;&gt;&lt;p&gt;雨后，在太阳宫的旁边漫步，夕阳映射下的玄武湖泛着粉紫色的梦幻光芒，对岸的紫峰大厦刚刚亮起灿灿星火。&lt;/p&gt;
-&lt;p&gt;五年前也是一个这样的夜晚，高二的我初到南京旅游，一时兴起绕着玄武湖夜跑，在同样的位置驻足。那个时候我还可以随意奔跑，心中也怀着凌云壮志。&lt;/p&gt;
-&lt;p&gt;犹豫了片刻，我拿出手机给许久未联系的zc拍下了这景色——正如我像当年做的一样。我告诉她兜兜转转我又回到了南京这座城市，同时也知道了她即将踏上赴日留学的旅程。&lt;/p&gt;
-&lt;p&gt;在那一刻，我知道，我的青春结束了。&lt;/p&gt;
-&lt;p&gt;定格在那湖边落日的霞云中，夏夜晚风的清凉里。&lt;/p&gt;
-&lt;/blockquote&gt; 
-&lt;p&gt;&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abd7f.jpg&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abd7f.jpg&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abeb0.jpg&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abeb0.jpg&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
-	
-&lt;/figure&gt;	&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abe18.jpg&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abe18.jpg&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure 
-	&gt;
-	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed0d9c307b7e94abcab.jpg&#34; &gt;
-		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed0d9c307b7e94abcab.jpg&#34;
-			
-			
-			
-			loading=&#34;lazy&#34;
-			&gt;
-	&lt;/a&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>技术学习与团队成长</title>
         <link>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</link>
         <pubDate>Tue, 21 May 2024 17:55:29 +0800</pubDate>
@@ -1051,6 +988,69 @@ HASH索引可能是访问数据库中数据的最快方法，但它也有自身�
 &lt;p&gt;&lt;strong&gt;OLTP(OnLine Transaction Processing)&lt;/strong&gt;；OLTP 是能够提供实时在线处理事务，同时保证实时强一致性的关系型数据库，也称交易型数据库。开源产品有：MySQL、PostgreSQL。可以理解成传统的关系型数据库的主要应用，主要是基本的、日常的事务处理，例如银行交易。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;OLAP(Online Analytical Processing)&lt;/strong&gt;：OLAP 是指支持对大规模数据进行较为复杂的联机分析处理的关系型数据库。开源产品有：Greenplum、Doris、Clickhouse、Kylin、Impala、Sparksql、Druid、Hive、Presto。是数据仓库系统的主要应用，支持复杂的分析操作，侧重决策支持，并且提供直观易懂的查询结果。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;HTAP (Hybrid Transactional/Analytical Processing)&lt;/strong&gt;：HTAP 是指能够同时支持在线事务处理和复杂数据分析的关系型数据库。广义的 HTAP 指的是同时支持 OLTP 和 OLAP 查询的数据库，而狭义的 HTAP 指的是同时支持行存列存 OLTP 和 OLAP 查询的数据库。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>六月二十九日晚</title>
+        <link>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</link>
+        <pubDate>Sat, 29 Jun 2024 19:31:35 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/</guid>
+        <description>&lt;img src="https://proben1.github.io/2024/%E5%85%AD%E6%9C%88%E4%BA%8C%E5%8D%81%E4%B9%9D%E6%97%A5%E6%99%9A/index.jpg" alt="Featured image of post 六月二十九日晚" /&gt;
+
+&lt;blockquote class=&#34;quote en&#34;&gt;&lt;p&gt;雨后，在太阳宫的旁边漫步，夕阳映射下的玄武湖泛着粉紫色的梦幻光芒，对岸的紫峰大厦刚刚亮起灿灿星火。&lt;/p&gt;
+&lt;p&gt;五年前也是一个这样的夜晚，高二的我初到南京旅游，一时兴起绕着玄武湖夜跑，在同样的位置驻足。那个时候我还可以随意奔跑，心中也怀着凌云壮志。&lt;/p&gt;
+&lt;p&gt;犹豫了片刻，我拿出手机给许久未联系的zc拍下了这景色——正如我像当年做的一样。我告诉她兜兜转转我又回到了南京这座城市，同时也知道了她即将踏上赴日留学的旅程。&lt;/p&gt;
+&lt;p&gt;在那一刻，我知道，我的青春结束了。&lt;/p&gt;
+&lt;p&gt;定格在那湖边落日的霞云中，夏夜晚风的清凉里。&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abd7f.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abd7f.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abeb0.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abeb0.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;	&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abe18.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed1d9c307b7e94abe18.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/6684aed0d9c307b7e94abcab.jpg&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/6684aed0d9c307b7e94abcab.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2441,8 +2441,8 @@ b2&lt;/p&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;use &amp;#34;fisk&amp;#34; create new partition
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgextend vg00 /dev/nvme0n1p7
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend /dev/vg00/lvoracle -L +9.9G vg00
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xfs_growfs /dev/vg00/lvoracle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend -L +9.9G /dev/mapper/vg00-lvoracle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xfs_growfs /dev/mapper/vg00-lvoracle
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;swap扩容&#34;&gt;SWAP扩容
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapoff 分区名/LV名（卸）
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;对SWAP所在的文件系统扩容

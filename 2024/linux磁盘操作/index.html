@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    1199字
+                    1198字
                 </time>
             </div>
         
@@ -365,8 +365,8 @@
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>use &#34;fisk&#34; create new partition
 </span></span><span style="display:flex;"><span>pvcreate /dev/nvme0n1p7
 </span></span><span style="display:flex;"><span>vgextend vg00 /dev/nvme0n1p7
-</span></span><span style="display:flex;"><span>lvextend /dev/vg00/lvoracle -L +9.9G vg00
-</span></span><span style="display:flex;"><span>xfs_growfs /dev/vg00/lvoracle
+</span></span><span style="display:flex;"><span>lvextend -L +9.9G /dev/mapper/vg00-lvoracle
+</span></span><span style="display:flex;"><span>xfs_growfs /dev/mapper/vg00-lvoracle
 </span></span></code></pre></div><h3 id="swap扩容">SWAP扩容
 </h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>swapoff 分区名/LV名（卸）
 </span></span><span style="display:flex;"><span>对SWAP所在的文件系统扩容
