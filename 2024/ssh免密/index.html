@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='启动步骤 一：上电与BIOS启动： 上电：打开电源，BIOS（Basic Input/Output System）进行开机自检（POST）BIOS启动：初始化内存等设备，'><title>Linux概念知识 运行、内核和shell</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='免密配置 如果将输入密码登录比作拿钥匙开门，那么免密登录可以理解为刷脸或者刷指纹开门，要在此之前已经在开门的数据库中录下来。在录下来之后才体会'><title>Ssh免密</title>
 
-<link rel='canonical' href='https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/'>
+<link rel='canonical' href='https://proben1.github.io/2024/ssh%E5%85%8D%E5%AF%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Linux概念知识 运行、内核和shell'>
-<meta property='og:description' content='启动步骤 一：上电与BIOS启动： 上电：打开电源，BIOS（Basic Input/Output System）进行开机自检（POST）BIOS启动：初始化内存等设备，'>
-<meta property='og:url' content='https://proben1.github.io/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/'>
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Ssh免密'>
+<meta property='og:description' content='免密配置 如果将输入密码登录比作拿钥匙开门，那么免密登录可以理解为刷脸或者刷指纹开门，要在此之前已经在开门的数据库中录下来。在录下来之后才体会'>
+<meta property='og:url' content='https://proben1.github.io/2024/ssh%E5%85%8D%E5%AF%86/'>
 <meta property='og:site_name' content='茄子的养殖场'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-05-11T15:27:07&#43;08:00'/><meta property='article:modified_time' content='2024-05-11T15:27:07&#43;08:00'/>
-<meta name="twitter:title" content="Linux概念知识 运行、内核和shell">
-<meta name="twitter:description" content="启动步骤 一：上电与BIOS启动： 上电：打开电源，BIOS（Basic Input/Output System）进行开机自检（POST）BIOS启动：初始化内存等设备，">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-07-27T16:21:01&#43;08:00'/><meta property='article:modified_time' content='2024-07-27T16:21:01&#43;08:00'/>
+<meta name="twitter:title" content="Ssh免密">
+<meta name="twitter:description" content="免密配置 如果将输入密码登录比作拿钥匙开门，那么免密登录可以理解为刷脸或者刷指纹开门，要在此之前已经在开门的数据库中录下来。在录下来之后才体会">
   
 
 <style>
@@ -284,7 +284,7 @@
     
 
     <h2 class="article-title">
-        <a href="/2024/linux%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86-%E8%BF%90%E8%A1%8C%E5%86%85%E6%A0%B8%E5%92%8Cshell/">Linux概念知识 运行、内核和shell</a>
+        <a href="/2024/ssh%E5%85%8D%E5%AF%86/">Ssh免密</a>
     </h2>
 
     
@@ -302,7 +302,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 11, 2024</time>
+                <time class="article-time--published">Jul 27, 2024</time>
             </div>
         
 
@@ -317,7 +317,7 @@
 
 
                 <time class="article-words">
-                    1555字
+                    1130字
                 </time>
             </div>
         
@@ -329,73 +329,80 @@
     <section class="article-content">
     
     
-    <h3 id="启动步骤">启动步骤
-</h3><p>一：上电与BIOS启动：</p>
-<p>上电：打开电源，BIOS（Basic Input/Output System）进行开机自检（POST）BIOS启动：初始化内存等设备，按照启动顺序，启动各个设备</p>
-<p>二：加载引导加载程序（Boot Loader）：</p>
-<p>Boot Loader读取配置文件grub.cfg、lilo.conf等，加载并启动Linux内核到内存，并跳转到内核的入口点开始执行。内核会进行一系列的初始化工作，如初始化硬件设备、建立内存空间的映射图等。</p>
-<p>三：执行init进程：</p>
-<p>Linux内核启动完成后，会启动第一个用户空间进程init（PID为1）。
-init进程会读取/etc/inittab或/etc/systemd/system/default.target等配置文件，确定系统的运行级别（runlevel）。</p>
-<p>四：启动系统服务和管理器：</p>
-<p>根据运行级别，init进程会启动相应的服务和管理器（如systemd）。
-systemd会根据配置文件（如/etc/systemd/system/和/lib/systemd/system/目录下的.service文件）启动相应的服务。</p>
-<h3 id="uefi和legacy两种启动方式的区别">UEFI和Legacy两种启动方式的区别
-</h3><div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>UEFI</th>
-<th>Legacy</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>更快的启动时间</td>
-<td>相比UEFI，它的速度较慢</td>
-</tr>
-<tr>
-<td>默认GPT 分区方案</td>
-<td>默认MBR 分区方案</td>
-</tr>
-<tr>
-<td>以 32 位和 64 位运行</td>
-<td>16位</td>
-</tr>
-<tr>
-<td>允许安全启动,将操作系统（OS）视为应用程序</td>
-<td>它不提供允许加载未经授权的应用程序的安全启动方法，未限制双启动</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="uek和rhck内核">UEK和RHCK内核
-</h3><p>二者分别是Unbreakable Enterprise Kernel(UEK)以及Red Hat Compatible Kernel(RHCK) ，RHCK使用与Redhat一样的内核的版本，稳定性与兼容性有保证。
-UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强功能。</p>
-<h3 id="kernel和操作系统硬件驱动">Kernel和操作系统、硬件、驱动
-</h3><p>内核操作系统的一个核心组成部分，主要用于管理计算机的硬件资源，如CPU、内存、输入输出等。
-操作系统是建立在内核之上的一个软件系统，包括了Kernel、系统服务、工具程序和应用程序等，用户通过系统调用程序申请内核相关功能。
-内核与计算机硬件交互，提供了操作系统运行的核心功能，如进程管理、内存管理、设备驱动程序等。
-驱动又是内核与硬件沟通的桥梁，用于与特定硬件设备进行通信。</p>
-<h3 id="kernel和shell">Kernel和shell
-</h3><p>Shell是用户与操作系统交互的主要接口，会将用户输入的命令通过系统调用（system call）发送给内核（Kernel）。
-内核是操作系统的核心部分，负责管理系统资源、提供进程管理、内存管理、设备驱动等核心功能。
-内核在接收到Shell发送的命令后，会执行相应的操作，并将结果返回给Shell。从而实现了用户的需求。</p>
-<h3 id="用户连接shell变量和进程的关系">用户连接、shell、变量和进程的关系
-</h3><p>首先，系统会启动一个shell进程作为用户与操作系统之间的接口。</p>
-<p>其次，shell进程启动后，会加载并设置一系列的环境变量。系统级的环境变量和用户级环境变量。</p>
-<p>每当用户在shell中输入一个命令并回车时，shell会为该命令创建一个新的进程。这个新进程是shell进程的子进程，它继承了shell进程的环境变量。</p>
-<h3 id="pci连接设备">PCI连接设备
-</h3><p>PCI（Peripheral Component Interconnect）是一种计算机总线标准，用于连接计算机主板和其他硬件设备。PCI连接设备指的是那些通过PCI总线与主板相连的设备。如显卡、声卡、网卡、RAID卡等。</p>
-<h3 id="系统的运行级别">系统的运行级别
-</h3><p>运行级别0：系统停机
-运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆
-运行级别2：多用户状态(没有NFS)
-运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式
-运行级别4：系统未使用，保留
-运行级别5：图形GUI模式
-运行级别6：系统正常关闭并重启</p>
-<p>存储在/etc/systemd/system/default.target
-通过systemctl set-default xxx修改</p>
-
+    <h3 id="免密配置">免密配置
+</h3><p>如果将输入密码登录比作拿钥匙开门，那么免密登录可以理解为刷脸或者刷指纹开门，要在此之前已经在开门的数据库中录下来。在录下来之后才体会到开门不用钥匙便捷。</p>
+<p>所以，免密登录的前提就是远端的服务器能够认识你的机器，而你的机器“刷脸”（免密）进门就需要把它的“脸”（公钥）放到远端的服务器的可信列表里。</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/66ec23a3f21886ccc001e8f7.png" >
+		<img src="https://pic.imgdb.cn/item/66ec23a3f21886ccc001e8f7.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<h4 id="步骤">步骤
+</h4><p>ssh免密，A用户要免密登录B用户，在A用户ssh-keygen生成公钥和私钥，把公钥加入到B用户目录下.ssh/authorized_keys里</p>
+<p><figure 
+	>
+	<a href="https://pic.imgdb.cn/item/66ec2680f21886ccc005072d.png" >
+		<img src="https://pic.imgdb.cn/item/66ec2680f21886ccc005072d.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<p>1、生成公私钥</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ssh-keygen -t rsa
+</span></span></code></pre></div><p>根据提示三次默认回车，就会在 $HOME/.ssh 目录下，会新生成两个文件 <code>id_rsa</code> 和 <code>id_rsa.pub</code> 。其中 <code>id_rsa</code> 是私钥，而 <code>id_rsa.pub</code> 是公钥。由于要设置多个 ssh key ，因此在<code>第一个提示</code>所要保存的路径时，可以将密钥名字改为 <code>xxx_rsa</code> 。</p>
+<p>2、将本地的公钥上传至远程服务器</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub  user@10.11.xx.xx
+</span></span></code></pre></div><p>通过 <code>scp</code> 将 <code>xxx_rsa.pub</code> 上传到远程主机 <code>$HOME/.ssh</code> 目录下也行（如果没有，则新建一个）</p>
+<p>3、尝试免密登录</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ssh user@10.11.xx.xx
+</span></span></code></pre></div><h4 id="权限需要">权限需要
+</h4><p>SSH对公钥、私钥的权限和所有权的要求是非常严格的，总结如下：
+1、下面两个目录的所有权必须是user-B，所属组也应该是user-B，前者权限不能是777，后者权限必须为700
+/home/user
+/home/user/.ssh
+2、下面公钥文件的所有权必须是user-B，所属组也应该是user-B，权限必须为644
+/home/user/.ssh/authorized_keys
+3、下面私钥文件的所有权必须是user-A，所属组也应该是user-A，权限必须是600
+/home/user/.ssh/id_rsa</p>
+<p>4、vi /etc/ssh/sshd_config</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>//开启以下内容,一般默认即可
+</span></span><span style="display:flex;"><span>HostKey /etc/ssh/ssh_host_rsa_key
+</span></span><span style="display:flex;"><span>RSAAuthentication yes
+</span></span><span style="display:flex;"><span>PubkeyAuthentication yes
+</span></span><span style="display:flex;"><span>AuthorizedKeysFile .ssh/authorized_keys
+</span></span></code></pre></div><p>记得去systemctl restart sshd</p>
+<h4 id="别名多个key">别名/多个key
+</h4><p>要登录不同的远程主机时，每个帐号参数配置可能不同，比如端口设置不同，这时候敲命令就很劳神费力了。SSH 提供了配置文件用来管理用户的 SSH 会话，该机制可以大大的方便用户登录。</p>
+<p>SSH 的配置文件有两个：</p>
+<blockquote>
+<p>$ ~/.ssh/config # 用户配置文件
+$ /etc/ssh/ssh_config # 系统配置文件</p>
+</blockquote>
+<p>在 <code>~/.ssh/</code> 新建 config 文件，其配置如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Host cn_server                      # 关键词、别名
+</span></span><span style="display:flex;"><span>    HostName 10.11.xx.xx           # 主机地址
+</span></span><span style="display:flex;"><span>    Port 22                   # 指定端口
+</span></span><span style="display:flex;"><span>    User root                   # 用户名
+</span></span><span style="display:flex;"><span>    IdentityFile ~/.ssh/xxx_rsa # 认证文件
+</span></span><span style="display:flex;"><span>    StrictHostKeyChecking no    # 关闭提示
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span># ssh别名链接验证
+</span></span><span style="display:flex;"><span>ssh cn_server
+</span></span></code></pre></div><p>若要设置多个 ssh key ，只需要在 config 文件中添加多个 HOST 即可。 在 <code>.ssh/</code> 目录下，还有一个文件是 <code>known_hosts</code> ，该文件是已知的主机公钥名单。 在第一次连接远程主机时，OpenSSH 会提示： <code>无法辨认主机的真实性，询问是否要继续连接</code> 。手动输入 yes 之后 ssh 就会将远程主机地址及对应的公钥添加进 known_hosts 文件。下一次连接同一台远程主机时，OpenSSH 通过 known_hosts 文件识别出它的公钥已经保存在本地了，从而跳过提示。 将 <code>StrictHostKeyChecking</code> 设置成 no 后，在第一次连接时，ssh 将会自动添加远程主机的相关信息，省略了手动敲 yes 的步骤。 最后在终端执行命令 <code>ssh alias</code> 就可以了。</p>
+<h3 id="sshpass">sshpass
+</h3><p>sshpass 是<strong>一个简单、轻量级的命令行工具</strong>，通过它我们能够向命令提示符本身提供密码（非交互式密码验证），这样就可以通过cron 调度器执行自动化的shell 脚本进行备份。</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>sshpass -p {密码} ssh {用户名}@{主机IP}
+</span></span></code></pre></div>
 </section>
 
 
@@ -433,36 +440,36 @@ UEK的内核是基于更新的主流内核,同时附加了Oralce很多的加强�
                 
                     
 <article class="">
-    <a href="/2024/ntp%E6%9C%8D%E5%8A%A1/">
+    <a href="/2024/ssh%E5%92%8Csftp%E7%9A%84%E4%BD%BF%E7%94%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">NTP服务</h2>
+            <h2 class="article-title">ssh和sftp的使用</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2024/linux%E5%8F%98%E9%87%8F/">
+    <a href="/2024/%E8%8C%84%E7%A7%91%E7%94%9F%E7%89%A9%E8%A7%82%E6%B5%8B%E6%97%A5%E5%BF%972024.7/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux变量</h2>
+            <h2 class="article-title">茄科生物观测日志2024.7</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/2024/%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E9%85%8D%E7%BD%AE/">
+    <a href="/2024/spine-leaf%E6%9E%B6%E6%9E%84/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">本地yum源配置</h2>
+            <h2 class="article-title">Spine Leaf架构</h2>
         </div>
     </a>
 </article>
@@ -807,14 +814,14 @@ document.getElementById('days').innerHTML = number_of_days;
   <ol>
     <li>
       <ol>
-        <li><a href="#启动步骤">启动步骤</a></li>
-        <li><a href="#uefi和legacy两种启动方式的区别">UEFI和Legacy两种启动方式的区别</a></li>
-        <li><a href="#uek和rhck内核">UEK和RHCK内核</a></li>
-        <li><a href="#kernel和操作系统硬件驱动">Kernel和操作系统、硬件、驱动</a></li>
-        <li><a href="#kernel和shell">Kernel和shell</a></li>
-        <li><a href="#用户连接shell变量和进程的关系">用户连接、shell、变量和进程的关系</a></li>
-        <li><a href="#pci连接设备">PCI连接设备</a></li>
-        <li><a href="#系统的运行级别">系统的运行级别</a></li>
+        <li><a href="#免密配置">免密配置</a>
+          <ol>
+            <li><a href="#步骤">步骤</a></li>
+            <li><a href="#权限需要">权限需要</a></li>
+            <li><a href="#别名多个key">别名/多个key</a></li>
+          </ol>
+        </li>
+        <li><a href="#sshpass">sshpass</a></li>
       </ol>
     </li>
   </ol>

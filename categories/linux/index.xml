@@ -7,15 +7,85 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sat, 27 Jul 2024 16:21:01 +0800</lastBuildDate><atom:link href="https://proben1.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Ssh进阶</title>
-        <link>https://proben1.github.io/2024/ssh%E8%BF%9B%E9%98%B6/</link>
+        <title>Ssh免密</title>
+        <link>https://proben1.github.io/2024/ssh%E5%85%8D%E5%AF%86/</link>
         <pubDate>Sat, 27 Jul 2024 16:21:01 +0800</pubDate>
         
-        <guid>https://proben1.github.io/2024/ssh%E8%BF%9B%E9%98%B6/</guid>
+        <guid>https://proben1.github.io/2024/ssh%E5%85%8D%E5%AF%86/</guid>
         <description>&lt;h3 id=&#34;免密配置&#34;&gt;免密配置
-&lt;/h3&gt;&lt;h3 id=&#34;端口转发&#34;&gt;端口转发
-&lt;/h3&gt;&lt;h3 id=&#34;sshpass&#34;&gt;sshpass
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;如果将输入密码登录比作拿钥匙开门，那么免密登录可以理解为刷脸或者刷指纹开门，要在此之前已经在开门的数据库中录下来。在录下来之后才体会到开门不用钥匙便捷。&lt;/p&gt;
+&lt;p&gt;所以，免密登录的前提就是远端的服务器能够认识你的机器，而你的机器“刷脸”（免密）进门就需要把它的“脸”（公钥）放到远端的服务器的可信列表里。&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66ec23a3f21886ccc001e8f7.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66ec23a3f21886ccc001e8f7.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;步骤&#34;&gt;步骤
+&lt;/h4&gt;&lt;p&gt;ssh免密，A用户要免密登录B用户，在A用户ssh-keygen生成公钥和私钥，把公钥加入到B用户目录下.ssh/authorized_keys里&lt;/p&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://pic.imgdb.cn/item/66ec2680f21886ccc005072d.png&#34; &gt;
+		&lt;img src=&#34;https://pic.imgdb.cn/item/66ec2680f21886ccc005072d.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;1、生成公私钥&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen -t rsa
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据提示三次默认回车，就会在 $HOME/.ssh 目录下，会新生成两个文件 &lt;code&gt;id_rsa&lt;/code&gt; 和 &lt;code&gt;id_rsa.pub&lt;/code&gt; 。其中 &lt;code&gt;id_rsa&lt;/code&gt; 是私钥，而 &lt;code&gt;id_rsa.pub&lt;/code&gt; 是公钥。由于要设置多个 ssh key ，因此在&lt;code&gt;第一个提示&lt;/code&gt;所要保存的路径时，可以将密钥名字改为 &lt;code&gt;xxx_rsa&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;2、将本地的公钥上传至远程服务器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub  user@10.11.xx.xx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;scp&lt;/code&gt; 将 &lt;code&gt;xxx_rsa.pub&lt;/code&gt; 上传到远程主机 &lt;code&gt;$HOME/.ssh&lt;/code&gt; 目录下也行（如果没有，则新建一个）&lt;/p&gt;
+&lt;p&gt;3、尝试免密登录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh user@10.11.xx.xx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;权限需要&#34;&gt;权限需要
+&lt;/h4&gt;&lt;p&gt;SSH对公钥、私钥的权限和所有权的要求是非常严格的，总结如下：
+1、下面两个目录的所有权必须是user-B，所属组也应该是user-B，前者权限不能是777，后者权限必须为700
+/home/user
+/home/user/.ssh
+2、下面公钥文件的所有权必须是user-B，所属组也应该是user-B，权限必须为644
+/home/user/.ssh/authorized_keys
+3、下面私钥文件的所有权必须是user-A，所属组也应该是user-A，权限必须是600
+/home/user/.ssh/id_rsa&lt;/p&gt;
+&lt;p&gt;4、vi /etc/ssh/sshd_config&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;//开启以下内容,一般默认即可
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;HostKey /etc/ssh/ssh_host_rsa_key
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;RSAAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PubkeyAuthentication yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AuthorizedKeysFile .ssh/authorized_keys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;记得去systemctl restart sshd&lt;/p&gt;
+&lt;h4 id=&#34;别名多个key&#34;&gt;别名/多个key
+&lt;/h4&gt;&lt;p&gt;要登录不同的远程主机时，每个帐号参数配置可能不同，比如端口设置不同，这时候敲命令就很劳神费力了。SSH 提供了配置文件用来管理用户的 SSH 会话，该机制可以大大的方便用户登录。&lt;/p&gt;
+&lt;p&gt;SSH 的配置文件有两个：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ ~/.ssh/config # 用户配置文件
+$ /etc/ssh/ssh_config # 系统配置文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;code&gt;~/.ssh/&lt;/code&gt; 新建 config 文件，其配置如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host cn_server                      # 关键词、别名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HostName 10.11.xx.xx           # 主机地址
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Port 22                   # 指定端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    User root                   # 用户名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    IdentityFile ~/.ssh/xxx_rsa # 认证文件
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    StrictHostKeyChecking no    # 关闭提示
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# ssh别名链接验证
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh cn_server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;若要设置多个 ssh key ，只需要在 config 文件中添加多个 HOST 即可。 在 &lt;code&gt;.ssh/&lt;/code&gt; 目录下，还有一个文件是 &lt;code&gt;known_hosts&lt;/code&gt; ，该文件是已知的主机公钥名单。 在第一次连接远程主机时，OpenSSH 会提示： &lt;code&gt;无法辨认主机的真实性，询问是否要继续连接&lt;/code&gt; 。手动输入 yes 之后 ssh 就会将远程主机地址及对应的公钥添加进 known_hosts 文件。下一次连接同一台远程主机时，OpenSSH 通过 known_hosts 文件识别出它的公钥已经保存在本地了，从而跳过提示。 将 &lt;code&gt;StrictHostKeyChecking&lt;/code&gt; 设置成 no 后，在第一次连接时，ssh 将会自动添加远程主机的相关信息，省略了手动敲 yes 的步骤。 最后在终端执行命令 &lt;code&gt;ssh alias&lt;/code&gt; 就可以了。&lt;/p&gt;
+&lt;h3 id=&#34;sshpass&#34;&gt;sshpass
+&lt;/h3&gt;&lt;p&gt;sshpass 是&lt;strong&gt;一个简单、轻量级的命令行工具&lt;/strong&gt;，通过它我们能够向命令提示符本身提供密码（非交互式密码验证），这样就可以通过cron 调度器执行自动化的shell 脚本进行备份。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sshpass -p {密码} ssh {用户名}@{主机IP}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>ssh和sftp的使用</title>
@@ -470,6 +540,8 @@ b2&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pvcreate /dev/nvme0n1p7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vgextend vg00 /dev/nvme0n1p7
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend -L +9.9G /dev/mapper/vg00-lvoracle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;或者
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lvextend -l+100%FREE /dev/mapper/vg00-lvoracle
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xfs_growfs /dev/mapper/vg00-lvoracle
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;swap扩容&#34;&gt;SWAP扩容
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;swapoff 分区名/LV名（卸）
