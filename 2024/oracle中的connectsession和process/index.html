@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='省流 connects (连接)、sessions(会话)和pocesses(进程)的关系： connect(连接)：使用plsql连接到oracle后，就是建'><title>Oracle中的Connect、Session和Process</title>
+
+<link rel='canonical' href='https://proben1.github.io/2024/oracle%E4%B8%AD%E7%9A%84connectsession%E5%92%8Cprocess/'>
+
+<link rel="stylesheet" href="/scss/style.min.3969b56e11a0a78b1e042d11ff075f38fbfabbdb7de872598226316810cc343a.css"><meta property='og:title' content='Oracle中的Connect、Session和Process'>
+<meta property='og:description' content='省流 connects (连接)、sessions(会话)和pocesses(进程)的关系： connect(连接)：使用plsql连接到oracle后，就是建'>
+<meta property='og:url' content='https://proben1.github.io/2024/oracle%E4%B8%AD%E7%9A%84connectsession%E5%92%8Cprocess/'>
+<meta property='og:site_name' content='茄子的养殖场'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Oracle' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2024-09-20T10:12:15&#43;08:00'/><meta property='article:modified_time' content='2024-09-20T10:12:15&#43;08:00'/>
+<meta name="twitter:title" content="Oracle中的Connect、Session和Process">
+<meta name="twitter:description" content="省流 connects (连接)、sessions(会话)和pocesses(进程)的关系： connect(连接)：使用plsql连接到oracle后，就是建">
+  
+
+<style>
+    :root {
+        --article-font-family: "Noto Serif SC", var(--base-font-family);
+    }
+</style>
+
+<script> 
+		(function () {
+		    const customFont = document.createElement('link');
+		    customFont.href = "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;700&display=swap"; 
+		    customFont.type = "text/css";
+		    customFont.rel = "stylesheet";
+		
+		    document.head.appendChild(customFont);
+		}());
+</script>
+
+    </head>
+    <body class="
+    article-page
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    <!-- 
+        extended
+     -->
+    on-phone--column extended
+">
+    
+<div id="article-toolbar">
+    <a href="https://proben1.github.io/" class="back-home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+        <span>Back</span>
+    </a>
+</div>
+    <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu5f6318bf2277bd145affa4ac152aafed_74595_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">茄子的养殖场</a></h1>
+        <h2 class="site-description">完成一个名为人生的作品</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/ProbeN1'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+       
+       
+        
+
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+       
+        
+
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E%E6%88%91/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我</span>
+            </a>
+        </li>
+        
+       
+        
+
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+       
+        
+
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+       
+        
+
+
+        <li >
+            <a href='/links' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+    </ol>
+</aside>
+
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="background-color: #2a9d8f; color: #fff;">
+                数据库
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/2024/oracle%E4%B8%AD%E7%9A%84connectsession%E5%92%8Cprocess/">Oracle中的Connect、Session和Process</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 20, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-words">
+                    1061字
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="省流">省流
+</h3><p><strong>connects (连接)、sessions(会话)和pocesses(进程)的关系：</strong></p>
+<ul>
+<li>connect(连接)：使用plsql连接到oracle后，就是建立了一个连接(一次logon)</li>
+<li>session(会话)：决定同时登陆到数据库的并发用户数(数据库层面)</li>
+<li>processes(进程):也决定同时登陆到数据库的并发用户数(操作系统层面)</li>
+</ul>
+<h3 id="connects-和session"><strong>connects 和session：</strong>
+</h3><p>有A/B两个城市，需要从A运送白菜到B城</p>
+<p>我们先建设一条公路（connection）
+然后运送白菜过去，包括准备白菜和运送白菜以及返回等一系列的动作（session）</p>
+<p>一条公路，可以运送0-n次白菜（session &gt;= connection）
+当然从A到B的公路也可能不只一条（connection &gt;= 1）</p>
+<p>某一次运送白菜，可以在真正上路时才开通某一条道路（需要session时才建connection）
+一次运送不会影响别的运送的状态（同一connection上的不同session之间互不影响）</p>
+<p>因此：</p>
+<ul>
+<li>一个连接可以进行多次的会话</li>
+<li>一个会话可以不依赖于某个连接，甚至没有连接(当我准备好了，真正开始运送时再建立连接)</li>
+<li>一个会话不会影响别的会话</li>
+</ul>
+<h3 id="session和processes"><strong>session和processes：</strong>
+</h3><p>每个sqllogon称为一个连接（connection)，而每个连接，可以产生一个或多个会话，如果数据库运行在专用服务器方式，一个会话对应一个服务器进程（process)；如果数据库运行在共享服务器方式，一个服务器进程可以为多个会话服务。</p>
+<p>使用共享模式连接示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ORCL_1 =
+</span></span><span style="display:flex;"><span>(DESCRIPTION =
+</span></span><span style="display:flex;"><span>	(ADDRESS_LIST =
+</span></span><span style="display:flex;"><span>		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.142)(PORT = 1521))
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>	(CONNECT_DATA =
+</span></span><span style="display:flex;"><span>		(server = shared )
+</span></span><span style="display:flex;"><span>		(sid = orcl)
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>使用专用服务器模式连接示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ORCL_1 =
+</span></span><span style="display:flex;"><span>(DESCRIPTION =
+</span></span><span style="display:flex;"><span>    (ADDRESS_LIST =
+</span></span><span style="display:flex;"><span>		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.142)(PORT = 1521))
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>	(CONNECT_DATA =
+</span></span><span style="display:flex;"><span>		(server = dedicated )
+</span></span><span style="display:flex;"><span>           (sid = orcl)
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="常用查询sql">常用查询sql
+</h3><div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>--允许最大进程数processes：
+</span></span><span style="display:flex;"><span>select value from v$parameter where name = &#39;processes&#39; ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--当前已用进程数processes：
+</span></span><span style="display:flex;"><span>select count(*) from v$process ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--最大允许会话数session：
+</span></span><span style="display:flex;"><span>show parameter sessions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--当前已用会话数session：
+</span></span><span style="display:flex;"><span>select count(1) from v$session;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--查看连接数历史最大值
+</span></span><span style="display:flex;"><span>select resource_name,MAX_UTILIZATION,LIMIT_VALUE from v$resource_limit where resource_name in (&#39;processes&#39;,&#39;sessions&#39;);
+</span></span><span style="display:flex;"><span>（MAX_UTILIZATION代表数据库自上次启动以来达到的最大值，LIMIT_VALUE代表设置的最大值）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--查询某客户端连接数据库的session值：
+</span></span><span style="display:flex;"><span>select * from v$session where terminal=&#39;RUIFEI&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--查询某客户端连接数据库的process值：
+</span></span><span style="display:flex;"><span>select * from v$process
+</span></span><span style="display:flex;"><span>where addr in
+</span></span><span style="display:flex;"><span>(select paddr from v$session where terminal=&#39;RUIFEI&#39;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--如果是专用服务器方式连接，session和process是一样的。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--查看当前数据库使用的模式：
+</span></span><span style="display:flex;"><span>select count(*) from v$shared_server;(结果不为0，表示共享模式)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--当前活动的session
+</span></span><span style="display:flex;"><span>SELECT S.USERNAME,
+</span></span><span style="display:flex;"><span>       S.SID,
+</span></span><span style="display:flex;"><span>       S.SERIAL#,
+</span></span><span style="display:flex;"><span>       S.INST_ID,
+</span></span><span style="display:flex;"><span>       S.EVENT,
+</span></span><span style="display:flex;"><span>       S.WAIT_CLASS,
+</span></span><span style="display:flex;"><span>       S.SQL_EXEC_START,
+</span></span><span style="display:flex;"><span>       S.LOGON_TIME,
+</span></span><span style="display:flex;"><span>       S.ACTION,
+</span></span><span style="display:flex;"><span>       SQ.SQL_TEXT
+</span></span><span style="display:flex;"><span>  FROM GV$SESSION S, GV$SQLAREA SQ
+</span></span><span style="display:flex;"><span> WHERE S.STATUS = &#39;ACTIVE&#39;
+</span></span><span style="display:flex;"><span>   AND S.USERNAME IS NOT NULL
+</span></span><span style="display:flex;"><span>   AND S.SQL_ID = SQ.SQL_ID;
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/oracle/">Oracle</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title"></h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/2024/oracle%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle静默安装</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/oracle%E7%89%A9%E7%90%86%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E6%A6%82%E5%BF%B5%E5%8C%BA%E5%88%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle物理逻辑存储概念区分</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/2024/oracle%E7%BB%86%E8%8A%82%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Oracle细节知识整理</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+  
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>
+
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 <a href="https://stack-theme-mod.vercel.app/">茄子的养殖场</a>·<i class="fas fa-bell"></i> <a id="days">0</a>Days<br>
+      共书写了117k字·共 79篇文章</br><span><p>
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a><br />
+         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">© Licensed Under CC BY-NC-SA 4.0</a>
+    </section>
+
+<script>
+var s1 = '2022-02-12';
+s1 = new Date(s1.replace(/-/g, "/"));
+s2 = new Date();
+var days = s2.getTime() - s1.getTime();
+var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+document.getElementById('days').innerHTML = number_of_days;
+</script>
+    
+</footer>
+
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>Search</label>
+            <input name="keyword" required placeholder="Type something..." />
+        
+            <button title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+        
+            
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#省流">省流</a></li>
+        <li><a href="#connects-和session"><strong>connects 和session：</strong></a></li>
+        <li><a href="#session和processes"><strong>session和processes：</strong></a></li>
+        <li><a href="#常用查询sql">常用查询sql</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+        
+            <section class="widget categories">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+  
+        </div> 
+        <h2 class="widget-title section-title">Categories</h2>
+    <div class="widget-categories--list">
+<div class="widget">
+    <h3 class="widget-title"> </h3>
+    <div class="widget-body">
+        <div class="category-list">
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/linux/" class="category-list-link">linux<span class="category-list-count">12</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-list-link">学习笔记<span class="category-list-count">36</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E5%B0%8F%E4%BA%BA%E8%81%94%E5%90%88%E5%B7%A5%E4%BC%9A%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99/" class="category-list-link">小人联合工会内部资料<span class="category-list-count">15</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-list-link">数据库<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E6%95%B4%E7%82%B9%E5%B0%8F%E6%B4%BB/" class="category-list-link">整点小活<span class="category-list-count">6</a>
+            </span></div>
+            <div class="category-list-item"><a href="https://proben1.github.io/categories/%E7%BD%91%E7%BB%9C/" class="category-list-link">网络<span class="category-list-count">4</a>
+            </span></div>
+        </div>
+    </div>
+</div>
+    </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">Tags</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/ctf/" class="font_size_12">
+                CTF
+            </a>
+        
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="font_size_7">
+                环境搭建
+            </a>
+        
+            <a href="/tags/oracle/" class="font_size_5">
+                Oracle
+            </a>
+        
+            <a href="/tags/%E5%85%B6%E4%BB%96/" class="font_size_5">
+                其他
+            </a>
+        
+            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="font_size_4">
+                计算机基础
+            </a>
+        
+            <a href="/tags/web%E5%AE%89%E5%85%A8/" class="font_size_3">
+                Web安全
+            </a>
+        
+            <a href="/tags/java/" class="font_size_2">
+                Java
+            </a>
+        
+            <a href="/tags/lb/ha%E9%AB%98%E5%8F%AF%E7%94%A8/" class="font_size_2">
+                LB/HA高可用
+            </a>
+        
+            <a href="/tags/php/" class="font_size_2">
+                Php
+            </a>
+        
+            <a href="/tags/python/" class="font_size_2">
+                Python
+            </a>
+        
+            <a href="/tags/sql/" class="font_size_2">
+                SQL
+            </a>
+        
+            <a href="/tags/%E6%80%9D%E8%80%83%E6%80%BB%E7%BB%93/" class="font_size_2">
+                思考总结
+            </a>
+        
+            <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="font_size_2">
+                英语
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_1">
+                Docker
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                Git
+            </a>
+        
+    </div>
+</section>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Archives</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2024">
+                        
+                            <span class="year">2024</span>
+                            <span class="count">32</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2023">
+                        
+                            <span class="year">2023</span>
+                            <span class="count">1</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2022">
+                        
+                            <span class="year">2022</span>
+                            <span class="count">27</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">17</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -6,7 +6,7 @@
         <description>Recent content on 茄子的养殖场</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 08 Aug 2024 09:39:04 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Sep 2024 10:12:15 +0800</lastBuildDate><atom:link href="https://proben1.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>技术学习与团队成长</title>
         <link>https://proben1.github.io/2024/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%9B%A2%E9%98%9F%E6%88%90%E9%95%BF/</link>
         <pubDate>Tue, 21 May 2024 17:55:29 +0800</pubDate>
@@ -66,6 +66,104 @@
 &lt;h1 id=&#34;结语&#34;&gt;结语
 &lt;/h1&gt;&lt;p&gt;个人的成长过程是贯穿始终的，是以年为单位的，而且会一直持续数十年。每位&lt;code&gt;工程师&lt;/code&gt;的学习方法、工作方法、学习态度等等，都要经历数十年的考验，谨记。&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Oracle中的Connect、Session和Process</title>
+        <link>https://proben1.github.io/2024/oracle%E4%B8%AD%E7%9A%84connectsession%E5%92%8Cprocess/</link>
+        <pubDate>Fri, 20 Sep 2024 10:12:15 +0800</pubDate>
+        
+        <guid>https://proben1.github.io/2024/oracle%E4%B8%AD%E7%9A%84connectsession%E5%92%8Cprocess/</guid>
+        <description>&lt;h3 id=&#34;省流&#34;&gt;省流
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;connects (连接)、sessions(会话)和pocesses(进程)的关系：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;connect(连接)：使用plsql连接到oracle后，就是建立了一个连接(一次logon)&lt;/li&gt;
+&lt;li&gt;session(会话)：决定同时登陆到数据库的并发用户数(数据库层面)&lt;/li&gt;
+&lt;li&gt;processes(进程):也决定同时登陆到数据库的并发用户数(操作系统层面)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;connects-和session&#34;&gt;&lt;strong&gt;connects 和session：&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;有A/B两个城市，需要从A运送白菜到B城&lt;/p&gt;
+&lt;p&gt;我们先建设一条公路（connection）
+然后运送白菜过去，包括准备白菜和运送白菜以及返回等一系列的动作（session）&lt;/p&gt;
+&lt;p&gt;一条公路，可以运送0-n次白菜（session &amp;gt;= connection）
+当然从A到B的公路也可能不只一条（connection &amp;gt;= 1）&lt;/p&gt;
+&lt;p&gt;某一次运送白菜，可以在真正上路时才开通某一条道路（需要session时才建connection）
+一次运送不会影响别的运送的状态（同一connection上的不同session之间互不影响）&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个连接可以进行多次的会话&lt;/li&gt;
+&lt;li&gt;一个会话可以不依赖于某个连接，甚至没有连接(当我准备好了，真正开始运送时再建立连接)&lt;/li&gt;
+&lt;li&gt;一个会话不会影响别的会话&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;session和processes&#34;&gt;&lt;strong&gt;session和processes：&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;每个sqllogon称为一个连接（connection)，而每个连接，可以产生一个或多个会话，如果数据库运行在专用服务器方式，一个会话对应一个服务器进程（process)；如果数据库运行在共享服务器方式，一个服务器进程可以为多个会话服务。&lt;/p&gt;
+&lt;p&gt;使用共享模式连接示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ORCL_1 =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(DESCRIPTION =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(ADDRESS_LIST =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.142)(PORT = 1521))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(CONNECT_DATA =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		(server = shared )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		(sid = orcl)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用专用服务器模式连接示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ORCL_1 =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(DESCRIPTION =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    (ADDRESS_LIST =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.142)(PORT = 1521))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	(CONNECT_DATA =
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		(server = dedicated )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;           (sid = orcl)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;常用查询sql&#34;&gt;常用查询sql
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--允许最大进程数processes：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select value from v$parameter where name = &amp;#39;processes&amp;#39; ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--当前已用进程数processes：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select count(*) from v$process ;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--最大允许会话数session：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;show parameter sessions
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--当前已用会话数session：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select count(1) from v$session;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--查看连接数历史最大值
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select resource_name,MAX_UTILIZATION,LIMIT_VALUE from v$resource_limit where resource_name in (&amp;#39;processes&amp;#39;,&amp;#39;sessions&amp;#39;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;（MAX_UTILIZATION代表数据库自上次启动以来达到的最大值，LIMIT_VALUE代表设置的最大值）
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--查询某客户端连接数据库的session值：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select * from v$session where terminal=&amp;#39;RUIFEI&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--查询某客户端连接数据库的process值：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select * from v$process
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;where addr in
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(select paddr from v$session where terminal=&amp;#39;RUIFEI&amp;#39;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--如果是专用服务器方式连接，session和process是一样的。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--查看当前数据库使用的模式：
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;select count(*) from v$shared_server;(结果不为0，表示共享模式)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--当前活动的session
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SELECT S.USERNAME,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.SID,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.SERIAL#,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.INST_ID,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.EVENT,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.WAIT_CLASS,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.SQL_EXEC_START,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.LOGON_TIME,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       S.ACTION,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       SQ.SQL_TEXT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  FROM GV$SESSION S, GV$SQLAREA SQ
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; WHERE S.STATUS = &amp;#39;ACTIVE&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   AND S.USERNAME IS NOT NULL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   AND S.SQL_ID = SQ.SQL_ID;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>茄科生物观测日志2024.7</title>
@@ -1136,7 +1234,7 @@ HASH索引可能是访问数据库中数据的最快方法，但它也有自身�
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &amp;#39;server 10.xxx.xxx.xxx iburst&amp;#39; &amp;gt;&amp;gt; /etc/chrony.conf
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl restart chronyd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可以通过多种方式查看chronyd服务的开启或者状态：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;system status chronyd
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status chronyd
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chronyc tracking
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;timedatectl
